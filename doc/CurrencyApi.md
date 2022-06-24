@@ -5,11 +5,11 @@
 import 'package:bind_api/api.dart';
 ```
 
-All URIs are relative to *https://api.bind.com/v2*
+All URIs are relative to *https://api.thebind.uk/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**listCurrencies**](CurrencyApi.md#listcurrencies) | **GET** /currency/ | Currencies list
+[**listCurrencies**](CurrencyApi.md#listcurrencies) | **GET** /currencies/ | Currencies list
 
 
 # **listCurrencies**

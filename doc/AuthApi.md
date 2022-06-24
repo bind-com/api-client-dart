@@ -1,4 +1,4 @@
-# bind_api.api.GeoApi
+# bind_api.api.AuthApi
 
 ## Load the API package
 ```dart
@@ -9,13 +9,13 @@ All URIs are relative to *https://api.thebind.uk/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**listCountries**](GeoApi.md#listcountries) | **GET** /countries/ | Countries list
+[**whoAmI**](AuthApi.md#whoami) | **GET** /auth/whoami/ | Who am I
 
 
-# **listCountries**
-> BuiltList<Country> listCountries()
+# **whoAmI**
+> User whoAmI()
 
-Countries list
+Who am I
 
 ### Example
 ```dart
@@ -24,13 +24,13 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
-final api = BindApi().getGeoApi();
+final api = BindApi().getAuthApi();
 
 try {
-    final response = api.listCountries();
+    final response = api.whoAmI();
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling GeoApi->listCountries: $e\n');
+    print('Exception when calling AuthApi->whoAmI: $e\n');
 }
 ```
 
@@ -39,7 +39,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;Country&gt;**](Country.md)
+[**User**](User.md)
 
 ### Authorization
 

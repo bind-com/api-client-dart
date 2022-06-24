@@ -40,7 +40,7 @@ class GeoApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/geo/countries/';
+    final _path = r'/countries/';
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{

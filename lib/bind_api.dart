@@ -9,6 +9,7 @@ export 'package:bind_api/src/auth/oauth.dart';
 export 'package:bind_api/src/serializers.dart';
 export 'package:bind_api/src/model/date.dart';
 
+export 'package:bind_api/src/api/auth_api.dart';
 export 'package:bind_api/src/api/currency_api.dart';
 export 'package:bind_api/src/api/geo_api.dart';
 export 'package:bind_api/src/api/user_api.dart';

@@ -9,12 +9,13 @@ import 'package:bind_api/src/auth/api_key_auth.dart';
 import 'package:bind_api/src/auth/basic_auth.dart';
 import 'package:bind_api/src/auth/bearer_auth.dart';
 import 'package:bind_api/src/auth/oauth.dart';
+import 'package:bind_api/src/api/auth_api.dart';
 import 'package:bind_api/src/api/currency_api.dart';
 import 'package:bind_api/src/api/geo_api.dart';
 import 'package:bind_api/src/api/user_api.dart';
 
 class BindApi {
-  static const String basePath = r'https://api.bind.com/v2';
+  static const String basePath = r'https://api.thebind.uk/v1';
 
   final Dio dio;
   final Serializers serializers;
@@ -65,6 +66,12 @@ class BindApi {
     if (this.dio.interceptors.any((i) => i is ApiKeyAuthInterceptor)) {
       (this.dio.interceptors.firstWhere((element) => element is ApiKeyAuthInterceptor) as ApiKeyAuthInterceptor).apiKeys[name] = apiKey;
     }
+  }
+
+  /// Get AuthApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  AuthApi getAuthApi() {
+    return AuthApi(dio, serializers);
   }
 
   /// Get CurrencyApi instance, base route and serializer can be overridden by a given but be careful,

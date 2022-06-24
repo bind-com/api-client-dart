@@ -2,7 +2,6 @@
 
 BIND it the evolution of trade.
 
-
 ## Requirements
 
 * Dart 2.12.0 or later OR Flutter 1.26.0 or later
@@ -14,7 +13,7 @@ BIND it the evolution of trade.
 To use the package from [pub.dev](https://pub.dev), please include the following in pubspec.yaml
 ```yaml
 dependencies:
-  bind_api: 0.1.0
+  bind_api: 0.2.0
 ```
 
 ### Github
@@ -23,7 +22,7 @@ If this Dart package is published to Github, please include the following in pub
 dependencies:
   bind_api:
     git:
-      url: https://github.com/bind-com/api-client-dart.git
+      url: https://github.com/GIT_USER_ID/GIT_REPO_ID.git
       #ref: main
 ```
 
@@ -43,28 +42,28 @@ Please follow the [installation procedure](#installation--usage) and then run th
 import 'package:bind_api/bind_api.dart';
 
 
-final api = BindApi().getCurrencyApi();
+final api = BindApi().getAuthApi();
 
 try {
-    final response = await api.listCurrencies();
+    final response = await api.whoAmI();
     print(response);
 } catch on DioError (e) {
-    print("Exception when calling CurrencyApi->listCurrencies: $e\n");
+    print("Exception when calling AuthApi->whoAmI: $e\n");
 }
 
 ```
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.bind.com/v2*
+All URIs are relative to *https://api.thebind.uk/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-[*CurrencyApi*](doc/CurrencyApi.md) | [**listCurrencies**](doc/CurrencyApi.md#listcurrencies) | **GET** /currency/ | Currencies list
-[*GeoApi*](doc/GeoApi.md) | [**listCountries**](doc/GeoApi.md#listcountries) | **GET** /geo/countries/ | Countries list
+[*AuthApi*](doc/AuthApi.md) | [**whoAmI**](doc/AuthApi.md#whoami) | **GET** /auth/whoami/ | Who am I
+[*CurrencyApi*](doc/CurrencyApi.md) | [**listCurrencies**](doc/CurrencyApi.md#listcurrencies) | **GET** /currencies/ | Currencies list
+[*GeoApi*](doc/GeoApi.md) | [**listCountries**](doc/GeoApi.md#listcountries) | **GET** /countries/ | Countries list
 [*UserApi*](doc/UserApi.md) | [**createKYCRequest**](doc/UserApi.md#createkycrequest) | **POST** /user/kyc/requests/ | Create KYC Request
-[*UserApi*](doc/UserApi.md) | [**updateUser**](doc/UserApi.md#updateuser) | **PATCH** /user/{userID}/ | Update user
-[*UserApi*](doc/UserApi.md) | [**whoAmI**](doc/UserApi.md#whoami) | **GET** /user/whoami/ | Who am I
+[*UserApi*](doc/UserApi.md) | [**updateUser**](doc/UserApi.md#updateuser) | **PATCH** /users/{userID}/ | Update user
 
 
 ## Documentation For Models

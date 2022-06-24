@@ -1,6 +1,7 @@
 .gitignore
 README.md
 analysis_options.yaml
+doc/AuthApi.md
 doc/Country.md
 doc/Currency.md
 doc/CurrencyApi.md
@@ -10,6 +11,7 @@ doc/User.md
 doc/UserApi.md
 lib/bind_api.dart
 lib/src/api.dart
+lib/src/api/auth_api.dart
 lib/src/api/currency_api.dart
 lib/src/api/geo_api.dart
 lib/src/api/user_api.dart
