@@ -117,7 +117,7 @@ class UserApi {
   /// Returns a [Future] containing a [Response] with a [User] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<User>> updateUser({ 
-    required num userID,
+    required String userID,
     User? user,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

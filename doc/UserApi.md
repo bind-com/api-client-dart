@@ -75,7 +75,7 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getUserApi();
-final num userID = 8.14; // num | 
+final String userID = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 final User user = ; // User | 
 
 try {
@@ -90,7 +90,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userID** | **num**|  | 
+ **userID** | **String**|  | 
  **user** | [**User**](User.md)|  | [optional] 
 
 ### Return type
