@@ -19,7 +19,7 @@ For more information, please visit [https://www.bind.com/](https://www.bind.com/
 To use the package from [pub.dev](https://pub.dev), please include the following in pubspec.yaml
 ```yaml
 dependencies:
-  bind_api: 0.2.2
+  bind_api: 0.2.1
 ```
 
 ### Github
@@ -66,17 +66,73 @@ All URIs are relative to *https://api.thebind.uk/v1*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 [*AuthApi*](doc/AuthApi.md) | [**whoAmI**](doc/AuthApi.md#whoami) | **GET** /auth/whoami/ | Who am I
-[*CurrencyApi*](doc/CurrencyApi.md) | [**listCurrencies**](doc/CurrencyApi.md#listcurrencies) | **GET** /currencies/ | Currencies list
+[*BankTransferApi*](doc/BankTransferApi.md) | [**createBeneficiary**](doc/BankTransferApi.md#createbeneficiary) | **POST** /beneficiaries/ | Add new beneficiary
+[*BankTransferApi*](doc/BankTransferApi.md) | [**getBeneficiaries**](doc/BankTransferApi.md#getbeneficiaries) | **GET** /beneficiaries/ | List of beneficiaries of current user
+[*BankTransferApi*](doc/BankTransferApi.md) | [**performFiatTransfer**](doc/BankTransferApi.md#performfiattransfer) | **POST** /fiat/transfer/ | Send money to outer bank account
+[*ContactListApi*](doc/ContactListApi.md) | [**getContacts**](doc/ContactListApi.md#getcontacts) | **GET** /contacts/ | List of contacts of current user
+[*ContactListApi*](doc/ContactListApi.md) | [**getTransactionsFiltered**](doc/ContactListApi.md#gettransactionsfiltered) | **POST** /transactions/ | Get list of user transactions
+[*ContactListApi*](doc/ContactListApi.md) | [**syncContacts**](doc/ContactListApi.md#synccontacts) | **POST** /contacts/sync/ | Sync mobile phone contacts of current user with backend data
+[*ContactListApi*](doc/ContactListApi.md) | [**updateBeneficiary**](doc/ContactListApi.md#updatebeneficiary) | **PATCH** /beneficiaries/{beneficiary_id}/ | Update beneficiary data (add/remove from favorite)
+[*ContactListApi*](doc/ContactListApi.md) | [**updateContact**](doc/ContactListApi.md#updatecontact) | **PATCH** /contacts/{user_id}/ | Update contact data (add/remove contact from favorite)
+[*ContactsApi*](doc/ContactsApi.md) | [**getBeneficiaries**](doc/ContactsApi.md#getbeneficiaries) | **GET** /beneficiaries/ | List of beneficiaries of current user
+[*ContactsApi*](doc/ContactsApi.md) | [**getContacts**](doc/ContactsApi.md#getcontacts) | **GET** /contacts/ | List of contacts of current user
+[*ContactsApi*](doc/ContactsApi.md) | [**syncContacts**](doc/ContactsApi.md#synccontacts) | **POST** /contacts/sync/ | Sync mobile phone contacts of current user with backend data
+[*ContactsApi*](doc/ContactsApi.md) | [**updateBeneficiary**](doc/ContactsApi.md#updatebeneficiary) | **PATCH** /beneficiaries/{beneficiary_id}/ | Update beneficiary data (add/remove from favorite)
+[*ContactsApi*](doc/ContactsApi.md) | [**updateContact**](doc/ContactsApi.md#updatecontact) | **PATCH** /contacts/{user_id}/ | Update contact data (add/remove contact from favorite)
+[*CurrencyApi*](doc/CurrencyApi.md) | [**getFiatCurrencies**](doc/CurrencyApi.md#getfiatcurrencies) | **GET** /fiat/currencies/ | List of currencies that are available for fiat account opening
+[*CurrencyApi*](doc/CurrencyApi.md) | [**listCurrencies**](doc/CurrencyApi.md#listcurrencies) | **GET** /currencies/ | List of Currencies available at Bind
+[*DepositFiatApi*](doc/DepositFiatApi.md) | [**getFiatWalletDetails**](doc/DepositFiatApi.md#getfiatwalletdetails) | **GET** /fiat/wallets/{wallet_id}/ | Wallet&#39;s details
+[*DepositFiatApi*](doc/DepositFiatApi.md) | [**getFiatWallets**](doc/DepositFiatApi.md#getfiatwallets) | **GET** /fiat/wallets/ | All fiat wallets of current user with total balance data
+[*ExchangeApi*](doc/ExchangeApi.md) | [**getExchangeRate**](doc/ExchangeApi.md#getexchangerate) | **GET** /fiat/exchange/rate/{from}/{to}/ | Exchange rate between two given currencies
+[*ExchangeApi*](doc/ExchangeApi.md) | [**performExchange**](doc/ExchangeApi.md#performexchange) | **POST** /fiat/exchange/ | Perform exchange operation
+[*FiatApi*](doc/FiatApi.md) | [**createFiatRequest**](doc/FiatApi.md#createfiatrequest) | **POST** /fiat/request/ | Request fiat inside BIND
+[*FiatApi*](doc/FiatApi.md) | [**createFiatWallet**](doc/FiatApi.md#createfiatwallet) | **POST** /fiat/wallets/ | Create an wallet in given currency
+[*FiatApi*](doc/FiatApi.md) | [**fiatSend**](doc/FiatApi.md#fiatsend) | **POST** /fiat/send/ | Send fiat inside BIND
+[*FiatApi*](doc/FiatApi.md) | [**getExchangeRate**](doc/FiatApi.md#getexchangerate) | **GET** /fiat/exchange/rate/{from}/{to}/ | Exchange rate between two given currencies
+[*FiatApi*](doc/FiatApi.md) | [**getFiatWalletDetails**](doc/FiatApi.md#getfiatwalletdetails) | **GET** /fiat/wallets/{wallet_id}/ | Wallet&#39;s details
+[*FiatApi*](doc/FiatApi.md) | [**getFiatWallets**](doc/FiatApi.md#getfiatwallets) | **GET** /fiat/wallets/ | All fiat wallets of current user with total balance data
+[*FiatApi*](doc/FiatApi.md) | [**performExchange**](doc/FiatApi.md#performexchange) | **POST** /fiat/exchange/ | Perform exchange operation
+[*FiatApi*](doc/FiatApi.md) | [**performFiatTransfer**](doc/FiatApi.md#performfiattransfer) | **POST** /fiat/transfer/ | Send money to outer bank account
 [*GeoApi*](doc/GeoApi.md) | [**listCountries**](doc/GeoApi.md#listcountries) | **GET** /countries/ | Countries list
+[*HomepageApi*](doc/HomepageApi.md) | [**createFiatWallet**](doc/HomepageApi.md#createfiatwallet) | **POST** /fiat/wallets/ | Create an wallet in given currency
+[*HomepageApi*](doc/HomepageApi.md) | [**getFiatCurrencies**](doc/HomepageApi.md#getfiatcurrencies) | **GET** /fiat/currencies/ | List of currencies that are available for fiat account opening
+[*SendRequestApi*](doc/SendRequestApi.md) | [**createFiatRequest**](doc/SendRequestApi.md#createfiatrequest) | **POST** /fiat/request/ | Request fiat inside BIND
+[*SendRequestApi*](doc/SendRequestApi.md) | [**fiatSend**](doc/SendRequestApi.md#fiatsend) | **POST** /fiat/send/ | Send fiat inside BIND
+[*SendRequestApi*](doc/SendRequestApi.md) | [**getContacts**](doc/SendRequestApi.md#getcontacts) | **GET** /contacts/ | List of contacts of current user
+[*SendRequestApi*](doc/SendRequestApi.md) | [**syncContacts**](doc/SendRequestApi.md#synccontacts) | **POST** /contacts/sync/ | Sync mobile phone contacts of current user with backend data
+[*SendRequestApi*](doc/SendRequestApi.md) | [**updateBeneficiary**](doc/SendRequestApi.md#updatebeneficiary) | **PATCH** /beneficiaries/{beneficiary_id}/ | Update beneficiary data (add/remove from favorite)
+[*SendRequestApi*](doc/SendRequestApi.md) | [**updateContact**](doc/SendRequestApi.md#updatecontact) | **PATCH** /contacts/{user_id}/ | Update contact data (add/remove contact from favorite)
+[*StagingApi*](doc/StagingApi.md) | [**adjustWalletBalance**](doc/StagingApi.md#adjustwalletbalance) | **POST** /staging/fiat/wallet/adjust/ | Change balance of a fiat wallet
+[*TransactionApi*](doc/TransactionApi.md) | [**getTransactionsFiltered**](doc/TransactionApi.md#gettransactionsfiltered) | **POST** /transactions/ | Get list of user transactions
 [*UserApi*](doc/UserApi.md) | [**createKYCRequest**](doc/UserApi.md#createkycrequest) | **POST** /user/kyc/requests/ | Create KYC Request
 [*UserApi*](doc/UserApi.md) | [**updateUser**](doc/UserApi.md#updateuser) | **PATCH** /users/{userID}/ | Update user
 
 
 ## Documentation For Models
 
+ - [AdjustWalletBalanceRequest](doc/AdjustWalletBalanceRequest.md)
+ - [Beneficiary](doc/Beneficiary.md)
+ - [Contact](doc/Contact.md)
  - [Country](doc/Country.md)
+ - [CreateBeneficiaryRequest](doc/CreateBeneficiaryRequest.md)
+ - [CreateFiatRequestRequest](doc/CreateFiatRequestRequest.md)
+ - [CreateFiatWalletRequest](doc/CreateFiatWalletRequest.md)
  - [Currency](doc/Currency.md)
  - [Error](doc/Error.md)
+ - [FiatSendRequest](doc/FiatSendRequest.md)
+ - [FiatWallet](doc/FiatWallet.md)
+ - [FiatWalletRequisites](doc/FiatWalletRequisites.md)
+ - [GetFiatWallets200Response](doc/GetFiatWallets200Response.md)
+ - [GetFiatWallets200ResponseTotalBalance](doc/GetFiatWallets200ResponseTotalBalance.md)
+ - [GetTransactionsFilteredRequest](doc/GetTransactionsFilteredRequest.md)
+ - [PerformExchangeRequest](doc/PerformExchangeRequest.md)
+ - [PerformFiatTransferRequest](doc/PerformFiatTransferRequest.md)
+ - [SyncContacts200Response](doc/SyncContacts200Response.md)
+ - [SyncContactsRequest](doc/SyncContactsRequest.md)
+ - [Transaction](doc/Transaction.md)
+ - [TransactionStates](doc/TransactionStates.md)
+ - [TransactionTypes](doc/TransactionTypes.md)
+ - [UpdateContactRequest](doc/UpdateContactRequest.md)
  - [User](doc/User.md)
 
 
