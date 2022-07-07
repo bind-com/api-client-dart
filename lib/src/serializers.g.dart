@@ -7,33 +7,29 @@ part of 'serializers.dart';
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
-      ..add(AdjustWalletBalanceRequest.serializer)
+      ..add(AdjustFiatWalletBalanceRequest.serializer)
       ..add(Beneficiary.serializer)
       ..add(Contact.serializer)
       ..add(Country.serializer)
       ..add(CreateBeneficiaryRequest.serializer)
-      ..add(CreateFiatRequestRequest.serializer)
       ..add(CreateFiatWalletRequest.serializer)
+      ..add(CreateInnerFiatRequestRequest.serializer)
+      ..add(CreateInnerFiatTransferRequest.serializer)
       ..add(Currency.serializer)
       ..add(Error.serializer)
-      ..add(FiatSendRequest.serializer)
+      ..add(FiatAccount.serializer)
       ..add(FiatWallet.serializer)
       ..add(FiatWalletRequisites.serializer)
-      ..add(GetFiatWallets200Response.serializer)
-      ..add(GetFiatWallets200ResponseTotalBalance.serializer)
+      ..add(FiatWalletTotalBalance.serializer)
       ..add(GetTransactionsFilteredRequest.serializer)
       ..add(PerformExchangeRequest.serializer)
       ..add(PerformFiatTransferRequest.serializer)
-      ..add(SyncContacts200Response.serializer)
       ..add(SyncContactsRequest.serializer)
       ..add(Transaction.serializer)
       ..add(TransactionStates.serializer)
       ..add(TransactionTypes.serializer)
       ..add(UpdateContactRequest.serializer)
       ..add(User.serializer)
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(Contact)]),
-          () => new ListBuilder<Contact>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(FiatWallet)]),
           () => new ListBuilder<FiatWallet>())

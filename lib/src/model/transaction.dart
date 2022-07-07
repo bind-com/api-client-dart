@@ -38,7 +38,7 @@ abstract class Transaction implements Built<Transaction, TransactionBuilder> {
     String? get parent;
 
     @BuiltValueField(wireName: r'order')
-    String? get order;
+    num? get order;
 
     @BuiltValueField(wireName: r'state')
     TransactionStates? get state;
@@ -125,7 +125,7 @@ class _$TransactionSerializer implements StructuredSerializer<Transaction> {
             result
                 ..add(r'order')
                 ..add(serializers.serialize(object.order,
-                    specifiedType: const FullType.nullable(String)));
+                    specifiedType: const FullType.nullable(num)));
         }
         if (object.state != null) {
             result
@@ -245,7 +245,7 @@ class _$TransactionSerializer implements StructuredSerializer<Transaction> {
                     break;
                 case r'order':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType.nullable(String)) as String?;
+                        specifiedType: const FullType.nullable(num)) as num?;
                     if (valueDes == null) continue;
                     result.order = valueDes;
                     break;

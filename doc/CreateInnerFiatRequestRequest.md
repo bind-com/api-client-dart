@@ -1,4 +1,4 @@
-# bind_api.model.PerformFiatTransferRequest
+# bind_api.model.CreateInnerFiatRequestRequest
 
 ## Load the model package
 ```dart
@@ -8,9 +8,11 @@ import 'package:bind_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**beneficiaryId** | **String** |  | [optional] 
+**userId** | **String** |  | [optional] 
 **currency** | **String** |  | [optional] 
 **amount** | **num** |  | [optional] 
+**date** | **String** |  | [optional] 
+**time** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

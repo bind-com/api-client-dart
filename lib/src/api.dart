@@ -10,18 +10,14 @@ import 'package:bind_api/src/auth/basic_auth.dart';
 import 'package:bind_api/src/auth/bearer_auth.dart';
 import 'package:bind_api/src/auth/oauth.dart';
 import 'package:bind_api/src/api/auth_api.dart';
-import 'package:bind_api/src/api/bank_transfer_api.dart';
-import 'package:bind_api/src/api/contact_list_api.dart';
+import 'package:bind_api/src/api/beneficiaries_api.dart';
 import 'package:bind_api/src/api/contacts_api.dart';
 import 'package:bind_api/src/api/currency_api.dart';
-import 'package:bind_api/src/api/deposit_fiat_api.dart';
 import 'package:bind_api/src/api/exchange_api.dart';
-import 'package:bind_api/src/api/fiat_api.dart';
+import 'package:bind_api/src/api/fiat_wallet_api.dart';
 import 'package:bind_api/src/api/geo_api.dart';
-import 'package:bind_api/src/api/homepage_api.dart';
-import 'package:bind_api/src/api/send_request_api.dart';
 import 'package:bind_api/src/api/staging_api.dart';
-import 'package:bind_api/src/api/transaction_api.dart';
+import 'package:bind_api/src/api/transactions_api.dart';
 import 'package:bind_api/src/api/user_api.dart';
 
 class BindApi {
@@ -84,16 +80,10 @@ class BindApi {
     return AuthApi(dio, serializers);
   }
 
-  /// Get BankTransferApi instance, base route and serializer can be overridden by a given but be careful,
+  /// Get BeneficiariesApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
-  BankTransferApi getBankTransferApi() {
-    return BankTransferApi(dio, serializers);
-  }
-
-  /// Get ContactListApi instance, base route and serializer can be overridden by a given but be careful,
-  /// by doing that all interceptors will not be executed
-  ContactListApi getContactListApi() {
-    return ContactListApi(dio, serializers);
+  BeneficiariesApi getBeneficiariesApi() {
+    return BeneficiariesApi(dio, serializers);
   }
 
   /// Get ContactsApi instance, base route and serializer can be overridden by a given but be careful,
@@ -108,22 +98,16 @@ class BindApi {
     return CurrencyApi(dio, serializers);
   }
 
-  /// Get DepositFiatApi instance, base route and serializer can be overridden by a given but be careful,
-  /// by doing that all interceptors will not be executed
-  DepositFiatApi getDepositFiatApi() {
-    return DepositFiatApi(dio, serializers);
-  }
-
   /// Get ExchangeApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   ExchangeApi getExchangeApi() {
     return ExchangeApi(dio, serializers);
   }
 
-  /// Get FiatApi instance, base route and serializer can be overridden by a given but be careful,
+  /// Get FiatWalletApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
-  FiatApi getFiatApi() {
-    return FiatApi(dio, serializers);
+  FiatWalletApi getFiatWalletApi() {
+    return FiatWalletApi(dio, serializers);
   }
 
   /// Get GeoApi instance, base route and serializer can be overridden by a given but be careful,
@@ -132,28 +116,16 @@ class BindApi {
     return GeoApi(dio, serializers);
   }
 
-  /// Get HomepageApi instance, base route and serializer can be overridden by a given but be careful,
-  /// by doing that all interceptors will not be executed
-  HomepageApi getHomepageApi() {
-    return HomepageApi(dio, serializers);
-  }
-
-  /// Get SendRequestApi instance, base route and serializer can be overridden by a given but be careful,
-  /// by doing that all interceptors will not be executed
-  SendRequestApi getSendRequestApi() {
-    return SendRequestApi(dio, serializers);
-  }
-
   /// Get StagingApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   StagingApi getStagingApi() {
     return StagingApi(dio, serializers);
   }
 
-  /// Get TransactionApi instance, base route and serializer can be overridden by a given but be careful,
+  /// Get TransactionsApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
-  TransactionApi getTransactionApi() {
-    return TransactionApi(dio, serializers);
+  TransactionsApi getTransactionsApi() {
+    return TransactionsApi(dio, serializers);
   }
 
   /// Get UserApi instance, base route and serializer can be overridden by a given but be careful,

@@ -5,17 +5,17 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'perform_fiat_transfer_request.g.dart';
+part 'create_inner_fiat_transfer_request.g.dart';
 
-/// PerformFiatTransferRequest
+/// CreateInnerFiatTransferRequest
 ///
 /// Properties:
-/// * [beneficiaryId] 
+/// * [userId] 
 /// * [currency] 
 /// * [amount] 
-abstract class PerformFiatTransferRequest implements Built<PerformFiatTransferRequest, PerformFiatTransferRequestBuilder> {
-    @BuiltValueField(wireName: r'beneficiary_id')
-    String? get beneficiaryId;
+abstract class CreateInnerFiatTransferRequest implements Built<CreateInnerFiatTransferRequest, CreateInnerFiatTransferRequestBuilder> {
+    @BuiltValueField(wireName: r'user_id')
+    String? get userId;
 
     @BuiltValueField(wireName: r'currency')
     String? get currency;
@@ -23,32 +23,32 @@ abstract class PerformFiatTransferRequest implements Built<PerformFiatTransferRe
     @BuiltValueField(wireName: r'amount')
     num? get amount;
 
-    PerformFiatTransferRequest._();
+    CreateInnerFiatTransferRequest._();
 
     @BuiltValueHook(initializeBuilder: true)
-    static void _defaults(PerformFiatTransferRequestBuilder b) => b;
+    static void _defaults(CreateInnerFiatTransferRequestBuilder b) => b;
 
-    factory PerformFiatTransferRequest([void updates(PerformFiatTransferRequestBuilder b)]) = _$PerformFiatTransferRequest;
+    factory CreateInnerFiatTransferRequest([void updates(CreateInnerFiatTransferRequestBuilder b)]) = _$CreateInnerFiatTransferRequest;
 
     @BuiltValueSerializer(custom: true)
-    static Serializer<PerformFiatTransferRequest> get serializer => _$PerformFiatTransferRequestSerializer();
+    static Serializer<CreateInnerFiatTransferRequest> get serializer => _$CreateInnerFiatTransferRequestSerializer();
 }
 
-class _$PerformFiatTransferRequestSerializer implements StructuredSerializer<PerformFiatTransferRequest> {
+class _$CreateInnerFiatTransferRequestSerializer implements StructuredSerializer<CreateInnerFiatTransferRequest> {
     @override
-    final Iterable<Type> types = const [PerformFiatTransferRequest, _$PerformFiatTransferRequest];
+    final Iterable<Type> types = const [CreateInnerFiatTransferRequest, _$CreateInnerFiatTransferRequest];
 
     @override
-    final String wireName = r'PerformFiatTransferRequest';
+    final String wireName = r'CreateInnerFiatTransferRequest';
 
     @override
-    Iterable<Object?> serialize(Serializers serializers, PerformFiatTransferRequest object,
+    Iterable<Object?> serialize(Serializers serializers, CreateInnerFiatTransferRequest object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
-        if (object.beneficiaryId != null) {
+        if (object.userId != null) {
             result
-                ..add(r'beneficiary_id')
-                ..add(serializers.serialize(object.beneficiaryId,
+                ..add(r'user_id')
+                ..add(serializers.serialize(object.userId,
                     specifiedType: const FullType(String)));
         }
         if (object.currency != null) {
@@ -67,9 +67,9 @@ class _$PerformFiatTransferRequestSerializer implements StructuredSerializer<Per
     }
 
     @override
-    PerformFiatTransferRequest deserialize(Serializers serializers, Iterable<Object?> serialized,
+    CreateInnerFiatTransferRequest deserialize(Serializers serializers, Iterable<Object?> serialized,
         {FullType specifiedType = FullType.unspecified}) {
-        final result = PerformFiatTransferRequestBuilder();
+        final result = CreateInnerFiatTransferRequestBuilder();
 
         final iterator = serialized.iterator;
         while (iterator.moveNext()) {
@@ -78,10 +78,10 @@ class _$PerformFiatTransferRequestSerializer implements StructuredSerializer<Per
             final Object? value = iterator.current;
             
             switch (key) {
-                case r'beneficiary_id':
+                case r'user_id':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
-                    result.beneficiaryId = valueDes;
+                    result.userId = valueDes;
                     break;
                 case r'currency':
                     final valueDes = serializers.deserialize(value,

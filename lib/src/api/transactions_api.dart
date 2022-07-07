@@ -7,21 +7,24 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:bind_api/src/model/adjust_fiat_wallet_balance_request.dart';
+import 'package:bind_api/src/model/error.dart';
+import 'package:bind_api/src/model/get_transactions_filtered_request.dart';
+import 'package:bind_api/src/model/transaction.dart';
+import 'package:built_collection/built_collection.dart';
 
-class StagingApi {
+class TransactionsApi {
 
   final Dio _dio;
 
   final Serializers _serializers;
 
-  const StagingApi(this._dio, this._serializers);
+  const TransactionsApi(this._dio, this._serializers);
 
-  /// Change balance of a fiat wallet
-  /// Change balance of a fiat wallet
+  /// Get list of user transactions
+  /// Get list of user transactions
   ///
   /// Parameters:
-  /// * [adjustFiatWalletBalanceRequest] 
+  /// * [getTransactionsFilteredRequest] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -29,10 +32,10 @@ class StagingApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [BuiltList<Transaction>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> adjustFiatWalletBalance({ 
-    AdjustFiatWalletBalanceRequest? adjustFiatWalletBalanceRequest,
+  Future<Response<BuiltList<Transaction>>> getTransactionsFiltered({ 
+    GetTransactionsFilteredRequest? getTransactionsFilteredRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -40,7 +43,7 @@ class StagingApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/staging/fiat/wallet/adjust/';
+    final _path = r'/transactions/';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -63,8 +66,8 @@ class StagingApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(AdjustFiatWalletBalanceRequest);
-      _bodyData = adjustFiatWalletBalanceRequest == null ? null : _serializers.serialize(adjustFiatWalletBalanceRequest, specifiedType: _type);
+      const _type = FullType(GetTransactionsFilteredRequest);
+      _bodyData = getTransactionsFilteredRequest == null ? null : _serializers.serialize(getTransactionsFilteredRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioError(
@@ -86,7 +89,34 @@ class StagingApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    BuiltList<Transaction> _responseData;
+
+    try {
+      const _responseType = FullType(BuiltList, [FullType(Transaction)]);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as BuiltList<Transaction>;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<BuiltList<Transaction>>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
 }

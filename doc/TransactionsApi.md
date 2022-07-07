@@ -1,4 +1,4 @@
-# bind_api.api.StagingApi
+# bind_api.api.TransactionsApi
 
 ## Load the API package
 ```dart
@@ -9,15 +9,15 @@ All URIs are relative to *https://api.thebind.uk/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**adjustFiatWalletBalance**](StagingApi.md#adjustfiatwalletbalance) | **POST** /staging/fiat/wallet/adjust/ | Change balance of a fiat wallet
+[**getTransactionsFiltered**](TransactionsApi.md#gettransactionsfiltered) | **POST** /transactions/ | Get list of user transactions
 
 
-# **adjustFiatWalletBalance**
-> adjustFiatWalletBalance(adjustFiatWalletBalanceRequest)
+# **getTransactionsFiltered**
+> BuiltList<Transaction> getTransactionsFiltered(getTransactionsFilteredRequest)
 
-Change balance of a fiat wallet
+Get list of user transactions
 
-Change balance of a fiat wallet
+Get list of user transactions
 
 ### Example
 ```dart
@@ -26,13 +26,14 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
-final api = BindApi().getStagingApi();
-final AdjustFiatWalletBalanceRequest adjustFiatWalletBalanceRequest = ; // AdjustFiatWalletBalanceRequest | 
+final api = BindApi().getTransactionsApi();
+final GetTransactionsFilteredRequest getTransactionsFilteredRequest = ; // GetTransactionsFilteredRequest | 
 
 try {
-    api.adjustFiatWalletBalance(adjustFiatWalletBalanceRequest);
+    final response = api.getTransactionsFiltered(getTransactionsFilteredRequest);
+    print(response);
 } catch on DioError (e) {
-    print('Exception when calling StagingApi->adjustFiatWalletBalance: $e\n');
+    print('Exception when calling TransactionsApi->getTransactionsFiltered: $e\n');
 }
 ```
 
@@ -40,11 +41,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **adjustFiatWalletBalanceRequest** | [**AdjustFiatWalletBalanceRequest**](AdjustFiatWalletBalanceRequest.md)|  | [optional] 
+ **getTransactionsFilteredRequest** | [**GetTransactionsFilteredRequest**](GetTransactionsFilteredRequest.md)|  | [optional] 
 
 ### Return type
 
-void (empty response body)
+[**BuiltList&lt;Transaction&gt;**](Transaction.md)
 
 ### Authorization
 
@@ -53,7 +54,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

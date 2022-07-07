@@ -10,10 +10,10 @@ part 'create_fiat_wallet_request.g.dart';
 /// CreateFiatWalletRequest
 ///
 /// Properties:
-/// * [currencyCode] 
+/// * [currency] 
 abstract class CreateFiatWalletRequest implements Built<CreateFiatWalletRequest, CreateFiatWalletRequestBuilder> {
-    @BuiltValueField(wireName: r'currency_code')
-    String? get currencyCode;
+    @BuiltValueField(wireName: r'currency')
+    String? get currency;
 
     CreateFiatWalletRequest._();
 
@@ -37,10 +37,10 @@ class _$CreateFiatWalletRequestSerializer implements StructuredSerializer<Create
     Iterable<Object?> serialize(Serializers serializers, CreateFiatWalletRequest object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
-        if (object.currencyCode != null) {
+        if (object.currency != null) {
             result
-                ..add(r'currency_code')
-                ..add(serializers.serialize(object.currencyCode,
+                ..add(r'currency')
+                ..add(serializers.serialize(object.currency,
                     specifiedType: const FullType(String)));
         }
         return result;
@@ -58,10 +58,10 @@ class _$CreateFiatWalletRequestSerializer implements StructuredSerializer<Create
             final Object? value = iterator.current;
             
             switch (key) {
-                case r'currency_code':
+                case r'currency':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
-                    result.currencyCode = valueDes;
+                    result.currency = valueDes;
                     break;
             }
         }

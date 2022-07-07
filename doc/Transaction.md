@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
 **parent** | **String** |  | [optional] 
-**order** | **String** |  | [optional] 
+**order** | **num** |  | [optional] 
 **state** | [**TransactionStates**](TransactionStates.md) |  | [optional] 
 **isCrypto** | **bool** |  | [optional] 
 **isFiat** | **bool** |  | [optional] 

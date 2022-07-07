@@ -1,4 +1,4 @@
-# bind_api.api.ContactsApi
+# bind_api.api.FiatWalletApi
 
 ## Load the API package
 ```dart
@@ -9,19 +9,17 @@ All URIs are relative to *https://api.thebind.uk/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createInnerFiatRequest**](ContactsApi.md#createinnerfiatrequest) | **POST** /fiat/request/ | Request fiat inside BIND
-[**createInnerFiatTransfer**](ContactsApi.md#createinnerfiattransfer) | **POST** /fiat/send/ | Send fiat inside BIND
-[**getContacts**](ContactsApi.md#getcontacts) | **GET** /contacts/ | List of contacts of current user
-[**syncContacts**](ContactsApi.md#synccontacts) | **POST** /contacts/sync/ | Sync mobile phone contacts of current user with backend data
-[**updateContact**](ContactsApi.md#updatecontact) | **PATCH** /contacts/{user_id}/ | Update contact data (add/remove contact from favorite)
+[**createFiatWallet**](FiatWalletApi.md#createfiatwallet) | **POST** /fiat/wallets/ | Create an wallet in given currency
+[**getFiatAccount**](FiatWalletApi.md#getfiataccount) | **GET** /fiat/account/ | All fiat wallets of current user with total balance data
+[**getFiatCurrencies**](FiatWalletApi.md#getfiatcurrencies) | **GET** /fiat/currencies/ | List of currencies that are available for fiat account opening
+[**getFiatWalletDetails**](FiatWalletApi.md#getfiatwalletdetails) | **GET** /fiat/wallets/{wallet_id}/ | Wallet&#39;s details
+[**getFiatWallets**](FiatWalletApi.md#getfiatwallets) | **GET** /fiat/wallets/ | All fiat wallets of current user
 
 
-# **createInnerFiatRequest**
-> createInnerFiatRequest(createInnerFiatRequestRequest)
+# **createFiatWallet**
+> String createFiatWallet(createFiatWalletRequest)
 
-Request fiat inside BIND
-
-Request fiat from BIND user
+Create an wallet in given currency
 
 ### Example
 ```dart
@@ -30,103 +28,59 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
-final api = BindApi().getContactsApi();
-final CreateInnerFiatRequestRequest createInnerFiatRequestRequest = ; // CreateInnerFiatRequestRequest | 
+final api = BindApi().getFiatWalletApi();
+final CreateFiatWalletRequest createFiatWalletRequest = ; // CreateFiatWalletRequest | 
 
 try {
-    api.createInnerFiatRequest(createInnerFiatRequestRequest);
-} catch on DioError (e) {
-    print('Exception when calling ContactsApi->createInnerFiatRequest: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **createInnerFiatRequestRequest** | [**CreateInnerFiatRequestRequest**](CreateInnerFiatRequestRequest.md)|  | [optional] 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **createInnerFiatTransfer**
-> createInnerFiatTransfer(createInnerFiatTransferRequest)
-
-Send fiat inside BIND
-
-Send fiat inside BIND
-
-### Example
-```dart
-import 'package:bind_api/api.dart';
-// TODO Configure HTTP basic authorization: bearerAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
-
-final api = BindApi().getContactsApi();
-final CreateInnerFiatTransferRequest createInnerFiatTransferRequest = ; // CreateInnerFiatTransferRequest | 
-
-try {
-    api.createInnerFiatTransfer(createInnerFiatTransferRequest);
-} catch on DioError (e) {
-    print('Exception when calling ContactsApi->createInnerFiatTransfer: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **createInnerFiatTransferRequest** | [**CreateInnerFiatTransferRequest**](CreateInnerFiatTransferRequest.md)|  | [optional] 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **getContacts**
-> BuiltList<Contact> getContacts()
-
-List of contacts of current user
-
-Contacts are BIND users who have shared contact info with current user to make fast fiat and crypto transfers inside the system
-
-### Example
-```dart
-import 'package:bind_api/api.dart';
-// TODO Configure HTTP basic authorization: bearerAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
-
-final api = BindApi().getContactsApi();
-
-try {
-    final response = api.getContacts();
+    final response = api.createFiatWallet(createFiatWalletRequest);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling ContactsApi->getContacts: $e\n');
+    print('Exception when calling FiatWalletApi->createFiatWallet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createFiatWalletRequest** | [**CreateFiatWalletRequest**](CreateFiatWalletRequest.md)|  | [optional] 
+
+### Return type
+
+**String**
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getFiatAccount**
+> FiatAccount getFiatAccount()
+
+All fiat wallets of current user with total balance data
+
+Get wallets of current user with total balance data
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getFiatWalletApi();
+
+try {
+    final response = api.getFiatAccount();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling FiatWalletApi->getFiatAccount: $e\n');
 }
 ```
 
@@ -135,7 +89,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;Contact&gt;**](Contact.md)
+[**FiatAccount**](FiatAccount.md)
 
 ### Authorization
 
@@ -148,10 +102,10 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **syncContacts**
-> BuiltList<Contact> syncContacts(syncContactsRequest)
+# **getFiatCurrencies**
+> BuiltList<Currency> getFiatCurrencies()
 
-Sync mobile phone contacts of current user with backend data
+List of currencies that are available for fiat account opening
 
 ### Example
 ```dart
@@ -160,26 +114,22 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
-final api = BindApi().getContactsApi();
-final SyncContactsRequest syncContactsRequest = ; // SyncContactsRequest | 
+final api = BindApi().getFiatWalletApi();
 
 try {
-    final response = api.syncContacts(syncContactsRequest);
+    final response = api.getFiatCurrencies();
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling ContactsApi->syncContacts: $e\n');
+    print('Exception when calling FiatWalletApi->getFiatCurrencies: $e\n');
 }
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **syncContactsRequest** | [**SyncContactsRequest**](SyncContactsRequest.md)|  | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;Contact&gt;**](Contact.md)
+[**BuiltList&lt;Currency&gt;**](Currency.md)
 
 ### Authorization
 
@@ -187,15 +137,15 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **updateContact**
-> updateContact(userId, updateContactRequest)
+# **getFiatWalletDetails**
+> FiatWallet getFiatWalletDetails(walletId)
 
-Update contact data (add/remove contact from favorite)
+Wallet's details
 
 ### Example
 ```dart
@@ -204,14 +154,14 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
-final api = BindApi().getContactsApi();
-final int userId = 56; // int | id of contact user
-final UpdateContactRequest updateContactRequest = ; // UpdateContactRequest | 
+final api = BindApi().getFiatWalletApi();
+final String walletId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of exact wallet
 
 try {
-    api.updateContact(userId, updateContactRequest);
+    final response = api.getFiatWalletDetails(walletId);
+    print(response);
 } catch on DioError (e) {
-    print('Exception when calling ContactsApi->updateContact: $e\n');
+    print('Exception when calling FiatWalletApi->getFiatWalletDetails: $e\n');
 }
 ```
 
@@ -219,12 +169,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **int**| id of contact user | 
- **updateContactRequest** | [**UpdateContactRequest**](UpdateContactRequest.md)|  | [optional] 
+ **walletId** | **String**| id of exact wallet | 
 
 ### Return type
 
-void (empty response body)
+[**FiatWallet**](FiatWallet.md)
 
 ### Authorization
 
@@ -232,7 +181,49 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getFiatWallets**
+> FiatWallet getFiatWallets()
+
+All fiat wallets of current user
+
+Get wallets of current user
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getFiatWalletApi();
+
+try {
+    final response = api.getFiatWallets();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling FiatWalletApi->getFiatWallets: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**FiatWallet**](FiatWallet.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

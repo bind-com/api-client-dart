@@ -14,7 +14,7 @@ part 'fiat_wallet.g.dart';
 /// * [id] 
 /// * [balance] 
 /// * [account] 
-/// * [currencyCode] 
+/// * [currency] 
 /// * [transferRequisites] 
 abstract class FiatWallet implements Built<FiatWallet, FiatWalletBuilder> {
     @BuiltValueField(wireName: r'id')
@@ -26,8 +26,8 @@ abstract class FiatWallet implements Built<FiatWallet, FiatWalletBuilder> {
     @BuiltValueField(wireName: r'account')
     String? get account;
 
-    @BuiltValueField(wireName: r'currency_code')
-    String? get currencyCode;
+    @BuiltValueField(wireName: r'currency')
+    String? get currency;
 
     @BuiltValueField(wireName: r'transfer_requisites')
     FiatWalletRequisites? get transferRequisites;
@@ -72,10 +72,10 @@ class _$FiatWalletSerializer implements StructuredSerializer<FiatWallet> {
                 ..add(serializers.serialize(object.account,
                     specifiedType: const FullType(String)));
         }
-        if (object.currencyCode != null) {
+        if (object.currency != null) {
             result
-                ..add(r'currency_code')
-                ..add(serializers.serialize(object.currencyCode,
+                ..add(r'currency')
+                ..add(serializers.serialize(object.currency,
                     specifiedType: const FullType(String)));
         }
         if (object.transferRequisites != null) {
@@ -114,10 +114,10 @@ class _$FiatWalletSerializer implements StructuredSerializer<FiatWallet> {
                         specifiedType: const FullType(String)) as String;
                     result.account = valueDes;
                     break;
-                case r'currency_code':
+                case r'currency':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
-                    result.currencyCode = valueDes;
+                    result.currency = valueDes;
                     break;
                 case r'transfer_requisites':
                     final valueDes = serializers.deserialize(value,
