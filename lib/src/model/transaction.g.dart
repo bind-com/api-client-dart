@@ -12,7 +12,7 @@ class _$Transaction extends Transaction {
   @override
   final String? parent;
   @override
-  final String? order;
+  final num? order;
   @override
   final TransactionStates? state;
   @override
@@ -179,9 +179,9 @@ class TransactionBuilder implements Builder<Transaction, TransactionBuilder> {
   String? get parent => _$this._parent;
   set parent(String? parent) => _$this._parent = parent;
 
-  String? _order;
-  String? get order => _$this._order;
-  set order(String? order) => _$this._order = order;
+  num? _order;
+  num? get order => _$this._order;
+  set order(num? order) => _$this._order = order;
 
   TransactionStates? _state;
   TransactionStates? get state => _$this._state;

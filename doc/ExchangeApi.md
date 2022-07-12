@@ -28,8 +28,8 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getExchangeApi();
-final String from = USD; // String | 
-final String to = AED; // String | 
+final String from = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final String to = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
     final response = api.getExchangeRate(from, to);

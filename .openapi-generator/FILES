@@ -79,11 +79,3 @@ lib/src/model/update_contact_request.dart
 lib/src/model/user.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/adjust_fiat_wallet_balance_request_test.dart
-test/beneficiaries_api_test.dart
-test/create_inner_fiat_request_request_test.dart
-test/create_inner_fiat_transfer_request_test.dart
-test/fiat_account_test.dart
-test/fiat_wallet_api_test.dart
-test/fiat_wallet_total_balance_test.dart
-test/transactions_api_test.dart
