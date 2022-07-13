@@ -8,13 +8,13 @@ part of 'create_fiat_wallet_request.dart';
 
 class _$CreateFiatWalletRequest extends CreateFiatWalletRequest {
   @override
-  final String? currencyCode;
+  final String? currency;
 
   factory _$CreateFiatWalletRequest(
           [void Function(CreateFiatWalletRequestBuilder)? updates]) =>
       (new CreateFiatWalletRequestBuilder()..update(updates))._build();
 
-  _$CreateFiatWalletRequest._({this.currencyCode}) : super._();
+  _$CreateFiatWalletRequest._({this.currency}) : super._();
 
   @override
   CreateFiatWalletRequest rebuild(
@@ -28,19 +28,18 @@ class _$CreateFiatWalletRequest extends CreateFiatWalletRequest {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is CreateFiatWalletRequest &&
-        currencyCode == other.currencyCode;
+    return other is CreateFiatWalletRequest && currency == other.currency;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(0, currencyCode.hashCode));
+    return $jf($jc(0, currency.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'CreateFiatWalletRequest')
-          ..add('currencyCode', currencyCode))
+          ..add('currency', currency))
         .toString();
   }
 }
@@ -50,9 +49,9 @@ class CreateFiatWalletRequestBuilder
         Builder<CreateFiatWalletRequest, CreateFiatWalletRequestBuilder> {
   _$CreateFiatWalletRequest? _$v;
 
-  String? _currencyCode;
-  String? get currencyCode => _$this._currencyCode;
-  set currencyCode(String? currencyCode) => _$this._currencyCode = currencyCode;
+  String? _currency;
+  String? get currency => _$this._currency;
+  set currency(String? currency) => _$this._currency = currency;
 
   CreateFiatWalletRequestBuilder() {
     CreateFiatWalletRequest._defaults(this);
@@ -61,7 +60,7 @@ class CreateFiatWalletRequestBuilder
   CreateFiatWalletRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _currencyCode = $v.currencyCode;
+      _currency = $v.currency;
       _$v = null;
     }
     return this;
@@ -82,8 +81,7 @@ class CreateFiatWalletRequestBuilder
   CreateFiatWalletRequest build() => _build();
 
   _$CreateFiatWalletRequest _build() {
-    final _$result =
-        _$v ?? new _$CreateFiatWalletRequest._(currencyCode: currencyCode);
+    final _$result = _$v ?? new _$CreateFiatWalletRequest._(currency: currency);
     replace(_$result);
     return _$result;
   }

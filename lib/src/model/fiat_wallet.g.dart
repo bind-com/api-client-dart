@@ -14,7 +14,7 @@ class _$FiatWallet extends FiatWallet {
   @override
   final String? account;
   @override
-  final String? currencyCode;
+  final String? currency;
   @override
   final FiatWalletRequisites? transferRequisites;
 
@@ -25,7 +25,7 @@ class _$FiatWallet extends FiatWallet {
       {this.id,
       this.balance,
       this.account,
-      this.currencyCode,
+      this.currency,
       this.transferRequisites})
       : super._();
 
@@ -43,7 +43,7 @@ class _$FiatWallet extends FiatWallet {
         id == other.id &&
         balance == other.balance &&
         account == other.account &&
-        currencyCode == other.currencyCode &&
+        currency == other.currency &&
         transferRequisites == other.transferRequisites;
   }
 
@@ -51,7 +51,7 @@ class _$FiatWallet extends FiatWallet {
   int get hashCode {
     return $jf($jc(
         $jc($jc($jc($jc(0, id.hashCode), balance.hashCode), account.hashCode),
-            currencyCode.hashCode),
+            currency.hashCode),
         transferRequisites.hashCode));
   }
 
@@ -61,7 +61,7 @@ class _$FiatWallet extends FiatWallet {
           ..add('id', id)
           ..add('balance', balance)
           ..add('account', account)
-          ..add('currencyCode', currencyCode)
+          ..add('currency', currency)
           ..add('transferRequisites', transferRequisites))
         .toString();
   }
@@ -82,9 +82,9 @@ class FiatWalletBuilder implements Builder<FiatWallet, FiatWalletBuilder> {
   String? get account => _$this._account;
   set account(String? account) => _$this._account = account;
 
-  String? _currencyCode;
-  String? get currencyCode => _$this._currencyCode;
-  set currencyCode(String? currencyCode) => _$this._currencyCode = currencyCode;
+  String? _currency;
+  String? get currency => _$this._currency;
+  set currency(String? currency) => _$this._currency = currency;
 
   FiatWalletRequisitesBuilder? _transferRequisites;
   FiatWalletRequisitesBuilder get transferRequisites =>
@@ -102,7 +102,7 @@ class FiatWalletBuilder implements Builder<FiatWallet, FiatWalletBuilder> {
       _id = $v.id;
       _balance = $v.balance;
       _account = $v.account;
-      _currencyCode = $v.currencyCode;
+      _currency = $v.currency;
       _transferRequisites = $v.transferRequisites?.toBuilder();
       _$v = null;
     }
@@ -131,7 +131,7 @@ class FiatWalletBuilder implements Builder<FiatWallet, FiatWalletBuilder> {
               id: id,
               balance: balance,
               account: account,
-              currencyCode: currencyCode,
+              currency: currency,
               transferRequisites: _transferRequisites?.build());
     } catch (_) {
       late String _$failedField;
