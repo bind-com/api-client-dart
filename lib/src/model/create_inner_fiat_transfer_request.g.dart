@@ -10,6 +10,8 @@ class _$CreateInnerFiatTransferRequest extends CreateInnerFiatTransferRequest {
   @override
   final String? userId;
   @override
+  final String? contactId;
+  @override
   final String? currency;
   @override
   final num? amount;
@@ -18,7 +20,8 @@ class _$CreateInnerFiatTransferRequest extends CreateInnerFiatTransferRequest {
           [void Function(CreateInnerFiatTransferRequestBuilder)? updates]) =>
       (new CreateInnerFiatTransferRequestBuilder()..update(updates))._build();
 
-  _$CreateInnerFiatTransferRequest._({this.userId, this.currency, this.amount})
+  _$CreateInnerFiatTransferRequest._(
+      {this.userId, this.contactId, this.currency, this.amount})
       : super._();
 
   @override
@@ -35,20 +38,24 @@ class _$CreateInnerFiatTransferRequest extends CreateInnerFiatTransferRequest {
     if (identical(other, this)) return true;
     return other is CreateInnerFiatTransferRequest &&
         userId == other.userId &&
+        contactId == other.contactId &&
         currency == other.currency &&
         amount == other.amount;
   }
 
   @override
   int get hashCode {
-    return $jf(
-        $jc($jc($jc(0, userId.hashCode), currency.hashCode), amount.hashCode));
+    return $jf($jc(
+        $jc($jc($jc(0, userId.hashCode), contactId.hashCode),
+            currency.hashCode),
+        amount.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'CreateInnerFiatTransferRequest')
           ..add('userId', userId)
+          ..add('contactId', contactId)
           ..add('currency', currency)
           ..add('amount', amount))
         .toString();
@@ -64,6 +71,10 @@ class CreateInnerFiatTransferRequestBuilder
   String? _userId;
   String? get userId => _$this._userId;
   set userId(String? userId) => _$this._userId = userId;
+
+  String? _contactId;
+  String? get contactId => _$this._contactId;
+  set contactId(String? contactId) => _$this._contactId = contactId;
 
   String? _currency;
   String? get currency => _$this._currency;
@@ -81,6 +92,7 @@ class CreateInnerFiatTransferRequestBuilder
     final $v = _$v;
     if ($v != null) {
       _userId = $v.userId;
+      _contactId = $v.contactId;
       _currency = $v.currency;
       _amount = $v.amount;
       _$v = null;
@@ -105,7 +117,10 @@ class CreateInnerFiatTransferRequestBuilder
   _$CreateInnerFiatTransferRequest _build() {
     final _$result = _$v ??
         new _$CreateInnerFiatTransferRequest._(
-            userId: userId, currency: currency, amount: amount);
+            userId: userId,
+            contactId: contactId,
+            currency: currency,
+            amount: amount);
     replace(_$result);
     return _$result;
   }

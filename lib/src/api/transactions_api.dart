@@ -8,8 +8,8 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:bind_api/src/model/error.dart';
-import 'package:bind_api/src/model/get_transactions_filtered_request.dart';
 import 'package:bind_api/src/model/transaction.dart';
+import 'package:bind_api/src/model/transaction_filter.dart';
 import 'package:built_collection/built_collection.dart';
 
 class TransactionsApi {
@@ -24,7 +24,7 @@ class TransactionsApi {
   /// Get list of user transactions
   ///
   /// Parameters:
-  /// * [getTransactionsFilteredRequest] 
+  /// * [transactionFilter] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -35,7 +35,7 @@ class TransactionsApi {
   /// Returns a [Future] containing a [Response] with a [BuiltList<Transaction>] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BuiltList<Transaction>>> getTransactionsFiltered({ 
-    GetTransactionsFilteredRequest? getTransactionsFilteredRequest,
+    TransactionFilter? transactionFilter,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -66,8 +66,8 @@ class TransactionsApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(GetTransactionsFilteredRequest);
-      _bodyData = getTransactionsFilteredRequest == null ? null : _serializers.serialize(getTransactionsFilteredRequest, specifiedType: _type);
+      const _type = FullType(TransactionFilter);
+      _bodyData = transactionFilter == null ? null : _serializers.serialize(transactionFilter, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioError(

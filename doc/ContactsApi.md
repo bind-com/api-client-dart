@@ -9,12 +9,59 @@ All URIs are relative to *https://api.thebind.uk/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addContactByUser**](ContactsApi.md#addcontactbyuser) | **POST** /contacts/ | add user to contact
 [**createInnerFiatRequest**](ContactsApi.md#createinnerfiatrequest) | **POST** /fiat/request/ | Request fiat inside BIND
 [**createInnerFiatTransfer**](ContactsApi.md#createinnerfiattransfer) | **POST** /fiat/send/ | Send fiat inside BIND
 [**getContacts**](ContactsApi.md#getcontacts) | **GET** /contacts/ | List of contacts of current user
 [**syncContacts**](ContactsApi.md#synccontacts) | **POST** /contacts/sync/ | Sync mobile phone contacts of current user with backend data
-[**updateContact**](ContactsApi.md#updatecontact) | **PATCH** /contacts/{user_id}/ | Update contact data (add/remove contact from favorite)
+[**updateContact**](ContactsApi.md#updatecontact) | **PATCH** /contacts/{contact_id}/ | Update contact data (add/remove contact from favorite)
 
+
+# **addContactByUser**
+> Contact addContactByUser(addContactByUserRequest)
+
+add user to contact
+
+add user to contact
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getContactsApi();
+final AddContactByUserRequest addContactByUserRequest = ; // AddContactByUserRequest | 
+
+try {
+    final response = api.addContactByUser(addContactByUserRequest);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling ContactsApi->addContactByUser: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **addContactByUserRequest** | [**AddContactByUserRequest**](AddContactByUserRequest.md)|  | [optional] 
+
+### Return type
+
+[**Contact**](Contact.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createInnerFiatRequest**
 > createInnerFiatRequest(createInnerFiatRequestRequest)
@@ -193,7 +240,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateContact**
-> updateContact(userId, updateContactRequest)
+> updateContact(contactId, updateContactRequest)
 
 Update contact data (add/remove contact from favorite)
 
@@ -205,11 +252,11 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getContactsApi();
-final int userId = 56; // int | id of contact user
+final int contactId = 56; // int | id of contact
 final UpdateContactRequest updateContactRequest = ; // UpdateContactRequest | 
 
 try {
-    api.updateContact(userId, updateContactRequest);
+    api.updateContact(contactId, updateContactRequest);
 } catch on DioError (e) {
     print('Exception when calling ContactsApi->updateContact: $e\n');
 }
@@ -219,7 +266,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **int**| id of contact user | 
+ **contactId** | **int**| id of contact | 
  **updateContactRequest** | [**UpdateContactRequest**](UpdateContactRequest.md)|  | [optional] 
 
 ### Return type

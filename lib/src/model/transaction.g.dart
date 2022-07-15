@@ -8,11 +8,11 @@ part of 'transaction.dart';
 
 class _$Transaction extends Transaction {
   @override
+  final TransactionGroup? group;
+  @override
   final String? id;
   @override
-  final String? parent;
-  @override
-  final num? order;
+  final String? operationLabel;
   @override
   final TransactionStates? state;
   @override
@@ -20,52 +20,40 @@ class _$Transaction extends Transaction {
   @override
   final bool? isFiat;
   @override
-  final String? user;
+  final String? assetSourceCode;
   @override
-  final String? assetSource;
-  @override
-  final String? assetTarget;
+  final String? assetTargetCode;
   @override
   final num? amountSource;
   @override
   final num? amountTarget;
   @override
-  final String? walletSource;
-  @override
-  final String? walletTarget;
-  @override
-  final String? chain;
-  @override
-  final String? cardId;
-  @override
   final TransactionTypes? type;
   @override
   final DateTime? datetime;
   @override
-  final String? contact;
+  final String? description;
+  @override
+  final String? cursor;
 
   factory _$Transaction([void Function(TransactionBuilder)? updates]) =>
       (new TransactionBuilder()..update(updates))._build();
 
   _$Transaction._(
-      {this.id,
-      this.parent,
-      this.order,
+      {this.group,
+      this.id,
+      this.operationLabel,
       this.state,
       this.isCrypto,
       this.isFiat,
-      this.user,
-      this.assetSource,
-      this.assetTarget,
+      this.assetSourceCode,
+      this.assetTargetCode,
       this.amountSource,
       this.amountTarget,
-      this.walletSource,
-      this.walletTarget,
-      this.chain,
-      this.cardId,
       this.type,
       this.datetime,
-      this.contact})
+      this.description,
+      this.cursor})
       : super._();
 
   @override
@@ -79,24 +67,20 @@ class _$Transaction extends Transaction {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Transaction &&
+        group == other.group &&
         id == other.id &&
-        parent == other.parent &&
-        order == other.order &&
+        operationLabel == other.operationLabel &&
         state == other.state &&
         isCrypto == other.isCrypto &&
         isFiat == other.isFiat &&
-        user == other.user &&
-        assetSource == other.assetSource &&
-        assetTarget == other.assetTarget &&
+        assetSourceCode == other.assetSourceCode &&
+        assetTargetCode == other.assetTargetCode &&
         amountSource == other.amountSource &&
         amountTarget == other.amountTarget &&
-        walletSource == other.walletSource &&
-        walletTarget == other.walletTarget &&
-        chain == other.chain &&
-        cardId == other.cardId &&
         type == other.type &&
         datetime == other.datetime &&
-        contact == other.contact;
+        description == other.description &&
+        cursor == other.cursor;
   }
 
   @override
@@ -113,57 +97,39 @@ class _$Transaction extends Transaction {
                                         $jc(
                                             $jc(
                                                 $jc(
-                                                    $jc(
-                                                        $jc(
-                                                            $jc(
-                                                                $jc(
-                                                                    $jc(
-                                                                        $jc(
-                                                                            0,
-                                                                            id
-                                                                                .hashCode),
-                                                                        parent
-                                                                            .hashCode),
-                                                                    order
-                                                                        .hashCode),
-                                                                state.hashCode),
-                                                            isCrypto.hashCode),
-                                                        isFiat.hashCode),
-                                                    user.hashCode),
-                                                assetSource.hashCode),
-                                            assetTarget.hashCode),
-                                        amountSource.hashCode),
-                                    amountTarget.hashCode),
-                                walletSource.hashCode),
-                            walletTarget.hashCode),
-                        chain.hashCode),
-                    cardId.hashCode),
-                type.hashCode),
-            datetime.hashCode),
-        contact.hashCode));
+                                                    $jc($jc(0, group.hashCode),
+                                                        id.hashCode),
+                                                    operationLabel.hashCode),
+                                                state.hashCode),
+                                            isCrypto.hashCode),
+                                        isFiat.hashCode),
+                                    assetSourceCode.hashCode),
+                                assetTargetCode.hashCode),
+                            amountSource.hashCode),
+                        amountTarget.hashCode),
+                    type.hashCode),
+                datetime.hashCode),
+            description.hashCode),
+        cursor.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'Transaction')
+          ..add('group', group)
           ..add('id', id)
-          ..add('parent', parent)
-          ..add('order', order)
+          ..add('operationLabel', operationLabel)
           ..add('state', state)
           ..add('isCrypto', isCrypto)
           ..add('isFiat', isFiat)
-          ..add('user', user)
-          ..add('assetSource', assetSource)
-          ..add('assetTarget', assetTarget)
+          ..add('assetSourceCode', assetSourceCode)
+          ..add('assetTargetCode', assetTargetCode)
           ..add('amountSource', amountSource)
           ..add('amountTarget', amountTarget)
-          ..add('walletSource', walletSource)
-          ..add('walletTarget', walletTarget)
-          ..add('chain', chain)
-          ..add('cardId', cardId)
           ..add('type', type)
           ..add('datetime', datetime)
-          ..add('contact', contact))
+          ..add('description', description)
+          ..add('cursor', cursor))
         .toString();
   }
 }
@@ -171,17 +137,19 @@ class _$Transaction extends Transaction {
 class TransactionBuilder implements Builder<Transaction, TransactionBuilder> {
   _$Transaction? _$v;
 
+  TransactionGroupBuilder? _group;
+  TransactionGroupBuilder get group =>
+      _$this._group ??= new TransactionGroupBuilder();
+  set group(TransactionGroupBuilder? group) => _$this._group = group;
+
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
-  String? _parent;
-  String? get parent => _$this._parent;
-  set parent(String? parent) => _$this._parent = parent;
-
-  num? _order;
-  num? get order => _$this._order;
-  set order(num? order) => _$this._order = order;
+  String? _operationLabel;
+  String? get operationLabel => _$this._operationLabel;
+  set operationLabel(String? operationLabel) =>
+      _$this._operationLabel = operationLabel;
 
   TransactionStates? _state;
   TransactionStates? get state => _$this._state;
@@ -195,17 +163,15 @@ class TransactionBuilder implements Builder<Transaction, TransactionBuilder> {
   bool? get isFiat => _$this._isFiat;
   set isFiat(bool? isFiat) => _$this._isFiat = isFiat;
 
-  String? _user;
-  String? get user => _$this._user;
-  set user(String? user) => _$this._user = user;
+  String? _assetSourceCode;
+  String? get assetSourceCode => _$this._assetSourceCode;
+  set assetSourceCode(String? assetSourceCode) =>
+      _$this._assetSourceCode = assetSourceCode;
 
-  String? _assetSource;
-  String? get assetSource => _$this._assetSource;
-  set assetSource(String? assetSource) => _$this._assetSource = assetSource;
-
-  String? _assetTarget;
-  String? get assetTarget => _$this._assetTarget;
-  set assetTarget(String? assetTarget) => _$this._assetTarget = assetTarget;
+  String? _assetTargetCode;
+  String? get assetTargetCode => _$this._assetTargetCode;
+  set assetTargetCode(String? assetTargetCode) =>
+      _$this._assetTargetCode = assetTargetCode;
 
   num? _amountSource;
   num? get amountSource => _$this._amountSource;
@@ -215,22 +181,6 @@ class TransactionBuilder implements Builder<Transaction, TransactionBuilder> {
   num? get amountTarget => _$this._amountTarget;
   set amountTarget(num? amountTarget) => _$this._amountTarget = amountTarget;
 
-  String? _walletSource;
-  String? get walletSource => _$this._walletSource;
-  set walletSource(String? walletSource) => _$this._walletSource = walletSource;
-
-  String? _walletTarget;
-  String? get walletTarget => _$this._walletTarget;
-  set walletTarget(String? walletTarget) => _$this._walletTarget = walletTarget;
-
-  String? _chain;
-  String? get chain => _$this._chain;
-  set chain(String? chain) => _$this._chain = chain;
-
-  String? _cardId;
-  String? get cardId => _$this._cardId;
-  set cardId(String? cardId) => _$this._cardId = cardId;
-
   TransactionTypes? _type;
   TransactionTypes? get type => _$this._type;
   set type(TransactionTypes? type) => _$this._type = type;
@@ -239,9 +189,13 @@ class TransactionBuilder implements Builder<Transaction, TransactionBuilder> {
   DateTime? get datetime => _$this._datetime;
   set datetime(DateTime? datetime) => _$this._datetime = datetime;
 
-  String? _contact;
-  String? get contact => _$this._contact;
-  set contact(String? contact) => _$this._contact = contact;
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  String? _cursor;
+  String? get cursor => _$this._cursor;
+  set cursor(String? cursor) => _$this._cursor = cursor;
 
   TransactionBuilder() {
     Transaction._defaults(this);
@@ -250,24 +204,20 @@ class TransactionBuilder implements Builder<Transaction, TransactionBuilder> {
   TransactionBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _group = $v.group?.toBuilder();
       _id = $v.id;
-      _parent = $v.parent;
-      _order = $v.order;
+      _operationLabel = $v.operationLabel;
       _state = $v.state;
       _isCrypto = $v.isCrypto;
       _isFiat = $v.isFiat;
-      _user = $v.user;
-      _assetSource = $v.assetSource;
-      _assetTarget = $v.assetTarget;
+      _assetSourceCode = $v.assetSourceCode;
+      _assetTargetCode = $v.assetTargetCode;
       _amountSource = $v.amountSource;
       _amountTarget = $v.amountTarget;
-      _walletSource = $v.walletSource;
-      _walletTarget = $v.walletTarget;
-      _chain = $v.chain;
-      _cardId = $v.cardId;
       _type = $v.type;
       _datetime = $v.datetime;
-      _contact = $v.contact;
+      _description = $v.description;
+      _cursor = $v.cursor;
       _$v = null;
     }
     return this;
@@ -288,26 +238,35 @@ class TransactionBuilder implements Builder<Transaction, TransactionBuilder> {
   Transaction build() => _build();
 
   _$Transaction _build() {
-    final _$result = _$v ??
-        new _$Transaction._(
-            id: id,
-            parent: parent,
-            order: order,
-            state: state,
-            isCrypto: isCrypto,
-            isFiat: isFiat,
-            user: user,
-            assetSource: assetSource,
-            assetTarget: assetTarget,
-            amountSource: amountSource,
-            amountTarget: amountTarget,
-            walletSource: walletSource,
-            walletTarget: walletTarget,
-            chain: chain,
-            cardId: cardId,
-            type: type,
-            datetime: datetime,
-            contact: contact);
+    _$Transaction _$result;
+    try {
+      _$result = _$v ??
+          new _$Transaction._(
+              group: _group?.build(),
+              id: id,
+              operationLabel: operationLabel,
+              state: state,
+              isCrypto: isCrypto,
+              isFiat: isFiat,
+              assetSourceCode: assetSourceCode,
+              assetTargetCode: assetTargetCode,
+              amountSource: amountSource,
+              amountTarget: amountTarget,
+              type: type,
+              datetime: datetime,
+              description: description,
+              cursor: cursor);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'group';
+        _group?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Transaction', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

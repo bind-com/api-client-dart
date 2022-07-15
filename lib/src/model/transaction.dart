@@ -2,6 +2,7 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+import 'package:bind_api/src/model/transaction_group.dart';
 import 'package:bind_api/src/model/transaction_types.dart';
 import 'package:bind_api/src/model/transaction_states.dart';
 import 'package:built_value/built_value.dart';
@@ -12,33 +13,30 @@ part 'transaction.g.dart';
 /// Transaction
 ///
 /// Properties:
-/// * [id] 
-/// * [parent] 
-/// * [order] 
+/// * [group] 
+/// * [id] - primary key of the transaction
+/// * [operationLabel] 
 /// * [state] 
 /// * [isCrypto] 
 /// * [isFiat] 
-/// * [user] 
-/// * [assetSource] 
-/// * [assetTarget] 
+/// * [assetSourceCode] - ISO code of source asset
+/// * [assetTargetCode] - ISO code of target asset
 /// * [amountSource] 
 /// * [amountTarget] 
-/// * [walletSource] 
-/// * [walletTarget] 
-/// * [chain] 
-/// * [cardId] 
 /// * [type] 
 /// * [datetime] 
-/// * [contact] 
+/// * [description] - custom description of a transaction
+/// * [cursor] - Field to give to backend as a cursor for pagination. Format depends on a group_by argument. Can consist of one or two and more comma-separated values, representing a tuple of pagination arguments
 abstract class Transaction implements Built<Transaction, TransactionBuilder> {
+    @BuiltValueField(wireName: r'group')
+    TransactionGroup? get group;
+
+    /// primary key of the transaction
     @BuiltValueField(wireName: r'id')
     String? get id;
 
-    @BuiltValueField(wireName: r'parent')
-    String? get parent;
-
-    @BuiltValueField(wireName: r'order')
-    num? get order;
+    @BuiltValueField(wireName: r'operation_label')
+    String? get operationLabel;
 
     @BuiltValueField(wireName: r'state')
     TransactionStates? get state;
@@ -50,32 +48,19 @@ abstract class Transaction implements Built<Transaction, TransactionBuilder> {
     @BuiltValueField(wireName: r'is_fiat')
     bool? get isFiat;
 
-    @BuiltValueField(wireName: r'user')
-    String? get user;
+    /// ISO code of source asset
+    @BuiltValueField(wireName: r'asset_source_code')
+    String? get assetSourceCode;
 
-    @BuiltValueField(wireName: r'asset_source')
-    String? get assetSource;
-
-    @BuiltValueField(wireName: r'asset_target')
-    String? get assetTarget;
+    /// ISO code of target asset
+    @BuiltValueField(wireName: r'asset_target_code')
+    String? get assetTargetCode;
 
     @BuiltValueField(wireName: r'amount_source')
     num? get amountSource;
 
     @BuiltValueField(wireName: r'amount_target')
     num? get amountTarget;
-
-    @BuiltValueField(wireName: r'wallet_source')
-    String? get walletSource;
-
-    @BuiltValueField(wireName: r'wallet_target')
-    String? get walletTarget;
-
-    @BuiltValueField(wireName: r'chain')
-    String? get chain;
-
-    @BuiltValueField(wireName: r'card_id')
-    String? get cardId;
 
     @BuiltValueField(wireName: r'type')
     TransactionTypes? get type;
@@ -84,8 +69,13 @@ abstract class Transaction implements Built<Transaction, TransactionBuilder> {
     @BuiltValueField(wireName: r'datetime')
     DateTime? get datetime;
 
-    @BuiltValueField(wireName: r'contact')
-    String? get contact;
+    /// custom description of a transaction
+    @BuiltValueField(wireName: r'description')
+    String? get description;
+
+    /// Field to give to backend as a cursor for pagination. Format depends on a group_by argument. Can consist of one or two and more comma-separated values, representing a tuple of pagination arguments
+    @BuiltValueField(wireName: r'cursor')
+    String? get cursor;
 
     Transaction._();
 
@@ -109,23 +99,23 @@ class _$TransactionSerializer implements StructuredSerializer<Transaction> {
     Iterable<Object?> serialize(Serializers serializers, Transaction object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
+        if (object.group != null) {
+            result
+                ..add(r'group')
+                ..add(serializers.serialize(object.group,
+                    specifiedType: const FullType(TransactionGroup)));
+        }
         if (object.id != null) {
             result
                 ..add(r'id')
                 ..add(serializers.serialize(object.id,
                     specifiedType: const FullType(String)));
         }
-        if (object.parent != null) {
+        if (object.operationLabel != null) {
             result
-                ..add(r'parent')
-                ..add(serializers.serialize(object.parent,
-                    specifiedType: const FullType.nullable(String)));
-        }
-        if (object.order != null) {
-            result
-                ..add(r'order')
-                ..add(serializers.serialize(object.order,
-                    specifiedType: const FullType.nullable(num)));
+                ..add(r'operation_label')
+                ..add(serializers.serialize(object.operationLabel,
+                    specifiedType: const FullType(String)));
         }
         if (object.state != null) {
             result
@@ -145,59 +135,29 @@ class _$TransactionSerializer implements StructuredSerializer<Transaction> {
                 ..add(serializers.serialize(object.isFiat,
                     specifiedType: const FullType(bool)));
         }
-        if (object.user != null) {
+        if (object.assetSourceCode != null) {
             result
-                ..add(r'user')
-                ..add(serializers.serialize(object.user,
-                    specifiedType: const FullType(String)));
-        }
-        if (object.assetSource != null) {
-            result
-                ..add(r'asset_source')
-                ..add(serializers.serialize(object.assetSource,
+                ..add(r'asset_source_code')
+                ..add(serializers.serialize(object.assetSourceCode,
                     specifiedType: const FullType.nullable(String)));
         }
-        if (object.assetTarget != null) {
+        if (object.assetTargetCode != null) {
             result
-                ..add(r'asset_target')
-                ..add(serializers.serialize(object.assetTarget,
+                ..add(r'asset_target_code')
+                ..add(serializers.serialize(object.assetTargetCode,
                     specifiedType: const FullType.nullable(String)));
         }
         if (object.amountSource != null) {
             result
                 ..add(r'amount_source')
                 ..add(serializers.serialize(object.amountSource,
-                    specifiedType: const FullType(num)));
+                    specifiedType: const FullType.nullable(num)));
         }
         if (object.amountTarget != null) {
             result
                 ..add(r'amount_target')
                 ..add(serializers.serialize(object.amountTarget,
-                    specifiedType: const FullType(num)));
-        }
-        if (object.walletSource != null) {
-            result
-                ..add(r'wallet_source')
-                ..add(serializers.serialize(object.walletSource,
-                    specifiedType: const FullType(String)));
-        }
-        if (object.walletTarget != null) {
-            result
-                ..add(r'wallet_target')
-                ..add(serializers.serialize(object.walletTarget,
-                    specifiedType: const FullType(String)));
-        }
-        if (object.chain != null) {
-            result
-                ..add(r'chain')
-                ..add(serializers.serialize(object.chain,
-                    specifiedType: const FullType.nullable(String)));
-        }
-        if (object.cardId != null) {
-            result
-                ..add(r'card_id')
-                ..add(serializers.serialize(object.cardId,
-                    specifiedType: const FullType.nullable(String)));
+                    specifiedType: const FullType.nullable(num)));
         }
         if (object.type != null) {
             result
@@ -211,11 +171,17 @@ class _$TransactionSerializer implements StructuredSerializer<Transaction> {
                 ..add(serializers.serialize(object.datetime,
                     specifiedType: const FullType(DateTime)));
         }
-        if (object.contact != null) {
+        if (object.description != null) {
             result
-                ..add(r'contact')
-                ..add(serializers.serialize(object.contact,
+                ..add(r'description')
+                ..add(serializers.serialize(object.description,
                     specifiedType: const FullType.nullable(String)));
+        }
+        if (object.cursor != null) {
+            result
+                ..add(r'cursor')
+                ..add(serializers.serialize(object.cursor,
+                    specifiedType: const FullType(String)));
         }
         return result;
     }
@@ -232,22 +198,20 @@ class _$TransactionSerializer implements StructuredSerializer<Transaction> {
             final Object? value = iterator.current;
             
             switch (key) {
+                case r'group':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(TransactionGroup)) as TransactionGroup;
+                    result.group.replace(valueDes);
+                    break;
                 case r'id':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.id = valueDes;
                     break;
-                case r'parent':
+                case r'operation_label':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType.nullable(String)) as String?;
-                    if (valueDes == null) continue;
-                    result.parent = valueDes;
-                    break;
-                case r'order':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType.nullable(num)) as num?;
-                    if (valueDes == null) continue;
-                    result.order = valueDes;
+                        specifiedType: const FullType(String)) as String;
+                    result.operationLabel = valueDes;
                     break;
                 case r'state':
                     final valueDes = serializers.deserialize(value,
@@ -264,54 +228,29 @@ class _$TransactionSerializer implements StructuredSerializer<Transaction> {
                         specifiedType: const FullType(bool)) as bool;
                     result.isFiat = valueDes;
                     break;
-                case r'user':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.user = valueDes;
-                    break;
-                case r'asset_source':
+                case r'asset_source_code':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType.nullable(String)) as String?;
                     if (valueDes == null) continue;
-                    result.assetSource = valueDes;
+                    result.assetSourceCode = valueDes;
                     break;
-                case r'asset_target':
+                case r'asset_target_code':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType.nullable(String)) as String?;
                     if (valueDes == null) continue;
-                    result.assetTarget = valueDes;
+                    result.assetTargetCode = valueDes;
                     break;
                 case r'amount_source':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
+                        specifiedType: const FullType.nullable(num)) as num?;
+                    if (valueDes == null) continue;
                     result.amountSource = valueDes;
                     break;
                 case r'amount_target':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
+                        specifiedType: const FullType.nullable(num)) as num?;
+                    if (valueDes == null) continue;
                     result.amountTarget = valueDes;
-                    break;
-                case r'wallet_source':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.walletSource = valueDes;
-                    break;
-                case r'wallet_target':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.walletTarget = valueDes;
-                    break;
-                case r'chain':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType.nullable(String)) as String?;
-                    if (valueDes == null) continue;
-                    result.chain = valueDes;
-                    break;
-                case r'card_id':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType.nullable(String)) as String?;
-                    if (valueDes == null) continue;
-                    result.cardId = valueDes;
                     break;
                 case r'type':
                     final valueDes = serializers.deserialize(value,
@@ -323,11 +262,16 @@ class _$TransactionSerializer implements StructuredSerializer<Transaction> {
                         specifiedType: const FullType(DateTime)) as DateTime;
                     result.datetime = valueDes;
                     break;
-                case r'contact':
+                case r'description':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType.nullable(String)) as String?;
                     if (valueDes == null) continue;
-                    result.contact = valueDes;
+                    result.description = valueDes;
+                    break;
+                case r'cursor':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.cursor = valueDes;
                     break;
             }
         }

@@ -8,7 +8,7 @@ part of 'contact.dart';
 
 class _$Contact extends Contact {
   @override
-  final String? userId;
+  final String? id;
   @override
   final String? name;
   @override
@@ -19,7 +19,7 @@ class _$Contact extends Contact {
   factory _$Contact([void Function(ContactBuilder)? updates]) =>
       (new ContactBuilder()..update(updates))._build();
 
-  _$Contact._({this.userId, this.name, this.phoneNumber, this.isFavorite})
+  _$Contact._({this.id, this.name, this.phoneNumber, this.isFavorite})
       : super._();
 
   @override
@@ -33,7 +33,7 @@ class _$Contact extends Contact {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Contact &&
-        userId == other.userId &&
+        id == other.id &&
         name == other.name &&
         phoneNumber == other.phoneNumber &&
         isFavorite == other.isFavorite;
@@ -42,14 +42,14 @@ class _$Contact extends Contact {
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, userId.hashCode), name.hashCode), phoneNumber.hashCode),
+        $jc($jc($jc(0, id.hashCode), name.hashCode), phoneNumber.hashCode),
         isFavorite.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'Contact')
-          ..add('userId', userId)
+          ..add('id', id)
           ..add('name', name)
           ..add('phoneNumber', phoneNumber)
           ..add('isFavorite', isFavorite))
@@ -60,9 +60,9 @@ class _$Contact extends Contact {
 class ContactBuilder implements Builder<Contact, ContactBuilder> {
   _$Contact? _$v;
 
-  String? _userId;
-  String? get userId => _$this._userId;
-  set userId(String? userId) => _$this._userId = userId;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   String? _name;
   String? get name => _$this._name;
@@ -83,7 +83,7 @@ class ContactBuilder implements Builder<Contact, ContactBuilder> {
   ContactBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _userId = $v.userId;
+      _id = $v.id;
       _name = $v.name;
       _phoneNumber = $v.phoneNumber;
       _isFavorite = $v.isFavorite;
@@ -109,7 +109,7 @@ class ContactBuilder implements Builder<Contact, ContactBuilder> {
   _$Contact _build() {
     final _$result = _$v ??
         new _$Contact._(
-            userId: userId,
+            id: id,
             name: name,
             phoneNumber: phoneNumber,
             isFavorite: isFavorite);
