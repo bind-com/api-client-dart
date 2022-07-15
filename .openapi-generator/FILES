@@ -93,11 +93,3 @@ lib/src/model/update_contact_request.dart
 lib/src/model/user.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/add_contact_by_user_request_test.dart
-test/kyc_field_status_test.dart
-test/kyc_request_move_result_request_fields_status_test.dart
-test/kyc_request_move_result_test.dart
-test/kyc_request_status_test.dart
-test/transaction_filter_test.dart
-test/transaction_group_test.dart
-test/transaction_grouping_test.dart
