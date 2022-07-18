@@ -17,6 +17,11 @@ void main() {
       // TODO
     });
 
+    // TransactionDescriptionFillingRuleSet descriptionFillingRuleSet
+    test('to test the property `descriptionFillingRuleSet`', () async {
+      // TODO
+    });
+
     // id of asset (currency)
     // String asset
     test('to test the property `asset`', () async {

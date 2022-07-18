@@ -80,10 +80,14 @@ Class | Method | HTTP request | Description
 [*ExchangeApi*](doc/ExchangeApi.md) | [**getExchangeRate**](doc/ExchangeApi.md#getexchangerate) | **GET** /fiat/exchange/rate/{from}/{to}/ | Exchange rate between two given currencies
 [*ExchangeApi*](doc/ExchangeApi.md) | [**performExchange**](doc/ExchangeApi.md#performexchange) | **POST** /fiat/exchange/ | Perform exchange operation
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**createFiatWallet**](doc/FiatWalletApi.md#createfiatwallet) | **POST** /fiat/wallets/ | Create an wallet in given currency
+[*FiatWalletApi*](doc/FiatWalletApi.md) | [**getBankCard**](doc/FiatWalletApi.md#getbankcard) | **GET** /fiat/bankcards/{card_id}/ | Get one exact Bank Card
+[*FiatWalletApi*](doc/FiatWalletApi.md) | [**getBankCardAnalytics**](doc/FiatWalletApi.md#getbankcardanalytics) | **GET** /fiat/bankcards/{card_id}/analytics/ | Get analytics for Bank Card
+[*FiatWalletApi*](doc/FiatWalletApi.md) | [**getBankCardsList**](doc/FiatWalletApi.md#getbankcardslist) | **GET** /fiat/bankcards/ | Get a list of Bank Cards issued for current User
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**getFiatAccount**](doc/FiatWalletApi.md#getfiataccount) | **GET** /fiat/account/ | All fiat wallets of current user with total balance data
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**getFiatCurrencies**](doc/FiatWalletApi.md#getfiatcurrencies) | **GET** /fiat/currencies/ | List of currencies that are available for fiat account opening
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**getFiatWalletDetails**](doc/FiatWalletApi.md#getfiatwalletdetails) | **GET** /fiat/wallets/{wallet_id}/ | Wallet&#39;s details
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**getFiatWallets**](doc/FiatWalletApi.md#getfiatwallets) | **GET** /fiat/wallets/ | All fiat wallets of current user
+[*FiatWalletApi*](doc/FiatWalletApi.md) | [**updateBankCardSettings**](doc/FiatWalletApi.md#updatebankcardsettings) | **PATCH** /fiat/bankcards/{card_id}/ | Update settings of a Bank Card
 [*GeoApi*](doc/GeoApi.md) | [**listCountries**](doc/GeoApi.md#listcountries) | **GET** /countries/ | Countries list
 [*StagingApi*](doc/StagingApi.md) | [**adjustFiatWalletBalance**](doc/StagingApi.md#adjustfiatwalletbalance) | **POST** /staging/fiat/wallet/adjust/ | Change balance of a fiat wallet
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionsFiltered**](doc/TransactionsApi.md#gettransactionsfiltered) | **POST** /transactions/ | Get list of user transactions
@@ -97,6 +101,11 @@ Class | Method | HTTP request | Description
 
  - [AddContactByUserRequest](doc/AddContactByUserRequest.md)
  - [AdjustFiatWalletBalanceRequest](doc/AdjustFiatWalletBalanceRequest.md)
+ - [BankCardAnalytics](doc/BankCardAnalytics.md)
+ - [BankCardBaseData](doc/BankCardBaseData.md)
+ - [BankCardDetail](doc/BankCardDetail.md)
+ - [BankCardDetailAllOf](doc/BankCardDetailAllOf.md)
+ - [BankCardSettings](doc/BankCardSettings.md)
  - [Beneficiary](doc/Beneficiary.md)
  - [Contact](doc/Contact.md)
  - [Country](doc/Country.md)
@@ -118,6 +127,7 @@ Class | Method | HTTP request | Description
  - [PerformFiatTransferRequest](doc/PerformFiatTransferRequest.md)
  - [SyncContactsRequest](doc/SyncContactsRequest.md)
  - [Transaction](doc/Transaction.md)
+ - [TransactionDescriptionFillingRuleSet](doc/TransactionDescriptionFillingRuleSet.md)
  - [TransactionFilter](doc/TransactionFilter.md)
  - [TransactionGroup](doc/TransactionGroup.md)
  - [TransactionGrouping](doc/TransactionGrouping.md)

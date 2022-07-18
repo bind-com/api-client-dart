@@ -2,6 +2,7 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+import 'package:bind_api/src/model/transaction_description_filling_rule_set.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:bind_api/src/model/transaction_grouping.dart';
 import 'package:bind_api/src/model/transaction_types.dart';
@@ -15,6 +16,7 @@ part 'transaction_filter.g.dart';
 /// Properties:
 /// * [groupBy] 
 /// * [assetType] 
+/// * [descriptionFillingRuleSet] 
 /// * [asset] - id of asset (currency)
 /// * [transactionType] 
 /// * [wallet] - id of wallet (fiat or crypto)
@@ -27,6 +29,10 @@ abstract class TransactionFilter implements Built<TransactionFilter, Transaction
     @BuiltValueField(wireName: r'asset_type')
     TransactionFilterAssetTypeEnum get assetType;
     // enum assetTypeEnum {  fiat,  crypto,  all,  };
+
+    @BuiltValueField(wireName: r'description_filling_rule_set')
+    TransactionDescriptionFillingRuleSet get descriptionFillingRuleSet;
+    // enum descriptionFillingRuleSetEnum {  for_wallet,  for_contact,  common,  };
 
     /// id of asset (currency)
     @BuiltValueField(wireName: r'asset')
@@ -74,6 +80,10 @@ class _$TransactionFilterSerializer implements StructuredSerializer<TransactionF
             ..add(r'asset_type')
             ..add(serializers.serialize(object.assetType,
                 specifiedType: const FullType(TransactionFilterAssetTypeEnum)));
+        result
+            ..add(r'description_filling_rule_set')
+            ..add(serializers.serialize(object.descriptionFillingRuleSet,
+                specifiedType: const FullType(TransactionDescriptionFillingRuleSet)));
         if (object.asset != null) {
             result
                 ..add(r'asset')
@@ -122,6 +132,11 @@ class _$TransactionFilterSerializer implements StructuredSerializer<TransactionF
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(TransactionFilterAssetTypeEnum)) as TransactionFilterAssetTypeEnum;
                     result.assetType = valueDes;
+                    break;
+                case r'description_filling_rule_set':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(TransactionDescriptionFillingRuleSet)) as TransactionDescriptionFillingRuleSet;
+                    result.descriptionFillingRuleSet = valueDes;
                     break;
                 case r'asset':
                     final valueDes = serializers.deserialize(value,

@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **type** | [**TransactionTypes**](TransactionTypes.md) |  | [optional] 
 **datetime** | [**DateTime**](DateTime.md) |  | [optional] 
 **description** | **String** | custom description of a transaction | [optional] 
+**comment** | **String** | custom comment for a transaction | [optional] 
 **cursor** | **String** | Field to give to backend as a cursor for pagination. Format depends on a group_by argument. Can consist of one or two and more comma-separated values, representing a tuple of pagination arguments | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

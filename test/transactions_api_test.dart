@@ -11,7 +11,7 @@ void main() {
     //
     // Get list of user transactions
     //
-    //Future<BuiltList<Transaction>> getTransactionsFiltered({ GetTransactionsFilteredRequest getTransactionsFilteredRequest }) async
+    //Future<BuiltList<Transaction>> getTransactionsFiltered({ TransactionFilter transactionFilter }) async
     test('test getTransactionsFiltered', () async {
       // TODO
     });

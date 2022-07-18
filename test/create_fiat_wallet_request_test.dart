@@ -7,8 +7,8 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(CreateFiatWalletRequest, () {
-    // String currencyCode
-    test('to test the property `currencyCode`', () async {
+    // String currency
+    test('to test the property `currency`', () async {
       // TODO
     });
 

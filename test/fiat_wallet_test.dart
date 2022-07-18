@@ -22,8 +22,8 @@ void main() {
       // TODO
     });
 
-    // String currencyCode
-    test('to test the property `currencyCode`', () async {
+    // String currency
+    test('to test the property `currency`', () async {
       // TODO
     });
 

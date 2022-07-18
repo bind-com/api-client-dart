@@ -7,12 +7,30 @@ void main() {
   final instance = BindApi().getContactsApi();
 
   group(ContactsApi, () {
-    // List of beneficiaries of current user
+    // add user to contact
     //
-    // Beneficiaries are users of various banks (BIND included). User adds beneficiaries via app interface to make quick fiat transfers to there bank accounts
+    // add user to contact
     //
-    //Future<BuiltList<Beneficiary>> getBeneficiaries() async
-    test('test getBeneficiaries', () async {
+    //Future<Contact> addContactByUser({ AddContactByUserRequest addContactByUserRequest }) async
+    test('test addContactByUser', () async {
+      // TODO
+    });
+
+    // Request fiat inside BIND
+    //
+    // Request fiat from BIND user
+    //
+    //Future createInnerFiatRequest({ CreateInnerFiatRequestRequest createInnerFiatRequestRequest }) async
+    test('test createInnerFiatRequest', () async {
+      // TODO
+    });
+
+    // Send fiat inside BIND
+    //
+    // Send fiat inside BIND
+    //
+    //Future createInnerFiatTransfer({ CreateInnerFiatTransferRequest createInnerFiatTransferRequest }) async
+    test('test createInnerFiatTransfer', () async {
       // TODO
     });
 
@@ -27,21 +45,14 @@ void main() {
 
     // Sync mobile phone contacts of current user with backend data
     //
-    //Future<SyncContacts200Response> syncContacts({ SyncContactsRequest syncContactsRequest }) async
+    //Future<BuiltList<Contact>> syncContacts({ SyncContactsRequest syncContactsRequest }) async
     test('test syncContacts', () async {
-      // TODO
-    });
-
-    // Update beneficiary data (add/remove from favorite)
-    //
-    //Future updateBeneficiary(String beneficiaryId, { UpdateContactRequest updateContactRequest }) async
-    test('test updateBeneficiary', () async {
       // TODO
     });
 
     // Update contact data (add/remove contact from favorite)
     //
-    //Future updateContact(int userId, { UpdateContactRequest updateContactRequest }) async
+    //Future updateContact(int contactId, { UpdateContactRequest updateContactRequest }) async
     test('test updateContact', () async {
       // TODO
     });

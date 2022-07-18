@@ -7,9 +7,9 @@ void main() {
   final instance = BindApi().getCurrencyApi();
 
   group(CurrencyApi, () {
-    // Currencies list
+    // List of Currencies available at Bind
     //
-    //Future<ListCurrencies200Response> listCurrencies() async
+    //Future<BuiltList<Currency>> listCurrencies() async
     test('test listCurrencies', () async {
       // TODO
     });

@@ -14,6 +14,11 @@ import 'package:bind_api/src/model/date.dart';
 
 import 'package:bind_api/src/model/add_contact_by_user_request.dart';
 import 'package:bind_api/src/model/adjust_fiat_wallet_balance_request.dart';
+import 'package:bind_api/src/model/bank_card_analytics.dart';
+import 'package:bind_api/src/model/bank_card_base_data.dart';
+import 'package:bind_api/src/model/bank_card_detail.dart';
+import 'package:bind_api/src/model/bank_card_detail_all_of.dart';
+import 'package:bind_api/src/model/bank_card_settings.dart';
 import 'package:bind_api/src/model/beneficiary.dart';
 import 'package:bind_api/src/model/contact.dart';
 import 'package:bind_api/src/model/country.dart';
@@ -35,6 +40,7 @@ import 'package:bind_api/src/model/perform_exchange_request.dart';
 import 'package:bind_api/src/model/perform_fiat_transfer_request.dart';
 import 'package:bind_api/src/model/sync_contacts_request.dart';
 import 'package:bind_api/src/model/transaction.dart';
+import 'package:bind_api/src/model/transaction_description_filling_rule_set.dart';
 import 'package:bind_api/src/model/transaction_filter.dart';
 import 'package:bind_api/src/model/transaction_group.dart';
 import 'package:bind_api/src/model/transaction_grouping.dart';
@@ -48,6 +54,11 @@ part 'serializers.g.dart';
 @SerializersFor([
   AddContactByUserRequest,
   AdjustFiatWalletBalanceRequest,
+  BankCardAnalytics,
+  BankCardBaseData,
+  BankCardDetail,
+  BankCardDetailAllOf,
+  BankCardSettings,
   Beneficiary,
   Contact,
   Country,
@@ -69,6 +80,7 @@ part 'serializers.g.dart';
   PerformFiatTransferRequest,
   SyncContactsRequest,
   Transaction,
+  TransactionDescriptionFillingRuleSet,
   TransactionFilter,
   TransactionGroup,
   TransactionGrouping,
@@ -89,6 +101,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Contact)]),
         () => ListBuilder<Contact>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(BankCardBaseData)]),
+        () => ListBuilder<BankCardBaseData>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Beneficiary)]),

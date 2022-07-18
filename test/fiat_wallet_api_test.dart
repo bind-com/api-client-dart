@@ -14,6 +14,27 @@ void main() {
       // TODO
     });
 
+    // Get one exact Bank Card
+    //
+    //Future<BankCardDetail> getBankCard(String cardId, bool showEncryptedData) async
+    test('test getBankCard', () async {
+      // TODO
+    });
+
+    // Get analytics for Bank Card
+    //
+    //Future<BankCardAnalytics> getBankCardAnalytics(String cardId) async
+    test('test getBankCardAnalytics', () async {
+      // TODO
+    });
+
+    // Get a list of Bank Cards issued for current User
+    //
+    //Future<BuiltList<BankCardBaseData>> getBankCardsList() async
+    test('test getBankCardsList', () async {
+      // TODO
+    });
+
     // All fiat wallets of current user with total balance data
     //
     // Get wallets of current user with total balance data
@@ -43,6 +64,13 @@ void main() {
     //
     //Future<FiatWallet> getFiatWallets() async
     test('test getFiatWallets', () async {
+      // TODO
+    });
+
+    // Update settings of a Bank Card
+    //
+    //Future<BankCardDetail> updateBankCardSettings(String cardId, { BankCardSettings bankCardSettings }) async
+    test('test updateBankCardSettings', () async {
       // TODO
     });
 
