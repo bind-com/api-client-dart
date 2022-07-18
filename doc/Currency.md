@@ -9,7 +9,7 @@ import 'package:bind_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **currencyId** | **String** |  | [optional] 
-**currencyCode** | **String** |  | [optional] 
+**code** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **symbol** | **String** |  | [optional] 
 **iconUrl** | **String** |  | [optional] 

@@ -12,6 +12,7 @@ import 'package:built_value/iso_8601_date_time_serializer.dart';
 import 'package:bind_api/src/date_serializer.dart';
 import 'package:bind_api/src/model/date.dart';
 
+import 'package:bind_api/src/model/add_contact_by_user_request.dart';
 import 'package:bind_api/src/model/adjust_fiat_wallet_balance_request.dart';
 import 'package:bind_api/src/model/beneficiary.dart';
 import 'package:bind_api/src/model/contact.dart';
@@ -26,11 +27,17 @@ import 'package:bind_api/src/model/fiat_account.dart';
 import 'package:bind_api/src/model/fiat_wallet.dart';
 import 'package:bind_api/src/model/fiat_wallet_requisites.dart';
 import 'package:bind_api/src/model/fiat_wallet_total_balance.dart';
-import 'package:bind_api/src/model/get_transactions_filtered_request.dart';
+import 'package:bind_api/src/model/kyc_field_status.dart';
+import 'package:bind_api/src/model/kyc_request_move_result.dart';
+import 'package:bind_api/src/model/kyc_request_move_result_request_fields_status.dart';
+import 'package:bind_api/src/model/kyc_request_status.dart';
 import 'package:bind_api/src/model/perform_exchange_request.dart';
 import 'package:bind_api/src/model/perform_fiat_transfer_request.dart';
 import 'package:bind_api/src/model/sync_contacts_request.dart';
 import 'package:bind_api/src/model/transaction.dart';
+import 'package:bind_api/src/model/transaction_filter.dart';
+import 'package:bind_api/src/model/transaction_group.dart';
+import 'package:bind_api/src/model/transaction_grouping.dart';
 import 'package:bind_api/src/model/transaction_states.dart';
 import 'package:bind_api/src/model/transaction_types.dart';
 import 'package:bind_api/src/model/update_contact_request.dart';
@@ -39,6 +46,7 @@ import 'package:bind_api/src/model/user.dart';
 part 'serializers.g.dart';
 
 @SerializersFor([
+  AddContactByUserRequest,
   AdjustFiatWalletBalanceRequest,
   Beneficiary,
   Contact,
@@ -53,11 +61,17 @@ part 'serializers.g.dart';
   FiatWallet,
   FiatWalletRequisites,
   FiatWalletTotalBalance,
-  GetTransactionsFilteredRequest,
+  KYCFieldStatus,
+  KYCRequestMoveResult,
+  KYCRequestMoveResultRequestFieldsStatus,
+  KYCRequestStatus,
   PerformExchangeRequest,
   PerformFiatTransferRequest,
   SyncContactsRequest,
   Transaction,
+  TransactionFilter,
+  TransactionGroup,
+  TransactionGrouping,
   TransactionStates,
   TransactionTypes,
   UpdateContactRequest,

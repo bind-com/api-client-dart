@@ -11,7 +11,7 @@ part 'currency.g.dart';
 ///
 /// Properties:
 /// * [currencyId] 
-/// * [currencyCode] 
+/// * [code] 
 /// * [name] 
 /// * [symbol] 
 /// * [iconUrl] 
@@ -19,8 +19,8 @@ abstract class Currency implements Built<Currency, CurrencyBuilder> {
     @BuiltValueField(wireName: r'currency_id')
     String? get currencyId;
 
-    @BuiltValueField(wireName: r'currency_code')
-    String? get currencyCode;
+    @BuiltValueField(wireName: r'code')
+    String? get code;
 
     @BuiltValueField(wireName: r'name')
     String? get name;
@@ -59,10 +59,10 @@ class _$CurrencySerializer implements StructuredSerializer<Currency> {
                 ..add(serializers.serialize(object.currencyId,
                     specifiedType: const FullType(String)));
         }
-        if (object.currencyCode != null) {
+        if (object.code != null) {
             result
-                ..add(r'currency_code')
-                ..add(serializers.serialize(object.currencyCode,
+                ..add(r'code')
+                ..add(serializers.serialize(object.code,
                     specifiedType: const FullType(String)));
         }
         if (object.name != null) {
@@ -103,10 +103,10 @@ class _$CurrencySerializer implements StructuredSerializer<Currency> {
                         specifiedType: const FullType(String)) as String;
                     result.currencyId = valueDes;
                     break;
-                case r'currency_code':
+                case r'code':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
-                    result.currencyCode = valueDes;
+                    result.code = valueDes;
                     break;
                 case r'name':
                     final valueDes = serializers.deserialize(value,

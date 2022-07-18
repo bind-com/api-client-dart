@@ -10,13 +10,13 @@ part 'contact.g.dart';
 /// Contact
 ///
 /// Properties:
-/// * [userId] 
+/// * [id] 
 /// * [name] 
 /// * [phoneNumber] 
 /// * [isFavorite] 
 abstract class Contact implements Built<Contact, ContactBuilder> {
-    @BuiltValueField(wireName: r'user_id')
-    String? get userId;
+    @BuiltValueField(wireName: r'id')
+    String? get id;
 
     @BuiltValueField(wireName: r'name')
     String? get name;
@@ -49,10 +49,10 @@ class _$ContactSerializer implements StructuredSerializer<Contact> {
     Iterable<Object?> serialize(Serializers serializers, Contact object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
-        if (object.userId != null) {
+        if (object.id != null) {
             result
-                ..add(r'user_id')
-                ..add(serializers.serialize(object.userId,
+                ..add(r'id')
+                ..add(serializers.serialize(object.id,
                     specifiedType: const FullType(String)));
         }
         if (object.name != null) {
@@ -88,10 +88,10 @@ class _$ContactSerializer implements StructuredSerializer<Contact> {
             final Object? value = iterator.current;
             
             switch (key) {
-                case r'user_id':
+                case r'id':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
-                    result.userId = valueDes;
+                    result.id = valueDes;
                     break;
                 case r'name':
                     final valueDes = serializers.deserialize(value,

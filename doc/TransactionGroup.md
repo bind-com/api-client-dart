@@ -1,4 +1,4 @@
-# bind_api.model.CreateInnerFiatTransferRequest
+# bind_api.model.TransactionGroup
 
 ## Load the model package
 ```dart
@@ -8,10 +8,11 @@ import 'package:bind_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**userId** | **String** |  | [optional] 
-**contactId** | **String** | id of user contact | [optional] 
-**currency** | **String** |  | [optional] 
-**amount** | **num** |  | [optional] 
+**type** | [**TransactionGrouping**](TransactionGrouping.md) |  | [optional] 
+**assetLabel** | **String** |  | [optional] 
+**assetName** | **String** |  | [optional] 
+**assetCode** | **String** |  | [optional] 
+**date** | [**Date**](Date.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

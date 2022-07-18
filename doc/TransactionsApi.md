@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **getTransactionsFiltered**
-> BuiltList<Transaction> getTransactionsFiltered(getTransactionsFilteredRequest)
+> BuiltList<Transaction> getTransactionsFiltered(transactionFilter)
 
 Get list of user transactions
 
@@ -27,10 +27,10 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getTransactionsApi();
-final GetTransactionsFilteredRequest getTransactionsFilteredRequest = ; // GetTransactionsFilteredRequest | 
+final TransactionFilter transactionFilter = ; // TransactionFilter | 
 
 try {
-    final response = api.getTransactionsFiltered(getTransactionsFilteredRequest);
+    final response = api.getTransactionsFiltered(transactionFilter);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling TransactionsApi->getTransactionsFiltered: $e\n');
@@ -41,7 +41,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **getTransactionsFilteredRequest** | [**GetTransactionsFilteredRequest**](GetTransactionsFilteredRequest.md)|  | [optional] 
+ **transactionFilter** | [**TransactionFilter**](TransactionFilter.md)|  | [optional] 
 
 ### Return type
 

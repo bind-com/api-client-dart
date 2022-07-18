@@ -10,7 +10,7 @@ class _$Currency extends Currency {
   @override
   final String? currencyId;
   @override
-  final String? currencyCode;
+  final String? code;
   @override
   final String? name;
   @override
@@ -22,11 +22,7 @@ class _$Currency extends Currency {
       (new CurrencyBuilder()..update(updates))._build();
 
   _$Currency._(
-      {this.currencyId,
-      this.currencyCode,
-      this.name,
-      this.symbol,
-      this.iconUrl})
+      {this.currencyId, this.code, this.name, this.symbol, this.iconUrl})
       : super._();
 
   @override
@@ -41,7 +37,7 @@ class _$Currency extends Currency {
     if (identical(other, this)) return true;
     return other is Currency &&
         currencyId == other.currencyId &&
-        currencyCode == other.currencyCode &&
+        code == other.code &&
         name == other.name &&
         symbol == other.symbol &&
         iconUrl == other.iconUrl;
@@ -50,9 +46,7 @@ class _$Currency extends Currency {
   @override
   int get hashCode {
     return $jf($jc(
-        $jc(
-            $jc($jc($jc(0, currencyId.hashCode), currencyCode.hashCode),
-                name.hashCode),
+        $jc($jc($jc($jc(0, currencyId.hashCode), code.hashCode), name.hashCode),
             symbol.hashCode),
         iconUrl.hashCode));
   }
@@ -61,7 +55,7 @@ class _$Currency extends Currency {
   String toString() {
     return (newBuiltValueToStringHelper(r'Currency')
           ..add('currencyId', currencyId)
-          ..add('currencyCode', currencyCode)
+          ..add('code', code)
           ..add('name', name)
           ..add('symbol', symbol)
           ..add('iconUrl', iconUrl))
@@ -76,9 +70,9 @@ class CurrencyBuilder implements Builder<Currency, CurrencyBuilder> {
   String? get currencyId => _$this._currencyId;
   set currencyId(String? currencyId) => _$this._currencyId = currencyId;
 
-  String? _currencyCode;
-  String? get currencyCode => _$this._currencyCode;
-  set currencyCode(String? currencyCode) => _$this._currencyCode = currencyCode;
+  String? _code;
+  String? get code => _$this._code;
+  set code(String? code) => _$this._code = code;
 
   String? _name;
   String? get name => _$this._name;
@@ -100,7 +94,7 @@ class CurrencyBuilder implements Builder<Currency, CurrencyBuilder> {
     final $v = _$v;
     if ($v != null) {
       _currencyId = $v.currencyId;
-      _currencyCode = $v.currencyCode;
+      _code = $v.code;
       _name = $v.name;
       _symbol = $v.symbol;
       _iconUrl = $v.iconUrl;
@@ -127,7 +121,7 @@ class CurrencyBuilder implements Builder<Currency, CurrencyBuilder> {
     final _$result = _$v ??
         new _$Currency._(
             currencyId: currencyId,
-            currencyCode: currencyCode,
+            code: code,
             name: name,
             symbol: symbol,
             iconUrl: iconUrl);
