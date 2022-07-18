@@ -17,6 +17,7 @@ import 'package:bind_api/src/model/currency.dart';
 import 'package:bind_api/src/model/error.dart';
 import 'package:bind_api/src/model/fiat_account.dart';
 import 'package:bind_api/src/model/fiat_wallet.dart';
+import 'package:bind_api/src/model/fiat_wallet_light.dart';
 import 'package:built_collection/built_collection.dart';
 
 class FiatWalletApi {
@@ -614,9 +615,9 @@ class FiatWalletApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [FiatWallet] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<FiatWalletLight>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<FiatWallet>> getFiatWallets({ 
+  Future<Response<BuiltList<FiatWalletLight>>> getFiatWallets({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -651,14 +652,14 @@ class FiatWalletApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    FiatWallet _responseData;
+    BuiltList<FiatWalletLight> _responseData;
 
     try {
-      const _responseType = FullType(FiatWallet);
+      const _responseType = FullType(BuiltList, [FullType(FiatWalletLight)]);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as FiatWallet;
+      ) as BuiltList<FiatWalletLight>;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -669,7 +670,7 @@ class FiatWalletApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<FiatWallet>(
+    return Response<BuiltList<FiatWalletLight>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

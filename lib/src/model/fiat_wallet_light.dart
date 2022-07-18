@@ -5,17 +5,26 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'fiat_wallet_total_balance.g.dart';
+part 'fiat_wallet_light.g.dart';
 
-/// FiatWalletTotalBalance
+/// FiatWalletLight
 ///
 /// Properties:
+/// * [id] 
 /// * [balance] 
+/// * [account] 
 /// * [currency] 
 /// * [currencyCode] 
-abstract class FiatWalletTotalBalance implements Built<FiatWalletTotalBalance, FiatWalletTotalBalanceBuilder> {
+/// * [currencyName] 
+abstract class FiatWalletLight implements Built<FiatWalletLight, FiatWalletLightBuilder> {
+    @BuiltValueField(wireName: r'id')
+    String? get id;
+
     @BuiltValueField(wireName: r'balance')
     num? get balance;
+
+    @BuiltValueField(wireName: r'account')
+    String? get account;
 
     @BuiltValueField(wireName: r'currency')
     String? get currency;
@@ -23,33 +32,48 @@ abstract class FiatWalletTotalBalance implements Built<FiatWalletTotalBalance, F
     @BuiltValueField(wireName: r'currency_code')
     String? get currencyCode;
 
-    FiatWalletTotalBalance._();
+    @BuiltValueField(wireName: r'currency_name')
+    String? get currencyName;
+
+    FiatWalletLight._();
 
     @BuiltValueHook(initializeBuilder: true)
-    static void _defaults(FiatWalletTotalBalanceBuilder b) => b;
+    static void _defaults(FiatWalletLightBuilder b) => b;
 
-    factory FiatWalletTotalBalance([void updates(FiatWalletTotalBalanceBuilder b)]) = _$FiatWalletTotalBalance;
+    factory FiatWalletLight([void updates(FiatWalletLightBuilder b)]) = _$FiatWalletLight;
 
     @BuiltValueSerializer(custom: true)
-    static Serializer<FiatWalletTotalBalance> get serializer => _$FiatWalletTotalBalanceSerializer();
+    static Serializer<FiatWalletLight> get serializer => _$FiatWalletLightSerializer();
 }
 
-class _$FiatWalletTotalBalanceSerializer implements StructuredSerializer<FiatWalletTotalBalance> {
+class _$FiatWalletLightSerializer implements StructuredSerializer<FiatWalletLight> {
     @override
-    final Iterable<Type> types = const [FiatWalletTotalBalance, _$FiatWalletTotalBalance];
+    final Iterable<Type> types = const [FiatWalletLight, _$FiatWalletLight];
 
     @override
-    final String wireName = r'FiatWalletTotalBalance';
+    final String wireName = r'FiatWalletLight';
 
     @override
-    Iterable<Object?> serialize(Serializers serializers, FiatWalletTotalBalance object,
+    Iterable<Object?> serialize(Serializers serializers, FiatWalletLight object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
+        if (object.id != null) {
+            result
+                ..add(r'id')
+                ..add(serializers.serialize(object.id,
+                    specifiedType: const FullType(String)));
+        }
         if (object.balance != null) {
             result
                 ..add(r'balance')
                 ..add(serializers.serialize(object.balance,
                     specifiedType: const FullType(num)));
+        }
+        if (object.account != null) {
+            result
+                ..add(r'account')
+                ..add(serializers.serialize(object.account,
+                    specifiedType: const FullType(String)));
         }
         if (object.currency != null) {
             result
@@ -63,13 +87,19 @@ class _$FiatWalletTotalBalanceSerializer implements StructuredSerializer<FiatWal
                 ..add(serializers.serialize(object.currencyCode,
                     specifiedType: const FullType(String)));
         }
+        if (object.currencyName != null) {
+            result
+                ..add(r'currency_name')
+                ..add(serializers.serialize(object.currencyName,
+                    specifiedType: const FullType(String)));
+        }
         return result;
     }
 
     @override
-    FiatWalletTotalBalance deserialize(Serializers serializers, Iterable<Object?> serialized,
+    FiatWalletLight deserialize(Serializers serializers, Iterable<Object?> serialized,
         {FullType specifiedType = FullType.unspecified}) {
-        final result = FiatWalletTotalBalanceBuilder();
+        final result = FiatWalletLightBuilder();
 
         final iterator = serialized.iterator;
         while (iterator.moveNext()) {
@@ -78,10 +108,20 @@ class _$FiatWalletTotalBalanceSerializer implements StructuredSerializer<FiatWal
             final Object? value = iterator.current;
             
             switch (key) {
+                case r'id':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.id = valueDes;
+                    break;
                 case r'balance':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(num)) as num;
                     result.balance = valueDes;
+                    break;
+                case r'account':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.account = valueDes;
                     break;
                 case r'currency':
                     final valueDes = serializers.deserialize(value,
@@ -92,6 +132,11 @@ class _$FiatWalletTotalBalanceSerializer implements StructuredSerializer<FiatWal
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.currencyCode = valueDes;
+                    break;
+                case r'currency_name':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.currencyName = valueDes;
                     break;
             }
         }

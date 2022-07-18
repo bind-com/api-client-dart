@@ -38,6 +38,8 @@ export 'package:bind_api/src/model/currency.dart';
 export 'package:bind_api/src/model/error.dart';
 export 'package:bind_api/src/model/fiat_account.dart';
 export 'package:bind_api/src/model/fiat_wallet.dart';
+export 'package:bind_api/src/model/fiat_wallet_all_of.dart';
+export 'package:bind_api/src/model/fiat_wallet_light.dart';
 export 'package:bind_api/src/model/fiat_wallet_requisites.dart';
 export 'package:bind_api/src/model/fiat_wallet_total_balance.dart';
 export 'package:bind_api/src/model/kyc_field_status.dart';

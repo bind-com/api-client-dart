@@ -30,6 +30,8 @@ import 'package:bind_api/src/model/currency.dart';
 import 'package:bind_api/src/model/error.dart';
 import 'package:bind_api/src/model/fiat_account.dart';
 import 'package:bind_api/src/model/fiat_wallet.dart';
+import 'package:bind_api/src/model/fiat_wallet_all_of.dart';
+import 'package:bind_api/src/model/fiat_wallet_light.dart';
 import 'package:bind_api/src/model/fiat_wallet_requisites.dart';
 import 'package:bind_api/src/model/fiat_wallet_total_balance.dart';
 import 'package:bind_api/src/model/kyc_field_status.dart';
@@ -70,6 +72,8 @@ part 'serializers.g.dart';
   Error,
   FiatAccount,
   FiatWallet,
+  FiatWalletAllOf,
+  FiatWalletLight,
   FiatWalletRequisites,
   FiatWalletTotalBalance,
   KYCFieldStatus,
@@ -113,6 +117,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Currency)]),
         () => ListBuilder<Currency>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(FiatWalletLight)]),
+        () => ListBuilder<FiatWalletLight>(),
       )
       ..add(const DateSerializer())
       ..add(Iso8601DateTimeSerializer()))

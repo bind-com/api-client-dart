@@ -11,12 +11,15 @@ class _$FiatWalletTotalBalance extends FiatWalletTotalBalance {
   final num? balance;
   @override
   final String? currency;
+  @override
+  final String? currencyCode;
 
   factory _$FiatWalletTotalBalance(
           [void Function(FiatWalletTotalBalanceBuilder)? updates]) =>
       (new FiatWalletTotalBalanceBuilder()..update(updates))._build();
 
-  _$FiatWalletTotalBalance._({this.balance, this.currency}) : super._();
+  _$FiatWalletTotalBalance._({this.balance, this.currency, this.currencyCode})
+      : super._();
 
   @override
   FiatWalletTotalBalance rebuild(
@@ -32,19 +35,22 @@ class _$FiatWalletTotalBalance extends FiatWalletTotalBalance {
     if (identical(other, this)) return true;
     return other is FiatWalletTotalBalance &&
         balance == other.balance &&
-        currency == other.currency;
+        currency == other.currency &&
+        currencyCode == other.currencyCode;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, balance.hashCode), currency.hashCode));
+    return $jf($jc($jc($jc(0, balance.hashCode), currency.hashCode),
+        currencyCode.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'FiatWalletTotalBalance')
           ..add('balance', balance)
-          ..add('currency', currency))
+          ..add('currency', currency)
+          ..add('currencyCode', currencyCode))
         .toString();
   }
 }
@@ -61,6 +67,10 @@ class FiatWalletTotalBalanceBuilder
   String? get currency => _$this._currency;
   set currency(String? currency) => _$this._currency = currency;
 
+  String? _currencyCode;
+  String? get currencyCode => _$this._currencyCode;
+  set currencyCode(String? currencyCode) => _$this._currencyCode = currencyCode;
+
   FiatWalletTotalBalanceBuilder() {
     FiatWalletTotalBalance._defaults(this);
   }
@@ -70,6 +80,7 @@ class FiatWalletTotalBalanceBuilder
     if ($v != null) {
       _balance = $v.balance;
       _currency = $v.currency;
+      _currencyCode = $v.currencyCode;
       _$v = null;
     }
     return this;
@@ -91,7 +102,8 @@ class FiatWalletTotalBalanceBuilder
 
   _$FiatWalletTotalBalance _build() {
     final _$result = _$v ??
-        new _$FiatWalletTotalBalance._(balance: balance, currency: currency);
+        new _$FiatWalletTotalBalance._(
+            balance: balance, currency: currency, currencyCode: currencyCode);
     replace(_$result);
     return _$result;
   }

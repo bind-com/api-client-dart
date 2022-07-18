@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getFiatWallets**
-> FiatWallet getFiatWallets()
+> BuiltList<FiatWalletLight> getFiatWallets()
 
 All fiat wallets of current user
 
@@ -349,7 +349,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**FiatWallet**](FiatWallet.md)
+[**BuiltList&lt;FiatWalletLight&gt;**](FiatWalletLight.md)
 
 ### Authorization
 

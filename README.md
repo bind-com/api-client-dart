@@ -117,6 +117,8 @@ Class | Method | HTTP request | Description
  - [Error](doc/Error.md)
  - [FiatAccount](doc/FiatAccount.md)
  - [FiatWallet](doc/FiatWallet.md)
+ - [FiatWalletAllOf](doc/FiatWalletAllOf.md)
+ - [FiatWalletLight](doc/FiatWalletLight.md)
  - [FiatWalletRequisites](doc/FiatWalletRequisites.md)
  - [FiatWalletTotalBalance](doc/FiatWalletTotalBalance.md)
  - [KYCFieldStatus](doc/KYCFieldStatus.md)

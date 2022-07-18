@@ -1,4 +1,4 @@
-# bind_api.model.FiatWallet
+# bind_api.model.FiatWalletLight
 
 ## Load the model package
 ```dart
@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **currency** | **String** |  | [optional] 
 **currencyCode** | **String** |  | [optional] 
 **currencyName** | **String** |  | [optional] 
-**transferRequisites** | [**FiatWalletRequisites**](FiatWalletRequisites.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'fiat_wallet.dart';
+part of 'fiat_wallet_light.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$FiatWallet extends FiatWallet {
+class _$FiatWalletLight extends FiatWalletLight {
   @override
   final String? id;
   @override
@@ -19,40 +19,37 @@ class _$FiatWallet extends FiatWallet {
   final String? currencyCode;
   @override
   final String? currencyName;
-  @override
-  final FiatWalletRequisites? transferRequisites;
 
-  factory _$FiatWallet([void Function(FiatWalletBuilder)? updates]) =>
-      (new FiatWalletBuilder()..update(updates))._build();
+  factory _$FiatWalletLight([void Function(FiatWalletLightBuilder)? updates]) =>
+      (new FiatWalletLightBuilder()..update(updates))._build();
 
-  _$FiatWallet._(
+  _$FiatWalletLight._(
       {this.id,
       this.balance,
       this.account,
       this.currency,
       this.currencyCode,
-      this.currencyName,
-      this.transferRequisites})
+      this.currencyName})
       : super._();
 
   @override
-  FiatWallet rebuild(void Function(FiatWalletBuilder) updates) =>
+  FiatWalletLight rebuild(void Function(FiatWalletLightBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  FiatWalletBuilder toBuilder() => new FiatWalletBuilder()..replace(this);
+  FiatWalletLightBuilder toBuilder() =>
+      new FiatWalletLightBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is FiatWallet &&
+    return other is FiatWalletLight &&
         id == other.id &&
         balance == other.balance &&
         account == other.account &&
         currency == other.currency &&
         currencyCode == other.currencyCode &&
-        currencyName == other.currencyName &&
-        transferRequisites == other.transferRequisites;
+        currencyName == other.currencyName;
   }
 
   @override
@@ -60,31 +57,29 @@ class _$FiatWallet extends FiatWallet {
     return $jf($jc(
         $jc(
             $jc(
-                $jc(
-                    $jc($jc($jc(0, id.hashCode), balance.hashCode),
-                        account.hashCode),
-                    currency.hashCode),
-                currencyCode.hashCode),
-            currencyName.hashCode),
-        transferRequisites.hashCode));
+                $jc($jc($jc(0, id.hashCode), balance.hashCode),
+                    account.hashCode),
+                currency.hashCode),
+            currencyCode.hashCode),
+        currencyName.hashCode));
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'FiatWallet')
+    return (newBuiltValueToStringHelper(r'FiatWalletLight')
           ..add('id', id)
           ..add('balance', balance)
           ..add('account', account)
           ..add('currency', currency)
           ..add('currencyCode', currencyCode)
-          ..add('currencyName', currencyName)
-          ..add('transferRequisites', transferRequisites))
+          ..add('currencyName', currencyName))
         .toString();
   }
 }
 
-class FiatWalletBuilder implements Builder<FiatWallet, FiatWalletBuilder> {
-  _$FiatWallet? _$v;
+class FiatWalletLightBuilder
+    implements Builder<FiatWalletLight, FiatWalletLightBuilder> {
+  _$FiatWalletLight? _$v;
 
   String? _id;
   String? get id => _$this._id;
@@ -110,17 +105,11 @@ class FiatWalletBuilder implements Builder<FiatWallet, FiatWalletBuilder> {
   String? get currencyName => _$this._currencyName;
   set currencyName(String? currencyName) => _$this._currencyName = currencyName;
 
-  FiatWalletRequisitesBuilder? _transferRequisites;
-  FiatWalletRequisitesBuilder get transferRequisites =>
-      _$this._transferRequisites ??= new FiatWalletRequisitesBuilder();
-  set transferRequisites(FiatWalletRequisitesBuilder? transferRequisites) =>
-      _$this._transferRequisites = transferRequisites;
-
-  FiatWalletBuilder() {
-    FiatWallet._defaults(this);
+  FiatWalletLightBuilder() {
+    FiatWalletLight._defaults(this);
   }
 
-  FiatWalletBuilder get _$this {
+  FiatWalletLightBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
@@ -129,49 +118,34 @@ class FiatWalletBuilder implements Builder<FiatWallet, FiatWalletBuilder> {
       _currency = $v.currency;
       _currencyCode = $v.currencyCode;
       _currencyName = $v.currencyName;
-      _transferRequisites = $v.transferRequisites?.toBuilder();
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(FiatWallet other) {
+  void replace(FiatWalletLight other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$FiatWallet;
+    _$v = other as _$FiatWalletLight;
   }
 
   @override
-  void update(void Function(FiatWalletBuilder)? updates) {
+  void update(void Function(FiatWalletLightBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  FiatWallet build() => _build();
+  FiatWalletLight build() => _build();
 
-  _$FiatWallet _build() {
-    _$FiatWallet _$result;
-    try {
-      _$result = _$v ??
-          new _$FiatWallet._(
-              id: id,
-              balance: balance,
-              account: account,
-              currency: currency,
-              currencyCode: currencyCode,
-              currencyName: currencyName,
-              transferRequisites: _transferRequisites?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'transferRequisites';
-        _transferRequisites?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'FiatWallet', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+  _$FiatWalletLight _build() {
+    final _$result = _$v ??
+        new _$FiatWalletLight._(
+            id: id,
+            balance: balance,
+            account: account,
+            currency: currency,
+            currencyCode: currencyCode,
+            currencyName: currencyName);
     replace(_$result);
     return _$result;
   }
