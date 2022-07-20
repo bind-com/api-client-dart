@@ -27,7 +27,6 @@ part 'transaction.g.dart';
 /// * [datetime] 
 /// * [description] - custom description of a transaction
 /// * [comment] - custom comment for a transaction
-/// * [cursor] - Field to give to backend as a cursor for pagination. Format depends on a group_by argument. Can consist of one or two and more comma-separated values, representing a tuple of pagination arguments
 abstract class Transaction implements Built<Transaction, TransactionBuilder> {
     @BuiltValueField(wireName: r'group')
     TransactionGroup? get group;
@@ -77,10 +76,6 @@ abstract class Transaction implements Built<Transaction, TransactionBuilder> {
     /// custom comment for a transaction
     @BuiltValueField(wireName: r'comment')
     String? get comment;
-
-    /// Field to give to backend as a cursor for pagination. Format depends on a group_by argument. Can consist of one or two and more comma-separated values, representing a tuple of pagination arguments
-    @BuiltValueField(wireName: r'cursor')
-    String? get cursor;
 
     Transaction._();
 
@@ -188,12 +183,6 @@ class _$TransactionSerializer implements StructuredSerializer<Transaction> {
                 ..add(serializers.serialize(object.comment,
                     specifiedType: const FullType(String)));
         }
-        if (object.cursor != null) {
-            result
-                ..add(r'cursor')
-                ..add(serializers.serialize(object.cursor,
-                    specifiedType: const FullType(String)));
-        }
         return result;
     }
 
@@ -283,11 +272,6 @@ class _$TransactionSerializer implements StructuredSerializer<Transaction> {
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.comment = valueDes;
-                    break;
-                case r'cursor':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.cursor = valueDes;
                     break;
             }
         }

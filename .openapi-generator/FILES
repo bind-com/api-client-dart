@@ -11,6 +11,7 @@ doc/BankCardDetailAllOf.md
 doc/BankCardSettings.md
 doc/BeneficiariesApi.md
 doc/Beneficiary.md
+doc/CheckPasscodeRequest.md
 doc/Contact.md
 doc/ContactsApi.md
 doc/Country.md
@@ -30,6 +31,7 @@ doc/FiatWalletLight.md
 doc/FiatWalletRequisites.md
 doc/FiatWalletTotalBalance.md
 doc/GeoApi.md
+doc/JWTToken.md
 doc/KYCFieldStatus.md
 doc/KYCRequestMoveResult.md
 doc/KYCRequestMoveResultRequestFieldsStatus.md
@@ -49,6 +51,7 @@ doc/TransactionsApi.md
 doc/UpdateContactRequest.md
 doc/User.md
 doc/UserApi.md
+doc/UserSharingData.md
 lib/bind_api.dart
 lib/src/api.dart
 lib/src/api/auth_api.dart
@@ -76,6 +79,7 @@ lib/src/model/bank_card_detail.dart
 lib/src/model/bank_card_detail_all_of.dart
 lib/src/model/bank_card_settings.dart
 lib/src/model/beneficiary.dart
+lib/src/model/check_passcode_request.dart
 lib/src/model/contact.dart
 lib/src/model/country.dart
 lib/src/model/create_beneficiary_request.dart
@@ -91,6 +95,7 @@ lib/src/model/fiat_wallet_all_of.dart
 lib/src/model/fiat_wallet_light.dart
 lib/src/model/fiat_wallet_requisites.dart
 lib/src/model/fiat_wallet_total_balance.dart
+lib/src/model/jwt_token.dart
 lib/src/model/kyc_field_status.dart
 lib/src/model/kyc_request_move_result.dart
 lib/src/model/kyc_request_move_result_request_fields_status.dart
@@ -107,7 +112,9 @@ lib/src/model/transaction_states.dart
 lib/src/model/transaction_types.dart
 lib/src/model/update_contact_request.dart
 lib/src/model/user.dart
+lib/src/model/user_sharing_data.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/fiat_wallet_all_of_test.dart
-test/fiat_wallet_light_test.dart
+test/check_passcode_request_test.dart
+test/jwt_token_test.dart
+test/user_sharing_data_test.dart

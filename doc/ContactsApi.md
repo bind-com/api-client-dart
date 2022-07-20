@@ -12,7 +12,9 @@ Method | HTTP request | Description
 [**addContactByUser**](ContactsApi.md#addcontactbyuser) | **POST** /contacts/ | add user to contact
 [**createInnerFiatRequest**](ContactsApi.md#createinnerfiatrequest) | **POST** /fiat/request/ | Request fiat inside BIND
 [**createInnerFiatTransfer**](ContactsApi.md#createinnerfiattransfer) | **POST** /fiat/send/ | Send fiat inside BIND
+[**generateQRCodeToken**](ContactsApi.md#generateqrcodetoken) | **GET** /fiat/send/qr_code/ | Generate JWT token to share as QR code
 [**getContacts**](ContactsApi.md#getcontacts) | **GET** /contacts/ | List of contacts of current user
+[**readJWTToken**](ContactsApi.md#readjwttoken) | **POST** /fiat/send/qr_code/ | Check JWT validity and read user from it
 [**syncContacts**](ContactsApi.md#synccontacts) | **POST** /contacts/sync/ | Sync mobile phone contacts of current user with backend data
 [**updateContact**](ContactsApi.md#updatecontact) | **PATCH** /contacts/{contact_id}/ | Update contact data (add/remove contact from favorite)
 
@@ -153,6 +155,46 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **generateQRCodeToken**
+> JWTToken generateQRCodeToken()
+
+Generate JWT token to share as QR code
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getContactsApi();
+
+try {
+    final response = api.generateQRCodeToken();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling ContactsApi->generateQRCodeToken: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**JWTToken**](JWTToken.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getContacts**
 > BuiltList<Contact> getContacts()
 
@@ -191,6 +233,50 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **readJWTToken**
+> UserSharingData readJWTToken(jWTToken)
+
+Check JWT validity and read user from it
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getContactsApi();
+final JWTToken jWTToken = ; // JWTToken | 
+
+try {
+    final response = api.readJWTToken(jWTToken);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling ContactsApi->readJWTToken: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **jWTToken** | [**JWTToken**](JWTToken.md)|  | [optional] 
+
+### Return type
+
+[**UserSharingData**](UserSharingData.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -252,7 +338,7 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getContactsApi();
-final int contactId = 56; // int | id of contact
+final String contactId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of contact
 final UpdateContactRequest updateContactRequest = ; // UpdateContactRequest | 
 
 try {
@@ -266,7 +352,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contactId** | **int**| id of contact | 
+ **contactId** | **String**| id of contact | 
  **updateContactRequest** | [**UpdateContactRequest**](UpdateContactRequest.md)|  | [optional] 
 
 ### Return type

@@ -35,8 +35,6 @@ class _$Transaction extends Transaction {
   final String? description;
   @override
   final String? comment;
-  @override
-  final String? cursor;
 
   factory _$Transaction([void Function(TransactionBuilder)? updates]) =>
       (new TransactionBuilder()..update(updates))._build();
@@ -55,8 +53,7 @@ class _$Transaction extends Transaction {
       this.type,
       this.datetime,
       this.description,
-      this.comment,
-      this.cursor})
+      this.comment})
       : super._();
 
   @override
@@ -83,8 +80,7 @@ class _$Transaction extends Transaction {
         type == other.type &&
         datetime == other.datetime &&
         description == other.description &&
-        comment == other.comment &&
-        cursor == other.cursor;
+        comment == other.comment;
   }
 
   @override
@@ -101,25 +97,20 @@ class _$Transaction extends Transaction {
                                         $jc(
                                             $jc(
                                                 $jc(
-                                                    $jc(
-                                                        $jc(
-                                                            $jc(0,
-                                                                group.hashCode),
-                                                            id.hashCode),
-                                                        operationLabel
-                                                            .hashCode),
-                                                    state.hashCode),
-                                                isCrypto.hashCode),
-                                            isFiat.hashCode),
-                                        assetSourceCode.hashCode),
-                                    assetTargetCode.hashCode),
-                                amountSource.hashCode),
-                            amountTarget.hashCode),
-                        type.hashCode),
-                    datetime.hashCode),
-                description.hashCode),
-            comment.hashCode),
-        cursor.hashCode));
+                                                    $jc($jc(0, group.hashCode),
+                                                        id.hashCode),
+                                                    operationLabel.hashCode),
+                                                state.hashCode),
+                                            isCrypto.hashCode),
+                                        isFiat.hashCode),
+                                    assetSourceCode.hashCode),
+                                assetTargetCode.hashCode),
+                            amountSource.hashCode),
+                        amountTarget.hashCode),
+                    type.hashCode),
+                datetime.hashCode),
+            description.hashCode),
+        comment.hashCode));
   }
 
   @override
@@ -138,8 +129,7 @@ class _$Transaction extends Transaction {
           ..add('type', type)
           ..add('datetime', datetime)
           ..add('description', description)
-          ..add('comment', comment)
-          ..add('cursor', cursor))
+          ..add('comment', comment))
         .toString();
   }
 }
@@ -207,10 +197,6 @@ class TransactionBuilder implements Builder<Transaction, TransactionBuilder> {
   String? get comment => _$this._comment;
   set comment(String? comment) => _$this._comment = comment;
 
-  String? _cursor;
-  String? get cursor => _$this._cursor;
-  set cursor(String? cursor) => _$this._cursor = cursor;
-
   TransactionBuilder() {
     Transaction._defaults(this);
   }
@@ -232,7 +218,6 @@ class TransactionBuilder implements Builder<Transaction, TransactionBuilder> {
       _datetime = $v.datetime;
       _description = $v.description;
       _comment = $v.comment;
-      _cursor = $v.cursor;
       _$v = null;
     }
     return this;
@@ -270,8 +255,7 @@ class TransactionBuilder implements Builder<Transaction, TransactionBuilder> {
               type: type,
               datetime: datetime,
               description: description,
-              comment: comment,
-              cursor: cursor);
+              comment: comment);
     } catch (_) {
       late String _$failedField;
       try {

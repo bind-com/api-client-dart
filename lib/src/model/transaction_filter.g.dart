@@ -81,7 +81,7 @@ class _$TransactionFilter extends TransactionFilter {
   @override
   final String? asset;
   @override
-  final TransactionTypes? transactionType;
+  final TransactionTypes? type;
   @override
   final String? wallet;
   @override
@@ -96,7 +96,7 @@ class _$TransactionFilter extends TransactionFilter {
       required this.assetType,
       required this.descriptionFillingRuleSet,
       this.asset,
-      this.transactionType,
+      this.type,
       this.wallet,
       this.contact})
       : super._() {
@@ -124,7 +124,7 @@ class _$TransactionFilter extends TransactionFilter {
         assetType == other.assetType &&
         descriptionFillingRuleSet == other.descriptionFillingRuleSet &&
         asset == other.asset &&
-        transactionType == other.transactionType &&
+        type == other.type &&
         wallet == other.wallet &&
         contact == other.contact;
   }
@@ -138,7 +138,7 @@ class _$TransactionFilter extends TransactionFilter {
                     $jc($jc($jc(0, groupBy.hashCode), assetType.hashCode),
                         descriptionFillingRuleSet.hashCode),
                     asset.hashCode),
-                transactionType.hashCode),
+                type.hashCode),
             wallet.hashCode),
         contact.hashCode));
   }
@@ -150,7 +150,7 @@ class _$TransactionFilter extends TransactionFilter {
           ..add('assetType', assetType)
           ..add('descriptionFillingRuleSet', descriptionFillingRuleSet)
           ..add('asset', asset)
-          ..add('transactionType', transactionType)
+          ..add('type', type)
           ..add('wallet', wallet)
           ..add('contact', contact))
         .toString();
@@ -181,10 +181,9 @@ class TransactionFilterBuilder
   String? get asset => _$this._asset;
   set asset(String? asset) => _$this._asset = asset;
 
-  TransactionTypes? _transactionType;
-  TransactionTypes? get transactionType => _$this._transactionType;
-  set transactionType(TransactionTypes? transactionType) =>
-      _$this._transactionType = transactionType;
+  TransactionTypes? _type;
+  TransactionTypes? get type => _$this._type;
+  set type(TransactionTypes? type) => _$this._type = type;
 
   String? _wallet;
   String? get wallet => _$this._wallet;
@@ -205,7 +204,7 @@ class TransactionFilterBuilder
       _assetType = $v.assetType;
       _descriptionFillingRuleSet = $v.descriptionFillingRuleSet;
       _asset = $v.asset;
-      _transactionType = $v.transactionType;
+      _type = $v.type;
       _wallet = $v.wallet;
       _contact = $v.contact;
       _$v = null;
@@ -239,7 +238,7 @@ class TransactionFilterBuilder
                 r'TransactionFilter',
                 'descriptionFillingRuleSet'),
             asset: asset,
-            transactionType: transactionType,
+            type: type,
             wallet: wallet,
             contact: contact);
     replace(_$result);

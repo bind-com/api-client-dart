@@ -18,7 +18,7 @@ part 'transaction_filter.g.dart';
 /// * [assetType] 
 /// * [descriptionFillingRuleSet] 
 /// * [asset] - id of asset (currency)
-/// * [transactionType] 
+/// * [type] 
 /// * [wallet] - id of wallet (fiat or crypto)
 /// * [contact] - id of contact
 abstract class TransactionFilter implements Built<TransactionFilter, TransactionFilterBuilder> {
@@ -38,9 +38,9 @@ abstract class TransactionFilter implements Built<TransactionFilter, Transaction
     @BuiltValueField(wireName: r'asset')
     String? get asset;
 
-    @BuiltValueField(wireName: r'transaction_type')
-    TransactionTypes? get transactionType;
-    // enum transactionTypeEnum {  OUTGOING_INNER_FIAT_TRANSFER,  INCOMING_INNER_FIAT_TRANSFER,  FIAT_EXCHANGE,  };
+    @BuiltValueField(wireName: r'type')
+    TransactionTypes? get type;
+    // enum typeEnum {  OUTGOING_INNER_FIAT_TRANSFER,  INCOMING_INNER_FIAT_TRANSFER,  FIAT_EXCHANGE,  };
 
     /// id of wallet (fiat or crypto)
     @BuiltValueField(wireName: r'wallet')
@@ -90,10 +90,10 @@ class _$TransactionFilterSerializer implements StructuredSerializer<TransactionF
                 ..add(serializers.serialize(object.asset,
                     specifiedType: const FullType(String)));
         }
-        if (object.transactionType != null) {
+        if (object.type != null) {
             result
-                ..add(r'transaction_type')
-                ..add(serializers.serialize(object.transactionType,
+                ..add(r'type')
+                ..add(serializers.serialize(object.type,
                     specifiedType: const FullType(TransactionTypes)));
         }
         if (object.wallet != null) {
@@ -143,10 +143,10 @@ class _$TransactionFilterSerializer implements StructuredSerializer<TransactionF
                         specifiedType: const FullType(String)) as String;
                     result.asset = valueDes;
                     break;
-                case r'transaction_type':
+                case r'type':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(TransactionTypes)) as TransactionTypes;
-                    result.transactionType = valueDes;
+                    result.type = valueDes;
                     break;
                 case r'wallet':
                     final valueDes = serializers.deserialize(value,

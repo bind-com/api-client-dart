@@ -20,6 +20,7 @@ import 'package:bind_api/src/model/bank_card_detail.dart';
 import 'package:bind_api/src/model/bank_card_detail_all_of.dart';
 import 'package:bind_api/src/model/bank_card_settings.dart';
 import 'package:bind_api/src/model/beneficiary.dart';
+import 'package:bind_api/src/model/check_passcode_request.dart';
 import 'package:bind_api/src/model/contact.dart';
 import 'package:bind_api/src/model/country.dart';
 import 'package:bind_api/src/model/create_beneficiary_request.dart';
@@ -34,6 +35,7 @@ import 'package:bind_api/src/model/fiat_wallet_all_of.dart';
 import 'package:bind_api/src/model/fiat_wallet_light.dart';
 import 'package:bind_api/src/model/fiat_wallet_requisites.dart';
 import 'package:bind_api/src/model/fiat_wallet_total_balance.dart';
+import 'package:bind_api/src/model/jwt_token.dart';
 import 'package:bind_api/src/model/kyc_field_status.dart';
 import 'package:bind_api/src/model/kyc_request_move_result.dart';
 import 'package:bind_api/src/model/kyc_request_move_result_request_fields_status.dart';
@@ -50,6 +52,7 @@ import 'package:bind_api/src/model/transaction_states.dart';
 import 'package:bind_api/src/model/transaction_types.dart';
 import 'package:bind_api/src/model/update_contact_request.dart';
 import 'package:bind_api/src/model/user.dart';
+import 'package:bind_api/src/model/user_sharing_data.dart';
 
 part 'serializers.g.dart';
 
@@ -62,6 +65,7 @@ part 'serializers.g.dart';
   BankCardDetailAllOf,
   BankCardSettings,
   Beneficiary,
+  CheckPasscodeRequest,
   Contact,
   Country,
   CreateBeneficiaryRequest,
@@ -76,6 +80,7 @@ part 'serializers.g.dart';
   FiatWalletLight,
   FiatWalletRequisites,
   FiatWalletTotalBalance,
+  JWTToken,
   KYCFieldStatus,
   KYCRequestMoveResult,
   KYCRequestMoveResultRequestFieldsStatus,
@@ -92,6 +97,7 @@ part 'serializers.g.dart';
   TransactionTypes,
   UpdateContactRequest,
   User,
+  UserSharingData,
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
