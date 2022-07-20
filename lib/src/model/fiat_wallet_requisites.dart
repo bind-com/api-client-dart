@@ -25,7 +25,7 @@ abstract class FiatWalletRequisites implements Built<FiatWalletRequisites, FiatW
     String? get swiftBic;
 
     @BuiltValueField(wireName: r'sort_code')
-    int? get sortCode;
+    String? get sortCode;
 
     @BuiltValueField(wireName: r'beneficiary')
     String? get beneficiary;
@@ -77,7 +77,7 @@ class _$FiatWalletRequisitesSerializer implements StructuredSerializer<FiatWalle
             result
                 ..add(r'sort_code')
                 ..add(serializers.serialize(object.sortCode,
-                    specifiedType: const FullType(int)));
+                    specifiedType: const FullType(String)));
         }
         if (object.beneficiary != null) {
             result
@@ -130,7 +130,7 @@ class _$FiatWalletRequisitesSerializer implements StructuredSerializer<FiatWalle
                     break;
                 case r'sort_code':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(int)) as int;
+                        specifiedType: const FullType(String)) as String;
                     result.sortCode = valueDes;
                     break;
                 case r'beneficiary':

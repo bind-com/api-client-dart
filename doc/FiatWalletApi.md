@@ -17,6 +17,8 @@ Method | HTTP request | Description
 [**getFiatCurrencies**](FiatWalletApi.md#getfiatcurrencies) | **GET** /fiat/currencies/ | List of currencies that are available for fiat account opening
 [**getFiatWalletDetails**](FiatWalletApi.md#getfiatwalletdetails) | **GET** /fiat/wallets/{wallet_id}/ | Wallet&#39;s details
 [**getFiatWallets**](FiatWalletApi.md#getfiatwallets) | **GET** /fiat/wallets/ | All fiat wallets of current user
+[**shareDefaultFiatWallet**](FiatWalletApi.md#sharedefaultfiatwallet) | **GET** /fiat/wallets/share/ | Get share information for user default wallet
+[**shareFiatWallet**](FiatWalletApi.md#sharefiatwallet) | **GET** /fiat/wallets/{wallet_id}/share/ | Share specified wallet details
 [**updateBankCardSettings**](FiatWalletApi.md#updatebankcardsettings) | **PATCH** /fiat/bankcards/{card_id}/ | Update settings of a Bank Card
 
 
@@ -350,6 +352,92 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**BuiltList&lt;FiatWalletLight&gt;**](FiatWalletLight.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **shareDefaultFiatWallet**
+> String shareDefaultFiatWallet()
+
+Get share information for user default wallet
+
+Get share information for user default wallet
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getFiatWalletApi();
+
+try {
+    final response = api.shareDefaultFiatWallet();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling FiatWalletApi->shareDefaultFiatWallet: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**String**
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **shareFiatWallet**
+> String shareFiatWallet(walletId)
+
+Share specified wallet details
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getFiatWalletApi();
+final String walletId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of exact wallet
+
+try {
+    final response = api.shareFiatWallet(walletId);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling FiatWalletApi->shareFiatWallet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **walletId** | **String**| id of exact wallet | 
+
+### Return type
+
+**String**
 
 ### Authorization
 

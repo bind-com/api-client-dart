@@ -12,9 +12,9 @@ Method | HTTP request | Description
 [**addContactByUser**](ContactsApi.md#addcontactbyuser) | **POST** /contacts/ | add user to contact
 [**createInnerFiatRequest**](ContactsApi.md#createinnerfiatrequest) | **POST** /fiat/request/ | Request fiat inside BIND
 [**createInnerFiatTransfer**](ContactsApi.md#createinnerfiattransfer) | **POST** /fiat/send/ | Send fiat inside BIND
-[**generateQRCodeToken**](ContactsApi.md#generateqrcodetoken) | **GET** /fiat/send/qr_code/ | Generate JWT token to share as QR code
+[**generateQRCodeToken**](ContactsApi.md#generateqrcodetoken) | **GET** /users/send/qr_code/ | Generate JWT token to share as QR code
 [**getContacts**](ContactsApi.md#getcontacts) | **GET** /contacts/ | List of contacts of current user
-[**readJWTToken**](ContactsApi.md#readjwttoken) | **POST** /fiat/send/qr_code/ | Check JWT validity and read user from it
+[**readJWTToken**](ContactsApi.md#readjwttoken) | **POST** /users/send/qr_code/ | Check JWT validity and read user from it
 [**syncContacts**](ContactsApi.md#synccontacts) | **POST** /contacts/sync/ | Sync mobile phone contacts of current user with backend data
 [**updateContact**](ContactsApi.md#updatecontact) | **PATCH** /contacts/{contact_id}/ | Update contact data (add/remove contact from favorite)
 

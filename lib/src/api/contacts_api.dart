@@ -290,7 +290,7 @@ class ContactsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/fiat/send/qr_code/';
+    final _path = r'/users/send/qr_code/';
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -448,7 +448,7 @@ class ContactsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/fiat/send/qr_code/';
+    final _path = r'/users/send/qr_code/';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{

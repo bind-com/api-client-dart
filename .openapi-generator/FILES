@@ -115,6 +115,3 @@ lib/src/model/user.dart
 lib/src/model/user_sharing_data.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/check_passcode_request_test.dart
-test/jwt_token_test.dart
-test/user_sharing_data_test.dart

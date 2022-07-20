@@ -12,7 +12,7 @@ class _$FiatWalletRequisites extends FiatWalletRequisites {
   @override
   final String? swiftBic;
   @override
-  final int? sortCode;
+  final String? sortCode;
   @override
   final String? beneficiary;
   @override
@@ -98,9 +98,9 @@ class FiatWalletRequisitesBuilder
   String? get swiftBic => _$this._swiftBic;
   set swiftBic(String? swiftBic) => _$this._swiftBic = swiftBic;
 
-  int? _sortCode;
-  int? get sortCode => _$this._sortCode;
-  set sortCode(int? sortCode) => _$this._sortCode = sortCode;
+  String? _sortCode;
+  String? get sortCode => _$this._sortCode;
+  set sortCode(String? sortCode) => _$this._sortCode = sortCode;
 
   String? _beneficiary;
   String? get beneficiary => _$this._beneficiary;

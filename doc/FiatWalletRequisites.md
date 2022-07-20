@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **iban** | **String** |  | [optional] 
 **swiftBic** | **String** |  | [optional] 
-**sortCode** | **int** |  | [optional] 
+**sortCode** | **String** |  | [optional] 
 **beneficiary** | **String** |  | [optional] 
 **bankName** | **String** |  | [optional] 
 **countryOfBank** | **String** |  | [optional] 
