@@ -14,7 +14,13 @@ import 'package:bind_api/src/model/date.dart';
 
 import 'package:bind_api/src/model/add_contact_by_user_request.dart';
 import 'package:bind_api/src/model/adjust_fiat_wallet_balance_request.dart';
+import 'package:bind_api/src/model/bank_card_analytics.dart';
+import 'package:bind_api/src/model/bank_card_base_data.dart';
+import 'package:bind_api/src/model/bank_card_detail.dart';
+import 'package:bind_api/src/model/bank_card_detail_all_of.dart';
+import 'package:bind_api/src/model/bank_card_settings.dart';
 import 'package:bind_api/src/model/beneficiary.dart';
+import 'package:bind_api/src/model/check_passcode_request.dart';
 import 'package:bind_api/src/model/contact.dart';
 import 'package:bind_api/src/model/country.dart';
 import 'package:bind_api/src/model/create_beneficiary_request.dart';
@@ -25,8 +31,11 @@ import 'package:bind_api/src/model/currency.dart';
 import 'package:bind_api/src/model/error.dart';
 import 'package:bind_api/src/model/fiat_account.dart';
 import 'package:bind_api/src/model/fiat_wallet.dart';
+import 'package:bind_api/src/model/fiat_wallet_all_of.dart';
+import 'package:bind_api/src/model/fiat_wallet_light.dart';
 import 'package:bind_api/src/model/fiat_wallet_requisites.dart';
 import 'package:bind_api/src/model/fiat_wallet_total_balance.dart';
+import 'package:bind_api/src/model/jwt_token.dart';
 import 'package:bind_api/src/model/kyc_field_status.dart';
 import 'package:bind_api/src/model/kyc_request_move_result.dart';
 import 'package:bind_api/src/model/kyc_request_move_result_request_fields_status.dart';
@@ -35,6 +44,7 @@ import 'package:bind_api/src/model/perform_exchange_request.dart';
 import 'package:bind_api/src/model/perform_fiat_transfer_request.dart';
 import 'package:bind_api/src/model/sync_contacts_request.dart';
 import 'package:bind_api/src/model/transaction.dart';
+import 'package:bind_api/src/model/transaction_description_filling_rule_set.dart';
 import 'package:bind_api/src/model/transaction_filter.dart';
 import 'package:bind_api/src/model/transaction_group.dart';
 import 'package:bind_api/src/model/transaction_grouping.dart';
@@ -42,13 +52,20 @@ import 'package:bind_api/src/model/transaction_states.dart';
 import 'package:bind_api/src/model/transaction_types.dart';
 import 'package:bind_api/src/model/update_contact_request.dart';
 import 'package:bind_api/src/model/user.dart';
+import 'package:bind_api/src/model/user_sharing_data.dart';
 
 part 'serializers.g.dart';
 
 @SerializersFor([
   AddContactByUserRequest,
   AdjustFiatWalletBalanceRequest,
+  BankCardAnalytics,
+  BankCardBaseData,
+  BankCardDetail,
+  BankCardDetailAllOf,
+  BankCardSettings,
   Beneficiary,
+  CheckPasscodeRequest,
   Contact,
   Country,
   CreateBeneficiaryRequest,
@@ -59,8 +76,11 @@ part 'serializers.g.dart';
   Error,
   FiatAccount,
   FiatWallet,
+  FiatWalletAllOf,
+  FiatWalletLight,
   FiatWalletRequisites,
   FiatWalletTotalBalance,
+  JWTToken,
   KYCFieldStatus,
   KYCRequestMoveResult,
   KYCRequestMoveResultRequestFieldsStatus,
@@ -69,6 +89,7 @@ part 'serializers.g.dart';
   PerformFiatTransferRequest,
   SyncContactsRequest,
   Transaction,
+  TransactionDescriptionFillingRuleSet,
   TransactionFilter,
   TransactionGroup,
   TransactionGrouping,
@@ -76,6 +97,7 @@ part 'serializers.g.dart';
   TransactionTypes,
   UpdateContactRequest,
   User,
+  UserSharingData,
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
@@ -91,12 +113,20 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<Contact>(),
       )
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(BankCardBaseData)]),
+        () => ListBuilder<BankCardBaseData>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Beneficiary)]),
         () => ListBuilder<Beneficiary>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Currency)]),
         () => ListBuilder<Currency>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(FiatWalletLight)]),
+        () => ListBuilder<FiatWalletLight>(),
       )
       ..add(const DateSerializer())
       ..add(Iso8601DateTimeSerializer()))

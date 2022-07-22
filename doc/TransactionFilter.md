@@ -10,8 +10,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **groupBy** | [**TransactionGrouping**](TransactionGrouping.md) |  | 
 **assetType** | **String** |  | 
+**descriptionFillingRuleSet** | [**TransactionDescriptionFillingRuleSet**](TransactionDescriptionFillingRuleSet.md) |  | 
 **asset** | **String** | id of asset (currency) | [optional] 
-**transactionType** | [**TransactionTypes**](TransactionTypes.md) |  | [optional] 
+**type** | [**TransactionTypes**](TransactionTypes.md) |  | [optional] 
 **wallet** | **String** | id of wallet (fiat or crypto) | [optional] 
 **contact** | **String** | id of contact | [optional] 
 

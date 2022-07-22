@@ -12,12 +12,16 @@ part 'fiat_wallet_total_balance.g.dart';
 /// Properties:
 /// * [balance] 
 /// * [currency] 
+/// * [currencyCode] 
 abstract class FiatWalletTotalBalance implements Built<FiatWalletTotalBalance, FiatWalletTotalBalanceBuilder> {
     @BuiltValueField(wireName: r'balance')
     num? get balance;
 
     @BuiltValueField(wireName: r'currency')
     String? get currency;
+
+    @BuiltValueField(wireName: r'currency_code')
+    String? get currencyCode;
 
     FiatWalletTotalBalance._();
 
@@ -53,6 +57,12 @@ class _$FiatWalletTotalBalanceSerializer implements StructuredSerializer<FiatWal
                 ..add(serializers.serialize(object.currency,
                     specifiedType: const FullType(String)));
         }
+        if (object.currencyCode != null) {
+            result
+                ..add(r'currency_code')
+                ..add(serializers.serialize(object.currencyCode,
+                    specifiedType: const FullType(String)));
+        }
         return result;
     }
 
@@ -77,6 +87,11 @@ class _$FiatWalletTotalBalanceSerializer implements StructuredSerializer<FiatWal
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.currency = valueDes;
+                    break;
+                case r'currency_code':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.currencyCode = valueDes;
                     break;
             }
         }

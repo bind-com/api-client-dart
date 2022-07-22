@@ -34,7 +34,7 @@ class _$Transaction extends Transaction {
   @override
   final String? description;
   @override
-  final String? cursor;
+  final String? comment;
 
   factory _$Transaction([void Function(TransactionBuilder)? updates]) =>
       (new TransactionBuilder()..update(updates))._build();
@@ -53,7 +53,7 @@ class _$Transaction extends Transaction {
       this.type,
       this.datetime,
       this.description,
-      this.cursor})
+      this.comment})
       : super._();
 
   @override
@@ -80,7 +80,7 @@ class _$Transaction extends Transaction {
         type == other.type &&
         datetime == other.datetime &&
         description == other.description &&
-        cursor == other.cursor;
+        comment == other.comment;
   }
 
   @override
@@ -110,7 +110,7 @@ class _$Transaction extends Transaction {
                     type.hashCode),
                 datetime.hashCode),
             description.hashCode),
-        cursor.hashCode));
+        comment.hashCode));
   }
 
   @override
@@ -129,7 +129,7 @@ class _$Transaction extends Transaction {
           ..add('type', type)
           ..add('datetime', datetime)
           ..add('description', description)
-          ..add('cursor', cursor))
+          ..add('comment', comment))
         .toString();
   }
 }
@@ -193,9 +193,9 @@ class TransactionBuilder implements Builder<Transaction, TransactionBuilder> {
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
 
-  String? _cursor;
-  String? get cursor => _$this._cursor;
-  set cursor(String? cursor) => _$this._cursor = cursor;
+  String? _comment;
+  String? get comment => _$this._comment;
+  set comment(String? comment) => _$this._comment = comment;
 
   TransactionBuilder() {
     Transaction._defaults(this);
@@ -217,7 +217,7 @@ class TransactionBuilder implements Builder<Transaction, TransactionBuilder> {
       _type = $v.type;
       _datetime = $v.datetime;
       _description = $v.description;
-      _cursor = $v.cursor;
+      _comment = $v.comment;
       _$v = null;
     }
     return this;
@@ -255,7 +255,7 @@ class TransactionBuilder implements Builder<Transaction, TransactionBuilder> {
               type: type,
               datetime: datetime,
               description: description,
-              cursor: cursor);
+              comment: comment);
     } catch (_) {
       late String _$failedField;
       try {

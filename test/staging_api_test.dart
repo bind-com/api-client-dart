@@ -11,8 +11,8 @@ void main() {
     //
     // Change balance of a fiat wallet
     //
-    //Future adjustWalletBalance({ AdjustWalletBalanceRequest adjustWalletBalanceRequest }) async
-    test('test adjustWalletBalance', () async {
+    //Future adjustFiatWalletBalance({ AdjustFiatWalletBalanceRequest adjustFiatWalletBalanceRequest }) async
+    test('test adjustFiatWalletBalance', () async {
       // TODO
     });
 

@@ -7,18 +7,19 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(Transaction, () {
+    // TransactionGroup group
+    test('to test the property `group`', () async {
+      // TODO
+    });
+
+    // primary key of the transaction
     // String id
     test('to test the property `id`', () async {
       // TODO
     });
 
-    // String parent
-    test('to test the property `parent`', () async {
-      // TODO
-    });
-
-    // String order
-    test('to test the property `order`', () async {
+    // String operationLabel
+    test('to test the property `operationLabel`', () async {
       // TODO
     });
 
@@ -37,18 +38,15 @@ void main() {
       // TODO
     });
 
-    // String user
-    test('to test the property `user`', () async {
+    // ISO code of source asset
+    // String assetSourceCode
+    test('to test the property `assetSourceCode`', () async {
       // TODO
     });
 
-    // String assetSource
-    test('to test the property `assetSource`', () async {
-      // TODO
-    });
-
-    // String assetTarget
-    test('to test the property `assetTarget`', () async {
+    // ISO code of target asset
+    // String assetTargetCode
+    test('to test the property `assetTargetCode`', () async {
       // TODO
     });
 
@@ -62,26 +60,6 @@ void main() {
       // TODO
     });
 
-    // String walletSource
-    test('to test the property `walletSource`', () async {
-      // TODO
-    });
-
-    // String walletTarget
-    test('to test the property `walletTarget`', () async {
-      // TODO
-    });
-
-    // String chain
-    test('to test the property `chain`', () async {
-      // TODO
-    });
-
-    // String cardId
-    test('to test the property `cardId`', () async {
-      // TODO
-    });
-
     // TransactionTypes type
     test('to test the property `type`', () async {
       // TODO
@@ -92,8 +70,21 @@ void main() {
       // TODO
     });
 
-    // String contact
-    test('to test the property `contact`', () async {
+    // custom description of a transaction
+    // String description
+    test('to test the property `description`', () async {
+      // TODO
+    });
+
+    // custom comment for a transaction
+    // String comment
+    test('to test the property `comment`', () async {
+      // TODO
+    });
+
+    // Field to give to backend as a cursor for pagination. Format depends on a group_by argument. Can consist of one or two and more comma-separated values, representing a tuple of pagination arguments
+    // String cursor
+    test('to test the property `cursor`', () async {
       // TODO
     });
 

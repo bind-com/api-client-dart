@@ -26,7 +26,7 @@ part 'transaction.g.dart';
 /// * [type] 
 /// * [datetime] 
 /// * [description] - custom description of a transaction
-/// * [cursor] - Field to give to backend as a cursor for pagination. Format depends on a group_by argument. Can consist of one or two and more comma-separated values, representing a tuple of pagination arguments
+/// * [comment] - custom comment for a transaction
 abstract class Transaction implements Built<Transaction, TransactionBuilder> {
     @BuiltValueField(wireName: r'group')
     TransactionGroup? get group;
@@ -73,9 +73,9 @@ abstract class Transaction implements Built<Transaction, TransactionBuilder> {
     @BuiltValueField(wireName: r'description')
     String? get description;
 
-    /// Field to give to backend as a cursor for pagination. Format depends on a group_by argument. Can consist of one or two and more comma-separated values, representing a tuple of pagination arguments
-    @BuiltValueField(wireName: r'cursor')
-    String? get cursor;
+    /// custom comment for a transaction
+    @BuiltValueField(wireName: r'comment')
+    String? get comment;
 
     Transaction._();
 
@@ -177,10 +177,10 @@ class _$TransactionSerializer implements StructuredSerializer<Transaction> {
                 ..add(serializers.serialize(object.description,
                     specifiedType: const FullType.nullable(String)));
         }
-        if (object.cursor != null) {
+        if (object.comment != null) {
             result
-                ..add(r'cursor')
-                ..add(serializers.serialize(object.cursor,
+                ..add(r'comment')
+                ..add(serializers.serialize(object.comment,
                     specifiedType: const FullType(String)));
         }
         return result;
@@ -268,10 +268,10 @@ class _$TransactionSerializer implements StructuredSerializer<Transaction> {
                     if (valueDes == null) continue;
                     result.description = valueDes;
                     break;
-                case r'cursor':
+                case r'comment':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
-                    result.cursor = valueDes;
+                    result.comment = valueDes;
                     break;
             }
         }

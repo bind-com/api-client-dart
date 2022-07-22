@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **balance** | **num** |  | [optional] 
 **account** | **String** |  | [optional] 
 **currency** | **String** |  | [optional] 
+**currencyCode** | **String** |  | [optional] 
+**currencyName** | **String** |  | [optional] 
 **transferRequisites** | [**FiatWalletRequisites**](FiatWalletRequisites.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -4,8 +4,14 @@ analysis_options.yaml
 doc/AddContactByUserRequest.md
 doc/AdjustFiatWalletBalanceRequest.md
 doc/AuthApi.md
+doc/BankCardAnalytics.md
+doc/BankCardBaseData.md
+doc/BankCardDetail.md
+doc/BankCardDetailAllOf.md
+doc/BankCardSettings.md
 doc/BeneficiariesApi.md
 doc/Beneficiary.md
+doc/CheckPasscodeRequest.md
 doc/Contact.md
 doc/ContactsApi.md
 doc/Country.md
@@ -19,10 +25,13 @@ doc/Error.md
 doc/ExchangeApi.md
 doc/FiatAccount.md
 doc/FiatWallet.md
+doc/FiatWalletAllOf.md
 doc/FiatWalletApi.md
+doc/FiatWalletLight.md
 doc/FiatWalletRequisites.md
 doc/FiatWalletTotalBalance.md
 doc/GeoApi.md
+doc/JWTToken.md
 doc/KYCFieldStatus.md
 doc/KYCRequestMoveResult.md
 doc/KYCRequestMoveResultRequestFieldsStatus.md
@@ -32,6 +41,7 @@ doc/PerformFiatTransferRequest.md
 doc/StagingApi.md
 doc/SyncContactsRequest.md
 doc/Transaction.md
+doc/TransactionDescriptionFillingRuleSet.md
 doc/TransactionFilter.md
 doc/TransactionGroup.md
 doc/TransactionGrouping.md
@@ -41,6 +51,7 @@ doc/TransactionsApi.md
 doc/UpdateContactRequest.md
 doc/User.md
 doc/UserApi.md
+doc/UserSharingData.md
 lib/bind_api.dart
 lib/src/api.dart
 lib/src/api/auth_api.dart
@@ -62,7 +73,13 @@ lib/src/auth/oauth.dart
 lib/src/date_serializer.dart
 lib/src/model/add_contact_by_user_request.dart
 lib/src/model/adjust_fiat_wallet_balance_request.dart
+lib/src/model/bank_card_analytics.dart
+lib/src/model/bank_card_base_data.dart
+lib/src/model/bank_card_detail.dart
+lib/src/model/bank_card_detail_all_of.dart
+lib/src/model/bank_card_settings.dart
 lib/src/model/beneficiary.dart
+lib/src/model/check_passcode_request.dart
 lib/src/model/contact.dart
 lib/src/model/country.dart
 lib/src/model/create_beneficiary_request.dart
@@ -74,8 +91,11 @@ lib/src/model/date.dart
 lib/src/model/error.dart
 lib/src/model/fiat_account.dart
 lib/src/model/fiat_wallet.dart
+lib/src/model/fiat_wallet_all_of.dart
+lib/src/model/fiat_wallet_light.dart
 lib/src/model/fiat_wallet_requisites.dart
 lib/src/model/fiat_wallet_total_balance.dart
+lib/src/model/jwt_token.dart
 lib/src/model/kyc_field_status.dart
 lib/src/model/kyc_request_move_result.dart
 lib/src/model/kyc_request_move_result_request_fields_status.dart
@@ -84,6 +104,7 @@ lib/src/model/perform_exchange_request.dart
 lib/src/model/perform_fiat_transfer_request.dart
 lib/src/model/sync_contacts_request.dart
 lib/src/model/transaction.dart
+lib/src/model/transaction_description_filling_rule_set.dart
 lib/src/model/transaction_filter.dart
 lib/src/model/transaction_group.dart
 lib/src/model/transaction_grouping.dart
@@ -91,5 +112,6 @@ lib/src/model/transaction_states.dart
 lib/src/model/transaction_types.dart
 lib/src/model/update_contact_request.dart
 lib/src/model/user.dart
+lib/src/model/user_sharing_data.dart
 lib/src/serializers.dart
 pubspec.yaml

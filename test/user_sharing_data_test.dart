@@ -1,24 +1,24 @@
 import 'package:test/test.dart';
 import 'package:bind_api/bind_api.dart';
 
-// tests for FiatSendRequest
+// tests for UserSharingData
 void main() {
-  final instance = FiatSendRequestBuilder();
+  final instance = UserSharingDataBuilder();
   // TODO add properties to the builder and call build()
 
-  group(FiatSendRequest, () {
+  group(UserSharingData, () {
     // String userId
     test('to test the property `userId`', () async {
       // TODO
     });
 
-    // String currencyCode
-    test('to test the property `currencyCode`', () async {
+    // String firstName
+    test('to test the property `firstName`', () async {
       // TODO
     });
 
-    // num amount
-    test('to test the property `amount`', () async {
+    // String lastName
+    test('to test the property `lastName`', () async {
       // TODO
     });
 

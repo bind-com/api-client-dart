@@ -7,6 +7,13 @@ void main() {
   final instance = BindApi().getUserApi();
 
   group(UserApi, () {
+    // Get status of KYC Request approval
+    //
+    //Future<KYCRequestStatus> checkKYCRequestApproval() async
+    test('test checkKYCRequestApproval', () async {
+      // TODO
+    });
+
     // Create KYC Request
     //
     //Future createKYCRequest({ MultipartFile selfie, MultipartFile passportScan, MultipartFile idScanFront, MultipartFile idScanBack }) async
@@ -14,17 +21,19 @@ void main() {
       // TODO
     });
 
-    // Update user
+    // Move KYCRequest to approval
     //
-    //Future<User> updateUser(num userID, { User user }) async
-    test('test updateUser', () async {
+    // Move KYC Request with priorly uploaded data to approval
+    //
+    //Future<KYCRequestMoveResult> moveKYCRequest() async
+    test('test moveKYCRequest', () async {
       // TODO
     });
 
-    // Who am I
+    // Update user
     //
-    //Future<User> whoAmI() async
-    test('test whoAmI', () async {
+    //Future<User> updateUser(String userID, { User user }) async
+    test('test updateUser', () async {
       // TODO
     });
 

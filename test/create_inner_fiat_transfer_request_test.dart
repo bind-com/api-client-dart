@@ -12,6 +12,12 @@ void main() {
       // TODO
     });
 
+    // id of user contact
+    // String contactId
+    test('to test the property `contactId`', () async {
+      // TODO
+    });
+
     // String currency
     test('to test the property `currency`', () async {
       // TODO
