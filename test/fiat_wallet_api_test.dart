@@ -7,6 +7,13 @@ void main() {
   final instance = BindApi().getFiatWalletApi();
 
   group(FiatWalletApi, () {
+    // Block bank card and write reason
+    //
+    //Future<BankCardDetail> blockBankCard(String cardId, { BankCardBlockingReason bankCardBlockingReason }) async
+    test('test blockBankCard', () async {
+      // TODO
+    });
+
     // Create an wallet in given currency
     //
     //Future<String> createFiatWallet({ CreateFiatWalletRequest createFiatWalletRequest }) async
@@ -62,8 +69,38 @@ void main() {
     //
     // Get wallets of current user
     //
-    //Future<FiatWallet> getFiatWallets() async
+    //Future<BuiltList<FiatWalletLight>> getFiatWallets() async
     test('test getFiatWallets', () async {
+      // TODO
+    });
+
+    // Lock or unlock a bank card
+    //
+    //Future<BankCardDetail> lockBankCard(String cardId, { LockBankCardRequest lockBankCardRequest }) async
+    test('test lockBankCard', () async {
+      // TODO
+    });
+
+    // Reissue bank card and return new bank card
+    //
+    //Future<BankCardDetail> reissueBankCard(String cardId, { BankCardBlockingReason bankCardBlockingReason }) async
+    test('test reissueBankCard', () async {
+      // TODO
+    });
+
+    // Get share information for user default wallet
+    //
+    // Get share information for user default wallet
+    //
+    //Future<String> shareDefaultFiatWallet() async
+    test('test shareDefaultFiatWallet', () async {
+      // TODO
+    });
+
+    // Share specified wallet details
+    //
+    //Future<String> shareFiatWallet(String walletId) async
+    test('test shareFiatWallet', () async {
       // TODO
     });
 

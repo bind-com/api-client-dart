@@ -81,6 +81,7 @@ Class | Method | HTTP request | Description
 [*CurrencyApi*](doc/CurrencyApi.md) | [**listCurrencies**](doc/CurrencyApi.md#listcurrencies) | **GET** /currencies/ | List of Currencies available at Bind
 [*ExchangeApi*](doc/ExchangeApi.md) | [**getExchangeRate**](doc/ExchangeApi.md#getexchangerate) | **GET** /fiat/exchange/rate/{from}/{to}/ | Exchange rate between two given currencies
 [*ExchangeApi*](doc/ExchangeApi.md) | [**performExchange**](doc/ExchangeApi.md#performexchange) | **POST** /fiat/exchange/ | Perform exchange operation
+[*FiatWalletApi*](doc/FiatWalletApi.md) | [**blockBankCard**](doc/FiatWalletApi.md#blockbankcard) | **POST** /fiat/bankcards/{card_id}/block/ | Block bank card and write reason
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**createFiatWallet**](doc/FiatWalletApi.md#createfiatwallet) | **POST** /fiat/wallets/ | Create an wallet in given currency
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**getBankCard**](doc/FiatWalletApi.md#getbankcard) | **GET** /fiat/bankcards/{card_id}/ | Get one exact Bank Card
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**getBankCardAnalytics**](doc/FiatWalletApi.md#getbankcardanalytics) | **GET** /fiat/bankcards/{card_id}/analytics/ | Get analytics for Bank Card
@@ -89,6 +90,8 @@ Class | Method | HTTP request | Description
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**getFiatCurrencies**](doc/FiatWalletApi.md#getfiatcurrencies) | **GET** /fiat/currencies/ | List of currencies that are available for fiat account opening
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**getFiatWalletDetails**](doc/FiatWalletApi.md#getfiatwalletdetails) | **GET** /fiat/wallets/{wallet_id}/ | Wallet&#39;s details
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**getFiatWallets**](doc/FiatWalletApi.md#getfiatwallets) | **GET** /fiat/wallets/ | All fiat wallets of current user
+[*FiatWalletApi*](doc/FiatWalletApi.md) | [**lockBankCard**](doc/FiatWalletApi.md#lockbankcard) | **POST** /fiat/bankcards/{card_id}/lock/ | Lock or unlock a bank card
+[*FiatWalletApi*](doc/FiatWalletApi.md) | [**reissueBankCard**](doc/FiatWalletApi.md#reissuebankcard) | **POST** /fiat/bankcards/{card_id}/reissue/ | Reissue bank card and return new bank card
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**shareDefaultFiatWallet**](doc/FiatWalletApi.md#sharedefaultfiatwallet) | **GET** /fiat/wallets/share/ | Get share information for user default wallet
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**shareFiatWallet**](doc/FiatWalletApi.md#sharefiatwallet) | **GET** /fiat/wallets/{wallet_id}/share/ | Share specified wallet details
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**updateBankCardSettings**](doc/FiatWalletApi.md#updatebankcardsettings) | **PATCH** /fiat/bankcards/{card_id}/ | Update settings of a Bank Card
@@ -108,9 +111,11 @@ Class | Method | HTTP request | Description
  - [AdjustFiatWalletBalanceRequest](doc/AdjustFiatWalletBalanceRequest.md)
  - [BankCardAnalytics](doc/BankCardAnalytics.md)
  - [BankCardBaseData](doc/BankCardBaseData.md)
+ - [BankCardBlockingReason](doc/BankCardBlockingReason.md)
  - [BankCardDetail](doc/BankCardDetail.md)
  - [BankCardDetailAllOf](doc/BankCardDetailAllOf.md)
  - [BankCardSettings](doc/BankCardSettings.md)
+ - [BankCardStatus](doc/BankCardStatus.md)
  - [Beneficiary](doc/Beneficiary.md)
  - [CheckPasscodeRequest](doc/CheckPasscodeRequest.md)
  - [Contact](doc/Contact.md)
@@ -132,6 +137,7 @@ Class | Method | HTTP request | Description
  - [KYCRequestMoveResult](doc/KYCRequestMoveResult.md)
  - [KYCRequestMoveResultRequestFieldsStatus](doc/KYCRequestMoveResultRequestFieldsStatus.md)
  - [KYCRequestStatus](doc/KYCRequestStatus.md)
+ - [LockBankCardRequest](doc/LockBankCardRequest.md)
  - [PerformExchangeRequest](doc/PerformExchangeRequest.md)
  - [PerformFiatTransferRequest](doc/PerformFiatTransferRequest.md)
  - [SyncContactsRequest](doc/SyncContactsRequest.md)

@@ -17,5 +17,10 @@ void main() {
       // TODO
     });
 
+    // String currencyCode
+    test('to test the property `currencyCode`', () async {
+      // TODO
+    });
+
   });
 }

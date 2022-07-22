@@ -6,6 +6,8 @@ import 'package:bind_api/src/model/bank_card_base_data.dart';
 import 'package:bind_api/src/model/date.dart';
 import 'package:bind_api/src/model/bank_card_detail_all_of.dart';
 import 'package:bind_api/src/model/bank_card_settings.dart';
+import 'package:bind_api/src/model/bank_card_status.dart';
+import 'package:bind_api/src/model/fiat_wallet_light.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -18,10 +20,11 @@ part 'bank_card_detail.g.dart';
 /// * [cardholderName] - From common settings of the user
 /// * [maskedCardNumber] 
 /// * [expiryDate] 
+/// * [balance] 
+/// * [linkedWallet] 
 /// * [decryptedCardNumber] - only if \"show encrypted data\" is true
 /// * [decryptedCvv] - only if \"show encrypted data\" is true
-/// * [cardIsLocked] 
-/// * [onlinePaymentsLocked] 
+/// * [status] 
 /// * [internationalPaymentsLocked] 
 /// * [gamblingTransactionsLocked] 
 abstract class BankCardDetail implements Built<BankCardDetail, BankCardDetailBuilder> {
@@ -38,6 +41,12 @@ abstract class BankCardDetail implements Built<BankCardDetail, BankCardDetailBui
     @BuiltValueField(wireName: r'expiry_date')
     Date get expiryDate;
 
+    @BuiltValueField(wireName: r'balance')
+    num? get balance;
+
+    @BuiltValueField(wireName: r'linked_wallet')
+    FiatWalletLight? get linkedWallet;
+
     /// only if \"show encrypted data\" is true
     @BuiltValueField(wireName: r'decrypted_card_number')
     String? get decryptedCardNumber;
@@ -46,11 +55,9 @@ abstract class BankCardDetail implements Built<BankCardDetail, BankCardDetailBui
     @BuiltValueField(wireName: r'decrypted_cvv')
     String? get decryptedCvv;
 
-    @BuiltValueField(wireName: r'card_is_locked')
-    bool? get cardIsLocked;
-
-    @BuiltValueField(wireName: r'online_payments_locked')
-    bool? get onlinePaymentsLocked;
+    @BuiltValueField(wireName: r'status')
+    BankCardStatus? get status;
+    // enum statusEnum {  NotActivated,  Active,  Lost,  Stolen,  Inactive,  PinTriesLimit,  Expired,  Replaced,  Blocked,  };
 
     @BuiltValueField(wireName: r'international_payments_locked')
     bool? get internationalPaymentsLocked;
@@ -96,6 +103,18 @@ class _$BankCardDetailSerializer implements StructuredSerializer<BankCardDetail>
             ..add(r'expiry_date')
             ..add(serializers.serialize(object.expiryDate,
                 specifiedType: const FullType(Date)));
+        if (object.balance != null) {
+            result
+                ..add(r'balance')
+                ..add(serializers.serialize(object.balance,
+                    specifiedType: const FullType(num)));
+        }
+        if (object.linkedWallet != null) {
+            result
+                ..add(r'linked_wallet')
+                ..add(serializers.serialize(object.linkedWallet,
+                    specifiedType: const FullType(FiatWalletLight)));
+        }
         if (object.decryptedCardNumber != null) {
             result
                 ..add(r'decrypted_card_number')
@@ -108,17 +127,11 @@ class _$BankCardDetailSerializer implements StructuredSerializer<BankCardDetail>
                 ..add(serializers.serialize(object.decryptedCvv,
                     specifiedType: const FullType.nullable(String)));
         }
-        if (object.cardIsLocked != null) {
+        if (object.status != null) {
             result
-                ..add(r'card_is_locked')
-                ..add(serializers.serialize(object.cardIsLocked,
-                    specifiedType: const FullType(bool)));
-        }
-        if (object.onlinePaymentsLocked != null) {
-            result
-                ..add(r'online_payments_locked')
-                ..add(serializers.serialize(object.onlinePaymentsLocked,
-                    specifiedType: const FullType(bool)));
+                ..add(r'status')
+                ..add(serializers.serialize(object.status,
+                    specifiedType: const FullType(BankCardStatus)));
         }
         if (object.internationalPaymentsLocked != null) {
             result
@@ -167,6 +180,16 @@ class _$BankCardDetailSerializer implements StructuredSerializer<BankCardDetail>
                         specifiedType: const FullType(Date)) as Date;
                     result.expiryDate = valueDes;
                     break;
+                case r'balance':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(num)) as num;
+                    result.balance = valueDes;
+                    break;
+                case r'linked_wallet':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(FiatWalletLight)) as FiatWalletLight;
+                    result.linkedWallet.replace(valueDes);
+                    break;
                 case r'decrypted_card_number':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType.nullable(String)) as String?;
@@ -179,15 +202,10 @@ class _$BankCardDetailSerializer implements StructuredSerializer<BankCardDetail>
                     if (valueDes == null) continue;
                     result.decryptedCvv = valueDes;
                     break;
-                case r'card_is_locked':
+                case r'status':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(bool)) as bool;
-                    result.cardIsLocked = valueDes;
-                    break;
-                case r'online_payments_locked':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(bool)) as bool;
-                    result.onlinePaymentsLocked = valueDes;
+                        specifiedType: const FullType(BankCardStatus)) as BankCardStatus;
+                    result.status = valueDes;
                     break;
                 case r'international_payments_locked':
                     final valueDes = serializers.deserialize(value,

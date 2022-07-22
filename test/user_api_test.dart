@@ -14,6 +14,13 @@ void main() {
       // TODO
     });
 
+    // Check validity of user passcode
+    //
+    //Future<bool> checkPasscode({ CheckPasscodeRequest checkPasscodeRequest }) async
+    test('test checkPasscode', () async {
+      // TODO
+    });
+
     // Create KYC Request
     //
     //Future createKYCRequest({ MultipartFile selfie, MultipartFile passportScan, MultipartFile idScanFront, MultipartFile idScanBack }) async

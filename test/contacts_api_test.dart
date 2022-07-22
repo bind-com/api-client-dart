@@ -34,12 +34,26 @@ void main() {
       // TODO
     });
 
+    // Generate JWT token to share as QR code
+    //
+    //Future<JWTToken> generateQRCodeToken() async
+    test('test generateQRCodeToken', () async {
+      // TODO
+    });
+
     // List of contacts of current user
     //
     // Contacts are BIND users who have shared contact info with current user to make fast fiat and crypto transfers inside the system
     //
     //Future<BuiltList<Contact>> getContacts() async
     test('test getContacts', () async {
+      // TODO
+    });
+
+    // Check JWT validity and read user from it
+    //
+    //Future<UserSharingData> readJWTToken({ JWTToken jWTToken }) async
+    test('test readJWTToken', () async {
       // TODO
     });
 
@@ -52,7 +66,7 @@ void main() {
 
     // Update contact data (add/remove contact from favorite)
     //
-    //Future updateContact(int contactId, { UpdateContactRequest updateContactRequest }) async
+    //Future updateContact(String contactId, { UpdateContactRequest updateContactRequest }) async
     test('test updateContact', () async {
       // TODO
     });

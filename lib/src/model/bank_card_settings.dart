@@ -10,17 +10,9 @@ part 'bank_card_settings.g.dart';
 /// BankCardSettings
 ///
 /// Properties:
-/// * [cardIsLocked] 
-/// * [onlinePaymentsLocked] 
 /// * [internationalPaymentsLocked] 
 /// * [gamblingTransactionsLocked] 
 abstract class BankCardSettings implements Built<BankCardSettings, BankCardSettingsBuilder> {
-    @BuiltValueField(wireName: r'card_is_locked')
-    bool? get cardIsLocked;
-
-    @BuiltValueField(wireName: r'online_payments_locked')
-    bool? get onlinePaymentsLocked;
-
     @BuiltValueField(wireName: r'international_payments_locked')
     bool? get internationalPaymentsLocked;
 
@@ -49,18 +41,6 @@ class _$BankCardSettingsSerializer implements StructuredSerializer<BankCardSetti
     Iterable<Object?> serialize(Serializers serializers, BankCardSettings object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
-        if (object.cardIsLocked != null) {
-            result
-                ..add(r'card_is_locked')
-                ..add(serializers.serialize(object.cardIsLocked,
-                    specifiedType: const FullType(bool)));
-        }
-        if (object.onlinePaymentsLocked != null) {
-            result
-                ..add(r'online_payments_locked')
-                ..add(serializers.serialize(object.onlinePaymentsLocked,
-                    specifiedType: const FullType(bool)));
-        }
         if (object.internationalPaymentsLocked != null) {
             result
                 ..add(r'international_payments_locked')
@@ -88,16 +68,6 @@ class _$BankCardSettingsSerializer implements StructuredSerializer<BankCardSetti
             final Object? value = iterator.current;
             
             switch (key) {
-                case r'card_is_locked':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(bool)) as bool;
-                    result.cardIsLocked = valueDes;
-                    break;
-                case r'online_payments_locked':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(bool)) as bool;
-                    result.onlinePaymentsLocked = valueDes;
-                    break;
                 case r'international_payments_locked':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(bool)) as bool;

@@ -16,9 +16,11 @@ import 'package:bind_api/src/model/add_contact_by_user_request.dart';
 import 'package:bind_api/src/model/adjust_fiat_wallet_balance_request.dart';
 import 'package:bind_api/src/model/bank_card_analytics.dart';
 import 'package:bind_api/src/model/bank_card_base_data.dart';
+import 'package:bind_api/src/model/bank_card_blocking_reason.dart';
 import 'package:bind_api/src/model/bank_card_detail.dart';
 import 'package:bind_api/src/model/bank_card_detail_all_of.dart';
 import 'package:bind_api/src/model/bank_card_settings.dart';
+import 'package:bind_api/src/model/bank_card_status.dart';
 import 'package:bind_api/src/model/beneficiary.dart';
 import 'package:bind_api/src/model/check_passcode_request.dart';
 import 'package:bind_api/src/model/contact.dart';
@@ -40,6 +42,7 @@ import 'package:bind_api/src/model/kyc_field_status.dart';
 import 'package:bind_api/src/model/kyc_request_move_result.dart';
 import 'package:bind_api/src/model/kyc_request_move_result_request_fields_status.dart';
 import 'package:bind_api/src/model/kyc_request_status.dart';
+import 'package:bind_api/src/model/lock_bank_card_request.dart';
 import 'package:bind_api/src/model/perform_exchange_request.dart';
 import 'package:bind_api/src/model/perform_fiat_transfer_request.dart';
 import 'package:bind_api/src/model/sync_contacts_request.dart';
@@ -61,9 +64,11 @@ part 'serializers.g.dart';
   AdjustFiatWalletBalanceRequest,
   BankCardAnalytics,
   BankCardBaseData,
+  BankCardBlockingReason,
   BankCardDetail,
   BankCardDetailAllOf,
   BankCardSettings,
+  BankCardStatus,
   Beneficiary,
   CheckPasscodeRequest,
   Contact,
@@ -85,6 +90,7 @@ part 'serializers.g.dart';
   KYCRequestMoveResult,
   KYCRequestMoveResultRequestFieldsStatus,
   KYCRequestStatus,
+  LockBankCardRequest,
   PerformExchangeRequest,
   PerformFiatTransferRequest,
   SyncContactsRequest,

@@ -28,8 +28,8 @@ void main() {
       // TODO
     });
 
-    // TransactionTypes transactionType
-    test('to test the property `transactionType`', () async {
+    // TransactionTypes type
+    test('to test the property `type`', () async {
       // TODO
     });
 
