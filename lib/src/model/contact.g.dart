@@ -8,26 +8,33 @@ part of 'contact.dart';
 
 class _$Contact extends Contact {
   @override
-  final String? id;
+  final String id;
   @override
-  final String? firstName;
+  final String firstName;
   @override
-  final String? lastName;
+  final String lastName;
   @override
-  final String? phoneNumber;
+  final String phoneNumber;
   @override
-  final bool? isFavorite;
+  final bool isFavorite;
 
   factory _$Contact([void Function(ContactBuilder)? updates]) =>
       (new ContactBuilder()..update(updates))._build();
 
   _$Contact._(
-      {this.id,
-      this.firstName,
-      this.lastName,
-      this.phoneNumber,
-      this.isFavorite})
-      : super._();
+      {required this.id,
+      required this.firstName,
+      required this.lastName,
+      required this.phoneNumber,
+      required this.isFavorite})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(id, r'Contact', 'id');
+    BuiltValueNullFieldError.checkNotNull(firstName, r'Contact', 'firstName');
+    BuiltValueNullFieldError.checkNotNull(lastName, r'Contact', 'lastName');
+    BuiltValueNullFieldError.checkNotNull(
+        phoneNumber, r'Contact', 'phoneNumber');
+    BuiltValueNullFieldError.checkNotNull(isFavorite, r'Contact', 'isFavorite');
+  }
 
   @override
   Contact rebuild(void Function(ContactBuilder) updates) =>
@@ -126,11 +133,15 @@ class ContactBuilder implements Builder<Contact, ContactBuilder> {
   _$Contact _build() {
     final _$result = _$v ??
         new _$Contact._(
-            id: id,
-            firstName: firstName,
-            lastName: lastName,
-            phoneNumber: phoneNumber,
-            isFavorite: isFavorite);
+            id: BuiltValueNullFieldError.checkNotNull(id, r'Contact', 'id'),
+            firstName: BuiltValueNullFieldError.checkNotNull(
+                firstName, r'Contact', 'firstName'),
+            lastName: BuiltValueNullFieldError.checkNotNull(
+                lastName, r'Contact', 'lastName'),
+            phoneNumber: BuiltValueNullFieldError.checkNotNull(
+                phoneNumber, r'Contact', 'phoneNumber'),
+            isFavorite: BuiltValueNullFieldError.checkNotNull(
+                isFavorite, r'Contact', 'isFavorite'));
     replace(_$result);
     return _$result;
   }
