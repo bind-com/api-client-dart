@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**getFiatCurrencies**](FiatWalletApi.md#getfiatcurrencies) | **GET** /fiat/currencies/ | List of currencies that are available for fiat account opening
 [**getFiatWalletDetails**](FiatWalletApi.md#getfiatwalletdetails) | **GET** /fiat/wallets/{wallet_id}/ | Wallet&#39;s details
 [**getFiatWallets**](FiatWalletApi.md#getfiatwallets) | **GET** /fiat/wallets/ | All fiat wallets of current user
+[**getFiatWalletsWithUserPaymentCurrency**](FiatWalletApi.md#getfiatwalletswithuserpaymentcurrency) | **GET** /fiat/wallets/detailed/ | All fiat wallets of current user with user payment currency info
 [**lockBankCard**](FiatWalletApi.md#lockbankcard) | **POST** /fiat/bankcards/{card_id}/lock/ | Lock or unlock a bank card
 [**reissueBankCard**](FiatWalletApi.md#reissuebankcard) | **POST** /fiat/bankcards/{card_id}/reissue/ | Reissue bank card and return new bank card
 [**shareDefaultFiatWallet**](FiatWalletApi.md#sharedefaultfiatwallet) | **GET** /fiat/wallets/share/ | Get share information for user default wallet
@@ -401,6 +402,48 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**BuiltList&lt;FiatWalletLight&gt;**](FiatWalletLight.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getFiatWalletsWithUserPaymentCurrency**
+> BuiltList<FiatWalletLightWithPaymentCurrency> getFiatWalletsWithUserPaymentCurrency()
+
+All fiat wallets of current user with user payment currency info
+
+Get wallets of current user with user payment currency info
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getFiatWalletApi();
+
+try {
+    final response = api.getFiatWalletsWithUserPaymentCurrency();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling FiatWalletApi->getFiatWalletsWithUserPaymentCurrency: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**BuiltList&lt;FiatWalletLightWithPaymentCurrency&gt;**](FiatWalletLightWithPaymentCurrency.md)
 
 ### Authorization
 

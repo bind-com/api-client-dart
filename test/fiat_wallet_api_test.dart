@@ -74,6 +74,15 @@ void main() {
       // TODO
     });
 
+    // All fiat wallets of current user with user payment currency info
+    //
+    // Get wallets of current user with user payment currency info
+    //
+    //Future<BuiltList<FiatWalletLightWithPaymentCurrency>> getFiatWalletsWithUserPaymentCurrency() async
+    test('test getFiatWalletsWithUserPaymentCurrency', () async {
+      // TODO
+    });
+
     // Lock or unlock a bank card
     //
     //Future<BankCardDetail> lockBankCard(String cardId, { LockBankCardRequest lockBankCardRequest }) async

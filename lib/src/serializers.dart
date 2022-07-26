@@ -35,6 +35,8 @@ import 'package:bind_api/src/model/fiat_account.dart';
 import 'package:bind_api/src/model/fiat_wallet.dart';
 import 'package:bind_api/src/model/fiat_wallet_all_of.dart';
 import 'package:bind_api/src/model/fiat_wallet_light.dart';
+import 'package:bind_api/src/model/fiat_wallet_light_with_payment_currency.dart';
+import 'package:bind_api/src/model/fiat_wallet_light_with_payment_currency_all_of.dart';
 import 'package:bind_api/src/model/fiat_wallet_requisites.dart';
 import 'package:bind_api/src/model/fiat_wallet_total_balance.dart';
 import 'package:bind_api/src/model/jwt_token.dart';
@@ -56,6 +58,7 @@ import 'package:bind_api/src/model/transaction_types.dart';
 import 'package:bind_api/src/model/update_contact_request.dart';
 import 'package:bind_api/src/model/user.dart';
 import 'package:bind_api/src/model/user_sharing_data.dart';
+import 'package:bind_api/src/model/wallet_balance_info.dart';
 
 part 'serializers.g.dart';
 
@@ -83,6 +86,8 @@ part 'serializers.g.dart';
   FiatWallet,
   FiatWalletAllOf,
   FiatWalletLight,
+  FiatWalletLightWithPaymentCurrency,
+  FiatWalletLightWithPaymentCurrencyAllOf,
   FiatWalletRequisites,
   FiatWalletTotalBalance,
   JWTToken,
@@ -104,6 +109,7 @@ part 'serializers.g.dart';
   UpdateContactRequest,
   User,
   UserSharingData,
+  WalletBalanceInfo,
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
@@ -133,6 +139,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(FiatWalletLight)]),
         () => ListBuilder<FiatWalletLight>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(FiatWalletLightWithPaymentCurrency)]),
+        () => ListBuilder<FiatWalletLightWithPaymentCurrency>(),
       )
       ..add(const DateSerializer())
       ..add(Iso8601DateTimeSerializer()))

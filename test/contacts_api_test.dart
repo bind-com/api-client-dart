@@ -16,6 +16,15 @@ void main() {
       // TODO
     });
 
+    // Check if user_id is in contacts
+    //
+    // Check if user_id is in contacts
+    //
+    //Future<bool> checkContact(String userId) async
+    test('test checkContact', () async {
+      // TODO
+    });
+
     // Request fiat inside BIND
     //
     // Request fiat from BIND user

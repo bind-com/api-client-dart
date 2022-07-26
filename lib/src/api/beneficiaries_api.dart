@@ -34,9 +34,9 @@ class BeneficiariesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [Beneficiary] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> createBeneficiary({ 
+  Future<Response<Beneficiary>> createBeneficiary({ 
     CreateBeneficiaryRequest? createBeneficiaryRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -91,7 +91,34 @@ class BeneficiariesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    Beneficiary _responseData;
+
+    try {
+      const _responseType = FullType(Beneficiary);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as Beneficiary;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<Beneficiary>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// List of beneficiaries of current user
