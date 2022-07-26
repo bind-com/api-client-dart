@@ -8,7 +8,8 @@ import 'package:bind_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**fullName** | **String** |  | [optional] 
+**firstName** | **String** |  | [optional] 
+**lastName** | **String** |  | [optional] 
 **iban** | **String** |  | [optional] 
 **swiftBic** | **String** |  | [optional] 
 

@@ -10,7 +10,9 @@ class _$Beneficiary extends Beneficiary {
   @override
   final String? id;
   @override
-  final String? fullName;
+  final String? firstName;
+  @override
+  final String? lastName;
   @override
   final bool? isFavorite;
   @override
@@ -23,7 +25,8 @@ class _$Beneficiary extends Beneficiary {
 
   _$Beneficiary._(
       {this.id,
-      this.fullName,
+      this.firstName,
+      this.lastName,
       this.isFavorite,
       this.isBindUser,
       this.accountNumber})
@@ -41,7 +44,8 @@ class _$Beneficiary extends Beneficiary {
     if (identical(other, this)) return true;
     return other is Beneficiary &&
         id == other.id &&
-        fullName == other.fullName &&
+        firstName == other.firstName &&
+        lastName == other.lastName &&
         isFavorite == other.isFavorite &&
         isBindUser == other.isBindUser &&
         accountNumber == other.accountNumber;
@@ -51,7 +55,9 @@ class _$Beneficiary extends Beneficiary {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, id.hashCode), fullName.hashCode),
+            $jc(
+                $jc($jc($jc(0, id.hashCode), firstName.hashCode),
+                    lastName.hashCode),
                 isFavorite.hashCode),
             isBindUser.hashCode),
         accountNumber.hashCode));
@@ -61,7 +67,8 @@ class _$Beneficiary extends Beneficiary {
   String toString() {
     return (newBuiltValueToStringHelper(r'Beneficiary')
           ..add('id', id)
-          ..add('fullName', fullName)
+          ..add('firstName', firstName)
+          ..add('lastName', lastName)
           ..add('isFavorite', isFavorite)
           ..add('isBindUser', isBindUser)
           ..add('accountNumber', accountNumber))
@@ -76,9 +83,13 @@ class BeneficiaryBuilder implements Builder<Beneficiary, BeneficiaryBuilder> {
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
-  String? _fullName;
-  String? get fullName => _$this._fullName;
-  set fullName(String? fullName) => _$this._fullName = fullName;
+  String? _firstName;
+  String? get firstName => _$this._firstName;
+  set firstName(String? firstName) => _$this._firstName = firstName;
+
+  String? _lastName;
+  String? get lastName => _$this._lastName;
+  set lastName(String? lastName) => _$this._lastName = lastName;
 
   bool? _isFavorite;
   bool? get isFavorite => _$this._isFavorite;
@@ -101,7 +112,8 @@ class BeneficiaryBuilder implements Builder<Beneficiary, BeneficiaryBuilder> {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
-      _fullName = $v.fullName;
+      _firstName = $v.firstName;
+      _lastName = $v.lastName;
       _isFavorite = $v.isFavorite;
       _isBindUser = $v.isBindUser;
       _accountNumber = $v.accountNumber;
@@ -128,7 +140,8 @@ class BeneficiaryBuilder implements Builder<Beneficiary, BeneficiaryBuilder> {
     final _$result = _$v ??
         new _$Beneficiary._(
             id: id,
-            fullName: fullName,
+            firstName: firstName,
+            lastName: lastName,
             isFavorite: isFavorite,
             isBindUser: isBindUser,
             accountNumber: accountNumber);

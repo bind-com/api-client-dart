@@ -8,7 +8,9 @@ part of 'create_beneficiary_request.dart';
 
 class _$CreateBeneficiaryRequest extends CreateBeneficiaryRequest {
   @override
-  final String? fullName;
+  final String? firstName;
+  @override
+  final String? lastName;
   @override
   final String? iban;
   @override
@@ -18,7 +20,8 @@ class _$CreateBeneficiaryRequest extends CreateBeneficiaryRequest {
           [void Function(CreateBeneficiaryRequestBuilder)? updates]) =>
       (new CreateBeneficiaryRequestBuilder()..update(updates))._build();
 
-  _$CreateBeneficiaryRequest._({this.fullName, this.iban, this.swiftBic})
+  _$CreateBeneficiaryRequest._(
+      {this.firstName, this.lastName, this.iban, this.swiftBic})
       : super._();
 
   @override
@@ -34,21 +37,24 @@ class _$CreateBeneficiaryRequest extends CreateBeneficiaryRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CreateBeneficiaryRequest &&
-        fullName == other.fullName &&
+        firstName == other.firstName &&
+        lastName == other.lastName &&
         iban == other.iban &&
         swiftBic == other.swiftBic;
   }
 
   @override
   int get hashCode {
-    return $jf(
-        $jc($jc($jc(0, fullName.hashCode), iban.hashCode), swiftBic.hashCode));
+    return $jf($jc(
+        $jc($jc($jc(0, firstName.hashCode), lastName.hashCode), iban.hashCode),
+        swiftBic.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'CreateBeneficiaryRequest')
-          ..add('fullName', fullName)
+          ..add('firstName', firstName)
+          ..add('lastName', lastName)
           ..add('iban', iban)
           ..add('swiftBic', swiftBic))
         .toString();
@@ -60,9 +66,13 @@ class CreateBeneficiaryRequestBuilder
         Builder<CreateBeneficiaryRequest, CreateBeneficiaryRequestBuilder> {
   _$CreateBeneficiaryRequest? _$v;
 
-  String? _fullName;
-  String? get fullName => _$this._fullName;
-  set fullName(String? fullName) => _$this._fullName = fullName;
+  String? _firstName;
+  String? get firstName => _$this._firstName;
+  set firstName(String? firstName) => _$this._firstName = firstName;
+
+  String? _lastName;
+  String? get lastName => _$this._lastName;
+  set lastName(String? lastName) => _$this._lastName = lastName;
 
   String? _iban;
   String? get iban => _$this._iban;
@@ -79,7 +89,8 @@ class CreateBeneficiaryRequestBuilder
   CreateBeneficiaryRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _fullName = $v.fullName;
+      _firstName = $v.firstName;
+      _lastName = $v.lastName;
       _iban = $v.iban;
       _swiftBic = $v.swiftBic;
       _$v = null;
@@ -104,7 +115,10 @@ class CreateBeneficiaryRequestBuilder
   _$CreateBeneficiaryRequest _build() {
     final _$result = _$v ??
         new _$CreateBeneficiaryRequest._(
-            fullName: fullName, iban: iban, swiftBic: swiftBic);
+            firstName: firstName,
+            lastName: lastName,
+            iban: iban,
+            swiftBic: swiftBic);
     replace(_$result);
     return _$result;
   }

@@ -10,7 +10,9 @@ class _$Contact extends Contact {
   @override
   final String? id;
   @override
-  final String? name;
+  final String? firstName;
+  @override
+  final String? lastName;
   @override
   final String? phoneNumber;
   @override
@@ -19,7 +21,12 @@ class _$Contact extends Contact {
   factory _$Contact([void Function(ContactBuilder)? updates]) =>
       (new ContactBuilder()..update(updates))._build();
 
-  _$Contact._({this.id, this.name, this.phoneNumber, this.isFavorite})
+  _$Contact._(
+      {this.id,
+      this.firstName,
+      this.lastName,
+      this.phoneNumber,
+      this.isFavorite})
       : super._();
 
   @override
@@ -34,7 +41,8 @@ class _$Contact extends Contact {
     if (identical(other, this)) return true;
     return other is Contact &&
         id == other.id &&
-        name == other.name &&
+        firstName == other.firstName &&
+        lastName == other.lastName &&
         phoneNumber == other.phoneNumber &&
         isFavorite == other.isFavorite;
   }
@@ -42,7 +50,10 @@ class _$Contact extends Contact {
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, id.hashCode), name.hashCode), phoneNumber.hashCode),
+        $jc(
+            $jc($jc($jc(0, id.hashCode), firstName.hashCode),
+                lastName.hashCode),
+            phoneNumber.hashCode),
         isFavorite.hashCode));
   }
 
@@ -50,7 +61,8 @@ class _$Contact extends Contact {
   String toString() {
     return (newBuiltValueToStringHelper(r'Contact')
           ..add('id', id)
-          ..add('name', name)
+          ..add('firstName', firstName)
+          ..add('lastName', lastName)
           ..add('phoneNumber', phoneNumber)
           ..add('isFavorite', isFavorite))
         .toString();
@@ -64,9 +76,13 @@ class ContactBuilder implements Builder<Contact, ContactBuilder> {
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
+  String? _firstName;
+  String? get firstName => _$this._firstName;
+  set firstName(String? firstName) => _$this._firstName = firstName;
+
+  String? _lastName;
+  String? get lastName => _$this._lastName;
+  set lastName(String? lastName) => _$this._lastName = lastName;
 
   String? _phoneNumber;
   String? get phoneNumber => _$this._phoneNumber;
@@ -84,7 +100,8 @@ class ContactBuilder implements Builder<Contact, ContactBuilder> {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
-      _name = $v.name;
+      _firstName = $v.firstName;
+      _lastName = $v.lastName;
       _phoneNumber = $v.phoneNumber;
       _isFavorite = $v.isFavorite;
       _$v = null;
@@ -110,7 +127,8 @@ class ContactBuilder implements Builder<Contact, ContactBuilder> {
     final _$result = _$v ??
         new _$Contact._(
             id: id,
-            name: name,
+            firstName: firstName,
+            lastName: lastName,
             phoneNumber: phoneNumber,
             isFavorite: isFavorite);
     replace(_$result);

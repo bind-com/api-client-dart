@@ -11,15 +11,19 @@ part 'contact.g.dart';
 ///
 /// Properties:
 /// * [id] 
-/// * [name] 
+/// * [firstName] 
+/// * [lastName] 
 /// * [phoneNumber] 
 /// * [isFavorite] 
 abstract class Contact implements Built<Contact, ContactBuilder> {
     @BuiltValueField(wireName: r'id')
     String? get id;
 
-    @BuiltValueField(wireName: r'name')
-    String? get name;
+    @BuiltValueField(wireName: r'first_name')
+    String? get firstName;
+
+    @BuiltValueField(wireName: r'last_name')
+    String? get lastName;
 
     @BuiltValueField(wireName: r'phone_number')
     String? get phoneNumber;
@@ -55,10 +59,16 @@ class _$ContactSerializer implements StructuredSerializer<Contact> {
                 ..add(serializers.serialize(object.id,
                     specifiedType: const FullType(String)));
         }
-        if (object.name != null) {
+        if (object.firstName != null) {
             result
-                ..add(r'name')
-                ..add(serializers.serialize(object.name,
+                ..add(r'first_name')
+                ..add(serializers.serialize(object.firstName,
+                    specifiedType: const FullType(String)));
+        }
+        if (object.lastName != null) {
+            result
+                ..add(r'last_name')
+                ..add(serializers.serialize(object.lastName,
                     specifiedType: const FullType(String)));
         }
         if (object.phoneNumber != null) {
@@ -93,10 +103,15 @@ class _$ContactSerializer implements StructuredSerializer<Contact> {
                         specifiedType: const FullType(String)) as String;
                     result.id = valueDes;
                     break;
-                case r'name':
+                case r'first_name':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
-                    result.name = valueDes;
+                    result.firstName = valueDes;
+                    break;
+                case r'last_name':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.lastName = valueDes;
                     break;
                 case r'phone_number':
                     final valueDes = serializers.deserialize(value,

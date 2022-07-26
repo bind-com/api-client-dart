@@ -19,7 +19,7 @@ For more information, please visit [https://www.bind.com/](https://www.bind.com/
 To use the package from [pub.dev](https://pub.dev), please include the following in pubspec.yaml
 ```yaml
 dependencies:
-  bind_api: 0.2.1
+  bind_api: 0.3.1
 ```
 
 ### Github

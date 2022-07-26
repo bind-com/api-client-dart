@@ -9,7 +9,7 @@ void main() {
   group(GeoApi, () {
     // Countries list
     //
-    //Future<BuiltList<Country>> listCountries() async
+    //Future<BuiltList<Country>> listCountries({ String search }) async
     test('test listCountries', () async {
       // TODO
     });
