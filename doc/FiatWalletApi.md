@@ -415,7 +415,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getFiatWalletsWithUserPaymentCurrency**
-> BuiltList<FiatWalletLightWithPaymentCurrency> getFiatWalletsWithUserPaymentCurrency()
+> BuiltList<FiatWalletWithPaymentCurrency> getFiatWalletsWithUserPaymentCurrency()
 
 All fiat wallets of current user with user payment currency info
 
@@ -443,7 +443,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;FiatWalletLightWithPaymentCurrency&gt;**](FiatWalletLightWithPaymentCurrency.md)
+[**BuiltList&lt;FiatWalletWithPaymentCurrency&gt;**](FiatWalletWithPaymentCurrency.md)
 
 ### Authorization
 

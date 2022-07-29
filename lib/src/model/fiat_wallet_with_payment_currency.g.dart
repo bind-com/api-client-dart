@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'fiat_wallet.dart';
+part of 'fiat_wallet_with_payment_currency.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$FiatWallet extends FiatWallet {
+class _$FiatWalletWithPaymentCurrency extends FiatWalletWithPaymentCurrency {
   @override
   final String? id;
   @override
@@ -23,11 +23,14 @@ class _$FiatWallet extends FiatWallet {
   final String? currencyIcon;
   @override
   final FiatWalletRequisites? transferRequisites;
+  @override
+  final WalletBalanceInfo? paymentCurrencyBalance;
 
-  factory _$FiatWallet([void Function(FiatWalletBuilder)? updates]) =>
-      (new FiatWalletBuilder()..update(updates))._build();
+  factory _$FiatWalletWithPaymentCurrency(
+          [void Function(FiatWalletWithPaymentCurrencyBuilder)? updates]) =>
+      (new FiatWalletWithPaymentCurrencyBuilder()..update(updates))._build();
 
-  _$FiatWallet._(
+  _$FiatWalletWithPaymentCurrency._(
       {this.id,
       this.balance,
       this.account,
@@ -35,20 +38,23 @@ class _$FiatWallet extends FiatWallet {
       this.currencyCode,
       this.currencyName,
       this.currencyIcon,
-      this.transferRequisites})
+      this.transferRequisites,
+      this.paymentCurrencyBalance})
       : super._();
 
   @override
-  FiatWallet rebuild(void Function(FiatWalletBuilder) updates) =>
+  FiatWalletWithPaymentCurrency rebuild(
+          void Function(FiatWalletWithPaymentCurrencyBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  FiatWalletBuilder toBuilder() => new FiatWalletBuilder()..replace(this);
+  FiatWalletWithPaymentCurrencyBuilder toBuilder() =>
+      new FiatWalletWithPaymentCurrencyBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is FiatWallet &&
+    return other is FiatWalletWithPaymentCurrency &&
         id == other.id &&
         balance == other.balance &&
         account == other.account &&
@@ -56,7 +62,8 @@ class _$FiatWallet extends FiatWallet {
         currencyCode == other.currencyCode &&
         currencyName == other.currencyName &&
         currencyIcon == other.currencyIcon &&
-        transferRequisites == other.transferRequisites;
+        transferRequisites == other.transferRequisites &&
+        paymentCurrencyBalance == other.paymentCurrencyBalance;
   }
 
   @override
@@ -66,18 +73,20 @@ class _$FiatWallet extends FiatWallet {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, id.hashCode), balance.hashCode),
-                            account.hashCode),
-                        currency.hashCode),
-                    currencyCode.hashCode),
-                currencyName.hashCode),
-            currencyIcon.hashCode),
-        transferRequisites.hashCode));
+                        $jc(
+                            $jc($jc($jc(0, id.hashCode), balance.hashCode),
+                                account.hashCode),
+                            currency.hashCode),
+                        currencyCode.hashCode),
+                    currencyName.hashCode),
+                currencyIcon.hashCode),
+            transferRequisites.hashCode),
+        paymentCurrencyBalance.hashCode));
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'FiatWallet')
+    return (newBuiltValueToStringHelper(r'FiatWalletWithPaymentCurrency')
           ..add('id', id)
           ..add('balance', balance)
           ..add('account', account)
@@ -85,13 +94,17 @@ class _$FiatWallet extends FiatWallet {
           ..add('currencyCode', currencyCode)
           ..add('currencyName', currencyName)
           ..add('currencyIcon', currencyIcon)
-          ..add('transferRequisites', transferRequisites))
+          ..add('transferRequisites', transferRequisites)
+          ..add('paymentCurrencyBalance', paymentCurrencyBalance))
         .toString();
   }
 }
 
-class FiatWalletBuilder implements Builder<FiatWallet, FiatWalletBuilder> {
-  _$FiatWallet? _$v;
+class FiatWalletWithPaymentCurrencyBuilder
+    implements
+        Builder<FiatWalletWithPaymentCurrency,
+            FiatWalletWithPaymentCurrencyBuilder> {
+  _$FiatWalletWithPaymentCurrency? _$v;
 
   String? _id;
   String? get id => _$this._id;
@@ -127,11 +140,18 @@ class FiatWalletBuilder implements Builder<FiatWallet, FiatWalletBuilder> {
   set transferRequisites(FiatWalletRequisitesBuilder? transferRequisites) =>
       _$this._transferRequisites = transferRequisites;
 
-  FiatWalletBuilder() {
-    FiatWallet._defaults(this);
+  WalletBalanceInfoBuilder? _paymentCurrencyBalance;
+  WalletBalanceInfoBuilder get paymentCurrencyBalance =>
+      _$this._paymentCurrencyBalance ??= new WalletBalanceInfoBuilder();
+  set paymentCurrencyBalance(
+          WalletBalanceInfoBuilder? paymentCurrencyBalance) =>
+      _$this._paymentCurrencyBalance = paymentCurrencyBalance;
+
+  FiatWalletWithPaymentCurrencyBuilder() {
+    FiatWalletWithPaymentCurrency._defaults(this);
   }
 
-  FiatWalletBuilder get _$this {
+  FiatWalletWithPaymentCurrencyBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
@@ -142,30 +162,31 @@ class FiatWalletBuilder implements Builder<FiatWallet, FiatWalletBuilder> {
       _currencyName = $v.currencyName;
       _currencyIcon = $v.currencyIcon;
       _transferRequisites = $v.transferRequisites?.toBuilder();
+      _paymentCurrencyBalance = $v.paymentCurrencyBalance?.toBuilder();
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(FiatWallet other) {
+  void replace(FiatWalletWithPaymentCurrency other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$FiatWallet;
+    _$v = other as _$FiatWalletWithPaymentCurrency;
   }
 
   @override
-  void update(void Function(FiatWalletBuilder)? updates) {
+  void update(void Function(FiatWalletWithPaymentCurrencyBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  FiatWallet build() => _build();
+  FiatWalletWithPaymentCurrency build() => _build();
 
-  _$FiatWallet _build() {
-    _$FiatWallet _$result;
+  _$FiatWalletWithPaymentCurrency _build() {
+    _$FiatWalletWithPaymentCurrency _$result;
     try {
       _$result = _$v ??
-          new _$FiatWallet._(
+          new _$FiatWalletWithPaymentCurrency._(
               id: id,
               balance: balance,
               account: account,
@@ -173,15 +194,18 @@ class FiatWalletBuilder implements Builder<FiatWallet, FiatWalletBuilder> {
               currencyCode: currencyCode,
               currencyName: currencyName,
               currencyIcon: currencyIcon,
-              transferRequisites: _transferRequisites?.build());
+              transferRequisites: _transferRequisites?.build(),
+              paymentCurrencyBalance: _paymentCurrencyBalance?.build());
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'transferRequisites';
         _transferRequisites?.build();
+        _$failedField = 'paymentCurrencyBalance';
+        _paymentCurrencyBalance?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'FiatWallet', _$failedField, e.toString());
+            r'FiatWalletWithPaymentCurrency', _$failedField, e.toString());
       }
       rethrow;
     }

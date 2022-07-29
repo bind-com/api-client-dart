@@ -99,6 +99,9 @@ Class | Method | HTTP request | Description
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**updateBankCardSettings**](doc/FiatWalletApi.md#updatebankcardsettings) | **PATCH** /fiat/bankcards/{card_id}/ | Update settings of a Bank Card
 [*GeoApi*](doc/GeoApi.md) | [**listCountries**](doc/GeoApi.md#listcountries) | **GET** /countries/ | Countries list
 [*StagingApi*](doc/StagingApi.md) | [**adjustFiatWalletBalance**](doc/StagingApi.md#adjustfiatwalletbalance) | **POST** /staging/fiat/wallet/adjust/ | Change balance of a fiat wallet
+[*TransactionsApi*](doc/TransactionsApi.md) | [**exportTransactions**](doc/TransactionsApi.md#exporttransactions) | **POST** /transactions/export | Export user transaction to csv
+[*TransactionsApi*](doc/TransactionsApi.md) | [**getExportHistory**](doc/TransactionsApi.md#getexporthistory) | **GET** /transactions/export/history | Get export history
+[*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionsAssetsList**](doc/TransactionsApi.md#gettransactionsassetslist) | **POST** /transactions/assets/ | Get list of assets of user transactions
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionsFiltered**](doc/TransactionsApi.md#gettransactionsfiltered) | **POST** /transactions/ | Get list of user transactions
 [*UserApi*](doc/UserApi.md) | [**checkKYCRequestApproval**](doc/UserApi.md#checkkycrequestapproval) | **GET** /users/kyc/requests/approval/ | Get status of KYC Request approval
 [*UserApi*](doc/UserApi.md) | [**checkPasscode**](doc/UserApi.md#checkpasscode) | **POST** /users/check/passcode/ | Check validity of user passcode
@@ -128,14 +131,15 @@ Class | Method | HTTP request | Description
  - [CreateInnerFiatTransferRequest](doc/CreateInnerFiatTransferRequest.md)
  - [Currency](doc/Currency.md)
  - [Error](doc/Error.md)
+ - [ExportHistory](doc/ExportHistory.md)
  - [FiatAccount](doc/FiatAccount.md)
  - [FiatWallet](doc/FiatWallet.md)
  - [FiatWalletAllOf](doc/FiatWalletAllOf.md)
  - [FiatWalletLight](doc/FiatWalletLight.md)
- - [FiatWalletLightWithPaymentCurrency](doc/FiatWalletLightWithPaymentCurrency.md)
- - [FiatWalletLightWithPaymentCurrencyAllOf](doc/FiatWalletLightWithPaymentCurrencyAllOf.md)
  - [FiatWalletRequisites](doc/FiatWalletRequisites.md)
  - [FiatWalletTotalBalance](doc/FiatWalletTotalBalance.md)
+ - [FiatWalletWithPaymentCurrency](doc/FiatWalletWithPaymentCurrency.md)
+ - [FiatWalletWithPaymentCurrencyAllOf](doc/FiatWalletWithPaymentCurrencyAllOf.md)
  - [JWTToken](doc/JWTToken.md)
  - [KYCFieldStatus](doc/KYCFieldStatus.md)
  - [KYCRequestMoveResult](doc/KYCRequestMoveResult.md)
@@ -146,7 +150,9 @@ Class | Method | HTTP request | Description
  - [PerformFiatTransferRequest](doc/PerformFiatTransferRequest.md)
  - [SyncContactsRequest](doc/SyncContactsRequest.md)
  - [Transaction](doc/Transaction.md)
+ - [TransactionAssetsFilter](doc/TransactionAssetsFilter.md)
  - [TransactionDescriptionFillingRuleSet](doc/TransactionDescriptionFillingRuleSet.md)
+ - [TransactionExportFilter](doc/TransactionExportFilter.md)
  - [TransactionFilter](doc/TransactionFilter.md)
  - [TransactionGroup](doc/TransactionGroup.md)
  - [TransactionGrouping](doc/TransactionGrouping.md)

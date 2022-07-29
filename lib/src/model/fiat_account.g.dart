@@ -10,7 +10,7 @@ class _$FiatAccount extends FiatAccount {
   @override
   final FiatWalletTotalBalance? totalBalance;
   @override
-  final BuiltList<FiatWallet>? wallets;
+  final BuiltList<FiatWalletWithPaymentCurrency>? wallets;
 
   factory _$FiatAccount([void Function(FiatAccountBuilder)? updates]) =>
       (new FiatAccountBuilder()..update(updates))._build();
@@ -55,10 +55,11 @@ class FiatAccountBuilder implements Builder<FiatAccount, FiatAccountBuilder> {
   set totalBalance(FiatWalletTotalBalanceBuilder? totalBalance) =>
       _$this._totalBalance = totalBalance;
 
-  ListBuilder<FiatWallet>? _wallets;
-  ListBuilder<FiatWallet> get wallets =>
-      _$this._wallets ??= new ListBuilder<FiatWallet>();
-  set wallets(ListBuilder<FiatWallet>? wallets) => _$this._wallets = wallets;
+  ListBuilder<FiatWalletWithPaymentCurrency>? _wallets;
+  ListBuilder<FiatWalletWithPaymentCurrency> get wallets =>
+      _$this._wallets ??= new ListBuilder<FiatWalletWithPaymentCurrency>();
+  set wallets(ListBuilder<FiatWalletWithPaymentCurrency>? wallets) =>
+      _$this._wallets = wallets;
 
   FiatAccountBuilder() {
     FiatAccount._defaults(this);

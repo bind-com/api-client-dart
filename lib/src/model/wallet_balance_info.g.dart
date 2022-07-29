@@ -15,13 +15,19 @@ class _$WalletBalanceInfo extends WalletBalanceInfo {
   final String? currencyCode;
   @override
   final String? currencyName;
+  @override
+  final String? currencyIcon;
 
   factory _$WalletBalanceInfo(
           [void Function(WalletBalanceInfoBuilder)? updates]) =>
       (new WalletBalanceInfoBuilder()..update(updates))._build();
 
   _$WalletBalanceInfo._(
-      {this.amount, this.currency, this.currencyCode, this.currencyName})
+      {this.amount,
+      this.currency,
+      this.currencyCode,
+      this.currencyName,
+      this.currencyIcon})
       : super._();
 
   @override
@@ -39,15 +45,18 @@ class _$WalletBalanceInfo extends WalletBalanceInfo {
         amount == other.amount &&
         currency == other.currency &&
         currencyCode == other.currencyCode &&
-        currencyName == other.currencyName;
+        currencyName == other.currencyName &&
+        currencyIcon == other.currencyIcon;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, amount.hashCode), currency.hashCode),
-            currencyCode.hashCode),
-        currencyName.hashCode));
+        $jc(
+            $jc($jc($jc(0, amount.hashCode), currency.hashCode),
+                currencyCode.hashCode),
+            currencyName.hashCode),
+        currencyIcon.hashCode));
   }
 
   @override
@@ -56,7 +65,8 @@ class _$WalletBalanceInfo extends WalletBalanceInfo {
           ..add('amount', amount)
           ..add('currency', currency)
           ..add('currencyCode', currencyCode)
-          ..add('currencyName', currencyName))
+          ..add('currencyName', currencyName)
+          ..add('currencyIcon', currencyIcon))
         .toString();
   }
 }
@@ -81,6 +91,10 @@ class WalletBalanceInfoBuilder
   String? get currencyName => _$this._currencyName;
   set currencyName(String? currencyName) => _$this._currencyName = currencyName;
 
+  String? _currencyIcon;
+  String? get currencyIcon => _$this._currencyIcon;
+  set currencyIcon(String? currencyIcon) => _$this._currencyIcon = currencyIcon;
+
   WalletBalanceInfoBuilder() {
     WalletBalanceInfo._defaults(this);
   }
@@ -92,6 +106,7 @@ class WalletBalanceInfoBuilder
       _currency = $v.currency;
       _currencyCode = $v.currencyCode;
       _currencyName = $v.currencyName;
+      _currencyIcon = $v.currencyIcon;
       _$v = null;
     }
     return this;
@@ -117,7 +132,8 @@ class WalletBalanceInfoBuilder
             amount: amount,
             currency: currency,
             currencyCode: currencyCode,
-            currencyName: currencyName);
+            currencyName: currencyName,
+            currencyIcon: currencyIcon);
     replace(_$result);
     return _$result;
   }

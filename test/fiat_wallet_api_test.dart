@@ -78,7 +78,7 @@ void main() {
     //
     // Get wallets of current user with user payment currency info
     //
-    //Future<BuiltList<FiatWalletLightWithPaymentCurrency>> getFiatWalletsWithUserPaymentCurrency() async
+    //Future<BuiltList<FiatWalletWithPaymentCurrency>> getFiatWalletsWithUserPaymentCurrency() async
     test('test getFiatWalletsWithUserPaymentCurrency', () async {
       // TODO
     });

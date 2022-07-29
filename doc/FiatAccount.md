@@ -9,7 +9,7 @@ import 'package:bind_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalBalance** | [**FiatWalletTotalBalance**](FiatWalletTotalBalance.md) |  | [optional] 
-**wallets** | [**BuiltList&lt;FiatWallet&gt;**](FiatWallet.md) |  | [optional] 
+**wallets** | [**BuiltList&lt;FiatWalletWithPaymentCurrency&gt;**](FiatWalletWithPaymentCurrency.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

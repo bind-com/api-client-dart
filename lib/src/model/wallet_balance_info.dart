@@ -14,6 +14,7 @@ part 'wallet_balance_info.g.dart';
 /// * [currency] 
 /// * [currencyCode] 
 /// * [currencyName] 
+/// * [currencyIcon] 
 abstract class WalletBalanceInfo implements Built<WalletBalanceInfo, WalletBalanceInfoBuilder> {
     @BuiltValueField(wireName: r'amount')
     num? get amount;
@@ -26,6 +27,9 @@ abstract class WalletBalanceInfo implements Built<WalletBalanceInfo, WalletBalan
 
     @BuiltValueField(wireName: r'currency_name')
     String? get currencyName;
+
+    @BuiltValueField(wireName: r'currency_icon')
+    String? get currencyIcon;
 
     WalletBalanceInfo._();
 
@@ -73,6 +77,12 @@ class _$WalletBalanceInfoSerializer implements StructuredSerializer<WalletBalanc
                 ..add(serializers.serialize(object.currencyName,
                     specifiedType: const FullType(String)));
         }
+        if (object.currencyIcon != null) {
+            result
+                ..add(r'currency_icon')
+                ..add(serializers.serialize(object.currencyIcon,
+                    specifiedType: const FullType(String)));
+        }
         return result;
     }
 
@@ -107,6 +117,11 @@ class _$WalletBalanceInfoSerializer implements StructuredSerializer<WalletBalanc
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.currencyName = valueDes;
+                    break;
+                case r'currency_icon':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.currencyIcon = valueDes;
                     break;
             }
         }

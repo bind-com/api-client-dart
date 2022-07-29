@@ -1,12 +1,12 @@
 import 'package:test/test.dart';
 import 'package:bind_api/bind_api.dart';
 
-// tests for FiatWalletLightWithPaymentCurrency
+// tests for FiatWalletWithPaymentCurrency
 void main() {
-  final instance = FiatWalletLightWithPaymentCurrencyBuilder();
+  final instance = FiatWalletWithPaymentCurrencyBuilder();
   // TODO add properties to the builder and call build()
 
-  group(FiatWalletLightWithPaymentCurrency, () {
+  group(FiatWalletWithPaymentCurrency, () {
     // String id
     test('to test the property `id`', () async {
       // TODO
@@ -37,8 +37,18 @@ void main() {
       // TODO
     });
 
-    // WalletBalanceInfo userPaymentCurrencyBalance
-    test('to test the property `userPaymentCurrencyBalance`', () async {
+    // String currencyIcon
+    test('to test the property `currencyIcon`', () async {
+      // TODO
+    });
+
+    // FiatWalletRequisites transferRequisites
+    test('to test the property `transferRequisites`', () async {
+      // TODO
+    });
+
+    // WalletBalanceInfo paymentCurrencyBalance
+    test('to test the property `paymentCurrencyBalance`', () async {
       // TODO
     });
 

@@ -37,5 +37,10 @@ void main() {
       // TODO
     });
 
+    // String currencyIcon
+    test('to test the property `currencyIcon`', () async {
+      // TODO
+    });
+
   });
 }
