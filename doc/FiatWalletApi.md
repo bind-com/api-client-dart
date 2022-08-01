@@ -10,6 +10,7 @@ All URIs are relative to *https://api.thebind.uk/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**blockBankCard**](FiatWalletApi.md#blockbankcard) | **POST** /fiat/bankcards/{card_id}/block/ | Block bank card and write reason
+[**changeDefaultWallet**](FiatWalletApi.md#changedefaultwallet) | **POST** /fiat/bankcards/{card_id}/change_wallet/ | Change wallet attached to bank card
 [**createFiatWallet**](FiatWalletApi.md#createfiatwallet) | **POST** /fiat/wallets/ | Create an wallet in given currency
 [**getBankCard**](FiatWalletApi.md#getbankcard) | **GET** /fiat/bankcards/{card_id}/ | Get one exact Bank Card
 [**getBankCardAnalytics**](FiatWalletApi.md#getbankcardanalytics) | **GET** /fiat/bankcards/{card_id}/analytics/ | Get analytics for Bank Card
@@ -56,6 +57,52 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cardId** | **String**| id of exact card | 
  **bankCardBlockingReason** | [**BankCardBlockingReason**](BankCardBlockingReason.md)|  | [optional] 
+
+### Return type
+
+[**BankCardDetail**](BankCardDetail.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **changeDefaultWallet**
+> BankCardDetail changeDefaultWallet(cardId, bankCardChangeWalletRequest)
+
+Change wallet attached to bank card
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getFiatWalletApi();
+final String cardId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of exact card
+final BankCardChangeWalletRequest bankCardChangeWalletRequest = ; // BankCardChangeWalletRequest | 
+
+try {
+    final response = api.changeDefaultWallet(cardId, bankCardChangeWalletRequest);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling FiatWalletApi->changeDefaultWallet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cardId** | **String**| id of exact card | 
+ **bankCardChangeWalletRequest** | [**BankCardChangeWalletRequest**](BankCardChangeWalletRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -457,7 +504,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **lockBankCard**
-> BankCardDetail lockBankCard(cardId, lockBankCardRequest)
+> BankCardDetail lockBankCard(cardId, bankCardLockRequest)
 
 Lock or unlock a bank card
 
@@ -470,10 +517,10 @@ import 'package:bind_api/api.dart';
 
 final api = BindApi().getFiatWalletApi();
 final String cardId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of exact card
-final LockBankCardRequest lockBankCardRequest = ; // LockBankCardRequest | 
+final BankCardLockRequest bankCardLockRequest = ; // BankCardLockRequest | 
 
 try {
-    final response = api.lockBankCard(cardId, lockBankCardRequest);
+    final response = api.lockBankCard(cardId, bankCardLockRequest);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling FiatWalletApi->lockBankCard: $e\n');
@@ -485,7 +532,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cardId** | **String**| id of exact card | 
- **lockBankCardRequest** | [**LockBankCardRequest**](LockBankCardRequest.md)|  | [optional] 
+ **bankCardLockRequest** | [**BankCardLockRequest**](BankCardLockRequest.md)|  | [optional] 
 
 ### Return type
 
