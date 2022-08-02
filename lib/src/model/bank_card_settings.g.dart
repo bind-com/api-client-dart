@@ -8,10 +8,6 @@ part of 'bank_card_settings.dart';
 
 class _$BankCardSettings extends BankCardSettings {
   @override
-  final bool? cardIsLocked;
-  @override
-  final bool? onlinePaymentsLocked;
-  @override
   final bool? internationalPaymentsLocked;
   @override
   final bool? gamblingTransactionsLocked;
@@ -21,10 +17,7 @@ class _$BankCardSettings extends BankCardSettings {
       (new BankCardSettingsBuilder()..update(updates))._build();
 
   _$BankCardSettings._(
-      {this.cardIsLocked,
-      this.onlinePaymentsLocked,
-      this.internationalPaymentsLocked,
-      this.gamblingTransactionsLocked})
+      {this.internationalPaymentsLocked, this.gamblingTransactionsLocked})
       : super._();
 
   @override
@@ -39,25 +32,19 @@ class _$BankCardSettings extends BankCardSettings {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is BankCardSettings &&
-        cardIsLocked == other.cardIsLocked &&
-        onlinePaymentsLocked == other.onlinePaymentsLocked &&
         internationalPaymentsLocked == other.internationalPaymentsLocked &&
         gamblingTransactionsLocked == other.gamblingTransactionsLocked;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc(0, cardIsLocked.hashCode), onlinePaymentsLocked.hashCode),
-            internationalPaymentsLocked.hashCode),
+    return $jf($jc($jc(0, internationalPaymentsLocked.hashCode),
         gamblingTransactionsLocked.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'BankCardSettings')
-          ..add('cardIsLocked', cardIsLocked)
-          ..add('onlinePaymentsLocked', onlinePaymentsLocked)
           ..add('internationalPaymentsLocked', internationalPaymentsLocked)
           ..add('gamblingTransactionsLocked', gamblingTransactionsLocked))
         .toString();
@@ -67,15 +54,6 @@ class _$BankCardSettings extends BankCardSettings {
 class BankCardSettingsBuilder
     implements Builder<BankCardSettings, BankCardSettingsBuilder> {
   _$BankCardSettings? _$v;
-
-  bool? _cardIsLocked;
-  bool? get cardIsLocked => _$this._cardIsLocked;
-  set cardIsLocked(bool? cardIsLocked) => _$this._cardIsLocked = cardIsLocked;
-
-  bool? _onlinePaymentsLocked;
-  bool? get onlinePaymentsLocked => _$this._onlinePaymentsLocked;
-  set onlinePaymentsLocked(bool? onlinePaymentsLocked) =>
-      _$this._onlinePaymentsLocked = onlinePaymentsLocked;
 
   bool? _internationalPaymentsLocked;
   bool? get internationalPaymentsLocked => _$this._internationalPaymentsLocked;
@@ -94,8 +72,6 @@ class BankCardSettingsBuilder
   BankCardSettingsBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _cardIsLocked = $v.cardIsLocked;
-      _onlinePaymentsLocked = $v.onlinePaymentsLocked;
       _internationalPaymentsLocked = $v.internationalPaymentsLocked;
       _gamblingTransactionsLocked = $v.gamblingTransactionsLocked;
       _$v = null;
@@ -120,8 +96,6 @@ class BankCardSettingsBuilder
   _$BankCardSettings _build() {
     final _$result = _$v ??
         new _$BankCardSettings._(
-            cardIsLocked: cardIsLocked,
-            onlinePaymentsLocked: onlinePaymentsLocked,
             internationalPaymentsLocked: internationalPaymentsLocked,
             gamblingTransactionsLocked: gamblingTransactionsLocked);
     replace(_$result);

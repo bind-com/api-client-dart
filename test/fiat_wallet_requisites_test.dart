@@ -17,7 +17,7 @@ void main() {
       // TODO
     });
 
-    // int sortCode
+    // String sortCode
     test('to test the property `sortCode`', () async {
       // TODO
     });

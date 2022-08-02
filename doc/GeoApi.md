@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **listCountries**
-> BuiltList<Country> listCountries()
+> BuiltList<Country> listCountries(search)
 
 Countries list
 
@@ -25,9 +25,10 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getGeoApi();
+final String search = search_example; // String | search by currency name
 
 try {
-    final response = api.listCountries();
+    final response = api.listCountries(search);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling GeoApi->listCountries: $e\n');
@@ -35,7 +36,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **search** | **String**| search by currency name | [optional] 
 
 ### Return type
 

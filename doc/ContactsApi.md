@@ -10,6 +10,7 @@ All URIs are relative to *https://api.thebind.uk/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addContactByUser**](ContactsApi.md#addcontactbyuser) | **POST** /contacts/ | add user to contact
+[**checkContact**](ContactsApi.md#checkcontact) | **GET** /contacts/{user_id}/check | Check if user_id is in contacts
 [**createInnerFiatRequest**](ContactsApi.md#createinnerfiatrequest) | **POST** /fiat/request/ | Request fiat inside BIND
 [**createInnerFiatTransfer**](ContactsApi.md#createinnerfiattransfer) | **POST** /fiat/send/ | Send fiat inside BIND
 [**generateQRCodeToken**](ContactsApi.md#generateqrcodetoken) | **GET** /users/send/qr_code/ | Generate JWT token to share as QR code
@@ -61,6 +62,52 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **checkContact**
+> bool checkContact(userId)
+
+Check if user_id is in contacts
+
+Check if user_id is in contacts
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getContactsApi();
+final String userId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of user
+
+try {
+    final response = api.checkContact(userId);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling ContactsApi->checkContact: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**| id of user | 
+
+### Return type
+
+**bool**
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

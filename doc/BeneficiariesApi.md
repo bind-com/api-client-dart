@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **createBeneficiary**
-> createBeneficiary(createBeneficiaryRequest)
+> Beneficiary createBeneficiary(createBeneficiaryRequest)
 
 Add new beneficiary
 
@@ -33,7 +33,8 @@ final api = BindApi().getBeneficiariesApi();
 final CreateBeneficiaryRequest createBeneficiaryRequest = ; // CreateBeneficiaryRequest | 
 
 try {
-    api.createBeneficiary(createBeneficiaryRequest);
+    final response = api.createBeneficiary(createBeneficiaryRequest);
+    print(response);
 } catch on DioError (e) {
     print('Exception when calling BeneficiariesApi->createBeneficiary: $e\n');
 }
@@ -47,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Beneficiary**](Beneficiary.md)
 
 ### Authorization
 

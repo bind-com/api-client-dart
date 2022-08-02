@@ -11,7 +11,7 @@ void main() {
     //
     // Add a beneficiary to list
     //
-    //Future createBeneficiary({ CreateBeneficiaryRequest createBeneficiaryRequest }) async
+    //Future<Beneficiary> createBeneficiary({ CreateBeneficiaryRequest createBeneficiaryRequest }) async
     test('test createBeneficiary', () async {
       // TODO
     });

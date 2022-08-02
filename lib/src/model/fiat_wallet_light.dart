@@ -16,6 +16,7 @@ part 'fiat_wallet_light.g.dart';
 /// * [currency] 
 /// * [currencyCode] 
 /// * [currencyName] 
+/// * [currencyIcon] 
 abstract class FiatWalletLight implements Built<FiatWalletLight, FiatWalletLightBuilder> {
     @BuiltValueField(wireName: r'id')
     String? get id;
@@ -34,6 +35,9 @@ abstract class FiatWalletLight implements Built<FiatWalletLight, FiatWalletLight
 
     @BuiltValueField(wireName: r'currency_name')
     String? get currencyName;
+
+    @BuiltValueField(wireName: r'currency_icon')
+    String? get currencyIcon;
 
     FiatWalletLight._();
 
@@ -93,6 +97,12 @@ class _$FiatWalletLightSerializer implements StructuredSerializer<FiatWalletLigh
                 ..add(serializers.serialize(object.currencyName,
                     specifiedType: const FullType(String)));
         }
+        if (object.currencyIcon != null) {
+            result
+                ..add(r'currency_icon')
+                ..add(serializers.serialize(object.currencyIcon,
+                    specifiedType: const FullType(String)));
+        }
         return result;
     }
 
@@ -137,6 +147,11 @@ class _$FiatWalletLightSerializer implements StructuredSerializer<FiatWalletLigh
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.currencyName = valueDes;
+                    break;
+                case r'currency_icon':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.currencyIcon = valueDes;
                     break;
             }
         }

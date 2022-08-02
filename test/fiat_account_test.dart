@@ -12,7 +12,7 @@ void main() {
       // TODO
     });
 
-    // BuiltList<FiatWallet> wallets
+    // BuiltList<FiatWalletWithPaymentCurrency> wallets
     test('to test the property `wallets`', () async {
       // TODO
     });

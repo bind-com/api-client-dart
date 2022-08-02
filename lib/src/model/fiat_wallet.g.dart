@@ -20,6 +20,8 @@ class _$FiatWallet extends FiatWallet {
   @override
   final String? currencyName;
   @override
+  final String? currencyIcon;
+  @override
   final FiatWalletRequisites? transferRequisites;
 
   factory _$FiatWallet([void Function(FiatWalletBuilder)? updates]) =>
@@ -32,6 +34,7 @@ class _$FiatWallet extends FiatWallet {
       this.currency,
       this.currencyCode,
       this.currencyName,
+      this.currencyIcon,
       this.transferRequisites})
       : super._();
 
@@ -52,6 +55,7 @@ class _$FiatWallet extends FiatWallet {
         currency == other.currency &&
         currencyCode == other.currencyCode &&
         currencyName == other.currencyName &&
+        currencyIcon == other.currencyIcon &&
         transferRequisites == other.transferRequisites;
   }
 
@@ -61,11 +65,13 @@ class _$FiatWallet extends FiatWallet {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, id.hashCode), balance.hashCode),
-                        account.hashCode),
-                    currency.hashCode),
-                currencyCode.hashCode),
-            currencyName.hashCode),
+                    $jc(
+                        $jc($jc($jc(0, id.hashCode), balance.hashCode),
+                            account.hashCode),
+                        currency.hashCode),
+                    currencyCode.hashCode),
+                currencyName.hashCode),
+            currencyIcon.hashCode),
         transferRequisites.hashCode));
   }
 
@@ -78,6 +84,7 @@ class _$FiatWallet extends FiatWallet {
           ..add('currency', currency)
           ..add('currencyCode', currencyCode)
           ..add('currencyName', currencyName)
+          ..add('currencyIcon', currencyIcon)
           ..add('transferRequisites', transferRequisites))
         .toString();
   }
@@ -110,6 +117,10 @@ class FiatWalletBuilder implements Builder<FiatWallet, FiatWalletBuilder> {
   String? get currencyName => _$this._currencyName;
   set currencyName(String? currencyName) => _$this._currencyName = currencyName;
 
+  String? _currencyIcon;
+  String? get currencyIcon => _$this._currencyIcon;
+  set currencyIcon(String? currencyIcon) => _$this._currencyIcon = currencyIcon;
+
   FiatWalletRequisitesBuilder? _transferRequisites;
   FiatWalletRequisitesBuilder get transferRequisites =>
       _$this._transferRequisites ??= new FiatWalletRequisitesBuilder();
@@ -129,6 +140,7 @@ class FiatWalletBuilder implements Builder<FiatWallet, FiatWalletBuilder> {
       _currency = $v.currency;
       _currencyCode = $v.currencyCode;
       _currencyName = $v.currencyName;
+      _currencyIcon = $v.currencyIcon;
       _transferRequisites = $v.transferRequisites?.toBuilder();
       _$v = null;
     }
@@ -160,6 +172,7 @@ class FiatWalletBuilder implements Builder<FiatWallet, FiatWalletBuilder> {
               currency: currency,
               currencyCode: currencyCode,
               currencyName: currencyName,
+              currencyIcon: currencyIcon,
               transferRequisites: _transferRequisites?.build());
     } catch (_) {
       late String _$failedField;

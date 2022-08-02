@@ -12,10 +12,11 @@ Name | Type | Description | Notes
 **cardholderName** | **String** | From common settings of the user | 
 **maskedCardNumber** | **String** |  | 
 **expiryDate** | [**Date**](Date.md) |  | 
+**balance** | **num** |  | [optional] 
+**linkedWallet** | [**FiatWalletLight**](FiatWalletLight.md) |  | [optional] 
 **decryptedCardNumber** | **String** | only if \"show encrypted data\" is true | [optional] 
 **decryptedCvv** | **String** | only if \"show encrypted data\" is true | [optional] 
-**cardIsLocked** | **bool** |  | [optional] 
-**onlinePaymentsLocked** | **bool** |  | [optional] 
+**status** | [**BankCardStatus**](BankCardStatus.md) |  | [optional] 
 **internationalPaymentsLocked** | **bool** |  | [optional] 
 **gamblingTransactionsLocked** | **bool** |  | [optional] 
 

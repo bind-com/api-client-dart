@@ -19,6 +19,8 @@ class _$FiatWalletLight extends FiatWalletLight {
   final String? currencyCode;
   @override
   final String? currencyName;
+  @override
+  final String? currencyIcon;
 
   factory _$FiatWalletLight([void Function(FiatWalletLightBuilder)? updates]) =>
       (new FiatWalletLightBuilder()..update(updates))._build();
@@ -29,7 +31,8 @@ class _$FiatWalletLight extends FiatWalletLight {
       this.account,
       this.currency,
       this.currencyCode,
-      this.currencyName})
+      this.currencyName,
+      this.currencyIcon})
       : super._();
 
   @override
@@ -49,7 +52,8 @@ class _$FiatWalletLight extends FiatWalletLight {
         account == other.account &&
         currency == other.currency &&
         currencyCode == other.currencyCode &&
-        currencyName == other.currencyName;
+        currencyName == other.currencyName &&
+        currencyIcon == other.currencyIcon;
   }
 
   @override
@@ -57,11 +61,13 @@ class _$FiatWalletLight extends FiatWalletLight {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, id.hashCode), balance.hashCode),
-                    account.hashCode),
-                currency.hashCode),
-            currencyCode.hashCode),
-        currencyName.hashCode));
+                $jc(
+                    $jc($jc($jc(0, id.hashCode), balance.hashCode),
+                        account.hashCode),
+                    currency.hashCode),
+                currencyCode.hashCode),
+            currencyName.hashCode),
+        currencyIcon.hashCode));
   }
 
   @override
@@ -72,7 +78,8 @@ class _$FiatWalletLight extends FiatWalletLight {
           ..add('account', account)
           ..add('currency', currency)
           ..add('currencyCode', currencyCode)
-          ..add('currencyName', currencyName))
+          ..add('currencyName', currencyName)
+          ..add('currencyIcon', currencyIcon))
         .toString();
   }
 }
@@ -105,6 +112,10 @@ class FiatWalletLightBuilder
   String? get currencyName => _$this._currencyName;
   set currencyName(String? currencyName) => _$this._currencyName = currencyName;
 
+  String? _currencyIcon;
+  String? get currencyIcon => _$this._currencyIcon;
+  set currencyIcon(String? currencyIcon) => _$this._currencyIcon = currencyIcon;
+
   FiatWalletLightBuilder() {
     FiatWalletLight._defaults(this);
   }
@@ -118,6 +129,7 @@ class FiatWalletLightBuilder
       _currency = $v.currency;
       _currencyCode = $v.currencyCode;
       _currencyName = $v.currencyName;
+      _currencyIcon = $v.currencyIcon;
       _$v = null;
     }
     return this;
@@ -145,7 +157,8 @@ class FiatWalletLightBuilder
             account: account,
             currency: currency,
             currencyCode: currencyCode,
-            currencyName: currencyName);
+            currencyName: currencyName,
+            currencyIcon: currencyIcon);
     replace(_$result);
     return _$result;
   }

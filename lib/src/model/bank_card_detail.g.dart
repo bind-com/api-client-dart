@@ -16,13 +16,15 @@ class _$BankCardDetail extends BankCardDetail {
   @override
   final Date expiryDate;
   @override
+  final num? balance;
+  @override
+  final FiatWalletLight? linkedWallet;
+  @override
   final String? decryptedCardNumber;
   @override
   final String? decryptedCvv;
   @override
-  final bool? cardIsLocked;
-  @override
-  final bool? onlinePaymentsLocked;
+  final BankCardStatus? status;
   @override
   final bool? internationalPaymentsLocked;
   @override
@@ -36,10 +38,11 @@ class _$BankCardDetail extends BankCardDetail {
       required this.cardholderName,
       required this.maskedCardNumber,
       required this.expiryDate,
+      this.balance,
+      this.linkedWallet,
       this.decryptedCardNumber,
       this.decryptedCvv,
-      this.cardIsLocked,
-      this.onlinePaymentsLocked,
+      this.status,
       this.internationalPaymentsLocked,
       this.gamblingTransactionsLocked})
       : super._() {
@@ -68,10 +71,11 @@ class _$BankCardDetail extends BankCardDetail {
         cardholderName == other.cardholderName &&
         maskedCardNumber == other.maskedCardNumber &&
         expiryDate == other.expiryDate &&
+        balance == other.balance &&
+        linkedWallet == other.linkedWallet &&
         decryptedCardNumber == other.decryptedCardNumber &&
         decryptedCvv == other.decryptedCvv &&
-        cardIsLocked == other.cardIsLocked &&
-        onlinePaymentsLocked == other.onlinePaymentsLocked &&
+        status == other.status &&
         internationalPaymentsLocked == other.internationalPaymentsLocked &&
         gamblingTransactionsLocked == other.gamblingTransactionsLocked;
   }
@@ -86,14 +90,16 @@ class _$BankCardDetail extends BankCardDetail {
                         $jc(
                             $jc(
                                 $jc(
-                                    $jc($jc(0, id.hashCode),
-                                        cardholderName.hashCode),
-                                    maskedCardNumber.hashCode),
-                                expiryDate.hashCode),
-                            decryptedCardNumber.hashCode),
-                        decryptedCvv.hashCode),
-                    cardIsLocked.hashCode),
-                onlinePaymentsLocked.hashCode),
+                                    $jc(
+                                        $jc($jc(0, id.hashCode),
+                                            cardholderName.hashCode),
+                                        maskedCardNumber.hashCode),
+                                    expiryDate.hashCode),
+                                balance.hashCode),
+                            linkedWallet.hashCode),
+                        decryptedCardNumber.hashCode),
+                    decryptedCvv.hashCode),
+                status.hashCode),
             internationalPaymentsLocked.hashCode),
         gamblingTransactionsLocked.hashCode));
   }
@@ -105,10 +111,11 @@ class _$BankCardDetail extends BankCardDetail {
           ..add('cardholderName', cardholderName)
           ..add('maskedCardNumber', maskedCardNumber)
           ..add('expiryDate', expiryDate)
+          ..add('balance', balance)
+          ..add('linkedWallet', linkedWallet)
           ..add('decryptedCardNumber', decryptedCardNumber)
           ..add('decryptedCvv', decryptedCvv)
-          ..add('cardIsLocked', cardIsLocked)
-          ..add('onlinePaymentsLocked', onlinePaymentsLocked)
+          ..add('status', status)
           ..add('internationalPaymentsLocked', internationalPaymentsLocked)
           ..add('gamblingTransactionsLocked', gamblingTransactionsLocked))
         .toString();
@@ -137,6 +144,16 @@ class BankCardDetailBuilder
   Date? get expiryDate => _$this._expiryDate;
   set expiryDate(Date? expiryDate) => _$this._expiryDate = expiryDate;
 
+  num? _balance;
+  num? get balance => _$this._balance;
+  set balance(num? balance) => _$this._balance = balance;
+
+  FiatWalletLightBuilder? _linkedWallet;
+  FiatWalletLightBuilder get linkedWallet =>
+      _$this._linkedWallet ??= new FiatWalletLightBuilder();
+  set linkedWallet(FiatWalletLightBuilder? linkedWallet) =>
+      _$this._linkedWallet = linkedWallet;
+
   String? _decryptedCardNumber;
   String? get decryptedCardNumber => _$this._decryptedCardNumber;
   set decryptedCardNumber(String? decryptedCardNumber) =>
@@ -146,14 +163,9 @@ class BankCardDetailBuilder
   String? get decryptedCvv => _$this._decryptedCvv;
   set decryptedCvv(String? decryptedCvv) => _$this._decryptedCvv = decryptedCvv;
 
-  bool? _cardIsLocked;
-  bool? get cardIsLocked => _$this._cardIsLocked;
-  set cardIsLocked(bool? cardIsLocked) => _$this._cardIsLocked = cardIsLocked;
-
-  bool? _onlinePaymentsLocked;
-  bool? get onlinePaymentsLocked => _$this._onlinePaymentsLocked;
-  set onlinePaymentsLocked(bool? onlinePaymentsLocked) =>
-      _$this._onlinePaymentsLocked = onlinePaymentsLocked;
+  BankCardStatus? _status;
+  BankCardStatus? get status => _$this._status;
+  set status(BankCardStatus? status) => _$this._status = status;
 
   bool? _internationalPaymentsLocked;
   bool? get internationalPaymentsLocked => _$this._internationalPaymentsLocked;
@@ -176,10 +188,11 @@ class BankCardDetailBuilder
       _cardholderName = $v.cardholderName;
       _maskedCardNumber = $v.maskedCardNumber;
       _expiryDate = $v.expiryDate;
+      _balance = $v.balance;
+      _linkedWallet = $v.linkedWallet?.toBuilder();
       _decryptedCardNumber = $v.decryptedCardNumber;
       _decryptedCvv = $v.decryptedCvv;
-      _cardIsLocked = $v.cardIsLocked;
-      _onlinePaymentsLocked = $v.onlinePaymentsLocked;
+      _status = $v.status;
       _internationalPaymentsLocked = $v.internationalPaymentsLocked;
       _gamblingTransactionsLocked = $v.gamblingTransactionsLocked;
       _$v = null;
@@ -202,22 +215,36 @@ class BankCardDetailBuilder
   BankCardDetail build() => _build();
 
   _$BankCardDetail _build() {
-    final _$result = _$v ??
-        new _$BankCardDetail._(
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'BankCardDetail', 'id'),
-            cardholderName: BuiltValueNullFieldError.checkNotNull(
-                cardholderName, r'BankCardDetail', 'cardholderName'),
-            maskedCardNumber: BuiltValueNullFieldError.checkNotNull(
-                maskedCardNumber, r'BankCardDetail', 'maskedCardNumber'),
-            expiryDate: BuiltValueNullFieldError.checkNotNull(
-                expiryDate, r'BankCardDetail', 'expiryDate'),
-            decryptedCardNumber: decryptedCardNumber,
-            decryptedCvv: decryptedCvv,
-            cardIsLocked: cardIsLocked,
-            onlinePaymentsLocked: onlinePaymentsLocked,
-            internationalPaymentsLocked: internationalPaymentsLocked,
-            gamblingTransactionsLocked: gamblingTransactionsLocked);
+    _$BankCardDetail _$result;
+    try {
+      _$result = _$v ??
+          new _$BankCardDetail._(
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id, r'BankCardDetail', 'id'),
+              cardholderName: BuiltValueNullFieldError.checkNotNull(
+                  cardholderName, r'BankCardDetail', 'cardholderName'),
+              maskedCardNumber: BuiltValueNullFieldError.checkNotNull(
+                  maskedCardNumber, r'BankCardDetail', 'maskedCardNumber'),
+              expiryDate: BuiltValueNullFieldError.checkNotNull(
+                  expiryDate, r'BankCardDetail', 'expiryDate'),
+              balance: balance,
+              linkedWallet: _linkedWallet?.build(),
+              decryptedCardNumber: decryptedCardNumber,
+              decryptedCvv: decryptedCvv,
+              status: status,
+              internationalPaymentsLocked: internationalPaymentsLocked,
+              gamblingTransactionsLocked: gamblingTransactionsLocked);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'linkedWallet';
+        _linkedWallet?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'BankCardDetail', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

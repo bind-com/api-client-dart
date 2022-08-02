@@ -14,6 +14,7 @@ part 'create_inner_fiat_transfer_request.g.dart';
 /// * [contactId] - id of user contact
 /// * [currency] 
 /// * [amount] 
+/// * [note] 
 abstract class CreateInnerFiatTransferRequest implements Built<CreateInnerFiatTransferRequest, CreateInnerFiatTransferRequestBuilder> {
     @BuiltValueField(wireName: r'user_id')
     String? get userId;
@@ -27,6 +28,9 @@ abstract class CreateInnerFiatTransferRequest implements Built<CreateInnerFiatTr
 
     @BuiltValueField(wireName: r'amount')
     num? get amount;
+
+    @BuiltValueField(wireName: r'note')
+    String? get note;
 
     CreateInnerFiatTransferRequest._();
 
@@ -74,6 +78,12 @@ class _$CreateInnerFiatTransferRequestSerializer implements StructuredSerializer
                 ..add(serializers.serialize(object.amount,
                     specifiedType: const FullType(num)));
         }
+        if (object.note != null) {
+            result
+                ..add(r'note')
+                ..add(serializers.serialize(object.note,
+                    specifiedType: const FullType(String)));
+        }
         return result;
     }
 
@@ -108,6 +118,11 @@ class _$CreateInnerFiatTransferRequestSerializer implements StructuredSerializer
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(num)) as num;
                     result.amount = valueDes;
+                    break;
+                case r'note':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.note = valueDes;
                     break;
             }
         }

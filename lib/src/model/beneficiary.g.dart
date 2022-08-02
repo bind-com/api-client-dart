@@ -8,26 +8,40 @@ part of 'beneficiary.dart';
 
 class _$Beneficiary extends Beneficiary {
   @override
-  final String? id;
+  final String id;
   @override
-  final String? fullName;
+  final String firstName;
   @override
-  final bool? isFavorite;
+  final String lastName;
   @override
-  final bool? isBindUser;
+  final bool isFavorite;
   @override
-  final String? accountNumber;
+  final bool isBindUser;
+  @override
+  final String accountNumber;
 
   factory _$Beneficiary([void Function(BeneficiaryBuilder)? updates]) =>
       (new BeneficiaryBuilder()..update(updates))._build();
 
   _$Beneficiary._(
-      {this.id,
-      this.fullName,
-      this.isFavorite,
-      this.isBindUser,
-      this.accountNumber})
-      : super._();
+      {required this.id,
+      required this.firstName,
+      required this.lastName,
+      required this.isFavorite,
+      required this.isBindUser,
+      required this.accountNumber})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(id, r'Beneficiary', 'id');
+    BuiltValueNullFieldError.checkNotNull(
+        firstName, r'Beneficiary', 'firstName');
+    BuiltValueNullFieldError.checkNotNull(lastName, r'Beneficiary', 'lastName');
+    BuiltValueNullFieldError.checkNotNull(
+        isFavorite, r'Beneficiary', 'isFavorite');
+    BuiltValueNullFieldError.checkNotNull(
+        isBindUser, r'Beneficiary', 'isBindUser');
+    BuiltValueNullFieldError.checkNotNull(
+        accountNumber, r'Beneficiary', 'accountNumber');
+  }
 
   @override
   Beneficiary rebuild(void Function(BeneficiaryBuilder) updates) =>
@@ -41,7 +55,8 @@ class _$Beneficiary extends Beneficiary {
     if (identical(other, this)) return true;
     return other is Beneficiary &&
         id == other.id &&
-        fullName == other.fullName &&
+        firstName == other.firstName &&
+        lastName == other.lastName &&
         isFavorite == other.isFavorite &&
         isBindUser == other.isBindUser &&
         accountNumber == other.accountNumber;
@@ -51,7 +66,9 @@ class _$Beneficiary extends Beneficiary {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, id.hashCode), fullName.hashCode),
+            $jc(
+                $jc($jc($jc(0, id.hashCode), firstName.hashCode),
+                    lastName.hashCode),
                 isFavorite.hashCode),
             isBindUser.hashCode),
         accountNumber.hashCode));
@@ -61,7 +78,8 @@ class _$Beneficiary extends Beneficiary {
   String toString() {
     return (newBuiltValueToStringHelper(r'Beneficiary')
           ..add('id', id)
-          ..add('fullName', fullName)
+          ..add('firstName', firstName)
+          ..add('lastName', lastName)
           ..add('isFavorite', isFavorite)
           ..add('isBindUser', isBindUser)
           ..add('accountNumber', accountNumber))
@@ -76,9 +94,13 @@ class BeneficiaryBuilder implements Builder<Beneficiary, BeneficiaryBuilder> {
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
-  String? _fullName;
-  String? get fullName => _$this._fullName;
-  set fullName(String? fullName) => _$this._fullName = fullName;
+  String? _firstName;
+  String? get firstName => _$this._firstName;
+  set firstName(String? firstName) => _$this._firstName = firstName;
+
+  String? _lastName;
+  String? get lastName => _$this._lastName;
+  set lastName(String? lastName) => _$this._lastName = lastName;
 
   bool? _isFavorite;
   bool? get isFavorite => _$this._isFavorite;
@@ -101,7 +123,8 @@ class BeneficiaryBuilder implements Builder<Beneficiary, BeneficiaryBuilder> {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
-      _fullName = $v.fullName;
+      _firstName = $v.firstName;
+      _lastName = $v.lastName;
       _isFavorite = $v.isFavorite;
       _isBindUser = $v.isBindUser;
       _accountNumber = $v.accountNumber;
@@ -127,11 +150,17 @@ class BeneficiaryBuilder implements Builder<Beneficiary, BeneficiaryBuilder> {
   _$Beneficiary _build() {
     final _$result = _$v ??
         new _$Beneficiary._(
-            id: id,
-            fullName: fullName,
-            isFavorite: isFavorite,
-            isBindUser: isBindUser,
-            accountNumber: accountNumber);
+            id: BuiltValueNullFieldError.checkNotNull(id, r'Beneficiary', 'id'),
+            firstName: BuiltValueNullFieldError.checkNotNull(
+                firstName, r'Beneficiary', 'firstName'),
+            lastName: BuiltValueNullFieldError.checkNotNull(
+                lastName, r'Beneficiary', 'lastName'),
+            isFavorite: BuiltValueNullFieldError.checkNotNull(
+                isFavorite, r'Beneficiary', 'isFavorite'),
+            isBindUser: BuiltValueNullFieldError.checkNotNull(
+                isBindUser, r'Beneficiary', 'isBindUser'),
+            accountNumber: BuiltValueNullFieldError.checkNotNull(
+                accountNumber, r'Beneficiary', 'accountNumber'));
     replace(_$result);
     return _$result;
   }

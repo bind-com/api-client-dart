@@ -27,6 +27,21 @@ void main() {
       // TODO
     });
 
+    // String currencyCode
+    test('to test the property `currencyCode`', () async {
+      // TODO
+    });
+
+    // String currencyName
+    test('to test the property `currencyName`', () async {
+      // TODO
+    });
+
+    // String currencyIcon
+    test('to test the property `currencyIcon`', () async {
+      // TODO
+    });
+
     // FiatWalletRequisites transferRequisites
     test('to test the property `transferRequisites`', () async {
       // TODO

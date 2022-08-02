@@ -8,8 +8,6 @@ import 'package:bind_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cardIsLocked** | **bool** |  | [optional] 
-**onlinePaymentsLocked** | **bool** |  | [optional] 
 **internationalPaymentsLocked** | **bool** |  | [optional] 
 **gamblingTransactionsLocked** | **bool** |  | [optional] 
 

@@ -7,6 +7,7 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:bind_api/src/api_util.dart';
 import 'package:bind_api/src/model/country.dart';
 import 'package:bind_api/src/model/error.dart';
 import 'package:built_collection/built_collection.dart';
@@ -23,6 +24,7 @@ class GeoApi {
   /// 
   ///
   /// Parameters:
+  /// * [search] - search by currency name
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -33,6 +35,7 @@ class GeoApi {
   /// Returns a [Future] containing a [Response] with a [BuiltList<Country>] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BuiltList<Country>>> listCountries({ 
+    String? search,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -59,9 +62,14 @@ class GeoApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (search != null) r'search': encodeQueryParameter(_serializers, search, const FullType(String)),
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,

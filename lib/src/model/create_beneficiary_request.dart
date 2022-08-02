@@ -10,12 +10,16 @@ part 'create_beneficiary_request.g.dart';
 /// CreateBeneficiaryRequest
 ///
 /// Properties:
-/// * [fullName] 
+/// * [firstName] 
+/// * [lastName] 
 /// * [iban] 
 /// * [swiftBic] 
 abstract class CreateBeneficiaryRequest implements Built<CreateBeneficiaryRequest, CreateBeneficiaryRequestBuilder> {
-    @BuiltValueField(wireName: r'full_name')
-    String? get fullName;
+    @BuiltValueField(wireName: r'first_name')
+    String? get firstName;
+
+    @BuiltValueField(wireName: r'last_name')
+    String? get lastName;
 
     @BuiltValueField(wireName: r'iban')
     String? get iban;
@@ -45,10 +49,16 @@ class _$CreateBeneficiaryRequestSerializer implements StructuredSerializer<Creat
     Iterable<Object?> serialize(Serializers serializers, CreateBeneficiaryRequest object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
-        if (object.fullName != null) {
+        if (object.firstName != null) {
             result
-                ..add(r'full_name')
-                ..add(serializers.serialize(object.fullName,
+                ..add(r'first_name')
+                ..add(serializers.serialize(object.firstName,
+                    specifiedType: const FullType(String)));
+        }
+        if (object.lastName != null) {
+            result
+                ..add(r'last_name')
+                ..add(serializers.serialize(object.lastName,
                     specifiedType: const FullType(String)));
         }
         if (object.iban != null) {
@@ -78,10 +88,15 @@ class _$CreateBeneficiaryRequestSerializer implements StructuredSerializer<Creat
             final Object? value = iterator.current;
             
             switch (key) {
-                case r'full_name':
+                case r'first_name':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
-                    result.fullName = valueDes;
+                    result.firstName = valueDes;
+                    break;
+                case r'last_name':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.lastName = valueDes;
                     break;
                 case r'iban':
                     final valueDes = serializers.deserialize(value,

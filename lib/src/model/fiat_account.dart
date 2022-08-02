@@ -2,9 +2,9 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+import 'package:bind_api/src/model/fiat_wallet_with_payment_currency.dart';
 import 'package:bind_api/src/model/fiat_wallet_total_balance.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:bind_api/src/model/fiat_wallet.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -20,7 +20,7 @@ abstract class FiatAccount implements Built<FiatAccount, FiatAccountBuilder> {
     FiatWalletTotalBalance? get totalBalance;
 
     @BuiltValueField(wireName: r'wallets')
-    BuiltList<FiatWallet>? get wallets;
+    BuiltList<FiatWalletWithPaymentCurrency>? get wallets;
 
     FiatAccount._();
 
@@ -54,7 +54,7 @@ class _$FiatAccountSerializer implements StructuredSerializer<FiatAccount> {
             result
                 ..add(r'wallets')
                 ..add(serializers.serialize(object.wallets,
-                    specifiedType: const FullType(BuiltList, [FullType(FiatWallet)])));
+                    specifiedType: const FullType(BuiltList, [FullType(FiatWalletWithPaymentCurrency)])));
         }
         return result;
     }
@@ -78,7 +78,7 @@ class _$FiatAccountSerializer implements StructuredSerializer<FiatAccount> {
                     break;
                 case r'wallets':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(BuiltList, [FullType(FiatWallet)])) as BuiltList<FiatWallet>;
+                        specifiedType: const FullType(BuiltList, [FullType(FiatWalletWithPaymentCurrency)])) as BuiltList<FiatWalletWithPaymentCurrency>;
                     result.wallets.replace(valueDes);
                     break;
             }

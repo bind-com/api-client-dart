@@ -11,25 +11,29 @@ part 'beneficiary.g.dart';
 ///
 /// Properties:
 /// * [id] 
-/// * [fullName] 
+/// * [firstName] 
+/// * [lastName] 
 /// * [isFavorite] 
 /// * [isBindUser] 
 /// * [accountNumber] 
 abstract class Beneficiary implements Built<Beneficiary, BeneficiaryBuilder> {
     @BuiltValueField(wireName: r'id')
-    String? get id;
+    String get id;
 
-    @BuiltValueField(wireName: r'full_name')
-    String? get fullName;
+    @BuiltValueField(wireName: r'first_name')
+    String get firstName;
+
+    @BuiltValueField(wireName: r'last_name')
+    String get lastName;
 
     @BuiltValueField(wireName: r'is_favorite')
-    bool? get isFavorite;
+    bool get isFavorite;
 
     @BuiltValueField(wireName: r'is_bind_user')
-    bool? get isBindUser;
+    bool get isBindUser;
 
     @BuiltValueField(wireName: r'account_number')
-    String? get accountNumber;
+    String get accountNumber;
 
     Beneficiary._();
 
@@ -53,36 +57,30 @@ class _$BeneficiarySerializer implements StructuredSerializer<Beneficiary> {
     Iterable<Object?> serialize(Serializers serializers, Beneficiary object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
-        if (object.id != null) {
-            result
-                ..add(r'id')
-                ..add(serializers.serialize(object.id,
-                    specifiedType: const FullType(String)));
-        }
-        if (object.fullName != null) {
-            result
-                ..add(r'full_name')
-                ..add(serializers.serialize(object.fullName,
-                    specifiedType: const FullType(String)));
-        }
-        if (object.isFavorite != null) {
-            result
-                ..add(r'is_favorite')
-                ..add(serializers.serialize(object.isFavorite,
-                    specifiedType: const FullType(bool)));
-        }
-        if (object.isBindUser != null) {
-            result
-                ..add(r'is_bind_user')
-                ..add(serializers.serialize(object.isBindUser,
-                    specifiedType: const FullType(bool)));
-        }
-        if (object.accountNumber != null) {
-            result
-                ..add(r'account_number')
-                ..add(serializers.serialize(object.accountNumber,
-                    specifiedType: const FullType(String)));
-        }
+        result
+            ..add(r'id')
+            ..add(serializers.serialize(object.id,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'first_name')
+            ..add(serializers.serialize(object.firstName,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'last_name')
+            ..add(serializers.serialize(object.lastName,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'is_favorite')
+            ..add(serializers.serialize(object.isFavorite,
+                specifiedType: const FullType(bool)));
+        result
+            ..add(r'is_bind_user')
+            ..add(serializers.serialize(object.isBindUser,
+                specifiedType: const FullType(bool)));
+        result
+            ..add(r'account_number')
+            ..add(serializers.serialize(object.accountNumber,
+                specifiedType: const FullType(String)));
         return result;
     }
 
@@ -103,10 +101,15 @@ class _$BeneficiarySerializer implements StructuredSerializer<Beneficiary> {
                         specifiedType: const FullType(String)) as String;
                     result.id = valueDes;
                     break;
-                case r'full_name':
+                case r'first_name':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
-                    result.fullName = valueDes;
+                    result.firstName = valueDes;
+                    break;
+                case r'last_name':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.lastName = valueDes;
                     break;
                 case r'is_favorite':
                     final valueDes = serializers.deserialize(value,

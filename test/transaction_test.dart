@@ -82,11 +82,5 @@ void main() {
       // TODO
     });
 
-    // Field to give to backend as a cursor for pagination. Format depends on a group_by argument. Can consist of one or two and more comma-separated values, representing a tuple of pagination arguments
-    // String cursor
-    test('to test the property `cursor`', () async {
-      // TODO
-    });
-
   });
 }

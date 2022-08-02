@@ -12,6 +12,8 @@ class _$User extends User {
   @override
   final String? email;
   @override
+  final String? phoneNumber;
+  @override
   final String? firstName;
   @override
   final String? lastName;
@@ -32,6 +34,7 @@ class _$User extends User {
   _$User._(
       {this.userId,
       this.email,
+      this.phoneNumber,
       this.firstName,
       this.lastName,
       this.middleName,
@@ -54,6 +57,7 @@ class _$User extends User {
     return other is User &&
         userId == other.userId &&
         email == other.email &&
+        phoneNumber == other.phoneNumber &&
         firstName == other.firstName &&
         lastName == other.lastName &&
         middleName == other.middleName &&
@@ -71,7 +75,11 @@ class _$User extends User {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, userId.hashCode), email.hashCode),
+                            $jc(
+                                $jc(
+                                    $jc($jc(0, userId.hashCode),
+                                        email.hashCode),
+                                    phoneNumber.hashCode),
                                 firstName.hashCode),
                             lastName.hashCode),
                         middleName.hashCode),
@@ -86,6 +94,7 @@ class _$User extends User {
     return (newBuiltValueToStringHelper(r'User')
           ..add('userId', userId)
           ..add('email', email)
+          ..add('phoneNumber', phoneNumber)
           ..add('firstName', firstName)
           ..add('lastName', lastName)
           ..add('middleName', middleName)
@@ -107,6 +116,10 @@ class UserBuilder implements Builder<User, UserBuilder> {
   String? _email;
   String? get email => _$this._email;
   set email(String? email) => _$this._email = email;
+
+  String? _phoneNumber;
+  String? get phoneNumber => _$this._phoneNumber;
+  set phoneNumber(String? phoneNumber) => _$this._phoneNumber = phoneNumber;
 
   String? _firstName;
   String? get firstName => _$this._firstName;
@@ -146,6 +159,7 @@ class UserBuilder implements Builder<User, UserBuilder> {
     if ($v != null) {
       _userId = $v.userId;
       _email = $v.email;
+      _phoneNumber = $v.phoneNumber;
       _firstName = $v.firstName;
       _lastName = $v.lastName;
       _middleName = $v.middleName;
@@ -177,6 +191,7 @@ class UserBuilder implements Builder<User, UserBuilder> {
         new _$User._(
             userId: userId,
             email: email,
+            phoneNumber: phoneNumber,
             firstName: firstName,
             lastName: lastName,
             middleName: middleName,

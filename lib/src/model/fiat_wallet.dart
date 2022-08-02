@@ -19,6 +19,7 @@ part 'fiat_wallet.g.dart';
 /// * [currency] 
 /// * [currencyCode] 
 /// * [currencyName] 
+/// * [currencyIcon] 
 /// * [transferRequisites] 
 abstract class FiatWallet implements Built<FiatWallet, FiatWalletBuilder> {
     @BuiltValueField(wireName: r'id')
@@ -38,6 +39,9 @@ abstract class FiatWallet implements Built<FiatWallet, FiatWalletBuilder> {
 
     @BuiltValueField(wireName: r'currency_name')
     String? get currencyName;
+
+    @BuiltValueField(wireName: r'currency_icon')
+    String? get currencyIcon;
 
     @BuiltValueField(wireName: r'transfer_requisites')
     FiatWalletRequisites? get transferRequisites;
@@ -100,6 +104,12 @@ class _$FiatWalletSerializer implements StructuredSerializer<FiatWallet> {
                 ..add(serializers.serialize(object.currencyName,
                     specifiedType: const FullType(String)));
         }
+        if (object.currencyIcon != null) {
+            result
+                ..add(r'currency_icon')
+                ..add(serializers.serialize(object.currencyIcon,
+                    specifiedType: const FullType(String)));
+        }
         if (object.transferRequisites != null) {
             result
                 ..add(r'transfer_requisites')
@@ -150,6 +160,11 @@ class _$FiatWalletSerializer implements StructuredSerializer<FiatWallet> {
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.currencyName = valueDes;
+                    break;
+                case r'currency_icon':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.currencyIcon = valueDes;
                     break;
                 case r'transfer_requisites':
                     final valueDes = serializers.deserialize(value,

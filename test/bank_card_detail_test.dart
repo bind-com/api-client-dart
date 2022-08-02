@@ -28,6 +28,16 @@ void main() {
       // TODO
     });
 
+    // num balance
+    test('to test the property `balance`', () async {
+      // TODO
+    });
+
+    // FiatWalletLight linkedWallet
+    test('to test the property `linkedWallet`', () async {
+      // TODO
+    });
+
     // only if \"show encrypted data\" is true
     // String decryptedCardNumber
     test('to test the property `decryptedCardNumber`', () async {
@@ -40,13 +50,8 @@ void main() {
       // TODO
     });
 
-    // bool cardIsLocked
-    test('to test the property `cardIsLocked`', () async {
-      // TODO
-    });
-
-    // bool onlinePaymentsLocked
-    test('to test the property `onlinePaymentsLocked`', () async {
+    // BankCardStatus status
+    test('to test the property `status`', () async {
       // TODO
     });
 

@@ -16,9 +16,13 @@ import 'package:bind_api/src/model/add_contact_by_user_request.dart';
 import 'package:bind_api/src/model/adjust_fiat_wallet_balance_request.dart';
 import 'package:bind_api/src/model/bank_card_analytics.dart';
 import 'package:bind_api/src/model/bank_card_base_data.dart';
+import 'package:bind_api/src/model/bank_card_blocking_reason.dart';
+import 'package:bind_api/src/model/bank_card_change_wallet_request.dart';
 import 'package:bind_api/src/model/bank_card_detail.dart';
 import 'package:bind_api/src/model/bank_card_detail_all_of.dart';
+import 'package:bind_api/src/model/bank_card_lock_request.dart';
 import 'package:bind_api/src/model/bank_card_settings.dart';
+import 'package:bind_api/src/model/bank_card_status.dart';
 import 'package:bind_api/src/model/beneficiary.dart';
 import 'package:bind_api/src/model/check_passcode_request.dart';
 import 'package:bind_api/src/model/contact.dart';
@@ -29,12 +33,15 @@ import 'package:bind_api/src/model/create_inner_fiat_request_request.dart';
 import 'package:bind_api/src/model/create_inner_fiat_transfer_request.dart';
 import 'package:bind_api/src/model/currency.dart';
 import 'package:bind_api/src/model/error.dart';
+import 'package:bind_api/src/model/export_history.dart';
 import 'package:bind_api/src/model/fiat_account.dart';
 import 'package:bind_api/src/model/fiat_wallet.dart';
 import 'package:bind_api/src/model/fiat_wallet_all_of.dart';
 import 'package:bind_api/src/model/fiat_wallet_light.dart';
 import 'package:bind_api/src/model/fiat_wallet_requisites.dart';
 import 'package:bind_api/src/model/fiat_wallet_total_balance.dart';
+import 'package:bind_api/src/model/fiat_wallet_with_payment_currency.dart';
+import 'package:bind_api/src/model/fiat_wallet_with_payment_currency_all_of.dart';
 import 'package:bind_api/src/model/jwt_token.dart';
 import 'package:bind_api/src/model/kyc_field_status.dart';
 import 'package:bind_api/src/model/kyc_request_move_result.dart';
@@ -44,7 +51,9 @@ import 'package:bind_api/src/model/perform_exchange_request.dart';
 import 'package:bind_api/src/model/perform_fiat_transfer_request.dart';
 import 'package:bind_api/src/model/sync_contacts_request.dart';
 import 'package:bind_api/src/model/transaction.dart';
+import 'package:bind_api/src/model/transaction_assets_filter.dart';
 import 'package:bind_api/src/model/transaction_description_filling_rule_set.dart';
+import 'package:bind_api/src/model/transaction_export_filter.dart';
 import 'package:bind_api/src/model/transaction_filter.dart';
 import 'package:bind_api/src/model/transaction_group.dart';
 import 'package:bind_api/src/model/transaction_grouping.dart';
@@ -53,6 +62,7 @@ import 'package:bind_api/src/model/transaction_types.dart';
 import 'package:bind_api/src/model/update_contact_request.dart';
 import 'package:bind_api/src/model/user.dart';
 import 'package:bind_api/src/model/user_sharing_data.dart';
+import 'package:bind_api/src/model/wallet_balance_info.dart';
 
 part 'serializers.g.dart';
 
@@ -61,9 +71,13 @@ part 'serializers.g.dart';
   AdjustFiatWalletBalanceRequest,
   BankCardAnalytics,
   BankCardBaseData,
+  BankCardBlockingReason,
+  BankCardChangeWalletRequest,
   BankCardDetail,
   BankCardDetailAllOf,
+  BankCardLockRequest,
   BankCardSettings,
+  BankCardStatus,
   Beneficiary,
   CheckPasscodeRequest,
   Contact,
@@ -74,12 +88,15 @@ part 'serializers.g.dart';
   CreateInnerFiatTransferRequest,
   Currency,
   Error,
+  ExportHistory,
   FiatAccount,
   FiatWallet,
   FiatWalletAllOf,
   FiatWalletLight,
   FiatWalletRequisites,
   FiatWalletTotalBalance,
+  FiatWalletWithPaymentCurrency,
+  FiatWalletWithPaymentCurrencyAllOf,
   JWTToken,
   KYCFieldStatus,
   KYCRequestMoveResult,
@@ -89,7 +106,9 @@ part 'serializers.g.dart';
   PerformFiatTransferRequest,
   SyncContactsRequest,
   Transaction,
+  TransactionAssetsFilter,
   TransactionDescriptionFillingRuleSet,
+  TransactionExportFilter,
   TransactionFilter,
   TransactionGroup,
   TransactionGrouping,
@@ -98,6 +117,7 @@ part 'serializers.g.dart';
   UpdateContactRequest,
   User,
   UserSharingData,
+  WalletBalanceInfo,
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
@@ -111,6 +131,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Contact)]),
         () => ListBuilder<Contact>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(FiatWalletWithPaymentCurrency)]),
+        () => ListBuilder<FiatWalletWithPaymentCurrency>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(BankCardBaseData)]),
@@ -127,6 +151,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(FiatWalletLight)]),
         () => ListBuilder<FiatWalletLight>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(ExportHistory)]),
+        () => ListBuilder<ExportHistory>(),
       )
       ..add(const DateSerializer())
       ..add(Iso8601DateTimeSerializer()))

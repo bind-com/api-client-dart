@@ -17,6 +17,11 @@ void main() {
       // TODO
     });
 
+    // String phoneNumber
+    test('to test the property `phoneNumber`', () async {
+      // TODO
+    });
+
     // String firstName
     test('to test the property `firstName`', () async {
       // TODO
