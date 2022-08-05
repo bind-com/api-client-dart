@@ -14,6 +14,13 @@ void main() {
       // TODO
     });
 
+    // Change wallet attached to bank card
+    //
+    //Future<BankCardDetail> changeDefaultWallet(String cardId, { BankCardChangeWalletRequest bankCardChangeWalletRequest }) async
+    test('test changeDefaultWallet', () async {
+      // TODO
+    });
+
     // Create an wallet in given currency
     //
     //Future<String> createFiatWallet({ CreateFiatWalletRequest createFiatWalletRequest }) async
@@ -85,7 +92,7 @@ void main() {
 
     // Lock or unlock a bank card
     //
-    //Future<BankCardDetail> lockBankCard(String cardId, { LockBankCardRequest lockBankCardRequest }) async
+    //Future<BankCardDetail> lockBankCard(String cardId, { BankCardLockRequest bankCardLockRequest }) async
     test('test lockBankCard', () async {
       // TODO
     });

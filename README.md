@@ -79,6 +79,9 @@ Class | Method | HTTP request | Description
 [*ContactsApi*](doc/ContactsApi.md) | [**readJWTToken**](doc/ContactsApi.md#readjwttoken) | **POST** /users/send/qr_code/ | Check JWT validity and read user from it
 [*ContactsApi*](doc/ContactsApi.md) | [**syncContacts**](doc/ContactsApi.md#synccontacts) | **POST** /contacts/sync/ | Sync mobile phone contacts of current user with backend data
 [*ContactsApi*](doc/ContactsApi.md) | [**updateContact**](doc/ContactsApi.md#updatecontact) | **PATCH** /contacts/{contact_id}/ | Update contact data (add/remove contact from favorite)
+[*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getAssetsBreakdown**](doc/CryptoWalletApi.md#getassetsbreakdown) | **GET** /crypto/breakdown/ | Get crypto asset allocation/breakdown of current User
+[*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getCryptoWallet**](doc/CryptoWalletApi.md#getcryptowallet) | **GET** /crypto/wallet/ | Get crypto wallet of current User - total balance and assets balances
+[*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getDepositAddresses**](doc/CryptoWalletApi.md#getdepositaddresses) | **GET** /crypto/assets/{asset_id}/deposit_addresses/ | Get crypto asset allocation/breakdown of current User
 [*CurrencyApi*](doc/CurrencyApi.md) | [**listCurrencies**](doc/CurrencyApi.md#listcurrencies) | **GET** /currencies/ | List of Currencies available at Bind
 [*ExchangeApi*](doc/ExchangeApi.md) | [**getExchangeRate**](doc/ExchangeApi.md#getexchangerate) | **GET** /fiat/exchange/rate/{from}/{to}/ | Exchange rate between two given currencies
 [*ExchangeApi*](doc/ExchangeApi.md) | [**performExchange**](doc/ExchangeApi.md#performexchange) | **POST** /fiat/exchange/ | Perform exchange operation
@@ -100,6 +103,7 @@ Class | Method | HTTP request | Description
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**updateBankCardSettings**](doc/FiatWalletApi.md#updatebankcardsettings) | **PATCH** /fiat/bankcards/{card_id}/ | Update settings of a Bank Card
 [*GeoApi*](doc/GeoApi.md) | [**listCountries**](doc/GeoApi.md#listcountries) | **GET** /countries/ | Countries list
 [*StagingApi*](doc/StagingApi.md) | [**adjustFiatWalletBalance**](doc/StagingApi.md#adjustfiatwalletbalance) | **POST** /staging/fiat/wallet/adjust/ | Change balance of a fiat wallet
+[*StagingApi*](doc/StagingApi.md) | [**fillCryptoWallet**](doc/StagingApi.md#fillcryptowallet) | **POST** /staging/crypto/wallet/fill/ | Put some testnet assets in a crypto wallet of a current user
 [*TransactionsApi*](doc/TransactionsApi.md) | [**exportTransactions**](doc/TransactionsApi.md#exporttransactions) | **POST** /transactions/export | Export user transaction to csv
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getExportHistory**](doc/TransactionsApi.md#getexporthistory) | **GET** /transactions/export/history | Get export history
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionsAssetsList**](doc/TransactionsApi.md#gettransactionsassetslist) | **POST** /transactions/assets/ | Get list of assets of user transactions
@@ -109,6 +113,7 @@ Class | Method | HTTP request | Description
 [*UserApi*](doc/UserApi.md) | [**createKYCRequest**](doc/UserApi.md#createkycrequest) | **POST** /user/kyc/requests/ | Create KYC Request
 [*UserApi*](doc/UserApi.md) | [**moveKYCRequest**](doc/UserApi.md#movekycrequest) | **POST** /users/kyc/requests/approval/ | Move KYCRequest to approval
 [*UserApi*](doc/UserApi.md) | [**updateUser**](doc/UserApi.md#updateuser) | **PATCH** /users/{userID}/ | Update user
+[*WalletApi*](doc/WalletApi.md) | [**getMainWallet**](doc/WalletApi.md#getmainwallet) | **GET** /wallet/ | Total balance and info about Users wallets in crypto, fiat and nft
 
 
 ## Documentation For Models
@@ -132,7 +137,16 @@ Class | Method | HTTP request | Description
  - [CreateFiatWalletRequest](doc/CreateFiatWalletRequest.md)
  - [CreateInnerFiatRequestRequest](doc/CreateInnerFiatRequestRequest.md)
  - [CreateInnerFiatTransferRequest](doc/CreateInnerFiatTransferRequest.md)
+ - [CryptoAccountLight](doc/CryptoAccountLight.md)
+ - [CryptoAccountWithShare](doc/CryptoAccountWithShare.md)
+ - [CryptoAccountWithShareAllOf](doc/CryptoAccountWithShareAllOf.md)
+ - [CryptoWallet](doc/CryptoWallet.md)
+ - [CryptoWalletAllOf](doc/CryptoWalletAllOf.md)
+ - [CryptoWalletBalance](doc/CryptoWalletBalance.md)
+ - [CryptoWalletWithShare](doc/CryptoWalletWithShare.md)
+ - [CryptoWalletWithShareAllOf](doc/CryptoWalletWithShareAllOf.md)
  - [Currency](doc/Currency.md)
+ - [DepositAddress](doc/DepositAddress.md)
  - [Error](doc/Error.md)
  - [ExportHistory](doc/ExportHistory.md)
  - [FiatAccount](doc/FiatAccount.md)
@@ -148,6 +162,8 @@ Class | Method | HTTP request | Description
  - [KYCRequestMoveResult](doc/KYCRequestMoveResult.md)
  - [KYCRequestMoveResultRequestFieldsStatus](doc/KYCRequestMoveResultRequestFieldsStatus.md)
  - [KYCRequestStatus](doc/KYCRequestStatus.md)
+ - [MainWalletItem](doc/MainWalletItem.md)
+ - [MainWalletType](doc/MainWalletType.md)
  - [PerformExchangeRequest](doc/PerformExchangeRequest.md)
  - [PerformFiatTransferRequest](doc/PerformFiatTransferRequest.md)
  - [SyncContactsRequest](doc/SyncContactsRequest.md)

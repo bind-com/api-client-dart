@@ -12,6 +12,7 @@ import 'package:bind_api/src/auth/oauth.dart';
 import 'package:bind_api/src/api/auth_api.dart';
 import 'package:bind_api/src/api/beneficiaries_api.dart';
 import 'package:bind_api/src/api/contacts_api.dart';
+import 'package:bind_api/src/api/crypto_wallet_api.dart';
 import 'package:bind_api/src/api/currency_api.dart';
 import 'package:bind_api/src/api/exchange_api.dart';
 import 'package:bind_api/src/api/fiat_wallet_api.dart';
@@ -19,6 +20,7 @@ import 'package:bind_api/src/api/geo_api.dart';
 import 'package:bind_api/src/api/staging_api.dart';
 import 'package:bind_api/src/api/transactions_api.dart';
 import 'package:bind_api/src/api/user_api.dart';
+import 'package:bind_api/src/api/wallet_api.dart';
 
 class BindApi {
   static const String basePath = r'https://api.thebind.uk/v1';
@@ -92,6 +94,12 @@ class BindApi {
     return ContactsApi(dio, serializers);
   }
 
+  /// Get CryptoWalletApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  CryptoWalletApi getCryptoWalletApi() {
+    return CryptoWalletApi(dio, serializers);
+  }
+
   /// Get CurrencyApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   CurrencyApi getCurrencyApi() {
@@ -132,5 +140,11 @@ class BindApi {
   /// by doing that all interceptors will not be executed
   UserApi getUserApi() {
     return UserApi(dio, serializers);
+  }
+
+  /// Get WalletApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  WalletApi getWalletApi() {
+    return WalletApi(dio, serializers);
   }
 }

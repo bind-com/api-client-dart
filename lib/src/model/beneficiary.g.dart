@@ -16,8 +16,6 @@ class _$Beneficiary extends Beneficiary {
   @override
   final bool isFavorite;
   @override
-  final bool isBindUser;
-  @override
   final String accountNumber;
 
   factory _$Beneficiary([void Function(BeneficiaryBuilder)? updates]) =>
@@ -28,7 +26,6 @@ class _$Beneficiary extends Beneficiary {
       required this.firstName,
       required this.lastName,
       required this.isFavorite,
-      required this.isBindUser,
       required this.accountNumber})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, r'Beneficiary', 'id');
@@ -37,8 +34,6 @@ class _$Beneficiary extends Beneficiary {
     BuiltValueNullFieldError.checkNotNull(lastName, r'Beneficiary', 'lastName');
     BuiltValueNullFieldError.checkNotNull(
         isFavorite, r'Beneficiary', 'isFavorite');
-    BuiltValueNullFieldError.checkNotNull(
-        isBindUser, r'Beneficiary', 'isBindUser');
     BuiltValueNullFieldError.checkNotNull(
         accountNumber, r'Beneficiary', 'accountNumber');
   }
@@ -58,7 +53,6 @@ class _$Beneficiary extends Beneficiary {
         firstName == other.firstName &&
         lastName == other.lastName &&
         isFavorite == other.isFavorite &&
-        isBindUser == other.isBindUser &&
         accountNumber == other.accountNumber;
   }
 
@@ -66,11 +60,9 @@ class _$Beneficiary extends Beneficiary {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc(
-                $jc($jc($jc(0, id.hashCode), firstName.hashCode),
-                    lastName.hashCode),
-                isFavorite.hashCode),
-            isBindUser.hashCode),
+            $jc($jc($jc(0, id.hashCode), firstName.hashCode),
+                lastName.hashCode),
+            isFavorite.hashCode),
         accountNumber.hashCode));
   }
 
@@ -81,7 +73,6 @@ class _$Beneficiary extends Beneficiary {
           ..add('firstName', firstName)
           ..add('lastName', lastName)
           ..add('isFavorite', isFavorite)
-          ..add('isBindUser', isBindUser)
           ..add('accountNumber', accountNumber))
         .toString();
   }
@@ -106,10 +97,6 @@ class BeneficiaryBuilder implements Builder<Beneficiary, BeneficiaryBuilder> {
   bool? get isFavorite => _$this._isFavorite;
   set isFavorite(bool? isFavorite) => _$this._isFavorite = isFavorite;
 
-  bool? _isBindUser;
-  bool? get isBindUser => _$this._isBindUser;
-  set isBindUser(bool? isBindUser) => _$this._isBindUser = isBindUser;
-
   String? _accountNumber;
   String? get accountNumber => _$this._accountNumber;
   set accountNumber(String? accountNumber) =>
@@ -126,7 +113,6 @@ class BeneficiaryBuilder implements Builder<Beneficiary, BeneficiaryBuilder> {
       _firstName = $v.firstName;
       _lastName = $v.lastName;
       _isFavorite = $v.isFavorite;
-      _isBindUser = $v.isBindUser;
       _accountNumber = $v.accountNumber;
       _$v = null;
     }
@@ -157,8 +143,6 @@ class BeneficiaryBuilder implements Builder<Beneficiary, BeneficiaryBuilder> {
                 lastName, r'Beneficiary', 'lastName'),
             isFavorite: BuiltValueNullFieldError.checkNotNull(
                 isFavorite, r'Beneficiary', 'isFavorite'),
-            isBindUser: BuiltValueNullFieldError.checkNotNull(
-                isBindUser, r'Beneficiary', 'isBindUser'),
             accountNumber: BuiltValueNullFieldError.checkNotNull(
                 accountNumber, r'Beneficiary', 'accountNumber'));
     replace(_$result);
