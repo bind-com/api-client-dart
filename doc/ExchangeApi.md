@@ -9,9 +9,58 @@ All URIs are relative to *https://api.thebind.uk/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**getCryptoExchangeRate**](ExchangeApi.md#getcryptoexchangerate) | **GET** /crypto/exchange/rate/{from}/{to}/ | Exchange rate between two given assets (at least one of them is crypto)
 [**getExchangeRate**](ExchangeApi.md#getexchangerate) | **GET** /fiat/exchange/rate/{from}/{to}/ | Exchange rate between two given currencies
 [**performExchange**](ExchangeApi.md#performexchange) | **POST** /fiat/exchange/ | Perform exchange operation
 
+
+# **getCryptoExchangeRate**
+> num getCryptoExchangeRate(from, to)
+
+Exchange rate between two given assets (at least one of them is crypto)
+
+How much of asset \"to\" you get for asset \"from\"
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getExchangeApi();
+final String from = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final String to = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+
+try {
+    final response = api.getCryptoExchangeRate(from, to);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling ExchangeApi->getCryptoExchangeRate: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **String**|  | 
+ **to** | **String**|  | 
+
+### Return type
+
+**num**
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getExchangeRate**
 > num getExchangeRate(from, to)

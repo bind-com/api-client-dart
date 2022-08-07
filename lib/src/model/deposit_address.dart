@@ -16,16 +16,16 @@ part 'deposit_address.g.dart';
 /// * [assetId] 
 abstract class DepositAddress implements Built<DepositAddress, DepositAddressBuilder> {
     @BuiltValueField(wireName: r'address')
-    String? get address;
+    String get address;
 
     @BuiltValueField(wireName: r'network_code')
-    String? get networkCode;
+    String get networkCode;
 
     @BuiltValueField(wireName: r'asset_code')
-    String? get assetCode;
+    String get assetCode;
 
     @BuiltValueField(wireName: r'asset_id')
-    String? get assetId;
+    String get assetId;
 
     DepositAddress._();
 
@@ -49,30 +49,22 @@ class _$DepositAddressSerializer implements StructuredSerializer<DepositAddress>
     Iterable<Object?> serialize(Serializers serializers, DepositAddress object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
-        if (object.address != null) {
-            result
-                ..add(r'address')
-                ..add(serializers.serialize(object.address,
-                    specifiedType: const FullType(String)));
-        }
-        if (object.networkCode != null) {
-            result
-                ..add(r'network_code')
-                ..add(serializers.serialize(object.networkCode,
-                    specifiedType: const FullType(String)));
-        }
-        if (object.assetCode != null) {
-            result
-                ..add(r'asset_code')
-                ..add(serializers.serialize(object.assetCode,
-                    specifiedType: const FullType(String)));
-        }
-        if (object.assetId != null) {
-            result
-                ..add(r'asset_id')
-                ..add(serializers.serialize(object.assetId,
-                    specifiedType: const FullType(String)));
-        }
+        result
+            ..add(r'address')
+            ..add(serializers.serialize(object.address,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'network_code')
+            ..add(serializers.serialize(object.networkCode,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'asset_code')
+            ..add(serializers.serialize(object.assetCode,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'asset_id')
+            ..add(serializers.serialize(object.assetId,
+                specifiedType: const FullType(String)));
         return result;
     }
 

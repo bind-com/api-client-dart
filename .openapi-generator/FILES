@@ -32,6 +32,9 @@ doc/CryptoWalletApi.md
 doc/CryptoWalletBalance.md
 doc/CryptoWalletWithShare.md
 doc/CryptoWalletWithShareAllOf.md
+doc/CryptoWithdrawalFeeEstimationRequest.md
+doc/CryptoWithdrawalFeeEstimationResult.md
+doc/CryptoWithdrawalRequest.md
 doc/Currency.md
 doc/CurrencyApi.md
 doc/DepositAddress.md
@@ -75,6 +78,8 @@ doc/UserApi.md
 doc/UserSharingData.md
 doc/WalletApi.md
 doc/WalletBalanceInfo.md
+doc/WithdrawalAddress.md
+doc/WithdrawalAddressCreationRequest.md
 lib/bind_api.dart
 lib/src/api.dart
 lib/src/api/auth_api.dart
@@ -123,6 +128,9 @@ lib/src/model/crypto_wallet_all_of.dart
 lib/src/model/crypto_wallet_balance.dart
 lib/src/model/crypto_wallet_with_share.dart
 lib/src/model/crypto_wallet_with_share_all_of.dart
+lib/src/model/crypto_withdrawal_fee_estimation_request.dart
+lib/src/model/crypto_withdrawal_fee_estimation_result.dart
+lib/src/model/crypto_withdrawal_request.dart
 lib/src/model/currency.dart
 lib/src/model/date.dart
 lib/src/model/deposit_address.dart
@@ -159,6 +167,8 @@ lib/src/model/update_contact_request.dart
 lib/src/model/user.dart
 lib/src/model/user_sharing_data.dart
 lib/src/model/wallet_balance_info.dart
+lib/src/model/withdrawal_address.dart
+lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
 test/add_contact_by_user_request_test.dart
@@ -192,6 +202,9 @@ test/crypto_wallet_balance_test.dart
 test/crypto_wallet_test.dart
 test/crypto_wallet_with_share_all_of_test.dart
 test/crypto_wallet_with_share_test.dart
+test/crypto_withdrawal_fee_estimation_request_test.dart
+test/crypto_withdrawal_fee_estimation_result_test.dart
+test/crypto_withdrawal_request_test.dart
 test/currency_api_test.dart
 test/currency_test.dart
 test/deposit_address_test.dart
@@ -235,3 +248,5 @@ test/user_sharing_data_test.dart
 test/user_test.dart
 test/wallet_api_test.dart
 test/wallet_balance_info_test.dart
+test/withdrawal_address_creation_request_test.dart
+test/withdrawal_address_test.dart

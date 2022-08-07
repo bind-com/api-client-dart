@@ -48,7 +48,7 @@ class TransactionsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/transactions/export';
+    final _path = r'/transactions/export/';
     final _options = Options(
       method: r'POST',
       responseType: ResponseType.bytes,
@@ -142,7 +142,7 @@ class TransactionsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/transactions/export/history';
+    final _path = r'/transactions/export/history/';
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{

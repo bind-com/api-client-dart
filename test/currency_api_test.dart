@@ -9,7 +9,7 @@ void main() {
   group(CurrencyApi, () {
     // List of Currencies available at Bind
     //
-    //Future<BuiltList<Currency>> listCurrencies() async
+    //Future<BuiltList<Currency>> listCurrencies({ bool isCrypto }) async
     test('test listCurrencies', () async {
       // TODO
     });

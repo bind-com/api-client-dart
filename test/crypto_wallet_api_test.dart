@@ -7,6 +7,27 @@ void main() {
   final instance = BindApi().getCryptoWalletApi();
 
   group(CryptoWalletApi, () {
+    // Create new whitelisted withdrawal address
+    //
+    //Future<WithdrawalAddress> createWithdrawalAddress({ WithdrawalAddressCreationRequest withdrawalAddressCreationRequest }) async
+    test('test createWithdrawalAddress', () async {
+      // TODO
+    });
+
+    // Delete withdrawal asset
+    //
+    //Future deleteWithdrawalAddress(String addressId) async
+    test('test deleteWithdrawalAddress', () async {
+      // TODO
+    });
+
+    // Estimate fee for withdrawal
+    //
+    //Future<CryptoWithdrawalFeeEstimationResult> estimateCryptoWithdrawalFee({ CryptoWithdrawalFeeEstimationRequest cryptoWithdrawalFeeEstimationRequest }) async
+    test('test estimateCryptoWithdrawalFee', () async {
+      // TODO
+    });
+
     // Get crypto asset allocation/breakdown of current User
     //
     //Future<BuiltList<CryptoWalletWithShare>> getAssetsBreakdown() async
@@ -21,10 +42,24 @@ void main() {
       // TODO
     });
 
-    // Get crypto asset allocation/breakdown of current User
+    // Get deposit addresses for a crypto asset
     //
     //Future<BuiltList<DepositAddress>> getDepositAddresses(String assetId) async
     test('test getDepositAddresses', () async {
+      // TODO
+    });
+
+    // Get whitelisted addresses for crypto withdrawal
+    //
+    //Future<BuiltList<WithdrawalAddress>> getWithdrawalAddresses(String assetId) async
+    test('test getWithdrawalAddresses', () async {
+      // TODO
+    });
+
+    // Register a withdrawal transaction
+    //
+    //Future performWithdrawalOfCrypto({ CryptoWithdrawalRequest cryptoWithdrawalRequest }) async
+    test('test performWithdrawalOfCrypto', () async {
       // TODO
     });
 

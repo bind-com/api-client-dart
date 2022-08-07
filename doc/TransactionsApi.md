@@ -9,8 +9,8 @@ All URIs are relative to *https://api.thebind.uk/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**exportTransactions**](TransactionsApi.md#exporttransactions) | **POST** /transactions/export | Export user transaction to csv
-[**getExportHistory**](TransactionsApi.md#getexporthistory) | **GET** /transactions/export/history | Get export history
+[**exportTransactions**](TransactionsApi.md#exporttransactions) | **POST** /transactions/export/ | Export user transaction to csv
+[**getExportHistory**](TransactionsApi.md#getexporthistory) | **GET** /transactions/export/history/ | Get export history
 [**getTransactionsAssetsList**](TransactionsApi.md#gettransactionsassetslist) | **POST** /transactions/assets/ | Get list of assets of user transactions
 [**getTransactionsFiltered**](TransactionsApi.md#gettransactionsfiltered) | **POST** /transactions/ | Get list of user transactions
 
