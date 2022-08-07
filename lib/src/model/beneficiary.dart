@@ -14,7 +14,6 @@ part 'beneficiary.g.dart';
 /// * [firstName] 
 /// * [lastName] 
 /// * [isFavorite] 
-/// * [isBindUser] 
 /// * [accountNumber] 
 abstract class Beneficiary implements Built<Beneficiary, BeneficiaryBuilder> {
     @BuiltValueField(wireName: r'id')
@@ -28,9 +27,6 @@ abstract class Beneficiary implements Built<Beneficiary, BeneficiaryBuilder> {
 
     @BuiltValueField(wireName: r'is_favorite')
     bool get isFavorite;
-
-    @BuiltValueField(wireName: r'is_bind_user')
-    bool get isBindUser;
 
     @BuiltValueField(wireName: r'account_number')
     String get accountNumber;
@@ -74,10 +70,6 @@ class _$BeneficiarySerializer implements StructuredSerializer<Beneficiary> {
             ..add(serializers.serialize(object.isFavorite,
                 specifiedType: const FullType(bool)));
         result
-            ..add(r'is_bind_user')
-            ..add(serializers.serialize(object.isBindUser,
-                specifiedType: const FullType(bool)));
-        result
             ..add(r'account_number')
             ..add(serializers.serialize(object.accountNumber,
                 specifiedType: const FullType(String)));
@@ -115,11 +107,6 @@ class _$BeneficiarySerializer implements StructuredSerializer<Beneficiary> {
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(bool)) as bool;
                     result.isFavorite = valueDes;
-                    break;
-                case r'is_bind_user':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(bool)) as bool;
-                    result.isBindUser = valueDes;
                     break;
                 case r'account_number':
                     final valueDes = serializers.deserialize(value,

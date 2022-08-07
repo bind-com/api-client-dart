@@ -27,11 +27,6 @@ void main() {
       // TODO
     });
 
-    // bool isBindUser
-    test('to test the property `isBindUser`', () async {
-      // TODO
-    });
-
     // String accountNumber
     test('to test the property `accountNumber`', () async {
       // TODO

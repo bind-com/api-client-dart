@@ -27,7 +27,16 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(CreateFiatWalletRequest.serializer)
       ..add(CreateInnerFiatRequestRequest.serializer)
       ..add(CreateInnerFiatTransferRequest.serializer)
+      ..add(CryptoAccountLight.serializer)
+      ..add(CryptoAccountWithShare.serializer)
+      ..add(CryptoAccountWithShareAllOf.serializer)
+      ..add(CryptoWallet.serializer)
+      ..add(CryptoWalletAllOf.serializer)
+      ..add(CryptoWalletBalance.serializer)
+      ..add(CryptoWalletWithShare.serializer)
+      ..add(CryptoWalletWithShareAllOf.serializer)
       ..add(Currency.serializer)
+      ..add(DepositAddress.serializer)
       ..add(Error.serializer)
       ..add(ExportHistory.serializer)
       ..add(ExportHistoryWalletTypeEnum.serializer)
@@ -46,6 +55,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(KYCRequestMoveResultRequestFieldsStatus.serializer)
       ..add(KYCRequestMoveResultStatusEnum.serializer)
       ..add(KYCRequestStatus.serializer)
+      ..add(MainWalletItem.serializer)
+      ..add(MainWalletType.serializer)
       ..add(PerformExchangeRequest.serializer)
       ..add(PerformFiatTransferRequest.serializer)
       ..add(SyncContactsRequest.serializer)
@@ -65,6 +76,20 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(User.serializer)
       ..add(UserSharingData.serializer)
       ..add(WalletBalanceInfo.serializer)
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(CryptoAccountLight)]),
+          () => new ListBuilder<CryptoAccountLight>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(CryptoAccountLight)]),
+          () => new ListBuilder<CryptoAccountLight>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(CryptoAccountWithShare)]),
+          () => new ListBuilder<CryptoAccountWithShare>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(CryptoAccountWithShare)]),
+          () => new ListBuilder<CryptoAccountWithShare>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(FiatWalletWithPaymentCurrency)]),

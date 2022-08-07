@@ -16,5 +16,14 @@ void main() {
       // TODO
     });
 
+    // Put some testnet assets in a crypto wallet of a current user
+    //
+    // Assets come in little amounts because it is hard to find generous testnet faucets
+    //
+    //Future fillCryptoWallet() async
+    test('test fillCryptoWallet', () async {
+      // TODO
+    });
+
   });
 }
