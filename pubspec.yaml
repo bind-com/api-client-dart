@@ -1,6 +1,6 @@
 name: bind_api
-version: 0.4.1
-description: A package to interact api.bind.com
+version: 0.5.2
+description: OpenAPI API client
 homepage: https://bind.com/
 
 environment:

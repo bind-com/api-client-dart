@@ -8,8 +8,6 @@ part of 'crypto_account_light.dart';
 
 class _$CryptoAccountLight extends CryptoAccountLight {
   @override
-  final String id;
-  @override
   final num assetBalance;
   @override
   final String assetCode;
@@ -31,8 +29,7 @@ class _$CryptoAccountLight extends CryptoAccountLight {
       (new CryptoAccountLightBuilder()..update(updates))._build();
 
   _$CryptoAccountLight._(
-      {required this.id,
-      required this.assetBalance,
+      {required this.assetBalance,
       required this.assetCode,
       required this.assetName,
       required this.assetId,
@@ -41,7 +38,6 @@ class _$CryptoAccountLight extends CryptoAccountLight {
       required this.paymentCurrencyCode,
       required this.paymentCurrencyBalance})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, r'CryptoAccountLight', 'id');
     BuiltValueNullFieldError.checkNotNull(
         assetBalance, r'CryptoAccountLight', 'assetBalance');
     BuiltValueNullFieldError.checkNotNull(
@@ -73,7 +69,6 @@ class _$CryptoAccountLight extends CryptoAccountLight {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CryptoAccountLight &&
-        id == other.id &&
         assetBalance == other.assetBalance &&
         assetCode == other.assetCode &&
         assetName == other.assetName &&
@@ -92,7 +87,7 @@ class _$CryptoAccountLight extends CryptoAccountLight {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, id.hashCode), assetBalance.hashCode),
+                            $jc($jc(0, assetBalance.hashCode),
                                 assetCode.hashCode),
                             assetName.hashCode),
                         assetId.hashCode),
@@ -105,7 +100,6 @@ class _$CryptoAccountLight extends CryptoAccountLight {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'CryptoAccountLight')
-          ..add('id', id)
           ..add('assetBalance', assetBalance)
           ..add('assetCode', assetCode)
           ..add('assetName', assetName)
@@ -121,10 +115,6 @@ class _$CryptoAccountLight extends CryptoAccountLight {
 class CryptoAccountLightBuilder
     implements Builder<CryptoAccountLight, CryptoAccountLightBuilder> {
   _$CryptoAccountLight? _$v;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
 
   num? _assetBalance;
   num? get assetBalance => _$this._assetBalance;
@@ -168,7 +158,6 @@ class CryptoAccountLightBuilder
   CryptoAccountLightBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _id = $v.id;
       _assetBalance = $v.assetBalance;
       _assetCode = $v.assetCode;
       _assetName = $v.assetName;
@@ -199,8 +188,6 @@ class CryptoAccountLightBuilder
   _$CryptoAccountLight _build() {
     final _$result = _$v ??
         new _$CryptoAccountLight._(
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'CryptoAccountLight', 'id'),
             assetBalance: BuiltValueNullFieldError.checkNotNull(
                 assetBalance, r'CryptoAccountLight', 'assetBalance'),
             assetCode: BuiltValueNullFieldError.checkNotNull(
@@ -216,7 +203,9 @@ class CryptoAccountLightBuilder
             paymentCurrencyCode: BuiltValueNullFieldError.checkNotNull(
                 paymentCurrencyCode, r'CryptoAccountLight', 'paymentCurrencyCode'),
             paymentCurrencyBalance: BuiltValueNullFieldError.checkNotNull(
-                paymentCurrencyBalance, r'CryptoAccountLight', 'paymentCurrencyBalance'));
+                paymentCurrencyBalance,
+                r'CryptoAccountLight',
+                'paymentCurrencyBalance'));
     replace(_$result);
     return _$result;
   }

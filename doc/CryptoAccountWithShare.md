@@ -8,7 +8,6 @@ import 'package:bind_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | Primary key of an account | 
 **assetBalance** | **num** | balance of a token | 
 **assetCode** | **String** | Code of an asset | 
 **assetName** | **String** | Full name of a token | 
