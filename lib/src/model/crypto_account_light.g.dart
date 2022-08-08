@@ -16,7 +16,7 @@ class _$CryptoAccountLight extends CryptoAccountLight {
   @override
   final String assetId;
   @override
-  final String assetLogo;
+  final String? assetLogo;
   @override
   final num assetPerformance;
   @override
@@ -33,7 +33,7 @@ class _$CryptoAccountLight extends CryptoAccountLight {
       required this.assetCode,
       required this.assetName,
       required this.assetId,
-      required this.assetLogo,
+      this.assetLogo,
       required this.assetPerformance,
       required this.paymentCurrencyCode,
       required this.paymentCurrencyBalance})
@@ -46,8 +46,6 @@ class _$CryptoAccountLight extends CryptoAccountLight {
         assetName, r'CryptoAccountLight', 'assetName');
     BuiltValueNullFieldError.checkNotNull(
         assetId, r'CryptoAccountLight', 'assetId');
-    BuiltValueNullFieldError.checkNotNull(
-        assetLogo, r'CryptoAccountLight', 'assetLogo');
     BuiltValueNullFieldError.checkNotNull(
         assetPerformance, r'CryptoAccountLight', 'assetPerformance');
     BuiltValueNullFieldError.checkNotNull(
@@ -196,12 +194,13 @@ class CryptoAccountLightBuilder
                 assetName, r'CryptoAccountLight', 'assetName'),
             assetId: BuiltValueNullFieldError.checkNotNull(
                 assetId, r'CryptoAccountLight', 'assetId'),
-            assetLogo: BuiltValueNullFieldError.checkNotNull(
-                assetLogo, r'CryptoAccountLight', 'assetLogo'),
+            assetLogo: assetLogo,
             assetPerformance: BuiltValueNullFieldError.checkNotNull(
                 assetPerformance, r'CryptoAccountLight', 'assetPerformance'),
             paymentCurrencyCode: BuiltValueNullFieldError.checkNotNull(
-                paymentCurrencyCode, r'CryptoAccountLight', 'paymentCurrencyCode'),
+                paymentCurrencyCode,
+                r'CryptoAccountLight',
+                'paymentCurrencyCode'),
             paymentCurrencyBalance: BuiltValueNullFieldError.checkNotNull(
                 paymentCurrencyBalance,
                 r'CryptoAccountLight',

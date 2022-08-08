@@ -16,7 +16,7 @@ class _$CryptoAccountWithShare extends CryptoAccountWithShare {
   @override
   final String assetId;
   @override
-  final String assetLogo;
+  final String? assetLogo;
   @override
   final num assetPerformance;
   @override
@@ -35,7 +35,7 @@ class _$CryptoAccountWithShare extends CryptoAccountWithShare {
       required this.assetCode,
       required this.assetName,
       required this.assetId,
-      required this.assetLogo,
+      this.assetLogo,
       required this.assetPerformance,
       required this.paymentCurrencyCode,
       required this.paymentCurrencyBalance,
@@ -49,8 +49,6 @@ class _$CryptoAccountWithShare extends CryptoAccountWithShare {
         assetName, r'CryptoAccountWithShare', 'assetName');
     BuiltValueNullFieldError.checkNotNull(
         assetId, r'CryptoAccountWithShare', 'assetId');
-    BuiltValueNullFieldError.checkNotNull(
-        assetLogo, r'CryptoAccountWithShare', 'assetLogo');
     BuiltValueNullFieldError.checkNotNull(
         assetPerformance, r'CryptoAccountWithShare', 'assetPerformance');
     BuiltValueNullFieldError.checkNotNull(
@@ -208,12 +206,13 @@ class CryptoAccountWithShareBuilder
                 assetName, r'CryptoAccountWithShare', 'assetName'),
             assetId: BuiltValueNullFieldError.checkNotNull(
                 assetId, r'CryptoAccountWithShare', 'assetId'),
-            assetLogo: BuiltValueNullFieldError.checkNotNull(
-                assetLogo, r'CryptoAccountWithShare', 'assetLogo'),
+            assetLogo: assetLogo,
             assetPerformance: BuiltValueNullFieldError.checkNotNull(
                 assetPerformance, r'CryptoAccountWithShare', 'assetPerformance'),
             paymentCurrencyCode: BuiltValueNullFieldError.checkNotNull(
-                paymentCurrencyCode, r'CryptoAccountWithShare', 'paymentCurrencyCode'),
+                paymentCurrencyCode,
+                r'CryptoAccountWithShare',
+                'paymentCurrencyCode'),
             paymentCurrencyBalance: BuiltValueNullFieldError.checkNotNull(
                 paymentCurrencyBalance,
                 r'CryptoAccountWithShare',
