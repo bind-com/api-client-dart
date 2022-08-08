@@ -30,14 +30,14 @@ void main() {
 
     // Get crypto asset allocation/breakdown of current User
     //
-    //Future<BuiltList<CryptoWalletWithShare>> getAssetsBreakdown() async
+    //Future<CryptoWalletWithShare> getAssetsBreakdown() async
     test('test getAssetsBreakdown', () async {
       // TODO
     });
 
     // Get crypto wallet of current User - total balance and assets balances
     //
-    //Future<BuiltList<CryptoWallet>> getCryptoWallet() async
+    //Future<CryptoWallet> getCryptoWallet() async
     test('test getCryptoWallet', () async {
       // TODO
     });

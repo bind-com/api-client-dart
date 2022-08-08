@@ -153,6 +153,10 @@ part 'serializers.g.dart';
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Transaction)]),
+        () => ListBuilder<Transaction>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(MainWalletItem)]),
         () => ListBuilder<MainWalletItem>(),
       )
@@ -161,12 +165,16 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<Country>(),
       )
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Contact)]),
+        () => ListBuilder<Contact>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(FiatWalletWithPaymentCurrency)]),
         () => ListBuilder<FiatWalletWithPaymentCurrency>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(CryptoWallet)]),
-        () => ListBuilder<CryptoWallet>(),
+        const FullType(BuiltList, [FullType(BankCardBaseData)]),
+        () => ListBuilder<BankCardBaseData>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Beneficiary)]),
@@ -185,28 +193,12 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<ExportHistory>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(DepositAddress)]),
-        () => ListBuilder<DepositAddress>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(CryptoWalletWithShare)]),
-        () => ListBuilder<CryptoWalletWithShare>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Transaction)]),
-        () => ListBuilder<Transaction>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Contact)]),
-        () => ListBuilder<Contact>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(BankCardBaseData)]),
-        () => ListBuilder<BankCardBaseData>(),
-      )
-      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(WithdrawalAddress)]),
         () => ListBuilder<WithdrawalAddress>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(DepositAddress)]),
+        () => ListBuilder<DepositAddress>(),
       )
       ..add(const DateSerializer())
       ..add(Iso8601DateTimeSerializer()))

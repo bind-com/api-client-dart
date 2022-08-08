@@ -289,9 +289,9 @@ class CryptoWalletApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<CryptoWalletWithShare>] as data
+  /// Returns a [Future] containing a [Response] with a [CryptoWalletWithShare] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<CryptoWalletWithShare>>> getAssetsBreakdown({ 
+  Future<Response<CryptoWalletWithShare>> getAssetsBreakdown({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -326,14 +326,14 @@ class CryptoWalletApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<CryptoWalletWithShare> _responseData;
+    CryptoWalletWithShare _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(CryptoWalletWithShare)]);
+      const _responseType = FullType(CryptoWalletWithShare);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as BuiltList<CryptoWalletWithShare>;
+      ) as CryptoWalletWithShare;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -344,7 +344,7 @@ class CryptoWalletApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<CryptoWalletWithShare>>(
+    return Response<CryptoWalletWithShare>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -367,9 +367,9 @@ class CryptoWalletApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<CryptoWallet>] as data
+  /// Returns a [Future] containing a [Response] with a [CryptoWallet] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<CryptoWallet>>> getCryptoWallet({ 
+  Future<Response<CryptoWallet>> getCryptoWallet({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -404,14 +404,14 @@ class CryptoWalletApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<CryptoWallet> _responseData;
+    CryptoWallet _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(CryptoWallet)]);
+      const _responseType = FullType(CryptoWallet);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as BuiltList<CryptoWallet>;
+      ) as CryptoWallet;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -422,7 +422,7 @@ class CryptoWalletApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<CryptoWallet>>(
+    return Response<CryptoWallet>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

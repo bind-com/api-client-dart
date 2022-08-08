@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getAssetsBreakdown**
-> BuiltList<CryptoWalletWithShare> getAssetsBreakdown()
+> CryptoWalletWithShare getAssetsBreakdown()
 
 Get crypto asset allocation/breakdown of current User
 
@@ -177,7 +177,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;CryptoWalletWithShare&gt;**](CryptoWalletWithShare.md)
+[**CryptoWalletWithShare**](CryptoWalletWithShare.md)
 
 ### Authorization
 
@@ -191,7 +191,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCryptoWallet**
-> BuiltList<CryptoWallet> getCryptoWallet()
+> CryptoWallet getCryptoWallet()
 
 Get crypto wallet of current User - total balance and assets balances
 
@@ -217,7 +217,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;CryptoWallet&gt;**](CryptoWallet.md)
+[**CryptoWallet**](CryptoWallet.md)
 
 ### Authorization
 
