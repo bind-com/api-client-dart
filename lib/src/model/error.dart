@@ -2,6 +2,8 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -11,13 +13,21 @@ part 'error.g.dart';
 ///
 /// Properties:
 /// * [code] 
-/// * [detail] 
+/// * [message] 
+/// * [parent] 
+/// * [validationError] 
 abstract class Error implements Built<Error, ErrorBuilder> {
     @BuiltValueField(wireName: r'code')
     String get code;
 
-    @BuiltValueField(wireName: r'detail')
-    String? get detail;
+    @BuiltValueField(wireName: r'message')
+    String get message;
+
+    @BuiltValueField(wireName: r'parent')
+    BuiltMap<String, JsonObject?>? get parent;
+
+    @BuiltValueField(wireName: r'validation_error')
+    BuiltMap<String, BuiltList<String>>? get validationError;
 
     Error._();
 
@@ -45,12 +55,18 @@ class _$ErrorSerializer implements StructuredSerializer<Error> {
             ..add(r'code')
             ..add(serializers.serialize(object.code,
                 specifiedType: const FullType(String)));
-        if (object.detail != null) {
-            result
-                ..add(r'detail')
-                ..add(serializers.serialize(object.detail,
-                    specifiedType: const FullType(String)));
-        }
+        result
+            ..add(r'message')
+            ..add(serializers.serialize(object.message,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'parent')
+            ..add(object.parent == null ? null : serializers.serialize(object.parent,
+                specifiedType: const FullType.nullable(BuiltMap, [FullType(String), FullType.nullable(JsonObject)])));
+        result
+            ..add(r'validation_error')
+            ..add(object.validationError == null ? null : serializers.serialize(object.validationError,
+                specifiedType: const FullType.nullable(BuiltMap, [FullType(String), FullType(BuiltList, [FullType(String)])])));
         return result;
     }
 
@@ -71,10 +87,22 @@ class _$ErrorSerializer implements StructuredSerializer<Error> {
                         specifiedType: const FullType(String)) as String;
                     result.code = valueDes;
                     break;
-                case r'detail':
+                case r'message':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
-                    result.detail = valueDes;
+                    result.message = valueDes;
+                    break;
+                case r'parent':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType.nullable(BuiltMap, [FullType(String), FullType.nullable(JsonObject)])) as BuiltMap<String, JsonObject?>?;
+                    if (valueDes == null) continue;
+                    result.parent.replace(valueDes);
+                    break;
+                case r'validation_error':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType.nullable(BuiltMap, [FullType(String), FullType(BuiltList, [FullType(String)])])) as BuiltMap<String, BuiltList<String>>?;
+                    if (valueDes == null) continue;
+                    result.validationError.replace(valueDes);
                     break;
             }
         }
