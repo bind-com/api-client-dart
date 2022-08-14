@@ -10,13 +10,23 @@ class _$Error extends Error {
   @override
   final String code;
   @override
-  final String? detail;
+  final String message;
+  @override
+  final BuiltMap<String, JsonObject?>? parent;
+  @override
+  final BuiltMap<String, BuiltList<String>>? validationError;
 
   factory _$Error([void Function(ErrorBuilder)? updates]) =>
       (new ErrorBuilder()..update(updates))._build();
 
-  _$Error._({required this.code, this.detail}) : super._() {
+  _$Error._(
+      {required this.code,
+      required this.message,
+      this.parent,
+      this.validationError})
+      : super._() {
     BuiltValueNullFieldError.checkNotNull(code, r'Error', 'code');
+    BuiltValueNullFieldError.checkNotNull(message, r'Error', 'message');
   }
 
   @override
@@ -29,19 +39,27 @@ class _$Error extends Error {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Error && code == other.code && detail == other.detail;
+    return other is Error &&
+        code == other.code &&
+        message == other.message &&
+        parent == other.parent &&
+        validationError == other.validationError;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, code.hashCode), detail.hashCode));
+    return $jf($jc(
+        $jc($jc($jc(0, code.hashCode), message.hashCode), parent.hashCode),
+        validationError.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'Error')
           ..add('code', code)
-          ..add('detail', detail))
+          ..add('message', message)
+          ..add('parent', parent)
+          ..add('validationError', validationError))
         .toString();
   }
 }
@@ -53,9 +71,21 @@ class ErrorBuilder implements Builder<Error, ErrorBuilder> {
   String? get code => _$this._code;
   set code(String? code) => _$this._code = code;
 
-  String? _detail;
-  String? get detail => _$this._detail;
-  set detail(String? detail) => _$this._detail = detail;
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
+
+  MapBuilder<String, JsonObject?>? _parent;
+  MapBuilder<String, JsonObject?> get parent =>
+      _$this._parent ??= new MapBuilder<String, JsonObject?>();
+  set parent(MapBuilder<String, JsonObject?>? parent) =>
+      _$this._parent = parent;
+
+  MapBuilder<String, BuiltList<String>>? _validationError;
+  MapBuilder<String, BuiltList<String>> get validationError =>
+      _$this._validationError ??= new MapBuilder<String, BuiltList<String>>();
+  set validationError(MapBuilder<String, BuiltList<String>>? validationError) =>
+      _$this._validationError = validationError;
 
   ErrorBuilder() {
     Error._defaults(this);
@@ -65,7 +95,9 @@ class ErrorBuilder implements Builder<Error, ErrorBuilder> {
     final $v = _$v;
     if ($v != null) {
       _code = $v.code;
-      _detail = $v.detail;
+      _message = $v.message;
+      _parent = $v.parent?.toBuilder();
+      _validationError = $v.validationError?.toBuilder();
       _$v = null;
     }
     return this;
@@ -86,10 +118,29 @@ class ErrorBuilder implements Builder<Error, ErrorBuilder> {
   Error build() => _build();
 
   _$Error _build() {
-    final _$result = _$v ??
-        new _$Error._(
-            code: BuiltValueNullFieldError.checkNotNull(code, r'Error', 'code'),
-            detail: detail);
+    _$Error _$result;
+    try {
+      _$result = _$v ??
+          new _$Error._(
+              code:
+                  BuiltValueNullFieldError.checkNotNull(code, r'Error', 'code'),
+              message: BuiltValueNullFieldError.checkNotNull(
+                  message, r'Error', 'message'),
+              parent: _parent?.build(),
+              validationError: _validationError?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'parent';
+        _parent?.build();
+        _$failedField = 'validationError';
+        _validationError?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Error', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

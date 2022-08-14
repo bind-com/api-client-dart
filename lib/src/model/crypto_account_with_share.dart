@@ -12,7 +12,6 @@ part 'crypto_account_with_share.g.dart';
 /// CryptoAccountWithShare
 ///
 /// Properties:
-/// * [id] - Primary key of an account
 /// * [assetBalance] - balance of a token
 /// * [assetCode] - Code of an asset
 /// * [assetName] - Full name of a token
@@ -23,10 +22,6 @@ part 'crypto_account_with_share.g.dart';
 /// * [paymentCurrencyBalance] - Balance of a wallet converted to fiat currency (payment currency of current user)
 /// * [share] 
 abstract class CryptoAccountWithShare implements Built<CryptoAccountWithShare, CryptoAccountWithShareBuilder> {
-    /// Primary key of an account
-    @BuiltValueField(wireName: r'id')
-    String get id;
-
     /// balance of a token
     @BuiltValueField(wireName: r'asset_balance')
     num get assetBalance;
@@ -45,7 +40,7 @@ abstract class CryptoAccountWithShare implements Built<CryptoAccountWithShare, C
 
     /// Logo of an asset (link to static file)
     @BuiltValueField(wireName: r'asset_logo')
-    String get assetLogo;
+    String? get assetLogo;
 
     /// Percentage of growth of an asset during last 24 hours
     @BuiltValueField(wireName: r'asset_performance')
@@ -85,10 +80,6 @@ class _$CryptoAccountWithShareSerializer implements StructuredSerializer<CryptoA
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
         result
-            ..add(r'id')
-            ..add(serializers.serialize(object.id,
-                specifiedType: const FullType(String)));
-        result
             ..add(r'asset_balance')
             ..add(serializers.serialize(object.assetBalance,
                 specifiedType: const FullType(num)));
@@ -106,8 +97,8 @@ class _$CryptoAccountWithShareSerializer implements StructuredSerializer<CryptoA
                 specifiedType: const FullType(String)));
         result
             ..add(r'asset_logo')
-            ..add(serializers.serialize(object.assetLogo,
-                specifiedType: const FullType(String)));
+            ..add(object.assetLogo == null ? null : serializers.serialize(object.assetLogo,
+                specifiedType: const FullType.nullable(String)));
         result
             ..add(r'asset_performance')
             ..add(serializers.serialize(object.assetPerformance,
@@ -141,11 +132,6 @@ class _$CryptoAccountWithShareSerializer implements StructuredSerializer<CryptoA
             final Object? value = iterator.current;
             
             switch (key) {
-                case r'id':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.id = valueDes;
-                    break;
                 case r'asset_balance':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(num)) as num;
@@ -168,7 +154,8 @@ class _$CryptoAccountWithShareSerializer implements StructuredSerializer<CryptoA
                     break;
                 case r'asset_logo':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
+                        specifiedType: const FullType.nullable(String)) as String?;
+                    if (valueDes == null) continue;
                     result.assetLogo = valueDes;
                     break;
                 case r'asset_performance':

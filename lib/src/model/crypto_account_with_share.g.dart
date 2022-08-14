@@ -8,8 +8,6 @@ part of 'crypto_account_with_share.dart';
 
 class _$CryptoAccountWithShare extends CryptoAccountWithShare {
   @override
-  final String id;
-  @override
   final num assetBalance;
   @override
   final String assetCode;
@@ -18,7 +16,7 @@ class _$CryptoAccountWithShare extends CryptoAccountWithShare {
   @override
   final String assetId;
   @override
-  final String assetLogo;
+  final String? assetLogo;
   @override
   final num assetPerformance;
   @override
@@ -33,18 +31,16 @@ class _$CryptoAccountWithShare extends CryptoAccountWithShare {
       (new CryptoAccountWithShareBuilder()..update(updates))._build();
 
   _$CryptoAccountWithShare._(
-      {required this.id,
-      required this.assetBalance,
+      {required this.assetBalance,
       required this.assetCode,
       required this.assetName,
       required this.assetId,
-      required this.assetLogo,
+      this.assetLogo,
       required this.assetPerformance,
       required this.paymentCurrencyCode,
       required this.paymentCurrencyBalance,
       this.share})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, r'CryptoAccountWithShare', 'id');
     BuiltValueNullFieldError.checkNotNull(
         assetBalance, r'CryptoAccountWithShare', 'assetBalance');
     BuiltValueNullFieldError.checkNotNull(
@@ -53,8 +49,6 @@ class _$CryptoAccountWithShare extends CryptoAccountWithShare {
         assetName, r'CryptoAccountWithShare', 'assetName');
     BuiltValueNullFieldError.checkNotNull(
         assetId, r'CryptoAccountWithShare', 'assetId');
-    BuiltValueNullFieldError.checkNotNull(
-        assetLogo, r'CryptoAccountWithShare', 'assetLogo');
     BuiltValueNullFieldError.checkNotNull(
         assetPerformance, r'CryptoAccountWithShare', 'assetPerformance');
     BuiltValueNullFieldError.checkNotNull(
@@ -76,7 +70,6 @@ class _$CryptoAccountWithShare extends CryptoAccountWithShare {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CryptoAccountWithShare &&
-        id == other.id &&
         assetBalance == other.assetBalance &&
         assetCode == other.assetCode &&
         assetName == other.assetName &&
@@ -97,9 +90,7 @@ class _$CryptoAccountWithShare extends CryptoAccountWithShare {
                     $jc(
                         $jc(
                             $jc(
-                                $jc(
-                                    $jc($jc(0, id.hashCode),
-                                        assetBalance.hashCode),
+                                $jc($jc(0, assetBalance.hashCode),
                                     assetCode.hashCode),
                                 assetName.hashCode),
                             assetId.hashCode),
@@ -113,7 +104,6 @@ class _$CryptoAccountWithShare extends CryptoAccountWithShare {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'CryptoAccountWithShare')
-          ..add('id', id)
           ..add('assetBalance', assetBalance)
           ..add('assetCode', assetCode)
           ..add('assetName', assetName)
@@ -130,10 +120,6 @@ class _$CryptoAccountWithShare extends CryptoAccountWithShare {
 class CryptoAccountWithShareBuilder
     implements Builder<CryptoAccountWithShare, CryptoAccountWithShareBuilder> {
   _$CryptoAccountWithShare? _$v;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
 
   num? _assetBalance;
   num? get assetBalance => _$this._assetBalance;
@@ -181,7 +167,6 @@ class CryptoAccountWithShareBuilder
   CryptoAccountWithShareBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _id = $v.id;
       _assetBalance = $v.assetBalance;
       _assetCode = $v.assetCode;
       _assetName = $v.assetName;
@@ -213,8 +198,6 @@ class CryptoAccountWithShareBuilder
   _$CryptoAccountWithShare _build() {
     final _$result = _$v ??
         new _$CryptoAccountWithShare._(
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'CryptoAccountWithShare', 'id'),
             assetBalance: BuiltValueNullFieldError.checkNotNull(
                 assetBalance, r'CryptoAccountWithShare', 'assetBalance'),
             assetCode: BuiltValueNullFieldError.checkNotNull(
@@ -223,14 +206,17 @@ class CryptoAccountWithShareBuilder
                 assetName, r'CryptoAccountWithShare', 'assetName'),
             assetId: BuiltValueNullFieldError.checkNotNull(
                 assetId, r'CryptoAccountWithShare', 'assetId'),
-            assetLogo: BuiltValueNullFieldError.checkNotNull(
-                assetLogo, r'CryptoAccountWithShare', 'assetLogo'),
+            assetLogo: assetLogo,
             assetPerformance: BuiltValueNullFieldError.checkNotNull(
                 assetPerformance, r'CryptoAccountWithShare', 'assetPerformance'),
             paymentCurrencyCode: BuiltValueNullFieldError.checkNotNull(
-                paymentCurrencyCode, r'CryptoAccountWithShare', 'paymentCurrencyCode'),
-            paymentCurrencyBalance:
-                BuiltValueNullFieldError.checkNotNull(paymentCurrencyBalance, r'CryptoAccountWithShare', 'paymentCurrencyBalance'),
+                paymentCurrencyCode,
+                r'CryptoAccountWithShare',
+                'paymentCurrencyCode'),
+            paymentCurrencyBalance: BuiltValueNullFieldError.checkNotNull(
+                paymentCurrencyBalance,
+                r'CryptoAccountWithShare',
+                'paymentCurrencyBalance'),
             share: share);
     replace(_$result);
     return _$result;

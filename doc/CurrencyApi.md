@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **listCurrencies**
-> BuiltList<Currency> listCurrencies()
+> BuiltList<Currency> listCurrencies(isCrypto)
 
 List of Currencies available at Bind
 
@@ -25,9 +25,10 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getCurrencyApi();
+final bool isCrypto = true; // bool | crypto or fiat currency filter
 
 try {
-    final response = api.listCurrencies();
+    final response = api.listCurrencies(isCrypto);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling CurrencyApi->listCurrencies: $e\n');
@@ -35,7 +36,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **isCrypto** | **bool**| crypto or fiat currency filter | [optional] 
 
 ### Return type
 

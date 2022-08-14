@@ -8,20 +8,32 @@ part of 'deposit_address.dart';
 
 class _$DepositAddress extends DepositAddress {
   @override
-  final String? address;
+  final String address;
   @override
-  final String? networkCode;
+  final String networkCode;
   @override
-  final String? assetCode;
+  final String assetCode;
   @override
-  final String? assetId;
+  final String assetId;
 
   factory _$DepositAddress([void Function(DepositAddressBuilder)? updates]) =>
       (new DepositAddressBuilder()..update(updates))._build();
 
   _$DepositAddress._(
-      {this.address, this.networkCode, this.assetCode, this.assetId})
-      : super._();
+      {required this.address,
+      required this.networkCode,
+      required this.assetCode,
+      required this.assetId})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        address, r'DepositAddress', 'address');
+    BuiltValueNullFieldError.checkNotNull(
+        networkCode, r'DepositAddress', 'networkCode');
+    BuiltValueNullFieldError.checkNotNull(
+        assetCode, r'DepositAddress', 'assetCode');
+    BuiltValueNullFieldError.checkNotNull(
+        assetId, r'DepositAddress', 'assetId');
+  }
 
   @override
   DepositAddress rebuild(void Function(DepositAddressBuilder) updates) =>
@@ -113,10 +125,14 @@ class DepositAddressBuilder
   _$DepositAddress _build() {
     final _$result = _$v ??
         new _$DepositAddress._(
-            address: address,
-            networkCode: networkCode,
-            assetCode: assetCode,
-            assetId: assetId);
+            address: BuiltValueNullFieldError.checkNotNull(
+                address, r'DepositAddress', 'address'),
+            networkCode: BuiltValueNullFieldError.checkNotNull(
+                networkCode, r'DepositAddress', 'networkCode'),
+            assetCode: BuiltValueNullFieldError.checkNotNull(
+                assetCode, r'DepositAddress', 'assetCode'),
+            assetId: BuiltValueNullFieldError.checkNotNull(
+                assetId, r'DepositAddress', 'assetId'));
     replace(_$result);
     return _$result;
   }

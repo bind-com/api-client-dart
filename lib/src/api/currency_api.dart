@@ -7,6 +7,7 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:bind_api/src/api_util.dart';
 import 'package:bind_api/src/model/currency.dart';
 import 'package:bind_api/src/model/error.dart';
 import 'package:built_collection/built_collection.dart';
@@ -23,6 +24,7 @@ class CurrencyApi {
   /// 
   ///
   /// Parameters:
+  /// * [isCrypto] - crypto or fiat currency filter
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -33,6 +35,7 @@ class CurrencyApi {
   /// Returns a [Future] containing a [Response] with a [BuiltList<Currency>] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BuiltList<Currency>>> listCurrencies({ 
+    bool? isCrypto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -59,9 +62,14 @@ class CurrencyApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (isCrypto != null) r'is_crypto': encodeQueryParameter(_serializers, isCrypto, const FullType(bool)),
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,

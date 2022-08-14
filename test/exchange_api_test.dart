@@ -7,6 +7,15 @@ void main() {
   final instance = BindApi().getExchangeApi();
 
   group(ExchangeApi, () {
+    // Exchange rate between two given assets (at least one of them is crypto)
+    //
+    // How much of asset \"to\" you get for asset \"from\"
+    //
+    //Future<num> getCryptoExchangeRate(String from, String to) async
+    test('test getCryptoExchangeRate', () async {
+      // TODO
+    });
+
     // Exchange rate between two given currencies
     //
     // How much of currency \"to\" you get for currency \"from\"

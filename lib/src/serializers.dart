@@ -39,6 +39,9 @@ import 'package:bind_api/src/model/crypto_wallet_all_of.dart';
 import 'package:bind_api/src/model/crypto_wallet_balance.dart';
 import 'package:bind_api/src/model/crypto_wallet_with_share.dart';
 import 'package:bind_api/src/model/crypto_wallet_with_share_all_of.dart';
+import 'package:bind_api/src/model/crypto_withdrawal_fee_estimation_request.dart';
+import 'package:bind_api/src/model/crypto_withdrawal_fee_estimation_result.dart';
+import 'package:bind_api/src/model/crypto_withdrawal_request.dart';
 import 'package:bind_api/src/model/currency.dart';
 import 'package:bind_api/src/model/deposit_address.dart';
 import 'package:bind_api/src/model/error.dart';
@@ -74,6 +77,8 @@ import 'package:bind_api/src/model/update_contact_request.dart';
 import 'package:bind_api/src/model/user.dart';
 import 'package:bind_api/src/model/user_sharing_data.dart';
 import 'package:bind_api/src/model/wallet_balance_info.dart';
+import 'package:bind_api/src/model/withdrawal_address.dart';
+import 'package:bind_api/src/model/withdrawal_address_creation_request.dart';
 
 part 'serializers.g.dart';
 
@@ -105,6 +110,9 @@ part 'serializers.g.dart';
   CryptoWalletBalance,
   CryptoWalletWithShare,
   CryptoWalletWithShareAllOf,
+  CryptoWithdrawalFeeEstimationRequest,
+  CryptoWithdrawalFeeEstimationResult,
+  CryptoWithdrawalRequest,
   Currency,
   DepositAddress,
   Error,
@@ -140,8 +148,14 @@ part 'serializers.g.dart';
   User,
   UserSharingData,
   WalletBalanceInfo,
+  WithdrawalAddress,
+  WithdrawalAddressCreationRequest,
 ])
 Serializers serializers = (_$serializers.toBuilder()
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Transaction)]),
+        () => ListBuilder<Transaction>(),
+      )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(MainWalletItem)]),
         () => ListBuilder<MainWalletItem>(),
@@ -151,12 +165,16 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<Country>(),
       )
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Contact)]),
+        () => ListBuilder<Contact>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(FiatWalletWithPaymentCurrency)]),
         () => ListBuilder<FiatWalletWithPaymentCurrency>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(CryptoWallet)]),
-        () => ListBuilder<CryptoWallet>(),
+        const FullType(BuiltList, [FullType(BankCardBaseData)]),
+        () => ListBuilder<BankCardBaseData>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Beneficiary)]),
@@ -175,24 +193,12 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<ExportHistory>(),
       )
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(WithdrawalAddress)]),
+        () => ListBuilder<WithdrawalAddress>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(DepositAddress)]),
         () => ListBuilder<DepositAddress>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(CryptoWalletWithShare)]),
-        () => ListBuilder<CryptoWalletWithShare>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Transaction)]),
-        () => ListBuilder<Transaction>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Contact)]),
-        () => ListBuilder<Contact>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(BankCardBaseData)]),
-        () => ListBuilder<BankCardBaseData>(),
       )
       ..add(const DateSerializer())
       ..add(Iso8601DateTimeSerializer()))

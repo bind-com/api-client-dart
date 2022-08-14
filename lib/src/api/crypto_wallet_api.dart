@@ -7,10 +7,16 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:bind_api/src/api_util.dart';
 import 'package:bind_api/src/model/crypto_wallet.dart';
 import 'package:bind_api/src/model/crypto_wallet_with_share.dart';
+import 'package:bind_api/src/model/crypto_withdrawal_fee_estimation_request.dart';
+import 'package:bind_api/src/model/crypto_withdrawal_fee_estimation_result.dart';
+import 'package:bind_api/src/model/crypto_withdrawal_request.dart';
 import 'package:bind_api/src/model/deposit_address.dart';
 import 'package:bind_api/src/model/error.dart';
+import 'package:bind_api/src/model/withdrawal_address.dart';
+import 'package:bind_api/src/model/withdrawal_address_creation_request.dart';
 import 'package:built_collection/built_collection.dart';
 
 class CryptoWalletApi {
@@ -20,6 +26,257 @@ class CryptoWalletApi {
   final Serializers _serializers;
 
   const CryptoWalletApi(this._dio, this._serializers);
+
+  /// Create new whitelisted withdrawal address
+  /// 
+  ///
+  /// Parameters:
+  /// * [withdrawalAddressCreationRequest] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [WithdrawalAddress] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<WithdrawalAddress>> createWithdrawalAddress({ 
+    WithdrawalAddressCreationRequest? withdrawalAddressCreationRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/crypto/withdrawal/whitelisted_addresses/';
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'bearerAuth',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(WithdrawalAddressCreationRequest);
+      _bodyData = withdrawalAddressCreationRequest == null ? null : _serializers.serialize(withdrawalAddressCreationRequest, specifiedType: _type);
+
+    } catch(error, stackTrace) {
+      throw DioError(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    WithdrawalAddress _responseData;
+
+    try {
+      const _responseType = FullType(WithdrawalAddress);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as WithdrawalAddress;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<WithdrawalAddress>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Delete withdrawal asset
+  /// 
+  ///
+  /// Parameters:
+  /// * [addressId] - id of a withdrawal address
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<void>> deleteWithdrawalAddress({ 
+    required String addressId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/crypto/withdrawal/whitelisted_addresses/{address_id}/'.replaceAll('{' r'address_id' '}', addressId.toString());
+    final _options = Options(
+      method: r'DELETE',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'bearerAuth',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
+  }
+
+  /// Estimate fee for withdrawal
+  /// 
+  ///
+  /// Parameters:
+  /// * [cryptoWithdrawalFeeEstimationRequest] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [CryptoWithdrawalFeeEstimationResult] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<CryptoWithdrawalFeeEstimationResult>> estimateCryptoWithdrawalFee({ 
+    CryptoWithdrawalFeeEstimationRequest? cryptoWithdrawalFeeEstimationRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/crypto/withdrawal/estimate_fee/';
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'bearerAuth',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(CryptoWithdrawalFeeEstimationRequest);
+      _bodyData = cryptoWithdrawalFeeEstimationRequest == null ? null : _serializers.serialize(cryptoWithdrawalFeeEstimationRequest, specifiedType: _type);
+
+    } catch(error, stackTrace) {
+      throw DioError(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    CryptoWithdrawalFeeEstimationResult _responseData;
+
+    try {
+      const _responseType = FullType(CryptoWithdrawalFeeEstimationResult);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as CryptoWithdrawalFeeEstimationResult;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<CryptoWithdrawalFeeEstimationResult>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
 
   /// Get crypto asset allocation/breakdown of current User
   /// 
@@ -32,9 +289,9 @@ class CryptoWalletApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<CryptoWalletWithShare>] as data
+  /// Returns a [Future] containing a [Response] with a [CryptoWalletWithShare] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<CryptoWalletWithShare>>> getAssetsBreakdown({ 
+  Future<Response<CryptoWalletWithShare>> getAssetsBreakdown({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -69,14 +326,14 @@ class CryptoWalletApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<CryptoWalletWithShare> _responseData;
+    CryptoWalletWithShare _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(CryptoWalletWithShare)]);
+      const _responseType = FullType(CryptoWalletWithShare);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as BuiltList<CryptoWalletWithShare>;
+      ) as CryptoWalletWithShare;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -87,7 +344,7 @@ class CryptoWalletApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<CryptoWalletWithShare>>(
+    return Response<CryptoWalletWithShare>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -110,9 +367,9 @@ class CryptoWalletApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<CryptoWallet>] as data
+  /// Returns a [Future] containing a [Response] with a [CryptoWallet] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<CryptoWallet>>> getCryptoWallet({ 
+  Future<Response<CryptoWallet>> getCryptoWallet({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -147,14 +404,14 @@ class CryptoWalletApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<CryptoWallet> _responseData;
+    CryptoWallet _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(CryptoWallet)]);
+      const _responseType = FullType(CryptoWallet);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as BuiltList<CryptoWallet>;
+      ) as CryptoWallet;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -165,7 +422,7 @@ class CryptoWalletApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<CryptoWallet>>(
+    return Response<CryptoWallet>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -177,7 +434,7 @@ class CryptoWalletApi {
     );
   }
 
-  /// Get crypto asset allocation/breakdown of current User
+  /// Get deposit addresses for a crypto asset
   /// 
   ///
   /// Parameters:
@@ -255,6 +512,163 @@ class CryptoWalletApi {
       statusMessage: _response.statusMessage,
       extra: _response.extra,
     );
+  }
+
+  /// Get whitelisted addresses for crypto withdrawal
+  /// 
+  ///
+  /// Parameters:
+  /// * [assetId] - id of a crypto asset
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [BuiltList<WithdrawalAddress>] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<BuiltList<WithdrawalAddress>>> getWithdrawalAddresses({ 
+    required String assetId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/crypto/withdrawal/whitelisted_addresses/';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'bearerAuth',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      r'asset_id': encodeQueryParameter(_serializers, assetId, const FullType(String)),
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    BuiltList<WithdrawalAddress> _responseData;
+
+    try {
+      const _responseType = FullType(BuiltList, [FullType(WithdrawalAddress)]);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as BuiltList<WithdrawalAddress>;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<BuiltList<WithdrawalAddress>>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Register a withdrawal transaction
+  /// 
+  ///
+  /// Parameters:
+  /// * [cryptoWithdrawalRequest] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<void>> performWithdrawalOfCrypto({ 
+    CryptoWithdrawalRequest? cryptoWithdrawalRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/crypto/withdrawal/perform/';
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'bearerAuth',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(CryptoWithdrawalRequest);
+      _bodyData = cryptoWithdrawalRequest == null ? null : _serializers.serialize(cryptoWithdrawalRequest, specifiedType: _type);
+
+    } catch(error, stackTrace) {
+      throw DioError(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
   }
 
 }
