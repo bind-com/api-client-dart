@@ -1,4 +1,4 @@
-# bind_api.model.GetFiatWallets200Response
+# bind_api.model.FavoriteCryptoCreateRequest
 
 ## Load the model package
 ```dart
@@ -8,8 +8,7 @@ import 'package:bind_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalBalance** | [**GetFiatWallets200ResponseTotalBalance**](GetFiatWallets200ResponseTotalBalance.md) |  | [optional] 
-**wallets** | [**BuiltList&lt;FiatWallet&gt;**](FiatWallet.md) |  | [optional] 
+**assetId** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

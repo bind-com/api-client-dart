@@ -19,7 +19,7 @@ For more information, please visit [https://www.bind.com/](https://www.bind.com/
 To use the package from [pub.dev](https://pub.dev), please include the following in pubspec.yaml
 ```yaml
 dependencies:
-  bind_api: 0.5.2
+  bind_api: 0.2.1
 ```
 
 ### Github
@@ -79,10 +79,13 @@ Class | Method | HTTP request | Description
 [*ContactsApi*](doc/ContactsApi.md) | [**readJWTToken**](doc/ContactsApi.md#readjwttoken) | **POST** /users/send/qr_code/ | Check JWT validity and read user from it
 [*ContactsApi*](doc/ContactsApi.md) | [**syncContacts**](doc/ContactsApi.md#synccontacts) | **POST** /contacts/sync/ | Sync mobile phone contacts of current user with backend data
 [*ContactsApi*](doc/ContactsApi.md) | [**updateContact**](doc/ContactsApi.md#updatecontact) | **PATCH** /contacts/{contact_id}/ | Update contact data (add/remove contact from favorite)
+[*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**addCryptoFavorite**](doc/CryptoWalletApi.md#addcryptofavorite) | **POST** /crypto/favorites/ | Add crypto asset to favorite
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**createWithdrawalAddress**](doc/CryptoWalletApi.md#createwithdrawaladdress) | **POST** /crypto/withdrawal/whitelisted_addresses/ | Create new whitelisted withdrawal address
+[*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**deleteCryptoFavorite**](doc/CryptoWalletApi.md#deletecryptofavorite) | **DELETE** /crypto/favorite/{asset_id}/ | Delete asset from favorites
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**deleteWithdrawalAddress**](doc/CryptoWalletApi.md#deletewithdrawaladdress) | **DELETE** /crypto/withdrawal/whitelisted_addresses/{address_id}/ | Delete withdrawal asset
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**estimateCryptoWithdrawalFee**](doc/CryptoWalletApi.md#estimatecryptowithdrawalfee) | **POST** /crypto/withdrawal/estimate_fee/ | Estimate fee for withdrawal
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getAssetsBreakdown**](doc/CryptoWalletApi.md#getassetsbreakdown) | **GET** /crypto/breakdown/ | Get crypto asset allocation/breakdown of current User
+[*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getCryptoFavorites**](doc/CryptoWalletApi.md#getcryptofavorites) | **GET** /crypto/favorites/ | Get user favorite crypto assets
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getCryptoWallet**](doc/CryptoWalletApi.md#getcryptowallet) | **GET** /crypto/wallet/ | Get crypto wallet of current User - total balance and assets balances
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getDepositAddresses**](doc/CryptoWalletApi.md#getdepositaddresses) | **GET** /crypto/assets/{asset_id}/deposit_addresses/ | Get deposit addresses for a crypto asset
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getWithdrawalAddresses**](doc/CryptoWalletApi.md#getwithdrawaladdresses) | **GET** /crypto/withdrawal/whitelisted_addresses/ | Get whitelisted addresses for crypto withdrawal
@@ -146,6 +149,7 @@ Class | Method | HTTP request | Description
  - [CryptoAccountLight](doc/CryptoAccountLight.md)
  - [CryptoAccountWithShare](doc/CryptoAccountWithShare.md)
  - [CryptoAccountWithShareAllOf](doc/CryptoAccountWithShareAllOf.md)
+ - [CryptoAsset](doc/CryptoAsset.md)
  - [CryptoWallet](doc/CryptoWallet.md)
  - [CryptoWalletAllOf](doc/CryptoWalletAllOf.md)
  - [CryptoWalletBalance](doc/CryptoWalletBalance.md)
@@ -158,6 +162,7 @@ Class | Method | HTTP request | Description
  - [DepositAddress](doc/DepositAddress.md)
  - [Error](doc/Error.md)
  - [ExportHistory](doc/ExportHistory.md)
+ - [FavoriteCryptoCreateRequest](doc/FavoriteCryptoCreateRequest.md)
  - [FiatAccount](doc/FiatAccount.md)
  - [FiatWallet](doc/FiatWallet.md)
  - [FiatWalletAllOf](doc/FiatWalletAllOf.md)
