@@ -197,14 +197,3 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/chain_implementation_test.dart
-test/crypto_account_all_of_test.dart
-test/crypto_account_test.dart
-test/crypto_api_test.dart
-test/crypto_asset_sorting_test.dart
-test/crypto_exchange_estimation_result_test.dart
-test/crypto_exchange_request_test.dart
-test/crypto_market_stats_test.dart
-test/crypto_overview_element_test.dart
-test/token_stats_test.dart
-test/user_payment_currency_test.dart
