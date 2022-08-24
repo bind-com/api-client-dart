@@ -24,6 +24,7 @@ import 'package:bind_api/src/model/bank_card_lock_request.dart';
 import 'package:bind_api/src/model/bank_card_settings.dart';
 import 'package:bind_api/src/model/bank_card_status.dart';
 import 'package:bind_api/src/model/beneficiary.dart';
+import 'package:bind_api/src/model/chain_implementation.dart';
 import 'package:bind_api/src/model/check_passcode_request.dart';
 import 'package:bind_api/src/model/contact.dart';
 import 'package:bind_api/src/model/country.dart';
@@ -31,10 +32,17 @@ import 'package:bind_api/src/model/create_beneficiary_request.dart';
 import 'package:bind_api/src/model/create_fiat_wallet_request.dart';
 import 'package:bind_api/src/model/create_inner_fiat_request_request.dart';
 import 'package:bind_api/src/model/create_inner_fiat_transfer_request.dart';
+import 'package:bind_api/src/model/crypto_account.dart';
+import 'package:bind_api/src/model/crypto_account_all_of.dart';
 import 'package:bind_api/src/model/crypto_account_light.dart';
 import 'package:bind_api/src/model/crypto_account_with_share.dart';
 import 'package:bind_api/src/model/crypto_account_with_share_all_of.dart';
 import 'package:bind_api/src/model/crypto_asset.dart';
+import 'package:bind_api/src/model/crypto_asset_sorting.dart';
+import 'package:bind_api/src/model/crypto_exchange_estimation_result.dart';
+import 'package:bind_api/src/model/crypto_exchange_request.dart';
+import 'package:bind_api/src/model/crypto_market_stats.dart';
+import 'package:bind_api/src/model/crypto_overview_element.dart';
 import 'package:bind_api/src/model/crypto_wallet.dart';
 import 'package:bind_api/src/model/crypto_wallet_all_of.dart';
 import 'package:bind_api/src/model/crypto_wallet_balance.dart';
@@ -66,6 +74,7 @@ import 'package:bind_api/src/model/main_wallet_type.dart';
 import 'package:bind_api/src/model/perform_exchange_request.dart';
 import 'package:bind_api/src/model/perform_fiat_transfer_request.dart';
 import 'package:bind_api/src/model/sync_contacts_request.dart';
+import 'package:bind_api/src/model/token_stats.dart';
 import 'package:bind_api/src/model/transaction.dart';
 import 'package:bind_api/src/model/transaction_assets_filter.dart';
 import 'package:bind_api/src/model/transaction_description_filling_rule_set.dart';
@@ -77,6 +86,7 @@ import 'package:bind_api/src/model/transaction_states.dart';
 import 'package:bind_api/src/model/transaction_types.dart';
 import 'package:bind_api/src/model/update_contact_request.dart';
 import 'package:bind_api/src/model/user.dart';
+import 'package:bind_api/src/model/user_payment_currency.dart';
 import 'package:bind_api/src/model/user_sharing_data.dart';
 import 'package:bind_api/src/model/wallet_balance_info.dart';
 import 'package:bind_api/src/model/withdrawal_address.dart';
@@ -97,6 +107,7 @@ part 'serializers.g.dart';
   BankCardSettings,
   BankCardStatus,
   Beneficiary,
+  ChainImplementation,
   CheckPasscodeRequest,
   Contact,
   Country,
@@ -104,10 +115,17 @@ part 'serializers.g.dart';
   CreateFiatWalletRequest,
   CreateInnerFiatRequestRequest,
   CreateInnerFiatTransferRequest,
+  CryptoAccount,
+  CryptoAccountAllOf,
   CryptoAccountLight,
   CryptoAccountWithShare,
   CryptoAccountWithShareAllOf,
   CryptoAsset,
+  CryptoAssetSorting,
+  CryptoExchangeEstimationResult,
+  CryptoExchangeRequest,
+  CryptoMarketStats,
+  CryptoOverviewElement,
   CryptoWallet,
   CryptoWalletAllOf,
   CryptoWalletBalance,
@@ -139,6 +157,7 @@ part 'serializers.g.dart';
   PerformExchangeRequest,
   PerformFiatTransferRequest,
   SyncContactsRequest,
+  TokenStats,
   Transaction,
   TransactionAssetsFilter,
   TransactionDescriptionFillingRuleSet,
@@ -150,6 +169,7 @@ part 'serializers.g.dart';
   TransactionTypes,
   UpdateContactRequest,
   User,
+  UserPaymentCurrency,
   UserSharingData,
   WalletBalanceInfo,
   WithdrawalAddress,
@@ -157,8 +177,16 @@ part 'serializers.g.dart';
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(ChainImplementation)]),
+        () => ListBuilder<ChainImplementation>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(MainWalletItem)]),
         () => ListBuilder<MainWalletItem>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(CryptoOverviewElement)]),
+        () => ListBuilder<CryptoOverviewElement>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Country)]),
@@ -195,6 +223,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Transaction)]),
         () => ListBuilder<Transaction>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(CryptoAccountLight)]),
+        () => ListBuilder<CryptoAccountLight>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Contact)]),

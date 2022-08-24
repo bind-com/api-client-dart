@@ -8,7 +8,7 @@ part of 'crypto_wallet_all_of.dart';
 
 class _$CryptoWalletAllOf extends CryptoWalletAllOf {
   @override
-  final BuiltList<CryptoAccountLight>? accounts;
+  final BuiltList<CryptoAccount>? accounts;
 
   factory _$CryptoWalletAllOf(
           [void Function(CryptoWalletAllOfBuilder)? updates]) =>
@@ -47,10 +47,10 @@ class CryptoWalletAllOfBuilder
     implements Builder<CryptoWalletAllOf, CryptoWalletAllOfBuilder> {
   _$CryptoWalletAllOf? _$v;
 
-  ListBuilder<CryptoAccountLight>? _accounts;
-  ListBuilder<CryptoAccountLight> get accounts =>
-      _$this._accounts ??= new ListBuilder<CryptoAccountLight>();
-  set accounts(ListBuilder<CryptoAccountLight>? accounts) =>
+  ListBuilder<CryptoAccount>? _accounts;
+  ListBuilder<CryptoAccount> get accounts =>
+      _$this._accounts ??= new ListBuilder<CryptoAccount>();
+  set accounts(ListBuilder<CryptoAccount>? accounts) =>
       _$this._accounts = accounts;
 
   CryptoWalletAllOfBuilder() {

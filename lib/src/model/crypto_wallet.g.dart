@@ -14,7 +14,7 @@ class _$CryptoWallet extends CryptoWallet {
   @override
   final num performance;
   @override
-  final BuiltList<CryptoAccountLight>? accounts;
+  final BuiltList<CryptoAccount>? accounts;
 
   factory _$CryptoWallet([void Function(CryptoWalletBuilder)? updates]) =>
       (new CryptoWalletBuilder()..update(updates))._build();
@@ -89,10 +89,10 @@ class CryptoWalletBuilder
   num? get performance => _$this._performance;
   set performance(num? performance) => _$this._performance = performance;
 
-  ListBuilder<CryptoAccountLight>? _accounts;
-  ListBuilder<CryptoAccountLight> get accounts =>
-      _$this._accounts ??= new ListBuilder<CryptoAccountLight>();
-  set accounts(ListBuilder<CryptoAccountLight>? accounts) =>
+  ListBuilder<CryptoAccount>? _accounts;
+  ListBuilder<CryptoAccount> get accounts =>
+      _$this._accounts ??= new ListBuilder<CryptoAccount>();
+  set accounts(ListBuilder<CryptoAccount>? accounts) =>
       _$this._accounts = accounts;
 
   CryptoWalletBuilder() {

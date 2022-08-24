@@ -9,10 +9,58 @@ All URIs are relative to *https://api.thebind.uk/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**estimateCryptoExchange**](ExchangeApi.md#estimatecryptoexchange) | **POST** /crypto/exchange/estimate/ | Estimate exchange of assets. One of assets has to be a cryptocurrency
 [**getCryptoExchangeRate**](ExchangeApi.md#getcryptoexchangerate) | **GET** /crypto/exchange/rate/{from}/{to}/ | Exchange rate between two given assets (at least one of them is crypto)
 [**getExchangeRate**](ExchangeApi.md#getexchangerate) | **GET** /fiat/exchange/rate/{from}/{to}/ | Exchange rate between two given currencies
+[**performCryptoExchange**](ExchangeApi.md#performcryptoexchange) | **POST** /crypto/exchange/ | Perform exchange of assets. One of assets has to be a cryptocurrency
 [**performExchange**](ExchangeApi.md#performexchange) | **POST** /fiat/exchange/ | Perform exchange operation
 
+
+# **estimateCryptoExchange**
+> CryptoExchangeEstimationResult estimateCryptoExchange(cryptoExchangeRequest)
+
+Estimate exchange of assets. One of assets has to be a cryptocurrency
+
+Only one of amounts (source or target) must be given
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getExchangeApi();
+final CryptoExchangeRequest cryptoExchangeRequest = ; // CryptoExchangeRequest | 
+
+try {
+    final response = api.estimateCryptoExchange(cryptoExchangeRequest);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling ExchangeApi->estimateCryptoExchange: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cryptoExchangeRequest** | [**CryptoExchangeRequest**](CryptoExchangeRequest.md)|  | [optional] 
+
+### Return type
+
+[**CryptoExchangeEstimationResult**](CryptoExchangeEstimationResult.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCryptoExchangeRate**
 > num getCryptoExchangeRate(from, to)
@@ -106,6 +154,51 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **performCryptoExchange**
+> performCryptoExchange(cryptoExchangeRequest)
+
+Perform exchange of assets. One of assets has to be a cryptocurrency
+
+Only one of amounts (source or target) must be given
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getExchangeApi();
+final CryptoExchangeRequest cryptoExchangeRequest = ; // CryptoExchangeRequest | 
+
+try {
+    api.performCryptoExchange(cryptoExchangeRequest);
+} catch on DioError (e) {
+    print('Exception when calling ExchangeApi->performCryptoExchange: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cryptoExchangeRequest** | [**CryptoExchangeRequest**](CryptoExchangeRequest.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
