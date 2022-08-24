@@ -8,7 +8,7 @@ import 'package:bind_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accounts** | [**BuiltList&lt;CryptoAccountLight&gt;**](CryptoAccountLight.md) |  | [optional] 
+**accounts** | [**BuiltList&lt;CryptoAccount&gt;**](CryptoAccount.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

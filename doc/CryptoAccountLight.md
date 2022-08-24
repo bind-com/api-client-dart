@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **assetName** | **String** | Full name of a token | 
 **assetId** | **String** | Primary key of an asset | 
 **assetLogo** | **String** | Logo of an asset (link to static file) | 
-**assetPerformance** | **num** | Percentage of growth of an asset during last 24 hours | 
 **paymentCurrencyCode** | **String** | Code of a fiat currency (can be used to show currency symbol at UI) | 
 **paymentCurrencyBalance** | **num** | Balance of a wallet converted to fiat currency (payment currency of current user) | 
 

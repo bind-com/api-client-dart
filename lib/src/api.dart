@@ -12,6 +12,7 @@ import 'package:bind_api/src/auth/oauth.dart';
 import 'package:bind_api/src/api/auth_api.dart';
 import 'package:bind_api/src/api/beneficiaries_api.dart';
 import 'package:bind_api/src/api/contacts_api.dart';
+import 'package:bind_api/src/api/crypto_api.dart';
 import 'package:bind_api/src/api/crypto_wallet_api.dart';
 import 'package:bind_api/src/api/currency_api.dart';
 import 'package:bind_api/src/api/exchange_api.dart';
@@ -92,6 +93,12 @@ class BindApi {
   /// by doing that all interceptors will not be executed
   ContactsApi getContactsApi() {
     return ContactsApi(dio, serializers);
+  }
+
+  /// Get CryptoApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  CryptoApi getCryptoApi() {
+    return CryptoApi(dio, serializers);
   }
 
   /// Get CryptoWalletApi instance, base route and serializer can be overridden by a given but be careful,

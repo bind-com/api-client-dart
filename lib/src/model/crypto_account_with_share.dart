@@ -3,7 +3,7 @@
 //
 
 import 'package:bind_api/src/model/crypto_account_with_share_all_of.dart';
-import 'package:bind_api/src/model/crypto_account_light.dart';
+import 'package:bind_api/src/model/crypto_account.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -17,9 +17,9 @@ part 'crypto_account_with_share.g.dart';
 /// * [assetName] - Full name of a token
 /// * [assetId] - Primary key of an asset
 /// * [assetLogo] - Logo of an asset (link to static file)
-/// * [assetPerformance] - Percentage of growth of an asset during last 24 hours
 /// * [paymentCurrencyCode] - Code of a fiat currency (can be used to show currency symbol at UI)
 /// * [paymentCurrencyBalance] - Balance of a wallet converted to fiat currency (payment currency of current user)
+/// * [assetPerformance] - Percentage of growth of an asset during last 24 hours
 /// * [share] 
 abstract class CryptoAccountWithShare implements Built<CryptoAccountWithShare, CryptoAccountWithShareBuilder> {
     /// balance of a token
@@ -42,10 +42,6 @@ abstract class CryptoAccountWithShare implements Built<CryptoAccountWithShare, C
     @BuiltValueField(wireName: r'asset_logo')
     String? get assetLogo;
 
-    /// Percentage of growth of an asset during last 24 hours
-    @BuiltValueField(wireName: r'asset_performance')
-    num get assetPerformance;
-
     /// Code of a fiat currency (can be used to show currency symbol at UI)
     @BuiltValueField(wireName: r'payment_currency_code')
     String get paymentCurrencyCode;
@@ -53,6 +49,10 @@ abstract class CryptoAccountWithShare implements Built<CryptoAccountWithShare, C
     /// Balance of a wallet converted to fiat currency (payment currency of current user)
     @BuiltValueField(wireName: r'payment_currency_balance')
     num get paymentCurrencyBalance;
+
+    /// Percentage of growth of an asset during last 24 hours
+    @BuiltValueField(wireName: r'asset_performance')
+    num get assetPerformance;
 
     @BuiltValueField(wireName: r'share')
     num? get share;
@@ -100,16 +100,16 @@ class _$CryptoAccountWithShareSerializer implements StructuredSerializer<CryptoA
             ..add(object.assetLogo == null ? null : serializers.serialize(object.assetLogo,
                 specifiedType: const FullType.nullable(String)));
         result
-            ..add(r'asset_performance')
-            ..add(serializers.serialize(object.assetPerformance,
-                specifiedType: const FullType(num)));
-        result
             ..add(r'payment_currency_code')
             ..add(serializers.serialize(object.paymentCurrencyCode,
                 specifiedType: const FullType(String)));
         result
             ..add(r'payment_currency_balance')
             ..add(serializers.serialize(object.paymentCurrencyBalance,
+                specifiedType: const FullType(num)));
+        result
+            ..add(r'asset_performance')
+            ..add(serializers.serialize(object.assetPerformance,
                 specifiedType: const FullType(num)));
         if (object.share != null) {
             result
@@ -158,11 +158,6 @@ class _$CryptoAccountWithShareSerializer implements StructuredSerializer<CryptoA
                     if (valueDes == null) continue;
                     result.assetLogo = valueDes;
                     break;
-                case r'asset_performance':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
-                    result.assetPerformance = valueDes;
-                    break;
                 case r'payment_currency_code':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
@@ -172,6 +167,11 @@ class _$CryptoAccountWithShareSerializer implements StructuredSerializer<CryptoA
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(num)) as num;
                     result.paymentCurrencyBalance = valueDes;
+                    break;
+                case r'asset_performance':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(num)) as num;
+                    result.assetPerformance = valueDes;
                     break;
                 case r'share':
                     final valueDes = serializers.deserialize(value,
