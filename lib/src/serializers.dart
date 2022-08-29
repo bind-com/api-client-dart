@@ -24,8 +24,8 @@ import 'package:bind_api/src/model/bank_card_lock_request.dart';
 import 'package:bind_api/src/model/bank_card_settings.dart';
 import 'package:bind_api/src/model/bank_card_status.dart';
 import 'package:bind_api/src/model/beneficiary.dart';
+import 'package:bind_api/src/model/cancel_limit_order_request.dart';
 import 'package:bind_api/src/model/chain_implementation.dart';
-import 'package:bind_api/src/model/check_passcode_request.dart';
 import 'package:bind_api/src/model/contact.dart';
 import 'package:bind_api/src/model/country.dart';
 import 'package:bind_api/src/model/create_beneficiary_request.dart';
@@ -56,6 +56,7 @@ import 'package:bind_api/src/model/deposit_address.dart';
 import 'package:bind_api/src/model/error.dart';
 import 'package:bind_api/src/model/export_history.dart';
 import 'package:bind_api/src/model/favorite_crypto_create_request.dart';
+import 'package:bind_api/src/model/fear_greed.dart';
 import 'package:bind_api/src/model/fiat_account.dart';
 import 'package:bind_api/src/model/fiat_wallet.dart';
 import 'package:bind_api/src/model/fiat_wallet_all_of.dart';
@@ -69,10 +70,12 @@ import 'package:bind_api/src/model/kyc_field_status.dart';
 import 'package:bind_api/src/model/kyc_request_move_result.dart';
 import 'package:bind_api/src/model/kyc_request_move_result_request_fields_status.dart';
 import 'package:bind_api/src/model/kyc_request_status.dart';
+import 'package:bind_api/src/model/limit_order.dart';
 import 'package:bind_api/src/model/main_wallet_item.dart';
 import 'package:bind_api/src/model/main_wallet_type.dart';
 import 'package:bind_api/src/model/perform_exchange_request.dart';
 import 'package:bind_api/src/model/perform_fiat_transfer_request.dart';
+import 'package:bind_api/src/model/put_limit_order_request.dart';
 import 'package:bind_api/src/model/sync_contacts_request.dart';
 import 'package:bind_api/src/model/token_stats.dart';
 import 'package:bind_api/src/model/transaction.dart';
@@ -85,6 +88,7 @@ import 'package:bind_api/src/model/transaction_grouping.dart';
 import 'package:bind_api/src/model/transaction_states.dart';
 import 'package:bind_api/src/model/transaction_types.dart';
 import 'package:bind_api/src/model/update_contact_request.dart';
+import 'package:bind_api/src/model/update_user_passcode_request.dart';
 import 'package:bind_api/src/model/user.dart';
 import 'package:bind_api/src/model/user_payment_currency.dart';
 import 'package:bind_api/src/model/user_sharing_data.dart';
@@ -107,8 +111,8 @@ part 'serializers.g.dart';
   BankCardSettings,
   BankCardStatus,
   Beneficiary,
+  CancelLimitOrderRequest,
   ChainImplementation,
-  CheckPasscodeRequest,
   Contact,
   Country,
   CreateBeneficiaryRequest,
@@ -139,6 +143,7 @@ part 'serializers.g.dart';
   Error,
   ExportHistory,
   FavoriteCryptoCreateRequest,
+  FearGreed,
   FiatAccount,
   FiatWallet,
   FiatWalletAllOf,
@@ -152,10 +157,12 @@ part 'serializers.g.dart';
   KYCRequestMoveResult,
   KYCRequestMoveResultRequestFieldsStatus,
   KYCRequestStatus,
+  LimitOrder,
   MainWalletItem,
   MainWalletType,
   PerformExchangeRequest,
   PerformFiatTransferRequest,
+  PutLimitOrderRequest,
   SyncContactsRequest,
   TokenStats,
   Transaction,
@@ -168,6 +175,7 @@ part 'serializers.g.dart';
   TransactionStates,
   TransactionTypes,
   UpdateContactRequest,
+  UpdateUserPasscodeRequest,
   User,
   UserPaymentCurrency,
   UserSharingData,
@@ -199,6 +207,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(CryptoAsset)]),
         () => ListBuilder<CryptoAsset>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(LimitOrder)]),
+        () => ListBuilder<LimitOrder>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Beneficiary)]),

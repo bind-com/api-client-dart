@@ -5,36 +5,36 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'check_passcode_request.g.dart';
+part 'update_user_passcode_request.g.dart';
 
-/// CheckPasscodeRequest
+/// UpdateUserPasscodeRequest
 ///
 /// Properties:
 /// * [passcode] 
-abstract class CheckPasscodeRequest implements Built<CheckPasscodeRequest, CheckPasscodeRequestBuilder> {
+abstract class UpdateUserPasscodeRequest implements Built<UpdateUserPasscodeRequest, UpdateUserPasscodeRequestBuilder> {
     @BuiltValueField(wireName: r'passcode')
     String? get passcode;
 
-    CheckPasscodeRequest._();
+    UpdateUserPasscodeRequest._();
 
     @BuiltValueHook(initializeBuilder: true)
-    static void _defaults(CheckPasscodeRequestBuilder b) => b;
+    static void _defaults(UpdateUserPasscodeRequestBuilder b) => b;
 
-    factory CheckPasscodeRequest([void updates(CheckPasscodeRequestBuilder b)]) = _$CheckPasscodeRequest;
+    factory UpdateUserPasscodeRequest([void updates(UpdateUserPasscodeRequestBuilder b)]) = _$UpdateUserPasscodeRequest;
 
     @BuiltValueSerializer(custom: true)
-    static Serializer<CheckPasscodeRequest> get serializer => _$CheckPasscodeRequestSerializer();
+    static Serializer<UpdateUserPasscodeRequest> get serializer => _$UpdateUserPasscodeRequestSerializer();
 }
 
-class _$CheckPasscodeRequestSerializer implements StructuredSerializer<CheckPasscodeRequest> {
+class _$UpdateUserPasscodeRequestSerializer implements StructuredSerializer<UpdateUserPasscodeRequest> {
     @override
-    final Iterable<Type> types = const [CheckPasscodeRequest, _$CheckPasscodeRequest];
+    final Iterable<Type> types = const [UpdateUserPasscodeRequest, _$UpdateUserPasscodeRequest];
 
     @override
-    final String wireName = r'CheckPasscodeRequest';
+    final String wireName = r'UpdateUserPasscodeRequest';
 
     @override
-    Iterable<Object?> serialize(Serializers serializers, CheckPasscodeRequest object,
+    Iterable<Object?> serialize(Serializers serializers, UpdateUserPasscodeRequest object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
         if (object.passcode != null) {
@@ -47,9 +47,9 @@ class _$CheckPasscodeRequestSerializer implements StructuredSerializer<CheckPass
     }
 
     @override
-    CheckPasscodeRequest deserialize(Serializers serializers, Iterable<Object?> serialized,
+    UpdateUserPasscodeRequest deserialize(Serializers serializers, Iterable<Object?> serialized,
         {FullType specifiedType = FullType.unspecified}) {
-        final result = CheckPasscodeRequestBuilder();
+        final result = UpdateUserPasscodeRequestBuilder();
 
         final iterator = serialized.iterator;
         while (iterator.moveNext()) {

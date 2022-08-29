@@ -98,11 +98,16 @@ Class | Method | HTTP request | Description
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**performWithdrawalOfCrypto**](doc/CryptoWalletApi.md#performwithdrawalofcrypto) | **POST** /crypto/withdrawal/perform/ | Register a withdrawal transaction
 [*CurrencyApi*](doc/CurrencyApi.md) | [**listCryptoCurrencies**](doc/CurrencyApi.md#listcryptocurrencies) | **GET** /currencies/crypto/ | List of Crypto Currencies available at Bind
 [*CurrencyApi*](doc/CurrencyApi.md) | [**listCurrencies**](doc/CurrencyApi.md#listcurrencies) | **GET** /currencies/ | List of Currencies available at Bind
+[*ExchangeApi*](doc/ExchangeApi.md) | [**cancelLimitOrder**](doc/ExchangeApi.md#cancellimitorder) | **POST** /crypto/limit_orders/{order_id}/cancel/ | Cancel given limit order
 [*ExchangeApi*](doc/ExchangeApi.md) | [**estimateCryptoExchange**](doc/ExchangeApi.md#estimatecryptoexchange) | **POST** /crypto/exchange/estimate/ | Estimate exchange of assets. One of assets has to be a cryptocurrency
 [*ExchangeApi*](doc/ExchangeApi.md) | [**getCryptoExchangeRate**](doc/ExchangeApi.md#getcryptoexchangerate) | **GET** /crypto/exchange/rate/{from}/{to}/ | Exchange rate between two given assets (at least one of them is crypto)
 [*ExchangeApi*](doc/ExchangeApi.md) | [**getExchangeRate**](doc/ExchangeApi.md#getexchangerate) | **GET** /fiat/exchange/rate/{from}/{to}/ | Exchange rate between two given currencies
+[*ExchangeApi*](doc/ExchangeApi.md) | [**getFearGreed**](doc/ExchangeApi.md#getfeargreed) | **GET** /crypto/assets/{asset_id}/fear_greed/ | Get fear and greed rates for given asset (results of votes if crypto asset will go up or down)
+[*ExchangeApi*](doc/ExchangeApi.md) | [**getLimitOrdersList**](doc/ExchangeApi.md#getlimitorderslist) | **GET** /crypto/limit_orders/ | Get list of limit orders for current user
 [*ExchangeApi*](doc/ExchangeApi.md) | [**performCryptoExchange**](doc/ExchangeApi.md#performcryptoexchange) | **POST** /crypto/exchange/ | Perform exchange of assets. One of assets has to be a cryptocurrency
 [*ExchangeApi*](doc/ExchangeApi.md) | [**performExchange**](doc/ExchangeApi.md#performexchange) | **POST** /fiat/exchange/ | Perform exchange operation
+[*ExchangeApi*](doc/ExchangeApi.md) | [**putLimitOrder**](doc/ExchangeApi.md#putlimitorder) | **POST** /crypto/limit_orders/ | Put limit order to the system. Order will be executed later
+[*ExchangeApi*](doc/ExchangeApi.md) | [**voteFearGreed**](doc/ExchangeApi.md#votefeargreed) | **PATCH** /crypto/assets/{asset_id}/fear_greed/ | Vote if this crypto asset goes up or down today
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**blockBankCard**](doc/FiatWalletApi.md#blockbankcard) | **POST** /fiat/bankcards/{card_id}/block/ | Block bank card and write reason
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**changeDefaultWallet**](doc/FiatWalletApi.md#changedefaultwallet) | **POST** /fiat/bankcards/{card_id}/change_wallet/ | Change wallet attached to bank card
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**createFiatWallet**](doc/FiatWalletApi.md#createfiatwallet) | **POST** /fiat/wallets/ | Create an wallet in given currency
@@ -131,6 +136,7 @@ Class | Method | HTTP request | Description
 [*UserApi*](doc/UserApi.md) | [**createKYCRequest**](doc/UserApi.md#createkycrequest) | **POST** /user/kyc/requests/ | Create KYC Request
 [*UserApi*](doc/UserApi.md) | [**moveKYCRequest**](doc/UserApi.md#movekycrequest) | **POST** /users/kyc/requests/approval/ | Move KYCRequest to approval
 [*UserApi*](doc/UserApi.md) | [**updateUser**](doc/UserApi.md#updateuser) | **PATCH** /users/{userID}/ | Update user
+[*UserApi*](doc/UserApi.md) | [**updateUserPasscode**](doc/UserApi.md#updateuserpasscode) | **PATCH** /users/change_passcode/{userID}/ | Update user passcode
 [*WalletApi*](doc/WalletApi.md) | [**getMainWallet**](doc/WalletApi.md#getmainwallet) | **GET** /wallet/ | Total balance and info about Users wallets in crypto, fiat and nft
 
 
@@ -148,8 +154,8 @@ Class | Method | HTTP request | Description
  - [BankCardSettings](doc/BankCardSettings.md)
  - [BankCardStatus](doc/BankCardStatus.md)
  - [Beneficiary](doc/Beneficiary.md)
+ - [CancelLimitOrderRequest](doc/CancelLimitOrderRequest.md)
  - [ChainImplementation](doc/ChainImplementation.md)
- - [CheckPasscodeRequest](doc/CheckPasscodeRequest.md)
  - [Contact](doc/Contact.md)
  - [Country](doc/Country.md)
  - [CreateBeneficiaryRequest](doc/CreateBeneficiaryRequest.md)
@@ -180,6 +186,7 @@ Class | Method | HTTP request | Description
  - [Error](doc/Error.md)
  - [ExportHistory](doc/ExportHistory.md)
  - [FavoriteCryptoCreateRequest](doc/FavoriteCryptoCreateRequest.md)
+ - [FearGreed](doc/FearGreed.md)
  - [FiatAccount](doc/FiatAccount.md)
  - [FiatWallet](doc/FiatWallet.md)
  - [FiatWalletAllOf](doc/FiatWalletAllOf.md)
@@ -193,10 +200,12 @@ Class | Method | HTTP request | Description
  - [KYCRequestMoveResult](doc/KYCRequestMoveResult.md)
  - [KYCRequestMoveResultRequestFieldsStatus](doc/KYCRequestMoveResultRequestFieldsStatus.md)
  - [KYCRequestStatus](doc/KYCRequestStatus.md)
+ - [LimitOrder](doc/LimitOrder.md)
  - [MainWalletItem](doc/MainWalletItem.md)
  - [MainWalletType](doc/MainWalletType.md)
  - [PerformExchangeRequest](doc/PerformExchangeRequest.md)
  - [PerformFiatTransferRequest](doc/PerformFiatTransferRequest.md)
+ - [PutLimitOrderRequest](doc/PutLimitOrderRequest.md)
  - [SyncContactsRequest](doc/SyncContactsRequest.md)
  - [TokenStats](doc/TokenStats.md)
  - [Transaction](doc/Transaction.md)
@@ -209,6 +218,7 @@ Class | Method | HTTP request | Description
  - [TransactionStates](doc/TransactionStates.md)
  - [TransactionTypes](doc/TransactionTypes.md)
  - [UpdateContactRequest](doc/UpdateContactRequest.md)
+ - [UpdateUserPasscodeRequest](doc/UpdateUserPasscodeRequest.md)
  - [User](doc/User.md)
  - [UserPaymentCurrency](doc/UserPaymentCurrency.md)
  - [UserSharingData](doc/UserSharingData.md)

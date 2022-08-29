@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**createKYCRequest**](UserApi.md#createkycrequest) | **POST** /user/kyc/requests/ | Create KYC Request
 [**moveKYCRequest**](UserApi.md#movekycrequest) | **POST** /users/kyc/requests/approval/ | Move KYCRequest to approval
 [**updateUser**](UserApi.md#updateuser) | **PATCH** /users/{userID}/ | Update user
+[**updateUserPasscode**](UserApi.md#updateuserpasscode) | **PATCH** /users/change_passcode/{userID}/ | Update user passcode
 
 
 # **checkKYCRequestApproval**
@@ -57,7 +58,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **checkPasscode**
-> bool checkPasscode(checkPasscodeRequest)
+> bool checkPasscode(updateUserPasscodeRequest)
 
 Check validity of user passcode
 
@@ -69,10 +70,10 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getUserApi();
-final CheckPasscodeRequest checkPasscodeRequest = ; // CheckPasscodeRequest | 
+final UpdateUserPasscodeRequest updateUserPasscodeRequest = ; // UpdateUserPasscodeRequest | 
 
 try {
-    final response = api.checkPasscode(checkPasscodeRequest);
+    final response = api.checkPasscode(updateUserPasscodeRequest);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling UserApi->checkPasscode: $e\n');
@@ -83,7 +84,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **checkPasscodeRequest** | [**CheckPasscodeRequest**](CheckPasscodeRequest.md)|  | [optional] 
+ **updateUserPasscodeRequest** | [**UpdateUserPasscodeRequest**](UpdateUserPasscodeRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -221,6 +222,52 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userID** | **String**|  | 
  **user** | [**User**](User.md)|  | [optional] 
+
+### Return type
+
+[**User**](User.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateUserPasscode**
+> User updateUserPasscode(userID, updateUserPasscodeRequest)
+
+Update user passcode
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getUserApi();
+final String userID = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final UpdateUserPasscodeRequest updateUserPasscodeRequest = ; // UpdateUserPasscodeRequest | 
+
+try {
+    final response = api.updateUserPasscode(userID, updateUserPasscodeRequest);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling UserApi->updateUserPasscode: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userID** | **String**|  | 
+ **updateUserPasscodeRequest** | [**UpdateUserPasscodeRequest**](UpdateUserPasscodeRequest.md)|  | [optional] 
 
 ### Return type
 
