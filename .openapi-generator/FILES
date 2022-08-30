@@ -205,8 +205,3 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/cancel_limit_order_request_test.dart
-test/fear_greed_test.dart
-test/limit_order_test.dart
-test/put_limit_order_request_test.dart
-test/update_user_passcode_request_test.dart

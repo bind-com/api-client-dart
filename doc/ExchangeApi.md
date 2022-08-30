@@ -9,15 +9,15 @@ All URIs are relative to *https://api.thebind.uk/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancelLimitOrder**](ExchangeApi.md#cancellimitorder) | **POST** /crypto/limit_orders/{order_id}/cancel/ | Cancel given limit order
+[**cancelLimitOrder**](ExchangeApi.md#cancellimitorder) | **POST** /crypto/exchange/limit_orders/{order_id}/cancel | Cancel given limit order
 [**estimateCryptoExchange**](ExchangeApi.md#estimatecryptoexchange) | **POST** /crypto/exchange/estimate/ | Estimate exchange of assets. One of assets has to be a cryptocurrency
 [**getCryptoExchangeRate**](ExchangeApi.md#getcryptoexchangerate) | **GET** /crypto/exchange/rate/{from}/{to}/ | Exchange rate between two given assets (at least one of them is crypto)
 [**getExchangeRate**](ExchangeApi.md#getexchangerate) | **GET** /fiat/exchange/rate/{from}/{to}/ | Exchange rate between two given currencies
 [**getFearGreed**](ExchangeApi.md#getfeargreed) | **GET** /crypto/assets/{asset_id}/fear_greed/ | Get fear and greed rates for given asset (results of votes if crypto asset will go up or down)
-[**getLimitOrdersList**](ExchangeApi.md#getlimitorderslist) | **GET** /crypto/limit_orders/ | Get list of limit orders for current user
+[**getLimitOrdersList**](ExchangeApi.md#getlimitorderslist) | **GET** /crypto/exchange/limit_orders | Get list of limit orders for current user
 [**performCryptoExchange**](ExchangeApi.md#performcryptoexchange) | **POST** /crypto/exchange/ | Perform exchange of assets. One of assets has to be a cryptocurrency
 [**performExchange**](ExchangeApi.md#performexchange) | **POST** /fiat/exchange/ | Perform exchange operation
-[**putLimitOrder**](ExchangeApi.md#putlimitorder) | **POST** /crypto/limit_orders/ | Put limit order to the system. Order will be executed later
+[**putLimitOrder**](ExchangeApi.md#putlimitorder) | **POST** /crypto/exchange/limit_orders | Put limit order to the system. Order will be executed later
 [**voteFearGreed**](ExchangeApi.md#votefeargreed) | **PATCH** /crypto/assets/{asset_id}/fear_greed/ | Vote if this crypto asset goes up or down today
 
 

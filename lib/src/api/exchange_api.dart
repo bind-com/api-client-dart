@@ -51,7 +51,7 @@ class ExchangeApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/crypto/limit_orders/{order_id}/cancel/'.replaceAll('{' r'order_id' '}', orderId.toString());
+    final _path = r'/crypto/exchange/limit_orders/{order_id}/cancel'.replaceAll('{' r'order_id' '}', orderId.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -485,7 +485,7 @@ class ExchangeApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/crypto/limit_orders/';
+    final _path = r'/crypto/exchange/limit_orders';
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -714,7 +714,7 @@ class ExchangeApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/crypto/limit_orders/';
+    final _path = r'/crypto/exchange/limit_orders';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
