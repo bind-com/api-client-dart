@@ -222,6 +222,7 @@ Class | Method | HTTP request | Description
  - [User](doc/User.md)
  - [UserPaymentCurrency](doc/UserPaymentCurrency.md)
  - [UserSharingData](doc/UserSharingData.md)
+ - [VoteFearGreedRequest](doc/VoteFearGreedRequest.md)
  - [WalletBalanceInfo](doc/WalletBalanceInfo.md)
  - [WithdrawalAddress](doc/WithdrawalAddress.md)
  - [WithdrawalAddressCreationRequest](doc/WithdrawalAddressCreationRequest.md)

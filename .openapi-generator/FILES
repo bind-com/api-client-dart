@@ -93,6 +93,7 @@ doc/User.md
 doc/UserApi.md
 doc/UserPaymentCurrency.md
 doc/UserSharingData.md
+doc/VoteFearGreedRequest.md
 doc/WalletApi.md
 doc/WalletBalanceInfo.md
 doc/WithdrawalAddress.md
@@ -200,8 +201,10 @@ lib/src/model/update_user_passcode_request.dart
 lib/src/model/user.dart
 lib/src/model/user_payment_currency.dart
 lib/src/model/user_sharing_data.dart
+lib/src/model/vote_fear_greed_request.dart
 lib/src/model/wallet_balance_info.dart
 lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/vote_fear_greed_request_test.dart

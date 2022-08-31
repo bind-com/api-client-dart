@@ -22,7 +22,7 @@ abstract class FearGreed implements Built<FearGreed, FearGreedBuilder> {
 
     /// True if current user voted up today. Can be null
     @BuiltValueField(wireName: r'user_vote_up')
-    bool get userVoteUp;
+    bool? get userVoteUp;
 
     FearGreed._();
 
@@ -56,8 +56,8 @@ class _$FearGreedSerializer implements StructuredSerializer<FearGreed> {
                 specifiedType: const FullType(num)));
         result
             ..add(r'user_vote_up')
-            ..add(serializers.serialize(object.userVoteUp,
-                specifiedType: const FullType(bool)));
+            ..add(object.userVoteUp == null ? null : serializers.serialize(object.userVoteUp,
+                specifiedType: const FullType.nullable(bool)));
         return result;
     }
 
@@ -85,7 +85,8 @@ class _$FearGreedSerializer implements StructuredSerializer<FearGreed> {
                     break;
                 case r'user_vote_up':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(bool)) as bool;
+                        specifiedType: const FullType.nullable(bool)) as bool?;
+                    if (valueDes == null) continue;
                     result.userVoteUp = valueDes;
                     break;
             }

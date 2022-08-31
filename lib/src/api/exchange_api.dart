@@ -16,6 +16,7 @@ import 'package:bind_api/src/model/fear_greed.dart';
 import 'package:bind_api/src/model/limit_order.dart';
 import 'package:bind_api/src/model/perform_exchange_request.dart';
 import 'package:bind_api/src/model/put_limit_order_request.dart';
+import 'package:bind_api/src/model/vote_fear_greed_request.dart';
 import 'package:built_collection/built_collection.dart';
 
 class ExchangeApi {
@@ -768,6 +769,7 @@ class ExchangeApi {
   ///
   /// Parameters:
   /// * [assetId] - id of a crypto asset
+  /// * [voteFearGreedRequest] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -779,6 +781,7 @@ class ExchangeApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<FearGreed>> voteFearGreed({ 
     required String assetId,
+    VoteFearGreedRequest? voteFearGreedRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -802,11 +805,30 @@ class ExchangeApi {
         ],
         ...?extra,
       },
+      contentType: 'application/json',
       validateStatus: validateStatus,
     );
 
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(VoteFearGreedRequest);
+      _bodyData = voteFearGreedRequest == null ? null : _serializers.serialize(voteFearGreedRequest, specifiedType: _type);
+
+    } catch(error, stackTrace) {
+      throw DioError(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
     final _response = await _dio.request<Object>(
       _path,
+      data: _bodyData,
       options: _options,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,

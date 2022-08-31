@@ -103,6 +103,7 @@ export 'package:bind_api/src/model/update_user_passcode_request.dart';
 export 'package:bind_api/src/model/user.dart';
 export 'package:bind_api/src/model/user_payment_currency.dart';
 export 'package:bind_api/src/model/user_sharing_data.dart';
+export 'package:bind_api/src/model/vote_fear_greed_request.dart';
 export 'package:bind_api/src/model/wallet_balance_info.dart';
 export 'package:bind_api/src/model/withdrawal_address.dart';
 export 'package:bind_api/src/model/withdrawal_address_creation_request.dart';

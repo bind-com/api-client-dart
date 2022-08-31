@@ -12,21 +12,17 @@ class _$FearGreed extends FearGreed {
   @override
   final num downPercent;
   @override
-  final bool userVoteUp;
+  final bool? userVoteUp;
 
   factory _$FearGreed([void Function(FearGreedBuilder)? updates]) =>
       (new FearGreedBuilder()..update(updates))._build();
 
   _$FearGreed._(
-      {required this.upPercent,
-      required this.downPercent,
-      required this.userVoteUp})
+      {required this.upPercent, required this.downPercent, this.userVoteUp})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(upPercent, r'FearGreed', 'upPercent');
     BuiltValueNullFieldError.checkNotNull(
         downPercent, r'FearGreed', 'downPercent');
-    BuiltValueNullFieldError.checkNotNull(
-        userVoteUp, r'FearGreed', 'userVoteUp');
   }
 
   @override
@@ -112,8 +108,7 @@ class FearGreedBuilder implements Builder<FearGreed, FearGreedBuilder> {
                 upPercent, r'FearGreed', 'upPercent'),
             downPercent: BuiltValueNullFieldError.checkNotNull(
                 downPercent, r'FearGreed', 'downPercent'),
-            userVoteUp: BuiltValueNullFieldError.checkNotNull(
-                userVoteUp, r'FearGreed', 'userVoteUp'));
+            userVoteUp: userVoteUp);
     replace(_$result);
     return _$result;
   }

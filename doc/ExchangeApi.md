@@ -433,7 +433,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **voteFearGreed**
-> FearGreed voteFearGreed(assetId)
+> FearGreed voteFearGreed(assetId, voteFearGreedRequest)
 
 Vote if this crypto asset goes up or down today
 
@@ -446,9 +446,10 @@ import 'package:bind_api/api.dart';
 
 final api = BindApi().getExchangeApi();
 final String assetId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of a crypto asset
+final VoteFearGreedRequest voteFearGreedRequest = ; // VoteFearGreedRequest | 
 
 try {
-    final response = api.voteFearGreed(assetId);
+    final response = api.voteFearGreed(assetId, voteFearGreedRequest);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling ExchangeApi->voteFearGreed: $e\n');
@@ -460,6 +461,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **assetId** | **String**| id of a crypto asset | 
+ **voteFearGreedRequest** | [**VoteFearGreedRequest**](VoteFearGreedRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -471,7 +473,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

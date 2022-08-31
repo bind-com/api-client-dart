@@ -92,6 +92,7 @@ import 'package:bind_api/src/model/update_user_passcode_request.dart';
 import 'package:bind_api/src/model/user.dart';
 import 'package:bind_api/src/model/user_payment_currency.dart';
 import 'package:bind_api/src/model/user_sharing_data.dart';
+import 'package:bind_api/src/model/vote_fear_greed_request.dart';
 import 'package:bind_api/src/model/wallet_balance_info.dart';
 import 'package:bind_api/src/model/withdrawal_address.dart';
 import 'package:bind_api/src/model/withdrawal_address_creation_request.dart';
@@ -179,6 +180,7 @@ part 'serializers.g.dart';
   User,
   UserPaymentCurrency,
   UserSharingData,
+  VoteFearGreedRequest,
   WalletBalanceInfo,
   WithdrawalAddress,
   WithdrawalAddressCreationRequest,
