@@ -12,8 +12,18 @@ void main() {
       // TODO
     });
 
-    // String detail
-    test('to test the property `detail`', () async {
+    // String message
+    test('to test the property `message`', () async {
+      // TODO
+    });
+
+    // BuiltMap<String, JsonObject> parent
+    test('to test the property `parent`', () async {
+      // TODO
+    });
+
+    // BuiltMap<String, BuiltList<String>> validationError
+    test('to test the property `validationError`', () async {
       // TODO
     });
 

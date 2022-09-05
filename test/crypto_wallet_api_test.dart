@@ -7,10 +7,24 @@ void main() {
   final instance = BindApi().getCryptoWalletApi();
 
   group(CryptoWalletApi, () {
+    // Add crypto asset to favorite
+    //
+    //Future addCryptoFavorite({ FavoriteCryptoCreateRequest favoriteCryptoCreateRequest }) async
+    test('test addCryptoFavorite', () async {
+      // TODO
+    });
+
     // Create new whitelisted withdrawal address
     //
     //Future<WithdrawalAddress> createWithdrawalAddress({ WithdrawalAddressCreationRequest withdrawalAddressCreationRequest }) async
     test('test createWithdrawalAddress', () async {
+      // TODO
+    });
+
+    // Delete asset from favorites
+    //
+    //Future deleteCryptoFavorite(String assetId) async
+    test('test deleteCryptoFavorite', () async {
       // TODO
     });
 
@@ -35,10 +49,31 @@ void main() {
       // TODO
     });
 
+    // Get chains for a crypto asset
+    //
+    //Future<BuiltList<ChainImplementation>> getChainImplementations(String assetId) async
+    test('test getChainImplementations', () async {
+      // TODO
+    });
+
+    // Get user favorite crypto assets
+    //
+    //Future<BuiltList<CryptoAsset>> getCryptoFavorites() async
+    test('test getCryptoFavorites', () async {
+      // TODO
+    });
+
     // Get crypto wallet of current User - total balance and assets balances
     //
     //Future<CryptoWallet> getCryptoWallet() async
     test('test getCryptoWallet', () async {
+      // TODO
+    });
+
+    // Get crypto assets of current user with balances and prices
+    //
+    //Future<BuiltList<CryptoAccountLight>> getCryptoWalletLight() async
+    test('test getCryptoWalletLight', () async {
       // TODO
     });
 

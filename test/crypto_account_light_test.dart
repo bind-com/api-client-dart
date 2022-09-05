@@ -7,12 +7,6 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(CryptoAccountLight, () {
-    // Primary key of an account
-    // String id
-    test('to test the property `id`', () async {
-      // TODO
-    });
-
     // balance of a token
     // num assetBalance
     test('to test the property `assetBalance`', () async {
@@ -40,12 +34,6 @@ void main() {
     // Logo of an asset (link to static file)
     // String assetLogo
     test('to test the property `assetLogo`', () async {
-      // TODO
-    });
-
-    // Percentage of growth of an asset during last 24 hours
-    // num assetPerformance
-    test('to test the property `assetPerformance`', () async {
       // TODO
     });
 

@@ -7,6 +7,13 @@ void main() {
   final instance = BindApi().getCurrencyApi();
 
   group(CurrencyApi, () {
+    // List of Crypto Currencies available at Bind
+    //
+    //Future<BuiltList<CryptoAsset>> listCryptoCurrencies({ CryptoAssetSorting sort }) async
+    test('test listCryptoCurrencies', () async {
+      // TODO
+    });
+
     // List of Currencies available at Bind
     //
     //Future<BuiltList<Currency>> listCurrencies({ bool isCrypto }) async

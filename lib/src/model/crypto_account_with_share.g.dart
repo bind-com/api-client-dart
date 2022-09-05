@@ -18,11 +18,11 @@ class _$CryptoAccountWithShare extends CryptoAccountWithShare {
   @override
   final String? assetLogo;
   @override
-  final num assetPerformance;
-  @override
   final String paymentCurrencyCode;
   @override
   final num paymentCurrencyBalance;
+  @override
+  final num assetPerformance;
   @override
   final num? share;
 
@@ -36,9 +36,9 @@ class _$CryptoAccountWithShare extends CryptoAccountWithShare {
       required this.assetName,
       required this.assetId,
       this.assetLogo,
-      required this.assetPerformance,
       required this.paymentCurrencyCode,
       required this.paymentCurrencyBalance,
+      required this.assetPerformance,
       this.share})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
@@ -50,11 +50,11 @@ class _$CryptoAccountWithShare extends CryptoAccountWithShare {
     BuiltValueNullFieldError.checkNotNull(
         assetId, r'CryptoAccountWithShare', 'assetId');
     BuiltValueNullFieldError.checkNotNull(
-        assetPerformance, r'CryptoAccountWithShare', 'assetPerformance');
-    BuiltValueNullFieldError.checkNotNull(
         paymentCurrencyCode, r'CryptoAccountWithShare', 'paymentCurrencyCode');
     BuiltValueNullFieldError.checkNotNull(paymentCurrencyBalance,
         r'CryptoAccountWithShare', 'paymentCurrencyBalance');
+    BuiltValueNullFieldError.checkNotNull(
+        assetPerformance, r'CryptoAccountWithShare', 'assetPerformance');
   }
 
   @override
@@ -75,9 +75,9 @@ class _$CryptoAccountWithShare extends CryptoAccountWithShare {
         assetName == other.assetName &&
         assetId == other.assetId &&
         assetLogo == other.assetLogo &&
-        assetPerformance == other.assetPerformance &&
         paymentCurrencyCode == other.paymentCurrencyCode &&
         paymentCurrencyBalance == other.paymentCurrencyBalance &&
+        assetPerformance == other.assetPerformance &&
         share == other.share;
   }
 
@@ -95,9 +95,9 @@ class _$CryptoAccountWithShare extends CryptoAccountWithShare {
                                 assetName.hashCode),
                             assetId.hashCode),
                         assetLogo.hashCode),
-                    assetPerformance.hashCode),
-                paymentCurrencyCode.hashCode),
-            paymentCurrencyBalance.hashCode),
+                    paymentCurrencyCode.hashCode),
+                paymentCurrencyBalance.hashCode),
+            assetPerformance.hashCode),
         share.hashCode));
   }
 
@@ -109,9 +109,9 @@ class _$CryptoAccountWithShare extends CryptoAccountWithShare {
           ..add('assetName', assetName)
           ..add('assetId', assetId)
           ..add('assetLogo', assetLogo)
-          ..add('assetPerformance', assetPerformance)
           ..add('paymentCurrencyCode', paymentCurrencyCode)
           ..add('paymentCurrencyBalance', paymentCurrencyBalance)
+          ..add('assetPerformance', assetPerformance)
           ..add('share', share))
         .toString();
   }
@@ -141,11 +141,6 @@ class CryptoAccountWithShareBuilder
   String? get assetLogo => _$this._assetLogo;
   set assetLogo(String? assetLogo) => _$this._assetLogo = assetLogo;
 
-  num? _assetPerformance;
-  num? get assetPerformance => _$this._assetPerformance;
-  set assetPerformance(num? assetPerformance) =>
-      _$this._assetPerformance = assetPerformance;
-
   String? _paymentCurrencyCode;
   String? get paymentCurrencyCode => _$this._paymentCurrencyCode;
   set paymentCurrencyCode(String? paymentCurrencyCode) =>
@@ -155,6 +150,11 @@ class CryptoAccountWithShareBuilder
   num? get paymentCurrencyBalance => _$this._paymentCurrencyBalance;
   set paymentCurrencyBalance(num? paymentCurrencyBalance) =>
       _$this._paymentCurrencyBalance = paymentCurrencyBalance;
+
+  num? _assetPerformance;
+  num? get assetPerformance => _$this._assetPerformance;
+  set assetPerformance(num? assetPerformance) =>
+      _$this._assetPerformance = assetPerformance;
 
   num? _share;
   num? get share => _$this._share;
@@ -172,9 +172,9 @@ class CryptoAccountWithShareBuilder
       _assetName = $v.assetName;
       _assetId = $v.assetId;
       _assetLogo = $v.assetLogo;
-      _assetPerformance = $v.assetPerformance;
       _paymentCurrencyCode = $v.paymentCurrencyCode;
       _paymentCurrencyBalance = $v.paymentCurrencyBalance;
+      _assetPerformance = $v.assetPerformance;
       _share = $v.share;
       _$v = null;
     }
@@ -207,8 +207,6 @@ class CryptoAccountWithShareBuilder
             assetId: BuiltValueNullFieldError.checkNotNull(
                 assetId, r'CryptoAccountWithShare', 'assetId'),
             assetLogo: assetLogo,
-            assetPerformance: BuiltValueNullFieldError.checkNotNull(
-                assetPerformance, r'CryptoAccountWithShare', 'assetPerformance'),
             paymentCurrencyCode: BuiltValueNullFieldError.checkNotNull(
                 paymentCurrencyCode,
                 r'CryptoAccountWithShare',
@@ -217,6 +215,8 @@ class CryptoAccountWithShareBuilder
                 paymentCurrencyBalance,
                 r'CryptoAccountWithShare',
                 'paymentCurrencyBalance'),
+            assetPerformance: BuiltValueNullFieldError.checkNotNull(
+                assetPerformance, r'CryptoAccountWithShare', 'assetPerformance'),
             share: share);
     replace(_$result);
     return _$result;

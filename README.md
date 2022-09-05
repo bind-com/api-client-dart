@@ -19,7 +19,7 @@ For more information, please visit [https://www.bind.com/](https://www.bind.com/
 To use the package from [pub.dev](https://pub.dev), please include the following in pubspec.yaml
 ```yaml
 dependencies:
-  bind_api: 0.5.2
+  bind_api: 0.10.1
 ```
 
 ### Github
@@ -79,18 +79,37 @@ Class | Method | HTTP request | Description
 [*ContactsApi*](doc/ContactsApi.md) | [**readJWTToken**](doc/ContactsApi.md#readjwttoken) | **POST** /users/send/qr_code/ | Check JWT validity and read user from it
 [*ContactsApi*](doc/ContactsApi.md) | [**syncContacts**](doc/ContactsApi.md#synccontacts) | **POST** /contacts/sync/ | Sync mobile phone contacts of current user with backend data
 [*ContactsApi*](doc/ContactsApi.md) | [**updateContact**](doc/ContactsApi.md#updatecontact) | **PATCH** /contacts/{contact_id}/ | Update contact data (add/remove contact from favorite)
+[*CryptoApi*](doc/CryptoApi.md) | [**getCryptoChartCandles**](doc/CryptoApi.md#getcryptochartcandles) | **GET** /charts/crypto/candle/ | List of candles for crypto price chart
+[*CryptoApi*](doc/CryptoApi.md) | [**getCryptoChartLine**](doc/CryptoApi.md#getcryptochartline) | **GET** /charts/crypto/line/ | List line ticks for crypto price chart
+[*CryptoApi*](doc/CryptoApi.md) | [**getCryptoOverview**](doc/CryptoApi.md#getcryptooverview) | **GET** /crypto/overview/ | Get crypto overview information, the price of the tokens will be converted into the user&#39;s payment currency
+[*CryptoApi*](doc/CryptoApi.md) | [**getGlobalCryptoStats**](doc/CryptoApi.md#getglobalcryptostats) | **GET** /crypto/global/stats/ | Get global crypto market information, 24h volume and market cap will be converted into the user&#39;s payment currency
+[*CryptoApi*](doc/CryptoApi.md) | [**getTokenStats**](doc/CryptoApi.md#gettokenstats) | **GET** /crypto/stats/{assetID}/ | Get stats for certain token, price related stats will be converted into the user&#39;s payment currency
+[*CryptoApi*](doc/CryptoApi.md) | [**listCryptoCurrencies**](doc/CryptoApi.md#listcryptocurrencies) | **GET** /currencies/crypto/ | List of Crypto Currencies available at Bind
+[*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**addCryptoFavorite**](doc/CryptoWalletApi.md#addcryptofavorite) | **POST** /crypto/favorites/ | Add crypto asset to favorite
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**createWithdrawalAddress**](doc/CryptoWalletApi.md#createwithdrawaladdress) | **POST** /crypto/withdrawal/whitelisted_addresses/ | Create new whitelisted withdrawal address
+[*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**deleteCryptoFavorite**](doc/CryptoWalletApi.md#deletecryptofavorite) | **DELETE** /crypto/favorite/{asset_id}/ | Delete asset from favorites
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**deleteWithdrawalAddress**](doc/CryptoWalletApi.md#deletewithdrawaladdress) | **DELETE** /crypto/withdrawal/whitelisted_addresses/{address_id}/ | Delete withdrawal asset
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**estimateCryptoWithdrawalFee**](doc/CryptoWalletApi.md#estimatecryptowithdrawalfee) | **POST** /crypto/withdrawal/estimate_fee/ | Estimate fee for withdrawal
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getAssetsBreakdown**](doc/CryptoWalletApi.md#getassetsbreakdown) | **GET** /crypto/breakdown/ | Get crypto asset allocation/breakdown of current User
+[*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getChainImplementations**](doc/CryptoWalletApi.md#getchainimplementations) | **GET** /crypto/assets/{asset_id}/chain_implementations/ | Get chains for a crypto asset
+[*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getCryptoFavorites**](doc/CryptoWalletApi.md#getcryptofavorites) | **GET** /crypto/favorites/ | Get user favorite crypto assets
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getCryptoWallet**](doc/CryptoWalletApi.md#getcryptowallet) | **GET** /crypto/wallet/ | Get crypto wallet of current User - total balance and assets balances
+[*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getCryptoWalletLight**](doc/CryptoWalletApi.md#getcryptowalletlight) | **GET** /crypto/wallet/light/ | Get crypto assets of current user with balances and prices
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getDepositAddresses**](doc/CryptoWalletApi.md#getdepositaddresses) | **GET** /crypto/assets/{asset_id}/deposit_addresses/ | Get deposit addresses for a crypto asset
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getWithdrawalAddresses**](doc/CryptoWalletApi.md#getwithdrawaladdresses) | **GET** /crypto/withdrawal/whitelisted_addresses/ | Get whitelisted addresses for crypto withdrawal
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**performWithdrawalOfCrypto**](doc/CryptoWalletApi.md#performwithdrawalofcrypto) | **POST** /crypto/withdrawal/perform/ | Register a withdrawal transaction
+[*CurrencyApi*](doc/CurrencyApi.md) | [**listCryptoCurrencies**](doc/CurrencyApi.md#listcryptocurrencies) | **GET** /currencies/crypto/ | List of Crypto Currencies available at Bind
 [*CurrencyApi*](doc/CurrencyApi.md) | [**listCurrencies**](doc/CurrencyApi.md#listcurrencies) | **GET** /currencies/ | List of Currencies available at Bind
+[*ExchangeApi*](doc/ExchangeApi.md) | [**cancelLimitOrder**](doc/ExchangeApi.md#cancellimitorder) | **POST** /crypto/exchange/limit_orders/{order_id}/cancel | Cancel given limit order
+[*ExchangeApi*](doc/ExchangeApi.md) | [**estimateCryptoExchange**](doc/ExchangeApi.md#estimatecryptoexchange) | **POST** /crypto/exchange/estimate/ | Estimate exchange of assets. One of assets has to be a cryptocurrency
 [*ExchangeApi*](doc/ExchangeApi.md) | [**getCryptoExchangeRate**](doc/ExchangeApi.md#getcryptoexchangerate) | **GET** /crypto/exchange/rate/{from}/{to}/ | Exchange rate between two given assets (at least one of them is crypto)
 [*ExchangeApi*](doc/ExchangeApi.md) | [**getExchangeRate**](doc/ExchangeApi.md#getexchangerate) | **GET** /fiat/exchange/rate/{from}/{to}/ | Exchange rate between two given currencies
+[*ExchangeApi*](doc/ExchangeApi.md) | [**getFearGreed**](doc/ExchangeApi.md#getfeargreed) | **GET** /crypto/assets/{asset_id}/fear_greed/ | Get fear and greed rates for given asset (results of votes if crypto asset will go up or down)
+[*ExchangeApi*](doc/ExchangeApi.md) | [**getLimitOrdersList**](doc/ExchangeApi.md#getlimitorderslist) | **GET** /crypto/exchange/limit_orders | Get list of limit orders for current user
+[*ExchangeApi*](doc/ExchangeApi.md) | [**performCryptoExchange**](doc/ExchangeApi.md#performcryptoexchange) | **POST** /crypto/exchange/ | Perform exchange of assets. One of assets has to be a cryptocurrency
 [*ExchangeApi*](doc/ExchangeApi.md) | [**performExchange**](doc/ExchangeApi.md#performexchange) | **POST** /fiat/exchange/ | Perform exchange operation
+[*ExchangeApi*](doc/ExchangeApi.md) | [**putLimitOrder**](doc/ExchangeApi.md#putlimitorder) | **POST** /crypto/exchange/limit_orders | Put limit order to the system. Order will be executed later
+[*ExchangeApi*](doc/ExchangeApi.md) | [**voteFearGreed**](doc/ExchangeApi.md#votefeargreed) | **PATCH** /crypto/assets/{asset_id}/fear_greed/ | Vote if this crypto asset goes up or down today
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**blockBankCard**](doc/FiatWalletApi.md#blockbankcard) | **POST** /fiat/bankcards/{card_id}/block/ | Block bank card and write reason
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**changeDefaultWallet**](doc/FiatWalletApi.md#changedefaultwallet) | **POST** /fiat/bankcards/{card_id}/change_wallet/ | Change wallet attached to bank card
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**createFiatWallet**](doc/FiatWalletApi.md#createfiatwallet) | **POST** /fiat/wallets/ | Create an wallet in given currency
@@ -119,6 +138,7 @@ Class | Method | HTTP request | Description
 [*UserApi*](doc/UserApi.md) | [**createKYCRequest**](doc/UserApi.md#createkycrequest) | **POST** /user/kyc/requests/ | Create KYC Request
 [*UserApi*](doc/UserApi.md) | [**moveKYCRequest**](doc/UserApi.md#movekycrequest) | **POST** /users/kyc/requests/approval/ | Move KYCRequest to approval
 [*UserApi*](doc/UserApi.md) | [**updateUser**](doc/UserApi.md#updateuser) | **PATCH** /users/{userID}/ | Update user
+[*UserApi*](doc/UserApi.md) | [**updateUserPasscode**](doc/UserApi.md#updateuserpasscode) | **PATCH** /users/change_passcode/{userID}/ | Update user passcode
 [*WalletApi*](doc/WalletApi.md) | [**getMainWallet**](doc/WalletApi.md#getmainwallet) | **GET** /wallet/ | Total balance and info about Users wallets in crypto, fiat and nft
 
 
@@ -136,16 +156,27 @@ Class | Method | HTTP request | Description
  - [BankCardSettings](doc/BankCardSettings.md)
  - [BankCardStatus](doc/BankCardStatus.md)
  - [Beneficiary](doc/Beneficiary.md)
- - [CheckPasscodeRequest](doc/CheckPasscodeRequest.md)
+ - [CancelLimitOrderRequest](doc/CancelLimitOrderRequest.md)
+ - [Candle](doc/Candle.md)
+ - [ChainImplementation](doc/ChainImplementation.md)
+ - [ChartTick](doc/ChartTick.md)
  - [Contact](doc/Contact.md)
  - [Country](doc/Country.md)
  - [CreateBeneficiaryRequest](doc/CreateBeneficiaryRequest.md)
  - [CreateFiatWalletRequest](doc/CreateFiatWalletRequest.md)
  - [CreateInnerFiatRequestRequest](doc/CreateInnerFiatRequestRequest.md)
  - [CreateInnerFiatTransferRequest](doc/CreateInnerFiatTransferRequest.md)
+ - [CryptoAccount](doc/CryptoAccount.md)
+ - [CryptoAccountAllOf](doc/CryptoAccountAllOf.md)
  - [CryptoAccountLight](doc/CryptoAccountLight.md)
  - [CryptoAccountWithShare](doc/CryptoAccountWithShare.md)
  - [CryptoAccountWithShareAllOf](doc/CryptoAccountWithShareAllOf.md)
+ - [CryptoAsset](doc/CryptoAsset.md)
+ - [CryptoAssetSorting](doc/CryptoAssetSorting.md)
+ - [CryptoExchangeEstimationResult](doc/CryptoExchangeEstimationResult.md)
+ - [CryptoExchangeRequest](doc/CryptoExchangeRequest.md)
+ - [CryptoMarketStats](doc/CryptoMarketStats.md)
+ - [CryptoOverviewElement](doc/CryptoOverviewElement.md)
  - [CryptoWallet](doc/CryptoWallet.md)
  - [CryptoWalletAllOf](doc/CryptoWalletAllOf.md)
  - [CryptoWalletBalance](doc/CryptoWalletBalance.md)
@@ -158,6 +189,8 @@ Class | Method | HTTP request | Description
  - [DepositAddress](doc/DepositAddress.md)
  - [Error](doc/Error.md)
  - [ExportHistory](doc/ExportHistory.md)
+ - [FavoriteCryptoCreateRequest](doc/FavoriteCryptoCreateRequest.md)
+ - [FearGreed](doc/FearGreed.md)
  - [FiatAccount](doc/FiatAccount.md)
  - [FiatWallet](doc/FiatWallet.md)
  - [FiatWalletAllOf](doc/FiatWalletAllOf.md)
@@ -171,11 +204,15 @@ Class | Method | HTTP request | Description
  - [KYCRequestMoveResult](doc/KYCRequestMoveResult.md)
  - [KYCRequestMoveResultRequestFieldsStatus](doc/KYCRequestMoveResultRequestFieldsStatus.md)
  - [KYCRequestStatus](doc/KYCRequestStatus.md)
+ - [LimitOrder](doc/LimitOrder.md)
  - [MainWalletItem](doc/MainWalletItem.md)
  - [MainWalletType](doc/MainWalletType.md)
  - [PerformExchangeRequest](doc/PerformExchangeRequest.md)
  - [PerformFiatTransferRequest](doc/PerformFiatTransferRequest.md)
+ - [PeriodInterval](doc/PeriodInterval.md)
+ - [PutLimitOrderRequest](doc/PutLimitOrderRequest.md)
  - [SyncContactsRequest](doc/SyncContactsRequest.md)
+ - [TokenStats](doc/TokenStats.md)
  - [Transaction](doc/Transaction.md)
  - [TransactionAssetsFilter](doc/TransactionAssetsFilter.md)
  - [TransactionDescriptionFillingRuleSet](doc/TransactionDescriptionFillingRuleSet.md)
@@ -186,8 +223,11 @@ Class | Method | HTTP request | Description
  - [TransactionStates](doc/TransactionStates.md)
  - [TransactionTypes](doc/TransactionTypes.md)
  - [UpdateContactRequest](doc/UpdateContactRequest.md)
+ - [UpdateUserPasscodeRequest](doc/UpdateUserPasscodeRequest.md)
  - [User](doc/User.md)
+ - [UserPaymentCurrency](doc/UserPaymentCurrency.md)
  - [UserSharingData](doc/UserSharingData.md)
+ - [VoteFearGreedRequest](doc/VoteFearGreedRequest.md)
  - [WalletBalanceInfo](doc/WalletBalanceInfo.md)
  - [WithdrawalAddress](doc/WithdrawalAddress.md)
  - [WithdrawalAddressCreationRequest](doc/WithdrawalAddressCreationRequest.md)

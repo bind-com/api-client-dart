@@ -3,7 +3,7 @@
 //
 
 import 'package:built_collection/built_collection.dart';
-import 'package:bind_api/src/model/crypto_account_light.dart';
+import 'package:bind_api/src/model/crypto_account.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -15,7 +15,7 @@ part 'crypto_wallet_all_of.g.dart';
 /// * [accounts] 
 abstract class CryptoWalletAllOf implements Built<CryptoWalletAllOf, CryptoWalletAllOfBuilder> {
     @BuiltValueField(wireName: r'accounts')
-    BuiltList<CryptoAccountLight>? get accounts;
+    BuiltList<CryptoAccount>? get accounts;
 
     CryptoWalletAllOf._();
 
@@ -43,7 +43,7 @@ class _$CryptoWalletAllOfSerializer implements StructuredSerializer<CryptoWallet
             result
                 ..add(r'accounts')
                 ..add(serializers.serialize(object.accounts,
-                    specifiedType: const FullType(BuiltList, [FullType(CryptoAccountLight)])));
+                    specifiedType: const FullType(BuiltList, [FullType(CryptoAccount)])));
         }
         return result;
     }
@@ -62,7 +62,7 @@ class _$CryptoWalletAllOfSerializer implements StructuredSerializer<CryptoWallet
             switch (key) {
                 case r'accounts':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(BuiltList, [FullType(CryptoAccountLight)])) as BuiltList<CryptoAccountLight>;
+                        specifiedType: const FullType(BuiltList, [FullType(CryptoAccount)])) as BuiltList<CryptoAccount>;
                     result.accounts.replace(valueDes);
                     break;
             }

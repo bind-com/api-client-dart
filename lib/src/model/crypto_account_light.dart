@@ -15,7 +15,6 @@ part 'crypto_account_light.g.dart';
 /// * [assetName] - Full name of a token
 /// * [assetId] - Primary key of an asset
 /// * [assetLogo] - Logo of an asset (link to static file)
-/// * [assetPerformance] - Percentage of growth of an asset during last 24 hours
 /// * [paymentCurrencyCode] - Code of a fiat currency (can be used to show currency symbol at UI)
 /// * [paymentCurrencyBalance] - Balance of a wallet converted to fiat currency (payment currency of current user)
 abstract class CryptoAccountLight implements Built<CryptoAccountLight, CryptoAccountLightBuilder> {
@@ -38,10 +37,6 @@ abstract class CryptoAccountLight implements Built<CryptoAccountLight, CryptoAcc
     /// Logo of an asset (link to static file)
     @BuiltValueField(wireName: r'asset_logo')
     String? get assetLogo;
-
-    /// Percentage of growth of an asset during last 24 hours
-    @BuiltValueField(wireName: r'asset_performance')
-    num get assetPerformance;
 
     /// Code of a fiat currency (can be used to show currency symbol at UI)
     @BuiltValueField(wireName: r'payment_currency_code')
@@ -94,10 +89,6 @@ class _$CryptoAccountLightSerializer implements StructuredSerializer<CryptoAccou
             ..add(object.assetLogo == null ? null : serializers.serialize(object.assetLogo,
                 specifiedType: const FullType.nullable(String)));
         result
-            ..add(r'asset_performance')
-            ..add(serializers.serialize(object.assetPerformance,
-                specifiedType: const FullType(num)));
-        result
             ..add(r'payment_currency_code')
             ..add(serializers.serialize(object.paymentCurrencyCode,
                 specifiedType: const FullType(String)));
@@ -145,11 +136,6 @@ class _$CryptoAccountLightSerializer implements StructuredSerializer<CryptoAccou
                         specifiedType: const FullType.nullable(String)) as String?;
                     if (valueDes == null) continue;
                     result.assetLogo = valueDes;
-                    break;
-                case r'asset_performance':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
-                    result.assetPerformance = valueDes;
                     break;
                 case r'payment_currency_code':
                     final valueDes = serializers.deserialize(value,

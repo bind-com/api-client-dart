@@ -16,7 +16,7 @@ void main() {
 
     // Check validity of user passcode
     //
-    //Future<bool> checkPasscode({ CheckPasscodeRequest checkPasscodeRequest }) async
+    //Future<bool> checkPasscode({ UpdateUserPasscodeRequest updateUserPasscodeRequest }) async
     test('test checkPasscode', () async {
       // TODO
     });
@@ -41,6 +41,13 @@ void main() {
     //
     //Future<User> updateUser(String userID, { User user }) async
     test('test updateUser', () async {
+      // TODO
+    });
+
+    // Update user passcode
+    //
+    //Future<User> updateUserPasscode(String userID, { UpdateUserPasscodeRequest updateUserPasscodeRequest }) async
+    test('test updateUserPasscode', () async {
       // TODO
     });
 
