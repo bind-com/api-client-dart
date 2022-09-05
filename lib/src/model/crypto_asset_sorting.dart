@@ -16,14 +16,22 @@ class CryptoAssetSorting extends EnumClass {
   static const CryptoAssetSorting gainers = _$gainers;
   @BuiltValueEnumConst(wireName: r'losers')
   static const CryptoAssetSorting losers = _$losers;
-  @BuiltValueEnumConst(wireName: r'cap')
-  static const CryptoAssetSorting cap = _$cap;
-  @BuiltValueEnumConst(wireName: r'volume')
-  static const CryptoAssetSorting volume = _$volume;
-  @BuiltValueEnumConst(wireName: r'recent')
-  static const CryptoAssetSorting recent = _$recent;
+  @BuiltValueEnumConst(wireName: r'capUp')
+  static const CryptoAssetSorting capUp = _$capUp;
+  @BuiltValueEnumConst(wireName: r'capDown')
+  static const CryptoAssetSorting capDown = _$capDown;
+  @BuiltValueEnumConst(wireName: r'volumeUp')
+  static const CryptoAssetSorting volumeUp = _$volumeUp;
+  @BuiltValueEnumConst(wireName: r'volumeDown')
+  static const CryptoAssetSorting volumeDown = _$volumeDown;
+  @BuiltValueEnumConst(wireName: r'recentUp')
+  static const CryptoAssetSorting recentUp = _$recentUp;
+  @BuiltValueEnumConst(wireName: r'recentDown')
+  static const CryptoAssetSorting recentDown = _$recentDown;
   @BuiltValueEnumConst(wireName: r'watch')
   static const CryptoAssetSorting watch = _$watch;
+  @BuiltValueEnumConst(wireName: r'trending')
+  static const CryptoAssetSorting trending = _$trending;
 
   static Serializer<CryptoAssetSorting> get serializer => _$cryptoAssetSortingSerializer;
 

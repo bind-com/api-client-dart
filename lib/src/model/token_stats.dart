@@ -114,49 +114,49 @@ class _$TokenStatsSerializer implements StructuredSerializer<TokenStats> {
             result
                 ..add(r'24h_low')
                 ..add(serializers.serialize(object.n24hLow,
-                    specifiedType: const FullType(num)));
+                    specifiedType: const FullType.nullable(num)));
         }
         if (object.n24hHigh != null) {
             result
                 ..add(r'24h_high')
                 ..add(serializers.serialize(object.n24hHigh,
-                    specifiedType: const FullType(num)));
+                    specifiedType: const FullType.nullable(num)));
         }
         if (object.n7dLow != null) {
             result
                 ..add(r'7d_low')
                 ..add(serializers.serialize(object.n7dLow,
-                    specifiedType: const FullType(num)));
+                    specifiedType: const FullType.nullable(num)));
         }
         if (object.n7dHigh != null) {
             result
                 ..add(r'7d_high')
                 ..add(serializers.serialize(object.n7dHigh,
-                    specifiedType: const FullType(num)));
+                    specifiedType: const FullType.nullable(num)));
         }
         if (object.n30dLow != null) {
             result
                 ..add(r'30d_low')
                 ..add(serializers.serialize(object.n30dLow,
-                    specifiedType: const FullType(num)));
+                    specifiedType: const FullType.nullable(num)));
         }
         if (object.n30dHigh != null) {
             result
                 ..add(r'30d_high')
                 ..add(serializers.serialize(object.n30dHigh,
-                    specifiedType: const FullType(num)));
+                    specifiedType: const FullType.nullable(num)));
         }
         if (object.n90dLow != null) {
             result
                 ..add(r'90d_low')
                 ..add(serializers.serialize(object.n90dLow,
-                    specifiedType: const FullType(num)));
+                    specifiedType: const FullType.nullable(num)));
         }
         if (object.n90dHigh != null) {
             result
                 ..add(r'90d_high')
                 ..add(serializers.serialize(object.n90dHigh,
-                    specifiedType: const FullType(num)));
+                    specifiedType: const FullType.nullable(num)));
         }
         if (object.userCurrency != null) {
             result
@@ -201,42 +201,50 @@ class _$TokenStatsSerializer implements StructuredSerializer<TokenStats> {
                     break;
                 case r'24h_low':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
+                        specifiedType: const FullType.nullable(num)) as num?;
+                    if (valueDes == null) continue;
                     result.n24hLow = valueDes;
                     break;
                 case r'24h_high':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
+                        specifiedType: const FullType.nullable(num)) as num?;
+                    if (valueDes == null) continue;
                     result.n24hHigh = valueDes;
                     break;
                 case r'7d_low':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
+                        specifiedType: const FullType.nullable(num)) as num?;
+                    if (valueDes == null) continue;
                     result.n7dLow = valueDes;
                     break;
                 case r'7d_high':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
+                        specifiedType: const FullType.nullable(num)) as num?;
+                    if (valueDes == null) continue;
                     result.n7dHigh = valueDes;
                     break;
                 case r'30d_low':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
+                        specifiedType: const FullType.nullable(num)) as num?;
+                    if (valueDes == null) continue;
                     result.n30dLow = valueDes;
                     break;
                 case r'30d_high':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
+                        specifiedType: const FullType.nullable(num)) as num?;
+                    if (valueDes == null) continue;
                     result.n30dHigh = valueDes;
                     break;
                 case r'90d_low':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
+                        specifiedType: const FullType.nullable(num)) as num?;
+                    if (valueDes == null) continue;
                     result.n90dLow = valueDes;
                     break;
                 case r'90d_high':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
+                        specifiedType: const FullType.nullable(num)) as num?;
+                    if (valueDes == null) continue;
                     result.n90dHigh = valueDes;
                     break;
                 case r'user_currency':

@@ -79,6 +79,8 @@ Class | Method | HTTP request | Description
 [*ContactsApi*](doc/ContactsApi.md) | [**readJWTToken**](doc/ContactsApi.md#readjwttoken) | **POST** /users/send/qr_code/ | Check JWT validity and read user from it
 [*ContactsApi*](doc/ContactsApi.md) | [**syncContacts**](doc/ContactsApi.md#synccontacts) | **POST** /contacts/sync/ | Sync mobile phone contacts of current user with backend data
 [*ContactsApi*](doc/ContactsApi.md) | [**updateContact**](doc/ContactsApi.md#updatecontact) | **PATCH** /contacts/{contact_id}/ | Update contact data (add/remove contact from favorite)
+[*CryptoApi*](doc/CryptoApi.md) | [**getCryptoChartCandles**](doc/CryptoApi.md#getcryptochartcandles) | **GET** /charts/crypto/candle/ | List of candles for crypto price chart
+[*CryptoApi*](doc/CryptoApi.md) | [**getCryptoChartLine**](doc/CryptoApi.md#getcryptochartline) | **GET** /charts/crypto/line/ | List line ticks for crypto price chart
 [*CryptoApi*](doc/CryptoApi.md) | [**getCryptoOverview**](doc/CryptoApi.md#getcryptooverview) | **GET** /crypto/overview/ | Get crypto overview information, the price of the tokens will be converted into the user&#39;s payment currency
 [*CryptoApi*](doc/CryptoApi.md) | [**getGlobalCryptoStats**](doc/CryptoApi.md#getglobalcryptostats) | **GET** /crypto/global/stats/ | Get global crypto market information, 24h volume and market cap will be converted into the user&#39;s payment currency
 [*CryptoApi*](doc/CryptoApi.md) | [**getTokenStats**](doc/CryptoApi.md#gettokenstats) | **GET** /crypto/stats/{assetID}/ | Get stats for certain token, price related stats will be converted into the user&#39;s payment currency
@@ -155,7 +157,9 @@ Class | Method | HTTP request | Description
  - [BankCardStatus](doc/BankCardStatus.md)
  - [Beneficiary](doc/Beneficiary.md)
  - [CancelLimitOrderRequest](doc/CancelLimitOrderRequest.md)
+ - [Candle](doc/Candle.md)
  - [ChainImplementation](doc/ChainImplementation.md)
+ - [ChartTick](doc/ChartTick.md)
  - [Contact](doc/Contact.md)
  - [Country](doc/Country.md)
  - [CreateBeneficiaryRequest](doc/CreateBeneficiaryRequest.md)
@@ -205,6 +209,7 @@ Class | Method | HTTP request | Description
  - [MainWalletType](doc/MainWalletType.md)
  - [PerformExchangeRequest](doc/PerformExchangeRequest.md)
  - [PerformFiatTransferRequest](doc/PerformFiatTransferRequest.md)
+ - [PeriodInterval](doc/PeriodInterval.md)
  - [PutLimitOrderRequest](doc/PutLimitOrderRequest.md)
  - [SyncContactsRequest](doc/SyncContactsRequest.md)
  - [TokenStats](doc/TokenStats.md)
