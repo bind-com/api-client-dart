@@ -81,31 +81,31 @@ class _$CryptoOverviewElementSerializer implements StructuredSerializer<CryptoOv
             result
                 ..add(r'asset_id')
                 ..add(serializers.serialize(object.assetId,
-                    specifiedType: const FullType(String)));
+                    specifiedType: const FullType.nullable(String)));
         }
         if (object.assetName != null) {
             result
                 ..add(r'asset_name')
                 ..add(serializers.serialize(object.assetName,
-                    specifiedType: const FullType(String)));
+                    specifiedType: const FullType.nullable(String)));
         }
         if (object.assetIcon != null) {
             result
                 ..add(r'asset_icon')
                 ..add(serializers.serialize(object.assetIcon,
-                    specifiedType: const FullType(String)));
+                    specifiedType: const FullType.nullable(String)));
         }
         if (object.price != null) {
             result
                 ..add(r'price')
                 ..add(serializers.serialize(object.price,
-                    specifiedType: const FullType(num)));
+                    specifiedType: const FullType.nullable(num)));
         }
         if (object.growth != null) {
             result
                 ..add(r'growth')
                 ..add(serializers.serialize(object.growth,
-                    specifiedType: const FullType(num)));
+                    specifiedType: const FullType.nullable(num)));
         }
         if (object.description != null) {
             result
@@ -147,27 +147,32 @@ class _$CryptoOverviewElementSerializer implements StructuredSerializer<CryptoOv
                     break;
                 case r'asset_id':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
+                        specifiedType: const FullType.nullable(String)) as String?;
+                    if (valueDes == null) continue;
                     result.assetId = valueDes;
                     break;
                 case r'asset_name':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
+                        specifiedType: const FullType.nullable(String)) as String?;
+                    if (valueDes == null) continue;
                     result.assetName = valueDes;
                     break;
                 case r'asset_icon':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
+                        specifiedType: const FullType.nullable(String)) as String?;
+                    if (valueDes == null) continue;
                     result.assetIcon = valueDes;
                     break;
                 case r'price':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
+                        specifiedType: const FullType.nullable(num)) as num?;
+                    if (valueDes == null) continue;
                     result.price = valueDes;
                     break;
                 case r'growth':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
+                        specifiedType: const FullType.nullable(num)) as num?;
+                    if (valueDes == null) continue;
                     result.growth = valueDes;
                     break;
                 case r'description':

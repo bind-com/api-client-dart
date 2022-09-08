@@ -91,6 +91,7 @@ export 'package:bind_api/src/model/perform_fiat_transfer_request.dart';
 export 'package:bind_api/src/model/period_interval.dart';
 export 'package:bind_api/src/model/put_limit_order_request.dart';
 export 'package:bind_api/src/model/sync_contacts_request.dart';
+export 'package:bind_api/src/model/token_detail.dart';
 export 'package:bind_api/src/model/token_stats.dart';
 export 'package:bind_api/src/model/transaction.dart';
 export 'package:bind_api/src/model/transaction_assets_filter.dart';
