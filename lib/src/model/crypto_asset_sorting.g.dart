@@ -9,10 +9,16 @@ part of 'crypto_asset_sorting.dart';
 const CryptoAssetSorting _$all = const CryptoAssetSorting._('all');
 const CryptoAssetSorting _$gainers = const CryptoAssetSorting._('gainers');
 const CryptoAssetSorting _$losers = const CryptoAssetSorting._('losers');
-const CryptoAssetSorting _$cap = const CryptoAssetSorting._('cap');
-const CryptoAssetSorting _$volume = const CryptoAssetSorting._('volume');
-const CryptoAssetSorting _$recent = const CryptoAssetSorting._('recent');
+const CryptoAssetSorting _$capUp = const CryptoAssetSorting._('capUp');
+const CryptoAssetSorting _$capDown = const CryptoAssetSorting._('capDown');
+const CryptoAssetSorting _$volumeUp = const CryptoAssetSorting._('volumeUp');
+const CryptoAssetSorting _$volumeDown =
+    const CryptoAssetSorting._('volumeDown');
+const CryptoAssetSorting _$recentUp = const CryptoAssetSorting._('recentUp');
+const CryptoAssetSorting _$recentDown =
+    const CryptoAssetSorting._('recentDown');
 const CryptoAssetSorting _$watch = const CryptoAssetSorting._('watch');
+const CryptoAssetSorting _$trending = const CryptoAssetSorting._('trending');
 
 CryptoAssetSorting _$valueOf(String name) {
   switch (name) {
@@ -22,14 +28,22 @@ CryptoAssetSorting _$valueOf(String name) {
       return _$gainers;
     case 'losers':
       return _$losers;
-    case 'cap':
-      return _$cap;
-    case 'volume':
-      return _$volume;
-    case 'recent':
-      return _$recent;
+    case 'capUp':
+      return _$capUp;
+    case 'capDown':
+      return _$capDown;
+    case 'volumeUp':
+      return _$volumeUp;
+    case 'volumeDown':
+      return _$volumeDown;
+    case 'recentUp':
+      return _$recentUp;
+    case 'recentDown':
+      return _$recentDown;
     case 'watch':
       return _$watch;
+    case 'trending':
+      return _$trending;
     default:
       throw new ArgumentError(name);
   }
@@ -40,10 +54,14 @@ final BuiltSet<CryptoAssetSorting> _$values =
   _$all,
   _$gainers,
   _$losers,
-  _$cap,
-  _$volume,
-  _$recent,
+  _$capUp,
+  _$capDown,
+  _$volumeUp,
+  _$volumeDown,
+  _$recentUp,
+  _$recentDown,
   _$watch,
+  _$trending,
 ]);
 
 class _$CryptoAssetSortingMeta {
@@ -51,10 +69,14 @@ class _$CryptoAssetSortingMeta {
   CryptoAssetSorting get all => _$all;
   CryptoAssetSorting get gainers => _$gainers;
   CryptoAssetSorting get losers => _$losers;
-  CryptoAssetSorting get cap => _$cap;
-  CryptoAssetSorting get volume => _$volume;
-  CryptoAssetSorting get recent => _$recent;
+  CryptoAssetSorting get capUp => _$capUp;
+  CryptoAssetSorting get capDown => _$capDown;
+  CryptoAssetSorting get volumeUp => _$volumeUp;
+  CryptoAssetSorting get volumeDown => _$volumeDown;
+  CryptoAssetSorting get recentUp => _$recentUp;
+  CryptoAssetSorting get recentDown => _$recentDown;
   CryptoAssetSorting get watch => _$watch;
+  CryptoAssetSorting get trending => _$trending;
   CryptoAssetSorting valueOf(String name) => _$valueOf(name);
   BuiltSet<CryptoAssetSorting> get values => _$values;
 }
@@ -74,19 +96,27 @@ class _$CryptoAssetSortingSerializer
     'all': 'all',
     'gainers': 'gainers',
     'losers': 'losers',
-    'cap': 'cap',
-    'volume': 'volume',
-    'recent': 'recent',
+    'capUp': 'capUp',
+    'capDown': 'capDown',
+    'volumeUp': 'volumeUp',
+    'volumeDown': 'volumeDown',
+    'recentUp': 'recentUp',
+    'recentDown': 'recentDown',
     'watch': 'watch',
+    'trending': 'trending',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'all': 'all',
     'gainers': 'gainers',
     'losers': 'losers',
-    'cap': 'cap',
-    'volume': 'volume',
-    'recent': 'recent',
+    'capUp': 'capUp',
+    'capDown': 'capDown',
+    'volumeUp': 'volumeUp',
+    'volumeDown': 'volumeDown',
+    'recentUp': 'recentUp',
+    'recentDown': 'recentDown',
     'watch': 'watch',
+    'trending': 'trending',
   };
 
   @override

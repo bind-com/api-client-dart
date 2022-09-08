@@ -25,7 +25,9 @@ import 'package:bind_api/src/model/bank_card_settings.dart';
 import 'package:bind_api/src/model/bank_card_status.dart';
 import 'package:bind_api/src/model/beneficiary.dart';
 import 'package:bind_api/src/model/cancel_limit_order_request.dart';
+import 'package:bind_api/src/model/candle.dart';
 import 'package:bind_api/src/model/chain_implementation.dart';
+import 'package:bind_api/src/model/chart_tick.dart';
 import 'package:bind_api/src/model/contact.dart';
 import 'package:bind_api/src/model/country.dart';
 import 'package:bind_api/src/model/create_beneficiary_request.dart';
@@ -75,6 +77,7 @@ import 'package:bind_api/src/model/main_wallet_item.dart';
 import 'package:bind_api/src/model/main_wallet_type.dart';
 import 'package:bind_api/src/model/perform_exchange_request.dart';
 import 'package:bind_api/src/model/perform_fiat_transfer_request.dart';
+import 'package:bind_api/src/model/period_interval.dart';
 import 'package:bind_api/src/model/put_limit_order_request.dart';
 import 'package:bind_api/src/model/sync_contacts_request.dart';
 import 'package:bind_api/src/model/token_stats.dart';
@@ -113,7 +116,9 @@ part 'serializers.g.dart';
   BankCardStatus,
   Beneficiary,
   CancelLimitOrderRequest,
+  Candle,
   ChainImplementation,
+  ChartTick,
   Contact,
   Country,
   CreateBeneficiaryRequest,
@@ -163,6 +168,7 @@ part 'serializers.g.dart';
   MainWalletType,
   PerformExchangeRequest,
   PerformFiatTransferRequest,
+  PeriodInterval,
   PutLimitOrderRequest,
   SyncContactsRequest,
   TokenStats,
@@ -249,6 +255,14 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(BankCardBaseData)]),
         () => ListBuilder<BankCardBaseData>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Candle)]),
+        () => ListBuilder<Candle>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(ChartTick)]),
+        () => ListBuilder<ChartTick>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(WithdrawalAddress)]),

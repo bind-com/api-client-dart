@@ -9,11 +9,115 @@ All URIs are relative to *https://api.thebind.uk/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**getCryptoChartCandles**](CryptoApi.md#getcryptochartcandles) | **GET** /charts/crypto/candle/ | List of candles for crypto price chart
+[**getCryptoChartLine**](CryptoApi.md#getcryptochartline) | **GET** /charts/crypto/line/ | List line ticks for crypto price chart
 [**getCryptoOverview**](CryptoApi.md#getcryptooverview) | **GET** /crypto/overview/ | Get crypto overview information, the price of the tokens will be converted into the user&#39;s payment currency
 [**getGlobalCryptoStats**](CryptoApi.md#getglobalcryptostats) | **GET** /crypto/global/stats/ | Get global crypto market information, 24h volume and market cap will be converted into the user&#39;s payment currency
 [**getTokenStats**](CryptoApi.md#gettokenstats) | **GET** /crypto/stats/{assetID}/ | Get stats for certain token, price related stats will be converted into the user&#39;s payment currency
 [**listCryptoCurrencies**](CryptoApi.md#listcryptocurrencies) | **GET** /currencies/crypto/ | List of Crypto Currencies available at Bind
 
+
+# **getCryptoChartCandles**
+> BuiltList<Candle> getCryptoChartCandles(asset, interval, start, end, showUsd)
+
+List of candles for crypto price chart
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getCryptoApi();
+final String asset = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of crypto asset
+final PeriodInterval interval = ; // PeriodInterval | candle interval filter
+final DateTime start = 2013-10-20T19:20:30+01:00; // DateTime | time interval start filter
+final DateTime end = 2013-10-20T19:20:30+01:00; // DateTime | time interval end filter
+final bool showUsd = true; // bool | by default chart will be in fiat user payment currency, if this flag is true then currency is set to usd
+
+try {
+    final response = api.getCryptoChartCandles(asset, interval, start, end, showUsd);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling CryptoApi->getCryptoChartCandles: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **asset** | **String**| id of crypto asset | 
+ **interval** | [**PeriodInterval**](.md)| candle interval filter | 
+ **start** | **DateTime**| time interval start filter | 
+ **end** | **DateTime**| time interval end filter | 
+ **showUsd** | **bool**| by default chart will be in fiat user payment currency, if this flag is true then currency is set to usd | [optional] 
+
+### Return type
+
+[**BuiltList&lt;Candle&gt;**](Candle.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getCryptoChartLine**
+> BuiltList<ChartTick> getCryptoChartLine(interval, from, to, showUsd)
+
+List line ticks for crypto price chart
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getCryptoApi();
+final PeriodInterval interval = ; // PeriodInterval | interval filter
+final DateTime from = 2013-10-20T19:20:30+01:00; // DateTime | time interval start filter
+final DateTime to = 2013-10-20T19:20:30+01:00; // DateTime | time interval end filter
+final bool showUsd = true; // bool | by default chart will be in fiat user payment currency, if this flag is true then currency is set to usd
+
+try {
+    final response = api.getCryptoChartLine(interval, from, to, showUsd);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling CryptoApi->getCryptoChartLine: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **interval** | [**PeriodInterval**](.md)| interval filter | 
+ **from** | **DateTime**| time interval start filter | 
+ **to** | **DateTime**| time interval end filter | 
+ **showUsd** | **bool**| by default chart will be in fiat user payment currency, if this flag is true then currency is set to usd | [optional] 
+
+### Return type
+
+[**BuiltList&lt;ChartTick&gt;**](ChartTick.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCryptoOverview**
 > BuiltList<CryptoOverviewElement> getCryptoOverview()
