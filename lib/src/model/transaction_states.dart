@@ -14,6 +14,16 @@ class TransactionStates extends EnumClass {
   static const TransactionStates COMPLETED = _$COMPLETED;
   @BuiltValueEnumConst(wireName: r'FAILED')
   static const TransactionStates FAILED = _$FAILED;
+  @BuiltValueEnumConst(wireName: r'TECHNICALLY_FAILED')
+  static const TransactionStates TECHNICALLY_FAILED = _$TECHNICALLY_FAILED;
+  @BuiltValueEnumConst(wireName: r'PROCESSING')
+  static const TransactionStates PROCESSING = _$PROCESSING;
+  @BuiltValueEnumConst(wireName: r'UNCLEARED')
+  static const TransactionStates UNCLEARED = _$UNCLEARED;
+  @BuiltValueEnumConst(wireName: r'MARKED_FOR_CLEARING')
+  static const TransactionStates MARKED_FOR_CLEARING = _$MARKED_FOR_CLEARING;
+  @BuiltValueEnumConst(wireName: r'CLEARED')
+  static const TransactionStates CLEARED = _$CLEARED;
 
   static Serializer<TransactionStates> get serializer => _$transactionStatesSerializer;
 

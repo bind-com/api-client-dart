@@ -40,7 +40,7 @@ abstract class Transaction implements Built<Transaction, TransactionBuilder> {
 
     @BuiltValueField(wireName: r'state')
     TransactionStates? get state;
-    // enum stateEnum {  COMPLETED,  FAILED,  };
+    // enum stateEnum {  COMPLETED,  FAILED,  TECHNICALLY_FAILED,  PROCESSING,  UNCLEARED,  MARKED_FOR_CLEARING,  CLEARED,  };
 
     @BuiltValueField(wireName: r'is_crypto')
     bool? get isCrypto;
