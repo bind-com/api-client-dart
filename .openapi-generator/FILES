@@ -79,6 +79,7 @@ doc/PeriodInterval.md
 doc/PutLimitOrderRequest.md
 doc/StagingApi.md
 doc/SyncContactsRequest.md
+doc/TokenDetail.md
 doc/TokenStats.md
 doc/Transaction.md
 doc/TransactionAssetsFilter.md
@@ -192,6 +193,7 @@ lib/src/model/perform_fiat_transfer_request.dart
 lib/src/model/period_interval.dart
 lib/src/model/put_limit_order_request.dart
 lib/src/model/sync_contacts_request.dart
+lib/src/model/token_detail.dart
 lib/src/model/token_stats.dart
 lib/src/model/transaction.dart
 lib/src/model/transaction_assets_filter.dart
@@ -213,6 +215,3 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/candle_test.dart
-test/chart_tick_test.dart
-test/period_interval_test.dart

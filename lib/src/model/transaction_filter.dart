@@ -40,7 +40,7 @@ abstract class TransactionFilter implements Built<TransactionFilter, Transaction
 
     @BuiltValueField(wireName: r'type')
     TransactionTypes? get type;
-    // enum typeEnum {  OUTGOING_INNER_FIAT_TRANSFER,  INCOMING_INNER_FIAT_TRANSFER,  FIAT_EXCHANGE,  };
+    // enum typeEnum {  OUTGOING_INNER_FIAT_TRANSFER,  INCOMING_INNER_FIAT_TRANSFER,  OUTGOING_INNER_CRYPTO_TRANSFER,  INCOMING_INNER_CRYPTO_TRANSFER,  FIAT_EXCHANGE,  OUTGOING_SWIFT_FIAT_TRANSFER,  SETTLEMENT,  CLEARABLE,  EXCHANGE,  SEND,  FIAT_POOL_TRANSFER,  CRYPTO_WITHDRAWAL,  EXTERNAL,  SWIPE_TO_VAULT,  CRYPTO_NETWORK_TRANSFER,  CRYPTO_NETWORK_FEE,  };
 
     /// id of wallet (fiat or crypto)
     @BuiltValueField(wireName: r'wallet')

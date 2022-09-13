@@ -8,6 +8,13 @@ part of 'transaction_states.dart';
 
 const TransactionStates _$COMPLETED = const TransactionStates._('COMPLETED');
 const TransactionStates _$FAILED = const TransactionStates._('FAILED');
+const TransactionStates _$TECHNICALLY_FAILED =
+    const TransactionStates._('TECHNICALLY_FAILED');
+const TransactionStates _$PROCESSING = const TransactionStates._('PROCESSING');
+const TransactionStates _$UNCLEARED = const TransactionStates._('UNCLEARED');
+const TransactionStates _$MARKED_FOR_CLEARING =
+    const TransactionStates._('MARKED_FOR_CLEARING');
+const TransactionStates _$CLEARED = const TransactionStates._('CLEARED');
 
 TransactionStates _$valueOf(String name) {
   switch (name) {
@@ -15,6 +22,16 @@ TransactionStates _$valueOf(String name) {
       return _$COMPLETED;
     case 'FAILED':
       return _$FAILED;
+    case 'TECHNICALLY_FAILED':
+      return _$TECHNICALLY_FAILED;
+    case 'PROCESSING':
+      return _$PROCESSING;
+    case 'UNCLEARED':
+      return _$UNCLEARED;
+    case 'MARKED_FOR_CLEARING':
+      return _$MARKED_FOR_CLEARING;
+    case 'CLEARED':
+      return _$CLEARED;
     default:
       throw new ArgumentError(name);
   }
@@ -24,12 +41,22 @@ final BuiltSet<TransactionStates> _$values =
     new BuiltSet<TransactionStates>(const <TransactionStates>[
   _$COMPLETED,
   _$FAILED,
+  _$TECHNICALLY_FAILED,
+  _$PROCESSING,
+  _$UNCLEARED,
+  _$MARKED_FOR_CLEARING,
+  _$CLEARED,
 ]);
 
 class _$TransactionStatesMeta {
   const _$TransactionStatesMeta();
   TransactionStates get COMPLETED => _$COMPLETED;
   TransactionStates get FAILED => _$FAILED;
+  TransactionStates get TECHNICALLY_FAILED => _$TECHNICALLY_FAILED;
+  TransactionStates get PROCESSING => _$PROCESSING;
+  TransactionStates get UNCLEARED => _$UNCLEARED;
+  TransactionStates get MARKED_FOR_CLEARING => _$MARKED_FOR_CLEARING;
+  TransactionStates get CLEARED => _$CLEARED;
   TransactionStates valueOf(String name) => _$valueOf(name);
   BuiltSet<TransactionStates> get values => _$values;
 }
@@ -48,10 +75,20 @@ class _$TransactionStatesSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'COMPLETED': 'COMPLETED',
     'FAILED': 'FAILED',
+    'TECHNICALLY_FAILED': 'TECHNICALLY_FAILED',
+    'PROCESSING': 'PROCESSING',
+    'UNCLEARED': 'UNCLEARED',
+    'MARKED_FOR_CLEARING': 'MARKED_FOR_CLEARING',
+    'CLEARED': 'CLEARED',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'COMPLETED': 'COMPLETED',
     'FAILED': 'FAILED',
+    'TECHNICALLY_FAILED': 'TECHNICALLY_FAILED',
+    'PROCESSING': 'PROCESSING',
+    'UNCLEARED': 'UNCLEARED',
+    'MARKED_FOR_CLEARING': 'MARKED_FOR_CLEARING',
+    'CLEARED': 'CLEARED',
   };
 
   @override
