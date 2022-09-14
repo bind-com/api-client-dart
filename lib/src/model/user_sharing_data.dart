@@ -13,6 +13,8 @@ part 'user_sharing_data.g.dart';
 /// * [userId] 
 /// * [firstName] 
 /// * [lastName] 
+/// * [currency] 
+/// * [amount] 
 abstract class UserSharingData implements Built<UserSharingData, UserSharingDataBuilder> {
     @BuiltValueField(wireName: r'user_id')
     String? get userId;
@@ -22,6 +24,12 @@ abstract class UserSharingData implements Built<UserSharingData, UserSharingData
 
     @BuiltValueField(wireName: r'last_name')
     String? get lastName;
+
+    @BuiltValueField(wireName: r'currency')
+    String? get currency;
+
+    @BuiltValueField(wireName: r'amount')
+    num? get amount;
 
     UserSharingData._();
 
@@ -63,6 +71,18 @@ class _$UserSharingDataSerializer implements StructuredSerializer<UserSharingDat
                 ..add(serializers.serialize(object.lastName,
                     specifiedType: const FullType(String)));
         }
+        if (object.currency != null) {
+            result
+                ..add(r'currency')
+                ..add(serializers.serialize(object.currency,
+                    specifiedType: const FullType.nullable(String)));
+        }
+        if (object.amount != null) {
+            result
+                ..add(r'amount')
+                ..add(serializers.serialize(object.amount,
+                    specifiedType: const FullType.nullable(num)));
+        }
         return result;
     }
 
@@ -92,6 +112,18 @@ class _$UserSharingDataSerializer implements StructuredSerializer<UserSharingDat
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.lastName = valueDes;
+                    break;
+                case r'currency':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType.nullable(String)) as String?;
+                    if (valueDes == null) continue;
+                    result.currency = valueDes;
+                    break;
+                case r'amount':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType.nullable(num)) as num?;
+                    if (valueDes == null) continue;
+                    result.amount = valueDes;
                     break;
             }
         }

@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**createInnerFiatTransfer**](ContactsApi.md#createinnerfiattransfer) | **POST** /fiat/send/ | Send fiat inside BIND
 [**generateQRCodeToken**](ContactsApi.md#generateqrcodetoken) | **GET** /users/send/qr_code/ | Generate JWT token to share as QR code
 [**getContacts**](ContactsApi.md#getcontacts) | **GET** /contacts/ | List of contacts of current user
+[**getInnerFiatTransferFee**](ContactsApi.md#getinnerfiattransferfee) | **POST** /fiat/send/fee/ | 
 [**readJWTToken**](ContactsApi.md#readjwttoken) | **POST** /users/send/qr_code/ | Check JWT validity and read user from it
 [**syncContacts**](ContactsApi.md#synccontacts) | **POST** /contacts/sync/ | Sync mobile phone contacts of current user with backend data
 [**updateContact**](ContactsApi.md#updatecontact) | **PATCH** /contacts/{contact_id}/ | Update contact data (add/remove contact from favorite)
@@ -203,7 +204,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **generateQRCodeToken**
-> JWTToken generateQRCodeToken()
+> JWTToken generateQRCodeToken(currency, amount)
 
 Generate JWT token to share as QR code
 
@@ -215,9 +216,11 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getContactsApi();
+final String currency = BTC; // String | 
+final num amount = 10; // num | 
 
 try {
-    final response = api.generateQRCodeToken();
+    final response = api.generateQRCodeToken(currency, amount);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling ContactsApi->generateQRCodeToken: $e\n');
@@ -225,7 +228,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currency** | **String**|  | [optional] 
+ **amount** | **num**|  | [optional] 
 
 ### Return type
 
@@ -243,7 +250,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getContacts**
-> BuiltList<Contact> getContacts()
+> BuiltList<Contact> getContacts(lastTransactions)
 
 List of contacts of current user
 
@@ -257,9 +264,10 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getContactsApi();
+final bool lastTransactions = true; // bool | if true, only beneficiaries with last transactions will be returned
 
 try {
-    final response = api.getContacts();
+    final response = api.getContacts(lastTransactions);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling ContactsApi->getContacts: $e\n');
@@ -267,7 +275,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **lastTransactions** | **bool**| if true, only beneficiaries with last transactions will be returned | [optional] 
 
 ### Return type
 
@@ -280,6 +291,52 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getInnerFiatTransferFee**
+> InnerFiatTransferFeeResult getInnerFiatTransferFee(getInnerFiatTransferFeeRequest)
+
+
+
+Get fee for fiat transfer
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getContactsApi();
+final GetInnerFiatTransferFeeRequest getInnerFiatTransferFeeRequest = ; // GetInnerFiatTransferFeeRequest | 
+
+try {
+    final response = api.getInnerFiatTransferFee(getInnerFiatTransferFeeRequest);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling ContactsApi->getInnerFiatTransferFee: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **getInnerFiatTransferFeeRequest** | [**GetInnerFiatTransferFeeRequest**](GetInnerFiatTransferFeeRequest.md)|  | [optional] 
+
+### Return type
+
+[**InnerFiatTransferFeeResult**](InnerFiatTransferFeeResult.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -5,28 +5,24 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'create_inner_fiat_transfer_request.g.dart';
+part 'get_inner_fiat_transfer_fee_request.g.dart';
 
-/// CreateInnerFiatTransferRequest
+/// GetInnerFiatTransferFeeRequest
 ///
 /// Properties:
 /// * [userId] 
 /// * [contactId] - id of user contact
-/// * [currency] 
 /// * [fiatAccount] 
 /// * [receiverCurrency] 
 /// * [amount] 
 /// * [note] 
-abstract class CreateInnerFiatTransferRequest implements Built<CreateInnerFiatTransferRequest, CreateInnerFiatTransferRequestBuilder> {
+abstract class GetInnerFiatTransferFeeRequest implements Built<GetInnerFiatTransferFeeRequest, GetInnerFiatTransferFeeRequestBuilder> {
     @BuiltValueField(wireName: r'user_id')
     String? get userId;
 
     /// id of user contact
     @BuiltValueField(wireName: r'contact_id')
     String? get contactId;
-
-    @BuiltValueField(wireName: r'currency')
-    String? get currency;
 
     @BuiltValueField(wireName: r'fiat_account')
     String? get fiatAccount;
@@ -40,26 +36,26 @@ abstract class CreateInnerFiatTransferRequest implements Built<CreateInnerFiatTr
     @BuiltValueField(wireName: r'note')
     String? get note;
 
-    CreateInnerFiatTransferRequest._();
+    GetInnerFiatTransferFeeRequest._();
 
     @BuiltValueHook(initializeBuilder: true)
-    static void _defaults(CreateInnerFiatTransferRequestBuilder b) => b;
+    static void _defaults(GetInnerFiatTransferFeeRequestBuilder b) => b;
 
-    factory CreateInnerFiatTransferRequest([void updates(CreateInnerFiatTransferRequestBuilder b)]) = _$CreateInnerFiatTransferRequest;
+    factory GetInnerFiatTransferFeeRequest([void updates(GetInnerFiatTransferFeeRequestBuilder b)]) = _$GetInnerFiatTransferFeeRequest;
 
     @BuiltValueSerializer(custom: true)
-    static Serializer<CreateInnerFiatTransferRequest> get serializer => _$CreateInnerFiatTransferRequestSerializer();
+    static Serializer<GetInnerFiatTransferFeeRequest> get serializer => _$GetInnerFiatTransferFeeRequestSerializer();
 }
 
-class _$CreateInnerFiatTransferRequestSerializer implements StructuredSerializer<CreateInnerFiatTransferRequest> {
+class _$GetInnerFiatTransferFeeRequestSerializer implements StructuredSerializer<GetInnerFiatTransferFeeRequest> {
     @override
-    final Iterable<Type> types = const [CreateInnerFiatTransferRequest, _$CreateInnerFiatTransferRequest];
+    final Iterable<Type> types = const [GetInnerFiatTransferFeeRequest, _$GetInnerFiatTransferFeeRequest];
 
     @override
-    final String wireName = r'CreateInnerFiatTransferRequest';
+    final String wireName = r'GetInnerFiatTransferFeeRequest';
 
     @override
-    Iterable<Object?> serialize(Serializers serializers, CreateInnerFiatTransferRequest object,
+    Iterable<Object?> serialize(Serializers serializers, GetInnerFiatTransferFeeRequest object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
         if (object.userId != null) {
@@ -72,12 +68,6 @@ class _$CreateInnerFiatTransferRequestSerializer implements StructuredSerializer
             result
                 ..add(r'contact_id')
                 ..add(serializers.serialize(object.contactId,
-                    specifiedType: const FullType(String)));
-        }
-        if (object.currency != null) {
-            result
-                ..add(r'currency')
-                ..add(serializers.serialize(object.currency,
                     specifiedType: const FullType(String)));
         }
         if (object.fiatAccount != null) {
@@ -108,9 +98,9 @@ class _$CreateInnerFiatTransferRequestSerializer implements StructuredSerializer
     }
 
     @override
-    CreateInnerFiatTransferRequest deserialize(Serializers serializers, Iterable<Object?> serialized,
+    GetInnerFiatTransferFeeRequest deserialize(Serializers serializers, Iterable<Object?> serialized,
         {FullType specifiedType = FullType.unspecified}) {
-        final result = CreateInnerFiatTransferRequestBuilder();
+        final result = GetInnerFiatTransferFeeRequestBuilder();
 
         final iterator = serialized.iterator;
         while (iterator.moveNext()) {
@@ -128,11 +118,6 @@ class _$CreateInnerFiatTransferRequestSerializer implements StructuredSerializer
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.contactId = valueDes;
-                    break;
-                case r'currency':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.currency = valueDes;
                     break;
                 case r'fiat_account':
                     final valueDes = serializers.deserialize(value,

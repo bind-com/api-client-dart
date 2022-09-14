@@ -1,4 +1,4 @@
-# bind_api.model.CreateInnerFiatTransferRequest
+# bind_api.model.GetInnerFiatTransferFeeRequest
 
 ## Load the model package
 ```dart
@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **userId** | **String** |  | [optional] 
 **contactId** | **String** | id of user contact | [optional] 
-**currency** | **String** |  | [optional] 
 **fiatAccount** | **String** |  | [optional] 
 **receiverCurrency** | **String** |  | [optional] 
 **amount** | **num** |  | [optional] 

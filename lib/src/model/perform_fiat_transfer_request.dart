@@ -12,6 +12,7 @@ part 'perform_fiat_transfer_request.g.dart';
 /// Properties:
 /// * [beneficiaryId] 
 /// * [currency] 
+/// * [fiatWallet] 
 /// * [amount] 
 abstract class PerformFiatTransferRequest implements Built<PerformFiatTransferRequest, PerformFiatTransferRequestBuilder> {
     @BuiltValueField(wireName: r'beneficiary_id')
@@ -19,6 +20,9 @@ abstract class PerformFiatTransferRequest implements Built<PerformFiatTransferRe
 
     @BuiltValueField(wireName: r'currency')
     String? get currency;
+
+    @BuiltValueField(wireName: r'fiat_wallet')
+    String? get fiatWallet;
 
     @BuiltValueField(wireName: r'amount')
     num? get amount;
@@ -57,6 +61,12 @@ class _$PerformFiatTransferRequestSerializer implements StructuredSerializer<Per
                 ..add(serializers.serialize(object.currency,
                     specifiedType: const FullType(String)));
         }
+        if (object.fiatWallet != null) {
+            result
+                ..add(r'fiat_wallet')
+                ..add(serializers.serialize(object.fiatWallet,
+                    specifiedType: const FullType(String)));
+        }
         if (object.amount != null) {
             result
                 ..add(r'amount')
@@ -87,6 +97,11 @@ class _$PerformFiatTransferRequestSerializer implements StructuredSerializer<Per
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.currency = valueDes;
+                    break;
+                case r'fiat_wallet':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.fiatWallet = valueDes;
                     break;
                 case r'amount':
                     final valueDes = serializers.deserialize(value,

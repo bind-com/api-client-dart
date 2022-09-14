@@ -13,11 +13,17 @@ class _$UserSharingData extends UserSharingData {
   final String? firstName;
   @override
   final String? lastName;
+  @override
+  final String? currency;
+  @override
+  final num? amount;
 
   factory _$UserSharingData([void Function(UserSharingDataBuilder)? updates]) =>
       (new UserSharingDataBuilder()..update(updates))._build();
 
-  _$UserSharingData._({this.userId, this.firstName, this.lastName}) : super._();
+  _$UserSharingData._(
+      {this.userId, this.firstName, this.lastName, this.currency, this.amount})
+      : super._();
 
   @override
   UserSharingData rebuild(void Function(UserSharingDataBuilder) updates) =>
@@ -33,13 +39,19 @@ class _$UserSharingData extends UserSharingData {
     return other is UserSharingData &&
         userId == other.userId &&
         firstName == other.firstName &&
-        lastName == other.lastName;
+        lastName == other.lastName &&
+        currency == other.currency &&
+        amount == other.amount;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc(0, userId.hashCode), firstName.hashCode), lastName.hashCode));
+        $jc(
+            $jc($jc($jc(0, userId.hashCode), firstName.hashCode),
+                lastName.hashCode),
+            currency.hashCode),
+        amount.hashCode));
   }
 
   @override
@@ -47,7 +59,9 @@ class _$UserSharingData extends UserSharingData {
     return (newBuiltValueToStringHelper(r'UserSharingData')
           ..add('userId', userId)
           ..add('firstName', firstName)
-          ..add('lastName', lastName))
+          ..add('lastName', lastName)
+          ..add('currency', currency)
+          ..add('amount', amount))
         .toString();
   }
 }
@@ -68,6 +82,14 @@ class UserSharingDataBuilder
   String? get lastName => _$this._lastName;
   set lastName(String? lastName) => _$this._lastName = lastName;
 
+  String? _currency;
+  String? get currency => _$this._currency;
+  set currency(String? currency) => _$this._currency = currency;
+
+  num? _amount;
+  num? get amount => _$this._amount;
+  set amount(num? amount) => _$this._amount = amount;
+
   UserSharingDataBuilder() {
     UserSharingData._defaults(this);
   }
@@ -78,6 +100,8 @@ class UserSharingDataBuilder
       _userId = $v.userId;
       _firstName = $v.firstName;
       _lastName = $v.lastName;
+      _currency = $v.currency;
+      _amount = $v.amount;
       _$v = null;
     }
     return this;
@@ -100,7 +124,11 @@ class UserSharingDataBuilder
   _$UserSharingData _build() {
     final _$result = _$v ??
         new _$UserSharingData._(
-            userId: userId, firstName: firstName, lastName: lastName);
+            userId: userId,
+            firstName: firstName,
+            lastName: lastName,
+            currency: currency,
+            amount: amount);
     replace(_$result);
     return _$result;
   }

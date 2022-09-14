@@ -67,15 +67,18 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 [*AuthApi*](doc/AuthApi.md) | [**whoAmI**](doc/AuthApi.md#whoami) | **GET** /auth/whoami/ | Who am I
 [*BeneficiariesApi*](doc/BeneficiariesApi.md) | [**createBeneficiary**](doc/BeneficiariesApi.md#createbeneficiary) | **POST** /beneficiaries/ | Add new beneficiary
+[*BeneficiariesApi*](doc/BeneficiariesApi.md) | [**deleteBeneficiary**](doc/BeneficiariesApi.md#deletebeneficiary) | **DELETE** /beneficiaries/{beneficiary_id}/ | Delete beneficiary
 [*BeneficiariesApi*](doc/BeneficiariesApi.md) | [**getBeneficiaries**](doc/BeneficiariesApi.md#getbeneficiaries) | **GET** /beneficiaries/ | List of beneficiaries of current user
+[*BeneficiariesApi*](doc/BeneficiariesApi.md) | [**getBeneficiary**](doc/BeneficiariesApi.md#getbeneficiary) | **GET** /beneficiaries/{beneficiary_id}/ | Get beneficiary by id
 [*BeneficiariesApi*](doc/BeneficiariesApi.md) | [**performFiatTransfer**](doc/BeneficiariesApi.md#performfiattransfer) | **POST** /fiat/transfer/ | Send money to outer bank account
-[*BeneficiariesApi*](doc/BeneficiariesApi.md) | [**updateBeneficiary**](doc/BeneficiariesApi.md#updatebeneficiary) | **PATCH** /beneficiaries/{beneficiary_id}/ | Update beneficiary data (add/remove from favorite)
+[*BeneficiariesApi*](doc/BeneficiariesApi.md) | [**updateBeneficiary**](doc/BeneficiariesApi.md#updatebeneficiary) | **PATCH** /beneficiaries/{beneficiary_id}/ | Update beneficiary data
 [*ContactsApi*](doc/ContactsApi.md) | [**addContactByUser**](doc/ContactsApi.md#addcontactbyuser) | **POST** /contacts/ | add user to contact
 [*ContactsApi*](doc/ContactsApi.md) | [**checkContact**](doc/ContactsApi.md#checkcontact) | **GET** /contacts/{user_id}/check | Check if user_id is in contacts
 [*ContactsApi*](doc/ContactsApi.md) | [**createInnerFiatRequest**](doc/ContactsApi.md#createinnerfiatrequest) | **POST** /fiat/request/ | Request fiat inside BIND
 [*ContactsApi*](doc/ContactsApi.md) | [**createInnerFiatTransfer**](doc/ContactsApi.md#createinnerfiattransfer) | **POST** /fiat/send/ | Send fiat inside BIND
 [*ContactsApi*](doc/ContactsApi.md) | [**generateQRCodeToken**](doc/ContactsApi.md#generateqrcodetoken) | **GET** /users/send/qr_code/ | Generate JWT token to share as QR code
 [*ContactsApi*](doc/ContactsApi.md) | [**getContacts**](doc/ContactsApi.md#getcontacts) | **GET** /contacts/ | List of contacts of current user
+[*ContactsApi*](doc/ContactsApi.md) | [**getInnerFiatTransferFee**](doc/ContactsApi.md#getinnerfiattransferfee) | **POST** /fiat/send/fee/ | 
 [*ContactsApi*](doc/ContactsApi.md) | [**readJWTToken**](doc/ContactsApi.md#readjwttoken) | **POST** /users/send/qr_code/ | Check JWT validity and read user from it
 [*ContactsApi*](doc/ContactsApi.md) | [**syncContacts**](doc/ContactsApi.md#synccontacts) | **POST** /contacts/sync/ | Sync mobile phone contacts of current user with backend data
 [*ContactsApi*](doc/ContactsApi.md) | [**updateContact**](doc/ContactsApi.md#updatecontact) | **PATCH** /contacts/{contact_id}/ | Update contact data (add/remove contact from favorite)
@@ -119,6 +122,7 @@ Class | Method | HTTP request | Description
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**getBankCardsList**](doc/FiatWalletApi.md#getbankcardslist) | **GET** /fiat/bankcards/ | Get a list of Bank Cards issued for current User
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**getFiatAccount**](doc/FiatWalletApi.md#getfiataccount) | **GET** /fiat/account/ | All fiat wallets of current user with total balance data
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**getFiatCurrencies**](doc/FiatWalletApi.md#getfiatcurrencies) | **GET** /fiat/currencies/ | List of currencies that are available for fiat account opening
+[*FiatWalletApi*](doc/FiatWalletApi.md) | [**getFiatCurrenciesWithRates**](doc/FiatWalletApi.md#getfiatcurrencieswithrates) | **GET** /fiat/currencies/rate/ | List of currencies that are available for fiat account opening with rates for given currency
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**getFiatWalletDetails**](doc/FiatWalletApi.md#getfiatwalletdetails) | **GET** /fiat/wallets/{wallet_id}/ | Wallet&#39;s details
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**getFiatWallets**](doc/FiatWalletApi.md#getfiatwallets) | **GET** /fiat/wallets/ | All fiat wallets of current user
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**getFiatWalletsWithUserPaymentCurrency**](doc/FiatWalletApi.md#getfiatwalletswithuserpaymentcurrency) | **GET** /fiat/wallets/detailed/ | All fiat wallets of current user with user payment currency info
@@ -187,6 +191,8 @@ Class | Method | HTTP request | Description
  - [CryptoWithdrawalFeeEstimationResult](doc/CryptoWithdrawalFeeEstimationResult.md)
  - [CryptoWithdrawalRequest](doc/CryptoWithdrawalRequest.md)
  - [Currency](doc/Currency.md)
+ - [CurrencyWithRate](doc/CurrencyWithRate.md)
+ - [CurrencyWithRateAllOf](doc/CurrencyWithRateAllOf.md)
  - [DepositAddress](doc/DepositAddress.md)
  - [Error](doc/Error.md)
  - [ExportHistory](doc/ExportHistory.md)
@@ -200,6 +206,8 @@ Class | Method | HTTP request | Description
  - [FiatWalletTotalBalance](doc/FiatWalletTotalBalance.md)
  - [FiatWalletWithPaymentCurrency](doc/FiatWalletWithPaymentCurrency.md)
  - [FiatWalletWithPaymentCurrencyAllOf](doc/FiatWalletWithPaymentCurrencyAllOf.md)
+ - [GetInnerFiatTransferFeeRequest](doc/GetInnerFiatTransferFeeRequest.md)
+ - [InnerFiatTransferFeeResult](doc/InnerFiatTransferFeeResult.md)
  - [JWTToken](doc/JWTToken.md)
  - [KYCFieldStatus](doc/KYCFieldStatus.md)
  - [KYCRequestMoveResult](doc/KYCRequestMoveResult.md)
@@ -224,6 +232,7 @@ Class | Method | HTTP request | Description
  - [TransactionGrouping](doc/TransactionGrouping.md)
  - [TransactionStates](doc/TransactionStates.md)
  - [TransactionTypes](doc/TransactionTypes.md)
+ - [UpdateBeneficiaryRequest](doc/UpdateBeneficiaryRequest.md)
  - [UpdateContactRequest](doc/UpdateContactRequest.md)
  - [UpdateUserPasscodeRequest](doc/UpdateUserPasscodeRequest.md)
  - [User](doc/User.md)

@@ -49,6 +49,8 @@ doc/CryptoWithdrawalFeeEstimationResult.md
 doc/CryptoWithdrawalRequest.md
 doc/Currency.md
 doc/CurrencyApi.md
+doc/CurrencyWithRate.md
+doc/CurrencyWithRateAllOf.md
 doc/DepositAddress.md
 doc/Error.md
 doc/ExchangeApi.md
@@ -65,6 +67,8 @@ doc/FiatWalletTotalBalance.md
 doc/FiatWalletWithPaymentCurrency.md
 doc/FiatWalletWithPaymentCurrencyAllOf.md
 doc/GeoApi.md
+doc/GetInnerFiatTransferFeeRequest.md
+doc/InnerFiatTransferFeeResult.md
 doc/JWTToken.md
 doc/KYCFieldStatus.md
 doc/KYCRequestMoveResult.md
@@ -91,6 +95,7 @@ doc/TransactionGrouping.md
 doc/TransactionStates.md
 doc/TransactionTypes.md
 doc/TransactionsApi.md
+doc/UpdateBeneficiaryRequest.md
 doc/UpdateContactRequest.md
 doc/UpdateUserPasscodeRequest.md
 doc/User.md
@@ -166,6 +171,8 @@ lib/src/model/crypto_withdrawal_fee_estimation_request.dart
 lib/src/model/crypto_withdrawal_fee_estimation_result.dart
 lib/src/model/crypto_withdrawal_request.dart
 lib/src/model/currency.dart
+lib/src/model/currency_with_rate.dart
+lib/src/model/currency_with_rate_all_of.dart
 lib/src/model/date.dart
 lib/src/model/deposit_address.dart
 lib/src/model/error.dart
@@ -180,6 +187,8 @@ lib/src/model/fiat_wallet_requisites.dart
 lib/src/model/fiat_wallet_total_balance.dart
 lib/src/model/fiat_wallet_with_payment_currency.dart
 lib/src/model/fiat_wallet_with_payment_currency_all_of.dart
+lib/src/model/get_inner_fiat_transfer_fee_request.dart
+lib/src/model/inner_fiat_transfer_fee_result.dart
 lib/src/model/jwt_token.dart
 lib/src/model/kyc_field_status.dart
 lib/src/model/kyc_request_move_result.dart
@@ -204,6 +213,7 @@ lib/src/model/transaction_group.dart
 lib/src/model/transaction_grouping.dart
 lib/src/model/transaction_states.dart
 lib/src/model/transaction_types.dart
+lib/src/model/update_beneficiary_request.dart
 lib/src/model/update_contact_request.dart
 lib/src/model/update_user_passcode_request.dart
 lib/src/model/user.dart
@@ -215,3 +225,8 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/currency_with_rate_all_of_test.dart
+test/currency_with_rate_test.dart
+test/get_inner_fiat_transfer_fee_request_test.dart
+test/inner_fiat_transfer_fee_result_test.dart
+test/update_beneficiary_request_test.dart

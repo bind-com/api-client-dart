@@ -54,6 +54,8 @@ import 'package:bind_api/src/model/crypto_withdrawal_fee_estimation_request.dart
 import 'package:bind_api/src/model/crypto_withdrawal_fee_estimation_result.dart';
 import 'package:bind_api/src/model/crypto_withdrawal_request.dart';
 import 'package:bind_api/src/model/currency.dart';
+import 'package:bind_api/src/model/currency_with_rate.dart';
+import 'package:bind_api/src/model/currency_with_rate_all_of.dart';
 import 'package:bind_api/src/model/deposit_address.dart';
 import 'package:bind_api/src/model/error.dart';
 import 'package:bind_api/src/model/export_history.dart';
@@ -67,6 +69,8 @@ import 'package:bind_api/src/model/fiat_wallet_requisites.dart';
 import 'package:bind_api/src/model/fiat_wallet_total_balance.dart';
 import 'package:bind_api/src/model/fiat_wallet_with_payment_currency.dart';
 import 'package:bind_api/src/model/fiat_wallet_with_payment_currency_all_of.dart';
+import 'package:bind_api/src/model/get_inner_fiat_transfer_fee_request.dart';
+import 'package:bind_api/src/model/inner_fiat_transfer_fee_result.dart';
 import 'package:bind_api/src/model/jwt_token.dart';
 import 'package:bind_api/src/model/kyc_field_status.dart';
 import 'package:bind_api/src/model/kyc_request_move_result.dart';
@@ -91,6 +95,7 @@ import 'package:bind_api/src/model/transaction_group.dart';
 import 'package:bind_api/src/model/transaction_grouping.dart';
 import 'package:bind_api/src/model/transaction_states.dart';
 import 'package:bind_api/src/model/transaction_types.dart';
+import 'package:bind_api/src/model/update_beneficiary_request.dart';
 import 'package:bind_api/src/model/update_contact_request.dart';
 import 'package:bind_api/src/model/update_user_passcode_request.dart';
 import 'package:bind_api/src/model/user.dart';
@@ -146,6 +151,8 @@ part 'serializers.g.dart';
   CryptoWithdrawalFeeEstimationResult,
   CryptoWithdrawalRequest,
   Currency,
+  CurrencyWithRate,
+  CurrencyWithRateAllOf,
   DepositAddress,
   Error,
   ExportHistory,
@@ -159,6 +166,8 @@ part 'serializers.g.dart';
   FiatWalletTotalBalance,
   FiatWalletWithPaymentCurrency,
   FiatWalletWithPaymentCurrencyAllOf,
+  GetInnerFiatTransferFeeRequest,
+  InnerFiatTransferFeeResult,
   JWTToken,
   KYCFieldStatus,
   KYCRequestMoveResult,
@@ -183,6 +192,7 @@ part 'serializers.g.dart';
   TransactionGrouping,
   TransactionStates,
   TransactionTypes,
+  UpdateBeneficiaryRequest,
   UpdateContactRequest,
   UpdateUserPasscodeRequest,
   User,
@@ -269,6 +279,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(WithdrawalAddress)]),
         () => ListBuilder<WithdrawalAddress>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(CurrencyWithRate)]),
+        () => ListBuilder<CurrencyWithRate>(),
       )
       ..add(const DateSerializer())
       ..add(Iso8601DateTimeSerializer()))

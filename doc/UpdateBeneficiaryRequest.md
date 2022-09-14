@@ -1,4 +1,4 @@
-# bind_api.model.CreateBeneficiaryRequest
+# bind_api.model.UpdateBeneficiaryRequest
 
 ## Load the model package
 ```dart
@@ -8,8 +8,6 @@ import 'package:bind_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**firstName** | **String** |  | [optional] 
-**lastName** | **String** |  | [optional] 
 **fullName** | **String** |  | [optional] 
 **bank** | **String** |  | [optional] 
 **country** | **String** | UUID of a country | [optional] 
@@ -17,6 +15,7 @@ Name | Type | Description | Notes
 **address** | **String** |  | [optional] 
 **iban** | **String** |  | [optional] 
 **swiftBic** | **String** |  | [optional] 
+**isFavorite** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

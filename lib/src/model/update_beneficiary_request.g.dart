@@ -1,16 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'create_beneficiary_request.dart';
+part of 'update_beneficiary_request.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$CreateBeneficiaryRequest extends CreateBeneficiaryRequest {
-  @override
-  final String? firstName;
-  @override
-  final String? lastName;
+class _$UpdateBeneficiaryRequest extends UpdateBeneficiaryRequest {
   @override
   final String? fullName;
   @override
@@ -25,45 +21,45 @@ class _$CreateBeneficiaryRequest extends CreateBeneficiaryRequest {
   final String? iban;
   @override
   final String? swiftBic;
+  @override
+  final bool? isFavorite;
 
-  factory _$CreateBeneficiaryRequest(
-          [void Function(CreateBeneficiaryRequestBuilder)? updates]) =>
-      (new CreateBeneficiaryRequestBuilder()..update(updates))._build();
+  factory _$UpdateBeneficiaryRequest(
+          [void Function(UpdateBeneficiaryRequestBuilder)? updates]) =>
+      (new UpdateBeneficiaryRequestBuilder()..update(updates))._build();
 
-  _$CreateBeneficiaryRequest._(
-      {this.firstName,
-      this.lastName,
-      this.fullName,
+  _$UpdateBeneficiaryRequest._(
+      {this.fullName,
       this.bank,
       this.country,
       this.city,
       this.address,
       this.iban,
-      this.swiftBic})
+      this.swiftBic,
+      this.isFavorite})
       : super._();
 
   @override
-  CreateBeneficiaryRequest rebuild(
-          void Function(CreateBeneficiaryRequestBuilder) updates) =>
+  UpdateBeneficiaryRequest rebuild(
+          void Function(UpdateBeneficiaryRequestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  CreateBeneficiaryRequestBuilder toBuilder() =>
-      new CreateBeneficiaryRequestBuilder()..replace(this);
+  UpdateBeneficiaryRequestBuilder toBuilder() =>
+      new UpdateBeneficiaryRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is CreateBeneficiaryRequest &&
-        firstName == other.firstName &&
-        lastName == other.lastName &&
+    return other is UpdateBeneficiaryRequest &&
         fullName == other.fullName &&
         bank == other.bank &&
         country == other.country &&
         city == other.city &&
         address == other.address &&
         iban == other.iban &&
-        swiftBic == other.swiftBic;
+        swiftBic == other.swiftBic &&
+        isFavorite == other.isFavorite;
   }
 
   @override
@@ -73,47 +69,34 @@ class _$CreateBeneficiaryRequest extends CreateBeneficiaryRequest {
             $jc(
                 $jc(
                     $jc(
-                        $jc(
-                            $jc(
-                                $jc($jc(0, firstName.hashCode),
-                                    lastName.hashCode),
-                                fullName.hashCode),
-                            bank.hashCode),
-                        country.hashCode),
-                    city.hashCode),
-                address.hashCode),
-            iban.hashCode),
-        swiftBic.hashCode));
+                        $jc($jc($jc(0, fullName.hashCode), bank.hashCode),
+                            country.hashCode),
+                        city.hashCode),
+                    address.hashCode),
+                iban.hashCode),
+            swiftBic.hashCode),
+        isFavorite.hashCode));
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'CreateBeneficiaryRequest')
-          ..add('firstName', firstName)
-          ..add('lastName', lastName)
+    return (newBuiltValueToStringHelper(r'UpdateBeneficiaryRequest')
           ..add('fullName', fullName)
           ..add('bank', bank)
           ..add('country', country)
           ..add('city', city)
           ..add('address', address)
           ..add('iban', iban)
-          ..add('swiftBic', swiftBic))
+          ..add('swiftBic', swiftBic)
+          ..add('isFavorite', isFavorite))
         .toString();
   }
 }
 
-class CreateBeneficiaryRequestBuilder
+class UpdateBeneficiaryRequestBuilder
     implements
-        Builder<CreateBeneficiaryRequest, CreateBeneficiaryRequestBuilder> {
-  _$CreateBeneficiaryRequest? _$v;
-
-  String? _firstName;
-  String? get firstName => _$this._firstName;
-  set firstName(String? firstName) => _$this._firstName = firstName;
-
-  String? _lastName;
-  String? get lastName => _$this._lastName;
-  set lastName(String? lastName) => _$this._lastName = lastName;
+        Builder<UpdateBeneficiaryRequest, UpdateBeneficiaryRequestBuilder> {
+  _$UpdateBeneficiaryRequest? _$v;
 
   String? _fullName;
   String? get fullName => _$this._fullName;
@@ -143,15 +126,17 @@ class CreateBeneficiaryRequestBuilder
   String? get swiftBic => _$this._swiftBic;
   set swiftBic(String? swiftBic) => _$this._swiftBic = swiftBic;
 
-  CreateBeneficiaryRequestBuilder() {
-    CreateBeneficiaryRequest._defaults(this);
+  bool? _isFavorite;
+  bool? get isFavorite => _$this._isFavorite;
+  set isFavorite(bool? isFavorite) => _$this._isFavorite = isFavorite;
+
+  UpdateBeneficiaryRequestBuilder() {
+    UpdateBeneficiaryRequest._defaults(this);
   }
 
-  CreateBeneficiaryRequestBuilder get _$this {
+  UpdateBeneficiaryRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _firstName = $v.firstName;
-      _lastName = $v.lastName;
       _fullName = $v.fullName;
       _bank = $v.bank;
       _country = $v.country;
@@ -159,37 +144,37 @@ class CreateBeneficiaryRequestBuilder
       _address = $v.address;
       _iban = $v.iban;
       _swiftBic = $v.swiftBic;
+      _isFavorite = $v.isFavorite;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(CreateBeneficiaryRequest other) {
+  void replace(UpdateBeneficiaryRequest other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$CreateBeneficiaryRequest;
+    _$v = other as _$UpdateBeneficiaryRequest;
   }
 
   @override
-  void update(void Function(CreateBeneficiaryRequestBuilder)? updates) {
+  void update(void Function(UpdateBeneficiaryRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  CreateBeneficiaryRequest build() => _build();
+  UpdateBeneficiaryRequest build() => _build();
 
-  _$CreateBeneficiaryRequest _build() {
+  _$UpdateBeneficiaryRequest _build() {
     final _$result = _$v ??
-        new _$CreateBeneficiaryRequest._(
-            firstName: firstName,
-            lastName: lastName,
+        new _$UpdateBeneficiaryRequest._(
             fullName: fullName,
             bank: bank,
             country: country,
             city: city,
             address: address,
             iban: iban,
-            swiftBic: swiftBic);
+            swiftBic: swiftBic,
+            isFavorite: isFavorite);
     replace(_$result);
     return _$result;
   }

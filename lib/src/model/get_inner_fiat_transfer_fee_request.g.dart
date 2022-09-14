@@ -1,18 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'create_inner_fiat_transfer_request.dart';
+part of 'get_inner_fiat_transfer_fee_request.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$CreateInnerFiatTransferRequest extends CreateInnerFiatTransferRequest {
+class _$GetInnerFiatTransferFeeRequest extends GetInnerFiatTransferFeeRequest {
   @override
   final String? userId;
   @override
   final String? contactId;
-  @override
-  final String? currency;
   @override
   final String? fiatAccount;
   @override
@@ -22,14 +20,13 @@ class _$CreateInnerFiatTransferRequest extends CreateInnerFiatTransferRequest {
   @override
   final String? note;
 
-  factory _$CreateInnerFiatTransferRequest(
-          [void Function(CreateInnerFiatTransferRequestBuilder)? updates]) =>
-      (new CreateInnerFiatTransferRequestBuilder()..update(updates))._build();
+  factory _$GetInnerFiatTransferFeeRequest(
+          [void Function(GetInnerFiatTransferFeeRequestBuilder)? updates]) =>
+      (new GetInnerFiatTransferFeeRequestBuilder()..update(updates))._build();
 
-  _$CreateInnerFiatTransferRequest._(
+  _$GetInnerFiatTransferFeeRequest._(
       {this.userId,
       this.contactId,
-      this.currency,
       this.fiatAccount,
       this.receiverCurrency,
       this.amount,
@@ -37,21 +34,20 @@ class _$CreateInnerFiatTransferRequest extends CreateInnerFiatTransferRequest {
       : super._();
 
   @override
-  CreateInnerFiatTransferRequest rebuild(
-          void Function(CreateInnerFiatTransferRequestBuilder) updates) =>
+  GetInnerFiatTransferFeeRequest rebuild(
+          void Function(GetInnerFiatTransferFeeRequestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  CreateInnerFiatTransferRequestBuilder toBuilder() =>
-      new CreateInnerFiatTransferRequestBuilder()..replace(this);
+  GetInnerFiatTransferFeeRequestBuilder toBuilder() =>
+      new GetInnerFiatTransferFeeRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is CreateInnerFiatTransferRequest &&
+    return other is GetInnerFiatTransferFeeRequest &&
         userId == other.userId &&
         contactId == other.contactId &&
-        currency == other.currency &&
         fiatAccount == other.fiatAccount &&
         receiverCurrency == other.receiverCurrency &&
         amount == other.amount &&
@@ -63,9 +59,7 @@ class _$CreateInnerFiatTransferRequest extends CreateInnerFiatTransferRequest {
     return $jf($jc(
         $jc(
             $jc(
-                $jc(
-                    $jc($jc($jc(0, userId.hashCode), contactId.hashCode),
-                        currency.hashCode),
+                $jc($jc($jc(0, userId.hashCode), contactId.hashCode),
                     fiatAccount.hashCode),
                 receiverCurrency.hashCode),
             amount.hashCode),
@@ -74,10 +68,9 @@ class _$CreateInnerFiatTransferRequest extends CreateInnerFiatTransferRequest {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'CreateInnerFiatTransferRequest')
+    return (newBuiltValueToStringHelper(r'GetInnerFiatTransferFeeRequest')
           ..add('userId', userId)
           ..add('contactId', contactId)
-          ..add('currency', currency)
           ..add('fiatAccount', fiatAccount)
           ..add('receiverCurrency', receiverCurrency)
           ..add('amount', amount)
@@ -86,11 +79,11 @@ class _$CreateInnerFiatTransferRequest extends CreateInnerFiatTransferRequest {
   }
 }
 
-class CreateInnerFiatTransferRequestBuilder
+class GetInnerFiatTransferFeeRequestBuilder
     implements
-        Builder<CreateInnerFiatTransferRequest,
-            CreateInnerFiatTransferRequestBuilder> {
-  _$CreateInnerFiatTransferRequest? _$v;
+        Builder<GetInnerFiatTransferFeeRequest,
+            GetInnerFiatTransferFeeRequestBuilder> {
+  _$GetInnerFiatTransferFeeRequest? _$v;
 
   String? _userId;
   String? get userId => _$this._userId;
@@ -99,10 +92,6 @@ class CreateInnerFiatTransferRequestBuilder
   String? _contactId;
   String? get contactId => _$this._contactId;
   set contactId(String? contactId) => _$this._contactId = contactId;
-
-  String? _currency;
-  String? get currency => _$this._currency;
-  set currency(String? currency) => _$this._currency = currency;
 
   String? _fiatAccount;
   String? get fiatAccount => _$this._fiatAccount;
@@ -121,16 +110,15 @@ class CreateInnerFiatTransferRequestBuilder
   String? get note => _$this._note;
   set note(String? note) => _$this._note = note;
 
-  CreateInnerFiatTransferRequestBuilder() {
-    CreateInnerFiatTransferRequest._defaults(this);
+  GetInnerFiatTransferFeeRequestBuilder() {
+    GetInnerFiatTransferFeeRequest._defaults(this);
   }
 
-  CreateInnerFiatTransferRequestBuilder get _$this {
+  GetInnerFiatTransferFeeRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _userId = $v.userId;
       _contactId = $v.contactId;
-      _currency = $v.currency;
       _fiatAccount = $v.fiatAccount;
       _receiverCurrency = $v.receiverCurrency;
       _amount = $v.amount;
@@ -141,25 +129,24 @@ class CreateInnerFiatTransferRequestBuilder
   }
 
   @override
-  void replace(CreateInnerFiatTransferRequest other) {
+  void replace(GetInnerFiatTransferFeeRequest other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$CreateInnerFiatTransferRequest;
+    _$v = other as _$GetInnerFiatTransferFeeRequest;
   }
 
   @override
-  void update(void Function(CreateInnerFiatTransferRequestBuilder)? updates) {
+  void update(void Function(GetInnerFiatTransferFeeRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  CreateInnerFiatTransferRequest build() => _build();
+  GetInnerFiatTransferFeeRequest build() => _build();
 
-  _$CreateInnerFiatTransferRequest _build() {
+  _$GetInnerFiatTransferFeeRequest _build() {
     final _$result = _$v ??
-        new _$CreateInnerFiatTransferRequest._(
+        new _$GetInnerFiatTransferFeeRequest._(
             userId: userId,
             contactId: contactId,
-            currency: currency,
             fiatAccount: fiatAccount,
             receiverCurrency: receiverCurrency,
             amount: amount,
