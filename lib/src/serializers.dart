@@ -58,10 +58,12 @@ import 'package:bind_api/src/model/currency_with_rate.dart';
 import 'package:bind_api/src/model/currency_with_rate_all_of.dart';
 import 'package:bind_api/src/model/deposit_address.dart';
 import 'package:bind_api/src/model/error.dart';
+import 'package:bind_api/src/model/estimate_fiat_transfer_request.dart';
 import 'package:bind_api/src/model/export_history.dart';
 import 'package:bind_api/src/model/favorite_crypto_create_request.dart';
 import 'package:bind_api/src/model/fear_greed.dart';
 import 'package:bind_api/src/model/fiat_account.dart';
+import 'package:bind_api/src/model/fiat_transfer_estimate.dart';
 import 'package:bind_api/src/model/fiat_wallet.dart';
 import 'package:bind_api/src/model/fiat_wallet_all_of.dart';
 import 'package:bind_api/src/model/fiat_wallet_light.dart';
@@ -69,7 +71,10 @@ import 'package:bind_api/src/model/fiat_wallet_requisites.dart';
 import 'package:bind_api/src/model/fiat_wallet_total_balance.dart';
 import 'package:bind_api/src/model/fiat_wallet_with_payment_currency.dart';
 import 'package:bind_api/src/model/fiat_wallet_with_payment_currency_all_of.dart';
+import 'package:bind_api/src/model/get_inner_crypto_transfer_fee_request.dart';
 import 'package:bind_api/src/model/get_inner_fiat_transfer_fee_request.dart';
+import 'package:bind_api/src/model/get_staking_timer200_response.dart';
+import 'package:bind_api/src/model/inner_crypto_transfer_fee_result.dart';
 import 'package:bind_api/src/model/inner_fiat_transfer_fee_result.dart';
 import 'package:bind_api/src/model/jwt_token.dart';
 import 'package:bind_api/src/model/kyc_field_status.dart';
@@ -83,6 +88,14 @@ import 'package:bind_api/src/model/perform_exchange_request.dart';
 import 'package:bind_api/src/model/perform_fiat_transfer_request.dart';
 import 'package:bind_api/src/model/period_interval.dart';
 import 'package:bind_api/src/model/put_limit_order_request.dart';
+import 'package:bind_api/src/model/staking.dart';
+import 'package:bind_api/src/model/staking_additional_information.dart';
+import 'package:bind_api/src/model/staking_balance.dart';
+import 'package:bind_api/src/model/staking_estimate.dart';
+import 'package:bind_api/src/model/staking_information.dart';
+import 'package:bind_api/src/model/staking_perform_request.dart';
+import 'package:bind_api/src/model/staking_periods.dart';
+import 'package:bind_api/src/model/staking_releases.dart';
 import 'package:bind_api/src/model/sync_contacts_request.dart';
 import 'package:bind_api/src/model/token_detail.dart';
 import 'package:bind_api/src/model/token_stats.dart';
@@ -155,10 +168,12 @@ part 'serializers.g.dart';
   CurrencyWithRateAllOf,
   DepositAddress,
   Error,
+  EstimateFiatTransferRequest,
   ExportHistory,
   FavoriteCryptoCreateRequest,
   FearGreed,
   FiatAccount,
+  FiatTransferEstimate,
   FiatWallet,
   FiatWalletAllOf,
   FiatWalletLight,
@@ -166,7 +181,10 @@ part 'serializers.g.dart';
   FiatWalletTotalBalance,
   FiatWalletWithPaymentCurrency,
   FiatWalletWithPaymentCurrencyAllOf,
+  GetInnerCryptoTransferFeeRequest,
   GetInnerFiatTransferFeeRequest,
+  GetStakingTimer200Response,
+  InnerCryptoTransferFeeResult,
   InnerFiatTransferFeeResult,
   JWTToken,
   KYCFieldStatus,
@@ -180,6 +198,14 @@ part 'serializers.g.dart';
   PerformFiatTransferRequest,
   PeriodInterval,
   PutLimitOrderRequest,
+  Staking,
+  StakingAdditionalInformation,
+  StakingBalance,
+  StakingEstimate,
+  StakingInformation,
+  StakingPerformRequest,
+  StakingPeriods,
+  StakingReleases,
   SyncContactsRequest,
   TokenDetail,
   TokenStats,
@@ -261,6 +287,10 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<CryptoAccountLight>(),
       )
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(StakingReleases)]),
+        () => ListBuilder<StakingReleases>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Contact)]),
         () => ListBuilder<Contact>(),
       )
@@ -271,6 +301,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Candle)]),
         () => ListBuilder<Candle>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(StakingPeriods)]),
+        () => ListBuilder<StakingPeriods>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(ChartTick)]),

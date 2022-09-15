@@ -11,8 +11,11 @@ Name | Type | Description | Notes
 **id** | **String** |  | 
 **firstName** | **String** |  | 
 **lastName** | **String** |  | 
+**fullName** | **String** |  | [optional] 
 **isFavorite** | **bool** |  | 
 **accountNumber** | **String** |  | 
+**country** | [**Country**](Country.md) |  | [optional] 
+**currency** | **String** | ID of a currency associated with beneficiary country | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

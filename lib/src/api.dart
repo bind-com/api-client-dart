@@ -19,6 +19,7 @@ import 'package:bind_api/src/api/exchange_api.dart';
 import 'package:bind_api/src/api/fiat_wallet_api.dart';
 import 'package:bind_api/src/api/geo_api.dart';
 import 'package:bind_api/src/api/staging_api.dart';
+import 'package:bind_api/src/api/staking_api.dart';
 import 'package:bind_api/src/api/transactions_api.dart';
 import 'package:bind_api/src/api/user_api.dart';
 import 'package:bind_api/src/api/wallet_api.dart';
@@ -135,6 +136,12 @@ class BindApi {
   /// by doing that all interceptors will not be executed
   StagingApi getStagingApi() {
     return StagingApi(dio, serializers);
+  }
+
+  /// Get StakingApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  StakingApi getStakingApi() {
+    return StakingApi(dio, serializers);
   }
 
   /// Get TransactionsApi instance, base route and serializer can be overridden by a given but be careful,

@@ -1,4 +1,4 @@
-# bind_api.api.BeneficiariesApi
+# bind_api.api.StakingApi
 
 ## Load the API package
 ```dart
@@ -9,21 +9,22 @@ All URIs are relative to *https://api.thebind.uk/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createBeneficiary**](BeneficiariesApi.md#createbeneficiary) | **POST** /beneficiaries/ | Add new beneficiary
-[**deleteBeneficiary**](BeneficiariesApi.md#deletebeneficiary) | **DELETE** /beneficiaries/{beneficiary_id}/ | Delete beneficiary
-[**estimateFiatTransfer**](BeneficiariesApi.md#estimatefiattransfer) | **POST** /fiat/transfer/review/ | Preview of fiat transfer
-[**getBeneficiaries**](BeneficiariesApi.md#getbeneficiaries) | **GET** /beneficiaries/ | List of beneficiaries of current user
-[**getBeneficiary**](BeneficiariesApi.md#getbeneficiary) | **GET** /beneficiaries/{beneficiary_id}/ | Get beneficiary by id
-[**performFiatTransfer**](BeneficiariesApi.md#performfiattransfer) | **POST** /fiat/transfer/ | Send money to outer bank account
-[**updateBeneficiary**](BeneficiariesApi.md#updatebeneficiary) | **PATCH** /beneficiaries/{beneficiary_id}/ | Update beneficiary data
+[**getAdditionalStaking**](StakingApi.md#getadditionalstaking) | **GET** /crypto/staking/additional_info | Get info of additional staking
+[**getStaking**](StakingApi.md#getstaking) | **GET** /crypto/staking | Get info of staking
+[**getStakingBalance**](StakingApi.md#getstakingbalance) | **GET** /crypto/staking/balance | Get staking balance
+[**getStakingPeriods**](StakingApi.md#getstakingperiods) | **GET** /crypto/staking/periods | Get staking periods
+[**getStakingReleases**](StakingApi.md#getstakingreleases) | **GET** /crypto/staking/releases | Get staking releases
+[**getStakingTimer**](StakingApi.md#getstakingtimer) | **GET** /crypto/staking/timer | Get datetime of end timer
+[**stakingEstimateOperation**](StakingApi.md#stakingestimateoperation) | **POST** /crypto/staking/estimate | Estimate staking operation
+[**stakingPerform**](StakingApi.md#stakingperform) | **POST** /crypto/staking/perform | Perform staking
 
 
-# **createBeneficiary**
-> Beneficiary createBeneficiary(createBeneficiaryRequest)
+# **getAdditionalStaking**
+> StakingAdditionalInformation getAdditionalStaking()
 
-Add new beneficiary
+Get info of additional staking
 
-Add a beneficiary to list
+Get information about bind stacking
 
 ### Example
 ```dart
@@ -32,69 +33,22 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
-final api = BindApi().getBeneficiariesApi();
-final CreateBeneficiaryRequest createBeneficiaryRequest = ; // CreateBeneficiaryRequest | 
+final api = BindApi().getStakingApi();
 
 try {
-    final response = api.createBeneficiary(createBeneficiaryRequest);
+    final response = api.getAdditionalStaking();
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling BeneficiariesApi->createBeneficiary: $e\n');
+    print('Exception when calling StakingApi->getAdditionalStaking: $e\n');
 }
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **createBeneficiaryRequest** | [**CreateBeneficiaryRequest**](CreateBeneficiaryRequest.md)|  | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**Beneficiary**](Beneficiary.md)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **deleteBeneficiary**
-> deleteBeneficiary(beneficiaryId)
-
-Delete beneficiary
-
-### Example
-```dart
-import 'package:bind_api/api.dart';
-// TODO Configure HTTP basic authorization: bearerAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
-
-final api = BindApi().getBeneficiariesApi();
-final String beneficiaryId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of beneficiary
-
-try {
-    api.deleteBeneficiary(beneficiaryId);
-} catch on DioError (e) {
-    print('Exception when calling BeneficiariesApi->deleteBeneficiary: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **beneficiaryId** | **String**| id of beneficiary | 
-
-### Return type
-
-void (empty response body)
+[**StakingAdditionalInformation**](StakingAdditionalInformation.md)
 
 ### Authorization
 
@@ -107,58 +61,12 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **estimateFiatTransfer**
-> FiatTransferEstimate estimateFiatTransfer(estimateFiatTransferRequest)
+# **getStaking**
+> StakingInformation getStaking()
 
-Preview of fiat transfer
+Get info of staking
 
-Preview data before transfer
-
-### Example
-```dart
-import 'package:bind_api/api.dart';
-// TODO Configure HTTP basic authorization: bearerAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
-
-final api = BindApi().getBeneficiariesApi();
-final EstimateFiatTransferRequest estimateFiatTransferRequest = ; // EstimateFiatTransferRequest | 
-
-try {
-    final response = api.estimateFiatTransfer(estimateFiatTransferRequest);
-    print(response);
-} catch on DioError (e) {
-    print('Exception when calling BeneficiariesApi->estimateFiatTransfer: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **estimateFiatTransferRequest** | [**EstimateFiatTransferRequest**](EstimateFiatTransferRequest.md)|  | [optional] 
-
-### Return type
-
-[**FiatTransferEstimate**](FiatTransferEstimate.md)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **getBeneficiaries**
-> BuiltList<Beneficiary> getBeneficiaries(lastTransactions)
-
-List of beneficiaries of current user
-
-Beneficiaries are users of various banks (BIND included). User adds beneficiaries via app interface to make quick fiat transfers to there bank accounts
+Get information about user stacking
 
 ### Example
 ```dart
@@ -167,26 +75,22 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
-final api = BindApi().getBeneficiariesApi();
-final bool lastTransactions = true; // bool | if true, only beneficiaries with last transactions will be returned
+final api = BindApi().getStakingApi();
 
 try {
-    final response = api.getBeneficiaries(lastTransactions);
+    final response = api.getStaking();
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling BeneficiariesApi->getBeneficiaries: $e\n');
+    print('Exception when calling StakingApi->getStaking: $e\n');
 }
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **lastTransactions** | **bool**| if true, only beneficiaries with last transactions will be returned | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;Beneficiary&gt;**](Beneficiary.md)
+[**StakingInformation**](StakingInformation.md)
 
 ### Authorization
 
@@ -199,10 +103,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getBeneficiary**
-> Beneficiary getBeneficiary(beneficiaryId)
+# **getStakingBalance**
+> StakingBalance getStakingBalance()
 
-Get beneficiary by id
+Get staking balance
+
+Get staking balance
 
 ### Example
 ```dart
@@ -211,26 +117,22 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
-final api = BindApi().getBeneficiariesApi();
-final String beneficiaryId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of a beneficiary
+final api = BindApi().getStakingApi();
 
 try {
-    final response = api.getBeneficiary(beneficiaryId);
+    final response = api.getStakingBalance();
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling BeneficiariesApi->getBeneficiary: $e\n');
+    print('Exception when calling StakingApi->getStakingBalance: $e\n');
 }
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **beneficiaryId** | **String**| id of a beneficiary | 
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**Beneficiary**](Beneficiary.md)
+[**StakingBalance**](StakingBalance.md)
 
 ### Authorization
 
@@ -243,12 +145,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **performFiatTransfer**
-> performFiatTransfer(performFiatTransferRequest)
+# **getStakingPeriods**
+> BuiltList<StakingPeriods> getStakingPeriods()
 
-Send money to outer bank account
+Get staking periods
 
-Sending fiat to previously saved beneficiary
+Get staking periods for dropdown
 
 ### Example
 ```dart
@@ -257,13 +159,98 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
-final api = BindApi().getBeneficiariesApi();
-final PerformFiatTransferRequest performFiatTransferRequest = ; // PerformFiatTransferRequest | 
+final api = BindApi().getStakingApi();
 
 try {
-    api.performFiatTransfer(performFiatTransferRequest);
+    final response = api.getStakingPeriods();
+    print(response);
 } catch on DioError (e) {
-    print('Exception when calling BeneficiariesApi->performFiatTransfer: $e\n');
+    print('Exception when calling StakingApi->getStakingPeriods: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**BuiltList&lt;StakingPeriods&gt;**](StakingPeriods.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getStakingReleases**
+> BuiltList<StakingReleases> getStakingReleases()
+
+Get staking releases
+
+Get staking releases which show when BINDX will be unstacked
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getStakingApi();
+
+try {
+    final response = api.getStakingReleases();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling StakingApi->getStakingReleases: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**BuiltList&lt;StakingReleases&gt;**](StakingReleases.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getStakingTimer**
+> GetStakingTimer200Response getStakingTimer(xUserTimezone)
+
+Get datetime of end timer
+
+Get datetime of end timer
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getStakingApi();
+final String xUserTimezone = xUserTimezone_example; // String | 
+
+try {
+    final response = api.getStakingTimer(xUserTimezone);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling StakingApi->getStakingTimer: $e\n');
 }
 ```
 
@@ -271,11 +258,57 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **performFiatTransferRequest** | [**PerformFiatTransferRequest**](PerformFiatTransferRequest.md)|  | [optional] 
+ **xUserTimezone** | **String**|  | 
 
 ### Return type
 
-void (empty response body)
+[**GetStakingTimer200Response**](GetStakingTimer200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **stakingEstimateOperation**
+> StakingEstimate stakingEstimateOperation(stakingPerformRequest)
+
+Estimate staking operation
+
+Estimate staking BINDX
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getStakingApi();
+final StakingPerformRequest stakingPerformRequest = ; // StakingPerformRequest | 
+
+try {
+    final response = api.stakingEstimateOperation(stakingPerformRequest);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling StakingApi->stakingEstimateOperation: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **stakingPerformRequest** | [**StakingPerformRequest**](StakingPerformRequest.md)|  | [optional] 
+
+### Return type
+
+[**StakingEstimate**](StakingEstimate.md)
 
 ### Authorization
 
@@ -288,10 +321,12 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **updateBeneficiary**
-> updateBeneficiary(beneficiaryId, updateBeneficiaryRequest)
+# **stakingPerform**
+> Staking stakingPerform(stakingPerformRequest)
 
-Update beneficiary data
+Perform staking
+
+Staking BINDX
 
 ### Example
 ```dart
@@ -300,14 +335,14 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
-final api = BindApi().getBeneficiariesApi();
-final String beneficiaryId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of beneficiary
-final UpdateBeneficiaryRequest updateBeneficiaryRequest = ; // UpdateBeneficiaryRequest | 
+final api = BindApi().getStakingApi();
+final StakingPerformRequest stakingPerformRequest = ; // StakingPerformRequest | 
 
 try {
-    api.updateBeneficiary(beneficiaryId, updateBeneficiaryRequest);
+    final response = api.stakingPerform(stakingPerformRequest);
+    print(response);
 } catch on DioError (e) {
-    print('Exception when calling BeneficiariesApi->updateBeneficiary: $e\n');
+    print('Exception when calling StakingApi->stakingPerform: $e\n');
 }
 ```
 
@@ -315,12 +350,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **beneficiaryId** | **String**| id of beneficiary | 
- **updateBeneficiaryRequest** | [**UpdateBeneficiaryRequest**](UpdateBeneficiaryRequest.md)|  | [optional] 
+ **stakingPerformRequest** | [**StakingPerformRequest**](StakingPerformRequest.md)|  | [optional] 
 
 ### Return type
 
-void (empty response body)
+[**Staking**](Staking.md)
 
 ### Authorization
 

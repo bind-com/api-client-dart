@@ -68,6 +68,7 @@ Class | Method | HTTP request | Description
 [*AuthApi*](doc/AuthApi.md) | [**whoAmI**](doc/AuthApi.md#whoami) | **GET** /auth/whoami/ | Who am I
 [*BeneficiariesApi*](doc/BeneficiariesApi.md) | [**createBeneficiary**](doc/BeneficiariesApi.md#createbeneficiary) | **POST** /beneficiaries/ | Add new beneficiary
 [*BeneficiariesApi*](doc/BeneficiariesApi.md) | [**deleteBeneficiary**](doc/BeneficiariesApi.md#deletebeneficiary) | **DELETE** /beneficiaries/{beneficiary_id}/ | Delete beneficiary
+[*BeneficiariesApi*](doc/BeneficiariesApi.md) | [**estimateFiatTransfer**](doc/BeneficiariesApi.md#estimatefiattransfer) | **POST** /fiat/transfer/review/ | Preview of fiat transfer
 [*BeneficiariesApi*](doc/BeneficiariesApi.md) | [**getBeneficiaries**](doc/BeneficiariesApi.md#getbeneficiaries) | **GET** /beneficiaries/ | List of beneficiaries of current user
 [*BeneficiariesApi*](doc/BeneficiariesApi.md) | [**getBeneficiary**](doc/BeneficiariesApi.md#getbeneficiary) | **GET** /beneficiaries/{beneficiary_id}/ | Get beneficiary by id
 [*BeneficiariesApi*](doc/BeneficiariesApi.md) | [**performFiatTransfer**](doc/BeneficiariesApi.md#performfiattransfer) | **POST** /fiat/transfer/ | Send money to outer bank account
@@ -86,9 +87,11 @@ Class | Method | HTTP request | Description
 [*CryptoApi*](doc/CryptoApi.md) | [**getCryptoChartLine**](doc/CryptoApi.md#getcryptochartline) | **GET** /charts/crypto/line/ | List line ticks for crypto price chart
 [*CryptoApi*](doc/CryptoApi.md) | [**getCryptoOverview**](doc/CryptoApi.md#getcryptooverview) | **GET** /crypto/overview/ | Get crypto overview information, the price of the tokens will be converted into the user&#39;s payment currency
 [*CryptoApi*](doc/CryptoApi.md) | [**getGlobalCryptoStats**](doc/CryptoApi.md#getglobalcryptostats) | **GET** /crypto/global/stats/ | Get global crypto market information, 24h volume and market cap will be converted into the user&#39;s payment currency
+[*CryptoApi*](doc/CryptoApi.md) | [**getInnerCryptoTransferFee**](doc/CryptoApi.md#getinnercryptotransferfee) | **POST** /crypto/send/fee/ | 
 [*CryptoApi*](doc/CryptoApi.md) | [**getTokenDetail**](doc/CryptoApi.md#gettokendetail) | **GET** /crypto/detail/{assetID}/ | Get description for certain token, price related stats will be converted into the user&#39;s payment currency
 [*CryptoApi*](doc/CryptoApi.md) | [**getTokenStats**](doc/CryptoApi.md#gettokenstats) | **GET** /crypto/stats/{assetID}/ | Get stats for certain token, price related stats will be converted into the user&#39;s payment currency
 [*CryptoApi*](doc/CryptoApi.md) | [**listCryptoCurrencies**](doc/CryptoApi.md#listcryptocurrencies) | **GET** /currencies/crypto/ | List of Crypto Currencies available at Bind
+[*CryptoApi*](doc/CryptoApi.md) | [**performInnerCryptoTransfer**](doc/CryptoApi.md#performinnercryptotransfer) | **POST** /crypto/send/ | Send crypto inside BIND
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**addCryptoFavorite**](doc/CryptoWalletApi.md#addcryptofavorite) | **POST** /crypto/favorites/ | Add crypto asset to favorite
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**createWithdrawalAddress**](doc/CryptoWalletApi.md#createwithdrawaladdress) | **POST** /crypto/withdrawal/whitelisted_addresses/ | Create new whitelisted withdrawal address
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**deleteCryptoFavorite**](doc/CryptoWalletApi.md#deletecryptofavorite) | **DELETE** /crypto/favorite/{asset_id}/ | Delete asset from favorites
@@ -134,6 +137,15 @@ Class | Method | HTTP request | Description
 [*GeoApi*](doc/GeoApi.md) | [**listCountries**](doc/GeoApi.md#listcountries) | **GET** /countries/ | Countries list
 [*StagingApi*](doc/StagingApi.md) | [**adjustFiatWalletBalance**](doc/StagingApi.md#adjustfiatwalletbalance) | **POST** /staging/fiat/wallet/adjust/ | Change balance of a fiat wallet
 [*StagingApi*](doc/StagingApi.md) | [**fillCryptoWallet**](doc/StagingApi.md#fillcryptowallet) | **POST** /staging/crypto/wallet/fill/ | Put some testnet assets in a crypto wallet of a current user
+[*StagingApi*](doc/StagingApi.md) | [**fireblocksPoolBalances**](doc/StagingApi.md#fireblockspoolbalances) | **GET** /staging/fireblocks_pool/balances/ | Get pool balances
+[*StakingApi*](doc/StakingApi.md) | [**getAdditionalStaking**](doc/StakingApi.md#getadditionalstaking) | **GET** /crypto/staking/additional_info | Get info of additional staking
+[*StakingApi*](doc/StakingApi.md) | [**getStaking**](doc/StakingApi.md#getstaking) | **GET** /crypto/staking | Get info of staking
+[*StakingApi*](doc/StakingApi.md) | [**getStakingBalance**](doc/StakingApi.md#getstakingbalance) | **GET** /crypto/staking/balance | Get staking balance
+[*StakingApi*](doc/StakingApi.md) | [**getStakingPeriods**](doc/StakingApi.md#getstakingperiods) | **GET** /crypto/staking/periods | Get staking periods
+[*StakingApi*](doc/StakingApi.md) | [**getStakingReleases**](doc/StakingApi.md#getstakingreleases) | **GET** /crypto/staking/releases | Get staking releases
+[*StakingApi*](doc/StakingApi.md) | [**getStakingTimer**](doc/StakingApi.md#getstakingtimer) | **GET** /crypto/staking/timer | Get datetime of end timer
+[*StakingApi*](doc/StakingApi.md) | [**stakingEstimateOperation**](doc/StakingApi.md#stakingestimateoperation) | **POST** /crypto/staking/estimate | Estimate staking operation
+[*StakingApi*](doc/StakingApi.md) | [**stakingPerform**](doc/StakingApi.md#stakingperform) | **POST** /crypto/staking/perform | Perform staking
 [*TransactionsApi*](doc/TransactionsApi.md) | [**exportTransactions**](doc/TransactionsApi.md#exporttransactions) | **POST** /transactions/export/ | Export user transaction to csv
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getExportHistory**](doc/TransactionsApi.md#getexporthistory) | **GET** /transactions/export/history/ | Get export history
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionsAssetsList**](doc/TransactionsApi.md#gettransactionsassetslist) | **POST** /transactions/assets/ | Get list of assets of user transactions
@@ -195,10 +207,12 @@ Class | Method | HTTP request | Description
  - [CurrencyWithRateAllOf](doc/CurrencyWithRateAllOf.md)
  - [DepositAddress](doc/DepositAddress.md)
  - [Error](doc/Error.md)
+ - [EstimateFiatTransferRequest](doc/EstimateFiatTransferRequest.md)
  - [ExportHistory](doc/ExportHistory.md)
  - [FavoriteCryptoCreateRequest](doc/FavoriteCryptoCreateRequest.md)
  - [FearGreed](doc/FearGreed.md)
  - [FiatAccount](doc/FiatAccount.md)
+ - [FiatTransferEstimate](doc/FiatTransferEstimate.md)
  - [FiatWallet](doc/FiatWallet.md)
  - [FiatWalletAllOf](doc/FiatWalletAllOf.md)
  - [FiatWalletLight](doc/FiatWalletLight.md)
@@ -206,7 +220,10 @@ Class | Method | HTTP request | Description
  - [FiatWalletTotalBalance](doc/FiatWalletTotalBalance.md)
  - [FiatWalletWithPaymentCurrency](doc/FiatWalletWithPaymentCurrency.md)
  - [FiatWalletWithPaymentCurrencyAllOf](doc/FiatWalletWithPaymentCurrencyAllOf.md)
+ - [GetInnerCryptoTransferFeeRequest](doc/GetInnerCryptoTransferFeeRequest.md)
  - [GetInnerFiatTransferFeeRequest](doc/GetInnerFiatTransferFeeRequest.md)
+ - [GetStakingTimer200Response](doc/GetStakingTimer200Response.md)
+ - [InnerCryptoTransferFeeResult](doc/InnerCryptoTransferFeeResult.md)
  - [InnerFiatTransferFeeResult](doc/InnerFiatTransferFeeResult.md)
  - [JWTToken](doc/JWTToken.md)
  - [KYCFieldStatus](doc/KYCFieldStatus.md)
@@ -220,6 +237,14 @@ Class | Method | HTTP request | Description
  - [PerformFiatTransferRequest](doc/PerformFiatTransferRequest.md)
  - [PeriodInterval](doc/PeriodInterval.md)
  - [PutLimitOrderRequest](doc/PutLimitOrderRequest.md)
+ - [Staking](doc/Staking.md)
+ - [StakingAdditionalInformation](doc/StakingAdditionalInformation.md)
+ - [StakingBalance](doc/StakingBalance.md)
+ - [StakingEstimate](doc/StakingEstimate.md)
+ - [StakingInformation](doc/StakingInformation.md)
+ - [StakingPerformRequest](doc/StakingPerformRequest.md)
+ - [StakingPeriods](doc/StakingPeriods.md)
+ - [StakingReleases](doc/StakingReleases.md)
  - [SyncContactsRequest](doc/SyncContactsRequest.md)
  - [TokenDetail](doc/TokenDetail.md)
  - [TokenStats](doc/TokenStats.md)

@@ -2,6 +2,7 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+import 'package:bind_api/src/model/country.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -13,8 +14,11 @@ part 'beneficiary.g.dart';
 /// * [id] 
 /// * [firstName] 
 /// * [lastName] 
+/// * [fullName] 
 /// * [isFavorite] 
 /// * [accountNumber] 
+/// * [country] 
+/// * [currency] - ID of a currency associated with beneficiary country
 abstract class Beneficiary implements Built<Beneficiary, BeneficiaryBuilder> {
     @BuiltValueField(wireName: r'id')
     String get id;
@@ -25,11 +29,21 @@ abstract class Beneficiary implements Built<Beneficiary, BeneficiaryBuilder> {
     @BuiltValueField(wireName: r'last_name')
     String get lastName;
 
+    @BuiltValueField(wireName: r'full_name')
+    String? get fullName;
+
     @BuiltValueField(wireName: r'is_favorite')
     bool get isFavorite;
 
     @BuiltValueField(wireName: r'account_number')
     String get accountNumber;
+
+    @BuiltValueField(wireName: r'country')
+    Country? get country;
+
+    /// ID of a currency associated with beneficiary country
+    @BuiltValueField(wireName: r'currency')
+    String? get currency;
 
     Beneficiary._();
 
@@ -65,6 +79,12 @@ class _$BeneficiarySerializer implements StructuredSerializer<Beneficiary> {
             ..add(r'last_name')
             ..add(serializers.serialize(object.lastName,
                 specifiedType: const FullType(String)));
+        if (object.fullName != null) {
+            result
+                ..add(r'full_name')
+                ..add(serializers.serialize(object.fullName,
+                    specifiedType: const FullType(String)));
+        }
         result
             ..add(r'is_favorite')
             ..add(serializers.serialize(object.isFavorite,
@@ -73,6 +93,18 @@ class _$BeneficiarySerializer implements StructuredSerializer<Beneficiary> {
             ..add(r'account_number')
             ..add(serializers.serialize(object.accountNumber,
                 specifiedType: const FullType(String)));
+        if (object.country != null) {
+            result
+                ..add(r'country')
+                ..add(serializers.serialize(object.country,
+                    specifiedType: const FullType(Country)));
+        }
+        if (object.currency != null) {
+            result
+                ..add(r'currency')
+                ..add(serializers.serialize(object.currency,
+                    specifiedType: const FullType(String)));
+        }
         return result;
     }
 
@@ -103,6 +135,11 @@ class _$BeneficiarySerializer implements StructuredSerializer<Beneficiary> {
                         specifiedType: const FullType(String)) as String;
                     result.lastName = valueDes;
                     break;
+                case r'full_name':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.fullName = valueDes;
+                    break;
                 case r'is_favorite':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(bool)) as bool;
@@ -112,6 +149,16 @@ class _$BeneficiarySerializer implements StructuredSerializer<Beneficiary> {
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.accountNumber = valueDes;
+                    break;
+                case r'country':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(Country)) as Country;
+                    result.country.replace(valueDes);
+                    break;
+                case r'currency':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.currency = valueDes;
                     break;
             }
         }
