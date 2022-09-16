@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**generateQRCodeToken**](ContactsApi.md#generateqrcodetoken) | **GET** /users/send/qr_code/ | Generate JWT token to share as QR code
 [**getContacts**](ContactsApi.md#getcontacts) | **GET** /contacts/ | List of contacts of current user
 [**getInnerFiatTransferFee**](ContactsApi.md#getinnerfiattransferfee) | **POST** /fiat/send/fee/ | 
+[**qRCodeGenerateView**](ContactsApi.md#qrcodegenerateview) | **GET** /users/generate/qr_code/ | Generate QRCode with JWT token and return QRCode image
 [**readJWTToken**](ContactsApi.md#readjwttoken) | **POST** /users/send/qr_code/ | Check JWT validity and read user from it
 [**syncContacts**](ContactsApi.md#synccontacts) | **POST** /contacts/sync/ | Sync mobile phone contacts of current user with backend data
 [**updateContact**](ContactsApi.md#updatecontact) | **PATCH** /contacts/{contact_id}/ | Update contact data (add/remove contact from favorite)
@@ -338,6 +339,46 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **qRCodeGenerateView**
+> Uint8List qRCodeGenerateView()
+
+Generate QRCode with JWT token and return QRCode image
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getContactsApi();
+
+try {
+    final response = api.qRCodeGenerateView();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling ContactsApi->qRCodeGenerateView: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Uint8List**](Uint8List.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: image/png, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

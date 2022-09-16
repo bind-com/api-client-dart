@@ -28,6 +28,7 @@ import 'package:bind_api/src/model/cancel_limit_order_request.dart';
 import 'package:bind_api/src/model/candle.dart';
 import 'package:bind_api/src/model/chain_implementation.dart';
 import 'package:bind_api/src/model/chart_tick.dart';
+import 'package:bind_api/src/model/check_kyc_status_request.dart';
 import 'package:bind_api/src/model/contact.dart';
 import 'package:bind_api/src/model/country.dart';
 import 'package:bind_api/src/model/create_beneficiary_request.dart';
@@ -72,6 +73,7 @@ import 'package:bind_api/src/model/fiat_wallet_with_payment_currency.dart';
 import 'package:bind_api/src/model/fiat_wallet_with_payment_currency_all_of.dart';
 import 'package:bind_api/src/model/get_inner_crypto_transfer_fee_request.dart';
 import 'package:bind_api/src/model/get_inner_fiat_transfer_fee_request.dart';
+import 'package:bind_api/src/model/get_kyc_document_uid200_response.dart';
 import 'package:bind_api/src/model/get_staking_timer200_response.dart';
 import 'package:bind_api/src/model/inner_crypto_transfer_fee_result.dart';
 import 'package:bind_api/src/model/inner_fiat_transfer_fee_result.dart';
@@ -137,6 +139,7 @@ part 'serializers.g.dart';
   Candle,
   ChainImplementation,
   ChartTick,
+  CheckKYCStatusRequest,
   Contact,
   Country,
   CreateBeneficiaryRequest,
@@ -181,6 +184,7 @@ part 'serializers.g.dart';
   FiatWalletWithPaymentCurrencyAllOf,
   GetInnerCryptoTransferFeeRequest,
   GetInnerFiatTransferFeeRequest,
+  GetKYCDocumentUID200Response,
   GetStakingTimer200Response,
   InnerCryptoTransferFeeResult,
   InnerFiatTransferFeeResult,

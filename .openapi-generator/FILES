@@ -19,6 +19,7 @@ doc/CancelLimitOrderRequest.md
 doc/Candle.md
 doc/ChainImplementation.md
 doc/ChartTick.md
+doc/CheckKYCStatusRequest.md
 doc/Contact.md
 doc/ContactsApi.md
 doc/Country.md
@@ -70,6 +71,7 @@ doc/FiatWalletWithPaymentCurrencyAllOf.md
 doc/GeoApi.md
 doc/GetInnerCryptoTransferFeeRequest.md
 doc/GetInnerFiatTransferFeeRequest.md
+doc/GetKYCDocumentUID200Response.md
 doc/GetStakingTimer200Response.md
 doc/InnerCryptoTransferFeeResult.md
 doc/InnerFiatTransferFeeResult.md
@@ -159,6 +161,7 @@ lib/src/model/cancel_limit_order_request.dart
 lib/src/model/candle.dart
 lib/src/model/chain_implementation.dart
 lib/src/model/chart_tick.dart
+lib/src/model/check_kyc_status_request.dart
 lib/src/model/contact.dart
 lib/src/model/country.dart
 lib/src/model/create_beneficiary_request.dart
@@ -204,6 +207,7 @@ lib/src/model/fiat_wallet_with_payment_currency.dart
 lib/src/model/fiat_wallet_with_payment_currency_all_of.dart
 lib/src/model/get_inner_crypto_transfer_fee_request.dart
 lib/src/model/get_inner_fiat_transfer_fee_request.dart
+lib/src/model/get_kyc_document_uid200_response.dart
 lib/src/model/get_staking_timer200_response.dart
 lib/src/model/inner_crypto_transfer_fee_result.dart
 lib/src/model/inner_fiat_transfer_fee_result.dart
@@ -251,3 +255,5 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/check_kyc_status_request_test.dart
+test/get_kyc_document_uid200_response_test.dart
