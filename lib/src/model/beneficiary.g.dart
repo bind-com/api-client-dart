@@ -10,9 +10,9 @@ class _$Beneficiary extends Beneficiary {
   @override
   final String id;
   @override
-  final String firstName;
+  final String? firstName;
   @override
-  final String lastName;
+  final String? lastName;
   @override
   final String? fullName;
   @override
@@ -29,8 +29,8 @@ class _$Beneficiary extends Beneficiary {
 
   _$Beneficiary._(
       {required this.id,
-      required this.firstName,
-      required this.lastName,
+      this.firstName,
+      this.lastName,
       this.fullName,
       required this.isFavorite,
       required this.accountNumber,
@@ -38,9 +38,6 @@ class _$Beneficiary extends Beneficiary {
       this.currency})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, r'Beneficiary', 'id');
-    BuiltValueNullFieldError.checkNotNull(
-        firstName, r'Beneficiary', 'firstName');
-    BuiltValueNullFieldError.checkNotNull(lastName, r'Beneficiary', 'lastName');
     BuiltValueNullFieldError.checkNotNull(
         isFavorite, r'Beneficiary', 'isFavorite');
     BuiltValueNullFieldError.checkNotNull(
@@ -176,10 +173,8 @@ class BeneficiaryBuilder implements Builder<Beneficiary, BeneficiaryBuilder> {
           new _$Beneficiary._(
               id: BuiltValueNullFieldError.checkNotNull(
                   id, r'Beneficiary', 'id'),
-              firstName: BuiltValueNullFieldError.checkNotNull(
-                  firstName, r'Beneficiary', 'firstName'),
-              lastName: BuiltValueNullFieldError.checkNotNull(
-                  lastName, r'Beneficiary', 'lastName'),
+              firstName: firstName,
+              lastName: lastName,
               fullName: fullName,
               isFavorite: BuiltValueNullFieldError.checkNotNull(
                   isFavorite, r'Beneficiary', 'isFavorite'),

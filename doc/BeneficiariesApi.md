@@ -108,7 +108,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **estimateFiatTransfer**
-> FiatTransferEstimate estimateFiatTransfer(estimateFiatTransferRequest)
+> FiatTransferEstimate estimateFiatTransfer(performFiatTransferRequest)
 
 Preview of fiat transfer
 
@@ -122,10 +122,10 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getBeneficiariesApi();
-final EstimateFiatTransferRequest estimateFiatTransferRequest = ; // EstimateFiatTransferRequest | 
+final PerformFiatTransferRequest performFiatTransferRequest = ; // PerformFiatTransferRequest | 
 
 try {
-    final response = api.estimateFiatTransfer(estimateFiatTransferRequest);
+    final response = api.estimateFiatTransfer(performFiatTransferRequest);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling BeneficiariesApi->estimateFiatTransfer: $e\n');
@@ -136,7 +136,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **estimateFiatTransferRequest** | [**EstimateFiatTransferRequest**](EstimateFiatTransferRequest.md)|  | [optional] 
+ **performFiatTransferRequest** | [**PerformFiatTransferRequest**](PerformFiatTransferRequest.md)|  | [optional] 
 
 ### Return type
 

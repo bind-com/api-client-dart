@@ -53,7 +53,6 @@ doc/CurrencyWithRate.md
 doc/CurrencyWithRateAllOf.md
 doc/DepositAddress.md
 doc/Error.md
-doc/EstimateFiatTransferRequest.md
 doc/ExchangeApi.md
 doc/ExportHistory.md
 doc/FavoriteCryptoCreateRequest.md
@@ -191,7 +190,6 @@ lib/src/model/currency_with_rate_all_of.dart
 lib/src/model/date.dart
 lib/src/model/deposit_address.dart
 lib/src/model/error.dart
-lib/src/model/estimate_fiat_transfer_request.dart
 lib/src/model/export_history.dart
 lib/src/model/favorite_crypto_create_request.dart
 lib/src/model/fear_greed.dart
@@ -253,17 +251,3 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/estimate_fiat_transfer_request_test.dart
-test/fiat_transfer_estimate_test.dart
-test/get_inner_crypto_transfer_fee_request_test.dart
-test/get_staking_timer200_response_test.dart
-test/inner_crypto_transfer_fee_result_test.dart
-test/staking_additional_information_test.dart
-test/staking_api_test.dart
-test/staking_balance_test.dart
-test/staking_estimate_test.dart
-test/staking_information_test.dart
-test/staking_perform_request_test.dart
-test/staking_periods_test.dart
-test/staking_releases_test.dart
-test/staking_test.dart

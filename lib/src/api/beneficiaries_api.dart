@@ -11,7 +11,6 @@ import 'package:bind_api/src/api_util.dart';
 import 'package:bind_api/src/model/beneficiary.dart';
 import 'package:bind_api/src/model/create_beneficiary_request.dart';
 import 'package:bind_api/src/model/error.dart';
-import 'package:bind_api/src/model/estimate_fiat_transfer_request.dart';
 import 'package:bind_api/src/model/fiat_transfer_estimate.dart';
 import 'package:bind_api/src/model/perform_fiat_transfer_request.dart';
 import 'package:bind_api/src/model/update_beneficiary_request.dart';
@@ -181,7 +180,7 @@ class BeneficiariesApi {
   /// Preview data before transfer
   ///
   /// Parameters:
-  /// * [estimateFiatTransferRequest] 
+  /// * [performFiatTransferRequest] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -192,7 +191,7 @@ class BeneficiariesApi {
   /// Returns a [Future] containing a [Response] with a [FiatTransferEstimate] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<FiatTransferEstimate>> estimateFiatTransfer({ 
-    EstimateFiatTransferRequest? estimateFiatTransferRequest,
+    PerformFiatTransferRequest? performFiatTransferRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -223,8 +222,8 @@ class BeneficiariesApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(EstimateFiatTransferRequest);
-      _bodyData = estimateFiatTransferRequest == null ? null : _serializers.serialize(estimateFiatTransferRequest, specifiedType: _type);
+      const _type = FullType(PerformFiatTransferRequest);
+      _bodyData = performFiatTransferRequest == null ? null : _serializers.serialize(performFiatTransferRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioError(

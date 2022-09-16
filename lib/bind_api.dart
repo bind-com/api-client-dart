@@ -70,7 +70,6 @@ export 'package:bind_api/src/model/currency_with_rate.dart';
 export 'package:bind_api/src/model/currency_with_rate_all_of.dart';
 export 'package:bind_api/src/model/deposit_address.dart';
 export 'package:bind_api/src/model/error.dart';
-export 'package:bind_api/src/model/estimate_fiat_transfer_request.dart';
 export 'package:bind_api/src/model/export_history.dart';
 export 'package:bind_api/src/model/favorite_crypto_create_request.dart';
 export 'package:bind_api/src/model/fear_greed.dart';

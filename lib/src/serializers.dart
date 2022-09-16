@@ -58,7 +58,6 @@ import 'package:bind_api/src/model/currency_with_rate.dart';
 import 'package:bind_api/src/model/currency_with_rate_all_of.dart';
 import 'package:bind_api/src/model/deposit_address.dart';
 import 'package:bind_api/src/model/error.dart';
-import 'package:bind_api/src/model/estimate_fiat_transfer_request.dart';
 import 'package:bind_api/src/model/export_history.dart';
 import 'package:bind_api/src/model/favorite_crypto_create_request.dart';
 import 'package:bind_api/src/model/fear_greed.dart';
@@ -168,7 +167,6 @@ part 'serializers.g.dart';
   CurrencyWithRateAllOf,
   DepositAddress,
   Error,
-  EstimateFiatTransferRequest,
   ExportHistory,
   FavoriteCryptoCreateRequest,
   FearGreed,

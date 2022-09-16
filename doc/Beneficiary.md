@@ -9,8 +9,8 @@ import 'package:bind_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
-**firstName** | **String** |  | 
-**lastName** | **String** |  | 
+**firstName** | **String** |  | [optional] 
+**lastName** | **String** |  | [optional] 
 **fullName** | **String** |  | [optional] 
 **isFavorite** | **bool** |  | 
 **accountNumber** | **String** |  | 

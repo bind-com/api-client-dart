@@ -207,7 +207,6 @@ Class | Method | HTTP request | Description
  - [CurrencyWithRateAllOf](doc/CurrencyWithRateAllOf.md)
  - [DepositAddress](doc/DepositAddress.md)
  - [Error](doc/Error.md)
- - [EstimateFiatTransferRequest](doc/EstimateFiatTransferRequest.md)
  - [ExportHistory](doc/ExportHistory.md)
  - [FavoriteCryptoCreateRequest](doc/FavoriteCryptoCreateRequest.md)
  - [FearGreed](doc/FearGreed.md)
