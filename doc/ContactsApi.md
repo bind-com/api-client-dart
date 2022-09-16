@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **qRCodeGenerateView**
-> Uint8List qRCodeGenerateView()
+> Uint8List qRCodeGenerateView(currency, amount)
 
 Generate QRCode with JWT token and return QRCode image
 
@@ -355,9 +355,11 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getContactsApi();
+final String currency = BTC; // String | 
+final num amount = 10; // num | 
 
 try {
-    final response = api.qRCodeGenerateView();
+    final response = api.qRCodeGenerateView(currency, amount);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling ContactsApi->qRCodeGenerateView: $e\n');
@@ -365,7 +367,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currency** | **String**|  | [optional] 
+ **amount** | **num**|  | [optional] 
 
 ### Return type
 

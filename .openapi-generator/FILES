@@ -255,5 +255,3 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/check_kyc_status_request_test.dart
-test/get_kyc_document_uid200_response_test.dart

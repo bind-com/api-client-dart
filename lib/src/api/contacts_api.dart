@@ -625,6 +625,8 @@ class ContactsApi {
   /// 
   ///
   /// Parameters:
+  /// * [currency] 
+  /// * [amount] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -635,6 +637,8 @@ class ContactsApi {
   /// Returns a [Future] containing a [Response] with a [Uint8List] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<Uint8List>> qRCodeGenerateView({ 
+    String? currency,
+    num? amount,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -662,9 +666,15 @@ class ContactsApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (currency != null) r'currency': encodeQueryParameter(_serializers, currency, const FullType(String)),
+      if (amount != null) r'amount': encodeQueryParameter(_serializers, amount, const FullType(num)),
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
