@@ -22,26 +22,14 @@ class TransactionTypes extends EnumClass {
   static const TransactionTypes FIAT_EXCHANGE = _$FIAT_EXCHANGE;
   @BuiltValueEnumConst(wireName: r'OUTGOING_SWIFT_FIAT_TRANSFER')
   static const TransactionTypes OUTGOING_SWIFT_FIAT_TRANSFER = _$OUTGOING_SWIFT_FIAT_TRANSFER;
-  @BuiltValueEnumConst(wireName: r'SETTLEMENT')
-  static const TransactionTypes SETTLEMENT = _$SETTLEMENT;
-  @BuiltValueEnumConst(wireName: r'CLEARABLE')
-  static const TransactionTypes CLEARABLE = _$CLEARABLE;
   @BuiltValueEnumConst(wireName: r'EXCHANGE')
   static const TransactionTypes EXCHANGE = _$EXCHANGE;
   @BuiltValueEnumConst(wireName: r'SEND')
   static const TransactionTypes SEND = _$SEND;
-  @BuiltValueEnumConst(wireName: r'FIAT_POOL_TRANSFER')
-  static const TransactionTypes FIAT_POOL_TRANSFER = _$FIAT_POOL_TRANSFER;
   @BuiltValueEnumConst(wireName: r'CRYPTO_WITHDRAWAL')
   static const TransactionTypes CRYPTO_WITHDRAWAL = _$CRYPTO_WITHDRAWAL;
-  @BuiltValueEnumConst(wireName: r'EXTERNAL')
-  static const TransactionTypes EXTERNAL = _$EXTERNAL;
-  @BuiltValueEnumConst(wireName: r'SWIPE_TO_VAULT')
-  static const TransactionTypes SWIPE_TO_VAULT = _$SWIPE_TO_VAULT;
-  @BuiltValueEnumConst(wireName: r'CRYPTO_NETWORK_TRANSFER')
-  static const TransactionTypes CRYPTO_NETWORK_TRANSFER = _$CRYPTO_NETWORK_TRANSFER;
-  @BuiltValueEnumConst(wireName: r'CRYPTO_NETWORK_FEE')
-  static const TransactionTypes CRYPTO_NETWORK_FEE = _$CRYPTO_NETWORK_FEE;
+  @BuiltValueEnumConst(wireName: r'CRYPTO_DEPOSIT')
+  static const TransactionTypes CRYPTO_DEPOSIT = _$CRYPTO_DEPOSIT;
 
   static Serializer<TransactionTypes> get serializer => _$transactionTypesSerializer;
 
