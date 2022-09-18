@@ -177,6 +177,7 @@ Class | Method | HTTP request | Description
  - [BankCardSettings](doc/BankCardSettings.md)
  - [BankCardStatus](doc/BankCardStatus.md)
  - [Beneficiary](doc/Beneficiary.md)
+ - [BeneficiaryDetail](doc/BeneficiaryDetail.md)
  - [CancelLimitOrderRequest](doc/CancelLimitOrderRequest.md)
  - [Candle](doc/Candle.md)
  - [ChainImplementation](doc/ChainImplementation.md)

@@ -9,6 +9,7 @@ import 'package:dio/dio.dart';
 
 import 'package:bind_api/src/api_util.dart';
 import 'package:bind_api/src/model/beneficiary.dart';
+import 'package:bind_api/src/model/beneficiary_detail.dart';
 import 'package:bind_api/src/model/create_beneficiary_request.dart';
 import 'package:bind_api/src/model/error.dart';
 import 'package:bind_api/src/model/fiat_transfer_estimate.dart';
@@ -372,9 +373,9 @@ class BeneficiariesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Beneficiary] as data
+  /// Returns a [Future] containing a [Response] with a [BeneficiaryDetail] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<Beneficiary>> getBeneficiary({ 
+  Future<Response<BeneficiaryDetail>> getBeneficiary({ 
     required String beneficiaryId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -410,14 +411,14 @@ class BeneficiariesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Beneficiary _responseData;
+    BeneficiaryDetail _responseData;
 
     try {
-      const _responseType = FullType(Beneficiary);
+      const _responseType = FullType(BeneficiaryDetail);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as Beneficiary;
+      ) as BeneficiaryDetail;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -428,7 +429,7 @@ class BeneficiariesApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<Beneficiary>(
+    return Response<BeneficiaryDetail>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

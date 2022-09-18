@@ -24,6 +24,7 @@ import 'package:bind_api/src/model/bank_card_lock_request.dart';
 import 'package:bind_api/src/model/bank_card_settings.dart';
 import 'package:bind_api/src/model/bank_card_status.dart';
 import 'package:bind_api/src/model/beneficiary.dart';
+import 'package:bind_api/src/model/beneficiary_detail.dart';
 import 'package:bind_api/src/model/cancel_limit_order_request.dart';
 import 'package:bind_api/src/model/candle.dart';
 import 'package:bind_api/src/model/chain_implementation.dart';
@@ -135,6 +136,7 @@ part 'serializers.g.dart';
   BankCardSettings,
   BankCardStatus,
   Beneficiary,
+  BeneficiaryDetail,
   CancelLimitOrderRequest,
   Candle,
   ChainImplementation,

@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getBeneficiary**
-> Beneficiary getBeneficiary(beneficiaryId)
+> BeneficiaryDetail getBeneficiary(beneficiaryId)
 
 Get beneficiary by id
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Beneficiary**](Beneficiary.md)
+[**BeneficiaryDetail**](BeneficiaryDetail.md)
 
 ### Authorization
 
