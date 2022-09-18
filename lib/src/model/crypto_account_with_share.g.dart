@@ -22,6 +22,8 @@ class _$CryptoAccountWithShare extends CryptoAccountWithShare {
   @override
   final num paymentCurrencyBalance;
   @override
+  final num? price;
+  @override
   final num assetPerformance;
   @override
   final num? share;
@@ -38,6 +40,7 @@ class _$CryptoAccountWithShare extends CryptoAccountWithShare {
       this.assetLogo,
       required this.paymentCurrencyCode,
       required this.paymentCurrencyBalance,
+      this.price,
       required this.assetPerformance,
       this.share})
       : super._() {
@@ -77,6 +80,7 @@ class _$CryptoAccountWithShare extends CryptoAccountWithShare {
         assetLogo == other.assetLogo &&
         paymentCurrencyCode == other.paymentCurrencyCode &&
         paymentCurrencyBalance == other.paymentCurrencyBalance &&
+        price == other.price &&
         assetPerformance == other.assetPerformance &&
         share == other.share;
   }
@@ -90,13 +94,15 @@ class _$CryptoAccountWithShare extends CryptoAccountWithShare {
                     $jc(
                         $jc(
                             $jc(
-                                $jc($jc(0, assetBalance.hashCode),
-                                    assetCode.hashCode),
-                                assetName.hashCode),
-                            assetId.hashCode),
-                        assetLogo.hashCode),
-                    paymentCurrencyCode.hashCode),
-                paymentCurrencyBalance.hashCode),
+                                $jc(
+                                    $jc($jc(0, assetBalance.hashCode),
+                                        assetCode.hashCode),
+                                    assetName.hashCode),
+                                assetId.hashCode),
+                            assetLogo.hashCode),
+                        paymentCurrencyCode.hashCode),
+                    paymentCurrencyBalance.hashCode),
+                price.hashCode),
             assetPerformance.hashCode),
         share.hashCode));
   }
@@ -111,6 +117,7 @@ class _$CryptoAccountWithShare extends CryptoAccountWithShare {
           ..add('assetLogo', assetLogo)
           ..add('paymentCurrencyCode', paymentCurrencyCode)
           ..add('paymentCurrencyBalance', paymentCurrencyBalance)
+          ..add('price', price)
           ..add('assetPerformance', assetPerformance)
           ..add('share', share))
         .toString();
@@ -151,6 +158,10 @@ class CryptoAccountWithShareBuilder
   set paymentCurrencyBalance(num? paymentCurrencyBalance) =>
       _$this._paymentCurrencyBalance = paymentCurrencyBalance;
 
+  num? _price;
+  num? get price => _$this._price;
+  set price(num? price) => _$this._price = price;
+
   num? _assetPerformance;
   num? get assetPerformance => _$this._assetPerformance;
   set assetPerformance(num? assetPerformance) =>
@@ -174,6 +185,7 @@ class CryptoAccountWithShareBuilder
       _assetLogo = $v.assetLogo;
       _paymentCurrencyCode = $v.paymentCurrencyCode;
       _paymentCurrencyBalance = $v.paymentCurrencyBalance;
+      _price = $v.price;
       _assetPerformance = $v.assetPerformance;
       _share = $v.share;
       _$v = null;
@@ -215,6 +227,7 @@ class CryptoAccountWithShareBuilder
                 paymentCurrencyBalance,
                 r'CryptoAccountWithShare',
                 'paymentCurrencyBalance'),
+            price: price,
             assetPerformance: BuiltValueNullFieldError.checkNotNull(
                 assetPerformance, r'CryptoAccountWithShare', 'assetPerformance'),
             share: share);

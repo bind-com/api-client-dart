@@ -22,6 +22,8 @@ class _$CryptoAccount extends CryptoAccount {
   @override
   final num paymentCurrencyBalance;
   @override
+  final num? price;
+  @override
   final num assetPerformance;
 
   factory _$CryptoAccount([void Function(CryptoAccountBuilder)? updates]) =>
@@ -35,6 +37,7 @@ class _$CryptoAccount extends CryptoAccount {
       this.assetLogo,
       required this.paymentCurrencyCode,
       required this.paymentCurrencyBalance,
+      this.price,
       required this.assetPerformance})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
@@ -70,6 +73,7 @@ class _$CryptoAccount extends CryptoAccount {
         assetLogo == other.assetLogo &&
         paymentCurrencyCode == other.paymentCurrencyCode &&
         paymentCurrencyBalance == other.paymentCurrencyBalance &&
+        price == other.price &&
         assetPerformance == other.assetPerformance;
   }
 
@@ -81,13 +85,15 @@ class _$CryptoAccount extends CryptoAccount {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc(0, assetBalance.hashCode),
-                                assetCode.hashCode),
-                            assetName.hashCode),
-                        assetId.hashCode),
-                    assetLogo.hashCode),
-                paymentCurrencyCode.hashCode),
-            paymentCurrencyBalance.hashCode),
+                            $jc(
+                                $jc($jc(0, assetBalance.hashCode),
+                                    assetCode.hashCode),
+                                assetName.hashCode),
+                            assetId.hashCode),
+                        assetLogo.hashCode),
+                    paymentCurrencyCode.hashCode),
+                paymentCurrencyBalance.hashCode),
+            price.hashCode),
         assetPerformance.hashCode));
   }
 
@@ -101,6 +107,7 @@ class _$CryptoAccount extends CryptoAccount {
           ..add('assetLogo', assetLogo)
           ..add('paymentCurrencyCode', paymentCurrencyCode)
           ..add('paymentCurrencyBalance', paymentCurrencyBalance)
+          ..add('price', price)
           ..add('assetPerformance', assetPerformance))
         .toString();
   }
@@ -140,6 +147,10 @@ class CryptoAccountBuilder
   set paymentCurrencyBalance(num? paymentCurrencyBalance) =>
       _$this._paymentCurrencyBalance = paymentCurrencyBalance;
 
+  num? _price;
+  num? get price => _$this._price;
+  set price(num? price) => _$this._price = price;
+
   num? _assetPerformance;
   num? get assetPerformance => _$this._assetPerformance;
   set assetPerformance(num? assetPerformance) =>
@@ -159,6 +170,7 @@ class CryptoAccountBuilder
       _assetLogo = $v.assetLogo;
       _paymentCurrencyCode = $v.paymentCurrencyCode;
       _paymentCurrencyBalance = $v.paymentCurrencyBalance;
+      _price = $v.price;
       _assetPerformance = $v.assetPerformance;
       _$v = null;
     }
@@ -197,6 +209,7 @@ class CryptoAccountBuilder
                 paymentCurrencyBalance,
                 r'CryptoAccount',
                 'paymentCurrencyBalance'),
+            price: price,
             assetPerformance: BuiltValueNullFieldError.checkNotNull(
                 assetPerformance, r'CryptoAccount', 'assetPerformance'));
     replace(_$result);

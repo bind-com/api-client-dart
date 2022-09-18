@@ -17,6 +17,7 @@ part 'crypto_account_light.g.dart';
 /// * [assetLogo] - Logo of an asset (link to static file)
 /// * [paymentCurrencyCode] - Code of a fiat currency (can be used to show currency symbol at UI)
 /// * [paymentCurrencyBalance] - Balance of a wallet converted to fiat currency (payment currency of current user)
+/// * [price] - price of a token in payment currency
 abstract class CryptoAccountLight implements Built<CryptoAccountLight, CryptoAccountLightBuilder> {
     /// balance of a token
     @BuiltValueField(wireName: r'asset_balance')
@@ -45,6 +46,10 @@ abstract class CryptoAccountLight implements Built<CryptoAccountLight, CryptoAcc
     /// Balance of a wallet converted to fiat currency (payment currency of current user)
     @BuiltValueField(wireName: r'payment_currency_balance')
     num get paymentCurrencyBalance;
+
+    /// price of a token in payment currency
+    @BuiltValueField(wireName: r'price')
+    num? get price;
 
     CryptoAccountLight._();
 
@@ -96,6 +101,12 @@ class _$CryptoAccountLightSerializer implements StructuredSerializer<CryptoAccou
             ..add(r'payment_currency_balance')
             ..add(serializers.serialize(object.paymentCurrencyBalance,
                 specifiedType: const FullType(num)));
+        if (object.price != null) {
+            result
+                ..add(r'price')
+                ..add(serializers.serialize(object.price,
+                    specifiedType: const FullType(num)));
+        }
         return result;
     }
 
@@ -146,6 +157,11 @@ class _$CryptoAccountLightSerializer implements StructuredSerializer<CryptoAccou
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(num)) as num;
                     result.paymentCurrencyBalance = valueDes;
+                    break;
+                case r'price':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(num)) as num;
+                    result.price = valueDes;
                     break;
             }
         }
