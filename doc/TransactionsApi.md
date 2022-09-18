@@ -11,6 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**exportTransactions**](TransactionsApi.md#exporttransactions) | **POST** /transactions/export/ | Export user transaction to csv
 [**getExportHistory**](TransactionsApi.md#getexporthistory) | **GET** /transactions/export/history/ | Get export history
+[**getTransactionDetails**](TransactionsApi.md#gettransactiondetails) | **GET** /transactions/{transactionId} | Get list of user transactions
 [**getTransactionsAssetsList**](TransactionsApi.md#gettransactionsassetslist) | **POST** /transactions/assets/ | Get list of assets of user transactions
 [**getTransactionsFiltered**](TransactionsApi.md#gettransactionsfiltered) | **POST** /transactions/ | Get list of user transactions
 
@@ -91,6 +92,52 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**BuiltList&lt;ExportHistory&gt;**](ExportHistory.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getTransactionDetails**
+> BuiltMap<String, JsonObject> getTransactionDetails(transactionId)
+
+Get list of user transactions
+
+Get list of user transactions
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getTransactionsApi();
+final String transactionId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+
+try {
+    final response = api.getTransactionDetails(transactionId);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling TransactionsApi->getTransactionDetails: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **transactionId** | **String**|  | 
+
+### Return type
+
+[**BuiltMap&lt;String, JsonObject&gt;**](JsonObject.md)
 
 ### Authorization
 

@@ -322,6 +322,10 @@ Serializers serializers = (_$serializers.toBuilder()
         const FullType(BuiltList, [FullType(CurrencyWithRate)]),
         () => ListBuilder<CurrencyWithRate>(),
       )
+      ..addBuilderFactory(
+        const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+        () => MapBuilder<String, JsonObject>(),
+      )
       ..add(const DateSerializer())
       ..add(Iso8601DateTimeSerializer()))
     .build();
