@@ -131,6 +131,7 @@ class CryptoApi {
   /// 
   ///
   /// Parameters:
+  /// * [asset] - id of crypto asset
   /// * [interval] - interval filter
   /// * [from] - time interval start filter
   /// * [to] - time interval end filter
@@ -145,6 +146,7 @@ class CryptoApi {
   /// Returns a [Future] containing a [Response] with a [BuiltList<ChartTick>] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BuiltList<ChartTick>>> getCryptoChartLine({ 
+    required String asset,
     required PeriodInterval interval,
     required DateTime from,
     required DateTime to,
@@ -176,6 +178,7 @@ class CryptoApi {
     );
 
     final _queryParameters = <String, dynamic>{
+      r'asset': encodeQueryParameter(_serializers, asset, const FullType(String)),
       if (showUsd != null) r'show_usd': encodeQueryParameter(_serializers, showUsd, const FullType(bool)),
       r'interval': encodeQueryParameter(_serializers, interval, const FullType(PeriodInterval)),
       r'from': encodeQueryParameter(_serializers, from, const FullType(DateTime)),
