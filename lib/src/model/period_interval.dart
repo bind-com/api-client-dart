@@ -10,20 +10,20 @@ part 'period_interval.g.dart';
 
 class PeriodInterval extends EnumClass {
 
-  @BuiltValueEnumConst(wireName: r'm1')
-  static const PeriodInterval m1 = _$m1;
-  @BuiltValueEnumConst(wireName: r'm5')
-  static const PeriodInterval m5 = _$m5;
-  @BuiltValueEnumConst(wireName: r'm15')
-  static const PeriodInterval m15 = _$m15;
-  @BuiltValueEnumConst(wireName: r'h1')
-  static const PeriodInterval h1 = _$h1;
-  @BuiltValueEnumConst(wireName: r'h4')
-  static const PeriodInterval h4 = _$h4;
-  @BuiltValueEnumConst(wireName: r'd1')
-  static const PeriodInterval d1 = _$d1;
-  @BuiltValueEnumConst(wireName: r'w1')
-  static const PeriodInterval w1 = _$w1;
+  @BuiltValueEnumConst(wireName: r'1m')
+  static const PeriodInterval n1m = _$n1m;
+  @BuiltValueEnumConst(wireName: r'5m')
+  static const PeriodInterval n5m = _$n5m;
+  @BuiltValueEnumConst(wireName: r'15m')
+  static const PeriodInterval n15m = _$n15m;
+  @BuiltValueEnumConst(wireName: r'1h')
+  static const PeriodInterval n1h = _$n1h;
+  @BuiltValueEnumConst(wireName: r'4h')
+  static const PeriodInterval n4h = _$n4h;
+  @BuiltValueEnumConst(wireName: r'1d')
+  static const PeriodInterval n1d = _$n1d;
+  @BuiltValueEnumConst(wireName: r'1w')
+  static const PeriodInterval n1w = _$n1w;
 
   static Serializer<PeriodInterval> get serializer => _$periodIntervalSerializer;
 

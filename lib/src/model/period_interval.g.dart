@@ -6,30 +6,30 @@ part of 'period_interval.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const PeriodInterval _$m1 = const PeriodInterval._('m1');
-const PeriodInterval _$m5 = const PeriodInterval._('m5');
-const PeriodInterval _$m15 = const PeriodInterval._('m15');
-const PeriodInterval _$h1 = const PeriodInterval._('h1');
-const PeriodInterval _$h4 = const PeriodInterval._('h4');
-const PeriodInterval _$d1 = const PeriodInterval._('d1');
-const PeriodInterval _$w1 = const PeriodInterval._('w1');
+const PeriodInterval _$n1m = const PeriodInterval._('n1m');
+const PeriodInterval _$n5m = const PeriodInterval._('n5m');
+const PeriodInterval _$n15m = const PeriodInterval._('n15m');
+const PeriodInterval _$n1h = const PeriodInterval._('n1h');
+const PeriodInterval _$n4h = const PeriodInterval._('n4h');
+const PeriodInterval _$n1d = const PeriodInterval._('n1d');
+const PeriodInterval _$n1w = const PeriodInterval._('n1w');
 
 PeriodInterval _$valueOf(String name) {
   switch (name) {
-    case 'm1':
-      return _$m1;
-    case 'm5':
-      return _$m5;
-    case 'm15':
-      return _$m15;
-    case 'h1':
-      return _$h1;
-    case 'h4':
-      return _$h4;
-    case 'd1':
-      return _$d1;
-    case 'w1':
-      return _$w1;
+    case 'n1m':
+      return _$n1m;
+    case 'n5m':
+      return _$n5m;
+    case 'n15m':
+      return _$n15m;
+    case 'n1h':
+      return _$n1h;
+    case 'n4h':
+      return _$n4h;
+    case 'n1d':
+      return _$n1d;
+    case 'n1w':
+      return _$n1w;
     default:
       throw new ArgumentError(name);
   }
@@ -37,24 +37,24 @@ PeriodInterval _$valueOf(String name) {
 
 final BuiltSet<PeriodInterval> _$values =
     new BuiltSet<PeriodInterval>(const <PeriodInterval>[
-  _$m1,
-  _$m5,
-  _$m15,
-  _$h1,
-  _$h4,
-  _$d1,
-  _$w1,
+  _$n1m,
+  _$n5m,
+  _$n15m,
+  _$n1h,
+  _$n4h,
+  _$n1d,
+  _$n1w,
 ]);
 
 class _$PeriodIntervalMeta {
   const _$PeriodIntervalMeta();
-  PeriodInterval get m1 => _$m1;
-  PeriodInterval get m5 => _$m5;
-  PeriodInterval get m15 => _$m15;
-  PeriodInterval get h1 => _$h1;
-  PeriodInterval get h4 => _$h4;
-  PeriodInterval get d1 => _$d1;
-  PeriodInterval get w1 => _$w1;
+  PeriodInterval get n1m => _$n1m;
+  PeriodInterval get n5m => _$n5m;
+  PeriodInterval get n15m => _$n15m;
+  PeriodInterval get n1h => _$n1h;
+  PeriodInterval get n4h => _$n4h;
+  PeriodInterval get n1d => _$n1d;
+  PeriodInterval get n1w => _$n1w;
   PeriodInterval valueOf(String name) => _$valueOf(name);
   BuiltSet<PeriodInterval> get values => _$values;
 }
@@ -70,22 +70,22 @@ Serializer<PeriodInterval> _$periodIntervalSerializer =
 class _$PeriodIntervalSerializer
     implements PrimitiveSerializer<PeriodInterval> {
   static const Map<String, Object> _toWire = const <String, Object>{
-    'm1': 'm1',
-    'm5': 'm5',
-    'm15': 'm15',
-    'h1': 'h1',
-    'h4': 'h4',
-    'd1': 'd1',
-    'w1': 'w1',
+    'n1m': '1m',
+    'n5m': '5m',
+    'n15m': '15m',
+    'n1h': '1h',
+    'n4h': '4h',
+    'n1d': '1d',
+    'n1w': '1w',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
-    'm1': 'm1',
-    'm5': 'm5',
-    'm15': 'm15',
-    'h1': 'h1',
-    'h4': 'h4',
-    'd1': 'd1',
-    'w1': 'w1',
+    '1m': 'n1m',
+    '5m': 'n5m',
+    '15m': 'n15m',
+    '1h': 'n1h',
+    '4h': 'n4h',
+    '1d': 'n1d',
+    '1w': 'n1w',
   };
 
   @override
