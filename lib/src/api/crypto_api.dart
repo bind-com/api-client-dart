@@ -133,8 +133,8 @@ class CryptoApi {
   /// Parameters:
   /// * [asset] - id of crypto asset
   /// * [interval] - interval filter
-  /// * [from] - time interval start filter
-  /// * [to] - time interval end filter
+  /// * [start] - time interval start filter
+  /// * [end] - time interval end filter
   /// * [showUsd] - by default chart will be in fiat user payment currency, if this flag is true then currency is set to usd
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -148,8 +148,8 @@ class CryptoApi {
   Future<Response<BuiltList<ChartTick>>> getCryptoChartLine({ 
     required String asset,
     required PeriodInterval interval,
-    required DateTime from,
-    required DateTime to,
+    required DateTime start,
+    required DateTime end,
     bool? showUsd,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -181,8 +181,8 @@ class CryptoApi {
       r'asset': encodeQueryParameter(_serializers, asset, const FullType(String)),
       if (showUsd != null) r'show_usd': encodeQueryParameter(_serializers, showUsd, const FullType(bool)),
       r'interval': encodeQueryParameter(_serializers, interval, const FullType(PeriodInterval)),
-      r'from': encodeQueryParameter(_serializers, from, const FullType(DateTime)),
-      r'to': encodeQueryParameter(_serializers, to, const FullType(DateTime)),
+      r'start': encodeQueryParameter(_serializers, start, const FullType(DateTime)),
+      r'end': encodeQueryParameter(_serializers, end, const FullType(DateTime)),
     };
 
     final _response = await _dio.request<Object>(

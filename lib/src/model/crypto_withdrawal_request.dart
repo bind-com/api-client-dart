@@ -18,7 +18,7 @@ abstract class CryptoWithdrawalRequest implements Built<CryptoWithdrawalRequest,
     num get amount;
 
     @BuiltValueField(wireName: r'asset_id')
-    String get assetId;
+    String? get assetId;
 
     @BuiltValueField(wireName: r'destination_address_id')
     String get destinationAddressId;
@@ -49,10 +49,12 @@ class _$CryptoWithdrawalRequestSerializer implements StructuredSerializer<Crypto
             ..add(r'amount')
             ..add(serializers.serialize(object.amount,
                 specifiedType: const FullType(num)));
-        result
-            ..add(r'asset_id')
-            ..add(serializers.serialize(object.assetId,
-                specifiedType: const FullType(String)));
+        if (object.assetId != null) {
+            result
+                ..add(r'asset_id')
+                ..add(serializers.serialize(object.assetId,
+                    specifiedType: const FullType(String)));
+        }
         result
             ..add(r'destination_address_id')
             ..add(serializers.serialize(object.destinationAddressId,

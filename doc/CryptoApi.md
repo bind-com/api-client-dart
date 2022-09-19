@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCryptoChartLine**
-> BuiltList<ChartTick> getCryptoChartLine(asset, interval, from, to, showUsd)
+> BuiltList<ChartTick> getCryptoChartLine(asset, interval, start, end, showUsd)
 
 List line ticks for crypto price chart
 
@@ -87,12 +87,12 @@ import 'package:bind_api/api.dart';
 final api = BindApi().getCryptoApi();
 final String asset = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of crypto asset
 final PeriodInterval interval = ; // PeriodInterval | interval filter
-final DateTime from = 2013-10-20T19:20:30+01:00; // DateTime | time interval start filter
-final DateTime to = 2013-10-20T19:20:30+01:00; // DateTime | time interval end filter
+final DateTime start = 2013-10-20T19:20:30+01:00; // DateTime | time interval start filter
+final DateTime end = 2013-10-20T19:20:30+01:00; // DateTime | time interval end filter
 final bool showUsd = true; // bool | by default chart will be in fiat user payment currency, if this flag is true then currency is set to usd
 
 try {
-    final response = api.getCryptoChartLine(asset, interval, from, to, showUsd);
+    final response = api.getCryptoChartLine(asset, interval, start, end, showUsd);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling CryptoApi->getCryptoChartLine: $e\n');
@@ -105,8 +105,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **asset** | **String**| id of crypto asset | 
  **interval** | [**PeriodInterval**](.md)| interval filter | 
- **from** | **DateTime**| time interval start filter | 
- **to** | **DateTime**| time interval end filter | 
+ **start** | **DateTime**| time interval start filter | 
+ **end** | **DateTime**| time interval end filter | 
  **showUsd** | **bool**| by default chart will be in fiat user payment currency, if this flag is true then currency is set to usd | [optional] 
 
 ### Return type

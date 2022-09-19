@@ -10,7 +10,7 @@ class _$CryptoWithdrawalRequest extends CryptoWithdrawalRequest {
   @override
   final num amount;
   @override
-  final String assetId;
+  final String? assetId;
   @override
   final String destinationAddressId;
 
@@ -19,14 +19,10 @@ class _$CryptoWithdrawalRequest extends CryptoWithdrawalRequest {
       (new CryptoWithdrawalRequestBuilder()..update(updates))._build();
 
   _$CryptoWithdrawalRequest._(
-      {required this.amount,
-      required this.assetId,
-      required this.destinationAddressId})
+      {required this.amount, this.assetId, required this.destinationAddressId})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         amount, r'CryptoWithdrawalRequest', 'amount');
-    BuiltValueNullFieldError.checkNotNull(
-        assetId, r'CryptoWithdrawalRequest', 'assetId');
     BuiltValueNullFieldError.checkNotNull(destinationAddressId,
         r'CryptoWithdrawalRequest', 'destinationAddressId');
   }
@@ -117,8 +113,7 @@ class CryptoWithdrawalRequestBuilder
         new _$CryptoWithdrawalRequest._(
             amount: BuiltValueNullFieldError.checkNotNull(
                 amount, r'CryptoWithdrawalRequest', 'amount'),
-            assetId: BuiltValueNullFieldError.checkNotNull(
-                assetId, r'CryptoWithdrawalRequest', 'assetId'),
+            assetId: assetId,
             destinationAddressId: BuiltValueNullFieldError.checkNotNull(
                 destinationAddressId,
                 r'CryptoWithdrawalRequest',

@@ -11,7 +11,7 @@ class _$CryptoWithdrawalFeeEstimationRequest
   @override
   final num amount;
   @override
-  final String assetId;
+  final String? assetId;
   @override
   final String destinationAddressId;
 
@@ -22,14 +22,10 @@ class _$CryptoWithdrawalFeeEstimationRequest
           ._build();
 
   _$CryptoWithdrawalFeeEstimationRequest._(
-      {required this.amount,
-      required this.assetId,
-      required this.destinationAddressId})
+      {required this.amount, this.assetId, required this.destinationAddressId})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         amount, r'CryptoWithdrawalFeeEstimationRequest', 'amount');
-    BuiltValueNullFieldError.checkNotNull(
-        assetId, r'CryptoWithdrawalFeeEstimationRequest', 'assetId');
     BuiltValueNullFieldError.checkNotNull(destinationAddressId,
         r'CryptoWithdrawalFeeEstimationRequest', 'destinationAddressId');
   }
@@ -122,8 +118,7 @@ class CryptoWithdrawalFeeEstimationRequestBuilder
         new _$CryptoWithdrawalFeeEstimationRequest._(
             amount: BuiltValueNullFieldError.checkNotNull(
                 amount, r'CryptoWithdrawalFeeEstimationRequest', 'amount'),
-            assetId: BuiltValueNullFieldError.checkNotNull(
-                assetId, r'CryptoWithdrawalFeeEstimationRequest', 'assetId'),
+            assetId: assetId,
             destinationAddressId: BuiltValueNullFieldError.checkNotNull(
                 destinationAddressId,
                 r'CryptoWithdrawalFeeEstimationRequest',

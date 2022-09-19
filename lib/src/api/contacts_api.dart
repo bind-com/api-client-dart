@@ -441,7 +441,7 @@ class ContactsApi {
   /// Contacts are BIND users who have shared contact info with current user to make fast fiat and crypto transfers inside the system
   ///
   /// Parameters:
-  /// * [lastTransactions] - if true, only beneficiaries with last transactions will be returned
+  /// * [lastTransactions] - if true, only contacts with last transactions will be returned
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request

@@ -265,7 +265,7 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getContactsApi();
-final bool lastTransactions = true; // bool | if true, only beneficiaries with last transactions will be returned
+final bool lastTransactions = true; // bool | if true, only contacts with last transactions will be returned
 
 try {
     final response = api.getContacts(lastTransactions);
@@ -279,7 +279,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lastTransactions** | **bool**| if true, only beneficiaries with last transactions will be returned | [optional] 
+ **lastTransactions** | **bool**| if true, only contacts with last transactions will be returned | [optional] 
 
 ### Return type
 
