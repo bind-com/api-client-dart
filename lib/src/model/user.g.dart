@@ -27,6 +27,8 @@ class _$User extends User {
   final String? country;
   @override
   final String? paymentCurrency;
+  @override
+  final String? refundCurrency;
 
   factory _$User([void Function(UserBuilder)? updates]) =>
       (new UserBuilder()..update(updates))._build();
@@ -41,7 +43,8 @@ class _$User extends User {
       this.isApproved,
       this.passcode,
       this.country,
-      this.paymentCurrency})
+      this.paymentCurrency,
+      this.refundCurrency})
       : super._();
 
   @override
@@ -64,7 +67,8 @@ class _$User extends User {
         isApproved == other.isApproved &&
         passcode == other.passcode &&
         country == other.country &&
-        paymentCurrency == other.paymentCurrency;
+        paymentCurrency == other.paymentCurrency &&
+        refundCurrency == other.refundCurrency;
   }
 
   @override
@@ -77,16 +81,18 @@ class _$User extends User {
                         $jc(
                             $jc(
                                 $jc(
-                                    $jc($jc(0, userId.hashCode),
-                                        email.hashCode),
-                                    phoneNumber.hashCode),
-                                firstName.hashCode),
-                            lastName.hashCode),
-                        middleName.hashCode),
-                    isApproved.hashCode),
-                passcode.hashCode),
-            country.hashCode),
-        paymentCurrency.hashCode));
+                                    $jc(
+                                        $jc($jc(0, userId.hashCode),
+                                            email.hashCode),
+                                        phoneNumber.hashCode),
+                                    firstName.hashCode),
+                                lastName.hashCode),
+                            middleName.hashCode),
+                        isApproved.hashCode),
+                    passcode.hashCode),
+                country.hashCode),
+            paymentCurrency.hashCode),
+        refundCurrency.hashCode));
   }
 
   @override
@@ -101,7 +107,8 @@ class _$User extends User {
           ..add('isApproved', isApproved)
           ..add('passcode', passcode)
           ..add('country', country)
-          ..add('paymentCurrency', paymentCurrency))
+          ..add('paymentCurrency', paymentCurrency)
+          ..add('refundCurrency', refundCurrency))
         .toString();
   }
 }
@@ -150,6 +157,11 @@ class UserBuilder implements Builder<User, UserBuilder> {
   set paymentCurrency(String? paymentCurrency) =>
       _$this._paymentCurrency = paymentCurrency;
 
+  String? _refundCurrency;
+  String? get refundCurrency => _$this._refundCurrency;
+  set refundCurrency(String? refundCurrency) =>
+      _$this._refundCurrency = refundCurrency;
+
   UserBuilder() {
     User._defaults(this);
   }
@@ -167,6 +179,7 @@ class UserBuilder implements Builder<User, UserBuilder> {
       _passcode = $v.passcode;
       _country = $v.country;
       _paymentCurrency = $v.paymentCurrency;
+      _refundCurrency = $v.refundCurrency;
       _$v = null;
     }
     return this;
@@ -198,7 +211,8 @@ class UserBuilder implements Builder<User, UserBuilder> {
             isApproved: isApproved,
             passcode: passcode,
             country: country,
-            paymentCurrency: paymentCurrency);
+            paymentCurrency: paymentCurrency,
+            refundCurrency: refundCurrency);
     replace(_$result);
     return _$result;
   }
