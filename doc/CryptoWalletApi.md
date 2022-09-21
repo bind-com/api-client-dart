@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addCryptoFavorite**](CryptoWalletApi.md#addcryptofavorite) | **POST** /crypto/favorites/ | Add crypto asset to favorite
 [**createWithdrawalAddress**](CryptoWalletApi.md#createwithdrawaladdress) | **POST** /crypto/withdrawal/whitelisted_addresses/ | Create new whitelisted withdrawal address
-[**deleteCryptoFavorite**](CryptoWalletApi.md#deletecryptofavorite) | **DELETE** /crypto/favorite/{asset_id}/ | Delete asset from favorites
+[**deleteCryptoFavorite**](CryptoWalletApi.md#deletecryptofavorite) | **DELETE** /crypto/favorites/{asset_id}/ | Delete asset from favorites
 [**deleteWithdrawalAddress**](CryptoWalletApi.md#deletewithdrawaladdress) | **DELETE** /crypto/withdrawal/whitelisted_addresses/{address_id}/ | Delete withdrawal asset
 [**estimateCryptoWithdrawalFee**](CryptoWalletApi.md#estimatecryptowithdrawalfee) | **POST** /crypto/withdrawal/estimate_fee/ | Estimate fee for withdrawal
 [**getAssetsBreakdown**](CryptoWalletApi.md#getassetsbreakdown) | **GET** /crypto/breakdown/ | Get crypto asset allocation/breakdown of current User

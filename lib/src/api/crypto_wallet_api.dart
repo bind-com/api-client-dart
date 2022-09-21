@@ -225,7 +225,7 @@ class CryptoWalletApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/crypto/favorite/{asset_id}/'.replaceAll('{' r'asset_id' '}', assetId.toString());
+    final _path = r'/crypto/favorites/{asset_id}/'.replaceAll('{' r'asset_id' '}', assetId.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{

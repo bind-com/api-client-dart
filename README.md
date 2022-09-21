@@ -95,7 +95,7 @@ Class | Method | HTTP request | Description
 [*CryptoApi*](doc/CryptoApi.md) | [**performInnerCryptoTransfer**](doc/CryptoApi.md#performinnercryptotransfer) | **POST** /crypto/send/ | Send crypto inside BIND
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**addCryptoFavorite**](doc/CryptoWalletApi.md#addcryptofavorite) | **POST** /crypto/favorites/ | Add crypto asset to favorite
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**createWithdrawalAddress**](doc/CryptoWalletApi.md#createwithdrawaladdress) | **POST** /crypto/withdrawal/whitelisted_addresses/ | Create new whitelisted withdrawal address
-[*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**deleteCryptoFavorite**](doc/CryptoWalletApi.md#deletecryptofavorite) | **DELETE** /crypto/favorite/{asset_id}/ | Delete asset from favorites
+[*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**deleteCryptoFavorite**](doc/CryptoWalletApi.md#deletecryptofavorite) | **DELETE** /crypto/favorites/{asset_id}/ | Delete asset from favorites
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**deleteWithdrawalAddress**](doc/CryptoWalletApi.md#deletewithdrawaladdress) | **DELETE** /crypto/withdrawal/whitelisted_addresses/{address_id}/ | Delete withdrawal asset
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**estimateCryptoWithdrawalFee**](doc/CryptoWalletApi.md#estimatecryptowithdrawalfee) | **POST** /crypto/withdrawal/estimate_fee/ | Estimate fee for withdrawal
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getAssetsBreakdown**](doc/CryptoWalletApi.md#getassetsbreakdown) | **GET** /crypto/breakdown/ | Get crypto asset allocation/breakdown of current User
