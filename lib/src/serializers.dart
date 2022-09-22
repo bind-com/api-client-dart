@@ -90,6 +90,7 @@ import 'package:bind_api/src/model/perform_exchange_request.dart';
 import 'package:bind_api/src/model/perform_fiat_transfer_request.dart';
 import 'package:bind_api/src/model/period_interval.dart';
 import 'package:bind_api/src/model/put_limit_order_request.dart';
+import 'package:bind_api/src/model/single_crypto_balance.dart';
 import 'package:bind_api/src/model/staking.dart';
 import 'package:bind_api/src/model/staking_additional_information.dart';
 import 'package:bind_api/src/model/staking_balance.dart';
@@ -202,6 +203,7 @@ part 'serializers.g.dart';
   PerformFiatTransferRequest,
   PeriodInterval,
   PutLimitOrderRequest,
+  SingleCryptoBalance,
   Staking,
   StakingAdditionalInformation,
   StakingBalance,

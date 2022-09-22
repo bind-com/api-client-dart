@@ -104,6 +104,7 @@ Class | Method | HTTP request | Description
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getCryptoWallet**](doc/CryptoWalletApi.md#getcryptowallet) | **GET** /crypto/wallet/ | Get crypto wallet of current User - total balance and assets balances
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getCryptoWalletLight**](doc/CryptoWalletApi.md#getcryptowalletlight) | **GET** /crypto/wallet/light/ | Get crypto assets of current user with balances and prices
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getDepositAddresses**](doc/CryptoWalletApi.md#getdepositaddresses) | **GET** /crypto/assets/{asset_id}/deposit_addresses/ | Get deposit addresses for a crypto asset
+[*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getSingleCryptoBalance**](doc/CryptoWalletApi.md#getsinglecryptobalance) | **GET** /crypto/assets/{asset_id}/balance/ | Get detailed balance of a crypto asset
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getWithdrawalAddresses**](doc/CryptoWalletApi.md#getwithdrawaladdresses) | **GET** /crypto/withdrawal/whitelisted_addresses/ | Get whitelisted addresses for crypto withdrawal
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**performWithdrawalOfCrypto**](doc/CryptoWalletApi.md#performwithdrawalofcrypto) | **POST** /crypto/withdrawal/perform/ | Register a withdrawal transaction
 [*CurrencyApi*](doc/CurrencyApi.md) | [**listCryptoCurrencies**](doc/CurrencyApi.md#listcryptocurrencies) | **GET** /currencies/crypto/ | List of Crypto Currencies available at Bind
@@ -244,6 +245,7 @@ Class | Method | HTTP request | Description
  - [PerformFiatTransferRequest](doc/PerformFiatTransferRequest.md)
  - [PeriodInterval](doc/PeriodInterval.md)
  - [PutLimitOrderRequest](doc/PutLimitOrderRequest.md)
+ - [SingleCryptoBalance](doc/SingleCryptoBalance.md)
  - [Staking](doc/Staking.md)
  - [StakingAdditionalInformation](doc/StakingAdditionalInformation.md)
  - [StakingBalance](doc/StakingBalance.md)

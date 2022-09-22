@@ -88,6 +88,7 @@ doc/PerformExchangeRequest.md
 doc/PerformFiatTransferRequest.md
 doc/PeriodInterval.md
 doc/PutLimitOrderRequest.md
+doc/SingleCryptoBalance.md
 doc/StagingApi.md
 doc/Staking.md
 doc/StakingAdditionalInformation.md
@@ -225,6 +226,7 @@ lib/src/model/perform_exchange_request.dart
 lib/src/model/perform_fiat_transfer_request.dart
 lib/src/model/period_interval.dart
 lib/src/model/put_limit_order_request.dart
+lib/src/model/single_crypto_balance.dart
 lib/src/model/staking.dart
 lib/src/model/staking_additional_information.dart
 lib/src/model/staking_balance.dart
@@ -257,3 +259,4 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/single_crypto_balance_test.dart

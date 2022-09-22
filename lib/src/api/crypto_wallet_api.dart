@@ -19,6 +19,7 @@ import 'package:bind_api/src/model/crypto_withdrawal_request.dart';
 import 'package:bind_api/src/model/deposit_address.dart';
 import 'package:bind_api/src/model/error.dart';
 import 'package:bind_api/src/model/favorite_crypto_create_request.dart';
+import 'package:bind_api/src/model/single_crypto_balance.dart';
 import 'package:bind_api/src/model/withdrawal_address.dart';
 import 'package:bind_api/src/model/withdrawal_address_creation_request.dart';
 import 'package:built_collection/built_collection.dart';
@@ -868,6 +869,86 @@ class CryptoWalletApi {
     }
 
     return Response<BuiltList<DepositAddress>>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Get detailed balance of a crypto asset
+  /// 
+  ///
+  /// Parameters:
+  /// * [assetId] - id of a crypto asset
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [SingleCryptoBalance] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<SingleCryptoBalance>> getSingleCryptoBalance({ 
+    required String assetId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/crypto/assets/{asset_id}/balance/'.replaceAll('{' r'asset_id' '}', assetId.toString());
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'bearerAuth',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    SingleCryptoBalance _responseData;
+
+    try {
+      const _responseType = FullType(SingleCryptoBalance);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as SingleCryptoBalance;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<SingleCryptoBalance>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
