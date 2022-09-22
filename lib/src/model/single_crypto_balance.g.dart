@@ -8,21 +8,21 @@ part of 'single_crypto_balance.dart';
 
 class _$SingleCryptoBalance extends SingleCryptoBalance {
   @override
-  final JsonObject? assetName;
+  final String? assetName;
   @override
-  final JsonObject? assetCode;
+  final String? assetCode;
   @override
-  final JsonObject? totalBalance;
+  final num? totalBalance;
   @override
-  final JsonObject? availableBalance;
+  final num? availableBalance;
   @override
-  final JsonObject? inOrderBalance;
+  final num? inOrderBalance;
   @override
-  final JsonObject? stakedBalance;
+  final num? stakedBalance;
   @override
-  final JsonObject? paymentCurrencyCode;
+  final String? paymentCurrencyCode;
   @override
-  final JsonObject? paymentCurrencyBalance;
+  final num? paymentCurrencyBalance;
 
   factory _$SingleCryptoBalance(
           [void Function(SingleCryptoBalanceBuilder)? updates]) =>
@@ -97,42 +97,41 @@ class SingleCryptoBalanceBuilder
     implements Builder<SingleCryptoBalance, SingleCryptoBalanceBuilder> {
   _$SingleCryptoBalance? _$v;
 
-  JsonObject? _assetName;
-  JsonObject? get assetName => _$this._assetName;
-  set assetName(JsonObject? assetName) => _$this._assetName = assetName;
+  String? _assetName;
+  String? get assetName => _$this._assetName;
+  set assetName(String? assetName) => _$this._assetName = assetName;
 
-  JsonObject? _assetCode;
-  JsonObject? get assetCode => _$this._assetCode;
-  set assetCode(JsonObject? assetCode) => _$this._assetCode = assetCode;
+  String? _assetCode;
+  String? get assetCode => _$this._assetCode;
+  set assetCode(String? assetCode) => _$this._assetCode = assetCode;
 
-  JsonObject? _totalBalance;
-  JsonObject? get totalBalance => _$this._totalBalance;
-  set totalBalance(JsonObject? totalBalance) =>
-      _$this._totalBalance = totalBalance;
+  num? _totalBalance;
+  num? get totalBalance => _$this._totalBalance;
+  set totalBalance(num? totalBalance) => _$this._totalBalance = totalBalance;
 
-  JsonObject? _availableBalance;
-  JsonObject? get availableBalance => _$this._availableBalance;
-  set availableBalance(JsonObject? availableBalance) =>
+  num? _availableBalance;
+  num? get availableBalance => _$this._availableBalance;
+  set availableBalance(num? availableBalance) =>
       _$this._availableBalance = availableBalance;
 
-  JsonObject? _inOrderBalance;
-  JsonObject? get inOrderBalance => _$this._inOrderBalance;
-  set inOrderBalance(JsonObject? inOrderBalance) =>
+  num? _inOrderBalance;
+  num? get inOrderBalance => _$this._inOrderBalance;
+  set inOrderBalance(num? inOrderBalance) =>
       _$this._inOrderBalance = inOrderBalance;
 
-  JsonObject? _stakedBalance;
-  JsonObject? get stakedBalance => _$this._stakedBalance;
-  set stakedBalance(JsonObject? stakedBalance) =>
+  num? _stakedBalance;
+  num? get stakedBalance => _$this._stakedBalance;
+  set stakedBalance(num? stakedBalance) =>
       _$this._stakedBalance = stakedBalance;
 
-  JsonObject? _paymentCurrencyCode;
-  JsonObject? get paymentCurrencyCode => _$this._paymentCurrencyCode;
-  set paymentCurrencyCode(JsonObject? paymentCurrencyCode) =>
+  String? _paymentCurrencyCode;
+  String? get paymentCurrencyCode => _$this._paymentCurrencyCode;
+  set paymentCurrencyCode(String? paymentCurrencyCode) =>
       _$this._paymentCurrencyCode = paymentCurrencyCode;
 
-  JsonObject? _paymentCurrencyBalance;
-  JsonObject? get paymentCurrencyBalance => _$this._paymentCurrencyBalance;
-  set paymentCurrencyBalance(JsonObject? paymentCurrencyBalance) =>
+  num? _paymentCurrencyBalance;
+  num? get paymentCurrencyBalance => _$this._paymentCurrencyBalance;
+  set paymentCurrencyBalance(num? paymentCurrencyBalance) =>
       _$this._paymentCurrencyBalance = paymentCurrencyBalance;
 
   SingleCryptoBalanceBuilder() {

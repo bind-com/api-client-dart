@@ -2,7 +2,6 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -21,28 +20,28 @@ part 'single_crypto_balance.g.dart';
 /// * [paymentCurrencyBalance] 
 abstract class SingleCryptoBalance implements Built<SingleCryptoBalance, SingleCryptoBalanceBuilder> {
     @BuiltValueField(wireName: r'asset_name')
-    JsonObject? get assetName;
+    String? get assetName;
 
     @BuiltValueField(wireName: r'asset_code')
-    JsonObject? get assetCode;
+    String? get assetCode;
 
     @BuiltValueField(wireName: r'total_balance')
-    JsonObject? get totalBalance;
+    num? get totalBalance;
 
     @BuiltValueField(wireName: r'available_balance')
-    JsonObject? get availableBalance;
+    num? get availableBalance;
 
     @BuiltValueField(wireName: r'in_order_balance')
-    JsonObject? get inOrderBalance;
+    num? get inOrderBalance;
 
     @BuiltValueField(wireName: r'staked_balance')
-    JsonObject? get stakedBalance;
+    num? get stakedBalance;
 
     @BuiltValueField(wireName: r'payment_currency_code')
-    JsonObject? get paymentCurrencyCode;
+    String? get paymentCurrencyCode;
 
     @BuiltValueField(wireName: r'payment_currency_balance')
-    JsonObject? get paymentCurrencyBalance;
+    num? get paymentCurrencyBalance;
 
     SingleCryptoBalance._();
 
@@ -70,49 +69,49 @@ class _$SingleCryptoBalanceSerializer implements StructuredSerializer<SingleCryp
             result
                 ..add(r'asset_name')
                 ..add(serializers.serialize(object.assetName,
-                    specifiedType: const FullType.nullable(JsonObject)));
+                    specifiedType: const FullType(String)));
         }
         if (object.assetCode != null) {
             result
                 ..add(r'asset_code')
                 ..add(serializers.serialize(object.assetCode,
-                    specifiedType: const FullType.nullable(JsonObject)));
+                    specifiedType: const FullType(String)));
         }
         if (object.totalBalance != null) {
             result
                 ..add(r'total_balance')
                 ..add(serializers.serialize(object.totalBalance,
-                    specifiedType: const FullType.nullable(JsonObject)));
+                    specifiedType: const FullType(num)));
         }
         if (object.availableBalance != null) {
             result
                 ..add(r'available_balance')
                 ..add(serializers.serialize(object.availableBalance,
-                    specifiedType: const FullType.nullable(JsonObject)));
+                    specifiedType: const FullType(num)));
         }
         if (object.inOrderBalance != null) {
             result
                 ..add(r'in_order_balance')
                 ..add(serializers.serialize(object.inOrderBalance,
-                    specifiedType: const FullType.nullable(JsonObject)));
+                    specifiedType: const FullType(num)));
         }
         if (object.stakedBalance != null) {
             result
                 ..add(r'staked_balance')
                 ..add(serializers.serialize(object.stakedBalance,
-                    specifiedType: const FullType.nullable(JsonObject)));
+                    specifiedType: const FullType(num)));
         }
         if (object.paymentCurrencyCode != null) {
             result
                 ..add(r'payment_currency_code')
                 ..add(serializers.serialize(object.paymentCurrencyCode,
-                    specifiedType: const FullType.nullable(JsonObject)));
+                    specifiedType: const FullType(String)));
         }
         if (object.paymentCurrencyBalance != null) {
             result
                 ..add(r'payment_currency_balance')
                 ..add(serializers.serialize(object.paymentCurrencyBalance,
-                    specifiedType: const FullType.nullable(JsonObject)));
+                    specifiedType: const FullType(num)));
         }
         return result;
     }
@@ -131,50 +130,42 @@ class _$SingleCryptoBalanceSerializer implements StructuredSerializer<SingleCryp
             switch (key) {
                 case r'asset_name':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType.nullable(JsonObject)) as JsonObject?;
-                    if (valueDes == null) continue;
+                        specifiedType: const FullType(String)) as String;
                     result.assetName = valueDes;
                     break;
                 case r'asset_code':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType.nullable(JsonObject)) as JsonObject?;
-                    if (valueDes == null) continue;
+                        specifiedType: const FullType(String)) as String;
                     result.assetCode = valueDes;
                     break;
                 case r'total_balance':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType.nullable(JsonObject)) as JsonObject?;
-                    if (valueDes == null) continue;
+                        specifiedType: const FullType(num)) as num;
                     result.totalBalance = valueDes;
                     break;
                 case r'available_balance':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType.nullable(JsonObject)) as JsonObject?;
-                    if (valueDes == null) continue;
+                        specifiedType: const FullType(num)) as num;
                     result.availableBalance = valueDes;
                     break;
                 case r'in_order_balance':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType.nullable(JsonObject)) as JsonObject?;
-                    if (valueDes == null) continue;
+                        specifiedType: const FullType(num)) as num;
                     result.inOrderBalance = valueDes;
                     break;
                 case r'staked_balance':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType.nullable(JsonObject)) as JsonObject?;
-                    if (valueDes == null) continue;
+                        specifiedType: const FullType(num)) as num;
                     result.stakedBalance = valueDes;
                     break;
                 case r'payment_currency_code':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType.nullable(JsonObject)) as JsonObject?;
-                    if (valueDes == null) continue;
+                        specifiedType: const FullType(String)) as String;
                     result.paymentCurrencyCode = valueDes;
                     break;
                 case r'payment_currency_balance':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType.nullable(JsonObject)) as JsonObject?;
-                    if (valueDes == null) continue;
+                        specifiedType: const FullType(num)) as num;
                     result.paymentCurrencyBalance = valueDes;
                     break;
             }
