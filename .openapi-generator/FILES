@@ -263,5 +263,3 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/crypto_asset_favorite_all_of_test.dart
-test/crypto_asset_favorite_test.dart
