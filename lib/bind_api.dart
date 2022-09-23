@@ -54,6 +54,8 @@ export 'package:bind_api/src/model/crypto_account_light.dart';
 export 'package:bind_api/src/model/crypto_account_with_share.dart';
 export 'package:bind_api/src/model/crypto_account_with_share_all_of.dart';
 export 'package:bind_api/src/model/crypto_asset.dart';
+export 'package:bind_api/src/model/crypto_asset_favorite.dart';
+export 'package:bind_api/src/model/crypto_asset_favorite_all_of.dart';
 export 'package:bind_api/src/model/crypto_asset_sorting.dart';
 export 'package:bind_api/src/model/crypto_exchange_estimation_result.dart';
 export 'package:bind_api/src/model/crypto_exchange_request.dart';

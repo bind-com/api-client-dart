@@ -35,6 +35,8 @@ doc/CryptoAccountWithShare.md
 doc/CryptoAccountWithShareAllOf.md
 doc/CryptoApi.md
 doc/CryptoAsset.md
+doc/CryptoAssetFavorite.md
+doc/CryptoAssetFavoriteAllOf.md
 doc/CryptoAssetSorting.md
 doc/CryptoExchangeEstimationResult.md
 doc/CryptoExchangeRequest.md
@@ -177,6 +179,8 @@ lib/src/model/crypto_account_light.dart
 lib/src/model/crypto_account_with_share.dart
 lib/src/model/crypto_account_with_share_all_of.dart
 lib/src/model/crypto_asset.dart
+lib/src/model/crypto_asset_favorite.dart
+lib/src/model/crypto_asset_favorite_all_of.dart
 lib/src/model/crypto_asset_sorting.dart
 lib/src/model/crypto_exchange_estimation_result.dart
 lib/src/model/crypto_exchange_request.dart
@@ -259,3 +263,5 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/crypto_asset_favorite_all_of_test.dart
+test/crypto_asset_favorite_test.dart

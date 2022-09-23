@@ -107,6 +107,7 @@ Class | Method | HTTP request | Description
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getSingleCryptoBalance**](doc/CryptoWalletApi.md#getsinglecryptobalance) | **GET** /crypto/assets/{asset_id}/balance/ | Get detailed balance of a crypto asset
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getWithdrawalAddresses**](doc/CryptoWalletApi.md#getwithdrawaladdresses) | **GET** /crypto/withdrawal/whitelisted_addresses/ | Get whitelisted addresses for crypto withdrawal
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**performWithdrawalOfCrypto**](doc/CryptoWalletApi.md#performwithdrawalofcrypto) | **POST** /crypto/withdrawal/perform/ | Register a withdrawal transaction
+[*CurrencyApi*](doc/CurrencyApi.md) | [**getCryptoAsset**](doc/CurrencyApi.md#getcryptoasset) | **GET** /currencies/crypto/{crypto_currency_id} | Crypto currency information with flag favorite or not for user
 [*CurrencyApi*](doc/CurrencyApi.md) | [**listCryptoCurrencies**](doc/CurrencyApi.md#listcryptocurrencies) | **GET** /currencies/crypto/ | List of Crypto Currencies available at Bind
 [*CurrencyApi*](doc/CurrencyApi.md) | [**listCurrencies**](doc/CurrencyApi.md#listcurrencies) | **GET** /currencies/ | List of Currencies available at Bind
 [*ExchangeApi*](doc/ExchangeApi.md) | [**cancelLimitOrder**](doc/ExchangeApi.md#cancellimitorder) | **POST** /crypto/exchange/limit_orders/{order_id}/cancel | Cancel given limit order
@@ -197,6 +198,8 @@ Class | Method | HTTP request | Description
  - [CryptoAccountWithShare](doc/CryptoAccountWithShare.md)
  - [CryptoAccountWithShareAllOf](doc/CryptoAccountWithShareAllOf.md)
  - [CryptoAsset](doc/CryptoAsset.md)
+ - [CryptoAssetFavorite](doc/CryptoAssetFavorite.md)
+ - [CryptoAssetFavoriteAllOf](doc/CryptoAssetFavoriteAllOf.md)
  - [CryptoAssetSorting](doc/CryptoAssetSorting.md)
  - [CryptoExchangeEstimationResult](doc/CryptoExchangeEstimationResult.md)
  - [CryptoExchangeRequest](doc/CryptoExchangeRequest.md)

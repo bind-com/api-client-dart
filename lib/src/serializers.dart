@@ -42,6 +42,8 @@ import 'package:bind_api/src/model/crypto_account_light.dart';
 import 'package:bind_api/src/model/crypto_account_with_share.dart';
 import 'package:bind_api/src/model/crypto_account_with_share_all_of.dart';
 import 'package:bind_api/src/model/crypto_asset.dart';
+import 'package:bind_api/src/model/crypto_asset_favorite.dart';
+import 'package:bind_api/src/model/crypto_asset_favorite_all_of.dart';
 import 'package:bind_api/src/model/crypto_asset_sorting.dart';
 import 'package:bind_api/src/model/crypto_exchange_estimation_result.dart';
 import 'package:bind_api/src/model/crypto_exchange_request.dart';
@@ -155,6 +157,8 @@ part 'serializers.g.dart';
   CryptoAccountWithShare,
   CryptoAccountWithShareAllOf,
   CryptoAsset,
+  CryptoAssetFavorite,
+  CryptoAssetFavoriteAllOf,
   CryptoAssetSorting,
   CryptoExchangeEstimationResult,
   CryptoExchangeRequest,
