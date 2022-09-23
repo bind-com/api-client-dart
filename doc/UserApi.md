@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**getKYCDocumentUID**](UserApi.md#getkycdocumentuid) | **GET** /user/kyc/document_uid/ | Get KYC Document UID
 [**getUserPaymentCurrency**](UserApi.md#getuserpaymentcurrency) | **GET** /users/payment_currency/ | Get user payment currency
 [**moveKYCRequest**](UserApi.md#movekycrequest) | **POST** /users/kyc/requests/approval/ | Move KYCRequest to approval
+[**qRCodeGenerateCustomString**](UserApi.md#qrcodegeneratecustomstring) | **POST** /user/generate/custom_qr_code/ | Generate QR code with custom string
 [**updateUser**](UserApi.md#updateuser) | **PATCH** /users/{userID}/ | Update user
 [**updateUserPasscode**](UserApi.md#updateuserpasscode) | **PATCH** /users/change_passcode/{userID}/ | Update user passcode
 
@@ -314,6 +315,49 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **qRCodeGenerateCustomString**
+> qRCodeGenerateCustomString(qRCodeGenerateCustomStringRequest)
+
+Generate QR code with custom string
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getUserApi();
+final QRCodeGenerateCustomStringRequest qRCodeGenerateCustomStringRequest = ; // QRCodeGenerateCustomStringRequest | 
+
+try {
+    api.qRCodeGenerateCustomString(qRCodeGenerateCustomStringRequest);
+} catch on DioError (e) {
+    print('Exception when calling UserApi->qRCodeGenerateCustomString: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **qRCodeGenerateCustomStringRequest** | [**QRCodeGenerateCustomStringRequest**](QRCodeGenerateCustomStringRequest.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -14,6 +14,7 @@ import 'package:bind_api/src/model/error.dart';
 import 'package:bind_api/src/model/get_kyc_document_uid200_response.dart';
 import 'package:bind_api/src/model/kyc_request_move_result.dart';
 import 'package:bind_api/src/model/kyc_request_status.dart';
+import 'package:bind_api/src/model/qr_code_generate_custom_string_request.dart';
 import 'package:bind_api/src/model/update_user_passcode_request.dart';
 import 'package:bind_api/src/model/user.dart';
 
@@ -584,6 +585,78 @@ class UserApi {
       statusMessage: _response.statusMessage,
       extra: _response.extra,
     );
+  }
+
+  /// Generate QR code with custom string
+  /// 
+  ///
+  /// Parameters:
+  /// * [qRCodeGenerateCustomStringRequest] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<void>> qRCodeGenerateCustomString({ 
+    QRCodeGenerateCustomStringRequest? qRCodeGenerateCustomStringRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/user/generate/custom_qr_code/';
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'bearerAuth',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(QRCodeGenerateCustomStringRequest);
+      _bodyData = qRCodeGenerateCustomStringRequest == null ? null : _serializers.serialize(qRCodeGenerateCustomStringRequest, specifiedType: _type);
+
+    } catch(error, stackTrace) {
+      throw DioError(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
   }
 
   /// Update user
