@@ -7,6 +7,7 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'dart:typed_data';
 import 'package:bind_api/src/api_util.dart';
 import 'package:bind_api/src/model/check_kyc_status_request.dart';
 import 'package:bind_api/src/model/currency.dart';
@@ -599,9 +600,9 @@ class UserApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [Uint8List] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> qRCodeGenerateCustomString({ 
+  Future<Response<Uint8List>> qRCodeGenerateCustomString({ 
     QRCodeGenerateCustomStringRequest? qRCodeGenerateCustomStringRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -613,6 +614,7 @@ class UserApi {
     final _path = r'/user/generate/custom_qr_code/';
     final _options = Options(
       method: r'POST',
+      responseType: ResponseType.bytes,
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -656,7 +658,30 @@ class UserApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    Uint8List _responseData;
+
+    try {
+      _responseData = _response.data as Uint8List;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<Uint8List>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// Update user

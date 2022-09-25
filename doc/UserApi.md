@@ -320,7 +320,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **qRCodeGenerateCustomString**
-> qRCodeGenerateCustomString(qRCodeGenerateCustomStringRequest)
+> Uint8List qRCodeGenerateCustomString(qRCodeGenerateCustomStringRequest)
 
 Generate QR code with custom string
 
@@ -335,7 +335,8 @@ final api = BindApi().getUserApi();
 final QRCodeGenerateCustomStringRequest qRCodeGenerateCustomStringRequest = ; // QRCodeGenerateCustomStringRequest | 
 
 try {
-    api.qRCodeGenerateCustomString(qRCodeGenerateCustomStringRequest);
+    final response = api.qRCodeGenerateCustomString(qRCodeGenerateCustomStringRequest);
+    print(response);
 } catch on DioError (e) {
     print('Exception when calling UserApi->qRCodeGenerateCustomString: $e\n');
 }
@@ -349,7 +350,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Uint8List**](Uint8List.md)
 
 ### Authorization
 
@@ -358,7 +359,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: image/png, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
