@@ -19,6 +19,7 @@ part 'beneficiary.g.dart';
 /// * [accountNumber] 
 /// * [country] 
 /// * [currency] - ID of a currency associated with beneficiary country
+/// * [currencyCode] - ISO code of a currency associated with beneficiary country
 abstract class Beneficiary implements Built<Beneficiary, BeneficiaryBuilder> {
     @BuiltValueField(wireName: r'id')
     String get id;
@@ -44,6 +45,10 @@ abstract class Beneficiary implements Built<Beneficiary, BeneficiaryBuilder> {
     /// ID of a currency associated with beneficiary country
     @BuiltValueField(wireName: r'currency')
     String? get currency;
+
+    /// ISO code of a currency associated with beneficiary country
+    @BuiltValueField(wireName: r'currency_code')
+    String? get currencyCode;
 
     Beneficiary._();
 
@@ -109,6 +114,12 @@ class _$BeneficiarySerializer implements StructuredSerializer<Beneficiary> {
                 ..add(serializers.serialize(object.currency,
                     specifiedType: const FullType(String)));
         }
+        if (object.currencyCode != null) {
+            result
+                ..add(r'currency_code')
+                ..add(serializers.serialize(object.currencyCode,
+                    specifiedType: const FullType(String)));
+        }
         return result;
     }
 
@@ -163,6 +174,11 @@ class _$BeneficiarySerializer implements StructuredSerializer<Beneficiary> {
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.currency = valueDes;
+                    break;
+                case r'currency_code':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.currencyCode = valueDes;
                     break;
             }
         }

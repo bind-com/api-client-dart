@@ -23,6 +23,8 @@ class _$Beneficiary extends Beneficiary {
   final Country? country;
   @override
   final String? currency;
+  @override
+  final String? currencyCode;
 
   factory _$Beneficiary([void Function(BeneficiaryBuilder)? updates]) =>
       (new BeneficiaryBuilder()..update(updates))._build();
@@ -35,7 +37,8 @@ class _$Beneficiary extends Beneficiary {
       required this.isFavorite,
       required this.accountNumber,
       this.country,
-      this.currency})
+      this.currency,
+      this.currencyCode})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, r'Beneficiary', 'id');
     BuiltValueNullFieldError.checkNotNull(
@@ -62,7 +65,8 @@ class _$Beneficiary extends Beneficiary {
         isFavorite == other.isFavorite &&
         accountNumber == other.accountNumber &&
         country == other.country &&
-        currency == other.currency;
+        currency == other.currency &&
+        currencyCode == other.currencyCode;
   }
 
   @override
@@ -72,13 +76,15 @@ class _$Beneficiary extends Beneficiary {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, id.hashCode), firstName.hashCode),
-                            lastName.hashCode),
-                        fullName.hashCode),
-                    isFavorite.hashCode),
-                accountNumber.hashCode),
-            country.hashCode),
-        currency.hashCode));
+                        $jc(
+                            $jc($jc($jc(0, id.hashCode), firstName.hashCode),
+                                lastName.hashCode),
+                            fullName.hashCode),
+                        isFavorite.hashCode),
+                    accountNumber.hashCode),
+                country.hashCode),
+            currency.hashCode),
+        currencyCode.hashCode));
   }
 
   @override
@@ -91,7 +97,8 @@ class _$Beneficiary extends Beneficiary {
           ..add('isFavorite', isFavorite)
           ..add('accountNumber', accountNumber)
           ..add('country', country)
-          ..add('currency', currency))
+          ..add('currency', currency)
+          ..add('currencyCode', currencyCode))
         .toString();
   }
 }
@@ -132,6 +139,10 @@ class BeneficiaryBuilder implements Builder<Beneficiary, BeneficiaryBuilder> {
   String? get currency => _$this._currency;
   set currency(String? currency) => _$this._currency = currency;
 
+  String? _currencyCode;
+  String? get currencyCode => _$this._currencyCode;
+  set currencyCode(String? currencyCode) => _$this._currencyCode = currencyCode;
+
   BeneficiaryBuilder() {
     Beneficiary._defaults(this);
   }
@@ -147,6 +158,7 @@ class BeneficiaryBuilder implements Builder<Beneficiary, BeneficiaryBuilder> {
       _accountNumber = $v.accountNumber;
       _country = $v.country?.toBuilder();
       _currency = $v.currency;
+      _currencyCode = $v.currencyCode;
       _$v = null;
     }
     return this;
@@ -181,7 +193,8 @@ class BeneficiaryBuilder implements Builder<Beneficiary, BeneficiaryBuilder> {
               accountNumber: BuiltValueNullFieldError.checkNotNull(
                   accountNumber, r'Beneficiary', 'accountNumber'),
               country: _country?.build(),
-              currency: currency);
+              currency: currency,
+              currencyCode: currencyCode);
     } catch (_) {
       late String _$failedField;
       try {
