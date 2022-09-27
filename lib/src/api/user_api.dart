@@ -611,7 +611,7 @@ class UserApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/user/generate/custom_qr_code/';
+    final _path = r'/users/generate/custom_qr_code/';
     final _options = Options(
       method: r'POST',
       responseType: ResponseType.bytes,

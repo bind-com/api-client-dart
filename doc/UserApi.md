@@ -16,7 +16,7 @@ Method | HTTP request | Description
 [**getKYCDocumentUID**](UserApi.md#getkycdocumentuid) | **GET** /user/kyc/document_uid/ | Get KYC Document UID
 [**getUserPaymentCurrency**](UserApi.md#getuserpaymentcurrency) | **GET** /users/payment_currency/ | Get user payment currency
 [**moveKYCRequest**](UserApi.md#movekycrequest) | **POST** /users/kyc/requests/approval/ | Move KYCRequest to approval
-[**qRCodeGenerateCustomString**](UserApi.md#qrcodegeneratecustomstring) | **POST** /user/generate/custom_qr_code/ | Generate QR code with custom string
+[**qRCodeGenerateCustomString**](UserApi.md#qrcodegeneratecustomstring) | **POST** /users/generate/custom_qr_code/ | Generate QR code with custom string
 [**updateUser**](UserApi.md#updateuser) | **PATCH** /users/{userID}/ | Update user
 [**updateUserPasscode**](UserApi.md#updateuserpasscode) | **PATCH** /users/change_passcode/{userID}/ | Update user passcode
 

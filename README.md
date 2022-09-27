@@ -161,7 +161,7 @@ Class | Method | HTTP request | Description
 [*UserApi*](doc/UserApi.md) | [**getKYCDocumentUID**](doc/UserApi.md#getkycdocumentuid) | **GET** /user/kyc/document_uid/ | Get KYC Document UID
 [*UserApi*](doc/UserApi.md) | [**getUserPaymentCurrency**](doc/UserApi.md#getuserpaymentcurrency) | **GET** /users/payment_currency/ | Get user payment currency
 [*UserApi*](doc/UserApi.md) | [**moveKYCRequest**](doc/UserApi.md#movekycrequest) | **POST** /users/kyc/requests/approval/ | Move KYCRequest to approval
-[*UserApi*](doc/UserApi.md) | [**qRCodeGenerateCustomString**](doc/UserApi.md#qrcodegeneratecustomstring) | **POST** /user/generate/custom_qr_code/ | Generate QR code with custom string
+[*UserApi*](doc/UserApi.md) | [**qRCodeGenerateCustomString**](doc/UserApi.md#qrcodegeneratecustomstring) | **POST** /users/generate/custom_qr_code/ | Generate QR code with custom string
 [*UserApi*](doc/UserApi.md) | [**updateUser**](doc/UserApi.md#updateuser) | **PATCH** /users/{userID}/ | Update user
 [*UserApi*](doc/UserApi.md) | [**updateUserPasscode**](doc/UserApi.md#updateuserpasscode) | **PATCH** /users/change_passcode/{userID}/ | Update user passcode
 [*WalletApi*](doc/WalletApi.md) | [**getMainWallet**](doc/WalletApi.md#getmainwallet) | **GET** /wallet/ | Total balance and info about Users wallets in crypto, fiat and nft
