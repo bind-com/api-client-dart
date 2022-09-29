@@ -21,6 +21,8 @@ part 'transaction.g.dart';
 /// * [isFiat] 
 /// * [assetSourceCode] - ISO code of source asset
 /// * [assetTargetCode] - ISO code of target asset
+/// * [assetSourceIsCrypto] - is asset a crypto asset
+/// * [assetTargetIsCrypto] - is asset a crypto asset
 /// * [amountSource] 
 /// * [amountTarget] 
 /// * [type] 
@@ -55,6 +57,14 @@ abstract class Transaction implements Built<Transaction, TransactionBuilder> {
     /// ISO code of target asset
     @BuiltValueField(wireName: r'asset_target_code')
     String? get assetTargetCode;
+
+    /// is asset a crypto asset
+    @BuiltValueField(wireName: r'asset_source_is_crypto')
+    bool? get assetSourceIsCrypto;
+
+    /// is asset a crypto asset
+    @BuiltValueField(wireName: r'asset_target_is_crypto')
+    bool? get assetTargetIsCrypto;
 
     @BuiltValueField(wireName: r'amount_source')
     num? get amountSource;
@@ -146,6 +156,18 @@ class _$TransactionSerializer implements StructuredSerializer<Transaction> {
                 ..add(r'asset_target_code')
                 ..add(serializers.serialize(object.assetTargetCode,
                     specifiedType: const FullType.nullable(String)));
+        }
+        if (object.assetSourceIsCrypto != null) {
+            result
+                ..add(r'asset_source_is_crypto')
+                ..add(serializers.serialize(object.assetSourceIsCrypto,
+                    specifiedType: const FullType.nullable(bool)));
+        }
+        if (object.assetTargetIsCrypto != null) {
+            result
+                ..add(r'asset_target_is_crypto')
+                ..add(serializers.serialize(object.assetTargetIsCrypto,
+                    specifiedType: const FullType.nullable(bool)));
         }
         if (object.amountSource != null) {
             result
@@ -239,6 +261,18 @@ class _$TransactionSerializer implements StructuredSerializer<Transaction> {
                         specifiedType: const FullType.nullable(String)) as String?;
                     if (valueDes == null) continue;
                     result.assetTargetCode = valueDes;
+                    break;
+                case r'asset_source_is_crypto':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType.nullable(bool)) as bool?;
+                    if (valueDes == null) continue;
+                    result.assetSourceIsCrypto = valueDes;
+                    break;
+                case r'asset_target_is_crypto':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType.nullable(bool)) as bool?;
+                    if (valueDes == null) continue;
+                    result.assetTargetIsCrypto = valueDes;
                     break;
                 case r'amount_source':
                     final valueDes = serializers.deserialize(value,

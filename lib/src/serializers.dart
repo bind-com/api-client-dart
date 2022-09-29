@@ -14,6 +14,7 @@ import 'package:bind_api/src/model/date.dart';
 
 import 'package:bind_api/src/model/add_contact_by_user_request.dart';
 import 'package:bind_api/src/model/adjust_fiat_wallet_balance_request.dart';
+import 'package:bind_api/src/model/analysis_status.dart';
 import 'package:bind_api/src/model/bank_card_analytics.dart';
 import 'package:bind_api/src/model/bank_card_base_data.dart';
 import 'package:bind_api/src/model/bank_card_blocking_reason.dart';
@@ -29,6 +30,8 @@ import 'package:bind_api/src/model/cancel_limit_order_request.dart';
 import 'package:bind_api/src/model/candle.dart';
 import 'package:bind_api/src/model/chain_implementation.dart';
 import 'package:bind_api/src/model/chart_tick.dart';
+import 'package:bind_api/src/model/check_kyc_document_status200_response.dart';
+import 'package:bind_api/src/model/check_kyc_document_status_request.dart';
 import 'package:bind_api/src/model/check_kyc_status_request.dart';
 import 'package:bind_api/src/model/contact.dart';
 import 'package:bind_api/src/model/country.dart';
@@ -36,6 +39,7 @@ import 'package:bind_api/src/model/create_beneficiary_request.dart';
 import 'package:bind_api/src/model/create_fiat_wallet_request.dart';
 import 'package:bind_api/src/model/create_inner_fiat_request_request.dart';
 import 'package:bind_api/src/model/create_inner_fiat_transfer_request.dart';
+import 'package:bind_api/src/model/create_kyc_file200_response.dart';
 import 'package:bind_api/src/model/crypto_account.dart';
 import 'package:bind_api/src/model/crypto_account_all_of.dart';
 import 'package:bind_api/src/model/crypto_account_light.dart';
@@ -130,6 +134,7 @@ part 'serializers.g.dart';
 @SerializersFor([
   AddContactByUserRequest,
   AdjustFiatWalletBalanceRequest,
+  AnalysisStatus,
   BankCardAnalytics,
   BankCardBaseData,
   BankCardBlockingReason,
@@ -145,6 +150,8 @@ part 'serializers.g.dart';
   Candle,
   ChainImplementation,
   ChartTick,
+  CheckKYCDocumentStatus200Response,
+  CheckKYCDocumentStatusRequest,
   CheckKYCStatusRequest,
   Contact,
   Country,
@@ -152,6 +159,7 @@ part 'serializers.g.dart';
   CreateFiatWalletRequest,
   CreateInnerFiatRequestRequest,
   CreateInnerFiatTransferRequest,
+  CreateKYCFile200Response,
   CryptoAccount,
   CryptoAccountAllOf,
   CryptoAccountLight,

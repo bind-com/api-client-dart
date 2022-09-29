@@ -3,6 +3,7 @@ README.md
 analysis_options.yaml
 doc/AddContactByUserRequest.md
 doc/AdjustFiatWalletBalanceRequest.md
+doc/AnalysisStatus.md
 doc/AuthApi.md
 doc/BankCardAnalytics.md
 doc/BankCardBaseData.md
@@ -20,6 +21,8 @@ doc/CancelLimitOrderRequest.md
 doc/Candle.md
 doc/ChainImplementation.md
 doc/ChartTick.md
+doc/CheckKYCDocumentStatus200Response.md
+doc/CheckKYCDocumentStatusRequest.md
 doc/CheckKYCStatusRequest.md
 doc/Contact.md
 doc/ContactsApi.md
@@ -28,6 +31,7 @@ doc/CreateBeneficiaryRequest.md
 doc/CreateFiatWalletRequest.md
 doc/CreateInnerFiatRequestRequest.md
 doc/CreateInnerFiatTransferRequest.md
+doc/CreateKYCFile200Response.md
 doc/CryptoAccount.md
 doc/CryptoAccountAllOf.md
 doc/CryptoAccountLight.md
@@ -152,6 +156,7 @@ lib/src/auth/oauth.dart
 lib/src/date_serializer.dart
 lib/src/model/add_contact_by_user_request.dart
 lib/src/model/adjust_fiat_wallet_balance_request.dart
+lib/src/model/analysis_status.dart
 lib/src/model/bank_card_analytics.dart
 lib/src/model/bank_card_base_data.dart
 lib/src/model/bank_card_blocking_reason.dart
@@ -167,6 +172,8 @@ lib/src/model/cancel_limit_order_request.dart
 lib/src/model/candle.dart
 lib/src/model/chain_implementation.dart
 lib/src/model/chart_tick.dart
+lib/src/model/check_kyc_document_status200_response.dart
+lib/src/model/check_kyc_document_status_request.dart
 lib/src/model/check_kyc_status_request.dart
 lib/src/model/contact.dart
 lib/src/model/country.dart
@@ -174,6 +181,7 @@ lib/src/model/create_beneficiary_request.dart
 lib/src/model/create_fiat_wallet_request.dart
 lib/src/model/create_inner_fiat_request_request.dart
 lib/src/model/create_inner_fiat_transfer_request.dart
+lib/src/model/create_kyc_file200_response.dart
 lib/src/model/crypto_account.dart
 lib/src/model/crypto_account_all_of.dart
 lib/src/model/crypto_account_light.dart
@@ -265,3 +273,7 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/analysis_status_test.dart
+test/check_kyc_document_status200_response_test.dart
+test/check_kyc_document_status_request_test.dart
+test/create_kyc_file200_response_test.dart

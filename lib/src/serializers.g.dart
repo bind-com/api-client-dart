@@ -9,6 +9,7 @@ part of 'serializers.dart';
 Serializers _$serializers = (new Serializers().toBuilder()
       ..add(AddContactByUserRequest.serializer)
       ..add(AdjustFiatWalletBalanceRequest.serializer)
+      ..add(AnalysisStatus.serializer)
       ..add(BankCardAnalytics.serializer)
       ..add(BankCardBaseData.serializer)
       ..add(BankCardBlockingReason.serializer)
@@ -25,6 +26,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(Candle.serializer)
       ..add(ChainImplementation.serializer)
       ..add(ChartTick.serializer)
+      ..add(CheckKYCDocumentStatus200Response.serializer)
+      ..add(CheckKYCDocumentStatusRequest.serializer)
       ..add(CheckKYCStatusRequest.serializer)
       ..add(Contact.serializer)
       ..add(Country.serializer)
@@ -32,6 +35,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(CreateFiatWalletRequest.serializer)
       ..add(CreateInnerFiatRequestRequest.serializer)
       ..add(CreateInnerFiatTransferRequest.serializer)
+      ..add(CreateKYCFile200Response.serializer)
       ..add(CryptoAccount.serializer)
       ..add(CryptoAccountAllOf.serializer)
       ..add(CryptoAccountLight.serializer)
@@ -145,6 +149,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(FiatWalletWithPaymentCurrency)]),
           () => new ListBuilder<FiatWalletWithPaymentCurrency>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())

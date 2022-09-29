@@ -154,9 +154,12 @@ Class | Method | HTTP request | Description
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionDetails**](doc/TransactionsApi.md#gettransactiondetails) | **GET** /transactions/{transactionId} | Get list of user transactions
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionsAssetsList**](doc/TransactionsApi.md#gettransactionsassetslist) | **POST** /transactions/assets/ | Get list of assets of user transactions
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionsFiltered**](doc/TransactionsApi.md#gettransactionsfiltered) | **POST** /transactions/ | Get list of user transactions
+[*UserApi*](doc/UserApi.md) | [**checkKYCDocumentStatus**](doc/UserApi.md#checkkycdocumentstatus) | **POST** /user/kyc/check_document/ | Check KYC document status
+[*UserApi*](doc/UserApi.md) | [**checkKYCFileStatus**](doc/UserApi.md#checkkycfilestatus) | **POST** /user/kyc/check_file/ | Check KYC file status
 [*UserApi*](doc/UserApi.md) | [**checkKYCRequestApproval**](doc/UserApi.md#checkkycrequestapproval) | **GET** /users/kyc/requests/approval/ | Get status of KYC Request approval
 [*UserApi*](doc/UserApi.md) | [**checkKYCStatus**](doc/UserApi.md#checkkycstatus) | **POST** /user/kyc/check/ | Send KYC to check
 [*UserApi*](doc/UserApi.md) | [**checkPasscode**](doc/UserApi.md#checkpasscode) | **POST** /users/check/passcode/ | Check validity of user passcode
+[*UserApi*](doc/UserApi.md) | [**createKYCFile**](doc/UserApi.md#createkycfile) | **GET** /user/kyc/create_file/ | Create KYC file
 [*UserApi*](doc/UserApi.md) | [**createKYCRequest**](doc/UserApi.md#createkycrequest) | **POST** /user/kyc/requests/ | Create KYC Request
 [*UserApi*](doc/UserApi.md) | [**getKYCDocumentUID**](doc/UserApi.md#getkycdocumentuid) | **GET** /user/kyc/document_uid/ | Get KYC Document UID
 [*UserApi*](doc/UserApi.md) | [**getUserPaymentCurrency**](doc/UserApi.md#getuserpaymentcurrency) | **GET** /users/payment_currency/ | Get user payment currency
@@ -171,6 +174,7 @@ Class | Method | HTTP request | Description
 
  - [AddContactByUserRequest](doc/AddContactByUserRequest.md)
  - [AdjustFiatWalletBalanceRequest](doc/AdjustFiatWalletBalanceRequest.md)
+ - [AnalysisStatus](doc/AnalysisStatus.md)
  - [BankCardAnalytics](doc/BankCardAnalytics.md)
  - [BankCardBaseData](doc/BankCardBaseData.md)
  - [BankCardBlockingReason](doc/BankCardBlockingReason.md)
@@ -186,6 +190,8 @@ Class | Method | HTTP request | Description
  - [Candle](doc/Candle.md)
  - [ChainImplementation](doc/ChainImplementation.md)
  - [ChartTick](doc/ChartTick.md)
+ - [CheckKYCDocumentStatus200Response](doc/CheckKYCDocumentStatus200Response.md)
+ - [CheckKYCDocumentStatusRequest](doc/CheckKYCDocumentStatusRequest.md)
  - [CheckKYCStatusRequest](doc/CheckKYCStatusRequest.md)
  - [Contact](doc/Contact.md)
  - [Country](doc/Country.md)
@@ -193,6 +199,7 @@ Class | Method | HTTP request | Description
  - [CreateFiatWalletRequest](doc/CreateFiatWalletRequest.md)
  - [CreateInnerFiatRequestRequest](doc/CreateInnerFiatRequestRequest.md)
  - [CreateInnerFiatTransferRequest](doc/CreateInnerFiatTransferRequest.md)
+ - [CreateKYCFile200Response](doc/CreateKYCFile200Response.md)
  - [CryptoAccount](doc/CryptoAccount.md)
  - [CryptoAccountAllOf](doc/CryptoAccountAllOf.md)
  - [CryptoAccountLight](doc/CryptoAccountLight.md)
