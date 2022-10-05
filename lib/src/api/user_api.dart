@@ -133,7 +133,7 @@ class UserApi {
   /// 
   ///
   /// Parameters:
-  /// * [createKYCFile200Response] 
+  /// * [checkKYCDocumentStatusRequest] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -144,7 +144,7 @@ class UserApi {
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> checkKYCFileStatus({ 
-    CreateKYCFile200Response? createKYCFile200Response,
+    CheckKYCDocumentStatusRequest? checkKYCDocumentStatusRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -175,8 +175,8 @@ class UserApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CreateKYCFile200Response);
-      _bodyData = createKYCFile200Response == null ? null : _serializers.serialize(createKYCFile200Response, specifiedType: _type);
+      const _type = FullType(CheckKYCDocumentStatusRequest);
+      _bodyData = checkKYCDocumentStatusRequest == null ? null : _serializers.serialize(checkKYCDocumentStatusRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioError(
