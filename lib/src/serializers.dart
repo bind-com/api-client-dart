@@ -14,6 +14,7 @@ import 'package:bind_api/src/model/date.dart';
 
 import 'package:bind_api/src/model/add_contact_by_user_request.dart';
 import 'package:bind_api/src/model/adjust_fiat_wallet_balance_request.dart';
+import 'package:bind_api/src/model/analysis_status.dart';
 import 'package:bind_api/src/model/bank_card_analytics.dart';
 import 'package:bind_api/src/model/bank_card_base_data.dart';
 import 'package:bind_api/src/model/bank_card_blocking_reason.dart';
@@ -24,22 +25,29 @@ import 'package:bind_api/src/model/bank_card_lock_request.dart';
 import 'package:bind_api/src/model/bank_card_settings.dart';
 import 'package:bind_api/src/model/bank_card_status.dart';
 import 'package:bind_api/src/model/beneficiary.dart';
+import 'package:bind_api/src/model/beneficiary_detail.dart';
 import 'package:bind_api/src/model/cancel_limit_order_request.dart';
 import 'package:bind_api/src/model/candle.dart';
 import 'package:bind_api/src/model/chain_implementation.dart';
 import 'package:bind_api/src/model/chart_tick.dart';
+import 'package:bind_api/src/model/check_kyc_document_status200_response.dart';
+import 'package:bind_api/src/model/check_kyc_document_status_request.dart';
+import 'package:bind_api/src/model/check_kyc_status_request.dart';
 import 'package:bind_api/src/model/contact.dart';
 import 'package:bind_api/src/model/country.dart';
 import 'package:bind_api/src/model/create_beneficiary_request.dart';
 import 'package:bind_api/src/model/create_fiat_wallet_request.dart';
 import 'package:bind_api/src/model/create_inner_fiat_request_request.dart';
 import 'package:bind_api/src/model/create_inner_fiat_transfer_request.dart';
+import 'package:bind_api/src/model/create_kyc_file200_response.dart';
 import 'package:bind_api/src/model/crypto_account.dart';
 import 'package:bind_api/src/model/crypto_account_all_of.dart';
 import 'package:bind_api/src/model/crypto_account_light.dart';
 import 'package:bind_api/src/model/crypto_account_with_share.dart';
 import 'package:bind_api/src/model/crypto_account_with_share_all_of.dart';
 import 'package:bind_api/src/model/crypto_asset.dart';
+import 'package:bind_api/src/model/crypto_asset_favorite.dart';
+import 'package:bind_api/src/model/crypto_asset_favorite_all_of.dart';
 import 'package:bind_api/src/model/crypto_asset_sorting.dart';
 import 'package:bind_api/src/model/crypto_exchange_estimation_result.dart';
 import 'package:bind_api/src/model/crypto_exchange_request.dart';
@@ -54,12 +62,15 @@ import 'package:bind_api/src/model/crypto_withdrawal_fee_estimation_request.dart
 import 'package:bind_api/src/model/crypto_withdrawal_fee_estimation_result.dart';
 import 'package:bind_api/src/model/crypto_withdrawal_request.dart';
 import 'package:bind_api/src/model/currency.dart';
+import 'package:bind_api/src/model/currency_with_rate.dart';
+import 'package:bind_api/src/model/currency_with_rate_all_of.dart';
 import 'package:bind_api/src/model/deposit_address.dart';
 import 'package:bind_api/src/model/error.dart';
 import 'package:bind_api/src/model/export_history.dart';
 import 'package:bind_api/src/model/favorite_crypto_create_request.dart';
 import 'package:bind_api/src/model/fear_greed.dart';
 import 'package:bind_api/src/model/fiat_account.dart';
+import 'package:bind_api/src/model/fiat_transfer_estimate.dart';
 import 'package:bind_api/src/model/fiat_wallet.dart';
 import 'package:bind_api/src/model/fiat_wallet_all_of.dart';
 import 'package:bind_api/src/model/fiat_wallet_light.dart';
@@ -67,6 +78,12 @@ import 'package:bind_api/src/model/fiat_wallet_requisites.dart';
 import 'package:bind_api/src/model/fiat_wallet_total_balance.dart';
 import 'package:bind_api/src/model/fiat_wallet_with_payment_currency.dart';
 import 'package:bind_api/src/model/fiat_wallet_with_payment_currency_all_of.dart';
+import 'package:bind_api/src/model/get_inner_crypto_transfer_fee_request.dart';
+import 'package:bind_api/src/model/get_inner_fiat_transfer_fee_request.dart';
+import 'package:bind_api/src/model/get_kyc_document_uid200_response.dart';
+import 'package:bind_api/src/model/get_staking_timer200_response.dart';
+import 'package:bind_api/src/model/inner_crypto_transfer_fee_result.dart';
+import 'package:bind_api/src/model/inner_fiat_transfer_fee_result.dart';
 import 'package:bind_api/src/model/jwt_token.dart';
 import 'package:bind_api/src/model/kyc_field_status.dart';
 import 'package:bind_api/src/model/kyc_request_move_result.dart';
@@ -79,6 +96,16 @@ import 'package:bind_api/src/model/perform_exchange_request.dart';
 import 'package:bind_api/src/model/perform_fiat_transfer_request.dart';
 import 'package:bind_api/src/model/period_interval.dart';
 import 'package:bind_api/src/model/put_limit_order_request.dart';
+import 'package:bind_api/src/model/qr_code_generate_custom_string_request.dart';
+import 'package:bind_api/src/model/single_crypto_balance.dart';
+import 'package:bind_api/src/model/staking.dart';
+import 'package:bind_api/src/model/staking_additional_information.dart';
+import 'package:bind_api/src/model/staking_balance.dart';
+import 'package:bind_api/src/model/staking_estimate.dart';
+import 'package:bind_api/src/model/staking_information.dart';
+import 'package:bind_api/src/model/staking_perform_request.dart';
+import 'package:bind_api/src/model/staking_periods.dart';
+import 'package:bind_api/src/model/staking_releases.dart';
 import 'package:bind_api/src/model/sync_contacts_request.dart';
 import 'package:bind_api/src/model/token_detail.dart';
 import 'package:bind_api/src/model/token_stats.dart';
@@ -91,6 +118,7 @@ import 'package:bind_api/src/model/transaction_group.dart';
 import 'package:bind_api/src/model/transaction_grouping.dart';
 import 'package:bind_api/src/model/transaction_states.dart';
 import 'package:bind_api/src/model/transaction_types.dart';
+import 'package:bind_api/src/model/update_beneficiary_request.dart';
 import 'package:bind_api/src/model/update_contact_request.dart';
 import 'package:bind_api/src/model/update_user_passcode_request.dart';
 import 'package:bind_api/src/model/user.dart';
@@ -106,6 +134,7 @@ part 'serializers.g.dart';
 @SerializersFor([
   AddContactByUserRequest,
   AdjustFiatWalletBalanceRequest,
+  AnalysisStatus,
   BankCardAnalytics,
   BankCardBaseData,
   BankCardBlockingReason,
@@ -116,22 +145,29 @@ part 'serializers.g.dart';
   BankCardSettings,
   BankCardStatus,
   Beneficiary,
+  BeneficiaryDetail,
   CancelLimitOrderRequest,
   Candle,
   ChainImplementation,
   ChartTick,
+  CheckKYCDocumentStatus200Response,
+  CheckKYCDocumentStatusRequest,
+  CheckKYCStatusRequest,
   Contact,
   Country,
   CreateBeneficiaryRequest,
   CreateFiatWalletRequest,
   CreateInnerFiatRequestRequest,
   CreateInnerFiatTransferRequest,
+  CreateKYCFile200Response,
   CryptoAccount,
   CryptoAccountAllOf,
   CryptoAccountLight,
   CryptoAccountWithShare,
   CryptoAccountWithShareAllOf,
   CryptoAsset,
+  CryptoAssetFavorite,
+  CryptoAssetFavoriteAllOf,
   CryptoAssetSorting,
   CryptoExchangeEstimationResult,
   CryptoExchangeRequest,
@@ -146,12 +182,15 @@ part 'serializers.g.dart';
   CryptoWithdrawalFeeEstimationResult,
   CryptoWithdrawalRequest,
   Currency,
+  CurrencyWithRate,
+  CurrencyWithRateAllOf,
   DepositAddress,
   Error,
   ExportHistory,
   FavoriteCryptoCreateRequest,
   FearGreed,
   FiatAccount,
+  FiatTransferEstimate,
   FiatWallet,
   FiatWalletAllOf,
   FiatWalletLight,
@@ -159,6 +198,12 @@ part 'serializers.g.dart';
   FiatWalletTotalBalance,
   FiatWalletWithPaymentCurrency,
   FiatWalletWithPaymentCurrencyAllOf,
+  GetInnerCryptoTransferFeeRequest,
+  GetInnerFiatTransferFeeRequest,
+  GetKYCDocumentUID200Response,
+  GetStakingTimer200Response,
+  InnerCryptoTransferFeeResult,
+  InnerFiatTransferFeeResult,
   JWTToken,
   KYCFieldStatus,
   KYCRequestMoveResult,
@@ -171,6 +216,16 @@ part 'serializers.g.dart';
   PerformFiatTransferRequest,
   PeriodInterval,
   PutLimitOrderRequest,
+  QRCodeGenerateCustomStringRequest,
+  SingleCryptoBalance,
+  Staking,
+  StakingAdditionalInformation,
+  StakingBalance,
+  StakingEstimate,
+  StakingInformation,
+  StakingPerformRequest,
+  StakingPeriods,
+  StakingReleases,
   SyncContactsRequest,
   TokenDetail,
   TokenStats,
@@ -183,6 +238,7 @@ part 'serializers.g.dart';
   TransactionGrouping,
   TransactionStates,
   TransactionTypes,
+  UpdateBeneficiaryRequest,
   UpdateContactRequest,
   UpdateUserPasscodeRequest,
   User,
@@ -251,6 +307,10 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<CryptoAccountLight>(),
       )
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(StakingReleases)]),
+        () => ListBuilder<StakingReleases>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Contact)]),
         () => ListBuilder<Contact>(),
       )
@@ -263,12 +323,24 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<Candle>(),
       )
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(StakingPeriods)]),
+        () => ListBuilder<StakingPeriods>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(ChartTick)]),
         () => ListBuilder<ChartTick>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(WithdrawalAddress)]),
         () => ListBuilder<WithdrawalAddress>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(CurrencyWithRate)]),
+        () => ListBuilder<CurrencyWithRate>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+        () => MapBuilder<String, JsonObject>(),
       )
       ..add(const DateSerializer())
       ..add(Iso8601DateTimeSerializer()))

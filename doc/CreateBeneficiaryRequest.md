@@ -10,6 +10,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **firstName** | **String** |  | [optional] 
 **lastName** | **String** |  | [optional] 
+**fullName** | **String** |  | [optional] 
+**bank** | **String** |  | [optional] 
+**country** | **String** | UUID of a country | [optional] 
+**city** | **String** |  | [optional] 
+**address** | **String** |  | [optional] 
 **iban** | **String** |  | [optional] 
 **swiftBic** | **String** |  | [optional] 
 

@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**getBankCardsList**](FiatWalletApi.md#getbankcardslist) | **GET** /fiat/bankcards/ | Get a list of Bank Cards issued for current User
 [**getFiatAccount**](FiatWalletApi.md#getfiataccount) | **GET** /fiat/account/ | All fiat wallets of current user with total balance data
 [**getFiatCurrencies**](FiatWalletApi.md#getfiatcurrencies) | **GET** /fiat/currencies/ | List of currencies that are available for fiat account opening
+[**getFiatCurrenciesWithRates**](FiatWalletApi.md#getfiatcurrencieswithrates) | **GET** /fiat/currencies/rate/ | List of currencies that are available for fiat account opening with rates for given currency
 [**getFiatWalletDetails**](FiatWalletApi.md#getfiatwalletdetails) | **GET** /fiat/wallets/{wallet_id}/ | Wallet&#39;s details
 [**getFiatWallets**](FiatWalletApi.md#getfiatwallets) | **GET** /fiat/wallets/ | All fiat wallets of current user
 [**getFiatWalletsWithUserPaymentCurrency**](FiatWalletApi.md#getfiatwalletswithuserpaymentcurrency) | **GET** /fiat/wallets/detailed/ | All fiat wallets of current user with user payment currency info
@@ -363,6 +364,50 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**BuiltList&lt;Currency&gt;**](Currency.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getFiatCurrenciesWithRates**
+> BuiltList<CurrencyWithRate> getFiatCurrenciesWithRates(asset)
+
+List of currencies that are available for fiat account opening with rates for given currency
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getFiatWalletApi();
+final String asset = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | asset for rates
+
+try {
+    final response = api.getFiatCurrenciesWithRates(asset);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling FiatWalletApi->getFiatCurrenciesWithRates: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **asset** | **String**| asset for rates | 
+
+### Return type
+
+[**BuiltList&lt;CurrencyWithRate&gt;**](CurrencyWithRate.md)
 
 ### Authorization
 

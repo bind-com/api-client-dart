@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **assetLogo** | **String** | Logo of an asset (link to static file) | 
 **paymentCurrencyCode** | **String** | Code of a fiat currency (can be used to show currency symbol at UI) | 
 **paymentCurrencyBalance** | **num** | Balance of a wallet converted to fiat currency (payment currency of current user) | 
+**price** | **num** | price of a token in payment currency | [optional] 
 **assetPerformance** | **num** | Percentage of growth of an asset during last 24 hours | 
 **share** | **num** |  | [optional] 
 

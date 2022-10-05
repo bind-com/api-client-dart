@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addCryptoFavorite**](CryptoWalletApi.md#addcryptofavorite) | **POST** /crypto/favorites/ | Add crypto asset to favorite
 [**createWithdrawalAddress**](CryptoWalletApi.md#createwithdrawaladdress) | **POST** /crypto/withdrawal/whitelisted_addresses/ | Create new whitelisted withdrawal address
-[**deleteCryptoFavorite**](CryptoWalletApi.md#deletecryptofavorite) | **DELETE** /crypto/favorite/{asset_id}/ | Delete asset from favorites
+[**deleteCryptoFavorite**](CryptoWalletApi.md#deletecryptofavorite) | **DELETE** /crypto/favorites/{asset_id}/ | Delete asset from favorites
 [**deleteWithdrawalAddress**](CryptoWalletApi.md#deletewithdrawaladdress) | **DELETE** /crypto/withdrawal/whitelisted_addresses/{address_id}/ | Delete withdrawal asset
 [**estimateCryptoWithdrawalFee**](CryptoWalletApi.md#estimatecryptowithdrawalfee) | **POST** /crypto/withdrawal/estimate_fee/ | Estimate fee for withdrawal
 [**getAssetsBreakdown**](CryptoWalletApi.md#getassetsbreakdown) | **GET** /crypto/breakdown/ | Get crypto asset allocation/breakdown of current User
@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**getCryptoWallet**](CryptoWalletApi.md#getcryptowallet) | **GET** /crypto/wallet/ | Get crypto wallet of current User - total balance and assets balances
 [**getCryptoWalletLight**](CryptoWalletApi.md#getcryptowalletlight) | **GET** /crypto/wallet/light/ | Get crypto assets of current user with balances and prices
 [**getDepositAddresses**](CryptoWalletApi.md#getdepositaddresses) | **GET** /crypto/assets/{asset_id}/deposit_addresses/ | Get deposit addresses for a crypto asset
+[**getSingleCryptoBalance**](CryptoWalletApi.md#getsinglecryptobalance) | **GET** /crypto/assets/{asset_id}/balance/ | Get detailed balance of a crypto asset
 [**getWithdrawalAddresses**](CryptoWalletApi.md#getwithdrawaladdresses) | **GET** /crypto/withdrawal/whitelisted_addresses/ | Get whitelisted addresses for crypto withdrawal
 [**performWithdrawalOfCrypto**](CryptoWalletApi.md#performwithdrawalofcrypto) | **POST** /crypto/withdrawal/perform/ | Register a withdrawal transaction
 
@@ -477,6 +478,50 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BuiltList&lt;DepositAddress&gt;**](DepositAddress.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getSingleCryptoBalance**
+> SingleCryptoBalance getSingleCryptoBalance(assetId)
+
+Get detailed balance of a crypto asset
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getCryptoWalletApi();
+final String assetId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of a crypto asset
+
+try {
+    final response = api.getSingleCryptoBalance(assetId);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling CryptoWalletApi->getSingleCryptoBalance: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **assetId** | **String**| id of a crypto asset | 
+
+### Return type
+
+[**SingleCryptoBalance**](SingleCryptoBalance.md)
 
 ### Authorization
 

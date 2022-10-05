@@ -20,6 +20,7 @@ part 'user.g.dart';
 /// * [passcode] 
 /// * [country] 
 /// * [paymentCurrency] 
+/// * [refundCurrency] 
 abstract class User implements Built<User, UserBuilder> {
     @BuiltValueField(wireName: r'user_id')
     String? get userId;
@@ -50,6 +51,9 @@ abstract class User implements Built<User, UserBuilder> {
 
     @BuiltValueField(wireName: r'payment_currency')
     String? get paymentCurrency;
+
+    @BuiltValueField(wireName: r'refund_currency')
+    String? get refundCurrency;
 
     User._();
 
@@ -133,6 +137,12 @@ class _$UserSerializer implements StructuredSerializer<User> {
                 ..add(serializers.serialize(object.paymentCurrency,
                     specifiedType: const FullType(String)));
         }
+        if (object.refundCurrency != null) {
+            result
+                ..add(r'refund_currency')
+                ..add(serializers.serialize(object.refundCurrency,
+                    specifiedType: const FullType(String)));
+        }
         return result;
     }
 
@@ -197,6 +207,11 @@ class _$UserSerializer implements StructuredSerializer<User> {
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.paymentCurrency = valueDes;
+                    break;
+                case r'refund_currency':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.refundCurrency = valueDes;
                     break;
             }
         }

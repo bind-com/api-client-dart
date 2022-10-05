@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **type** | [**TransactionTypes**](TransactionTypes.md) |  | [optional] 
 **wallet** | **String** | id of wallet (fiat or crypto) | [optional] 
 **contact** | **String** | id of contact | [optional] 
+**startDate** | [**Date**](Date.md) | date field to filter transactions by date later or equal | [optional] 
+**endDate** | [**Date**](Date.md) | date field to filter transactions by date earlier or equal | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

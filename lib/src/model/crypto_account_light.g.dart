@@ -21,6 +21,8 @@ class _$CryptoAccountLight extends CryptoAccountLight {
   final String paymentCurrencyCode;
   @override
   final num paymentCurrencyBalance;
+  @override
+  final num? price;
 
   factory _$CryptoAccountLight(
           [void Function(CryptoAccountLightBuilder)? updates]) =>
@@ -33,7 +35,8 @@ class _$CryptoAccountLight extends CryptoAccountLight {
       required this.assetId,
       this.assetLogo,
       required this.paymentCurrencyCode,
-      required this.paymentCurrencyBalance})
+      required this.paymentCurrencyBalance,
+      this.price})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         assetBalance, r'CryptoAccountLight', 'assetBalance');
@@ -68,7 +71,8 @@ class _$CryptoAccountLight extends CryptoAccountLight {
         assetId == other.assetId &&
         assetLogo == other.assetLogo &&
         paymentCurrencyCode == other.paymentCurrencyCode &&
-        paymentCurrencyBalance == other.paymentCurrencyBalance;
+        paymentCurrencyBalance == other.paymentCurrencyBalance &&
+        price == other.price;
   }
 
   @override
@@ -77,12 +81,16 @@ class _$CryptoAccountLight extends CryptoAccountLight {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, assetBalance.hashCode), assetCode.hashCode),
-                        assetName.hashCode),
-                    assetId.hashCode),
-                assetLogo.hashCode),
-            paymentCurrencyCode.hashCode),
-        paymentCurrencyBalance.hashCode));
+                    $jc(
+                        $jc(
+                            $jc($jc(0, assetBalance.hashCode),
+                                assetCode.hashCode),
+                            assetName.hashCode),
+                        assetId.hashCode),
+                    assetLogo.hashCode),
+                paymentCurrencyCode.hashCode),
+            paymentCurrencyBalance.hashCode),
+        price.hashCode));
   }
 
   @override
@@ -94,7 +102,8 @@ class _$CryptoAccountLight extends CryptoAccountLight {
           ..add('assetId', assetId)
           ..add('assetLogo', assetLogo)
           ..add('paymentCurrencyCode', paymentCurrencyCode)
-          ..add('paymentCurrencyBalance', paymentCurrencyBalance))
+          ..add('paymentCurrencyBalance', paymentCurrencyBalance)
+          ..add('price', price))
         .toString();
   }
 }
@@ -133,6 +142,10 @@ class CryptoAccountLightBuilder
   set paymentCurrencyBalance(num? paymentCurrencyBalance) =>
       _$this._paymentCurrencyBalance = paymentCurrencyBalance;
 
+  num? _price;
+  num? get price => _$this._price;
+  set price(num? price) => _$this._price = price;
+
   CryptoAccountLightBuilder() {
     CryptoAccountLight._defaults(this);
   }
@@ -147,6 +160,7 @@ class CryptoAccountLightBuilder
       _assetLogo = $v.assetLogo;
       _paymentCurrencyCode = $v.paymentCurrencyCode;
       _paymentCurrencyBalance = $v.paymentCurrencyBalance;
+      _price = $v.price;
       _$v = null;
     }
     return this;
@@ -185,7 +199,8 @@ class CryptoAccountLightBuilder
             paymentCurrencyBalance: BuiltValueNullFieldError.checkNotNull(
                 paymentCurrencyBalance,
                 r'CryptoAccountLight',
-                'paymentCurrencyBalance'));
+                'paymentCurrencyBalance'),
+            price: price);
     replace(_$result);
     return _$result;
   }

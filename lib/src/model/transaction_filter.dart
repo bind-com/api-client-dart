@@ -4,6 +4,7 @@
 
 import 'package:bind_api/src/model/transaction_description_filling_rule_set.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:bind_api/src/model/date.dart';
 import 'package:bind_api/src/model/transaction_grouping.dart';
 import 'package:bind_api/src/model/transaction_types.dart';
 import 'package:built_value/built_value.dart';
@@ -21,6 +22,8 @@ part 'transaction_filter.g.dart';
 /// * [type] 
 /// * [wallet] - id of wallet (fiat or crypto)
 /// * [contact] - id of contact
+/// * [startDate] - date field to filter transactions by date later or equal
+/// * [endDate] - date field to filter transactions by date earlier or equal
 abstract class TransactionFilter implements Built<TransactionFilter, TransactionFilterBuilder> {
     @BuiltValueField(wireName: r'group_by')
     TransactionGrouping get groupBy;
@@ -40,7 +43,7 @@ abstract class TransactionFilter implements Built<TransactionFilter, Transaction
 
     @BuiltValueField(wireName: r'type')
     TransactionTypes? get type;
-    // enum typeEnum {  OUTGOING_INNER_FIAT_TRANSFER,  INCOMING_INNER_FIAT_TRANSFER,  OUTGOING_INNER_CRYPTO_TRANSFER,  INCOMING_INNER_CRYPTO_TRANSFER,  FIAT_EXCHANGE,  OUTGOING_SWIFT_FIAT_TRANSFER,  SETTLEMENT,  CLEARABLE,  EXCHANGE,  SEND,  FIAT_POOL_TRANSFER,  CRYPTO_WITHDRAWAL,  EXTERNAL,  SWIPE_TO_VAULT,  CRYPTO_NETWORK_TRANSFER,  CRYPTO_NETWORK_FEE,  };
+    // enum typeEnum {  OUTGOING_INNER_FIAT_TRANSFER,  INCOMING_INNER_FIAT_TRANSFER,  OUTGOING_INNER_CRYPTO_TRANSFER,  INCOMING_INNER_CRYPTO_TRANSFER,  FIAT_EXCHANGE,  OUTGOING_SWIFT_FIAT_TRANSFER,  EXCHANGE,  SEND,  CRYPTO_WITHDRAWAL,  CRYPTO_DEPOSIT,  };
 
     /// id of wallet (fiat or crypto)
     @BuiltValueField(wireName: r'wallet')
@@ -49,6 +52,14 @@ abstract class TransactionFilter implements Built<TransactionFilter, Transaction
     /// id of contact
     @BuiltValueField(wireName: r'contact')
     String? get contact;
+
+    /// date field to filter transactions by date later or equal
+    @BuiltValueField(wireName: r'start_date')
+    Date? get startDate;
+
+    /// date field to filter transactions by date earlier or equal
+    @BuiltValueField(wireName: r'end_date')
+    Date? get endDate;
 
     TransactionFilter._();
 
@@ -108,6 +119,18 @@ class _$TransactionFilterSerializer implements StructuredSerializer<TransactionF
                 ..add(serializers.serialize(object.contact,
                     specifiedType: const FullType(String)));
         }
+        if (object.startDate != null) {
+            result
+                ..add(r'start_date')
+                ..add(serializers.serialize(object.startDate,
+                    specifiedType: const FullType(Date)));
+        }
+        if (object.endDate != null) {
+            result
+                ..add(r'end_date')
+                ..add(serializers.serialize(object.endDate,
+                    specifiedType: const FullType(Date)));
+        }
         return result;
     }
 
@@ -157,6 +180,16 @@ class _$TransactionFilterSerializer implements StructuredSerializer<TransactionF
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.contact = valueDes;
+                    break;
+                case r'start_date':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(Date)) as Date;
+                    result.startDate = valueDes;
+                    break;
+                case r'end_date':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(Date)) as Date;
+                    result.endDate = valueDes;
                     break;
             }
         }

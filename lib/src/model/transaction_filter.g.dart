@@ -86,6 +86,10 @@ class _$TransactionFilter extends TransactionFilter {
   final String? wallet;
   @override
   final String? contact;
+  @override
+  final Date? startDate;
+  @override
+  final Date? endDate;
 
   factory _$TransactionFilter(
           [void Function(TransactionFilterBuilder)? updates]) =>
@@ -98,7 +102,9 @@ class _$TransactionFilter extends TransactionFilter {
       this.asset,
       this.type,
       this.wallet,
-      this.contact})
+      this.contact,
+      this.startDate,
+      this.endDate})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         groupBy, r'TransactionFilter', 'groupBy');
@@ -126,7 +132,9 @@ class _$TransactionFilter extends TransactionFilter {
         asset == other.asset &&
         type == other.type &&
         wallet == other.wallet &&
-        contact == other.contact;
+        contact == other.contact &&
+        startDate == other.startDate &&
+        endDate == other.endDate;
   }
 
   @override
@@ -135,12 +143,18 @@ class _$TransactionFilter extends TransactionFilter {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, groupBy.hashCode), assetType.hashCode),
-                        descriptionFillingRuleSet.hashCode),
-                    asset.hashCode),
-                type.hashCode),
-            wallet.hashCode),
-        contact.hashCode));
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc($jc(0, groupBy.hashCode),
+                                    assetType.hashCode),
+                                descriptionFillingRuleSet.hashCode),
+                            asset.hashCode),
+                        type.hashCode),
+                    wallet.hashCode),
+                contact.hashCode),
+            startDate.hashCode),
+        endDate.hashCode));
   }
 
   @override
@@ -152,7 +166,9 @@ class _$TransactionFilter extends TransactionFilter {
           ..add('asset', asset)
           ..add('type', type)
           ..add('wallet', wallet)
-          ..add('contact', contact))
+          ..add('contact', contact)
+          ..add('startDate', startDate)
+          ..add('endDate', endDate))
         .toString();
   }
 }
@@ -193,6 +209,14 @@ class TransactionFilterBuilder
   String? get contact => _$this._contact;
   set contact(String? contact) => _$this._contact = contact;
 
+  Date? _startDate;
+  Date? get startDate => _$this._startDate;
+  set startDate(Date? startDate) => _$this._startDate = startDate;
+
+  Date? _endDate;
+  Date? get endDate => _$this._endDate;
+  set endDate(Date? endDate) => _$this._endDate = endDate;
+
   TransactionFilterBuilder() {
     TransactionFilter._defaults(this);
   }
@@ -207,6 +231,8 @@ class TransactionFilterBuilder
       _type = $v.type;
       _wallet = $v.wallet;
       _contact = $v.contact;
+      _startDate = $v.startDate;
+      _endDate = $v.endDate;
       _$v = null;
     }
     return this;
@@ -240,7 +266,9 @@ class TransactionFilterBuilder
             asset: asset,
             type: type,
             wallet: wallet,
-            contact: contact);
+            contact: contact,
+            startDate: startDate,
+            endDate: endDate);
     replace(_$result);
     return _$result;
   }

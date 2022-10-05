@@ -18,21 +18,12 @@ const TransactionTypes _$FIAT_EXCHANGE =
     const TransactionTypes._('FIAT_EXCHANGE');
 const TransactionTypes _$OUTGOING_SWIFT_FIAT_TRANSFER =
     const TransactionTypes._('OUTGOING_SWIFT_FIAT_TRANSFER');
-const TransactionTypes _$SETTLEMENT = const TransactionTypes._('SETTLEMENT');
-const TransactionTypes _$CLEARABLE = const TransactionTypes._('CLEARABLE');
 const TransactionTypes _$EXCHANGE = const TransactionTypes._('EXCHANGE');
 const TransactionTypes _$SEND = const TransactionTypes._('SEND');
-const TransactionTypes _$FIAT_POOL_TRANSFER =
-    const TransactionTypes._('FIAT_POOL_TRANSFER');
 const TransactionTypes _$CRYPTO_WITHDRAWAL =
     const TransactionTypes._('CRYPTO_WITHDRAWAL');
-const TransactionTypes _$EXTERNAL = const TransactionTypes._('EXTERNAL');
-const TransactionTypes _$SWIPE_TO_VAULT =
-    const TransactionTypes._('SWIPE_TO_VAULT');
-const TransactionTypes _$CRYPTO_NETWORK_TRANSFER =
-    const TransactionTypes._('CRYPTO_NETWORK_TRANSFER');
-const TransactionTypes _$CRYPTO_NETWORK_FEE =
-    const TransactionTypes._('CRYPTO_NETWORK_FEE');
+const TransactionTypes _$CRYPTO_DEPOSIT =
+    const TransactionTypes._('CRYPTO_DEPOSIT');
 
 TransactionTypes _$valueOf(String name) {
   switch (name) {
@@ -48,26 +39,14 @@ TransactionTypes _$valueOf(String name) {
       return _$FIAT_EXCHANGE;
     case 'OUTGOING_SWIFT_FIAT_TRANSFER':
       return _$OUTGOING_SWIFT_FIAT_TRANSFER;
-    case 'SETTLEMENT':
-      return _$SETTLEMENT;
-    case 'CLEARABLE':
-      return _$CLEARABLE;
     case 'EXCHANGE':
       return _$EXCHANGE;
     case 'SEND':
       return _$SEND;
-    case 'FIAT_POOL_TRANSFER':
-      return _$FIAT_POOL_TRANSFER;
     case 'CRYPTO_WITHDRAWAL':
       return _$CRYPTO_WITHDRAWAL;
-    case 'EXTERNAL':
-      return _$EXTERNAL;
-    case 'SWIPE_TO_VAULT':
-      return _$SWIPE_TO_VAULT;
-    case 'CRYPTO_NETWORK_TRANSFER':
-      return _$CRYPTO_NETWORK_TRANSFER;
-    case 'CRYPTO_NETWORK_FEE':
-      return _$CRYPTO_NETWORK_FEE;
+    case 'CRYPTO_DEPOSIT':
+      return _$CRYPTO_DEPOSIT;
     default:
       throw new ArgumentError(name);
   }
@@ -81,16 +60,10 @@ final BuiltSet<TransactionTypes> _$values =
   _$INCOMING_INNER_CRYPTO_TRANSFER,
   _$FIAT_EXCHANGE,
   _$OUTGOING_SWIFT_FIAT_TRANSFER,
-  _$SETTLEMENT,
-  _$CLEARABLE,
   _$EXCHANGE,
   _$SEND,
-  _$FIAT_POOL_TRANSFER,
   _$CRYPTO_WITHDRAWAL,
-  _$EXTERNAL,
-  _$SWIPE_TO_VAULT,
-  _$CRYPTO_NETWORK_TRANSFER,
-  _$CRYPTO_NETWORK_FEE,
+  _$CRYPTO_DEPOSIT,
 ]);
 
 class _$TransactionTypesMeta {
@@ -106,16 +79,10 @@ class _$TransactionTypesMeta {
   TransactionTypes get FIAT_EXCHANGE => _$FIAT_EXCHANGE;
   TransactionTypes get OUTGOING_SWIFT_FIAT_TRANSFER =>
       _$OUTGOING_SWIFT_FIAT_TRANSFER;
-  TransactionTypes get SETTLEMENT => _$SETTLEMENT;
-  TransactionTypes get CLEARABLE => _$CLEARABLE;
   TransactionTypes get EXCHANGE => _$EXCHANGE;
   TransactionTypes get SEND => _$SEND;
-  TransactionTypes get FIAT_POOL_TRANSFER => _$FIAT_POOL_TRANSFER;
   TransactionTypes get CRYPTO_WITHDRAWAL => _$CRYPTO_WITHDRAWAL;
-  TransactionTypes get EXTERNAL => _$EXTERNAL;
-  TransactionTypes get SWIPE_TO_VAULT => _$SWIPE_TO_VAULT;
-  TransactionTypes get CRYPTO_NETWORK_TRANSFER => _$CRYPTO_NETWORK_TRANSFER;
-  TransactionTypes get CRYPTO_NETWORK_FEE => _$CRYPTO_NETWORK_FEE;
+  TransactionTypes get CRYPTO_DEPOSIT => _$CRYPTO_DEPOSIT;
   TransactionTypes valueOf(String name) => _$valueOf(name);
   BuiltSet<TransactionTypes> get values => _$values;
 }
@@ -137,16 +104,10 @@ class _$TransactionTypesSerializer
     'INCOMING_INNER_CRYPTO_TRANSFER': 'INCOMING_INNER_CRYPTO_TRANSFER',
     'FIAT_EXCHANGE': 'FIAT_EXCHANGE',
     'OUTGOING_SWIFT_FIAT_TRANSFER': 'OUTGOING_SWIFT_FIAT_TRANSFER',
-    'SETTLEMENT': 'SETTLEMENT',
-    'CLEARABLE': 'CLEARABLE',
     'EXCHANGE': 'EXCHANGE',
     'SEND': 'SEND',
-    'FIAT_POOL_TRANSFER': 'FIAT_POOL_TRANSFER',
     'CRYPTO_WITHDRAWAL': 'CRYPTO_WITHDRAWAL',
-    'EXTERNAL': 'EXTERNAL',
-    'SWIPE_TO_VAULT': 'SWIPE_TO_VAULT',
-    'CRYPTO_NETWORK_TRANSFER': 'CRYPTO_NETWORK_TRANSFER',
-    'CRYPTO_NETWORK_FEE': 'CRYPTO_NETWORK_FEE',
+    'CRYPTO_DEPOSIT': 'CRYPTO_DEPOSIT',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'OUTGOING_INNER_FIAT_TRANSFER': 'OUTGOING_INNER_FIAT_TRANSFER',
@@ -155,16 +116,10 @@ class _$TransactionTypesSerializer
     'INCOMING_INNER_CRYPTO_TRANSFER': 'INCOMING_INNER_CRYPTO_TRANSFER',
     'FIAT_EXCHANGE': 'FIAT_EXCHANGE',
     'OUTGOING_SWIFT_FIAT_TRANSFER': 'OUTGOING_SWIFT_FIAT_TRANSFER',
-    'SETTLEMENT': 'SETTLEMENT',
-    'CLEARABLE': 'CLEARABLE',
     'EXCHANGE': 'EXCHANGE',
     'SEND': 'SEND',
-    'FIAT_POOL_TRANSFER': 'FIAT_POOL_TRANSFER',
     'CRYPTO_WITHDRAWAL': 'CRYPTO_WITHDRAWAL',
-    'EXTERNAL': 'EXTERNAL',
-    'SWIPE_TO_VAULT': 'SWIPE_TO_VAULT',
-    'CRYPTO_NETWORK_TRANSFER': 'CRYPTO_NETWORK_TRANSFER',
-    'CRYPTO_NETWORK_FEE': 'CRYPTO_NETWORK_FEE',
+    'CRYPTO_DEPOSIT': 'CRYPTO_DEPOSIT',
   };
 
   @override

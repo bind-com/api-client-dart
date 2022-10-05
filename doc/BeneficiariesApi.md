@@ -10,9 +10,12 @@ All URIs are relative to *https://api.thebind.uk/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createBeneficiary**](BeneficiariesApi.md#createbeneficiary) | **POST** /beneficiaries/ | Add new beneficiary
+[**deleteBeneficiary**](BeneficiariesApi.md#deletebeneficiary) | **DELETE** /beneficiaries/{beneficiary_id}/ | Delete beneficiary
+[**estimateFiatTransfer**](BeneficiariesApi.md#estimatefiattransfer) | **POST** /fiat/transfer/review/ | Preview of fiat transfer
 [**getBeneficiaries**](BeneficiariesApi.md#getbeneficiaries) | **GET** /beneficiaries/ | List of beneficiaries of current user
+[**getBeneficiary**](BeneficiariesApi.md#getbeneficiary) | **GET** /beneficiaries/{beneficiary_id}/ | Get beneficiary by id
 [**performFiatTransfer**](BeneficiariesApi.md#performfiattransfer) | **POST** /fiat/transfer/ | Send money to outer bank account
-[**updateBeneficiary**](BeneficiariesApi.md#updatebeneficiary) | **PATCH** /beneficiaries/{beneficiary_id}/ | Update beneficiary data (add/remove from favorite)
+[**updateBeneficiary**](BeneficiariesApi.md#updatebeneficiary) | **PATCH** /beneficiaries/{beneficiary_id}/ | Update beneficiary data
 
 
 # **createBeneficiary**
@@ -61,8 +64,97 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **deleteBeneficiary**
+> deleteBeneficiary(beneficiaryId)
+
+Delete beneficiary
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getBeneficiariesApi();
+final String beneficiaryId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of beneficiary
+
+try {
+    api.deleteBeneficiary(beneficiaryId);
+} catch on DioError (e) {
+    print('Exception when calling BeneficiariesApi->deleteBeneficiary: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **beneficiaryId** | **String**| id of beneficiary | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **estimateFiatTransfer**
+> FiatTransferEstimate estimateFiatTransfer(performFiatTransferRequest)
+
+Preview of fiat transfer
+
+Preview data before transfer
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getBeneficiariesApi();
+final PerformFiatTransferRequest performFiatTransferRequest = ; // PerformFiatTransferRequest | 
+
+try {
+    final response = api.estimateFiatTransfer(performFiatTransferRequest);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling BeneficiariesApi->estimateFiatTransfer: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **performFiatTransferRequest** | [**PerformFiatTransferRequest**](PerformFiatTransferRequest.md)|  | [optional] 
+
+### Return type
+
+[**FiatTransferEstimate**](FiatTransferEstimate.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getBeneficiaries**
-> BuiltList<Beneficiary> getBeneficiaries()
+> BuiltList<Beneficiary> getBeneficiaries(lastTransactions)
 
 List of beneficiaries of current user
 
@@ -76,9 +168,10 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getBeneficiariesApi();
+final bool lastTransactions = true; // bool | if true, only beneficiaries with last transactions will be returned
 
 try {
-    final response = api.getBeneficiaries();
+    final response = api.getBeneficiaries(lastTransactions);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling BeneficiariesApi->getBeneficiaries: $e\n');
@@ -86,11 +179,58 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **lastTransactions** | **bool**| if true, only beneficiaries with last transactions will be returned | [optional] 
 
 ### Return type
 
 [**BuiltList&lt;Beneficiary&gt;**](Beneficiary.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getBeneficiary**
+> BeneficiaryDetail getBeneficiary(beneficiaryId)
+
+Get beneficiary by id
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getBeneficiariesApi();
+final String beneficiaryId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of a beneficiary
+
+try {
+    final response = api.getBeneficiary(beneficiaryId);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling BeneficiariesApi->getBeneficiary: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **beneficiaryId** | **String**| id of a beneficiary | 
+
+### Return type
+
+[**BeneficiaryDetail**](BeneficiaryDetail.md)
 
 ### Authorization
 
@@ -149,9 +289,9 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateBeneficiary**
-> updateBeneficiary(beneficiaryId, updateContactRequest)
+> updateBeneficiary(beneficiaryId, updateBeneficiaryRequest)
 
-Update beneficiary data (add/remove from favorite)
+Update beneficiary data
 
 ### Example
 ```dart
@@ -162,10 +302,10 @@ import 'package:bind_api/api.dart';
 
 final api = BindApi().getBeneficiariesApi();
 final String beneficiaryId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of beneficiary
-final UpdateContactRequest updateContactRequest = ; // UpdateContactRequest | 
+final UpdateBeneficiaryRequest updateBeneficiaryRequest = ; // UpdateBeneficiaryRequest | 
 
 try {
-    api.updateBeneficiary(beneficiaryId, updateContactRequest);
+    api.updateBeneficiary(beneficiaryId, updateBeneficiaryRequest);
 } catch on DioError (e) {
     print('Exception when calling BeneficiariesApi->updateBeneficiary: $e\n');
 }
@@ -176,7 +316,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **beneficiaryId** | **String**| id of beneficiary | 
- **updateContactRequest** | [**UpdateContactRequest**](UpdateContactRequest.md)|  | [optional] 
+ **updateBeneficiaryRequest** | [**UpdateBeneficiaryRequest**](UpdateBeneficiaryRequest.md)|  | [optional] 
 
 ### Return type
 

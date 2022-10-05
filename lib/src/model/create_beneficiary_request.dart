@@ -12,6 +12,11 @@ part 'create_beneficiary_request.g.dart';
 /// Properties:
 /// * [firstName] 
 /// * [lastName] 
+/// * [fullName] 
+/// * [bank] 
+/// * [country] - UUID of a country
+/// * [city] 
+/// * [address] 
 /// * [iban] 
 /// * [swiftBic] 
 abstract class CreateBeneficiaryRequest implements Built<CreateBeneficiaryRequest, CreateBeneficiaryRequestBuilder> {
@@ -20,6 +25,22 @@ abstract class CreateBeneficiaryRequest implements Built<CreateBeneficiaryReques
 
     @BuiltValueField(wireName: r'last_name')
     String? get lastName;
+
+    @BuiltValueField(wireName: r'full_name')
+    String? get fullName;
+
+    @BuiltValueField(wireName: r'bank')
+    String? get bank;
+
+    /// UUID of a country
+    @BuiltValueField(wireName: r'country')
+    String? get country;
+
+    @BuiltValueField(wireName: r'city')
+    String? get city;
+
+    @BuiltValueField(wireName: r'address')
+    String? get address;
 
     @BuiltValueField(wireName: r'iban')
     String? get iban;
@@ -61,6 +82,36 @@ class _$CreateBeneficiaryRequestSerializer implements StructuredSerializer<Creat
                 ..add(serializers.serialize(object.lastName,
                     specifiedType: const FullType(String)));
         }
+        if (object.fullName != null) {
+            result
+                ..add(r'full_name')
+                ..add(serializers.serialize(object.fullName,
+                    specifiedType: const FullType(String)));
+        }
+        if (object.bank != null) {
+            result
+                ..add(r'bank')
+                ..add(serializers.serialize(object.bank,
+                    specifiedType: const FullType(String)));
+        }
+        if (object.country != null) {
+            result
+                ..add(r'country')
+                ..add(serializers.serialize(object.country,
+                    specifiedType: const FullType(String)));
+        }
+        if (object.city != null) {
+            result
+                ..add(r'city')
+                ..add(serializers.serialize(object.city,
+                    specifiedType: const FullType(String)));
+        }
+        if (object.address != null) {
+            result
+                ..add(r'address')
+                ..add(serializers.serialize(object.address,
+                    specifiedType: const FullType(String)));
+        }
         if (object.iban != null) {
             result
                 ..add(r'iban')
@@ -97,6 +148,31 @@ class _$CreateBeneficiaryRequestSerializer implements StructuredSerializer<Creat
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.lastName = valueDes;
+                    break;
+                case r'full_name':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.fullName = valueDes;
+                    break;
+                case r'bank':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.bank = valueDes;
+                    break;
+                case r'country':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.country = valueDes;
+                    break;
+                case r'city':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.city = valueDes;
+                    break;
+                case r'address':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.address = valueDes;
                     break;
                 case r'iban':
                     final valueDes = serializers.deserialize(value,

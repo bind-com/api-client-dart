@@ -14,6 +14,10 @@ class _$CreateInnerFiatTransferRequest extends CreateInnerFiatTransferRequest {
   @override
   final String? currency;
   @override
+  final String? fiatAccount;
+  @override
+  final String? receiverCurrency;
+  @override
   final num? amount;
   @override
   final String? note;
@@ -23,7 +27,13 @@ class _$CreateInnerFiatTransferRequest extends CreateInnerFiatTransferRequest {
       (new CreateInnerFiatTransferRequestBuilder()..update(updates))._build();
 
   _$CreateInnerFiatTransferRequest._(
-      {this.userId, this.contactId, this.currency, this.amount, this.note})
+      {this.userId,
+      this.contactId,
+      this.currency,
+      this.fiatAccount,
+      this.receiverCurrency,
+      this.amount,
+      this.note})
       : super._();
 
   @override
@@ -42,6 +52,8 @@ class _$CreateInnerFiatTransferRequest extends CreateInnerFiatTransferRequest {
         userId == other.userId &&
         contactId == other.contactId &&
         currency == other.currency &&
+        fiatAccount == other.fiatAccount &&
+        receiverCurrency == other.receiverCurrency &&
         amount == other.amount &&
         note == other.note;
   }
@@ -50,8 +62,12 @@ class _$CreateInnerFiatTransferRequest extends CreateInnerFiatTransferRequest {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, userId.hashCode), contactId.hashCode),
-                currency.hashCode),
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, userId.hashCode), contactId.hashCode),
+                        currency.hashCode),
+                    fiatAccount.hashCode),
+                receiverCurrency.hashCode),
             amount.hashCode),
         note.hashCode));
   }
@@ -62,6 +78,8 @@ class _$CreateInnerFiatTransferRequest extends CreateInnerFiatTransferRequest {
           ..add('userId', userId)
           ..add('contactId', contactId)
           ..add('currency', currency)
+          ..add('fiatAccount', fiatAccount)
+          ..add('receiverCurrency', receiverCurrency)
           ..add('amount', amount)
           ..add('note', note))
         .toString();
@@ -86,6 +104,15 @@ class CreateInnerFiatTransferRequestBuilder
   String? get currency => _$this._currency;
   set currency(String? currency) => _$this._currency = currency;
 
+  String? _fiatAccount;
+  String? get fiatAccount => _$this._fiatAccount;
+  set fiatAccount(String? fiatAccount) => _$this._fiatAccount = fiatAccount;
+
+  String? _receiverCurrency;
+  String? get receiverCurrency => _$this._receiverCurrency;
+  set receiverCurrency(String? receiverCurrency) =>
+      _$this._receiverCurrency = receiverCurrency;
+
   num? _amount;
   num? get amount => _$this._amount;
   set amount(num? amount) => _$this._amount = amount;
@@ -104,6 +131,8 @@ class CreateInnerFiatTransferRequestBuilder
       _userId = $v.userId;
       _contactId = $v.contactId;
       _currency = $v.currency;
+      _fiatAccount = $v.fiatAccount;
+      _receiverCurrency = $v.receiverCurrency;
       _amount = $v.amount;
       _note = $v.note;
       _$v = null;
@@ -131,6 +160,8 @@ class CreateInnerFiatTransferRequestBuilder
             userId: userId,
             contactId: contactId,
             currency: currency,
+            fiatAccount: fiatAccount,
+            receiverCurrency: receiverCurrency,
             amount: amount,
             note: note);
     replace(_$result);

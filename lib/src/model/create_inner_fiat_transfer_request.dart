@@ -13,6 +13,8 @@ part 'create_inner_fiat_transfer_request.g.dart';
 /// * [userId] 
 /// * [contactId] - id of user contact
 /// * [currency] 
+/// * [fiatAccount] 
+/// * [receiverCurrency] 
 /// * [amount] 
 /// * [note] 
 abstract class CreateInnerFiatTransferRequest implements Built<CreateInnerFiatTransferRequest, CreateInnerFiatTransferRequestBuilder> {
@@ -25,6 +27,12 @@ abstract class CreateInnerFiatTransferRequest implements Built<CreateInnerFiatTr
 
     @BuiltValueField(wireName: r'currency')
     String? get currency;
+
+    @BuiltValueField(wireName: r'fiat_account')
+    String? get fiatAccount;
+
+    @BuiltValueField(wireName: r'receiver_currency')
+    String? get receiverCurrency;
 
     @BuiltValueField(wireName: r'amount')
     num? get amount;
@@ -72,6 +80,18 @@ class _$CreateInnerFiatTransferRequestSerializer implements StructuredSerializer
                 ..add(serializers.serialize(object.currency,
                     specifiedType: const FullType(String)));
         }
+        if (object.fiatAccount != null) {
+            result
+                ..add(r'fiat_account')
+                ..add(serializers.serialize(object.fiatAccount,
+                    specifiedType: const FullType(String)));
+        }
+        if (object.receiverCurrency != null) {
+            result
+                ..add(r'receiver_currency')
+                ..add(serializers.serialize(object.receiverCurrency,
+                    specifiedType: const FullType(String)));
+        }
         if (object.amount != null) {
             result
                 ..add(r'amount')
@@ -113,6 +133,16 @@ class _$CreateInnerFiatTransferRequestSerializer implements StructuredSerializer
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.currency = valueDes;
+                    break;
+                case r'fiat_account':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.fiatAccount = valueDes;
+                    break;
+                case r'receiver_currency':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.receiverCurrency = valueDes;
                     break;
                 case r'amount':
                     final valueDes = serializers.deserialize(value,

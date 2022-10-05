@@ -12,6 +12,16 @@ class _$CreateBeneficiaryRequest extends CreateBeneficiaryRequest {
   @override
   final String? lastName;
   @override
+  final String? fullName;
+  @override
+  final String? bank;
+  @override
+  final String? country;
+  @override
+  final String? city;
+  @override
+  final String? address;
+  @override
   final String? iban;
   @override
   final String? swiftBic;
@@ -21,7 +31,15 @@ class _$CreateBeneficiaryRequest extends CreateBeneficiaryRequest {
       (new CreateBeneficiaryRequestBuilder()..update(updates))._build();
 
   _$CreateBeneficiaryRequest._(
-      {this.firstName, this.lastName, this.iban, this.swiftBic})
+      {this.firstName,
+      this.lastName,
+      this.fullName,
+      this.bank,
+      this.country,
+      this.city,
+      this.address,
+      this.iban,
+      this.swiftBic})
       : super._();
 
   @override
@@ -39,6 +57,11 @@ class _$CreateBeneficiaryRequest extends CreateBeneficiaryRequest {
     return other is CreateBeneficiaryRequest &&
         firstName == other.firstName &&
         lastName == other.lastName &&
+        fullName == other.fullName &&
+        bank == other.bank &&
+        country == other.country &&
+        city == other.city &&
+        address == other.address &&
         iban == other.iban &&
         swiftBic == other.swiftBic;
   }
@@ -46,7 +69,20 @@ class _$CreateBeneficiaryRequest extends CreateBeneficiaryRequest {
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, firstName.hashCode), lastName.hashCode), iban.hashCode),
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc($jc(0, firstName.hashCode),
+                                    lastName.hashCode),
+                                fullName.hashCode),
+                            bank.hashCode),
+                        country.hashCode),
+                    city.hashCode),
+                address.hashCode),
+            iban.hashCode),
         swiftBic.hashCode));
   }
 
@@ -55,6 +91,11 @@ class _$CreateBeneficiaryRequest extends CreateBeneficiaryRequest {
     return (newBuiltValueToStringHelper(r'CreateBeneficiaryRequest')
           ..add('firstName', firstName)
           ..add('lastName', lastName)
+          ..add('fullName', fullName)
+          ..add('bank', bank)
+          ..add('country', country)
+          ..add('city', city)
+          ..add('address', address)
           ..add('iban', iban)
           ..add('swiftBic', swiftBic))
         .toString();
@@ -74,6 +115,26 @@ class CreateBeneficiaryRequestBuilder
   String? get lastName => _$this._lastName;
   set lastName(String? lastName) => _$this._lastName = lastName;
 
+  String? _fullName;
+  String? get fullName => _$this._fullName;
+  set fullName(String? fullName) => _$this._fullName = fullName;
+
+  String? _bank;
+  String? get bank => _$this._bank;
+  set bank(String? bank) => _$this._bank = bank;
+
+  String? _country;
+  String? get country => _$this._country;
+  set country(String? country) => _$this._country = country;
+
+  String? _city;
+  String? get city => _$this._city;
+  set city(String? city) => _$this._city = city;
+
+  String? _address;
+  String? get address => _$this._address;
+  set address(String? address) => _$this._address = address;
+
   String? _iban;
   String? get iban => _$this._iban;
   set iban(String? iban) => _$this._iban = iban;
@@ -91,6 +152,11 @@ class CreateBeneficiaryRequestBuilder
     if ($v != null) {
       _firstName = $v.firstName;
       _lastName = $v.lastName;
+      _fullName = $v.fullName;
+      _bank = $v.bank;
+      _country = $v.country;
+      _city = $v.city;
+      _address = $v.address;
       _iban = $v.iban;
       _swiftBic = $v.swiftBic;
       _$v = null;
@@ -117,6 +183,11 @@ class CreateBeneficiaryRequestBuilder
         new _$CreateBeneficiaryRequest._(
             firstName: firstName,
             lastName: lastName,
+            fullName: fullName,
+            bank: bank,
+            country: country,
+            city: city,
+            address: address,
             iban: iban,
             swiftBic: swiftBic);
     replace(_$result);

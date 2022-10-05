@@ -15,6 +15,8 @@ import 'package:bind_api/src/model/crypto_asset_sorting.dart';
 import 'package:bind_api/src/model/crypto_market_stats.dart';
 import 'package:bind_api/src/model/crypto_overview_element.dart';
 import 'package:bind_api/src/model/error.dart';
+import 'package:bind_api/src/model/get_inner_crypto_transfer_fee_request.dart';
+import 'package:bind_api/src/model/inner_crypto_transfer_fee_result.dart';
 import 'package:bind_api/src/model/period_interval.dart';
 import 'package:bind_api/src/model/token_detail.dart';
 import 'package:bind_api/src/model/token_stats.dart';
@@ -129,9 +131,10 @@ class CryptoApi {
   /// 
   ///
   /// Parameters:
+  /// * [asset] - id of crypto asset
   /// * [interval] - interval filter
-  /// * [from] - time interval start filter
-  /// * [to] - time interval end filter
+  /// * [start] - time interval start filter
+  /// * [end] - time interval end filter
   /// * [showUsd] - by default chart will be in fiat user payment currency, if this flag is true then currency is set to usd
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -143,9 +146,10 @@ class CryptoApi {
   /// Returns a [Future] containing a [Response] with a [BuiltList<ChartTick>] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BuiltList<ChartTick>>> getCryptoChartLine({ 
+    required String asset,
     required PeriodInterval interval,
-    required DateTime from,
-    required DateTime to,
+    required DateTime start,
+    required DateTime end,
     bool? showUsd,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -174,10 +178,11 @@ class CryptoApi {
     );
 
     final _queryParameters = <String, dynamic>{
+      r'asset': encodeQueryParameter(_serializers, asset, const FullType(String)),
       if (showUsd != null) r'show_usd': encodeQueryParameter(_serializers, showUsd, const FullType(bool)),
       r'interval': encodeQueryParameter(_serializers, interval, const FullType(PeriodInterval)),
-      r'from': encodeQueryParameter(_serializers, from, const FullType(DateTime)),
-      r'to': encodeQueryParameter(_serializers, to, const FullType(DateTime)),
+      r'start': encodeQueryParameter(_serializers, start, const FullType(DateTime)),
+      r'end': encodeQueryParameter(_serializers, end, const FullType(DateTime)),
     };
 
     final _response = await _dio.request<Object>(
@@ -364,6 +369,105 @@ class CryptoApi {
     }
 
     return Response<CryptoMarketStats>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// getInnerCryptoTransferFee
+  /// Get fee for crypto transfer
+  ///
+  /// Parameters:
+  /// * [getInnerCryptoTransferFeeRequest] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [InnerCryptoTransferFeeResult] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<InnerCryptoTransferFeeResult>> getInnerCryptoTransferFee({ 
+    GetInnerCryptoTransferFeeRequest? getInnerCryptoTransferFeeRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/crypto/send/fee/';
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'bearerAuth',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(GetInnerCryptoTransferFeeRequest);
+      _bodyData = getInnerCryptoTransferFeeRequest == null ? null : _serializers.serialize(getInnerCryptoTransferFeeRequest, specifiedType: _type);
+
+    } catch(error, stackTrace) {
+      throw DioError(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    InnerCryptoTransferFeeResult _responseData;
+
+    try {
+      const _responseType = FullType(InnerCryptoTransferFeeResult);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as InnerCryptoTransferFeeResult;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<InnerCryptoTransferFeeResult>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -618,6 +722,78 @@ class CryptoApi {
       statusMessage: _response.statusMessage,
       extra: _response.extra,
     );
+  }
+
+  /// Send crypto inside BIND
+  /// Send crypto inside BIND
+  ///
+  /// Parameters:
+  /// * [getInnerCryptoTransferFeeRequest] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<void>> performInnerCryptoTransfer({ 
+    GetInnerCryptoTransferFeeRequest? getInnerCryptoTransferFeeRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/crypto/send/';
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'bearerAuth',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(GetInnerCryptoTransferFeeRequest);
+      _bodyData = getInnerCryptoTransferFeeRequest == null ? null : _serializers.serialize(getInnerCryptoTransferFeeRequest, specifiedType: _type);
+
+    } catch(error, stackTrace) {
+      throw DioError(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
   }
 
 }

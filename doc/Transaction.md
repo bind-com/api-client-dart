@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **isFiat** | **bool** |  | [optional] 
 **assetSourceCode** | **String** | ISO code of source asset | [optional] 
 **assetTargetCode** | **String** | ISO code of target asset | [optional] 
+**assetSourceIsCrypto** | **bool** | is asset a crypto asset | [optional] 
+**assetTargetIsCrypto** | **bool** | is asset a crypto asset | [optional] 
 **amountSource** | **num** |  | [optional] 
 **amountTarget** | **num** |  | [optional] 
 **type** | [**TransactionTypes**](TransactionTypes.md) |  | [optional] 

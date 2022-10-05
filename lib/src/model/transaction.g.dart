@@ -24,6 +24,10 @@ class _$Transaction extends Transaction {
   @override
   final String? assetTargetCode;
   @override
+  final bool? assetSourceIsCrypto;
+  @override
+  final bool? assetTargetIsCrypto;
+  @override
   final num? amountSource;
   @override
   final num? amountTarget;
@@ -48,6 +52,8 @@ class _$Transaction extends Transaction {
       this.isFiat,
       this.assetSourceCode,
       this.assetTargetCode,
+      this.assetSourceIsCrypto,
+      this.assetTargetIsCrypto,
       this.amountSource,
       this.amountTarget,
       this.type,
@@ -75,6 +81,8 @@ class _$Transaction extends Transaction {
         isFiat == other.isFiat &&
         assetSourceCode == other.assetSourceCode &&
         assetTargetCode == other.assetTargetCode &&
+        assetSourceIsCrypto == other.assetSourceIsCrypto &&
+        assetTargetIsCrypto == other.assetTargetIsCrypto &&
         amountSource == other.amountSource &&
         amountTarget == other.amountTarget &&
         type == other.type &&
@@ -97,14 +105,23 @@ class _$Transaction extends Transaction {
                                         $jc(
                                             $jc(
                                                 $jc(
-                                                    $jc($jc(0, group.hashCode),
-                                                        id.hashCode),
-                                                    operationLabel.hashCode),
-                                                state.hashCode),
-                                            isCrypto.hashCode),
-                                        isFiat.hashCode),
-                                    assetSourceCode.hashCode),
-                                assetTargetCode.hashCode),
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    0,
+                                                                    group
+                                                                        .hashCode),
+                                                                id.hashCode),
+                                                            operationLabel
+                                                                .hashCode),
+                                                        state.hashCode),
+                                                    isCrypto.hashCode),
+                                                isFiat.hashCode),
+                                            assetSourceCode.hashCode),
+                                        assetTargetCode.hashCode),
+                                    assetSourceIsCrypto.hashCode),
+                                assetTargetIsCrypto.hashCode),
                             amountSource.hashCode),
                         amountTarget.hashCode),
                     type.hashCode),
@@ -124,6 +141,8 @@ class _$Transaction extends Transaction {
           ..add('isFiat', isFiat)
           ..add('assetSourceCode', assetSourceCode)
           ..add('assetTargetCode', assetTargetCode)
+          ..add('assetSourceIsCrypto', assetSourceIsCrypto)
+          ..add('assetTargetIsCrypto', assetTargetIsCrypto)
           ..add('amountSource', amountSource)
           ..add('amountTarget', amountTarget)
           ..add('type', type)
@@ -173,6 +192,16 @@ class TransactionBuilder implements Builder<Transaction, TransactionBuilder> {
   set assetTargetCode(String? assetTargetCode) =>
       _$this._assetTargetCode = assetTargetCode;
 
+  bool? _assetSourceIsCrypto;
+  bool? get assetSourceIsCrypto => _$this._assetSourceIsCrypto;
+  set assetSourceIsCrypto(bool? assetSourceIsCrypto) =>
+      _$this._assetSourceIsCrypto = assetSourceIsCrypto;
+
+  bool? _assetTargetIsCrypto;
+  bool? get assetTargetIsCrypto => _$this._assetTargetIsCrypto;
+  set assetTargetIsCrypto(bool? assetTargetIsCrypto) =>
+      _$this._assetTargetIsCrypto = assetTargetIsCrypto;
+
   num? _amountSource;
   num? get amountSource => _$this._amountSource;
   set amountSource(num? amountSource) => _$this._amountSource = amountSource;
@@ -212,6 +241,8 @@ class TransactionBuilder implements Builder<Transaction, TransactionBuilder> {
       _isFiat = $v.isFiat;
       _assetSourceCode = $v.assetSourceCode;
       _assetTargetCode = $v.assetTargetCode;
+      _assetSourceIsCrypto = $v.assetSourceIsCrypto;
+      _assetTargetIsCrypto = $v.assetTargetIsCrypto;
       _amountSource = $v.amountSource;
       _amountTarget = $v.amountTarget;
       _type = $v.type;
@@ -250,6 +281,8 @@ class TransactionBuilder implements Builder<Transaction, TransactionBuilder> {
               isFiat: isFiat,
               assetSourceCode: assetSourceCode,
               assetTargetCode: assetTargetCode,
+              assetSourceIsCrypto: assetSourceIsCrypto,
+              assetTargetIsCrypto: assetTargetIsCrypto,
               amountSource: amountSource,
               amountTarget: amountTarget,
               type: type,

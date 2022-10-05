@@ -90,25 +90,25 @@ class _$TokenStatsSerializer implements StructuredSerializer<TokenStats> {
             result
                 ..add(r'market_cap')
                 ..add(serializers.serialize(object.marketCap,
-                    specifiedType: const FullType(num)));
+                    specifiedType: const FullType.nullable(num)));
         }
         if (object.n24hVolume != null) {
             result
                 ..add(r'24h_volume')
                 ..add(serializers.serialize(object.n24hVolume,
-                    specifiedType: const FullType(num)));
+                    specifiedType: const FullType.nullable(num)));
         }
         if (object.circulatingSupply != null) {
             result
                 ..add(r'circulating_supply')
                 ..add(serializers.serialize(object.circulatingSupply,
-                    specifiedType: const FullType(num)));
+                    specifiedType: const FullType.nullable(num)));
         }
         if (object.maxSupply != null) {
             result
                 ..add(r'max_supply')
                 ..add(serializers.serialize(object.maxSupply,
-                    specifiedType: const FullType(num)));
+                    specifiedType: const FullType.nullable(num)));
         }
         if (object.n24hLow != null) {
             result
@@ -181,22 +181,26 @@ class _$TokenStatsSerializer implements StructuredSerializer<TokenStats> {
             switch (key) {
                 case r'market_cap':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
+                        specifiedType: const FullType.nullable(num)) as num?;
+                    if (valueDes == null) continue;
                     result.marketCap = valueDes;
                     break;
                 case r'24h_volume':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
+                        specifiedType: const FullType.nullable(num)) as num?;
+                    if (valueDes == null) continue;
                     result.n24hVolume = valueDes;
                     break;
                 case r'circulating_supply':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
+                        specifiedType: const FullType.nullable(num)) as num?;
+                    if (valueDes == null) continue;
                     result.circulatingSupply = valueDes;
                     break;
                 case r'max_supply':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
+                        specifiedType: const FullType.nullable(num)) as num?;
+                    if (valueDes == null) continue;
                     result.maxSupply = valueDes;
                     break;
                 case r'24h_low':

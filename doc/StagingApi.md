@@ -11,6 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**adjustFiatWalletBalance**](StagingApi.md#adjustfiatwalletbalance) | **POST** /staging/fiat/wallet/adjust/ | Change balance of a fiat wallet
 [**fillCryptoWallet**](StagingApi.md#fillcryptowallet) | **POST** /staging/crypto/wallet/fill/ | Put some testnet assets in a crypto wallet of a current user
+[**fireblocksPoolBalances**](StagingApi.md#fireblockspoolbalances) | **GET** /staging/fireblocks_pool/balances/ | Get pool balances
 
 
 # **adjustFiatWalletBalance**
@@ -78,6 +79,47 @@ try {
     api.fillCryptoWallet();
 } catch on DioError (e) {
     print('Exception when calling StagingApi->fillCryptoWallet: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fireblocksPoolBalances**
+> fireblocksPoolBalances()
+
+Get pool balances
+
+Get fireblocks main and withdraw pools balances
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getStagingApi();
+
+try {
+    api.fireblocksPoolBalances();
+} catch on DioError (e) {
+    print('Exception when calling StagingApi->fireblocksPoolBalances: $e\n');
 }
 ```
 

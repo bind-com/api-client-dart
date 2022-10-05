@@ -12,6 +12,8 @@ class _$PerformFiatTransferRequest extends PerformFiatTransferRequest {
   @override
   final String? currency;
   @override
+  final String? fiatWallet;
+  @override
   final num? amount;
 
   factory _$PerformFiatTransferRequest(
@@ -19,7 +21,7 @@ class _$PerformFiatTransferRequest extends PerformFiatTransferRequest {
       (new PerformFiatTransferRequestBuilder()..update(updates))._build();
 
   _$PerformFiatTransferRequest._(
-      {this.beneficiaryId, this.currency, this.amount})
+      {this.beneficiaryId, this.currency, this.fiatWallet, this.amount})
       : super._();
 
   @override
@@ -37,12 +39,15 @@ class _$PerformFiatTransferRequest extends PerformFiatTransferRequest {
     return other is PerformFiatTransferRequest &&
         beneficiaryId == other.beneficiaryId &&
         currency == other.currency &&
+        fiatWallet == other.fiatWallet &&
         amount == other.amount;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc(0, beneficiaryId.hashCode), currency.hashCode),
+    return $jf($jc(
+        $jc($jc($jc(0, beneficiaryId.hashCode), currency.hashCode),
+            fiatWallet.hashCode),
         amount.hashCode));
   }
 
@@ -51,6 +56,7 @@ class _$PerformFiatTransferRequest extends PerformFiatTransferRequest {
     return (newBuiltValueToStringHelper(r'PerformFiatTransferRequest')
           ..add('beneficiaryId', beneficiaryId)
           ..add('currency', currency)
+          ..add('fiatWallet', fiatWallet)
           ..add('amount', amount))
         .toString();
   }
@@ -70,6 +76,10 @@ class PerformFiatTransferRequestBuilder
   String? get currency => _$this._currency;
   set currency(String? currency) => _$this._currency = currency;
 
+  String? _fiatWallet;
+  String? get fiatWallet => _$this._fiatWallet;
+  set fiatWallet(String? fiatWallet) => _$this._fiatWallet = fiatWallet;
+
   num? _amount;
   num? get amount => _$this._amount;
   set amount(num? amount) => _$this._amount = amount;
@@ -83,6 +93,7 @@ class PerformFiatTransferRequestBuilder
     if ($v != null) {
       _beneficiaryId = $v.beneficiaryId;
       _currency = $v.currency;
+      _fiatWallet = $v.fiatWallet;
       _amount = $v.amount;
       _$v = null;
     }
@@ -106,7 +117,10 @@ class PerformFiatTransferRequestBuilder
   _$PerformFiatTransferRequest _build() {
     final _$result = _$v ??
         new _$PerformFiatTransferRequest._(
-            beneficiaryId: beneficiaryId, currency: currency, amount: amount);
+            beneficiaryId: beneficiaryId,
+            currency: currency,
+            fiatWallet: fiatWallet,
+            amount: amount);
     replace(_$result);
     return _$result;
   }
