@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 
 # **getCryptoChartCandles**
-> BuiltList<Candle> getCryptoChartCandles(asset, interval, start, end, showUsd)
+> BuiltList<Candle> getCryptoChartCandles(asset, interval, start, end, showUsd, pageSize)
 
 List of candles for crypto price chart
 
@@ -38,9 +38,10 @@ final PeriodInterval interval = ; // PeriodInterval | candle interval filter
 final DateTime start = 2013-10-20T19:20:30+01:00; // DateTime | time interval start filter
 final DateTime end = 2013-10-20T19:20:30+01:00; // DateTime | time interval end filter
 final bool showUsd = true; // bool | by default chart will be in fiat user payment currency, if this flag is true then currency is set to usd
+final num pageSize = 8.14; // num | 
 
 try {
-    final response = api.getCryptoChartCandles(asset, interval, start, end, showUsd);
+    final response = api.getCryptoChartCandles(asset, interval, start, end, showUsd, pageSize);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling CryptoApi->getCryptoChartCandles: $e\n');
@@ -56,6 +57,7 @@ Name | Type | Description  | Notes
  **start** | **DateTime**| time interval start filter | 
  **end** | **DateTime**| time interval end filter | 
  **showUsd** | **bool**| by default chart will be in fiat user payment currency, if this flag is true then currency is set to usd | [optional] 
+ **pageSize** | **num**|  | [optional] 
 
 ### Return type
 
@@ -73,7 +75,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCryptoChartLine**
-> BuiltList<ChartTick> getCryptoChartLine(asset, interval, start, end, showUsd)
+> BuiltList<ChartTick> getCryptoChartLine(asset, interval, start, end, showUsd, pageSize)
 
 List line ticks for crypto price chart
 
@@ -90,9 +92,10 @@ final PeriodInterval interval = ; // PeriodInterval | interval filter
 final DateTime start = 2013-10-20T19:20:30+01:00; // DateTime | time interval start filter
 final DateTime end = 2013-10-20T19:20:30+01:00; // DateTime | time interval end filter
 final bool showUsd = true; // bool | by default chart will be in fiat user payment currency, if this flag is true then currency is set to usd
+final num pageSize = 8.14; // num | 
 
 try {
-    final response = api.getCryptoChartLine(asset, interval, start, end, showUsd);
+    final response = api.getCryptoChartLine(asset, interval, start, end, showUsd, pageSize);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling CryptoApi->getCryptoChartLine: $e\n');
@@ -108,6 +111,7 @@ Name | Type | Description  | Notes
  **start** | **DateTime**| time interval start filter | 
  **end** | **DateTime**| time interval end filter | 
  **showUsd** | **bool**| by default chart will be in fiat user payment currency, if this flag is true then currency is set to usd | [optional] 
+ **pageSize** | **num**|  | [optional] 
 
 ### Return type
 

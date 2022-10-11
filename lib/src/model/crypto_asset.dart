@@ -18,6 +18,7 @@ part 'crypto_asset.g.dart';
 /// * [logo] - Logo of an asset (link to static file)
 /// * [paymentCurrencyCode] - Code of a fiat currency
 /// * [paymentCurrencySymbol] - Symbol of a fiat currency (can be used to show currency symbol at UI)
+/// * [rank] - coinmarketcap rank
 abstract class CryptoAsset implements Built<CryptoAsset, CryptoAssetBuilder> {
     /// Market price of a token converted to fiat currency (payment currency of current user)
     @BuiltValueField(wireName: r'price')
@@ -50,6 +51,10 @@ abstract class CryptoAsset implements Built<CryptoAsset, CryptoAssetBuilder> {
     /// Symbol of a fiat currency (can be used to show currency symbol at UI)
     @BuiltValueField(wireName: r'payment_currency_symbol')
     String get paymentCurrencySymbol;
+
+    /// coinmarketcap rank
+    @BuiltValueField(wireName: r'rank')
+    num? get rank;
 
     CryptoAsset._();
 
@@ -105,6 +110,12 @@ class _$CryptoAssetSerializer implements StructuredSerializer<CryptoAsset> {
             ..add(r'payment_currency_symbol')
             ..add(serializers.serialize(object.paymentCurrencySymbol,
                 specifiedType: const FullType(String)));
+        if (object.rank != null) {
+            result
+                ..add(r'rank')
+                ..add(serializers.serialize(object.rank,
+                    specifiedType: const FullType(num)));
+        }
         return result;
     }
 
@@ -160,6 +171,11 @@ class _$CryptoAssetSerializer implements StructuredSerializer<CryptoAsset> {
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.paymentCurrencySymbol = valueDes;
+                    break;
+                case r'rank':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(num)) as num;
+                    result.rank = valueDes;
                     break;
             }
         }

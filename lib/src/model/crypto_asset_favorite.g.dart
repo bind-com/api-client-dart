@@ -24,6 +24,8 @@ class _$CryptoAssetFavorite extends CryptoAssetFavorite {
   @override
   final String paymentCurrencySymbol;
   @override
+  final num? rank;
+  @override
   final bool favorite;
 
   factory _$CryptoAssetFavorite(
@@ -39,6 +41,7 @@ class _$CryptoAssetFavorite extends CryptoAssetFavorite {
       this.logo,
       required this.paymentCurrencyCode,
       required this.paymentCurrencySymbol,
+      this.rank,
       required this.favorite})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
@@ -77,6 +80,7 @@ class _$CryptoAssetFavorite extends CryptoAssetFavorite {
         logo == other.logo &&
         paymentCurrencyCode == other.paymentCurrencyCode &&
         paymentCurrencySymbol == other.paymentCurrencySymbol &&
+        rank == other.rank &&
         favorite == other.favorite;
   }
 
@@ -89,14 +93,16 @@ class _$CryptoAssetFavorite extends CryptoAssetFavorite {
                     $jc(
                         $jc(
                             $jc(
-                                $jc($jc(0, price.hashCode),
-                                    performance.hashCode),
-                                code.hashCode),
-                            name.hashCode),
-                        id.hashCode),
-                    logo.hashCode),
-                paymentCurrencyCode.hashCode),
-            paymentCurrencySymbol.hashCode),
+                                $jc(
+                                    $jc($jc(0, price.hashCode),
+                                        performance.hashCode),
+                                    code.hashCode),
+                                name.hashCode),
+                            id.hashCode),
+                        logo.hashCode),
+                    paymentCurrencyCode.hashCode),
+                paymentCurrencySymbol.hashCode),
+            rank.hashCode),
         favorite.hashCode));
   }
 
@@ -111,6 +117,7 @@ class _$CryptoAssetFavorite extends CryptoAssetFavorite {
           ..add('logo', logo)
           ..add('paymentCurrencyCode', paymentCurrencyCode)
           ..add('paymentCurrencySymbol', paymentCurrencySymbol)
+          ..add('rank', rank)
           ..add('favorite', favorite))
         .toString();
   }
@@ -154,6 +161,10 @@ class CryptoAssetFavoriteBuilder
   set paymentCurrencySymbol(String? paymentCurrencySymbol) =>
       _$this._paymentCurrencySymbol = paymentCurrencySymbol;
 
+  num? _rank;
+  num? get rank => _$this._rank;
+  set rank(num? rank) => _$this._rank = rank;
+
   bool? _favorite;
   bool? get favorite => _$this._favorite;
   set favorite(bool? favorite) => _$this._favorite = favorite;
@@ -173,6 +184,7 @@ class CryptoAssetFavoriteBuilder
       _logo = $v.logo;
       _paymentCurrencyCode = $v.paymentCurrencyCode;
       _paymentCurrencySymbol = $v.paymentCurrencySymbol;
+      _rank = $v.rank;
       _favorite = $v.favorite;
       _$v = null;
     }
@@ -213,6 +225,7 @@ class CryptoAssetFavoriteBuilder
                 paymentCurrencySymbol,
                 r'CryptoAssetFavorite',
                 'paymentCurrencySymbol'),
+            rank: rank,
             favorite: BuiltValueNullFieldError.checkNotNull(
                 favorite, r'CryptoAssetFavorite', 'favorite'));
     replace(_$result);

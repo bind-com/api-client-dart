@@ -39,6 +39,7 @@ class CryptoApi {
   /// * [start] - time interval start filter
   /// * [end] - time interval end filter
   /// * [showUsd] - by default chart will be in fiat user payment currency, if this flag is true then currency is set to usd
+  /// * [pageSize] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -54,6 +55,7 @@ class CryptoApi {
     required DateTime start,
     required DateTime end,
     bool? showUsd,
+    num? pageSize,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -86,6 +88,7 @@ class CryptoApi {
       r'interval': encodeQueryParameter(_serializers, interval, const FullType(PeriodInterval)),
       r'start': encodeQueryParameter(_serializers, start, const FullType(DateTime)),
       r'end': encodeQueryParameter(_serializers, end, const FullType(DateTime)),
+      if (pageSize != null) r'page_size': encodeQueryParameter(_serializers, pageSize, const FullType(num)),
     };
 
     final _response = await _dio.request<Object>(
@@ -136,6 +139,7 @@ class CryptoApi {
   /// * [start] - time interval start filter
   /// * [end] - time interval end filter
   /// * [showUsd] - by default chart will be in fiat user payment currency, if this flag is true then currency is set to usd
+  /// * [pageSize] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -151,6 +155,7 @@ class CryptoApi {
     required DateTime start,
     required DateTime end,
     bool? showUsd,
+    num? pageSize,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -183,6 +188,7 @@ class CryptoApi {
       r'interval': encodeQueryParameter(_serializers, interval, const FullType(PeriodInterval)),
       r'start': encodeQueryParameter(_serializers, start, const FullType(DateTime)),
       r'end': encodeQueryParameter(_serializers, end, const FullType(DateTime)),
+      if (pageSize != null) r'page_size': encodeQueryParameter(_serializers, pageSize, const FullType(num)),
     };
 
     final _response = await _dio.request<Object>(

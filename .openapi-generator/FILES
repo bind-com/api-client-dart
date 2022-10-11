@@ -93,6 +93,9 @@ doc/MainWalletType.md
 doc/PerformExchangeRequest.md
 doc/PerformFiatTransferRequest.md
 doc/PeriodInterval.md
+doc/ProfitLoss.md
+doc/ProfitLossSort.md
+doc/ProfitLossSummary.md
 doc/PutLimitOrderRequest.md
 doc/QRCodeGenerateCustomStringRequest.md
 doc/SingleCryptoBalance.md
@@ -238,6 +241,9 @@ lib/src/model/main_wallet_type.dart
 lib/src/model/perform_exchange_request.dart
 lib/src/model/perform_fiat_transfer_request.dart
 lib/src/model/period_interval.dart
+lib/src/model/profit_loss.dart
+lib/src/model/profit_loss_sort.dart
+lib/src/model/profit_loss_summary.dart
 lib/src/model/put_limit_order_request.dart
 lib/src/model/qr_code_generate_custom_string_request.dart
 lib/src/model/single_crypto_balance.dart

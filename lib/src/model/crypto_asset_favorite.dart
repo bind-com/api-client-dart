@@ -20,6 +20,7 @@ part 'crypto_asset_favorite.g.dart';
 /// * [logo] - Logo of an asset (link to static file)
 /// * [paymentCurrencyCode] - Code of a fiat currency
 /// * [paymentCurrencySymbol] - Symbol of a fiat currency (can be used to show currency symbol at UI)
+/// * [rank] - coinmarketcap rank
 /// * [favorite] - True if an asset is added to User's favorites
 abstract class CryptoAssetFavorite implements Built<CryptoAssetFavorite, CryptoAssetFavoriteBuilder> {
     /// Market price of a token converted to fiat currency (payment currency of current user)
@@ -53,6 +54,10 @@ abstract class CryptoAssetFavorite implements Built<CryptoAssetFavorite, CryptoA
     /// Symbol of a fiat currency (can be used to show currency symbol at UI)
     @BuiltValueField(wireName: r'payment_currency_symbol')
     String get paymentCurrencySymbol;
+
+    /// coinmarketcap rank
+    @BuiltValueField(wireName: r'rank')
+    num? get rank;
 
     /// True if an asset is added to User's favorites
     @BuiltValueField(wireName: r'favorite')
@@ -112,6 +117,12 @@ class _$CryptoAssetFavoriteSerializer implements StructuredSerializer<CryptoAsse
             ..add(r'payment_currency_symbol')
             ..add(serializers.serialize(object.paymentCurrencySymbol,
                 specifiedType: const FullType(String)));
+        if (object.rank != null) {
+            result
+                ..add(r'rank')
+                ..add(serializers.serialize(object.rank,
+                    specifiedType: const FullType(num)));
+        }
         result
             ..add(r'favorite')
             ..add(serializers.serialize(object.favorite,
@@ -171,6 +182,11 @@ class _$CryptoAssetFavoriteSerializer implements StructuredSerializer<CryptoAsse
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.paymentCurrencySymbol = valueDes;
+                    break;
+                case r'rank':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(num)) as num;
+                    result.rank = valueDes;
                     break;
                 case r'favorite':
                     final valueDes = serializers.deserialize(value,

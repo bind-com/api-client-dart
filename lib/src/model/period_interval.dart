@@ -16,14 +16,26 @@ class PeriodInterval extends EnumClass {
   static const PeriodInterval n5m = _$n5m;
   @BuiltValueEnumConst(wireName: r'15m')
   static const PeriodInterval n15m = _$n15m;
+  @BuiltValueEnumConst(wireName: r'30m')
+  static const PeriodInterval n30m = _$n30m;
   @BuiltValueEnumConst(wireName: r'1h')
   static const PeriodInterval n1h = _$n1h;
-  @BuiltValueEnumConst(wireName: r'4h')
-  static const PeriodInterval n4h = _$n4h;
-  @BuiltValueEnumConst(wireName: r'1d')
+  @BuiltValueEnumConst(wireName: r'2h')
+  static const PeriodInterval n2h = _$n2h;
+  @BuiltValueEnumConst(wireName: r'6h')
+  static const PeriodInterval n6h = _$n6h;
+  @BuiltValueEnumConst(wireName: r'8h')
+  static const PeriodInterval n8h = _$n8h;
+  @BuiltValueEnumConst(wireName: r'12h')
+  static const PeriodInterval n12h = _$n12h;
+  @BuiltValueEnumConst(wireName: r'1D')
   static const PeriodInterval n1d = _$n1d;
-  @BuiltValueEnumConst(wireName: r'1w')
+  @BuiltValueEnumConst(wireName: r'3D')
+  static const PeriodInterval n3d = _$n3d;
+  @BuiltValueEnumConst(wireName: r'1W')
   static const PeriodInterval n1w = _$n1w;
+  @BuiltValueEnumConst(wireName: r'1month')
+  static const PeriodInterval n1month = _$n1month;
 
   static Serializer<PeriodInterval> get serializer => _$periodIntervalSerializer;
 

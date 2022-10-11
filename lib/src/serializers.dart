@@ -95,6 +95,9 @@ import 'package:bind_api/src/model/main_wallet_type.dart';
 import 'package:bind_api/src/model/perform_exchange_request.dart';
 import 'package:bind_api/src/model/perform_fiat_transfer_request.dart';
 import 'package:bind_api/src/model/period_interval.dart';
+import 'package:bind_api/src/model/profit_loss.dart';
+import 'package:bind_api/src/model/profit_loss_sort.dart';
+import 'package:bind_api/src/model/profit_loss_summary.dart';
 import 'package:bind_api/src/model/put_limit_order_request.dart';
 import 'package:bind_api/src/model/qr_code_generate_custom_string_request.dart';
 import 'package:bind_api/src/model/single_crypto_balance.dart';
@@ -215,6 +218,9 @@ part 'serializers.g.dart';
   PerformExchangeRequest,
   PerformFiatTransferRequest,
   PeriodInterval,
+  ProfitLoss,
+  ProfitLossSort,
+  ProfitLossSummary,
   PutLimitOrderRequest,
   QRCodeGenerateCustomStringRequest,
   SingleCryptoBalance,
@@ -329,6 +335,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(ChartTick)]),
         () => ListBuilder<ChartTick>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(ProfitLoss)]),
+        () => ListBuilder<ProfitLoss>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(WithdrawalAddress)]),

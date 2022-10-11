@@ -104,6 +104,8 @@ Class | Method | HTTP request | Description
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getCryptoWallet**](doc/CryptoWalletApi.md#getcryptowallet) | **GET** /crypto/wallet/ | Get crypto wallet of current User - total balance and assets balances
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getCryptoWalletLight**](doc/CryptoWalletApi.md#getcryptowalletlight) | **GET** /crypto/wallet/light/ | Get crypto assets of current user with balances and prices
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getDepositAddresses**](doc/CryptoWalletApi.md#getdepositaddresses) | **GET** /crypto/assets/{asset_id}/deposit_addresses/ | Get deposit addresses for a crypto asset
+[*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getProfitLoss**](doc/CryptoWalletApi.md#getprofitloss) | **GET** /crypto/wallet/profitloss/ | Get profit loss
+[*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getProfitLossSummary**](doc/CryptoWalletApi.md#getprofitlosssummary) | **GET** /crypto/wallet/profitloss/summary/ | Get profit loss summary
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getSingleCryptoBalance**](doc/CryptoWalletApi.md#getsinglecryptobalance) | **GET** /crypto/assets/{asset_id}/balance/ | Get detailed balance of a crypto asset
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getWithdrawalAddresses**](doc/CryptoWalletApi.md#getwithdrawaladdresses) | **GET** /crypto/withdrawal/whitelisted_addresses/ | Get whitelisted addresses for crypto withdrawal
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**performWithdrawalOfCrypto**](doc/CryptoWalletApi.md#performwithdrawalofcrypto) | **POST** /crypto/withdrawal/perform/ | Register a withdrawal transaction
@@ -255,6 +257,9 @@ Class | Method | HTTP request | Description
  - [PerformExchangeRequest](doc/PerformExchangeRequest.md)
  - [PerformFiatTransferRequest](doc/PerformFiatTransferRequest.md)
  - [PeriodInterval](doc/PeriodInterval.md)
+ - [ProfitLoss](doc/ProfitLoss.md)
+ - [ProfitLossSort](doc/ProfitLossSort.md)
+ - [ProfitLossSummary](doc/ProfitLossSummary.md)
  - [PutLimitOrderRequest](doc/PutLimitOrderRequest.md)
  - [QRCodeGenerateCustomStringRequest](doc/QRCodeGenerateCustomStringRequest.md)
  - [SingleCryptoBalance](doc/SingleCryptoBalance.md)

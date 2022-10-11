@@ -20,6 +20,8 @@ Method | HTTP request | Description
 [**getCryptoWallet**](CryptoWalletApi.md#getcryptowallet) | **GET** /crypto/wallet/ | Get crypto wallet of current User - total balance and assets balances
 [**getCryptoWalletLight**](CryptoWalletApi.md#getcryptowalletlight) | **GET** /crypto/wallet/light/ | Get crypto assets of current user with balances and prices
 [**getDepositAddresses**](CryptoWalletApi.md#getdepositaddresses) | **GET** /crypto/assets/{asset_id}/deposit_addresses/ | Get deposit addresses for a crypto asset
+[**getProfitLoss**](CryptoWalletApi.md#getprofitloss) | **GET** /crypto/wallet/profitloss/ | Get profit loss
+[**getProfitLossSummary**](CryptoWalletApi.md#getprofitlosssummary) | **GET** /crypto/wallet/profitloss/summary/ | Get profit loss summary
 [**getSingleCryptoBalance**](CryptoWalletApi.md#getsinglecryptobalance) | **GET** /crypto/assets/{asset_id}/balance/ | Get detailed balance of a crypto asset
 [**getWithdrawalAddresses**](CryptoWalletApi.md#getwithdrawaladdresses) | **GET** /crypto/withdrawal/whitelisted_addresses/ | Get whitelisted addresses for crypto withdrawal
 [**performWithdrawalOfCrypto**](CryptoWalletApi.md#performwithdrawalofcrypto) | **POST** /crypto/withdrawal/perform/ | Register a withdrawal transaction
@@ -478,6 +480,90 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BuiltList&lt;DepositAddress&gt;**](DepositAddress.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getProfitLoss**
+> BuiltList<ProfitLoss> getProfitLoss(sorting)
+
+Get profit loss
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getCryptoWalletApi();
+final ProfitLossSort sorting = ; // ProfitLossSort | sorting
+
+try {
+    final response = api.getProfitLoss(sorting);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling CryptoWalletApi->getProfitLoss: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sorting** | [**ProfitLossSort**](.md)| sorting | 
+
+### Return type
+
+[**BuiltList&lt;ProfitLoss&gt;**](ProfitLoss.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getProfitLossSummary**
+> ProfitLossSummary getProfitLossSummary()
+
+Get profit loss summary
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getCryptoWalletApi();
+
+try {
+    final response = api.getProfitLossSummary();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling CryptoWalletApi->getProfitLossSummary: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**ProfitLossSummary**](ProfitLossSummary.md)
 
 ### Authorization
 
