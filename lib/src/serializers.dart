@@ -82,6 +82,7 @@ import 'package:bind_api/src/model/get_inner_crypto_transfer_fee_request.dart';
 import 'package:bind_api/src/model/get_inner_fiat_transfer_fee_request.dart';
 import 'package:bind_api/src/model/get_kyc_document_uid200_response.dart';
 import 'package:bind_api/src/model/get_staking_timer200_response.dart';
+import 'package:bind_api/src/model/human_transaction_types.dart';
 import 'package:bind_api/src/model/inner_crypto_transfer_fee_result.dart';
 import 'package:bind_api/src/model/inner_fiat_transfer_fee_result.dart';
 import 'package:bind_api/src/model/jwt_token.dart';
@@ -115,6 +116,7 @@ import 'package:bind_api/src/model/token_stats.dart';
 import 'package:bind_api/src/model/transaction.dart';
 import 'package:bind_api/src/model/transaction_assets_filter.dart';
 import 'package:bind_api/src/model/transaction_description_filling_rule_set.dart';
+import 'package:bind_api/src/model/transaction_detail.dart';
 import 'package:bind_api/src/model/transaction_export_filter.dart';
 import 'package:bind_api/src/model/transaction_filter.dart';
 import 'package:bind_api/src/model/transaction_group.dart';
@@ -205,6 +207,7 @@ part 'serializers.g.dart';
   GetInnerFiatTransferFeeRequest,
   GetKYCDocumentUID200Response,
   GetStakingTimer200Response,
+  HumanTransactionTypes,
   InnerCryptoTransferFeeResult,
   InnerFiatTransferFeeResult,
   JWTToken,
@@ -238,6 +241,7 @@ part 'serializers.g.dart';
   Transaction,
   TransactionAssetsFilter,
   TransactionDescriptionFillingRuleSet,
+  TransactionDetail,
   TransactionExportFilter,
   TransactionFilter,
   TransactionGroup,
@@ -347,10 +351,6 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(CurrencyWithRate)]),
         () => ListBuilder<CurrencyWithRate>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
-        () => MapBuilder<String, JsonObject>(),
       )
       ..add(const DateSerializer())
       ..add(Iso8601DateTimeSerializer()))

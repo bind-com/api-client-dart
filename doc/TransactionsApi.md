@@ -105,7 +105,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTransactionDetails**
-> BuiltMap<String, JsonObject> getTransactionDetails(transactionId)
+> TransactionDetail getTransactionDetails(transactionId)
 
 Get list of user transactions
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltMap&lt;String, JsonObject&gt;**](JsonObject.md)
+[**TransactionDetail**](TransactionDetail.md)
 
 ### Authorization
 

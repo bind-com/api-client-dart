@@ -19,7 +19,7 @@ For more information, please visit [https://www.bind.com/](https://www.bind.com/
 To use the package from [pub.dev](https://pub.dev), please include the following in pubspec.yaml
 ```yaml
 dependencies:
-  bind_api: 0.2.1
+  bind_api: 0.1.0
 ```
 
 ### Github
@@ -244,6 +244,7 @@ Class | Method | HTTP request | Description
  - [GetInnerFiatTransferFeeRequest](doc/GetInnerFiatTransferFeeRequest.md)
  - [GetKYCDocumentUID200Response](doc/GetKYCDocumentUID200Response.md)
  - [GetStakingTimer200Response](doc/GetStakingTimer200Response.md)
+ - [HumanTransactionTypes](doc/HumanTransactionTypes.md)
  - [InnerCryptoTransferFeeResult](doc/InnerCryptoTransferFeeResult.md)
  - [InnerFiatTransferFeeResult](doc/InnerFiatTransferFeeResult.md)
  - [JWTToken](doc/JWTToken.md)
@@ -277,6 +278,7 @@ Class | Method | HTTP request | Description
  - [Transaction](doc/Transaction.md)
  - [TransactionAssetsFilter](doc/TransactionAssetsFilter.md)
  - [TransactionDescriptionFillingRuleSet](doc/TransactionDescriptionFillingRuleSet.md)
+ - [TransactionDetail](doc/TransactionDetail.md)
  - [TransactionExportFilter](doc/TransactionExportFilter.md)
  - [TransactionFilter](doc/TransactionFilter.md)
  - [TransactionGroup](doc/TransactionGroup.md)

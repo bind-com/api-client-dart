@@ -13,10 +13,10 @@ import 'package:bind_api/src/model/error.dart';
 import 'package:bind_api/src/model/export_history.dart';
 import 'package:bind_api/src/model/transaction.dart';
 import 'package:bind_api/src/model/transaction_assets_filter.dart';
+import 'package:bind_api/src/model/transaction_detail.dart';
 import 'package:bind_api/src/model/transaction_export_filter.dart';
 import 'package:bind_api/src/model/transaction_filter.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:built_value/json_object.dart';
 
 class TransactionsApi {
 
@@ -212,9 +212,9 @@ class TransactionsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltMap<String, JsonObject>] as data
+  /// Returns a [Future] containing a [Response] with a [TransactionDetail] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltMap<String, JsonObject>>> getTransactionDetails({ 
+  Future<Response<TransactionDetail>> getTransactionDetails({ 
     required String transactionId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -250,14 +250,14 @@ class TransactionsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltMap<String, JsonObject> _responseData;
+    TransactionDetail _responseData;
 
     try {
-      const _responseType = FullType(BuiltMap, [FullType(String), FullType(JsonObject)]);
+      const _responseType = FullType(TransactionDetail);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as BuiltMap<String, JsonObject>;
+      ) as TransactionDetail;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -268,7 +268,7 @@ class TransactionsApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltMap<String, JsonObject>>(
+    return Response<TransactionDetail>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
