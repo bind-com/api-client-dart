@@ -23,6 +23,7 @@ doc/ChainImplementation.md
 doc/ChartTick.md
 doc/CheckKYCDocumentStatus200Response.md
 doc/CheckKYCDocumentStatusRequest.md
+doc/CheckKYCFileStatus200Response.md
 doc/CheckKYCStatusRequest.md
 doc/Contact.md
 doc/ContactsApi.md
@@ -179,6 +180,7 @@ lib/src/model/chain_implementation.dart
 lib/src/model/chart_tick.dart
 lib/src/model/check_kyc_document_status200_response.dart
 lib/src/model/check_kyc_document_status_request.dart
+lib/src/model/check_kyc_file_status200_response.dart
 lib/src/model/check_kyc_status_request.dart
 lib/src/model/contact.dart
 lib/src/model/country.dart
@@ -283,4 +285,4 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/human_transaction_types_test.dart
+test/check_kyc_file_status200_response_test.dart

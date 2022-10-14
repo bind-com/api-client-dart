@@ -19,7 +19,7 @@ For more information, please visit [https://www.bind.com/](https://www.bind.com/
 To use the package from [pub.dev](https://pub.dev), please include the following in pubspec.yaml
 ```yaml
 dependencies:
-  bind_api: 0.1.0
+  bind_api: 0.2.1
 ```
 
 ### Github
@@ -194,6 +194,7 @@ Class | Method | HTTP request | Description
  - [ChartTick](doc/ChartTick.md)
  - [CheckKYCDocumentStatus200Response](doc/CheckKYCDocumentStatus200Response.md)
  - [CheckKYCDocumentStatusRequest](doc/CheckKYCDocumentStatusRequest.md)
+ - [CheckKYCFileStatus200Response](doc/CheckKYCFileStatus200Response.md)
  - [CheckKYCStatusRequest](doc/CheckKYCStatusRequest.md)
  - [Contact](doc/Contact.md)
  - [Country](doc/Country.md)

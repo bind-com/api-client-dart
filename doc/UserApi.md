@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **checkKYCFileStatus**
-> checkKYCFileStatus(checkKYCDocumentStatusRequest)
+> CheckKYCFileStatus200Response checkKYCFileStatus(createKYCFile200Response)
 
 Check KYC file status
 
@@ -81,10 +81,11 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getUserApi();
-final CheckKYCDocumentStatusRequest checkKYCDocumentStatusRequest = ; // CheckKYCDocumentStatusRequest | 
+final CreateKYCFile200Response createKYCFile200Response = ; // CreateKYCFile200Response | 
 
 try {
-    api.checkKYCFileStatus(checkKYCDocumentStatusRequest);
+    final response = api.checkKYCFileStatus(createKYCFile200Response);
+    print(response);
 } catch on DioError (e) {
     print('Exception when calling UserApi->checkKYCFileStatus: $e\n');
 }
@@ -94,11 +95,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **checkKYCDocumentStatusRequest** | [**CheckKYCDocumentStatusRequest**](CheckKYCDocumentStatusRequest.md)|  | [optional] 
+ **createKYCFile200Response** | [**CreateKYCFile200Response**](CreateKYCFile200Response.md)|  | [optional] 
 
 ### Return type
 
-void (empty response body)
+[**CheckKYCFileStatus200Response**](CheckKYCFileStatus200Response.md)
 
 ### Authorization
 

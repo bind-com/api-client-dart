@@ -11,6 +11,7 @@ import 'dart:typed_data';
 import 'package:bind_api/src/api_util.dart';
 import 'package:bind_api/src/model/check_kyc_document_status200_response.dart';
 import 'package:bind_api/src/model/check_kyc_document_status_request.dart';
+import 'package:bind_api/src/model/check_kyc_file_status200_response.dart';
 import 'package:bind_api/src/model/check_kyc_status_request.dart';
 import 'package:bind_api/src/model/create_kyc_file200_response.dart';
 import 'package:bind_api/src/model/currency.dart';
@@ -133,7 +134,7 @@ class UserApi {
   /// 
   ///
   /// Parameters:
-  /// * [checkKYCDocumentStatusRequest] 
+  /// * [createKYCFile200Response] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -141,10 +142,10 @@ class UserApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [CheckKYCFileStatus200Response] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> checkKYCFileStatus({ 
-    CheckKYCDocumentStatusRequest? checkKYCDocumentStatusRequest,
+  Future<Response<CheckKYCFileStatus200Response>> checkKYCFileStatus({ 
+    CreateKYCFile200Response? createKYCFile200Response,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -175,8 +176,8 @@ class UserApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CheckKYCDocumentStatusRequest);
-      _bodyData = checkKYCDocumentStatusRequest == null ? null : _serializers.serialize(checkKYCDocumentStatusRequest, specifiedType: _type);
+      const _type = FullType(CreateKYCFile200Response);
+      _bodyData = createKYCFile200Response == null ? null : _serializers.serialize(createKYCFile200Response, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioError(
@@ -198,7 +199,34 @@ class UserApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    CheckKYCFileStatus200Response _responseData;
+
+    try {
+      const _responseType = FullType(CheckKYCFileStatus200Response);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as CheckKYCFileStatus200Response;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<CheckKYCFileStatus200Response>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// Get status of KYC Request approval

@@ -28,6 +28,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ChartTick.serializer)
       ..add(CheckKYCDocumentStatus200Response.serializer)
       ..add(CheckKYCDocumentStatusRequest.serializer)
+      ..add(CheckKYCFileStatus200Response.serializer)
       ..add(CheckKYCStatusRequest.serializer)
       ..add(Contact.serializer)
       ..add(Country.serializer)
@@ -154,6 +155,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(FiatWalletWithPaymentCurrency)]),
           () => new ListBuilder<FiatWalletWithPaymentCurrency>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())

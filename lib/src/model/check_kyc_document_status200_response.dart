@@ -13,11 +13,15 @@ part 'check_kyc_document_status200_response.g.dart';
 ///
 /// Properties:
 /// * [documentStatus] 
+/// * [fileUid] 
 /// * [errors] 
 abstract class CheckKYCDocumentStatus200Response implements Built<CheckKYCDocumentStatus200Response, CheckKYCDocumentStatus200ResponseBuilder> {
     @BuiltValueField(wireName: r'document_status')
     AnalysisStatus? get documentStatus;
     // enum documentStatusEnum {  NONE,  OK,  WARN,  ERROR,  OBSOLETE,  NOT_READY,  };
+
+    @BuiltValueField(wireName: r'file_uid')
+    String? get fileUid;
 
     @BuiltValueField(wireName: r'errors')
     BuiltList<String>? get errors;
@@ -50,6 +54,12 @@ class _$CheckKYCDocumentStatus200ResponseSerializer implements StructuredSeriali
                 ..add(serializers.serialize(object.documentStatus,
                     specifiedType: const FullType(AnalysisStatus)));
         }
+        if (object.fileUid != null) {
+            result
+                ..add(r'file_uid')
+                ..add(serializers.serialize(object.fileUid,
+                    specifiedType: const FullType(String)));
+        }
         if (object.errors != null) {
             result
                 ..add(r'errors')
@@ -75,6 +85,11 @@ class _$CheckKYCDocumentStatus200ResponseSerializer implements StructuredSeriali
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(AnalysisStatus)) as AnalysisStatus;
                     result.documentStatus = valueDes;
+                    break;
+                case r'file_uid':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.fileUid = valueDes;
                     break;
                 case r'errors':
                     final valueDes = serializers.deserialize(value,
