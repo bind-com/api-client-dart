@@ -23,6 +23,16 @@ void main() {
       // TODO
     });
 
+    // String fiatAccount
+    test('to test the property `fiatAccount`', () async {
+      // TODO
+    });
+
+    // String receiverCurrency
+    test('to test the property `receiverCurrency`', () async {
+      // TODO
+    });
+
     // num amount
     test('to test the property `amount`', () async {
       // TODO

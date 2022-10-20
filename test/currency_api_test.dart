@@ -7,6 +7,20 @@ void main() {
   final instance = BindApi().getCurrencyApi();
 
   group(CurrencyApi, () {
+    // Crypto currency information with flag favorite or not for user
+    //
+    //Future<CryptoAssetFavorite> getCryptoAsset(String cryptoCurrencyId) async
+    test('test getCryptoAsset', () async {
+      // TODO
+    });
+
+    // List of Crypto Currencies available at Bind
+    //
+    //Future<BuiltList<CryptoAsset>> listCryptoCurrencies({ CryptoAssetSorting sort }) async
+    test('test listCryptoCurrencies', () async {
+      // TODO
+    });
+
     // List of Currencies available at Bind
     //
     //Future<BuiltList<Currency>> listCurrencies({ bool isCrypto }) async

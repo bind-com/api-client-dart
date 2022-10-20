@@ -45,7 +45,7 @@ void main() {
 
     // Generate JWT token to share as QR code
     //
-    //Future<JWTToken> generateQRCodeToken() async
+    //Future<JWTToken> generateQRCodeToken({ String currency, num amount }) async
     test('test generateQRCodeToken', () async {
       // TODO
     });
@@ -54,8 +54,22 @@ void main() {
     //
     // Contacts are BIND users who have shared contact info with current user to make fast fiat and crypto transfers inside the system
     //
-    //Future<BuiltList<Contact>> getContacts() async
+    //Future<BuiltList<Contact>> getContacts({ bool lastTransactions }) async
     test('test getContacts', () async {
+      // TODO
+    });
+
+    // Get fee for fiat transfer
+    //
+    //Future<InnerFiatTransferFeeResult> getInnerFiatTransferFee({ GetInnerFiatTransferFeeRequest getInnerFiatTransferFeeRequest }) async
+    test('test getInnerFiatTransferFee', () async {
+      // TODO
+    });
+
+    // Generate QRCode with JWT token and return QRCode image
+    //
+    //Future<Uint8List> qRCodeGenerateView({ String currency, num amount }) async
+    test('test qRCodeGenerateView', () async {
       // TODO
     });
 

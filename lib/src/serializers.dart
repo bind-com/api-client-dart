@@ -31,7 +31,6 @@ import 'package:bind_api/src/model/candle.dart';
 import 'package:bind_api/src/model/chain_implementation.dart';
 import 'package:bind_api/src/model/chart_tick.dart';
 import 'package:bind_api/src/model/check_kyc_document_status200_response.dart';
-import 'package:bind_api/src/model/check_kyc_document_status_request.dart';
 import 'package:bind_api/src/model/check_kyc_file_status200_response.dart';
 import 'package:bind_api/src/model/check_kyc_status_request.dart';
 import 'package:bind_api/src/model/contact.dart';
@@ -157,7 +156,6 @@ part 'serializers.g.dart';
   ChainImplementation,
   ChartTick,
   CheckKYCDocumentStatus200Response,
-  CheckKYCDocumentStatusRequest,
   CheckKYCFileStatus200Response,
   CheckKYCStatusRequest,
   Contact,

@@ -57,5 +57,10 @@ void main() {
       // TODO
     });
 
+    // String refundCurrency
+    test('to test the property `refundCurrency`', () async {
+      // TODO
+    });
+
   });
 }

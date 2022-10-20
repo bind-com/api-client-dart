@@ -17,6 +17,11 @@ void main() {
       // TODO
     });
 
+    // String fiatWallet
+    test('to test the property `fiatWallet`', () async {
+      // TODO
+    });
+
     // num amount
     test('to test the property `amount`', () async {
       // TODO

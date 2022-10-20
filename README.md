@@ -19,7 +19,7 @@ For more information, please visit [https://www.bind.com/](https://www.bind.com/
 To use the package from [pub.dev](https://pub.dev), please include the following in pubspec.yaml
 ```yaml
 dependencies:
-  bind_api: 0.2.1
+  bind_api: 0.1.0
 ```
 
 ### Github
@@ -156,7 +156,7 @@ Class | Method | HTTP request | Description
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionDetails**](doc/TransactionsApi.md#gettransactiondetails) | **GET** /transactions/{transactionId} | Get list of user transactions
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionsAssetsList**](doc/TransactionsApi.md#gettransactionsassetslist) | **POST** /transactions/assets/ | Get list of assets of user transactions
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionsFiltered**](doc/TransactionsApi.md#gettransactionsfiltered) | **POST** /transactions/ | Get list of user transactions
-[*UserApi*](doc/UserApi.md) | [**checkKYCDocumentStatus**](doc/UserApi.md#checkkycdocumentstatus) | **POST** /user/kyc/check_document/ | Check KYC document status
+[*UserApi*](doc/UserApi.md) | [**checkKYCDocumentStatus**](doc/UserApi.md#checkkycdocumentstatus) | **POST** /user/kyc/document_status/ | Check KYC document status
 [*UserApi*](doc/UserApi.md) | [**checkKYCFileStatus**](doc/UserApi.md#checkkycfilestatus) | **POST** /user/kyc/check_file/ | Check KYC file status
 [*UserApi*](doc/UserApi.md) | [**checkKYCRequestApproval**](doc/UserApi.md#checkkycrequestapproval) | **GET** /users/kyc/requests/approval/ | Get status of KYC Request approval
 [*UserApi*](doc/UserApi.md) | [**checkKYCStatus**](doc/UserApi.md#checkkycstatus) | **POST** /user/kyc/check/ | Send KYC to check
@@ -193,7 +193,6 @@ Class | Method | HTTP request | Description
  - [ChainImplementation](doc/ChainImplementation.md)
  - [ChartTick](doc/ChartTick.md)
  - [CheckKYCDocumentStatus200Response](doc/CheckKYCDocumentStatus200Response.md)
- - [CheckKYCDocumentStatusRequest](doc/CheckKYCDocumentStatusRequest.md)
  - [CheckKYCFileStatus200Response](doc/CheckKYCFileStatus200Response.md)
  - [CheckKYCStatusRequest](doc/CheckKYCStatusRequest.md)
  - [Contact](doc/Contact.md)

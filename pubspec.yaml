@@ -1,5 +1,5 @@
 name: bind_api
-version: 0.2.1
+version: 0.1.0
 description: A package to interact api.bind.com
 homepage: https://bind.com/
 
@@ -10,7 +10,7 @@ dependencies:
   dio: '>=4.0.1 <5.0.0'
   built_value: '>=8.1.0 <9.0.0'
   built_collection: '>=5.1.0 <6.0.0'
-  build_runner: ^2.3.0
+  build_runner: ^2.3.2
 
 dev_dependencies:
   built_value_generator: '>=8.1.0 <9.0.0'

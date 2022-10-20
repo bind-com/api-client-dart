@@ -7,6 +7,21 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(TransactionDetail, () {
+    // String id
+    test('to test the property `id`', () async {
+      // TODO
+    });
+
+    // String state
+    test('to test the property `state`', () async {
+      // TODO
+    });
+
+    // String txHash
+    test('to test the property `txHash`', () async {
+      // TODO
+    });
+
     // ISO code of source asset
     // String assetSourceCode
     test('to test the property `assetSourceCode`', () async {
@@ -24,7 +39,12 @@ void main() {
       // TODO
     });
 
-    // TransactionTypes type
+    // num targetAmount
+    test('to test the property `targetAmount`', () async {
+      // TODO
+    });
+
+    // HumanTransactionTypes type
     test('to test the property `type`', () async {
       // TODO
     });
@@ -76,6 +96,11 @@ void main() {
 
     // String networkName
     test('to test the property `networkName`', () async {
+      // TODO
+    });
+
+    // String operationLabel
+    test('to test the property `operationLabel`', () async {
       // TODO
     });
 

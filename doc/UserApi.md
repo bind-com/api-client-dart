@@ -9,7 +9,7 @@ All URIs are relative to *https://api.thebind.uk/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**checkKYCDocumentStatus**](UserApi.md#checkkycdocumentstatus) | **POST** /user/kyc/check_document/ | Check KYC document status
+[**checkKYCDocumentStatus**](UserApi.md#checkkycdocumentstatus) | **POST** /user/kyc/document_status/ | Check KYC document status
 [**checkKYCFileStatus**](UserApi.md#checkkycfilestatus) | **POST** /user/kyc/check_file/ | Check KYC file status
 [**checkKYCRequestApproval**](UserApi.md#checkkycrequestapproval) | **GET** /users/kyc/requests/approval/ | Get status of KYC Request approval
 [**checkKYCStatus**](UserApi.md#checkkycstatus) | **POST** /user/kyc/check/ | Send KYC to check
@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 
 # **checkKYCDocumentStatus**
-> CheckKYCDocumentStatus200Response checkKYCDocumentStatus(checkKYCDocumentStatusRequest)
+> CheckKYCDocumentStatus200Response checkKYCDocumentStatus(createKYCFile200Response)
 
 Check KYC document status
 
@@ -37,10 +37,10 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getUserApi();
-final CheckKYCDocumentStatusRequest checkKYCDocumentStatusRequest = ; // CheckKYCDocumentStatusRequest | 
+final CreateKYCFile200Response createKYCFile200Response = ; // CreateKYCFile200Response | 
 
 try {
-    final response = api.checkKYCDocumentStatus(checkKYCDocumentStatusRequest);
+    final response = api.checkKYCDocumentStatus(createKYCFile200Response);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling UserApi->checkKYCDocumentStatus: $e\n');
@@ -51,7 +51,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **checkKYCDocumentStatusRequest** | [**CheckKYCDocumentStatusRequest**](CheckKYCDocumentStatusRequest.md)|  | [optional] 
+ **createKYCFile200Response** | [**CreateKYCFile200Response**](CreateKYCFile200Response.md)|  | [optional] 
 
 ### Return type
 

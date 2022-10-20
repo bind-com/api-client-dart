@@ -10,7 +10,6 @@ import 'package:dio/dio.dart';
 import 'dart:typed_data';
 import 'package:bind_api/src/api_util.dart';
 import 'package:bind_api/src/model/check_kyc_document_status200_response.dart';
-import 'package:bind_api/src/model/check_kyc_document_status_request.dart';
 import 'package:bind_api/src/model/check_kyc_file_status200_response.dart';
 import 'package:bind_api/src/model/check_kyc_status_request.dart';
 import 'package:bind_api/src/model/create_kyc_file200_response.dart';
@@ -35,7 +34,7 @@ class UserApi {
   /// 
   ///
   /// Parameters:
-  /// * [checkKYCDocumentStatusRequest] 
+  /// * [createKYCFile200Response] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -46,7 +45,7 @@ class UserApi {
   /// Returns a [Future] containing a [Response] with a [CheckKYCDocumentStatus200Response] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<CheckKYCDocumentStatus200Response>> checkKYCDocumentStatus({ 
-    CheckKYCDocumentStatusRequest? checkKYCDocumentStatusRequest,
+    CreateKYCFile200Response? createKYCFile200Response,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -54,7 +53,7 @@ class UserApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/user/kyc/check_document/';
+    final _path = r'/user/kyc/document_status/';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -77,8 +76,8 @@ class UserApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CheckKYCDocumentStatusRequest);
-      _bodyData = checkKYCDocumentStatusRequest == null ? null : _serializers.serialize(checkKYCDocumentStatusRequest, specifiedType: _type);
+      const _type = FullType(CreateKYCFile200Response);
+      _bodyData = createKYCFile200Response == null ? null : _serializers.serialize(createKYCFile200Response, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioError(

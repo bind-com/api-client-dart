@@ -65,6 +65,13 @@ void main() {
       // TODO
     });
 
+    // List of currencies that are available for fiat account opening with rates for given currency
+    //
+    //Future<BuiltList<CurrencyWithRate>> getFiatCurrenciesWithRates(String asset) async
+    test('test getFiatCurrenciesWithRates', () async {
+      // TODO
+    });
+
     // Wallet's details
     //
     //Future<FiatWallet> getFiatWalletDetails(String walletId) async

@@ -17,6 +17,32 @@ void main() {
       // TODO
     });
 
+    // String fullName
+    test('to test the property `fullName`', () async {
+      // TODO
+    });
+
+    // String bank
+    test('to test the property `bank`', () async {
+      // TODO
+    });
+
+    // UUID of a country
+    // String country
+    test('to test the property `country`', () async {
+      // TODO
+    });
+
+    // String city
+    test('to test the property `city`', () async {
+      // TODO
+    });
+
+    // String address
+    test('to test the property `address`', () async {
+      // TODO
+    });
+
     // String iban
     test('to test the property `iban`', () async {
       // TODO

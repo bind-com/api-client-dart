@@ -7,13 +7,8 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(CheckKYCDocumentStatus200Response, () {
-    // AnalysisStatus documentStatus
-    test('to test the property `documentStatus`', () async {
-      // TODO
-    });
-
-    // BuiltList<String> errors
-    test('to test the property `errors`', () async {
+    // AnalysisStatus status
+    test('to test the property `status`', () async {
       // TODO
     });
 

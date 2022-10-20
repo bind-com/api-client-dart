@@ -22,5 +22,15 @@ void main() {
       // TODO
     });
 
+    // String currency
+    test('to test the property `currency`', () async {
+      // TODO
+    });
+
+    // num amount
+    test('to test the property `amount`', () async {
+      // TODO
+    });
+
   });
 }

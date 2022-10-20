@@ -7,10 +7,24 @@ void main() {
   final instance = BindApi().getCryptoWalletApi();
 
   group(CryptoWalletApi, () {
+    // Add crypto asset to favorite
+    //
+    //Future addCryptoFavorite({ FavoriteCryptoCreateRequest favoriteCryptoCreateRequest }) async
+    test('test addCryptoFavorite', () async {
+      // TODO
+    });
+
     // Create new whitelisted withdrawal address
     //
     //Future<WithdrawalAddress> createWithdrawalAddress({ WithdrawalAddressCreationRequest withdrawalAddressCreationRequest }) async
     test('test createWithdrawalAddress', () async {
+      // TODO
+    });
+
+    // Delete asset from favorites
+    //
+    //Future deleteCryptoFavorite(String assetId) async
+    test('test deleteCryptoFavorite', () async {
       // TODO
     });
 
@@ -35,6 +49,20 @@ void main() {
       // TODO
     });
 
+    // Get chains for a crypto asset
+    //
+    //Future<BuiltList<ChainImplementation>> getChainImplementations(String assetId) async
+    test('test getChainImplementations', () async {
+      // TODO
+    });
+
+    // Get user favorite crypto assets
+    //
+    //Future<BuiltList<CryptoAsset>> getCryptoFavorites() async
+    test('test getCryptoFavorites', () async {
+      // TODO
+    });
+
     // Get crypto wallet of current User - total balance and assets balances
     //
     //Future<CryptoWallet> getCryptoWallet() async
@@ -42,10 +70,38 @@ void main() {
       // TODO
     });
 
+    // Get crypto assets of current user with balances and prices
+    //
+    //Future<BuiltList<CryptoAccountLight>> getCryptoWalletLight() async
+    test('test getCryptoWalletLight', () async {
+      // TODO
+    });
+
     // Get deposit addresses for a crypto asset
     //
     //Future<BuiltList<DepositAddress>> getDepositAddresses(String assetId) async
     test('test getDepositAddresses', () async {
+      // TODO
+    });
+
+    // Get profit loss
+    //
+    //Future<BuiltList<ProfitLoss>> getProfitLoss(ProfitLossSort sorting) async
+    test('test getProfitLoss', () async {
+      // TODO
+    });
+
+    // Get profit loss summary
+    //
+    //Future<ProfitLossSummary> getProfitLossSummary() async
+    test('test getProfitLossSummary', () async {
+      // TODO
+    });
+
+    // Get detailed balance of a crypto asset
+    //
+    //Future<SingleCryptoBalance> getSingleCryptoBalance(String assetId) async
+    test('test getSingleCryptoBalance', () async {
       // TODO
     });
 

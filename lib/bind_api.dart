@@ -43,7 +43,6 @@ export 'package:bind_api/src/model/candle.dart';
 export 'package:bind_api/src/model/chain_implementation.dart';
 export 'package:bind_api/src/model/chart_tick.dart';
 export 'package:bind_api/src/model/check_kyc_document_status200_response.dart';
-export 'package:bind_api/src/model/check_kyc_document_status_request.dart';
 export 'package:bind_api/src/model/check_kyc_file_status200_response.dart';
 export 'package:bind_api/src/model/check_kyc_status_request.dart';
 export 'package:bind_api/src/model/contact.dart';

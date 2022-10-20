@@ -7,42 +7,42 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(SingleCryptoBalance, () {
-    // JsonObject assetName
+    // String assetName
     test('to test the property `assetName`', () async {
       // TODO
     });
 
-    // JsonObject assetCode
+    // String assetCode
     test('to test the property `assetCode`', () async {
       // TODO
     });
 
-    // JsonObject totalBalance
+    // num totalBalance
     test('to test the property `totalBalance`', () async {
       // TODO
     });
 
-    // JsonObject availableBalance
+    // num availableBalance
     test('to test the property `availableBalance`', () async {
       // TODO
     });
 
-    // JsonObject inOrderBalance
+    // num inOrderBalance
     test('to test the property `inOrderBalance`', () async {
       // TODO
     });
 
-    // JsonObject stakedBalance
+    // num stakedBalance
     test('to test the property `stakedBalance`', () async {
       // TODO
     });
 
-    // JsonObject paymentCurrencyCode
+    // String paymentCurrencyCode
     test('to test the property `paymentCurrencyCode`', () async {
       // TODO
     });
 
-    // JsonObject paymentCurrencyBalance
+    // num paymentCurrencyBalance
     test('to test the property `paymentCurrencyBalance`', () async {
       // TODO
     });

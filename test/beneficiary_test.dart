@@ -22,6 +22,11 @@ void main() {
       // TODO
     });
 
+    // String fullName
+    test('to test the property `fullName`', () async {
+      // TODO
+    });
+
     // bool isFavorite
     test('to test the property `isFavorite`', () async {
       // TODO
@@ -29,6 +34,23 @@ void main() {
 
     // String accountNumber
     test('to test the property `accountNumber`', () async {
+      // TODO
+    });
+
+    // Country country
+    test('to test the property `country`', () async {
+      // TODO
+    });
+
+    // ID of a currency associated with beneficiary country
+    // String currency
+    test('to test the property `currency`', () async {
+      // TODO
+    });
+
+    // ISO code of a currency associated with beneficiary country
+    // String currencyCode
+    test('to test the property `currencyCode`', () async {
       // TODO
     });
 
