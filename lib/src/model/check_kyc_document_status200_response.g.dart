@@ -9,20 +9,14 @@ part of 'check_kyc_document_status200_response.dart';
 class _$CheckKYCDocumentStatus200Response
     extends CheckKYCDocumentStatus200Response {
   @override
-  final AnalysisStatus? documentStatus;
-  @override
-  final String? fileUid;
-  @override
-  final BuiltList<String>? errors;
+  final AnalysisStatus? status;
 
   factory _$CheckKYCDocumentStatus200Response(
           [void Function(CheckKYCDocumentStatus200ResponseBuilder)? updates]) =>
       (new CheckKYCDocumentStatus200ResponseBuilder()..update(updates))
           ._build();
 
-  _$CheckKYCDocumentStatus200Response._(
-      {this.documentStatus, this.fileUid, this.errors})
-      : super._();
+  _$CheckKYCDocumentStatus200Response._({this.status}) : super._();
 
   @override
   CheckKYCDocumentStatus200Response rebuild(
@@ -36,24 +30,18 @@ class _$CheckKYCDocumentStatus200Response
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is CheckKYCDocumentStatus200Response &&
-        documentStatus == other.documentStatus &&
-        fileUid == other.fileUid &&
-        errors == other.errors;
+    return other is CheckKYCDocumentStatus200Response && status == other.status;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc(0, documentStatus.hashCode), fileUid.hashCode),
-        errors.hashCode));
+    return $jf($jc(0, status.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'CheckKYCDocumentStatus200Response')
-          ..add('documentStatus', documentStatus)
-          ..add('fileUid', fileUid)
-          ..add('errors', errors))
+          ..add('status', status))
         .toString();
   }
 }
@@ -64,19 +52,9 @@ class CheckKYCDocumentStatus200ResponseBuilder
             CheckKYCDocumentStatus200ResponseBuilder> {
   _$CheckKYCDocumentStatus200Response? _$v;
 
-  AnalysisStatus? _documentStatus;
-  AnalysisStatus? get documentStatus => _$this._documentStatus;
-  set documentStatus(AnalysisStatus? documentStatus) =>
-      _$this._documentStatus = documentStatus;
-
-  String? _fileUid;
-  String? get fileUid => _$this._fileUid;
-  set fileUid(String? fileUid) => _$this._fileUid = fileUid;
-
-  ListBuilder<String>? _errors;
-  ListBuilder<String> get errors =>
-      _$this._errors ??= new ListBuilder<String>();
-  set errors(ListBuilder<String>? errors) => _$this._errors = errors;
+  AnalysisStatus? _status;
+  AnalysisStatus? get status => _$this._status;
+  set status(AnalysisStatus? status) => _$this._status = status;
 
   CheckKYCDocumentStatus200ResponseBuilder() {
     CheckKYCDocumentStatus200Response._defaults(this);
@@ -85,9 +63,7 @@ class CheckKYCDocumentStatus200ResponseBuilder
   CheckKYCDocumentStatus200ResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _documentStatus = $v.documentStatus;
-      _fileUid = $v.fileUid;
-      _errors = $v.errors?.toBuilder();
+      _status = $v.status;
       _$v = null;
     }
     return this;
@@ -109,24 +85,8 @@ class CheckKYCDocumentStatus200ResponseBuilder
   CheckKYCDocumentStatus200Response build() => _build();
 
   _$CheckKYCDocumentStatus200Response _build() {
-    _$CheckKYCDocumentStatus200Response _$result;
-    try {
-      _$result = _$v ??
-          new _$CheckKYCDocumentStatus200Response._(
-              documentStatus: documentStatus,
-              fileUid: fileUid,
-              errors: _errors?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'errors';
-        _errors?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'CheckKYCDocumentStatus200Response', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result =
+        _$v ?? new _$CheckKYCDocumentStatus200Response._(status: status);
     replace(_$result);
     return _$result;
   }

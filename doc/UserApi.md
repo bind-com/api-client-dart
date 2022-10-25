@@ -9,14 +9,16 @@ All URIs are relative to *https://api.thebind.uk/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**checkKYCDocumentStatus**](UserApi.md#checkkycdocumentstatus) | **POST** /user/kyc/check_document/ | Check KYC document status
+[**checkKYCDocumentStatus**](UserApi.md#checkkycdocumentstatus) | **POST** /user/kyc/document_status/ | Check KYC document status
 [**checkKYCFileStatus**](UserApi.md#checkkycfilestatus) | **POST** /user/kyc/check_file/ | Check KYC file status
 [**checkKYCRequestApproval**](UserApi.md#checkkycrequestapproval) | **GET** /users/kyc/requests/approval/ | Get status of KYC Request approval
 [**checkKYCStatus**](UserApi.md#checkkycstatus) | **POST** /user/kyc/check/ | Send KYC to check
 [**checkPasscode**](UserApi.md#checkpasscode) | **POST** /users/check/passcode/ | Check validity of user passcode
-[**createKYCFile**](UserApi.md#createkycfile) | **GET** /user/kyc/create_file/ | Create KYC file
+[**createKYCFile**](UserApi.md#createkycfile) | **POST** /user/kyc/file/ | CreateKYCFile
+[**createKYCFile_0**](UserApi.md#createkycfile_0) | **GET** /user/kyc/create_file/ | Create KYC file
 [**createKYCRequest**](UserApi.md#createkycrequest) | **POST** /user/kyc/requests/ | Create KYC Request
 [**getKYCDocumentUID**](UserApi.md#getkycdocumentuid) | **GET** /user/kyc/document_uid/ | Get KYC Document UID
+[**getKYCFile**](UserApi.md#getkycfile) | **GET** /user/kyc/file/ | GetKYCFile
 [**getUserPaymentCurrency**](UserApi.md#getuserpaymentcurrency) | **GET** /users/payment_currency/ | Get user payment currency
 [**moveKYCRequest**](UserApi.md#movekycrequest) | **POST** /users/kyc/requests/approval/ | Move KYCRequest to approval
 [**qRCodeGenerateCustomString**](UserApi.md#qrcodegeneratecustomstring) | **POST** /users/generate/custom_qr_code/ | Generate QR code with custom string
@@ -25,7 +27,7 @@ Method | HTTP request | Description
 
 
 # **checkKYCDocumentStatus**
-> CheckKYCDocumentStatus200Response checkKYCDocumentStatus(checkKYCDocumentStatusRequest)
+> CheckKYCDocumentStatus200Response checkKYCDocumentStatus(kYCDocumentStatusRequest)
 
 Check KYC document status
 
@@ -37,10 +39,10 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getUserApi();
-final CheckKYCDocumentStatusRequest checkKYCDocumentStatusRequest = ; // CheckKYCDocumentStatusRequest | 
+final KYCDocumentStatusRequest kYCDocumentStatusRequest = ; // KYCDocumentStatusRequest | 
 
 try {
-    final response = api.checkKYCDocumentStatus(checkKYCDocumentStatusRequest);
+    final response = api.checkKYCDocumentStatus(kYCDocumentStatusRequest);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling UserApi->checkKYCDocumentStatus: $e\n');
@@ -51,7 +53,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **checkKYCDocumentStatusRequest** | [**CheckKYCDocumentStatusRequest**](CheckKYCDocumentStatusRequest.md)|  | [optional] 
+ **kYCDocumentStatusRequest** | [**KYCDocumentStatusRequest**](KYCDocumentStatusRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -240,9 +242,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createKYCFile**
-> CreateKYCFile200Response createKYCFile()
+> KYCFile createKYCFile()
 
-Create KYC file
+CreateKYCFile
+
+Create a new KYC file for current User
 
 ### Example
 ```dart
@@ -258,6 +262,46 @@ try {
     print(response);
 } catch on DioError (e) {
     print('Exception when calling UserApi->createKYCFile: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**KYCFile**](KYCFile.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **createKYCFile_0**
+> CreateKYCFile200Response createKYCFile_0()
+
+Create KYC file
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getUserApi();
+
+try {
+    final response = api.createKYCFile_0();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling UserApi->createKYCFile_0: $e\n');
 }
 ```
 
@@ -356,6 +400,48 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**GetKYCDocumentUID200Response**](GetKYCDocumentUID200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getKYCFile**
+> KYCFile getKYCFile()
+
+GetKYCFile
+
+get latest KYC file for current User
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getUserApi();
+
+try {
+    final response = api.getKYCFile();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling UserApi->getKYCFile: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**KYCFile**](KYCFile.md)
 
 ### Authorization
 

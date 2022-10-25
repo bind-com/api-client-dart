@@ -27,7 +27,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ChainImplementation.serializer)
       ..add(ChartTick.serializer)
       ..add(CheckKYCDocumentStatus200Response.serializer)
-      ..add(CheckKYCDocumentStatusRequest.serializer)
       ..add(CheckKYCFileStatus200Response.serializer)
       ..add(CheckKYCStatusRequest.serializer)
       ..add(Contact.serializer)
@@ -84,8 +83,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(InnerCryptoTransferFeeResult.serializer)
       ..add(InnerFiatTransferFeeResult.serializer)
       ..add(JWTToken.serializer)
+      ..add(KYCDocumentStatus.serializer)
+      ..add(KYCDocumentStatusRequest.serializer)
       ..add(KYCFieldStatus.serializer)
       ..add(KYCFieldStatusStatusEnum.serializer)
+      ..add(KYCFile.serializer)
+      ..add(KYCFileId.serializer)
+      ..add(KYCFileStatus.serializer)
       ..add(KYCRequestMoveResult.serializer)
       ..add(KYCRequestMoveResultRequestFieldsStatus.serializer)
       ..add(KYCRequestMoveResultStatusEnum.serializer)
@@ -155,6 +159,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(FiatWalletWithPaymentCurrency)]),
           () => new ListBuilder<FiatWalletWithPaymentCurrency>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())

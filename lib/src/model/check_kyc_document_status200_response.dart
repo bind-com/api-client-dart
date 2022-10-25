@@ -3,7 +3,6 @@
 //
 
 import 'package:bind_api/src/model/analysis_status.dart';
-import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -12,19 +11,11 @@ part 'check_kyc_document_status200_response.g.dart';
 /// CheckKYCDocumentStatus200Response
 ///
 /// Properties:
-/// * [documentStatus] 
-/// * [fileUid] 
-/// * [errors] 
+/// * [status] 
 abstract class CheckKYCDocumentStatus200Response implements Built<CheckKYCDocumentStatus200Response, CheckKYCDocumentStatus200ResponseBuilder> {
-    @BuiltValueField(wireName: r'document_status')
-    AnalysisStatus? get documentStatus;
-    // enum documentStatusEnum {  NONE,  OK,  WARN,  ERROR,  OBSOLETE,  NOT_READY,  };
-
-    @BuiltValueField(wireName: r'file_uid')
-    String? get fileUid;
-
-    @BuiltValueField(wireName: r'errors')
-    BuiltList<String>? get errors;
+    @BuiltValueField(wireName: r'status')
+    AnalysisStatus? get status;
+    // enum statusEnum {  NONE,  OK,  WARN,  ERROR,  OBSOLETE,  NOT_READY,  };
 
     CheckKYCDocumentStatus200Response._();
 
@@ -48,23 +39,11 @@ class _$CheckKYCDocumentStatus200ResponseSerializer implements StructuredSeriali
     Iterable<Object?> serialize(Serializers serializers, CheckKYCDocumentStatus200Response object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
-        if (object.documentStatus != null) {
+        if (object.status != null) {
             result
-                ..add(r'document_status')
-                ..add(serializers.serialize(object.documentStatus,
+                ..add(r'status')
+                ..add(serializers.serialize(object.status,
                     specifiedType: const FullType(AnalysisStatus)));
-        }
-        if (object.fileUid != null) {
-            result
-                ..add(r'file_uid')
-                ..add(serializers.serialize(object.fileUid,
-                    specifiedType: const FullType(String)));
-        }
-        if (object.errors != null) {
-            result
-                ..add(r'errors')
-                ..add(serializers.serialize(object.errors,
-                    specifiedType: const FullType(BuiltList, [FullType(String)])));
         }
         return result;
     }
@@ -81,20 +60,10 @@ class _$CheckKYCDocumentStatus200ResponseSerializer implements StructuredSeriali
             final Object? value = iterator.current;
             
             switch (key) {
-                case r'document_status':
+                case r'status':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(AnalysisStatus)) as AnalysisStatus;
-                    result.documentStatus = valueDes;
-                    break;
-                case r'file_uid':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.fileUid = valueDes;
-                    break;
-                case r'errors':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(BuiltList, [FullType(String)])) as BuiltList<String>;
-                    result.errors.replace(valueDes);
+                    result.status = valueDes;
                     break;
             }
         }

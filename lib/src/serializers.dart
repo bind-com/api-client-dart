@@ -31,7 +31,6 @@ import 'package:bind_api/src/model/candle.dart';
 import 'package:bind_api/src/model/chain_implementation.dart';
 import 'package:bind_api/src/model/chart_tick.dart';
 import 'package:bind_api/src/model/check_kyc_document_status200_response.dart';
-import 'package:bind_api/src/model/check_kyc_document_status_request.dart';
 import 'package:bind_api/src/model/check_kyc_file_status200_response.dart';
 import 'package:bind_api/src/model/check_kyc_status_request.dart';
 import 'package:bind_api/src/model/contact.dart';
@@ -87,7 +86,12 @@ import 'package:bind_api/src/model/human_transaction_types.dart';
 import 'package:bind_api/src/model/inner_crypto_transfer_fee_result.dart';
 import 'package:bind_api/src/model/inner_fiat_transfer_fee_result.dart';
 import 'package:bind_api/src/model/jwt_token.dart';
+import 'package:bind_api/src/model/kyc_document_status.dart';
+import 'package:bind_api/src/model/kyc_document_status_request.dart';
 import 'package:bind_api/src/model/kyc_field_status.dart';
+import 'package:bind_api/src/model/kyc_file.dart';
+import 'package:bind_api/src/model/kyc_file_id.dart';
+import 'package:bind_api/src/model/kyc_file_status.dart';
 import 'package:bind_api/src/model/kyc_request_move_result.dart';
 import 'package:bind_api/src/model/kyc_request_move_result_request_fields_status.dart';
 import 'package:bind_api/src/model/kyc_request_status.dart';
@@ -157,7 +161,6 @@ part 'serializers.g.dart';
   ChainImplementation,
   ChartTick,
   CheckKYCDocumentStatus200Response,
-  CheckKYCDocumentStatusRequest,
   CheckKYCFileStatus200Response,
   CheckKYCStatusRequest,
   Contact,
@@ -213,7 +216,12 @@ part 'serializers.g.dart';
   InnerCryptoTransferFeeResult,
   InnerFiatTransferFeeResult,
   JWTToken,
+  KYCDocumentStatus,
+  KYCDocumentStatusRequest,
   KYCFieldStatus,
+  KYCFile,
+  KYCFileId,
+  KYCFileStatus,
   KYCRequestMoveResult,
   KYCRequestMoveResultRequestFieldsStatus,
   KYCRequestStatus,
