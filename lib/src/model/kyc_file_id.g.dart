@@ -8,6 +8,8 @@ part of 'kyc_file_id.dart';
 
 class _$KYCFileId extends KYCFileId {
   @override
+  final String? documentUid;
+  @override
   final KYCDocumentStatus? status;
   @override
   final BuiltList<String>? errors;
@@ -15,7 +17,7 @@ class _$KYCFileId extends KYCFileId {
   factory _$KYCFileId([void Function(KYCFileIdBuilder)? updates]) =>
       (new KYCFileIdBuilder()..update(updates))._build();
 
-  _$KYCFileId._({this.status, this.errors}) : super._();
+  _$KYCFileId._({this.documentUid, this.status, this.errors}) : super._();
 
   @override
   KYCFileId rebuild(void Function(KYCFileIdBuilder) updates) =>
@@ -28,18 +30,21 @@ class _$KYCFileId extends KYCFileId {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is KYCFileId &&
+        documentUid == other.documentUid &&
         status == other.status &&
         errors == other.errors;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, status.hashCode), errors.hashCode));
+    return $jf($jc(
+        $jc($jc(0, documentUid.hashCode), status.hashCode), errors.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'KYCFileId')
+          ..add('documentUid', documentUid)
           ..add('status', status)
           ..add('errors', errors))
         .toString();
@@ -48,6 +53,10 @@ class _$KYCFileId extends KYCFileId {
 
 class KYCFileIdBuilder implements Builder<KYCFileId, KYCFileIdBuilder> {
   _$KYCFileId? _$v;
+
+  String? _documentUid;
+  String? get documentUid => _$this._documentUid;
+  set documentUid(String? documentUid) => _$this._documentUid = documentUid;
 
   KYCDocumentStatus? _status;
   KYCDocumentStatus? get status => _$this._status;
@@ -65,6 +74,7 @@ class KYCFileIdBuilder implements Builder<KYCFileId, KYCFileIdBuilder> {
   KYCFileIdBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _documentUid = $v.documentUid;
       _status = $v.status;
       _errors = $v.errors?.toBuilder();
       _$v = null;
@@ -89,8 +99,11 @@ class KYCFileIdBuilder implements Builder<KYCFileId, KYCFileIdBuilder> {
   _$KYCFileId _build() {
     _$KYCFileId _$result;
     try {
-      _$result =
-          _$v ?? new _$KYCFileId._(status: status, errors: _errors?.build());
+      _$result = _$v ??
+          new _$KYCFileId._(
+              documentUid: documentUid,
+              status: status,
+              errors: _errors?.build());
     } catch (_) {
       late String _$failedField;
       try {

@@ -8,6 +8,7 @@ import 'package:bind_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**documentUid** | **String** |  | [optional] 
 **status** | [**KYCDocumentStatus**](KYCDocumentStatus.md) |  | [optional] 
 **errors** | **BuiltList&lt;String&gt;** |  | [optional] 
 

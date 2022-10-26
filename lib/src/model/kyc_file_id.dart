@@ -12,9 +12,13 @@ part 'kyc_file_id.g.dart';
 /// KYCFileId
 ///
 /// Properties:
+/// * [documentUid] 
 /// * [status] 
 /// * [errors] 
 abstract class KYCFileId implements Built<KYCFileId, KYCFileIdBuilder> {
+    @BuiltValueField(wireName: r'document_uid')
+    String? get documentUid;
+
     @BuiltValueField(wireName: r'status')
     KYCDocumentStatus? get status;
     // enum statusEnum {  OK,  NOT_SENT,  ERROR,  };
@@ -44,6 +48,12 @@ class _$KYCFileIdSerializer implements StructuredSerializer<KYCFileId> {
     Iterable<Object?> serialize(Serializers serializers, KYCFileId object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
+        if (object.documentUid != null) {
+            result
+                ..add(r'document_uid')
+                ..add(serializers.serialize(object.documentUid,
+                    specifiedType: const FullType(String)));
+        }
         if (object.status != null) {
             result
                 ..add(r'status')
@@ -71,6 +81,11 @@ class _$KYCFileIdSerializer implements StructuredSerializer<KYCFileId> {
             final Object? value = iterator.current;
             
             switch (key) {
+                case r'document_uid':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.documentUid = valueDes;
+                    break;
                 case r'status':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(KYCDocumentStatus)) as KYCDocumentStatus;
