@@ -10,7 +10,7 @@ class _$KYCFile extends KYCFile {
   @override
   final KYCFileStatus? status;
   @override
-  final String? fileUuid;
+  final String? fileUid;
   @override
   final BuiltList<String>? errors;
   @override
@@ -21,7 +21,7 @@ class _$KYCFile extends KYCFile {
   factory _$KYCFile([void Function(KYCFileBuilder)? updates]) =>
       (new KYCFileBuilder()..update(updates))._build();
 
-  _$KYCFile._({this.status, this.fileUuid, this.errors, this.id, this.liveness})
+  _$KYCFile._({this.status, this.fileUid, this.errors, this.id, this.liveness})
       : super._();
 
   @override
@@ -36,7 +36,7 @@ class _$KYCFile extends KYCFile {
     if (identical(other, this)) return true;
     return other is KYCFile &&
         status == other.status &&
-        fileUuid == other.fileUuid &&
+        fileUid == other.fileUid &&
         errors == other.errors &&
         id == other.id &&
         liveness == other.liveness;
@@ -46,7 +46,7 @@ class _$KYCFile extends KYCFile {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, status.hashCode), fileUuid.hashCode),
+            $jc($jc($jc(0, status.hashCode), fileUid.hashCode),
                 errors.hashCode),
             id.hashCode),
         liveness.hashCode));
@@ -56,7 +56,7 @@ class _$KYCFile extends KYCFile {
   String toString() {
     return (newBuiltValueToStringHelper(r'KYCFile')
           ..add('status', status)
-          ..add('fileUuid', fileUuid)
+          ..add('fileUid', fileUid)
           ..add('errors', errors)
           ..add('id', id)
           ..add('liveness', liveness))
@@ -71,9 +71,9 @@ class KYCFileBuilder implements Builder<KYCFile, KYCFileBuilder> {
   KYCFileStatus? get status => _$this._status;
   set status(KYCFileStatus? status) => _$this._status = status;
 
-  String? _fileUuid;
-  String? get fileUuid => _$this._fileUuid;
-  set fileUuid(String? fileUuid) => _$this._fileUuid = fileUuid;
+  String? _fileUid;
+  String? get fileUid => _$this._fileUid;
+  set fileUid(String? fileUid) => _$this._fileUid = fileUid;
 
   ListBuilder<String>? _errors;
   ListBuilder<String> get errors =>
@@ -96,7 +96,7 @@ class KYCFileBuilder implements Builder<KYCFile, KYCFileBuilder> {
     final $v = _$v;
     if ($v != null) {
       _status = $v.status;
-      _fileUuid = $v.fileUuid;
+      _fileUid = $v.fileUid;
       _errors = $v.errors?.toBuilder();
       _id = $v.id?.toBuilder();
       _liveness = $v.liveness?.toBuilder();
@@ -125,7 +125,7 @@ class KYCFileBuilder implements Builder<KYCFile, KYCFileBuilder> {
       _$result = _$v ??
           new _$KYCFile._(
               status: status,
-              fileUuid: fileUuid,
+              fileUid: fileUid,
               errors: _errors?.build(),
               id: _id?.build(),
               liveness: _liveness?.build());

@@ -14,7 +14,7 @@ part 'kyc_file.g.dart';
 ///
 /// Properties:
 /// * [status] 
-/// * [fileUuid] 
+/// * [fileUid] 
 /// * [errors] 
 /// * [id] 
 /// * [liveness] 
@@ -23,8 +23,8 @@ abstract class KYCFile implements Built<KYCFile, KYCFileBuilder> {
     KYCFileStatus? get status;
     // enum statusEnum {  APPROVED,  NOT_APPROVED,  NOT_SENT,  SENT_TO_APPROVAL,  };
 
-    @BuiltValueField(wireName: r'file_uuid')
-    String? get fileUuid;
+    @BuiltValueField(wireName: r'file_uid')
+    String? get fileUid;
 
     @BuiltValueField(wireName: r'errors')
     BuiltList<String>? get errors;
@@ -63,10 +63,10 @@ class _$KYCFileSerializer implements StructuredSerializer<KYCFile> {
                 ..add(serializers.serialize(object.status,
                     specifiedType: const FullType(KYCFileStatus)));
         }
-        if (object.fileUuid != null) {
+        if (object.fileUid != null) {
             result
-                ..add(r'file_uuid')
-                ..add(serializers.serialize(object.fileUuid,
+                ..add(r'file_uid')
+                ..add(serializers.serialize(object.fileUid,
                     specifiedType: const FullType(String)));
         }
         if (object.errors != null) {
@@ -107,10 +107,10 @@ class _$KYCFileSerializer implements StructuredSerializer<KYCFile> {
                         specifiedType: const FullType(KYCFileStatus)) as KYCFileStatus;
                     result.status = valueDes;
                     break;
-                case r'file_uuid':
+                case r'file_uid':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
-                    result.fileUuid = valueDes;
+                    result.fileUid = valueDes;
                     break;
                 case r'errors':
                     final valueDes = serializers.deserialize(value,
