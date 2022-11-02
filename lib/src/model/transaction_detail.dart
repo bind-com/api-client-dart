@@ -3,7 +3,6 @@
 //
 
 import 'package:bind_api/src/model/human_transaction_types.dart';
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -31,7 +30,6 @@ part 'transaction_detail.g.dart';
 /// * [transactionHash] 
 /// * [networkName] 
 /// * [operationLabel] 
-/// * [someFields] 
 abstract class TransactionDetail implements Built<TransactionDetail, TransactionDetailBuilder> {
     @BuiltValueField(wireName: r'id')
     String? get id;
@@ -92,9 +90,6 @@ abstract class TransactionDetail implements Built<TransactionDetail, Transaction
 
     @BuiltValueField(wireName: r'operation_label')
     String? get operationLabel;
-
-    @BuiltValueField(wireName: r'some_fields')
-    JsonObject? get someFields;
 
     TransactionDetail._();
 
@@ -232,12 +227,6 @@ class _$TransactionDetailSerializer implements StructuredSerializer<TransactionD
                 ..add(serializers.serialize(object.operationLabel,
                     specifiedType: const FullType.nullable(String)));
         }
-        if (object.someFields != null) {
-            result
-                ..add(r'some_fields')
-                ..add(serializers.serialize(object.someFields,
-                    specifiedType: const FullType(JsonObject)));
-        }
         return result;
     }
 
@@ -360,11 +349,6 @@ class _$TransactionDetailSerializer implements StructuredSerializer<TransactionD
                         specifiedType: const FullType.nullable(String)) as String?;
                     if (valueDes == null) continue;
                     result.operationLabel = valueDes;
-                    break;
-                case r'some_fields':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(JsonObject)) as JsonObject;
-                    result.someFields = valueDes;
                     break;
             }
         }
