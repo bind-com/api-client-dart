@@ -19,7 +19,7 @@ For more information, please visit [https://www.bind.com/](https://www.bind.com/
 To use the package from [pub.dev](https://pub.dev), please include the following in pubspec.yaml
 ```yaml
 dependencies:
-  bind_api: 0.2.1
+  bind_api: 0.1.0
 ```
 
 ### Github
@@ -86,12 +86,12 @@ Class | Method | HTTP request | Description
 [*ContactsApi*](doc/ContactsApi.md) | [**updateContact**](doc/ContactsApi.md#updatecontact) | **PATCH** /contacts/{contact_id}/ | Update contact data (add/remove contact from favorite)
 [*CryptoApi*](doc/CryptoApi.md) | [**getCryptoChartCandles**](doc/CryptoApi.md#getcryptochartcandles) | **GET** /charts/crypto/candle/ | List of candles for crypto price chart
 [*CryptoApi*](doc/CryptoApi.md) | [**getCryptoChartLine**](doc/CryptoApi.md#getcryptochartline) | **GET** /charts/crypto/line/ | List line ticks for crypto price chart
-[*CryptoApi*](doc/CryptoApi.md) | [**getCryptoOverview**](doc/CryptoApi.md#getcryptooverview) | **GET** /crypto/overview/ | Get crypto overview information, the price of the tokens will be converted into the user&#39;s payment currency
-[*CryptoApi*](doc/CryptoApi.md) | [**getGlobalCryptoStats**](doc/CryptoApi.md#getglobalcryptostats) | **GET** /crypto/global/stats/ | Get global crypto market information, 24h volume and market cap will be converted into the user&#39;s payment currency
+[*CryptoApi*](doc/CryptoApi.md) | [**getCryptoOverview**](doc/CryptoApi.md#getcryptooverview) | **GET** /crypto/overview/ | Get crypto overview information
+[*CryptoApi*](doc/CryptoApi.md) | [**getGlobalCryptoStats**](doc/CryptoApi.md#getglobalcryptostats) | **GET** /crypto/global/stats/ | Get global crypto market information
 [*CryptoApi*](doc/CryptoApi.md) | [**getInnerCryptoTransferFee**](doc/CryptoApi.md#getinnercryptotransferfee) | **POST** /crypto/send/fee/ | 
-[*CryptoApi*](doc/CryptoApi.md) | [**getTokenDetail**](doc/CryptoApi.md#gettokendetail) | **GET** /crypto/detail/{assetID}/ | Get description for certain token, price related stats will be converted into the user&#39;s payment currency
-[*CryptoApi*](doc/CryptoApi.md) | [**getTokenStats**](doc/CryptoApi.md#gettokenstats) | **GET** /crypto/stats/{assetID}/ | Get stats for certain token, price related stats will be converted into the user&#39;s payment currency
-[*CryptoApi*](doc/CryptoApi.md) | [**listCryptoCurrencies**](doc/CryptoApi.md#listcryptocurrencies) | **GET** /currencies/crypto/ | List of Crypto Currencies available at Bind
+[*CryptoApi*](doc/CryptoApi.md) | [**getTokenDetail**](doc/CryptoApi.md#gettokendetail) | **GET** /crypto/detail/{assetID}/ | Get detail for certain token
+[*CryptoApi*](doc/CryptoApi.md) | [**getTokenStats**](doc/CryptoApi.md#gettokenstats) | **GET** /crypto/stats/{assetID}/ | Get stats for certain token
+[*CryptoApi*](doc/CryptoApi.md) | [**listCryptoCurrencies**](doc/CryptoApi.md#listcryptocurrencies) | **GET** /currencies/crypto/ | List of Crypto Currencies
 [*CryptoApi*](doc/CryptoApi.md) | [**performInnerCryptoTransfer**](doc/CryptoApi.md#performinnercryptotransfer) | **POST** /crypto/send/ | Send crypto inside BIND
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**addCryptoFavorite**](doc/CryptoWalletApi.md#addcryptofavorite) | **POST** /crypto/favorites/ | Add crypto asset to favorite
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**createWithdrawalAddress**](doc/CryptoWalletApi.md#createwithdrawaladdress) | **POST** /crypto/withdrawal/whitelisted_addresses/ | Create new whitelisted withdrawal address
@@ -110,7 +110,7 @@ Class | Method | HTTP request | Description
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getWithdrawalAddresses**](doc/CryptoWalletApi.md#getwithdrawaladdresses) | **GET** /crypto/withdrawal/whitelisted_addresses/ | Get whitelisted addresses for crypto withdrawal
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**performWithdrawalOfCrypto**](doc/CryptoWalletApi.md#performwithdrawalofcrypto) | **POST** /crypto/withdrawal/perform/ | Register a withdrawal transaction
 [*CurrencyApi*](doc/CurrencyApi.md) | [**getCryptoAsset**](doc/CurrencyApi.md#getcryptoasset) | **GET** /currencies/crypto/{crypto_currency_id} | Crypto currency information with flag favorite or not for user
-[*CurrencyApi*](doc/CurrencyApi.md) | [**listCryptoCurrencies**](doc/CurrencyApi.md#listcryptocurrencies) | **GET** /currencies/crypto/ | List of Crypto Currencies available at Bind
+[*CurrencyApi*](doc/CurrencyApi.md) | [**listCryptoCurrencies**](doc/CurrencyApi.md#listcryptocurrencies) | **GET** /currencies/crypto/ | List of Crypto Currencies
 [*CurrencyApi*](doc/CurrencyApi.md) | [**listCurrencies**](doc/CurrencyApi.md#listcurrencies) | **GET** /currencies/ | List of Currencies available at Bind
 [*ExchangeApi*](doc/ExchangeApi.md) | [**cancelLimitOrder**](doc/ExchangeApi.md#cancellimitorder) | **POST** /crypto/exchange/limit_orders/{order_id}/cancel | Cancel given limit order
 [*ExchangeApi*](doc/ExchangeApi.md) | [**estimateCryptoExchange**](doc/ExchangeApi.md#estimatecryptoexchange) | **POST** /crypto/exchange/estimate/ | Estimate exchange of assets. One of assets has to be a cryptocurrency
@@ -197,6 +197,7 @@ Class | Method | HTTP request | Description
  - [CheckKYCDocumentStatus200Response](doc/CheckKYCDocumentStatus200Response.md)
  - [CheckKYCFileStatus200Response](doc/CheckKYCFileStatus200Response.md)
  - [CheckKYCStatusRequest](doc/CheckKYCStatusRequest.md)
+ - [CheckPasscodeRequest](doc/CheckPasscodeRequest.md)
  - [Contact](doc/Contact.md)
  - [Country](doc/Country.md)
  - [CreateBeneficiaryRequest](doc/CreateBeneficiaryRequest.md)

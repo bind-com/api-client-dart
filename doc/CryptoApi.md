@@ -11,12 +11,12 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getCryptoChartCandles**](CryptoApi.md#getcryptochartcandles) | **GET** /charts/crypto/candle/ | List of candles for crypto price chart
 [**getCryptoChartLine**](CryptoApi.md#getcryptochartline) | **GET** /charts/crypto/line/ | List line ticks for crypto price chart
-[**getCryptoOverview**](CryptoApi.md#getcryptooverview) | **GET** /crypto/overview/ | Get crypto overview information, the price of the tokens will be converted into the user&#39;s payment currency
-[**getGlobalCryptoStats**](CryptoApi.md#getglobalcryptostats) | **GET** /crypto/global/stats/ | Get global crypto market information, 24h volume and market cap will be converted into the user&#39;s payment currency
+[**getCryptoOverview**](CryptoApi.md#getcryptooverview) | **GET** /crypto/overview/ | Get crypto overview information
+[**getGlobalCryptoStats**](CryptoApi.md#getglobalcryptostats) | **GET** /crypto/global/stats/ | Get global crypto market information
 [**getInnerCryptoTransferFee**](CryptoApi.md#getinnercryptotransferfee) | **POST** /crypto/send/fee/ | 
-[**getTokenDetail**](CryptoApi.md#gettokendetail) | **GET** /crypto/detail/{assetID}/ | Get description for certain token, price related stats will be converted into the user&#39;s payment currency
-[**getTokenStats**](CryptoApi.md#gettokenstats) | **GET** /crypto/stats/{assetID}/ | Get stats for certain token, price related stats will be converted into the user&#39;s payment currency
-[**listCryptoCurrencies**](CryptoApi.md#listcryptocurrencies) | **GET** /currencies/crypto/ | List of Crypto Currencies available at Bind
+[**getTokenDetail**](CryptoApi.md#gettokendetail) | **GET** /crypto/detail/{assetID}/ | Get detail for certain token
+[**getTokenStats**](CryptoApi.md#gettokenstats) | **GET** /crypto/stats/{assetID}/ | Get stats for certain token
+[**listCryptoCurrencies**](CryptoApi.md#listcryptocurrencies) | **GET** /currencies/crypto/ | List of Crypto Currencies
 [**performInnerCryptoTransfer**](CryptoApi.md#performinnercryptotransfer) | **POST** /crypto/send/ | Send crypto inside BIND
 
 
@@ -131,6 +131,8 @@ Name | Type | Description  | Notes
 # **getCryptoOverview**
 > BuiltList<CryptoOverviewElement> getCryptoOverview()
 
+Get crypto overview information
+
 Get crypto overview information, the price of the tokens will be converted into the user's payment currency
 
 ### Example
@@ -170,6 +172,8 @@ This endpoint does not need any parameter.
 
 # **getGlobalCryptoStats**
 > CryptoMarketStats getGlobalCryptoStats()
+
+Get global crypto market information
 
 Get global crypto market information, 24h volume and market cap will be converted into the user's payment currency
 
@@ -257,7 +261,9 @@ Name | Type | Description  | Notes
 # **getTokenDetail**
 > TokenDetail getTokenDetail(assetID)
 
-Get description for certain token, price related stats will be converted into the user's payment currency
+Get detail for certain token
+
+Get detail info for certain token, price related stats will be converted into the user's payment currency
 
 ### Example
 ```dart
@@ -301,6 +307,8 @@ Name | Type | Description  | Notes
 # **getTokenStats**
 > TokenStats getTokenStats(assetID)
 
+Get stats for certain token
+
 Get stats for certain token, price related stats will be converted into the user's payment currency
 
 ### Example
@@ -311,7 +319,7 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getCryptoApi();
-final String assetID = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final String assetID = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of crypro currency(asset)
 
 try {
     final response = api.getTokenStats(assetID);
@@ -325,7 +333,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **assetID** | **String**|  | 
+ **assetID** | **String**| id of crypro currency(asset) | 
 
 ### Return type
 
@@ -345,6 +353,8 @@ Name | Type | Description  | Notes
 # **listCryptoCurrencies**
 > BuiltList<CryptoAsset> listCryptoCurrencies(sort)
 
+List of Crypto Currencies
+
 List of Crypto Currencies available at Bind
 
 ### Example
@@ -355,7 +365,7 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getCryptoApi();
-final CryptoAssetSorting sort = ; // CryptoAssetSorting | crypto currency ordering, default order is ascending, add \"-\" symbol before sort key for descending order if possible
+final CryptoAssetSorting sort = ; // CryptoAssetSorting | Sort order:  * `all` - Ascending, order by currency code  * `gainers` - Top gainers, tokens with highest perfomance first  * `losers` - Top losers, tokens with lowest perfomance first  * `capUp` - Ascending, order by market capitalization  * `capDown` - Descending, order by market capitalization  * `volumeUp` - Ascending, order by market volume   * `volumeDown` - Descending, order by market volume  * `recentUp` - Ascending, order by listing date on coinmarketcap api  * `recentDown` - Descending, order by listing date on coinmarketcap api  * `watch` - not implemented yet, sort like `all`  * `trending` - order by coinmarketcap trending sort 
 
 try {
     final response = api.listCryptoCurrencies(sort);
@@ -369,7 +379,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sort** | [**CryptoAssetSorting**](.md)| crypto currency ordering, default order is ascending, add \"-\" symbol before sort key for descending order if possible | [optional] 
+ **sort** | [**CryptoAssetSorting**](.md)| Sort order:  * `all` - Ascending, order by currency code  * `gainers` - Top gainers, tokens with highest perfomance first  * `losers` - Top losers, tokens with lowest perfomance first  * `capUp` - Ascending, order by market capitalization  * `capDown` - Descending, order by market capitalization  * `volumeUp` - Ascending, order by market volume   * `volumeDown` - Descending, order by market volume  * `recentUp` - Ascending, order by listing date on coinmarketcap api  * `recentDown` - Descending, order by listing date on coinmarketcap api  * `watch` - not implemented yet, sort like `all`  * `trending` - order by coinmarketcap trending sort  | [optional] 
 
 ### Return type
 

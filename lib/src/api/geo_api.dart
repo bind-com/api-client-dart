@@ -21,7 +21,7 @@ class GeoApi {
   const GeoApi(this._dio, this._serializers);
 
   /// Countries list
-  /// 
+  /// Main method to get information about Countries at BIND
   ///
   /// Parameters:
   /// * [search] - search by currency name

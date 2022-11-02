@@ -11,25 +11,30 @@ part 'crypto_market_stats.g.dart';
 /// CryptoMarketStats
 ///
 /// Properties:
-/// * [coins] 
-/// * [marketCap] 
-/// * [n24hVolume] 
-/// * [btcDominance] 
-/// * [ethDominance] 
+/// * [coins] - number of coins listed in CMC
+/// * [marketCap] - global market cap converted to user payment currency
+/// * [n24hVolume] - global 24h volume converted to user payment currency
+/// * [btcDominance] - dominance info
+/// * [ethDominance] - dominance info
 /// * [userCurrency] 
 abstract class CryptoMarketStats implements Built<CryptoMarketStats, CryptoMarketStatsBuilder> {
+    /// number of coins listed in CMC
     @BuiltValueField(wireName: r'coins')
     num? get coins;
 
+    /// global market cap converted to user payment currency
     @BuiltValueField(wireName: r'market_cap')
     num? get marketCap;
 
+    /// global 24h volume converted to user payment currency
     @BuiltValueField(wireName: r'24h_volume')
     num? get n24hVolume;
 
+    /// dominance info
     @BuiltValueField(wireName: r'btc_dominance')
     num? get btcDominance;
 
+    /// dominance info
     @BuiltValueField(wireName: r'eth_dominance')
     num? get ethDominance;
 

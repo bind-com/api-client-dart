@@ -10,42 +10,49 @@ part 'crypto_overview_element.g.dart';
 /// CryptoOverviewElement
 ///
 /// Properties:
-/// * [heading] 
-/// * [assetId] 
-/// * [assetName] 
-/// * [assetIcon] 
-/// * [price] 
-/// * [growth] 
-/// * [description] 
-/// * [paymentCurrencyCode] - Code of a fiat currency
-/// * [paymentCurrencySymbol] - Symbol of a fiat currency (can be used to show currency symbol at UI)
+/// * [heading] - heading of element
+/// * [assetId] - id of crypto currency that will be displayed in element
+/// * [assetName] - name of crypto currency that will be displayed in element
+/// * [assetIcon] - icon of crypto currency that will be displayed in element
+/// * [price] - price that will be showed(in user payment currency), can be null if element does not have it
+/// * [growth] - growth that will be showed, can be null if element does not have it
+/// * [description] - description of element
+/// * [paymentCurrencyCode] - code of user payment currency, used to show price with user currency
+/// * [paymentCurrencySymbol] - symbol of user payment currency, used to show price with user currency
 abstract class CryptoOverviewElement implements Built<CryptoOverviewElement, CryptoOverviewElementBuilder> {
+    /// heading of element
     @BuiltValueField(wireName: r'heading')
     String? get heading;
 
+    /// id of crypto currency that will be displayed in element
     @BuiltValueField(wireName: r'asset_id')
     String? get assetId;
 
+    /// name of crypto currency that will be displayed in element
     @BuiltValueField(wireName: r'asset_name')
     String? get assetName;
 
+    /// icon of crypto currency that will be displayed in element
     @BuiltValueField(wireName: r'asset_icon')
     String? get assetIcon;
 
+    /// price that will be showed(in user payment currency), can be null if element does not have it
     @BuiltValueField(wireName: r'price')
     num? get price;
 
+    /// growth that will be showed, can be null if element does not have it
     @BuiltValueField(wireName: r'growth')
     num? get growth;
 
+    /// description of element
     @BuiltValueField(wireName: r'description')
     String? get description;
 
-    /// Code of a fiat currency
+    /// code of user payment currency, used to show price with user currency
     @BuiltValueField(wireName: r'payment_currency_code')
     String? get paymentCurrencyCode;
 
-    /// Symbol of a fiat currency (can be used to show currency symbol at UI)
+    /// symbol of user payment currency, used to show price with user currency
     @BuiltValueField(wireName: r'payment_currency_symbol')
     String? get paymentCurrencySymbol;
 

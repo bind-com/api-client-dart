@@ -11,53 +11,65 @@ part 'token_stats.g.dart';
 /// TokenStats
 ///
 /// Properties:
-/// * [marketCap] 
-/// * [n24hVolume] 
-/// * [circulatingSupply] 
-/// * [maxSupply] 
-/// * [n24hLow] 
-/// * [n24hHigh] 
-/// * [n7dLow] 
-/// * [n7dHigh] 
-/// * [n30dLow] 
-/// * [n30dHigh] 
-/// * [n90dLow] 
-/// * [n90dHigh] 
+/// * [marketCap] - market cap of token converted to user payment currency
+/// * [n24hVolume] - 24h volume of token converted to user payment currency
+/// * [circulatingSupply] - circulating supply of token
+/// * [maxSupply] - max circulating supply of token
+/// * [n24hLow] - token price stat converted to user payment currency
+/// * [n24hHigh] - token price stat converted to user payment currency
+/// * [n7dLow] - token price stat converted to user payment currency
+/// * [n7dHigh] - token price stat converted to user payment currency
+/// * [n30dLow] - token price stat converted to user payment currency
+/// * [n30dHigh] - token price stat converted to user payment currency
+/// * [n90dLow] - token price stat converted to user payment currency
+/// * [n90dHigh] - token price stat converted to user payment currency
 /// * [userCurrency] 
 abstract class TokenStats implements Built<TokenStats, TokenStatsBuilder> {
+    /// market cap of token converted to user payment currency
     @BuiltValueField(wireName: r'market_cap')
     num? get marketCap;
 
+    /// 24h volume of token converted to user payment currency
     @BuiltValueField(wireName: r'24h_volume')
     num? get n24hVolume;
 
+    /// circulating supply of token
     @BuiltValueField(wireName: r'circulating_supply')
     num? get circulatingSupply;
 
+    /// max circulating supply of token
     @BuiltValueField(wireName: r'max_supply')
     num? get maxSupply;
 
+    /// token price stat converted to user payment currency
     @BuiltValueField(wireName: r'24h_low')
     num? get n24hLow;
 
+    /// token price stat converted to user payment currency
     @BuiltValueField(wireName: r'24h_high')
     num? get n24hHigh;
 
+    /// token price stat converted to user payment currency
     @BuiltValueField(wireName: r'7d_low')
     num? get n7dLow;
 
+    /// token price stat converted to user payment currency
     @BuiltValueField(wireName: r'7d_high')
     num? get n7dHigh;
 
+    /// token price stat converted to user payment currency
     @BuiltValueField(wireName: r'30d_low')
     num? get n30dLow;
 
+    /// token price stat converted to user payment currency
     @BuiltValueField(wireName: r'30d_high')
     num? get n30dHigh;
 
+    /// token price stat converted to user payment currency
     @BuiltValueField(wireName: r'90d_low')
     num? get n90dLow;
 
+    /// token price stat converted to user payment currency
     @BuiltValueField(wireName: r'90d_high')
     num? get n90dHigh;
 

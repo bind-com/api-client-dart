@@ -198,9 +198,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **checkPasscode**
-> bool checkPasscode(updateUserPasscodeRequest)
+> bool checkPasscode(checkPasscodeRequest)
 
 Check validity of user passcode
+
+A method to check passcode of a currency User
 
 ### Example
 ```dart
@@ -210,10 +212,10 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getUserApi();
-final UpdateUserPasscodeRequest updateUserPasscodeRequest = ; // UpdateUserPasscodeRequest | 
+final CheckPasscodeRequest checkPasscodeRequest = ; // CheckPasscodeRequest | 
 
 try {
-    final response = api.checkPasscode(updateUserPasscodeRequest);
+    final response = api.checkPasscode(checkPasscodeRequest);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling UserApi->checkPasscode: $e\n');
@@ -224,7 +226,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **updateUserPasscodeRequest** | [**UpdateUserPasscodeRequest**](UpdateUserPasscodeRequest.md)|  | [optional] 
+ **checkPasscodeRequest** | [**CheckPasscodeRequest**](CheckPasscodeRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -459,6 +461,8 @@ This endpoint does not need any parameter.
 
 Get user payment currency
 
+A dedicated method to get User’s payment currency with additional fields from Currency table
+
 ### Example
 ```dart
 import 'package:bind_api/api.dart';
@@ -585,6 +589,8 @@ Name | Type | Description  | Notes
 
 Update user
 
+This method allows to change or initially set some fields from WhoAmI method: email, first_name, last_name, middle_name, kyc_status, phone_number, passcode (To be removed), country, payment_currency, refund_currency Fields can be changed in a batch or separately. Method can work with a subset of possible arguments.  Authenticated User can change only himself. Calling a method with user_id of a different User will cause NotAllowed exception. 
+
 ### Example
 ```dart
 import 'package:bind_api/api.dart';
@@ -630,6 +636,8 @@ Name | Type | Description  | Notes
 > User updateUserPasscode(userID, updateUserPasscodeRequest)
 
 Update user passcode
+
+A separate method to change User’s passcode
 
 ### Example
 ```dart

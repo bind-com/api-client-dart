@@ -24,6 +24,7 @@ doc/ChartTick.md
 doc/CheckKYCDocumentStatus200Response.md
 doc/CheckKYCFileStatus200Response.md
 doc/CheckKYCStatusRequest.md
+doc/CheckPasscodeRequest.md
 doc/Contact.md
 doc/ContactsApi.md
 doc/Country.md
@@ -185,6 +186,7 @@ lib/src/model/chart_tick.dart
 lib/src/model/check_kyc_document_status200_response.dart
 lib/src/model/check_kyc_file_status200_response.dart
 lib/src/model/check_kyc_status_request.dart
+lib/src/model/check_passcode_request.dart
 lib/src/model/contact.dart
 lib/src/model/country.dart
 lib/src/model/create_beneficiary_request.dart

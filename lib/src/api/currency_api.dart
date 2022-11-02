@@ -24,7 +24,7 @@ class CurrencyApi {
   const CurrencyApi(this._dio, this._serializers);
 
   /// Crypto currency information with flag favorite or not for user
-  /// 
+  /// Crypto currency information with flag favorite or not for user.
   ///
   /// Parameters:
   /// * [cryptoCurrencyId] 
@@ -103,11 +103,11 @@ class CurrencyApi {
     );
   }
 
+  /// List of Crypto Currencies
   /// List of Crypto Currencies available at Bind
-  /// 
   ///
   /// Parameters:
-  /// * [sort] - crypto currency ordering, default order is ascending, add \"-\" symbol before sort key for descending order if possible
+  /// * [sort] - Sort order:  * `all` - Ascending, order by currency code  * `gainers` - Top gainers, tokens with highest perfomance first  * `losers` - Top losers, tokens with lowest perfomance first  * `capUp` - Ascending, order by market capitalization  * `capDown` - Descending, order by market capitalization  * `volumeUp` - Ascending, order by market volume   * `volumeDown` - Descending, order by market volume  * `recentUp` - Ascending, order by listing date on coinmarketcap api  * `recentDown` - Descending, order by listing date on coinmarketcap api  * `watch` - not implemented yet, sort like `all`  * `trending` - order by coinmarketcap trending sort 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -189,10 +189,10 @@ class CurrencyApi {
   }
 
   /// List of Currencies available at Bind
-  /// 
+  /// Main method to get information about Currencies at BIND.
   ///
   /// Parameters:
-  /// * [isCrypto] - crypto or fiat currency filter
+  /// * [isCrypto] - allows to view separately fiat or crypto currencies, if not passed then all available currencies will be shown
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request

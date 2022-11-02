@@ -12,6 +12,7 @@ import 'package:bind_api/src/api_util.dart';
 import 'package:bind_api/src/model/check_kyc_document_status200_response.dart';
 import 'package:bind_api/src/model/check_kyc_file_status200_response.dart';
 import 'package:bind_api/src/model/check_kyc_status_request.dart';
+import 'package:bind_api/src/model/check_passcode_request.dart';
 import 'package:bind_api/src/model/create_kyc_file200_response.dart';
 import 'package:bind_api/src/model/currency.dart';
 import 'package:bind_api/src/model/error.dart';
@@ -381,10 +382,10 @@ class UserApi {
   }
 
   /// Check validity of user passcode
-  /// 
+  /// A method to check passcode of a currency User
   ///
   /// Parameters:
-  /// * [updateUserPasscodeRequest] 
+  /// * [checkPasscodeRequest] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -395,7 +396,7 @@ class UserApi {
   /// Returns a [Future] containing a [Response] with a [bool] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<bool>> checkPasscode({ 
-    UpdateUserPasscodeRequest? updateUserPasscodeRequest,
+    CheckPasscodeRequest? checkPasscodeRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -426,8 +427,8 @@ class UserApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(UpdateUserPasscodeRequest);
-      _bodyData = updateUserPasscodeRequest == null ? null : _serializers.serialize(updateUserPasscodeRequest, specifiedType: _type);
+      const _type = FullType(CheckPasscodeRequest);
+      _bodyData = checkPasscodeRequest == null ? null : _serializers.serialize(checkPasscodeRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioError(
@@ -870,7 +871,7 @@ class UserApi {
   }
 
   /// Get user payment currency
-  /// 
+  /// A dedicated method to get User’s payment currency with additional fields from Currency table
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -1122,7 +1123,7 @@ class UserApi {
   }
 
   /// Update user
-  /// 
+  /// This method allows to change or initially set some fields from WhoAmI method: email, first_name, last_name, middle_name, kyc_status, phone_number, passcode (To be removed), country, payment_currency, refund_currency Fields can be changed in a batch or separately. Method can work with a subset of possible arguments.  Authenticated User can change only himself. Calling a method with user_id of a different User will cause NotAllowed exception. 
   ///
   /// Parameters:
   /// * [userID] 
@@ -1223,7 +1224,7 @@ class UserApi {
   }
 
   /// Update user passcode
-  /// 
+  /// A separate method to change User’s passcode
   ///
   /// Parameters:
   /// * [userID] 

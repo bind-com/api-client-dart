@@ -33,6 +33,7 @@ import 'package:bind_api/src/model/chart_tick.dart';
 import 'package:bind_api/src/model/check_kyc_document_status200_response.dart';
 import 'package:bind_api/src/model/check_kyc_file_status200_response.dart';
 import 'package:bind_api/src/model/check_kyc_status_request.dart';
+import 'package:bind_api/src/model/check_passcode_request.dart';
 import 'package:bind_api/src/model/contact.dart';
 import 'package:bind_api/src/model/country.dart';
 import 'package:bind_api/src/model/create_beneficiary_request.dart';
@@ -163,6 +164,7 @@ part 'serializers.g.dart';
   CheckKYCDocumentStatus200Response,
   CheckKYCFileStatus200Response,
   CheckKYCStatusRequest,
+  CheckPasscodeRequest,
   Contact,
   Country,
   CreateBeneficiaryRequest,

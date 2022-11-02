@@ -17,6 +17,8 @@ Method | HTTP request | Description
 
 Countries list
 
+Main method to get information about Countries at BIND
+
 ### Example
 ```dart
 import 'package:bind_api/api.dart';

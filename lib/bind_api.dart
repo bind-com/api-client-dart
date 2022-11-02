@@ -45,6 +45,7 @@ export 'package:bind_api/src/model/chart_tick.dart';
 export 'package:bind_api/src/model/check_kyc_document_status200_response.dart';
 export 'package:bind_api/src/model/check_kyc_file_status200_response.dart';
 export 'package:bind_api/src/model/check_kyc_status_request.dart';
+export 'package:bind_api/src/model/check_passcode_request.dart';
 export 'package:bind_api/src/model/contact.dart';
 export 'package:bind_api/src/model/country.dart';
 export 'package:bind_api/src/model/create_beneficiary_request.dart';
