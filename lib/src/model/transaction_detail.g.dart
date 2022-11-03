@@ -45,6 +45,8 @@ class _$TransactionDetail extends TransactionDetail {
   final String? networkName;
   @override
   final String? operationLabel;
+  @override
+  final JsonObject? someFields;
 
   factory _$TransactionDetail(
           [void Function(TransactionDetailBuilder)? updates]) =>
@@ -69,7 +71,8 @@ class _$TransactionDetail extends TransactionDetail {
       this.externalAddress,
       this.transactionHash,
       this.networkName,
-      this.operationLabel})
+      this.operationLabel,
+      this.someFields})
       : super._();
 
   @override
@@ -102,7 +105,8 @@ class _$TransactionDetail extends TransactionDetail {
         externalAddress == other.externalAddress &&
         transactionHash == other.transactionHash &&
         networkName == other.networkName &&
-        operationLabel == other.operationLabel;
+        operationLabel == other.operationLabel &&
+        someFields == other.someFields;
   }
 
   @override
@@ -126,32 +130,35 @@ class _$TransactionDetail extends TransactionDetail {
                                                                     $jc(
                                                                         $jc(
                                                                             $jc(
-                                                                                0,
-                                                                                id
+                                                                                $jc(
+                                                                                    0,
+                                                                                    id
+                                                                                        .hashCode),
+                                                                                state
                                                                                     .hashCode),
-                                                                            state
+                                                                            txHash
                                                                                 .hashCode),
-                                                                        txHash
+                                                                        assetSourceCode
                                                                             .hashCode),
-                                                                    assetSourceCode
+                                                                    assetTargetCode
                                                                         .hashCode),
-                                                                assetTargetCode
+                                                                sourceAmount
                                                                     .hashCode),
-                                                            sourceAmount
+                                                            targetAmount
                                                                 .hashCode),
-                                                        targetAmount.hashCode),
-                                                    type.hashCode),
-                                                date.hashCode),
-                                            time.hashCode),
-                                        assetSourceName.hashCode),
-                                    assetTargetName.hashCode),
-                                effectiveRateSourceToTarget.hashCode),
-                            effectiveRateTargetToSource.hashCode),
-                        fee.hashCode),
-                    externalAddress.hashCode),
-                transactionHash.hashCode),
-            networkName.hashCode),
-        operationLabel.hashCode));
+                                                        type.hashCode),
+                                                    date.hashCode),
+                                                time.hashCode),
+                                            assetSourceName.hashCode),
+                                        assetTargetName.hashCode),
+                                    effectiveRateSourceToTarget.hashCode),
+                                effectiveRateTargetToSource.hashCode),
+                            fee.hashCode),
+                        externalAddress.hashCode),
+                    transactionHash.hashCode),
+                networkName.hashCode),
+            operationLabel.hashCode),
+        someFields.hashCode));
   }
 
   @override
@@ -175,7 +182,8 @@ class _$TransactionDetail extends TransactionDetail {
           ..add('externalAddress', externalAddress)
           ..add('transactionHash', transactionHash)
           ..add('networkName', networkName)
-          ..add('operationLabel', operationLabel))
+          ..add('operationLabel', operationLabel)
+          ..add('someFields', someFields))
         .toString();
   }
 }
@@ -271,6 +279,10 @@ class TransactionDetailBuilder
   set operationLabel(String? operationLabel) =>
       _$this._operationLabel = operationLabel;
 
+  JsonObject? _someFields;
+  JsonObject? get someFields => _$this._someFields;
+  set someFields(JsonObject? someFields) => _$this._someFields = someFields;
+
   TransactionDetailBuilder() {
     TransactionDetail._defaults(this);
   }
@@ -297,6 +309,7 @@ class TransactionDetailBuilder
       _transactionHash = $v.transactionHash;
       _networkName = $v.networkName;
       _operationLabel = $v.operationLabel;
+      _someFields = $v.someFields;
       _$v = null;
     }
     return this;
@@ -337,7 +350,8 @@ class TransactionDetailBuilder
             externalAddress: externalAddress,
             transactionHash: transactionHash,
             networkName: networkName,
-            operationLabel: operationLabel);
+            operationLabel: operationLabel,
+            someFields: someFields);
     replace(_$result);
     return _$result;
   }
