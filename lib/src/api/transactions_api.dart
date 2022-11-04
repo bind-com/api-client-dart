@@ -204,6 +204,7 @@ class TransactionsApi {
   /// Get list of user transactions
   ///
   /// Parameters:
+  /// * [xUserTimezone] 
   /// * [transactionId] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -215,6 +216,7 @@ class TransactionsApi {
   /// Returns a [Future] containing a [Response] with a [TransactionDetail] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<TransactionDetail>> getTransactionDetails({ 
+    required String xUserTimezone,
     required String transactionId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -227,6 +229,7 @@ class TransactionsApi {
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
+        r'X-User-Timezone': xUserTimezone,
         ...?headers,
       },
       extra: <String, dynamic>{
