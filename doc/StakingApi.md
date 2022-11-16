@@ -12,11 +12,14 @@ Method | HTTP request | Description
 [**getAdditionalStaking**](StakingApi.md#getadditionalstaking) | **GET** /crypto/staking/additional_info | Get info of additional staking
 [**getStaking**](StakingApi.md#getstaking) | **GET** /crypto/staking | Get info of staking
 [**getStakingBalance**](StakingApi.md#getstakingbalance) | **GET** /crypto/staking/balance | Get staking balance
+[**getStakingCryptoAssetsForClaiming**](StakingApi.md#getstakingcryptoassetsforclaiming) | **GET** /crypto/staking/assets_for_claiming/crypto | Get crypto assets for claiming
+[**getStakingFiatAssetsForClaiming**](StakingApi.md#getstakingfiatassetsforclaiming) | **GET** /crypto/staking/assets_for_claiming/fiat | Get fiat assets for claiming
 [**getStakingPeriods**](StakingApi.md#getstakingperiods) | **GET** /crypto/staking/periods | Get staking periods
 [**getStakingReleases**](StakingApi.md#getstakingreleases) | **GET** /crypto/staking/releases | Get staking releases
 [**getStakingTimer**](StakingApi.md#getstakingtimer) | **GET** /crypto/staking/timer | Get datetime of end timer
 [**stakingEstimateOperation**](StakingApi.md#stakingestimateoperation) | **POST** /crypto/staking/estimate | Estimate staking operation
 [**stakingPerform**](StakingApi.md#stakingperform) | **POST** /crypto/staking/perform | Perform staking
+[**userStakingClaiming**](StakingApi.md#userstakingclaiming) | **POST** /crypto/staking/claiming | Perform user claiming
 
 
 # **getAdditionalStaking**
@@ -133,6 +136,90 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**StakingBalance**](StakingBalance.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getStakingCryptoAssetsForClaiming**
+> BuiltList<Currency> getStakingCryptoAssetsForClaiming()
+
+Get crypto assets for claiming
+
+This crypto assets are used for user claiming
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getStakingApi();
+
+try {
+    final response = api.getStakingCryptoAssetsForClaiming();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling StakingApi->getStakingCryptoAssetsForClaiming: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**BuiltList&lt;Currency&gt;**](Currency.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getStakingFiatAssetsForClaiming**
+> BuiltList<Currency> getStakingFiatAssetsForClaiming()
+
+Get fiat assets for claiming
+
+This fiat assets are used for user claiming
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getStakingApi();
+
+try {
+    final response = api.getStakingFiatAssetsForClaiming();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling StakingApi->getStakingFiatAssetsForClaiming: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**BuiltList&lt;Currency&gt;**](Currency.md)
 
 ### Authorization
 
@@ -355,6 +442,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Staking**](Staking.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **userStakingClaiming**
+> userStakingClaiming(cryptoExchangeRequest)
+
+Perform user claiming
+
+Only one of amounts (source or target) must be given
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getStakingApi();
+final CryptoExchangeRequest cryptoExchangeRequest = ; // CryptoExchangeRequest | 
+
+try {
+    api.userStakingClaiming(cryptoExchangeRequest);
+} catch on DioError (e) {
+    print('Exception when calling StakingApi->userStakingClaiming: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cryptoExchangeRequest** | [**CryptoExchangeRequest**](CryptoExchangeRequest.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 

@@ -16,21 +16,23 @@ part 'bank_card_detail.g.dart';
 /// BankCardDetail
 ///
 /// Properties:
-/// * [id] 
 /// * [cardholderName] - From common settings of the user
 /// * [maskedCardNumber] 
 /// * [expiryDate] 
+/// * [currency] 
+/// * [currencyName] 
+/// * [currencyLabel] 
+/// * [status] 
+/// * [image] 
+/// * [cardName] 
+/// * [createdAt] 
 /// * [balance] 
 /// * [linkedWallet] 
 /// * [decryptedCardNumber] - only if \"show encrypted data\" is true
 /// * [decryptedCvv] - only if \"show encrypted data\" is true
-/// * [status] 
 /// * [internationalPaymentsLocked] 
 /// * [gamblingTransactionsLocked] 
 abstract class BankCardDetail implements Built<BankCardDetail, BankCardDetailBuilder> {
-    @BuiltValueField(wireName: r'id')
-    String get id;
-
     /// From common settings of the user
     @BuiltValueField(wireName: r'cardholder_name')
     String get cardholderName;
@@ -40,6 +42,28 @@ abstract class BankCardDetail implements Built<BankCardDetail, BankCardDetailBui
 
     @BuiltValueField(wireName: r'expiry_date')
     Date get expiryDate;
+
+    @BuiltValueField(wireName: r'currency')
+    String get currency;
+
+    @BuiltValueField(wireName: r'currency_name')
+    String get currencyName;
+
+    @BuiltValueField(wireName: r'currency_label')
+    String get currencyLabel;
+
+    @BuiltValueField(wireName: r'status')
+    BankCardStatus get status;
+    // enum statusEnum {  NotActivated,  Active,  Lost,  Stolen,  Inactive,  PinTriesLimit,  Expired,  Replaced,  Blocked,  };
+
+    @BuiltValueField(wireName: r'image')
+    String get image;
+
+    @BuiltValueField(wireName: r'card_name')
+    String get cardName;
+
+    @BuiltValueField(wireName: r'created_at')
+    DateTime get createdAt;
 
     @BuiltValueField(wireName: r'balance')
     num? get balance;
@@ -54,10 +78,6 @@ abstract class BankCardDetail implements Built<BankCardDetail, BankCardDetailBui
     /// only if \"show encrypted data\" is true
     @BuiltValueField(wireName: r'decrypted_cvv')
     String? get decryptedCvv;
-
-    @BuiltValueField(wireName: r'status')
-    BankCardStatus? get status;
-    // enum statusEnum {  NotActivated,  Active,  Lost,  Stolen,  Inactive,  PinTriesLimit,  Expired,  Replaced,  Blocked,  };
 
     @BuiltValueField(wireName: r'international_payments_locked')
     bool? get internationalPaymentsLocked;
@@ -88,10 +108,6 @@ class _$BankCardDetailSerializer implements StructuredSerializer<BankCardDetail>
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
         result
-            ..add(r'id')
-            ..add(serializers.serialize(object.id,
-                specifiedType: const FullType(String)));
-        result
             ..add(r'cardholder_name')
             ..add(serializers.serialize(object.cardholderName,
                 specifiedType: const FullType(String)));
@@ -103,6 +119,34 @@ class _$BankCardDetailSerializer implements StructuredSerializer<BankCardDetail>
             ..add(r'expiry_date')
             ..add(serializers.serialize(object.expiryDate,
                 specifiedType: const FullType(Date)));
+        result
+            ..add(r'currency')
+            ..add(serializers.serialize(object.currency,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'currency_name')
+            ..add(serializers.serialize(object.currencyName,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'currency_label')
+            ..add(serializers.serialize(object.currencyLabel,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'status')
+            ..add(serializers.serialize(object.status,
+                specifiedType: const FullType(BankCardStatus)));
+        result
+            ..add(r'image')
+            ..add(serializers.serialize(object.image,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'card_name')
+            ..add(serializers.serialize(object.cardName,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'created_at')
+            ..add(serializers.serialize(object.createdAt,
+                specifiedType: const FullType(DateTime)));
         if (object.balance != null) {
             result
                 ..add(r'balance')
@@ -126,12 +170,6 @@ class _$BankCardDetailSerializer implements StructuredSerializer<BankCardDetail>
                 ..add(r'decrypted_cvv')
                 ..add(serializers.serialize(object.decryptedCvv,
                     specifiedType: const FullType.nullable(String)));
-        }
-        if (object.status != null) {
-            result
-                ..add(r'status')
-                ..add(serializers.serialize(object.status,
-                    specifiedType: const FullType(BankCardStatus)));
         }
         if (object.internationalPaymentsLocked != null) {
             result
@@ -160,11 +198,6 @@ class _$BankCardDetailSerializer implements StructuredSerializer<BankCardDetail>
             final Object? value = iterator.current;
             
             switch (key) {
-                case r'id':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.id = valueDes;
-                    break;
                 case r'cardholder_name':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
@@ -179,6 +212,41 @@ class _$BankCardDetailSerializer implements StructuredSerializer<BankCardDetail>
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(Date)) as Date;
                     result.expiryDate = valueDes;
+                    break;
+                case r'currency':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.currency = valueDes;
+                    break;
+                case r'currency_name':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.currencyName = valueDes;
+                    break;
+                case r'currency_label':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.currencyLabel = valueDes;
+                    break;
+                case r'status':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(BankCardStatus)) as BankCardStatus;
+                    result.status = valueDes;
+                    break;
+                case r'image':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.image = valueDes;
+                    break;
+                case r'card_name':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.cardName = valueDes;
+                    break;
+                case r'created_at':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(DateTime)) as DateTime;
+                    result.createdAt = valueDes;
                     break;
                 case r'balance':
                     final valueDes = serializers.deserialize(value,
@@ -201,11 +269,6 @@ class _$BankCardDetailSerializer implements StructuredSerializer<BankCardDetail>
                         specifiedType: const FullType.nullable(String)) as String?;
                     if (valueDes == null) continue;
                     result.decryptedCvv = valueDes;
-                    break;
-                case r'status':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(BankCardStatus)) as BankCardStatus;
-                    result.status = valueDes;
                     break;
                 case r'international_payments_locked':
                     final valueDes = serializers.deserialize(value,

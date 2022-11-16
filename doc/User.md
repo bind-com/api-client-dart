@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **country** | **String** | ID of a country chosen by User during registration. This country can be connected to documents that are used by User during KYC | [optional] 
 **paymentCurrency** | **String** | ID of User’s payment currency | [optional] 
 **refundCurrency** | **String** | ID of User’s refund currency | [optional] 
+**isAdmin** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

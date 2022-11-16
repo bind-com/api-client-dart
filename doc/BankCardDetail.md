@@ -8,15 +8,20 @@ import 'package:bind_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | 
 **cardholderName** | **String** | From common settings of the user | 
 **maskedCardNumber** | **String** |  | 
 **expiryDate** | [**Date**](Date.md) |  | 
+**currency** | **String** |  | 
+**currencyName** | **String** |  | 
+**currencyLabel** | **String** |  | 
+**status** | [**BankCardStatus**](BankCardStatus.md) |  | 
+**image** | **String** |  | 
+**cardName** | **String** |  | 
+**createdAt** | [**DateTime**](DateTime.md) |  | 
 **balance** | **num** |  | [optional] 
 **linkedWallet** | [**FiatWalletLight**](FiatWalletLight.md) |  | [optional] 
 **decryptedCardNumber** | **String** | only if \"show encrypted data\" is true | [optional] 
 **decryptedCvv** | **String** | only if \"show encrypted data\" is true | [optional] 
-**status** | [**BankCardStatus**](BankCardStatus.md) |  | [optional] 
 **internationalPaymentsLocked** | **bool** |  | [optional] 
 **gamblingTransactionsLocked** | **bool** |  | [optional] 
 

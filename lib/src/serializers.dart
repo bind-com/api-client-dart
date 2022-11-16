@@ -24,23 +24,25 @@ import 'package:bind_api/src/model/bank_card_detail_all_of.dart';
 import 'package:bind_api/src/model/bank_card_lock_request.dart';
 import 'package:bind_api/src/model/bank_card_settings.dart';
 import 'package:bind_api/src/model/bank_card_status.dart';
+import 'package:bind_api/src/model/bank_card_type.dart';
 import 'package:bind_api/src/model/beneficiary.dart';
 import 'package:bind_api/src/model/beneficiary_detail.dart';
 import 'package:bind_api/src/model/cancel_limit_order_request.dart';
 import 'package:bind_api/src/model/candle.dart';
+import 'package:bind_api/src/model/card_background.dart';
+import 'package:bind_api/src/model/card_view.dart';
 import 'package:bind_api/src/model/chain_implementation.dart';
+import 'package:bind_api/src/model/change_card_background_request.dart';
+import 'package:bind_api/src/model/change_card_status_request.dart';
 import 'package:bind_api/src/model/chart_tick.dart';
-import 'package:bind_api/src/model/check_kyc_document_status200_response.dart';
-import 'package:bind_api/src/model/check_kyc_file_status200_response.dart';
-import 'package:bind_api/src/model/check_kyc_status_request.dart';
 import 'package:bind_api/src/model/check_passcode_request.dart';
 import 'package:bind_api/src/model/contact.dart';
 import 'package:bind_api/src/model/country.dart';
+import 'package:bind_api/src/model/create_bank_card_request.dart';
 import 'package:bind_api/src/model/create_beneficiary_request.dart';
 import 'package:bind_api/src/model/create_fiat_wallet_request.dart';
 import 'package:bind_api/src/model/create_inner_fiat_request_request.dart';
 import 'package:bind_api/src/model/create_inner_fiat_transfer_request.dart';
-import 'package:bind_api/src/model/create_kyc_file200_response.dart';
 import 'package:bind_api/src/model/crypto_account.dart';
 import 'package:bind_api/src/model/crypto_account_all_of.dart';
 import 'package:bind_api/src/model/crypto_account_light.dart';
@@ -65,6 +67,7 @@ import 'package:bind_api/src/model/crypto_withdrawal_request.dart';
 import 'package:bind_api/src/model/currency.dart';
 import 'package:bind_api/src/model/currency_with_rate.dart';
 import 'package:bind_api/src/model/currency_with_rate_all_of.dart';
+import 'package:bind_api/src/model/delivery_address.dart';
 import 'package:bind_api/src/model/deposit_address.dart';
 import 'package:bind_api/src/model/error.dart';
 import 'package:bind_api/src/model/export_history.dart';
@@ -79,9 +82,11 @@ import 'package:bind_api/src/model/fiat_wallet_requisites.dart';
 import 'package:bind_api/src/model/fiat_wallet_total_balance.dart';
 import 'package:bind_api/src/model/fiat_wallet_with_payment_currency.dart';
 import 'package:bind_api/src/model/fiat_wallet_with_payment_currency_all_of.dart';
+import 'package:bind_api/src/model/get_bank_cards_list200_response.dart';
+import 'package:bind_api/src/model/get_card_benefits200_response.dart';
+import 'package:bind_api/src/model/get_card_limits200_response.dart';
 import 'package:bind_api/src/model/get_inner_crypto_transfer_fee_request.dart';
 import 'package:bind_api/src/model/get_inner_fiat_transfer_fee_request.dart';
-import 'package:bind_api/src/model/get_kyc_document_uid200_response.dart';
 import 'package:bind_api/src/model/get_staking_timer200_response.dart';
 import 'package:bind_api/src/model/human_transaction_types.dart';
 import 'package:bind_api/src/model/inner_crypto_transfer_fee_result.dart';
@@ -93,6 +98,7 @@ import 'package:bind_api/src/model/kyc_field_status.dart';
 import 'package:bind_api/src/model/kyc_file.dart';
 import 'package:bind_api/src/model/kyc_file_id.dart';
 import 'package:bind_api/src/model/kyc_file_status.dart';
+import 'package:bind_api/src/model/kyc_request.dart';
 import 'package:bind_api/src/model/kyc_request_move_result.dart';
 import 'package:bind_api/src/model/kyc_request_move_result_request_fields_status.dart';
 import 'package:bind_api/src/model/kyc_request_status.dart';
@@ -155,23 +161,25 @@ part 'serializers.g.dart';
   BankCardLockRequest,
   BankCardSettings,
   BankCardStatus,
+  BankCardType,
   Beneficiary,
   BeneficiaryDetail,
   CancelLimitOrderRequest,
   Candle,
+  CardBackground,
+  CardView,
   ChainImplementation,
+  ChangeCardBackgroundRequest,
+  ChangeCardStatusRequest,
   ChartTick,
-  CheckKYCDocumentStatus200Response,
-  CheckKYCFileStatus200Response,
-  CheckKYCStatusRequest,
   CheckPasscodeRequest,
   Contact,
   Country,
+  CreateBankCardRequest,
   CreateBeneficiaryRequest,
   CreateFiatWalletRequest,
   CreateInnerFiatRequestRequest,
   CreateInnerFiatTransferRequest,
-  CreateKYCFile200Response,
   CryptoAccount,
   CryptoAccountAllOf,
   CryptoAccountLight,
@@ -196,6 +204,7 @@ part 'serializers.g.dart';
   Currency,
   CurrencyWithRate,
   CurrencyWithRateAllOf,
+  DeliveryAddress,
   DepositAddress,
   Error,
   ExportHistory,
@@ -210,9 +219,11 @@ part 'serializers.g.dart';
   FiatWalletTotalBalance,
   FiatWalletWithPaymentCurrency,
   FiatWalletWithPaymentCurrencyAllOf,
+  GetBankCardsList200Response,
+  GetCardBenefits200Response,
+  GetCardLimits200Response,
   GetInnerCryptoTransferFeeRequest,
   GetInnerFiatTransferFeeRequest,
-  GetKYCDocumentUID200Response,
   GetStakingTimer200Response,
   HumanTransactionTypes,
   InnerCryptoTransferFeeResult,
@@ -224,6 +235,7 @@ part 'serializers.g.dart';
   KYCFile,
   KYCFileId,
   KYCFileStatus,
+  KYCRequest,
   KYCRequestMoveResult,
   KYCRequestMoveResultRequestFieldsStatus,
   KYCRequestStatus,
@@ -329,16 +341,16 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<CryptoAccountLight>(),
       )
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(CardView)]),
+        () => ListBuilder<CardView>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(StakingReleases)]),
         () => ListBuilder<StakingReleases>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Contact)]),
         () => ListBuilder<Contact>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(BankCardBaseData)]),
-        () => ListBuilder<BankCardBaseData>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Candle)]),

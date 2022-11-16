@@ -8,13 +8,25 @@ part of 'bank_card_detail.dart';
 
 class _$BankCardDetail extends BankCardDetail {
   @override
-  final String id;
-  @override
   final String cardholderName;
   @override
   final String maskedCardNumber;
   @override
   final Date expiryDate;
+  @override
+  final String currency;
+  @override
+  final String currencyName;
+  @override
+  final String currencyLabel;
+  @override
+  final BankCardStatus status;
+  @override
+  final String image;
+  @override
+  final String cardName;
+  @override
+  final DateTime createdAt;
   @override
   final num? balance;
   @override
@@ -24,8 +36,6 @@ class _$BankCardDetail extends BankCardDetail {
   @override
   final String? decryptedCvv;
   @override
-  final BankCardStatus? status;
-  @override
   final bool? internationalPaymentsLocked;
   @override
   final bool? gamblingTransactionsLocked;
@@ -34,25 +44,41 @@ class _$BankCardDetail extends BankCardDetail {
       (new BankCardDetailBuilder()..update(updates))._build();
 
   _$BankCardDetail._(
-      {required this.id,
-      required this.cardholderName,
+      {required this.cardholderName,
       required this.maskedCardNumber,
       required this.expiryDate,
+      required this.currency,
+      required this.currencyName,
+      required this.currencyLabel,
+      required this.status,
+      required this.image,
+      required this.cardName,
+      required this.createdAt,
       this.balance,
       this.linkedWallet,
       this.decryptedCardNumber,
       this.decryptedCvv,
-      this.status,
       this.internationalPaymentsLocked,
       this.gamblingTransactionsLocked})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, r'BankCardDetail', 'id');
     BuiltValueNullFieldError.checkNotNull(
         cardholderName, r'BankCardDetail', 'cardholderName');
     BuiltValueNullFieldError.checkNotNull(
         maskedCardNumber, r'BankCardDetail', 'maskedCardNumber');
     BuiltValueNullFieldError.checkNotNull(
         expiryDate, r'BankCardDetail', 'expiryDate');
+    BuiltValueNullFieldError.checkNotNull(
+        currency, r'BankCardDetail', 'currency');
+    BuiltValueNullFieldError.checkNotNull(
+        currencyName, r'BankCardDetail', 'currencyName');
+    BuiltValueNullFieldError.checkNotNull(
+        currencyLabel, r'BankCardDetail', 'currencyLabel');
+    BuiltValueNullFieldError.checkNotNull(status, r'BankCardDetail', 'status');
+    BuiltValueNullFieldError.checkNotNull(image, r'BankCardDetail', 'image');
+    BuiltValueNullFieldError.checkNotNull(
+        cardName, r'BankCardDetail', 'cardName');
+    BuiltValueNullFieldError.checkNotNull(
+        createdAt, r'BankCardDetail', 'createdAt');
   }
 
   @override
@@ -67,15 +93,20 @@ class _$BankCardDetail extends BankCardDetail {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is BankCardDetail &&
-        id == other.id &&
         cardholderName == other.cardholderName &&
         maskedCardNumber == other.maskedCardNumber &&
         expiryDate == other.expiryDate &&
+        currency == other.currency &&
+        currencyName == other.currencyName &&
+        currencyLabel == other.currencyLabel &&
+        status == other.status &&
+        image == other.image &&
+        cardName == other.cardName &&
+        createdAt == other.createdAt &&
         balance == other.balance &&
         linkedWallet == other.linkedWallet &&
         decryptedCardNumber == other.decryptedCardNumber &&
         decryptedCvv == other.decryptedCvv &&
-        status == other.status &&
         internationalPaymentsLocked == other.internationalPaymentsLocked &&
         gamblingTransactionsLocked == other.gamblingTransactionsLocked;
   }
@@ -91,15 +122,31 @@ class _$BankCardDetail extends BankCardDetail {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, id.hashCode),
-                                            cardholderName.hashCode),
-                                        maskedCardNumber.hashCode),
-                                    expiryDate.hashCode),
-                                balance.hashCode),
-                            linkedWallet.hashCode),
-                        decryptedCardNumber.hashCode),
-                    decryptedCvv.hashCode),
-                status.hashCode),
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    0,
+                                                                    cardholderName
+                                                                        .hashCode),
+                                                                maskedCardNumber
+                                                                    .hashCode),
+                                                            expiryDate
+                                                                .hashCode),
+                                                        currency.hashCode),
+                                                    currencyName.hashCode),
+                                                currencyLabel.hashCode),
+                                            status.hashCode),
+                                        image.hashCode),
+                                    cardName.hashCode),
+                                createdAt.hashCode),
+                            balance.hashCode),
+                        linkedWallet.hashCode),
+                    decryptedCardNumber.hashCode),
+                decryptedCvv.hashCode),
             internationalPaymentsLocked.hashCode),
         gamblingTransactionsLocked.hashCode));
   }
@@ -107,15 +154,20 @@ class _$BankCardDetail extends BankCardDetail {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'BankCardDetail')
-          ..add('id', id)
           ..add('cardholderName', cardholderName)
           ..add('maskedCardNumber', maskedCardNumber)
           ..add('expiryDate', expiryDate)
+          ..add('currency', currency)
+          ..add('currencyName', currencyName)
+          ..add('currencyLabel', currencyLabel)
+          ..add('status', status)
+          ..add('image', image)
+          ..add('cardName', cardName)
+          ..add('createdAt', createdAt)
           ..add('balance', balance)
           ..add('linkedWallet', linkedWallet)
           ..add('decryptedCardNumber', decryptedCardNumber)
           ..add('decryptedCvv', decryptedCvv)
-          ..add('status', status)
           ..add('internationalPaymentsLocked', internationalPaymentsLocked)
           ..add('gamblingTransactionsLocked', gamblingTransactionsLocked))
         .toString();
@@ -125,10 +177,6 @@ class _$BankCardDetail extends BankCardDetail {
 class BankCardDetailBuilder
     implements Builder<BankCardDetail, BankCardDetailBuilder> {
   _$BankCardDetail? _$v;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
 
   String? _cardholderName;
   String? get cardholderName => _$this._cardholderName;
@@ -143,6 +191,35 @@ class BankCardDetailBuilder
   Date? _expiryDate;
   Date? get expiryDate => _$this._expiryDate;
   set expiryDate(Date? expiryDate) => _$this._expiryDate = expiryDate;
+
+  String? _currency;
+  String? get currency => _$this._currency;
+  set currency(String? currency) => _$this._currency = currency;
+
+  String? _currencyName;
+  String? get currencyName => _$this._currencyName;
+  set currencyName(String? currencyName) => _$this._currencyName = currencyName;
+
+  String? _currencyLabel;
+  String? get currencyLabel => _$this._currencyLabel;
+  set currencyLabel(String? currencyLabel) =>
+      _$this._currencyLabel = currencyLabel;
+
+  BankCardStatus? _status;
+  BankCardStatus? get status => _$this._status;
+  set status(BankCardStatus? status) => _$this._status = status;
+
+  String? _image;
+  String? get image => _$this._image;
+  set image(String? image) => _$this._image = image;
+
+  String? _cardName;
+  String? get cardName => _$this._cardName;
+  set cardName(String? cardName) => _$this._cardName = cardName;
+
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
   num? _balance;
   num? get balance => _$this._balance;
@@ -163,10 +240,6 @@ class BankCardDetailBuilder
   String? get decryptedCvv => _$this._decryptedCvv;
   set decryptedCvv(String? decryptedCvv) => _$this._decryptedCvv = decryptedCvv;
 
-  BankCardStatus? _status;
-  BankCardStatus? get status => _$this._status;
-  set status(BankCardStatus? status) => _$this._status = status;
-
   bool? _internationalPaymentsLocked;
   bool? get internationalPaymentsLocked => _$this._internationalPaymentsLocked;
   set internationalPaymentsLocked(bool? internationalPaymentsLocked) =>
@@ -184,15 +257,20 @@ class BankCardDetailBuilder
   BankCardDetailBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _id = $v.id;
       _cardholderName = $v.cardholderName;
       _maskedCardNumber = $v.maskedCardNumber;
       _expiryDate = $v.expiryDate;
+      _currency = $v.currency;
+      _currencyName = $v.currencyName;
+      _currencyLabel = $v.currencyLabel;
+      _status = $v.status;
+      _image = $v.image;
+      _cardName = $v.cardName;
+      _createdAt = $v.createdAt;
       _balance = $v.balance;
       _linkedWallet = $v.linkedWallet?.toBuilder();
       _decryptedCardNumber = $v.decryptedCardNumber;
       _decryptedCvv = $v.decryptedCvv;
-      _status = $v.status;
       _internationalPaymentsLocked = $v.internationalPaymentsLocked;
       _gamblingTransactionsLocked = $v.gamblingTransactionsLocked;
       _$v = null;
@@ -219,19 +297,28 @@ class BankCardDetailBuilder
     try {
       _$result = _$v ??
           new _$BankCardDetail._(
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'BankCardDetail', 'id'),
               cardholderName: BuiltValueNullFieldError.checkNotNull(
                   cardholderName, r'BankCardDetail', 'cardholderName'),
               maskedCardNumber: BuiltValueNullFieldError.checkNotNull(
                   maskedCardNumber, r'BankCardDetail', 'maskedCardNumber'),
               expiryDate: BuiltValueNullFieldError.checkNotNull(
                   expiryDate, r'BankCardDetail', 'expiryDate'),
+              currency: BuiltValueNullFieldError.checkNotNull(
+                  currency, r'BankCardDetail', 'currency'),
+              currencyName: BuiltValueNullFieldError.checkNotNull(
+                  currencyName, r'BankCardDetail', 'currencyName'),
+              currencyLabel: BuiltValueNullFieldError.checkNotNull(
+                  currencyLabel, r'BankCardDetail', 'currencyLabel'),
+              status: BuiltValueNullFieldError.checkNotNull(
+                  status, r'BankCardDetail', 'status'),
+              image: BuiltValueNullFieldError.checkNotNull(
+                  image, r'BankCardDetail', 'image'),
+              cardName: BuiltValueNullFieldError.checkNotNull(cardName, r'BankCardDetail', 'cardName'),
+              createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'BankCardDetail', 'createdAt'),
               balance: balance,
               linkedWallet: _linkedWallet?.build(),
               decryptedCardNumber: decryptedCardNumber,
               decryptedCvv: decryptedCvv,
-              status: status,
               internationalPaymentsLocked: internationalPaymentsLocked,
               gamblingTransactionsLocked: gamblingTransactionsLocked);
     } catch (_) {

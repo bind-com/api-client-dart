@@ -9,12 +9,15 @@ import 'package:dio/dio.dart';
 
 import 'package:bind_api/src/api_util.dart';
 import 'package:bind_api/src/model/bank_card_analytics.dart';
-import 'package:bind_api/src/model/bank_card_base_data.dart';
 import 'package:bind_api/src/model/bank_card_blocking_reason.dart';
 import 'package:bind_api/src/model/bank_card_change_wallet_request.dart';
 import 'package:bind_api/src/model/bank_card_detail.dart';
 import 'package:bind_api/src/model/bank_card_lock_request.dart';
 import 'package:bind_api/src/model/bank_card_settings.dart';
+import 'package:bind_api/src/model/card_view.dart';
+import 'package:bind_api/src/model/change_card_background_request.dart';
+import 'package:bind_api/src/model/change_card_status_request.dart';
+import 'package:bind_api/src/model/create_bank_card_request.dart';
 import 'package:bind_api/src/model/create_fiat_wallet_request.dart';
 import 'package:bind_api/src/model/currency.dart';
 import 'package:bind_api/src/model/currency_with_rate.dart';
@@ -23,6 +26,9 @@ import 'package:bind_api/src/model/fiat_account.dart';
 import 'package:bind_api/src/model/fiat_wallet.dart';
 import 'package:bind_api/src/model/fiat_wallet_light.dart';
 import 'package:bind_api/src/model/fiat_wallet_with_payment_currency.dart';
+import 'package:bind_api/src/model/get_bank_cards_list200_response.dart';
+import 'package:bind_api/src/model/get_card_benefits200_response.dart';
+import 'package:bind_api/src/model/get_card_limits200_response.dart';
 import 'package:built_collection/built_collection.dart';
 
 class FiatWalletApi {
@@ -83,6 +89,181 @@ class FiatWalletApi {
     try {
       const _type = FullType(BankCardBlockingReason);
       _bodyData = bankCardBlockingReason == null ? null : _serializers.serialize(bankCardBlockingReason, specifiedType: _type);
+
+    } catch(error, stackTrace) {
+      throw DioError(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    BankCardDetail _responseData;
+
+    try {
+      const _responseType = FullType(BankCardDetail);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as BankCardDetail;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<BankCardDetail>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Change card background
+  /// 
+  ///
+  /// Parameters:
+  /// * [cardId] - id of exact card
+  /// * [changeCardBackgroundRequest] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<void>> changeCardBackground({ 
+    required String cardId,
+    ChangeCardBackgroundRequest? changeCardBackgroundRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/fiat/bankcards/{card_id}/card_background'.replaceAll('{' r'card_id' '}', cardId.toString());
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'bearerAuth',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(ChangeCardBackgroundRequest);
+      _bodyData = changeCardBackgroundRequest == null ? null : _serializers.serialize(changeCardBackgroundRequest, specifiedType: _type);
+
+    } catch(error, stackTrace) {
+      throw DioError(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
+  }
+
+  /// Change card status
+  /// 
+  ///
+  /// Parameters:
+  /// * [cardId] - id of exact card
+  /// * [changeCardStatusRequest] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [BankCardDetail] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<BankCardDetail>> changeCardStatus({ 
+    required String cardId,
+    ChangeCardStatusRequest? changeCardStatusRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/fiat/bankcards/{card_id}/card_status/'.replaceAll('{' r'card_id' '}', cardId.toString());
+    final _options = Options(
+      method: r'PATCH',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'bearerAuth',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(ChangeCardStatusRequest);
+      _bodyData = changeCardStatusRequest == null ? null : _serializers.serialize(changeCardStatusRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioError(
@@ -224,6 +405,101 @@ class FiatWalletApi {
     }
 
     return Response<BankCardDetail>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Create a new Bank Card of a specific type for current User
+  /// 
+  ///
+  /// Parameters:
+  /// * [createBankCardRequest] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [String] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<String>> createBankCard({ 
+    CreateBankCardRequest? createBankCardRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/fiat/bankcards/';
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'bearerAuth',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(CreateBankCardRequest);
+      _bodyData = createBankCardRequest == null ? null : _serializers.serialize(createBankCardRequest, specifiedType: _type);
+
+    } catch(error, stackTrace) {
+      throw DioError(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    String _responseData;
+
+    try {
+      _responseData = _response.data as String;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<String>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -508,9 +784,9 @@ class FiatWalletApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<BankCardBaseData>] as data
+  /// Returns a [Future] containing a [Response] with a [GetBankCardsList200Response] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<BankCardBaseData>>> getBankCardsList({ 
+  Future<Response<GetBankCardsList200Response>> getBankCardsList({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -545,14 +821,14 @@ class FiatWalletApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<BankCardBaseData> _responseData;
+    GetBankCardsList200Response _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(BankCardBaseData)]);
+      const _responseType = FullType(GetBankCardsList200Response);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as BuiltList<BankCardBaseData>;
+      ) as GetBankCardsList200Response;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -563,7 +839,245 @@ class FiatWalletApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<BankCardBaseData>>(
+    return Response<GetBankCardsList200Response>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Get card background color
+  /// 
+  ///
+  /// Parameters:
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [BuiltList<CardView>] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<BuiltList<CardView>>> getCardBackgorundColor({ 
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/fiat/bankcards/card_view/';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'bearerAuth',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    BuiltList<CardView> _responseData;
+
+    try {
+      const _responseType = FullType(BuiltList, [FullType(CardView)]);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as BuiltList<CardView>;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<BuiltList<CardView>>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Get card benefits
+  /// 
+  ///
+  /// Parameters:
+  /// * [cardId] - id of exact card
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [GetCardBenefits200Response] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<GetCardBenefits200Response>> getCardBenefits({ 
+    required String cardId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/fiat/bankcards/{card_id}/card_benefits/'.replaceAll('{' r'card_id' '}', cardId.toString());
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'bearerAuth',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    GetCardBenefits200Response _responseData;
+
+    try {
+      const _responseType = FullType(GetCardBenefits200Response);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as GetCardBenefits200Response;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<GetCardBenefits200Response>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Get card limits
+  /// 
+  ///
+  /// Parameters:
+  /// * [cardId] - id of exact card
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [GetCardLimits200Response] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<GetCardLimits200Response>> getCardLimits({ 
+    required String cardId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/fiat/bankcards/{card_id}/card_limits/'.replaceAll('{' r'card_id' '}', cardId.toString());
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'bearerAuth',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    GetCardLimits200Response _responseData;
+
+    try {
+      const _responseType = FullType(GetCardLimits200Response);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as GetCardLimits200Response;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<GetCardLimits200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1404,7 +1918,7 @@ class FiatWalletApi {
     );
   }
 
-  /// Update settings of a Bank Card
+  /// Update of a Bank Card
   /// 
   ///
   /// Parameters:

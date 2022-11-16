@@ -21,6 +21,7 @@ part 'user.g.dart';
 /// * [country] - ID of a country chosen by User during registration. This country can be connected to documents that are used by User during KYC
 /// * [paymentCurrency] - ID of User’s payment currency
 /// * [refundCurrency] - ID of User’s refund currency
+/// * [isAdmin] 
 abstract class User implements Built<User, UserBuilder> {
     /// Primary key of a User from User table
     @BuiltValueField(wireName: r'user_id')
@@ -63,6 +64,9 @@ abstract class User implements Built<User, UserBuilder> {
     /// ID of User’s refund currency
     @BuiltValueField(wireName: r'refund_currency')
     String? get refundCurrency;
+
+    @BuiltValueField(wireName: r'is_admin')
+    bool? get isAdmin;
 
     User._();
 
@@ -152,6 +156,12 @@ class _$UserSerializer implements StructuredSerializer<User> {
                 ..add(serializers.serialize(object.refundCurrency,
                     specifiedType: const FullType(String)));
         }
+        if (object.isAdmin != null) {
+            result
+                ..add(r'is_admin')
+                ..add(serializers.serialize(object.isAdmin,
+                    specifiedType: const FullType(bool)));
+        }
         return result;
     }
 
@@ -221,6 +231,11 @@ class _$UserSerializer implements StructuredSerializer<User> {
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.refundCurrency = valueDes;
+                    break;
+                case r'is_admin':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(bool)) as bool;
+                    result.isAdmin = valueDes;
                     break;
             }
         }

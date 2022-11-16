@@ -11,14 +11,17 @@ part 'bank_card_base_data.g.dart';
 /// BankCardBaseData
 ///
 /// Properties:
-/// * [id] 
 /// * [cardholderName] - From common settings of the user
 /// * [maskedCardNumber] 
 /// * [expiryDate] 
+/// * [currency] 
+/// * [currencyName] 
+/// * [currencyLabel] 
+/// * [status] 
+/// * [image] 
+/// * [cardName] 
+/// * [createdAt] 
 abstract class BankCardBaseData implements Built<BankCardBaseData, BankCardBaseDataBuilder> {
-    @BuiltValueField(wireName: r'id')
-    String get id;
-
     /// From common settings of the user
     @BuiltValueField(wireName: r'cardholder_name')
     String get cardholderName;
@@ -28,6 +31,27 @@ abstract class BankCardBaseData implements Built<BankCardBaseData, BankCardBaseD
 
     @BuiltValueField(wireName: r'expiry_date')
     Date get expiryDate;
+
+    @BuiltValueField(wireName: r'currency')
+    String get currency;
+
+    @BuiltValueField(wireName: r'currency_name')
+    String get currencyName;
+
+    @BuiltValueField(wireName: r'currency_label')
+    String get currencyLabel;
+
+    @BuiltValueField(wireName: r'status')
+    String get status;
+
+    @BuiltValueField(wireName: r'image')
+    String get image;
+
+    @BuiltValueField(wireName: r'card_name')
+    String get cardName;
+
+    @BuiltValueField(wireName: r'created_at')
+    DateTime get createdAt;
 
     BankCardBaseData._();
 
@@ -52,10 +76,6 @@ class _$BankCardBaseDataSerializer implements StructuredSerializer<BankCardBaseD
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
         result
-            ..add(r'id')
-            ..add(serializers.serialize(object.id,
-                specifiedType: const FullType(String)));
-        result
             ..add(r'cardholder_name')
             ..add(serializers.serialize(object.cardholderName,
                 specifiedType: const FullType(String)));
@@ -67,6 +87,34 @@ class _$BankCardBaseDataSerializer implements StructuredSerializer<BankCardBaseD
             ..add(r'expiry_date')
             ..add(serializers.serialize(object.expiryDate,
                 specifiedType: const FullType(Date)));
+        result
+            ..add(r'currency')
+            ..add(serializers.serialize(object.currency,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'currency_name')
+            ..add(serializers.serialize(object.currencyName,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'currency_label')
+            ..add(serializers.serialize(object.currencyLabel,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'status')
+            ..add(serializers.serialize(object.status,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'image')
+            ..add(serializers.serialize(object.image,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'card_name')
+            ..add(serializers.serialize(object.cardName,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'created_at')
+            ..add(serializers.serialize(object.createdAt,
+                specifiedType: const FullType(DateTime)));
         return result;
     }
 
@@ -82,11 +130,6 @@ class _$BankCardBaseDataSerializer implements StructuredSerializer<BankCardBaseD
             final Object? value = iterator.current;
             
             switch (key) {
-                case r'id':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.id = valueDes;
-                    break;
                 case r'cardholder_name':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
@@ -101,6 +144,41 @@ class _$BankCardBaseDataSerializer implements StructuredSerializer<BankCardBaseD
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(Date)) as Date;
                     result.expiryDate = valueDes;
+                    break;
+                case r'currency':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.currency = valueDes;
+                    break;
+                case r'currency_name':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.currencyName = valueDes;
+                    break;
+                case r'currency_label':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.currencyLabel = valueDes;
+                    break;
+                case r'status':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.status = valueDes;
+                    break;
+                case r'image':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.image = valueDes;
+                    break;
+                case r'card_name':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.cardName = valueDes;
+                    break;
+                case r'created_at':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(DateTime)) as DateTime;
+                    result.createdAt = valueDes;
                     break;
             }
         }

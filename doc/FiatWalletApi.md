@@ -10,11 +10,17 @@ All URIs are relative to *https://api.thebind.uk/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**blockBankCard**](FiatWalletApi.md#blockbankcard) | **POST** /fiat/bankcards/{card_id}/block/ | Block bank card and write reason
+[**changeCardBackground**](FiatWalletApi.md#changecardbackground) | **POST** /fiat/bankcards/{card_id}/card_background | Change card background
+[**changeCardStatus**](FiatWalletApi.md#changecardstatus) | **PATCH** /fiat/bankcards/{card_id}/card_status/ | Change card status
 [**changeDefaultWallet**](FiatWalletApi.md#changedefaultwallet) | **POST** /fiat/bankcards/{card_id}/change_wallet/ | Change wallet attached to bank card
+[**createBankCard**](FiatWalletApi.md#createbankcard) | **POST** /fiat/bankcards/ | Create a new Bank Card of a specific type for current User
 [**createFiatWallet**](FiatWalletApi.md#createfiatwallet) | **POST** /fiat/wallets/ | Create an wallet in given currency
 [**getBankCard**](FiatWalletApi.md#getbankcard) | **GET** /fiat/bankcards/{card_id}/ | Get one exact Bank Card
 [**getBankCardAnalytics**](FiatWalletApi.md#getbankcardanalytics) | **GET** /fiat/bankcards/{card_id}/analytics/ | Get analytics for Bank Card
 [**getBankCardsList**](FiatWalletApi.md#getbankcardslist) | **GET** /fiat/bankcards/ | Get a list of Bank Cards issued for current User
+[**getCardBackgorundColor**](FiatWalletApi.md#getcardbackgorundcolor) | **GET** /fiat/bankcards/card_view/ | Get card background color
+[**getCardBenefits**](FiatWalletApi.md#getcardbenefits) | **GET** /fiat/bankcards/{card_id}/card_benefits/ | Get card benefits
+[**getCardLimits**](FiatWalletApi.md#getcardlimits) | **GET** /fiat/bankcards/{card_id}/card_limits/ | Get card limits
 [**getFiatAccount**](FiatWalletApi.md#getfiataccount) | **GET** /fiat/account/ | All fiat wallets of current user with total balance data
 [**getFiatCurrencies**](FiatWalletApi.md#getfiatcurrencies) | **GET** /fiat/currencies/ | List of currencies that are available for fiat account opening
 [**getFiatCurrenciesWithRates**](FiatWalletApi.md#getfiatcurrencieswithrates) | **GET** /fiat/currencies/rate/ | List of currencies that are available for fiat account opening with rates for given currency
@@ -25,7 +31,7 @@ Method | HTTP request | Description
 [**reissueBankCard**](FiatWalletApi.md#reissuebankcard) | **POST** /fiat/bankcards/{card_id}/reissue/ | Reissue bank card and return new bank card
 [**shareDefaultFiatWallet**](FiatWalletApi.md#sharedefaultfiatwallet) | **GET** /fiat/wallets/share/ | Get share information for user default wallet
 [**shareFiatWallet**](FiatWalletApi.md#sharefiatwallet) | **GET** /fiat/wallets/{wallet_id}/share/ | Share specified wallet details
-[**updateBankCardSettings**](FiatWalletApi.md#updatebankcardsettings) | **PATCH** /fiat/bankcards/{card_id}/ | Update settings of a Bank Card
+[**updateBankCardSettings**](FiatWalletApi.md#updatebankcardsettings) | **PATCH** /fiat/bankcards/{card_id}/ | Update of a Bank Card
 
 
 # **blockBankCard**
@@ -58,6 +64,97 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cardId** | **String**| id of exact card | 
  **bankCardBlockingReason** | [**BankCardBlockingReason**](BankCardBlockingReason.md)|  | [optional] 
+
+### Return type
+
+[**BankCardDetail**](BankCardDetail.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **changeCardBackground**
+> changeCardBackground(cardId, changeCardBackgroundRequest)
+
+Change card background
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getFiatWalletApi();
+final String cardId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of exact card
+final ChangeCardBackgroundRequest changeCardBackgroundRequest = ; // ChangeCardBackgroundRequest | 
+
+try {
+    api.changeCardBackground(cardId, changeCardBackgroundRequest);
+} catch on DioError (e) {
+    print('Exception when calling FiatWalletApi->changeCardBackground: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cardId** | **String**| id of exact card | 
+ **changeCardBackgroundRequest** | [**ChangeCardBackgroundRequest**](ChangeCardBackgroundRequest.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **changeCardStatus**
+> BankCardDetail changeCardStatus(cardId, changeCardStatusRequest)
+
+Change card status
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getFiatWalletApi();
+final String cardId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of exact card
+final ChangeCardStatusRequest changeCardStatusRequest = ; // ChangeCardStatusRequest | 
+
+try {
+    final response = api.changeCardStatus(cardId, changeCardStatusRequest);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling FiatWalletApi->changeCardStatus: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cardId** | **String**| id of exact card | 
+ **changeCardStatusRequest** | [**ChangeCardStatusRequest**](ChangeCardStatusRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -108,6 +205,50 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BankCardDetail**](BankCardDetail.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **createBankCard**
+> String createBankCard(createBankCardRequest)
+
+Create a new Bank Card of a specific type for current User
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getFiatWalletApi();
+final CreateBankCardRequest createBankCardRequest = ; // CreateBankCardRequest | 
+
+try {
+    final response = api.createBankCard(createBankCardRequest);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling FiatWalletApi->createBankCard: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createBankCardRequest** | [**CreateBankCardRequest**](CreateBankCardRequest.md)|  | [optional] 
+
+### Return type
+
+**String**
 
 ### Authorization
 
@@ -255,7 +396,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getBankCardsList**
-> BuiltList<BankCardBaseData> getBankCardsList()
+> GetBankCardsList200Response getBankCardsList()
 
 Get a list of Bank Cards issued for current User
 
@@ -281,7 +422,135 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;BankCardBaseData&gt;**](BankCardBaseData.md)
+[**GetBankCardsList200Response**](GetBankCardsList200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getCardBackgorundColor**
+> BuiltList<CardView> getCardBackgorundColor()
+
+Get card background color
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getFiatWalletApi();
+
+try {
+    final response = api.getCardBackgorundColor();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling FiatWalletApi->getCardBackgorundColor: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**BuiltList&lt;CardView&gt;**](CardView.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getCardBenefits**
+> GetCardBenefits200Response getCardBenefits(cardId)
+
+Get card benefits
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getFiatWalletApi();
+final String cardId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of exact card
+
+try {
+    final response = api.getCardBenefits(cardId);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling FiatWalletApi->getCardBenefits: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cardId** | **String**| id of exact card | 
+
+### Return type
+
+[**GetCardBenefits200Response**](GetCardBenefits200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getCardLimits**
+> GetCardLimits200Response getCardLimits(cardId)
+
+Get card limits
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getFiatWalletApi();
+final String cardId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of exact card
+
+try {
+    final response = api.getCardLimits(cardId);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling FiatWalletApi->getCardLimits: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cardId** | **String**| id of exact card | 
+
+### Return type
+
+[**GetCardLimits200Response**](GetCardLimits200Response.md)
 
 ### Authorization
 
@@ -729,7 +998,7 @@ Name | Type | Description  | Notes
 # **updateBankCardSettings**
 > BankCardDetail updateBankCardSettings(cardId, bankCardSettings)
 
-Update settings of a Bank Card
+Update of a Bank Card
 
 ### Example
 ```dart

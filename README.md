@@ -123,11 +123,17 @@ Class | Method | HTTP request | Description
 [*ExchangeApi*](doc/ExchangeApi.md) | [**putLimitOrder**](doc/ExchangeApi.md#putlimitorder) | **POST** /crypto/exchange/limit_orders | Put limit order to the system. Order will be executed later
 [*ExchangeApi*](doc/ExchangeApi.md) | [**voteFearGreed**](doc/ExchangeApi.md#votefeargreed) | **PATCH** /crypto/assets/{asset_id}/fear_greed/ | Vote if this crypto asset goes up or down today
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**blockBankCard**](doc/FiatWalletApi.md#blockbankcard) | **POST** /fiat/bankcards/{card_id}/block/ | Block bank card and write reason
+[*FiatWalletApi*](doc/FiatWalletApi.md) | [**changeCardBackground**](doc/FiatWalletApi.md#changecardbackground) | **POST** /fiat/bankcards/{card_id}/card_background | Change card background
+[*FiatWalletApi*](doc/FiatWalletApi.md) | [**changeCardStatus**](doc/FiatWalletApi.md#changecardstatus) | **PATCH** /fiat/bankcards/{card_id}/card_status/ | Change card status
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**changeDefaultWallet**](doc/FiatWalletApi.md#changedefaultwallet) | **POST** /fiat/bankcards/{card_id}/change_wallet/ | Change wallet attached to bank card
+[*FiatWalletApi*](doc/FiatWalletApi.md) | [**createBankCard**](doc/FiatWalletApi.md#createbankcard) | **POST** /fiat/bankcards/ | Create a new Bank Card of a specific type for current User
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**createFiatWallet**](doc/FiatWalletApi.md#createfiatwallet) | **POST** /fiat/wallets/ | Create an wallet in given currency
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**getBankCard**](doc/FiatWalletApi.md#getbankcard) | **GET** /fiat/bankcards/{card_id}/ | Get one exact Bank Card
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**getBankCardAnalytics**](doc/FiatWalletApi.md#getbankcardanalytics) | **GET** /fiat/bankcards/{card_id}/analytics/ | Get analytics for Bank Card
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**getBankCardsList**](doc/FiatWalletApi.md#getbankcardslist) | **GET** /fiat/bankcards/ | Get a list of Bank Cards issued for current User
+[*FiatWalletApi*](doc/FiatWalletApi.md) | [**getCardBackgorundColor**](doc/FiatWalletApi.md#getcardbackgorundcolor) | **GET** /fiat/bankcards/card_view/ | Get card background color
+[*FiatWalletApi*](doc/FiatWalletApi.md) | [**getCardBenefits**](doc/FiatWalletApi.md#getcardbenefits) | **GET** /fiat/bankcards/{card_id}/card_benefits/ | Get card benefits
+[*FiatWalletApi*](doc/FiatWalletApi.md) | [**getCardLimits**](doc/FiatWalletApi.md#getcardlimits) | **GET** /fiat/bankcards/{card_id}/card_limits/ | Get card limits
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**getFiatAccount**](doc/FiatWalletApi.md#getfiataccount) | **GET** /fiat/account/ | All fiat wallets of current user with total balance data
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**getFiatCurrencies**](doc/FiatWalletApi.md#getfiatcurrencies) | **GET** /fiat/currencies/ | List of currencies that are available for fiat account opening
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**getFiatCurrenciesWithRates**](doc/FiatWalletApi.md#getfiatcurrencieswithrates) | **GET** /fiat/currencies/rate/ | List of currencies that are available for fiat account opening with rates for given currency
@@ -138,7 +144,7 @@ Class | Method | HTTP request | Description
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**reissueBankCard**](doc/FiatWalletApi.md#reissuebankcard) | **POST** /fiat/bankcards/{card_id}/reissue/ | Reissue bank card and return new bank card
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**shareDefaultFiatWallet**](doc/FiatWalletApi.md#sharedefaultfiatwallet) | **GET** /fiat/wallets/share/ | Get share information for user default wallet
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**shareFiatWallet**](doc/FiatWalletApi.md#sharefiatwallet) | **GET** /fiat/wallets/{wallet_id}/share/ | Share specified wallet details
-[*FiatWalletApi*](doc/FiatWalletApi.md) | [**updateBankCardSettings**](doc/FiatWalletApi.md#updatebankcardsettings) | **PATCH** /fiat/bankcards/{card_id}/ | Update settings of a Bank Card
+[*FiatWalletApi*](doc/FiatWalletApi.md) | [**updateBankCardSettings**](doc/FiatWalletApi.md#updatebankcardsettings) | **PATCH** /fiat/bankcards/{card_id}/ | Update of a Bank Card
 [*GeoApi*](doc/GeoApi.md) | [**listCountries**](doc/GeoApi.md#listcountries) | **GET** /countries/ | Countries list
 [*StagingApi*](doc/StagingApi.md) | [**adjustFiatWalletBalance**](doc/StagingApi.md#adjustfiatwalletbalance) | **POST** /staging/fiat/wallet/adjust/ | Change balance of a fiat wallet
 [*StagingApi*](doc/StagingApi.md) | [**fillCryptoWallet**](doc/StagingApi.md#fillcryptowallet) | **POST** /staging/crypto/wallet/fill/ | Put some testnet assets in a crypto wallet of a current user
@@ -146,28 +152,24 @@ Class | Method | HTTP request | Description
 [*StakingApi*](doc/StakingApi.md) | [**getAdditionalStaking**](doc/StakingApi.md#getadditionalstaking) | **GET** /crypto/staking/additional_info | Get info of additional staking
 [*StakingApi*](doc/StakingApi.md) | [**getStaking**](doc/StakingApi.md#getstaking) | **GET** /crypto/staking | Get info of staking
 [*StakingApi*](doc/StakingApi.md) | [**getStakingBalance**](doc/StakingApi.md#getstakingbalance) | **GET** /crypto/staking/balance | Get staking balance
+[*StakingApi*](doc/StakingApi.md) | [**getStakingCryptoAssetsForClaiming**](doc/StakingApi.md#getstakingcryptoassetsforclaiming) | **GET** /crypto/staking/assets_for_claiming/crypto | Get crypto assets for claiming
+[*StakingApi*](doc/StakingApi.md) | [**getStakingFiatAssetsForClaiming**](doc/StakingApi.md#getstakingfiatassetsforclaiming) | **GET** /crypto/staking/assets_for_claiming/fiat | Get fiat assets for claiming
 [*StakingApi*](doc/StakingApi.md) | [**getStakingPeriods**](doc/StakingApi.md#getstakingperiods) | **GET** /crypto/staking/periods | Get staking periods
 [*StakingApi*](doc/StakingApi.md) | [**getStakingReleases**](doc/StakingApi.md#getstakingreleases) | **GET** /crypto/staking/releases | Get staking releases
 [*StakingApi*](doc/StakingApi.md) | [**getStakingTimer**](doc/StakingApi.md#getstakingtimer) | **GET** /crypto/staking/timer | Get datetime of end timer
 [*StakingApi*](doc/StakingApi.md) | [**stakingEstimateOperation**](doc/StakingApi.md#stakingestimateoperation) | **POST** /crypto/staking/estimate | Estimate staking operation
 [*StakingApi*](doc/StakingApi.md) | [**stakingPerform**](doc/StakingApi.md#stakingperform) | **POST** /crypto/staking/perform | Perform staking
+[*StakingApi*](doc/StakingApi.md) | [**userStakingClaiming**](doc/StakingApi.md#userstakingclaiming) | **POST** /crypto/staking/claiming | Perform user claiming
 [*TransactionsApi*](doc/TransactionsApi.md) | [**exportTransactions**](doc/TransactionsApi.md#exporttransactions) | **POST** /transactions/export/ | Export user transaction to csv
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getExportHistory**](doc/TransactionsApi.md#getexporthistory) | **GET** /transactions/export/history/ | Get export history
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionDetails**](doc/TransactionsApi.md#gettransactiondetails) | **GET** /transactions/{transactionId} | Get list of user transactions
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionsAssetsList**](doc/TransactionsApi.md#gettransactionsassetslist) | **POST** /transactions/assets/ | Get list of assets of user transactions
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionsFiltered**](doc/TransactionsApi.md#gettransactionsfiltered) | **POST** /transactions/ | Get list of user transactions
-[*UserApi*](doc/UserApi.md) | [**checkKYCDocumentStatus**](doc/UserApi.md#checkkycdocumentstatus) | **POST** /user/kyc/document_status/ | Check KYC document status
-[*UserApi*](doc/UserApi.md) | [**checkKYCFileStatus**](doc/UserApi.md#checkkycfilestatus) | **POST** /user/kyc/check_file/ | Check KYC file status
 [*UserApi*](doc/UserApi.md) | [**checkKYCRequestApproval**](doc/UserApi.md#checkkycrequestapproval) | **GET** /users/kyc/requests/approval/ | Get status of KYC Request approval
-[*UserApi*](doc/UserApi.md) | [**checkKYCStatus**](doc/UserApi.md#checkkycstatus) | **POST** /user/kyc/check/ | Send KYC to check
 [*UserApi*](doc/UserApi.md) | [**checkPasscode**](doc/UserApi.md#checkpasscode) | **POST** /users/check/passcode/ | Check validity of user passcode
 [*UserApi*](doc/UserApi.md) | [**createKYCFile**](doc/UserApi.md#createkycfile) | **POST** /user/kyc/file/ | CreateKYCFile
-[*UserApi*](doc/UserApi.md) | [**createKYCFile_0**](doc/UserApi.md#createkycfile_0) | **GET** /user/kyc/create_file/ | Create KYC file
-[*UserApi*](doc/UserApi.md) | [**createKYCRequest**](doc/UserApi.md#createkycrequest) | **POST** /user/kyc/requests/ | Create KYC Request
-[*UserApi*](doc/UserApi.md) | [**getKYCDocumentUID**](doc/UserApi.md#getkycdocumentuid) | **GET** /user/kyc/document_uid/ | Get KYC Document UID
 [*UserApi*](doc/UserApi.md) | [**getKYCFile**](doc/UserApi.md#getkycfile) | **GET** /user/kyc/file/ | GetKYCFile
 [*UserApi*](doc/UserApi.md) | [**getUserPaymentCurrency**](doc/UserApi.md#getuserpaymentcurrency) | **GET** /users/payment_currency/ | Get user payment currency
-[*UserApi*](doc/UserApi.md) | [**moveKYCRequest**](doc/UserApi.md#movekycrequest) | **POST** /users/kyc/requests/approval/ | Move KYCRequest to approval
 [*UserApi*](doc/UserApi.md) | [**qRCodeGenerateCustomString**](doc/UserApi.md#qrcodegeneratecustomstring) | **POST** /users/generate/custom_qr_code/ | Generate QR code with custom string
 [*UserApi*](doc/UserApi.md) | [**updateUser**](doc/UserApi.md#updateuser) | **PATCH** /users/{userID}/ | Update user
 [*UserApi*](doc/UserApi.md) | [**updateUserPasscode**](doc/UserApi.md#updateuserpasscode) | **PATCH** /users/change_passcode/{userID}/ | Update user passcode
@@ -188,23 +190,25 @@ Class | Method | HTTP request | Description
  - [BankCardLockRequest](doc/BankCardLockRequest.md)
  - [BankCardSettings](doc/BankCardSettings.md)
  - [BankCardStatus](doc/BankCardStatus.md)
+ - [BankCardType](doc/BankCardType.md)
  - [Beneficiary](doc/Beneficiary.md)
  - [BeneficiaryDetail](doc/BeneficiaryDetail.md)
  - [CancelLimitOrderRequest](doc/CancelLimitOrderRequest.md)
  - [Candle](doc/Candle.md)
+ - [CardBackground](doc/CardBackground.md)
+ - [CardView](doc/CardView.md)
  - [ChainImplementation](doc/ChainImplementation.md)
+ - [ChangeCardBackgroundRequest](doc/ChangeCardBackgroundRequest.md)
+ - [ChangeCardStatusRequest](doc/ChangeCardStatusRequest.md)
  - [ChartTick](doc/ChartTick.md)
- - [CheckKYCDocumentStatus200Response](doc/CheckKYCDocumentStatus200Response.md)
- - [CheckKYCFileStatus200Response](doc/CheckKYCFileStatus200Response.md)
- - [CheckKYCStatusRequest](doc/CheckKYCStatusRequest.md)
  - [CheckPasscodeRequest](doc/CheckPasscodeRequest.md)
  - [Contact](doc/Contact.md)
  - [Country](doc/Country.md)
+ - [CreateBankCardRequest](doc/CreateBankCardRequest.md)
  - [CreateBeneficiaryRequest](doc/CreateBeneficiaryRequest.md)
  - [CreateFiatWalletRequest](doc/CreateFiatWalletRequest.md)
  - [CreateInnerFiatRequestRequest](doc/CreateInnerFiatRequestRequest.md)
  - [CreateInnerFiatTransferRequest](doc/CreateInnerFiatTransferRequest.md)
- - [CreateKYCFile200Response](doc/CreateKYCFile200Response.md)
  - [CryptoAccount](doc/CryptoAccount.md)
  - [CryptoAccountAllOf](doc/CryptoAccountAllOf.md)
  - [CryptoAccountLight](doc/CryptoAccountLight.md)
@@ -229,6 +233,7 @@ Class | Method | HTTP request | Description
  - [Currency](doc/Currency.md)
  - [CurrencyWithRate](doc/CurrencyWithRate.md)
  - [CurrencyWithRateAllOf](doc/CurrencyWithRateAllOf.md)
+ - [DeliveryAddress](doc/DeliveryAddress.md)
  - [DepositAddress](doc/DepositAddress.md)
  - [Error](doc/Error.md)
  - [ExportHistory](doc/ExportHistory.md)
@@ -243,9 +248,11 @@ Class | Method | HTTP request | Description
  - [FiatWalletTotalBalance](doc/FiatWalletTotalBalance.md)
  - [FiatWalletWithPaymentCurrency](doc/FiatWalletWithPaymentCurrency.md)
  - [FiatWalletWithPaymentCurrencyAllOf](doc/FiatWalletWithPaymentCurrencyAllOf.md)
+ - [GetBankCardsList200Response](doc/GetBankCardsList200Response.md)
+ - [GetCardBenefits200Response](doc/GetCardBenefits200Response.md)
+ - [GetCardLimits200Response](doc/GetCardLimits200Response.md)
  - [GetInnerCryptoTransferFeeRequest](doc/GetInnerCryptoTransferFeeRequest.md)
  - [GetInnerFiatTransferFeeRequest](doc/GetInnerFiatTransferFeeRequest.md)
- - [GetKYCDocumentUID200Response](doc/GetKYCDocumentUID200Response.md)
  - [GetStakingTimer200Response](doc/GetStakingTimer200Response.md)
  - [HumanTransactionTypes](doc/HumanTransactionTypes.md)
  - [InnerCryptoTransferFeeResult](doc/InnerCryptoTransferFeeResult.md)
@@ -257,6 +264,7 @@ Class | Method | HTTP request | Description
  - [KYCFile](doc/KYCFile.md)
  - [KYCFileId](doc/KYCFileId.md)
  - [KYCFileStatus](doc/KYCFileStatus.md)
+ - [KYCRequest](doc/KYCRequest.md)
  - [KYCRequestMoveResult](doc/KYCRequestMoveResult.md)
  - [KYCRequestMoveResultRequestFieldsStatus](doc/KYCRequestMoveResultRequestFieldsStatus.md)
  - [KYCRequestStatus](doc/KYCRequestStatus.md)
