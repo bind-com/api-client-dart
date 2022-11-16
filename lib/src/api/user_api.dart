@@ -10,12 +10,15 @@ import 'package:dio/dio.dart';
 import 'dart:typed_data';
 import 'package:bind_api/src/api_util.dart';
 import 'package:bind_api/src/model/check_kyc_document_status200_response.dart';
-import 'package:bind_api/src/model/check_kyc_document_status_request.dart';
+import 'package:bind_api/src/model/check_kyc_file_status200_response.dart';
 import 'package:bind_api/src/model/check_kyc_status_request.dart';
+import 'package:bind_api/src/model/check_passcode_request.dart';
 import 'package:bind_api/src/model/create_kyc_file200_response.dart';
 import 'package:bind_api/src/model/currency.dart';
 import 'package:bind_api/src/model/error.dart';
 import 'package:bind_api/src/model/get_kyc_document_uid200_response.dart';
+import 'package:bind_api/src/model/kyc_document_status_request.dart';
+import 'package:bind_api/src/model/kyc_file.dart';
 import 'package:bind_api/src/model/kyc_request_move_result.dart';
 import 'package:bind_api/src/model/kyc_request_status.dart';
 import 'package:bind_api/src/model/qr_code_generate_custom_string_request.dart';
@@ -34,7 +37,7 @@ class UserApi {
   /// 
   ///
   /// Parameters:
-  /// * [checkKYCDocumentStatusRequest] 
+  /// * [kYCDocumentStatusRequest] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -45,7 +48,7 @@ class UserApi {
   /// Returns a [Future] containing a [Response] with a [CheckKYCDocumentStatus200Response] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<CheckKYCDocumentStatus200Response>> checkKYCDocumentStatus({ 
-    CheckKYCDocumentStatusRequest? checkKYCDocumentStatusRequest,
+    KYCDocumentStatusRequest? kYCDocumentStatusRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -53,7 +56,7 @@ class UserApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/user/kyc/check_document/';
+    final _path = r'/user/kyc/document_status/';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -76,8 +79,8 @@ class UserApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CheckKYCDocumentStatusRequest);
-      _bodyData = checkKYCDocumentStatusRequest == null ? null : _serializers.serialize(checkKYCDocumentStatusRequest, specifiedType: _type);
+      const _type = FullType(KYCDocumentStatusRequest);
+      _bodyData = kYCDocumentStatusRequest == null ? null : _serializers.serialize(kYCDocumentStatusRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioError(
@@ -141,9 +144,9 @@ class UserApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [CheckKYCFileStatus200Response] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> checkKYCFileStatus({ 
+  Future<Response<CheckKYCFileStatus200Response>> checkKYCFileStatus({ 
     CreateKYCFile200Response? createKYCFile200Response,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -198,7 +201,34 @@ class UserApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    CheckKYCFileStatus200Response _responseData;
+
+    try {
+      const _responseType = FullType(CheckKYCFileStatus200Response);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as CheckKYCFileStatus200Response;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<CheckKYCFileStatus200Response>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// Get status of KYC Request approval
@@ -352,10 +382,10 @@ class UserApi {
   }
 
   /// Check validity of user passcode
-  /// 
+  /// A method to check passcode of a currency User
   ///
   /// Parameters:
-  /// * [updateUserPasscodeRequest] 
+  /// * [checkPasscodeRequest] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -366,7 +396,7 @@ class UserApi {
   /// Returns a [Future] containing a [Response] with a [bool] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<bool>> checkPasscode({ 
-    UpdateUserPasscodeRequest? updateUserPasscodeRequest,
+    CheckPasscodeRequest? checkPasscodeRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -397,8 +427,8 @@ class UserApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(UpdateUserPasscodeRequest);
-      _bodyData = updateUserPasscodeRequest == null ? null : _serializers.serialize(updateUserPasscodeRequest, specifiedType: _type);
+      const _type = FullType(CheckPasscodeRequest);
+      _bodyData = checkPasscodeRequest == null ? null : _serializers.serialize(checkPasscodeRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioError(
@@ -446,6 +476,84 @@ class UserApi {
     );
   }
 
+  /// CreateKYCFile
+  /// Create a new KYC file for current User
+  ///
+  /// Parameters:
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [KYCFile] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<KYCFile>> createKYCFile({ 
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/user/kyc/file/';
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'bearerAuth',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    KYCFile _responseData;
+
+    try {
+      const _responseType = FullType(KYCFile);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as KYCFile;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<KYCFile>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
   /// Create KYC file
   /// 
   ///
@@ -459,7 +567,7 @@ class UserApi {
   ///
   /// Returns a [Future] containing a [Response] with a [CreateKYCFile200Response] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<CreateKYCFile200Response>> createKYCFile({ 
+  Future<Response<CreateKYCFile200Response>> createKYCFile_1({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -684,8 +792,86 @@ class UserApi {
     );
   }
 
+  /// GetKYCFile
+  /// get latest KYC file for current User
+  ///
+  /// Parameters:
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [KYCFile] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<KYCFile>> getKYCFile({ 
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/user/kyc/file/';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'bearerAuth',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    KYCFile _responseData;
+
+    try {
+      const _responseType = FullType(KYCFile);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as KYCFile;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<KYCFile>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
   /// Get user payment currency
-  /// 
+  /// A dedicated method to get User’s payment currency with additional fields from Currency table
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -937,7 +1123,7 @@ class UserApi {
   }
 
   /// Update user
-  /// 
+  /// This method allows to change or initially set some fields from WhoAmI method: email, first_name, last_name, middle_name, kyc_status, phone_number, passcode (To be removed), country, payment_currency, refund_currency Fields can be changed in a batch or separately. Method can work with a subset of possible arguments.  Authenticated User can change only himself. Calling a method with user_id of a different User will cause NotAllowed exception. 
   ///
   /// Parameters:
   /// * [userID] 
@@ -1038,7 +1224,7 @@ class UserApi {
   }
 
   /// Update user passcode
-  /// 
+  /// A separate method to change User’s passcode
   ///
   /// Parameters:
   /// * [userID] 

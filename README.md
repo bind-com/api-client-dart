@@ -86,12 +86,12 @@ Class | Method | HTTP request | Description
 [*ContactsApi*](doc/ContactsApi.md) | [**updateContact**](doc/ContactsApi.md#updatecontact) | **PATCH** /contacts/{contact_id}/ | Update contact data (add/remove contact from favorite)
 [*CryptoApi*](doc/CryptoApi.md) | [**getCryptoChartCandles**](doc/CryptoApi.md#getcryptochartcandles) | **GET** /charts/crypto/candle/ | List of candles for crypto price chart
 [*CryptoApi*](doc/CryptoApi.md) | [**getCryptoChartLine**](doc/CryptoApi.md#getcryptochartline) | **GET** /charts/crypto/line/ | List line ticks for crypto price chart
-[*CryptoApi*](doc/CryptoApi.md) | [**getCryptoOverview**](doc/CryptoApi.md#getcryptooverview) | **GET** /crypto/overview/ | Get crypto overview information, the price of the tokens will be converted into the user&#39;s payment currency
-[*CryptoApi*](doc/CryptoApi.md) | [**getGlobalCryptoStats**](doc/CryptoApi.md#getglobalcryptostats) | **GET** /crypto/global/stats/ | Get global crypto market information, 24h volume and market cap will be converted into the user&#39;s payment currency
+[*CryptoApi*](doc/CryptoApi.md) | [**getCryptoOverview**](doc/CryptoApi.md#getcryptooverview) | **GET** /crypto/overview/ | Get crypto overview information
+[*CryptoApi*](doc/CryptoApi.md) | [**getGlobalCryptoStats**](doc/CryptoApi.md#getglobalcryptostats) | **GET** /crypto/global/stats/ | Get global crypto market information
 [*CryptoApi*](doc/CryptoApi.md) | [**getInnerCryptoTransferFee**](doc/CryptoApi.md#getinnercryptotransferfee) | **POST** /crypto/send/fee/ | 
-[*CryptoApi*](doc/CryptoApi.md) | [**getTokenDetail**](doc/CryptoApi.md#gettokendetail) | **GET** /crypto/detail/{assetID}/ | Get description for certain token, price related stats will be converted into the user&#39;s payment currency
-[*CryptoApi*](doc/CryptoApi.md) | [**getTokenStats**](doc/CryptoApi.md#gettokenstats) | **GET** /crypto/stats/{assetID}/ | Get stats for certain token, price related stats will be converted into the user&#39;s payment currency
-[*CryptoApi*](doc/CryptoApi.md) | [**listCryptoCurrencies**](doc/CryptoApi.md#listcryptocurrencies) | **GET** /currencies/crypto/ | List of Crypto Currencies available at Bind
+[*CryptoApi*](doc/CryptoApi.md) | [**getTokenDetail**](doc/CryptoApi.md#gettokendetail) | **GET** /crypto/detail/{assetID}/ | Get detail for certain token
+[*CryptoApi*](doc/CryptoApi.md) | [**getTokenStats**](doc/CryptoApi.md#gettokenstats) | **GET** /crypto/stats/{assetID}/ | Get stats for certain token
+[*CryptoApi*](doc/CryptoApi.md) | [**listCryptoCurrencies**](doc/CryptoApi.md#listcryptocurrencies) | **GET** /currencies/crypto/ | List of Crypto Currencies
 [*CryptoApi*](doc/CryptoApi.md) | [**performInnerCryptoTransfer**](doc/CryptoApi.md#performinnercryptotransfer) | **POST** /crypto/send/ | Send crypto inside BIND
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**addCryptoFavorite**](doc/CryptoWalletApi.md#addcryptofavorite) | **POST** /crypto/favorites/ | Add crypto asset to favorite
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**createWithdrawalAddress**](doc/CryptoWalletApi.md#createwithdrawaladdress) | **POST** /crypto/withdrawal/whitelisted_addresses/ | Create new whitelisted withdrawal address
@@ -104,11 +104,13 @@ Class | Method | HTTP request | Description
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getCryptoWallet**](doc/CryptoWalletApi.md#getcryptowallet) | **GET** /crypto/wallet/ | Get crypto wallet of current User - total balance and assets balances
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getCryptoWalletLight**](doc/CryptoWalletApi.md#getcryptowalletlight) | **GET** /crypto/wallet/light/ | Get crypto assets of current user with balances and prices
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getDepositAddresses**](doc/CryptoWalletApi.md#getdepositaddresses) | **GET** /crypto/assets/{asset_id}/deposit_addresses/ | Get deposit addresses for a crypto asset
+[*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getProfitLoss**](doc/CryptoWalletApi.md#getprofitloss) | **GET** /crypto/wallet/profitloss/ | Get profit loss
+[*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getProfitLossSummary**](doc/CryptoWalletApi.md#getprofitlosssummary) | **GET** /crypto/wallet/profitloss/summary/ | Get profit loss summary
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getSingleCryptoBalance**](doc/CryptoWalletApi.md#getsinglecryptobalance) | **GET** /crypto/assets/{asset_id}/balance/ | Get detailed balance of a crypto asset
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getWithdrawalAddresses**](doc/CryptoWalletApi.md#getwithdrawaladdresses) | **GET** /crypto/withdrawal/whitelisted_addresses/ | Get whitelisted addresses for crypto withdrawal
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**performWithdrawalOfCrypto**](doc/CryptoWalletApi.md#performwithdrawalofcrypto) | **POST** /crypto/withdrawal/perform/ | Register a withdrawal transaction
 [*CurrencyApi*](doc/CurrencyApi.md) | [**getCryptoAsset**](doc/CurrencyApi.md#getcryptoasset) | **GET** /currencies/crypto/{crypto_currency_id} | Crypto currency information with flag favorite or not for user
-[*CurrencyApi*](doc/CurrencyApi.md) | [**listCryptoCurrencies**](doc/CurrencyApi.md#listcryptocurrencies) | **GET** /currencies/crypto/ | List of Crypto Currencies available at Bind
+[*CurrencyApi*](doc/CurrencyApi.md) | [**listCryptoCurrencies**](doc/CurrencyApi.md#listcryptocurrencies) | **GET** /currencies/crypto/ | List of Crypto Currencies
 [*CurrencyApi*](doc/CurrencyApi.md) | [**listCurrencies**](doc/CurrencyApi.md#listcurrencies) | **GET** /currencies/ | List of Currencies available at Bind
 [*ExchangeApi*](doc/ExchangeApi.md) | [**cancelLimitOrder**](doc/ExchangeApi.md#cancellimitorder) | **POST** /crypto/exchange/limit_orders/{order_id}/cancel | Cancel given limit order
 [*ExchangeApi*](doc/ExchangeApi.md) | [**estimateCryptoExchange**](doc/ExchangeApi.md#estimatecryptoexchange) | **POST** /crypto/exchange/estimate/ | Estimate exchange of assets. One of assets has to be a cryptocurrency
@@ -154,14 +156,16 @@ Class | Method | HTTP request | Description
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionDetails**](doc/TransactionsApi.md#gettransactiondetails) | **GET** /transactions/{transactionId} | Get list of user transactions
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionsAssetsList**](doc/TransactionsApi.md#gettransactionsassetslist) | **POST** /transactions/assets/ | Get list of assets of user transactions
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionsFiltered**](doc/TransactionsApi.md#gettransactionsfiltered) | **POST** /transactions/ | Get list of user transactions
-[*UserApi*](doc/UserApi.md) | [**checkKYCDocumentStatus**](doc/UserApi.md#checkkycdocumentstatus) | **POST** /user/kyc/check_document/ | Check KYC document status
+[*UserApi*](doc/UserApi.md) | [**checkKYCDocumentStatus**](doc/UserApi.md#checkkycdocumentstatus) | **POST** /user/kyc/document_status/ | Check KYC document status
 [*UserApi*](doc/UserApi.md) | [**checkKYCFileStatus**](doc/UserApi.md#checkkycfilestatus) | **POST** /user/kyc/check_file/ | Check KYC file status
 [*UserApi*](doc/UserApi.md) | [**checkKYCRequestApproval**](doc/UserApi.md#checkkycrequestapproval) | **GET** /users/kyc/requests/approval/ | Get status of KYC Request approval
 [*UserApi*](doc/UserApi.md) | [**checkKYCStatus**](doc/UserApi.md#checkkycstatus) | **POST** /user/kyc/check/ | Send KYC to check
 [*UserApi*](doc/UserApi.md) | [**checkPasscode**](doc/UserApi.md#checkpasscode) | **POST** /users/check/passcode/ | Check validity of user passcode
-[*UserApi*](doc/UserApi.md) | [**createKYCFile**](doc/UserApi.md#createkycfile) | **GET** /user/kyc/create_file/ | Create KYC file
+[*UserApi*](doc/UserApi.md) | [**createKYCFile**](doc/UserApi.md#createkycfile) | **POST** /user/kyc/file/ | CreateKYCFile
+[*UserApi*](doc/UserApi.md) | [**createKYCFile_0**](doc/UserApi.md#createkycfile_0) | **GET** /user/kyc/create_file/ | Create KYC file
 [*UserApi*](doc/UserApi.md) | [**createKYCRequest**](doc/UserApi.md#createkycrequest) | **POST** /user/kyc/requests/ | Create KYC Request
 [*UserApi*](doc/UserApi.md) | [**getKYCDocumentUID**](doc/UserApi.md#getkycdocumentuid) | **GET** /user/kyc/document_uid/ | Get KYC Document UID
+[*UserApi*](doc/UserApi.md) | [**getKYCFile**](doc/UserApi.md#getkycfile) | **GET** /user/kyc/file/ | GetKYCFile
 [*UserApi*](doc/UserApi.md) | [**getUserPaymentCurrency**](doc/UserApi.md#getuserpaymentcurrency) | **GET** /users/payment_currency/ | Get user payment currency
 [*UserApi*](doc/UserApi.md) | [**moveKYCRequest**](doc/UserApi.md#movekycrequest) | **POST** /users/kyc/requests/approval/ | Move KYCRequest to approval
 [*UserApi*](doc/UserApi.md) | [**qRCodeGenerateCustomString**](doc/UserApi.md#qrcodegeneratecustomstring) | **POST** /users/generate/custom_qr_code/ | Generate QR code with custom string
@@ -191,8 +195,9 @@ Class | Method | HTTP request | Description
  - [ChainImplementation](doc/ChainImplementation.md)
  - [ChartTick](doc/ChartTick.md)
  - [CheckKYCDocumentStatus200Response](doc/CheckKYCDocumentStatus200Response.md)
- - [CheckKYCDocumentStatusRequest](doc/CheckKYCDocumentStatusRequest.md)
+ - [CheckKYCFileStatus200Response](doc/CheckKYCFileStatus200Response.md)
  - [CheckKYCStatusRequest](doc/CheckKYCStatusRequest.md)
+ - [CheckPasscodeRequest](doc/CheckPasscodeRequest.md)
  - [Contact](doc/Contact.md)
  - [Country](doc/Country.md)
  - [CreateBeneficiaryRequest](doc/CreateBeneficiaryRequest.md)
@@ -242,10 +247,16 @@ Class | Method | HTTP request | Description
  - [GetInnerFiatTransferFeeRequest](doc/GetInnerFiatTransferFeeRequest.md)
  - [GetKYCDocumentUID200Response](doc/GetKYCDocumentUID200Response.md)
  - [GetStakingTimer200Response](doc/GetStakingTimer200Response.md)
+ - [HumanTransactionTypes](doc/HumanTransactionTypes.md)
  - [InnerCryptoTransferFeeResult](doc/InnerCryptoTransferFeeResult.md)
  - [InnerFiatTransferFeeResult](doc/InnerFiatTransferFeeResult.md)
  - [JWTToken](doc/JWTToken.md)
+ - [KYCDocumentStatus](doc/KYCDocumentStatus.md)
+ - [KYCDocumentStatusRequest](doc/KYCDocumentStatusRequest.md)
  - [KYCFieldStatus](doc/KYCFieldStatus.md)
+ - [KYCFile](doc/KYCFile.md)
+ - [KYCFileId](doc/KYCFileId.md)
+ - [KYCFileStatus](doc/KYCFileStatus.md)
  - [KYCRequestMoveResult](doc/KYCRequestMoveResult.md)
  - [KYCRequestMoveResultRequestFieldsStatus](doc/KYCRequestMoveResultRequestFieldsStatus.md)
  - [KYCRequestStatus](doc/KYCRequestStatus.md)
@@ -255,6 +266,9 @@ Class | Method | HTTP request | Description
  - [PerformExchangeRequest](doc/PerformExchangeRequest.md)
  - [PerformFiatTransferRequest](doc/PerformFiatTransferRequest.md)
  - [PeriodInterval](doc/PeriodInterval.md)
+ - [ProfitLoss](doc/ProfitLoss.md)
+ - [ProfitLossSort](doc/ProfitLossSort.md)
+ - [ProfitLossSummary](doc/ProfitLossSummary.md)
  - [PutLimitOrderRequest](doc/PutLimitOrderRequest.md)
  - [QRCodeGenerateCustomStringRequest](doc/QRCodeGenerateCustomStringRequest.md)
  - [SingleCryptoBalance](doc/SingleCryptoBalance.md)
@@ -272,6 +286,7 @@ Class | Method | HTTP request | Description
  - [Transaction](doc/Transaction.md)
  - [TransactionAssetsFilter](doc/TransactionAssetsFilter.md)
  - [TransactionDescriptionFillingRuleSet](doc/TransactionDescriptionFillingRuleSet.md)
+ - [TransactionDetail](doc/TransactionDetail.md)
  - [TransactionExportFilter](doc/TransactionExportFilter.md)
  - [TransactionFilter](doc/TransactionFilter.md)
  - [TransactionGroup](doc/TransactionGroup.md)

@@ -31,8 +31,9 @@ import 'package:bind_api/src/model/candle.dart';
 import 'package:bind_api/src/model/chain_implementation.dart';
 import 'package:bind_api/src/model/chart_tick.dart';
 import 'package:bind_api/src/model/check_kyc_document_status200_response.dart';
-import 'package:bind_api/src/model/check_kyc_document_status_request.dart';
+import 'package:bind_api/src/model/check_kyc_file_status200_response.dart';
 import 'package:bind_api/src/model/check_kyc_status_request.dart';
+import 'package:bind_api/src/model/check_passcode_request.dart';
 import 'package:bind_api/src/model/contact.dart';
 import 'package:bind_api/src/model/country.dart';
 import 'package:bind_api/src/model/create_beneficiary_request.dart';
@@ -82,10 +83,16 @@ import 'package:bind_api/src/model/get_inner_crypto_transfer_fee_request.dart';
 import 'package:bind_api/src/model/get_inner_fiat_transfer_fee_request.dart';
 import 'package:bind_api/src/model/get_kyc_document_uid200_response.dart';
 import 'package:bind_api/src/model/get_staking_timer200_response.dart';
+import 'package:bind_api/src/model/human_transaction_types.dart';
 import 'package:bind_api/src/model/inner_crypto_transfer_fee_result.dart';
 import 'package:bind_api/src/model/inner_fiat_transfer_fee_result.dart';
 import 'package:bind_api/src/model/jwt_token.dart';
+import 'package:bind_api/src/model/kyc_document_status.dart';
+import 'package:bind_api/src/model/kyc_document_status_request.dart';
 import 'package:bind_api/src/model/kyc_field_status.dart';
+import 'package:bind_api/src/model/kyc_file.dart';
+import 'package:bind_api/src/model/kyc_file_id.dart';
+import 'package:bind_api/src/model/kyc_file_status.dart';
 import 'package:bind_api/src/model/kyc_request_move_result.dart';
 import 'package:bind_api/src/model/kyc_request_move_result_request_fields_status.dart';
 import 'package:bind_api/src/model/kyc_request_status.dart';
@@ -95,6 +102,9 @@ import 'package:bind_api/src/model/main_wallet_type.dart';
 import 'package:bind_api/src/model/perform_exchange_request.dart';
 import 'package:bind_api/src/model/perform_fiat_transfer_request.dart';
 import 'package:bind_api/src/model/period_interval.dart';
+import 'package:bind_api/src/model/profit_loss.dart';
+import 'package:bind_api/src/model/profit_loss_sort.dart';
+import 'package:bind_api/src/model/profit_loss_summary.dart';
 import 'package:bind_api/src/model/put_limit_order_request.dart';
 import 'package:bind_api/src/model/qr_code_generate_custom_string_request.dart';
 import 'package:bind_api/src/model/single_crypto_balance.dart';
@@ -112,6 +122,7 @@ import 'package:bind_api/src/model/token_stats.dart';
 import 'package:bind_api/src/model/transaction.dart';
 import 'package:bind_api/src/model/transaction_assets_filter.dart';
 import 'package:bind_api/src/model/transaction_description_filling_rule_set.dart';
+import 'package:bind_api/src/model/transaction_detail.dart';
 import 'package:bind_api/src/model/transaction_export_filter.dart';
 import 'package:bind_api/src/model/transaction_filter.dart';
 import 'package:bind_api/src/model/transaction_group.dart';
@@ -151,8 +162,9 @@ part 'serializers.g.dart';
   ChainImplementation,
   ChartTick,
   CheckKYCDocumentStatus200Response,
-  CheckKYCDocumentStatusRequest,
+  CheckKYCFileStatus200Response,
   CheckKYCStatusRequest,
+  CheckPasscodeRequest,
   Contact,
   Country,
   CreateBeneficiaryRequest,
@@ -202,10 +214,16 @@ part 'serializers.g.dart';
   GetInnerFiatTransferFeeRequest,
   GetKYCDocumentUID200Response,
   GetStakingTimer200Response,
+  HumanTransactionTypes,
   InnerCryptoTransferFeeResult,
   InnerFiatTransferFeeResult,
   JWTToken,
+  KYCDocumentStatus,
+  KYCDocumentStatusRequest,
   KYCFieldStatus,
+  KYCFile,
+  KYCFileId,
+  KYCFileStatus,
   KYCRequestMoveResult,
   KYCRequestMoveResultRequestFieldsStatus,
   KYCRequestStatus,
@@ -215,6 +233,9 @@ part 'serializers.g.dart';
   PerformExchangeRequest,
   PerformFiatTransferRequest,
   PeriodInterval,
+  ProfitLoss,
+  ProfitLossSort,
+  ProfitLossSummary,
   PutLimitOrderRequest,
   QRCodeGenerateCustomStringRequest,
   SingleCryptoBalance,
@@ -232,6 +253,7 @@ part 'serializers.g.dart';
   Transaction,
   TransactionAssetsFilter,
   TransactionDescriptionFillingRuleSet,
+  TransactionDetail,
   TransactionExportFilter,
   TransactionFilter,
   TransactionGroup,
@@ -331,16 +353,16 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<ChartTick>(),
       )
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(ProfitLoss)]),
+        () => ListBuilder<ProfitLoss>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(WithdrawalAddress)]),
         () => ListBuilder<WithdrawalAddress>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(CurrencyWithRate)]),
         () => ListBuilder<CurrencyWithRate>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
-        () => MapBuilder<String, JsonObject>(),
       )
       ..add(const DateSerializer())
       ..add(Iso8601DateTimeSerializer()))

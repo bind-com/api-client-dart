@@ -10,16 +10,19 @@ part 'token_detail.g.dart';
 /// TokenDetail
 ///
 /// Properties:
-/// * [description] 
-/// * [descriptionRest] 
-/// * [rank] 
+/// * [description] - default text about token with calculated info, prices converted to user payment currency
+/// * [descriptionRest] - info from description field of Currency model
+/// * [rank] - token coinmarketcap rank
 abstract class TokenDetail implements Built<TokenDetail, TokenDetailBuilder> {
+    /// default text about token with calculated info, prices converted to user payment currency
     @BuiltValueField(wireName: r'description')
     String? get description;
 
+    /// info from description field of Currency model
     @BuiltValueField(wireName: r'description_rest')
     String? get descriptionRest;
 
+    /// token coinmarketcap rank
     @BuiltValueField(wireName: r'rank')
     num? get rank;
 

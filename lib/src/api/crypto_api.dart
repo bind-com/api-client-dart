@@ -39,6 +39,7 @@ class CryptoApi {
   /// * [start] - time interval start filter
   /// * [end] - time interval end filter
   /// * [showUsd] - by default chart will be in fiat user payment currency, if this flag is true then currency is set to usd
+  /// * [pageSize] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -54,6 +55,7 @@ class CryptoApi {
     required DateTime start,
     required DateTime end,
     bool? showUsd,
+    num? pageSize,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -86,6 +88,7 @@ class CryptoApi {
       r'interval': encodeQueryParameter(_serializers, interval, const FullType(PeriodInterval)),
       r'start': encodeQueryParameter(_serializers, start, const FullType(DateTime)),
       r'end': encodeQueryParameter(_serializers, end, const FullType(DateTime)),
+      if (pageSize != null) r'page_size': encodeQueryParameter(_serializers, pageSize, const FullType(num)),
     };
 
     final _response = await _dio.request<Object>(
@@ -136,6 +139,7 @@ class CryptoApi {
   /// * [start] - time interval start filter
   /// * [end] - time interval end filter
   /// * [showUsd] - by default chart will be in fiat user payment currency, if this flag is true then currency is set to usd
+  /// * [pageSize] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -151,6 +155,7 @@ class CryptoApi {
     required DateTime start,
     required DateTime end,
     bool? showUsd,
+    num? pageSize,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -183,6 +188,7 @@ class CryptoApi {
       r'interval': encodeQueryParameter(_serializers, interval, const FullType(PeriodInterval)),
       r'start': encodeQueryParameter(_serializers, start, const FullType(DateTime)),
       r'end': encodeQueryParameter(_serializers, end, const FullType(DateTime)),
+      if (pageSize != null) r'page_size': encodeQueryParameter(_serializers, pageSize, const FullType(num)),
     };
 
     final _response = await _dio.request<Object>(
@@ -224,8 +230,8 @@ class CryptoApi {
     );
   }
 
+  /// Get crypto overview information
   /// Get crypto overview information, the price of the tokens will be converted into the user&#39;s payment currency
-  /// 
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -302,8 +308,8 @@ class CryptoApi {
     );
   }
 
+  /// Get global crypto market information
   /// Get global crypto market information, 24h volume and market cap will be converted into the user&#39;s payment currency
-  /// 
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -479,8 +485,8 @@ class CryptoApi {
     );
   }
 
-  /// Get description for certain token, price related stats will be converted into the user&#39;s payment currency
-  /// 
+  /// Get detail for certain token
+  /// Get detail info for certain token, price related stats will be converted into the user&#39;s payment currency
   ///
   /// Parameters:
   /// * [assetID] 
@@ -559,11 +565,11 @@ class CryptoApi {
     );
   }
 
+  /// Get stats for certain token
   /// Get stats for certain token, price related stats will be converted into the user&#39;s payment currency
-  /// 
   ///
   /// Parameters:
-  /// * [assetID] 
+  /// * [assetID] - id of crypro currency(asset)
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -639,11 +645,11 @@ class CryptoApi {
     );
   }
 
+  /// List of Crypto Currencies
   /// List of Crypto Currencies available at Bind
-  /// 
   ///
   /// Parameters:
-  /// * [sort] - crypto currency ordering, default order is ascending, add \"-\" symbol before sort key for descending order if possible
+  /// * [sort] - Sort order:  * `all` - Ascending, order by currency code  * `gainers` - Top gainers, tokens with highest perfomance first  * `losers` - Top losers, tokens with lowest perfomance first  * `capUp` - Ascending, order by market capitalization  * `capDown` - Descending, order by market capitalization  * `volumeUp` - Ascending, order by market volume   * `volumeDown` - Descending, order by market volume  * `recentUp` - Ascending, order by listing date on coinmarketcap api  * `recentDown` - Descending, order by listing date on coinmarketcap api  * `watch` - not implemented yet, sort like `all`  * `trending` - order by coinmarketcap trending sort 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request

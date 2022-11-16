@@ -23,6 +23,8 @@ class _$CryptoAsset extends CryptoAsset {
   final String paymentCurrencyCode;
   @override
   final String paymentCurrencySymbol;
+  @override
+  final num? rank;
 
   factory _$CryptoAsset([void Function(CryptoAssetBuilder)? updates]) =>
       (new CryptoAssetBuilder()..update(updates))._build();
@@ -35,7 +37,8 @@ class _$CryptoAsset extends CryptoAsset {
       required this.id,
       this.logo,
       required this.paymentCurrencyCode,
-      required this.paymentCurrencySymbol})
+      required this.paymentCurrencySymbol,
+      this.rank})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(price, r'CryptoAsset', 'price');
     BuiltValueNullFieldError.checkNotNull(
@@ -67,7 +70,8 @@ class _$CryptoAsset extends CryptoAsset {
         id == other.id &&
         logo == other.logo &&
         paymentCurrencyCode == other.paymentCurrencyCode &&
-        paymentCurrencySymbol == other.paymentCurrencySymbol;
+        paymentCurrencySymbol == other.paymentCurrencySymbol &&
+        rank == other.rank;
   }
 
   @override
@@ -77,13 +81,17 @@ class _$CryptoAsset extends CryptoAsset {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, price.hashCode), performance.hashCode),
-                            code.hashCode),
-                        name.hashCode),
-                    id.hashCode),
-                logo.hashCode),
-            paymentCurrencyCode.hashCode),
-        paymentCurrencySymbol.hashCode));
+                        $jc(
+                            $jc(
+                                $jc($jc(0, price.hashCode),
+                                    performance.hashCode),
+                                code.hashCode),
+                            name.hashCode),
+                        id.hashCode),
+                    logo.hashCode),
+                paymentCurrencyCode.hashCode),
+            paymentCurrencySymbol.hashCode),
+        rank.hashCode));
   }
 
   @override
@@ -96,7 +104,8 @@ class _$CryptoAsset extends CryptoAsset {
           ..add('id', id)
           ..add('logo', logo)
           ..add('paymentCurrencyCode', paymentCurrencyCode)
-          ..add('paymentCurrencySymbol', paymentCurrencySymbol))
+          ..add('paymentCurrencySymbol', paymentCurrencySymbol)
+          ..add('rank', rank))
         .toString();
   }
 }
@@ -138,6 +147,10 @@ class CryptoAssetBuilder implements Builder<CryptoAsset, CryptoAssetBuilder> {
   set paymentCurrencySymbol(String? paymentCurrencySymbol) =>
       _$this._paymentCurrencySymbol = paymentCurrencySymbol;
 
+  num? _rank;
+  num? get rank => _$this._rank;
+  set rank(num? rank) => _$this._rank = rank;
+
   CryptoAssetBuilder() {
     CryptoAsset._defaults(this);
   }
@@ -153,6 +166,7 @@ class CryptoAssetBuilder implements Builder<CryptoAsset, CryptoAssetBuilder> {
       _logo = $v.logo;
       _paymentCurrencyCode = $v.paymentCurrencyCode;
       _paymentCurrencySymbol = $v.paymentCurrencySymbol;
+      _rank = $v.rank;
       _$v = null;
     }
     return this;
@@ -188,9 +202,8 @@ class CryptoAssetBuilder implements Builder<CryptoAsset, CryptoAssetBuilder> {
             paymentCurrencyCode: BuiltValueNullFieldError.checkNotNull(
                 paymentCurrencyCode, r'CryptoAsset', 'paymentCurrencyCode'),
             paymentCurrencySymbol: BuiltValueNullFieldError.checkNotNull(
-                paymentCurrencySymbol,
-                r'CryptoAsset',
-                'paymentCurrencySymbol'));
+                paymentCurrencySymbol, r'CryptoAsset', 'paymentCurrencySymbol'),
+            rank: rank);
     replace(_$result);
     return _$result;
   }

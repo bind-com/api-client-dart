@@ -19,7 +19,7 @@ class AuthApi {
   const AuthApi(this._dio, this._serializers);
 
   /// Who am I
-  /// 
+  /// Main method to get information about current authenticated User
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation

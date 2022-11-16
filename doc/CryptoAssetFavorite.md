@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **logo** | **String** | Logo of an asset (link to static file) | 
 **paymentCurrencyCode** | **String** | Code of a fiat currency | 
 **paymentCurrencySymbol** | **String** | Symbol of a fiat currency (can be used to show currency symbol at UI) | 
+**rank** | **num** | coinmarketcap rank | [optional] 
 **favorite** | **bool** | True if an asset is added to User's favorites | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

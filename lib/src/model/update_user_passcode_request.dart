@@ -10,8 +10,9 @@ part 'update_user_passcode_request.g.dart';
 /// UpdateUserPasscodeRequest
 ///
 /// Properties:
-/// * [passcode] 
+/// * [passcode] - New passcode of a User. Passcode is hashed by SHA256 algorithm and stored in DB in hashed form.
 abstract class UpdateUserPasscodeRequest implements Built<UpdateUserPasscodeRequest, UpdateUserPasscodeRequestBuilder> {
+    /// New passcode of a User. Passcode is hashed by SHA256 algorithm and stored in DB in hashed form.
     @BuiltValueField(wireName: r'passcode')
     String? get passcode;
 

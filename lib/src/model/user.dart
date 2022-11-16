@@ -10,33 +10,39 @@ part 'user.g.dart';
 /// User
 ///
 /// Properties:
-/// * [userId] 
-/// * [email] 
-/// * [phoneNumber] 
-/// * [firstName] 
-/// * [lastName] 
-/// * [middleName] 
+/// * [userId] - Primary key of a User from User table
+/// * [email] - Email address that User inputs during registration. Bind backend receives it from Firebase when User is created for the first time
+/// * [phoneNumber] - Phone number that User inputs during registration. Received from Firebase
+/// * [firstName] - Received from Firebase
+/// * [lastName] - Received from Firebase
+/// * [middleName] - Received from Firebase
 /// * [isApproved] 
 /// * [passcode] 
-/// * [country] 
-/// * [paymentCurrency] 
-/// * [refundCurrency] 
+/// * [country] - ID of a country chosen by User during registration. This country can be connected to documents that are used by User during KYC
+/// * [paymentCurrency] - ID of User’s payment currency
+/// * [refundCurrency] - ID of User’s refund currency
 abstract class User implements Built<User, UserBuilder> {
+    /// Primary key of a User from User table
     @BuiltValueField(wireName: r'user_id')
     String? get userId;
 
+    /// Email address that User inputs during registration. Bind backend receives it from Firebase when User is created for the first time
     @BuiltValueField(wireName: r'email')
     String? get email;
 
+    /// Phone number that User inputs during registration. Received from Firebase
     @BuiltValueField(wireName: r'phone_number')
     String? get phoneNumber;
 
+    /// Received from Firebase
     @BuiltValueField(wireName: r'first_name')
     String? get firstName;
 
+    /// Received from Firebase
     @BuiltValueField(wireName: r'last_name')
     String? get lastName;
 
+    /// Received from Firebase
     @BuiltValueField(wireName: r'middle_name')
     String? get middleName;
 
@@ -46,12 +52,15 @@ abstract class User implements Built<User, UserBuilder> {
     @BuiltValueField(wireName: r'passcode')
     String? get passcode;
 
+    /// ID of a country chosen by User during registration. This country can be connected to documents that are used by User during KYC
     @BuiltValueField(wireName: r'country')
     String? get country;
 
+    /// ID of User’s payment currency
     @BuiltValueField(wireName: r'payment_currency')
     String? get paymentCurrency;
 
+    /// ID of User’s refund currency
     @BuiltValueField(wireName: r'refund_currency')
     String? get refundCurrency;
 

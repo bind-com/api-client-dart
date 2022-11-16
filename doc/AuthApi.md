@@ -17,6 +17,8 @@ Method | HTTP request | Description
 
 Who am I
 
+Main method to get information about current authenticated User
+
 ### Example
 ```dart
 import 'package:bind_api/api.dart';
