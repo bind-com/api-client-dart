@@ -8,68 +8,35 @@ part of 'transaction_detail.dart';
 
 class _$TransactionDetail extends TransactionDetail {
   @override
-  final String? id;
+  final String? description;
   @override
-  final String? state;
-  @override
-  final String? txHash;
-  @override
-  final String? assetSourceCode;
-  @override
-  final String? assetTargetCode;
-  @override
-  final num? sourceAmount;
-  @override
-  final num? targetAmount;
-  @override
-  final HumanTransactionTypes? type;
-  @override
-  final String? date;
-  @override
-  final String? time;
+  final String? comment;
   @override
   final String? assetSourceName;
   @override
   final String? assetTargetName;
   @override
-  final String? effectiveRateSourceToTarget;
+  final String? assetSourceCode;
   @override
-  final String? effectiveRateTargetToSource;
-  @override
-  final int? fee;
-  @override
-  final String? externalAddress;
-  @override
-  final String? transactionHash;
-  @override
-  final String? networkName;
+  final String? assetTargetCode;
   @override
   final String? operationLabel;
+  @override
+  final JsonObject? details;
 
   factory _$TransactionDetail(
           [void Function(TransactionDetailBuilder)? updates]) =>
       (new TransactionDetailBuilder()..update(updates))._build();
 
   _$TransactionDetail._(
-      {this.id,
-      this.state,
-      this.txHash,
-      this.assetSourceCode,
-      this.assetTargetCode,
-      this.sourceAmount,
-      this.targetAmount,
-      this.type,
-      this.date,
-      this.time,
+      {this.description,
+      this.comment,
       this.assetSourceName,
       this.assetTargetName,
-      this.effectiveRateSourceToTarget,
-      this.effectiveRateTargetToSource,
-      this.fee,
-      this.externalAddress,
-      this.transactionHash,
-      this.networkName,
-      this.operationLabel})
+      this.assetSourceCode,
+      this.assetTargetCode,
+      this.operationLabel,
+      this.details})
       : super._();
 
   @override
@@ -84,25 +51,14 @@ class _$TransactionDetail extends TransactionDetail {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TransactionDetail &&
-        id == other.id &&
-        state == other.state &&
-        txHash == other.txHash &&
-        assetSourceCode == other.assetSourceCode &&
-        assetTargetCode == other.assetTargetCode &&
-        sourceAmount == other.sourceAmount &&
-        targetAmount == other.targetAmount &&
-        type == other.type &&
-        date == other.date &&
-        time == other.time &&
+        description == other.description &&
+        comment == other.comment &&
         assetSourceName == other.assetSourceName &&
         assetTargetName == other.assetTargetName &&
-        effectiveRateSourceToTarget == other.effectiveRateSourceToTarget &&
-        effectiveRateTargetToSource == other.effectiveRateTargetToSource &&
-        fee == other.fee &&
-        externalAddress == other.externalAddress &&
-        transactionHash == other.transactionHash &&
-        networkName == other.networkName &&
-        operationLabel == other.operationLabel;
+        assetSourceCode == other.assetSourceCode &&
+        assetTargetCode == other.assetTargetCode &&
+        operationLabel == other.operationLabel &&
+        details == other.details;
   }
 
   @override
@@ -112,70 +68,26 @@ class _$TransactionDetail extends TransactionDetail {
             $jc(
                 $jc(
                     $jc(
-                        $jc(
-                            $jc(
-                                $jc(
-                                    $jc(
-                                        $jc(
-                                            $jc(
-                                                $jc(
-                                                    $jc(
-                                                        $jc(
-                                                            $jc(
-                                                                $jc(
-                                                                    $jc(
-                                                                        $jc(
-                                                                            $jc(
-                                                                                0,
-                                                                                id
-                                                                                    .hashCode),
-                                                                            state
-                                                                                .hashCode),
-                                                                        txHash
-                                                                            .hashCode),
-                                                                    assetSourceCode
-                                                                        .hashCode),
-                                                                assetTargetCode
-                                                                    .hashCode),
-                                                            sourceAmount
-                                                                .hashCode),
-                                                        targetAmount.hashCode),
-                                                    type.hashCode),
-                                                date.hashCode),
-                                            time.hashCode),
-                                        assetSourceName.hashCode),
-                                    assetTargetName.hashCode),
-                                effectiveRateSourceToTarget.hashCode),
-                            effectiveRateTargetToSource.hashCode),
-                        fee.hashCode),
-                    externalAddress.hashCode),
-                transactionHash.hashCode),
-            networkName.hashCode),
-        operationLabel.hashCode));
+                        $jc($jc($jc(0, description.hashCode), comment.hashCode),
+                            assetSourceName.hashCode),
+                        assetTargetName.hashCode),
+                    assetSourceCode.hashCode),
+                assetTargetCode.hashCode),
+            operationLabel.hashCode),
+        details.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'TransactionDetail')
-          ..add('id', id)
-          ..add('state', state)
-          ..add('txHash', txHash)
-          ..add('assetSourceCode', assetSourceCode)
-          ..add('assetTargetCode', assetTargetCode)
-          ..add('sourceAmount', sourceAmount)
-          ..add('targetAmount', targetAmount)
-          ..add('type', type)
-          ..add('date', date)
-          ..add('time', time)
+          ..add('description', description)
+          ..add('comment', comment)
           ..add('assetSourceName', assetSourceName)
           ..add('assetTargetName', assetTargetName)
-          ..add('effectiveRateSourceToTarget', effectiveRateSourceToTarget)
-          ..add('effectiveRateTargetToSource', effectiveRateTargetToSource)
-          ..add('fee', fee)
-          ..add('externalAddress', externalAddress)
-          ..add('transactionHash', transactionHash)
-          ..add('networkName', networkName)
-          ..add('operationLabel', operationLabel))
+          ..add('assetSourceCode', assetSourceCode)
+          ..add('assetTargetCode', assetTargetCode)
+          ..add('operationLabel', operationLabel)
+          ..add('details', details))
         .toString();
   }
 }
@@ -184,47 +96,13 @@ class TransactionDetailBuilder
     implements Builder<TransactionDetail, TransactionDetailBuilder> {
   _$TransactionDetail? _$v;
 
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
-  String? _state;
-  String? get state => _$this._state;
-  set state(String? state) => _$this._state = state;
-
-  String? _txHash;
-  String? get txHash => _$this._txHash;
-  set txHash(String? txHash) => _$this._txHash = txHash;
-
-  String? _assetSourceCode;
-  String? get assetSourceCode => _$this._assetSourceCode;
-  set assetSourceCode(String? assetSourceCode) =>
-      _$this._assetSourceCode = assetSourceCode;
-
-  String? _assetTargetCode;
-  String? get assetTargetCode => _$this._assetTargetCode;
-  set assetTargetCode(String? assetTargetCode) =>
-      _$this._assetTargetCode = assetTargetCode;
-
-  num? _sourceAmount;
-  num? get sourceAmount => _$this._sourceAmount;
-  set sourceAmount(num? sourceAmount) => _$this._sourceAmount = sourceAmount;
-
-  num? _targetAmount;
-  num? get targetAmount => _$this._targetAmount;
-  set targetAmount(num? targetAmount) => _$this._targetAmount = targetAmount;
-
-  HumanTransactionTypes? _type;
-  HumanTransactionTypes? get type => _$this._type;
-  set type(HumanTransactionTypes? type) => _$this._type = type;
-
-  String? _date;
-  String? get date => _$this._date;
-  set date(String? date) => _$this._date = date;
-
-  String? _time;
-  String? get time => _$this._time;
-  set time(String? time) => _$this._time = time;
+  String? _comment;
+  String? get comment => _$this._comment;
+  set comment(String? comment) => _$this._comment = comment;
 
   String? _assetSourceName;
   String? get assetSourceName => _$this._assetSourceName;
@@ -236,40 +114,24 @@ class TransactionDetailBuilder
   set assetTargetName(String? assetTargetName) =>
       _$this._assetTargetName = assetTargetName;
 
-  String? _effectiveRateSourceToTarget;
-  String? get effectiveRateSourceToTarget =>
-      _$this._effectiveRateSourceToTarget;
-  set effectiveRateSourceToTarget(String? effectiveRateSourceToTarget) =>
-      _$this._effectiveRateSourceToTarget = effectiveRateSourceToTarget;
+  String? _assetSourceCode;
+  String? get assetSourceCode => _$this._assetSourceCode;
+  set assetSourceCode(String? assetSourceCode) =>
+      _$this._assetSourceCode = assetSourceCode;
 
-  String? _effectiveRateTargetToSource;
-  String? get effectiveRateTargetToSource =>
-      _$this._effectiveRateTargetToSource;
-  set effectiveRateTargetToSource(String? effectiveRateTargetToSource) =>
-      _$this._effectiveRateTargetToSource = effectiveRateTargetToSource;
-
-  int? _fee;
-  int? get fee => _$this._fee;
-  set fee(int? fee) => _$this._fee = fee;
-
-  String? _externalAddress;
-  String? get externalAddress => _$this._externalAddress;
-  set externalAddress(String? externalAddress) =>
-      _$this._externalAddress = externalAddress;
-
-  String? _transactionHash;
-  String? get transactionHash => _$this._transactionHash;
-  set transactionHash(String? transactionHash) =>
-      _$this._transactionHash = transactionHash;
-
-  String? _networkName;
-  String? get networkName => _$this._networkName;
-  set networkName(String? networkName) => _$this._networkName = networkName;
+  String? _assetTargetCode;
+  String? get assetTargetCode => _$this._assetTargetCode;
+  set assetTargetCode(String? assetTargetCode) =>
+      _$this._assetTargetCode = assetTargetCode;
 
   String? _operationLabel;
   String? get operationLabel => _$this._operationLabel;
   set operationLabel(String? operationLabel) =>
       _$this._operationLabel = operationLabel;
+
+  JsonObject? _details;
+  JsonObject? get details => _$this._details;
+  set details(JsonObject? details) => _$this._details = details;
 
   TransactionDetailBuilder() {
     TransactionDetail._defaults(this);
@@ -278,25 +140,14 @@ class TransactionDetailBuilder
   TransactionDetailBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _id = $v.id;
-      _state = $v.state;
-      _txHash = $v.txHash;
-      _assetSourceCode = $v.assetSourceCode;
-      _assetTargetCode = $v.assetTargetCode;
-      _sourceAmount = $v.sourceAmount;
-      _targetAmount = $v.targetAmount;
-      _type = $v.type;
-      _date = $v.date;
-      _time = $v.time;
+      _description = $v.description;
+      _comment = $v.comment;
       _assetSourceName = $v.assetSourceName;
       _assetTargetName = $v.assetTargetName;
-      _effectiveRateSourceToTarget = $v.effectiveRateSourceToTarget;
-      _effectiveRateTargetToSource = $v.effectiveRateTargetToSource;
-      _fee = $v.fee;
-      _externalAddress = $v.externalAddress;
-      _transactionHash = $v.transactionHash;
-      _networkName = $v.networkName;
+      _assetSourceCode = $v.assetSourceCode;
+      _assetTargetCode = $v.assetTargetCode;
       _operationLabel = $v.operationLabel;
+      _details = $v.details;
       _$v = null;
     }
     return this;
@@ -319,25 +170,14 @@ class TransactionDetailBuilder
   _$TransactionDetail _build() {
     final _$result = _$v ??
         new _$TransactionDetail._(
-            id: id,
-            state: state,
-            txHash: txHash,
-            assetSourceCode: assetSourceCode,
-            assetTargetCode: assetTargetCode,
-            sourceAmount: sourceAmount,
-            targetAmount: targetAmount,
-            type: type,
-            date: date,
-            time: time,
+            description: description,
+            comment: comment,
             assetSourceName: assetSourceName,
             assetTargetName: assetTargetName,
-            effectiveRateSourceToTarget: effectiveRateSourceToTarget,
-            effectiveRateTargetToSource: effectiveRateTargetToSource,
-            fee: fee,
-            externalAddress: externalAddress,
-            transactionHash: transactionHash,
-            networkName: networkName,
-            operationLabel: operationLabel);
+            assetSourceCode: assetSourceCode,
+            assetTargetCode: assetTargetCode,
+            operationLabel: operationLabel,
+            details: details);
     replace(_$result);
     return _$result;
   }

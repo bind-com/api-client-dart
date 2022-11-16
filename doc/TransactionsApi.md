@@ -105,7 +105,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTransactionDetails**
-> TransactionDetail getTransactionDetails(transactionId)
+> TransactionDetail getTransactionDetails(xUserTimezone, transactionId)
 
 Get list of user transactions
 
@@ -119,10 +119,11 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getTransactionsApi();
+final String xUserTimezone = xUserTimezone_example; // String | 
 final String transactionId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.getTransactionDetails(transactionId);
+    final response = api.getTransactionDetails(xUserTimezone, transactionId);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling TransactionsApi->getTransactionDetails: $e\n');
@@ -133,6 +134,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **xUserTimezone** | **String**|  | 
  **transactionId** | **String**|  | 
 
 ### Return type
