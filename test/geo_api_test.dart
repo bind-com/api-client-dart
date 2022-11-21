@@ -9,6 +9,8 @@ void main() {
   group(GeoApi, () {
     // Countries list
     //
+    // Main method to get information about Countries at BIND
+    //
     //Future<BuiltList<Country>> listCountries({ String search }) async
     test('test listCountries', () async {
       // TODO

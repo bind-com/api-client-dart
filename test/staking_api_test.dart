@@ -34,6 +34,24 @@ void main() {
       // TODO
     });
 
+    // Get crypto assets for claiming
+    //
+    // This crypto assets are used for user claiming
+    //
+    //Future<BuiltList<Currency>> getStakingCryptoAssetsForClaiming() async
+    test('test getStakingCryptoAssetsForClaiming', () async {
+      // TODO
+    });
+
+    // Get fiat assets for claiming
+    //
+    // This fiat assets are used for user claiming
+    //
+    //Future<BuiltList<Currency>> getStakingFiatAssetsForClaiming() async
+    test('test getStakingFiatAssetsForClaiming', () async {
+      // TODO
+    });
+
     // Get staking periods
     //
     // Get staking periods for dropdown
@@ -76,6 +94,15 @@ void main() {
     //
     //Future<Staking> stakingPerform({ StakingPerformRequest stakingPerformRequest }) async
     test('test stakingPerform', () async {
+      // TODO
+    });
+
+    // Perform user claiming
+    //
+    // Only one of amounts (source or target) must be given
+    //
+    //Future userStakingClaiming({ CryptoExchangeRequest cryptoExchangeRequest }) async
+    test('test userStakingClaiming', () async {
       // TODO
     });
 

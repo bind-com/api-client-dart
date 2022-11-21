@@ -7,6 +7,7 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(UpdateUserPasscodeRequest, () {
+    // New passcode of a User. Passcode is hashed by SHA256 algorithm and stored in DB in hashed form.
     // String passcode
     test('to test the property `passcode`', () async {
       // TODO

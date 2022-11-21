@@ -49,6 +49,12 @@ void main() {
       // TODO
     });
 
+    // price of a token in payment currency
+    // num price
+    test('to test the property `price`', () async {
+      // TODO
+    });
+
     // Percentage of growth of an asset during last 24 hours
     // num assetPerformance
     test('to test the property `assetPerformance`', () async {

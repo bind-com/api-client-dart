@@ -24,7 +24,7 @@ void main() {
       // TODO
     });
 
-    // BuiltList<CryptoAccountLight> accounts
+    // BuiltList<CryptoAccount> accounts
     test('to test the property `accounts`', () async {
       // TODO
     });

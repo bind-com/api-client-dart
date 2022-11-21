@@ -50,6 +50,18 @@ void main() {
       // TODO
     });
 
+    // is asset a crypto asset
+    // bool assetSourceIsCrypto
+    test('to test the property `assetSourceIsCrypto`', () async {
+      // TODO
+    });
+
+    // is asset a crypto asset
+    // bool assetTargetIsCrypto
+    test('to test the property `assetTargetIsCrypto`', () async {
+      // TODO
+    });
+
     // num amountSource
     test('to test the property `amountSource`', () async {
       // TODO

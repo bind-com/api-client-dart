@@ -45,5 +45,17 @@ void main() {
       // TODO
     });
 
+    // date field to filter transactions by date later or equal
+    // Date startDate
+    test('to test the property `startDate`', () async {
+      // TODO
+    });
+
+    // date field to filter transactions by date earlier or equal
+    // Date endDate
+    test('to test the property `endDate`', () async {
+      // TODO
+    });
+
   });
 }

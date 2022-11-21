@@ -9,6 +9,8 @@ void main() {
   group(AuthApi, () {
     // Who am I
     //
+    // Main method to get information about current authenticated User
+    //
     //Future<User> whoAmI() async
     test('test whoAmI', () async {
       // TODO

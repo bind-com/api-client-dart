@@ -12,8 +12,8 @@ void main() {
       // TODO
     });
 
-    // String fileUuid
-    test('to test the property `fileUuid`', () async {
+    // String fileUid
+    test('to test the property `fileUid`', () async {
       // TODO
     });
 

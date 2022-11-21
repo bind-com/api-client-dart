@@ -7,7 +7,7 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(CryptoWalletAllOf, () {
-    // BuiltList<CryptoAccountLight> accounts
+    // BuiltList<CryptoAccount> accounts
     test('to test the property `accounts`', () async {
       // TODO
     });

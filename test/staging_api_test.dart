@@ -25,5 +25,14 @@ void main() {
       // TODO
     });
 
+    // Get pool balances
+    //
+    // Get fireblocks main and withdraw pools balances
+    //
+    //Future fireblocksPoolBalances() async
+    test('test fireblocksPoolBalances', () async {
+      // TODO
+    });
+
   });
 }

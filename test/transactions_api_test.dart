@@ -25,6 +25,15 @@ void main() {
       // TODO
     });
 
+    // Get list of user transactions
+    //
+    // Get list of user transactions
+    //
+    //Future<TransactionDetail> getTransactionDetails(String xUserTimezone, String transactionId) async
+    test('test getTransactionDetails', () async {
+      // TODO
+    });
+
     // Get list of assets of user transactions
     //
     // Get list of assets of user transactions

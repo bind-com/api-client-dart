@@ -14,10 +14,31 @@ void main() {
       // TODO
     });
 
+    // Change card background
+    //
+    //Future changeCardBackground(String cardId, { ChangeCardBackgroundRequest changeCardBackgroundRequest }) async
+    test('test changeCardBackground', () async {
+      // TODO
+    });
+
+    // Change card status
+    //
+    //Future<BankCardDetail> changeCardStatus(String cardId, { ChangeCardStatusRequest changeCardStatusRequest }) async
+    test('test changeCardStatus', () async {
+      // TODO
+    });
+
     // Change wallet attached to bank card
     //
     //Future<BankCardDetail> changeDefaultWallet(String cardId, { BankCardChangeWalletRequest bankCardChangeWalletRequest }) async
     test('test changeDefaultWallet', () async {
+      // TODO
+    });
+
+    // Create a new Bank Card of a specific type for current User
+    //
+    //Future<String> createBankCard({ CreateBankCardRequest createBankCardRequest }) async
+    test('test createBankCard', () async {
       // TODO
     });
 
@@ -44,8 +65,29 @@ void main() {
 
     // Get a list of Bank Cards issued for current User
     //
-    //Future<BuiltList<BankCardBaseData>> getBankCardsList() async
+    //Future<GetBankCardsList200Response> getBankCardsList() async
     test('test getBankCardsList', () async {
+      // TODO
+    });
+
+    // Get card background color
+    //
+    //Future<BuiltList<CardView>> getCardBackgorundColor() async
+    test('test getCardBackgorundColor', () async {
+      // TODO
+    });
+
+    // Get card benefits
+    //
+    //Future<GetCardBenefits200Response> getCardBenefits(String cardId) async
+    test('test getCardBenefits', () async {
+      // TODO
+    });
+
+    // Get card limits
+    //
+    //Future<GetCardLimits200Response> getCardLimits(String cardId) async
+    test('test getCardLimits', () async {
       // TODO
     });
 
@@ -62,6 +104,13 @@ void main() {
     //
     //Future<BuiltList<Currency>> getFiatCurrencies() async
     test('test getFiatCurrencies', () async {
+      // TODO
+    });
+
+    // List of currencies that are available for fiat account opening with rates for given currency
+    //
+    //Future<BuiltList<CurrencyWithRate>> getFiatCurrenciesWithRates(String asset) async
+    test('test getFiatCurrenciesWithRates', () async {
       // TODO
     });
 
@@ -120,7 +169,7 @@ void main() {
       // TODO
     });
 
-    // Update settings of a Bank Card
+    // Update of a Bank Card
     //
     //Future<BankCardDetail> updateBankCardSettings(String cardId, { BankCardSettings bankCardSettings }) async
     test('test updateBankCardSettings', () async {

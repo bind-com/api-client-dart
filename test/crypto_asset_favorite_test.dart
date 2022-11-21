@@ -55,6 +55,12 @@ void main() {
       // TODO
     });
 
+    // coinmarketcap rank
+    // num rank
+    test('to test the property `rank`', () async {
+      // TODO
+    });
+
     // True if an asset is added to User's favorites
     // bool favorite
     test('to test the property `favorite`', () async {

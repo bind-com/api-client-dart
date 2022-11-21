@@ -7,6 +7,7 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(CheckPasscodeRequest, () {
+    // A passcode to check. Passcode argument is hashed by SHA256 algorithm and is compared to a hashed passcode stored in DB for currently authenticated User.
     // String passcode
     test('to test the property `passcode`', () async {
       // TODO

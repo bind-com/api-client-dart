@@ -55,5 +55,11 @@ void main() {
       // TODO
     });
 
+    // coinmarketcap rank
+    // num rank
+    test('to test the property `rank`', () async {
+      // TODO
+    });
+
   });
 }

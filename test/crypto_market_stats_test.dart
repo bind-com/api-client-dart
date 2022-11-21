@@ -7,26 +7,31 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(CryptoMarketStats, () {
+    // number of coins listed in CMC
     // num coins
     test('to test the property `coins`', () async {
       // TODO
     });
 
+    // global market cap converted to user payment currency
     // num marketCap
     test('to test the property `marketCap`', () async {
       // TODO
     });
 
+    // global 24h volume converted to user payment currency
     // num n24hVolume
     test('to test the property `n24hVolume`', () async {
       // TODO
     });
 
+    // dominance info
     // num btcDominance
     test('to test the property `btcDominance`', () async {
       // TODO
     });
 
+    // dominance info
     // num ethDominance
     test('to test the property `ethDominance`', () async {
       // TODO

@@ -7,6 +7,11 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(KYCFileId, () {
+    // String documentUid
+    test('to test the property `documentUid`', () async {
+      // TODO
+    });
+
     // KYCDocumentStatus status
     test('to test the property `status`', () async {
       // TODO
