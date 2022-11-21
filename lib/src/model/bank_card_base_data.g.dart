@@ -8,6 +8,8 @@ part of 'bank_card_base_data.dart';
 
 class _$BankCardBaseData extends BankCardBaseData {
   @override
+  final String id;
+  @override
   final String cardholderName;
   @override
   final String maskedCardNumber;
@@ -33,7 +35,8 @@ class _$BankCardBaseData extends BankCardBaseData {
       (new BankCardBaseDataBuilder()..update(updates))._build();
 
   _$BankCardBaseData._(
-      {required this.cardholderName,
+      {required this.id,
+      required this.cardholderName,
       required this.maskedCardNumber,
       required this.expiryDate,
       required this.currency,
@@ -44,6 +47,7 @@ class _$BankCardBaseData extends BankCardBaseData {
       required this.cardName,
       required this.createdAt})
       : super._() {
+    BuiltValueNullFieldError.checkNotNull(id, r'BankCardBaseData', 'id');
     BuiltValueNullFieldError.checkNotNull(
         cardholderName, r'BankCardBaseData', 'cardholderName');
     BuiltValueNullFieldError.checkNotNull(
@@ -77,6 +81,7 @@ class _$BankCardBaseData extends BankCardBaseData {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is BankCardBaseData &&
+        id == other.id &&
         cardholderName == other.cardholderName &&
         maskedCardNumber == other.maskedCardNumber &&
         expiryDate == other.expiryDate &&
@@ -99,7 +104,9 @@ class _$BankCardBaseData extends BankCardBaseData {
                         $jc(
                             $jc(
                                 $jc(
-                                    $jc($jc(0, cardholderName.hashCode),
+                                    $jc(
+                                        $jc($jc(0, id.hashCode),
+                                            cardholderName.hashCode),
                                         maskedCardNumber.hashCode),
                                     expiryDate.hashCode),
                                 currency.hashCode),
@@ -114,6 +121,7 @@ class _$BankCardBaseData extends BankCardBaseData {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'BankCardBaseData')
+          ..add('id', id)
           ..add('cardholderName', cardholderName)
           ..add('maskedCardNumber', maskedCardNumber)
           ..add('expiryDate', expiryDate)
@@ -131,6 +139,10 @@ class _$BankCardBaseData extends BankCardBaseData {
 class BankCardBaseDataBuilder
     implements Builder<BankCardBaseData, BankCardBaseDataBuilder> {
   _$BankCardBaseData? _$v;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   String? _cardholderName;
   String? get cardholderName => _$this._cardholderName;
@@ -182,6 +194,7 @@ class BankCardBaseDataBuilder
   BankCardBaseDataBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _id = $v.id;
       _cardholderName = $v.cardholderName;
       _maskedCardNumber = $v.maskedCardNumber;
       _expiryDate = $v.expiryDate;
@@ -214,6 +227,8 @@ class BankCardBaseDataBuilder
   _$BankCardBaseData _build() {
     final _$result = _$v ??
         new _$BankCardBaseData._(
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'BankCardBaseData', 'id'),
             cardholderName: BuiltValueNullFieldError.checkNotNull(
                 cardholderName, r'BankCardBaseData', 'cardholderName'),
             maskedCardNumber: BuiltValueNullFieldError.checkNotNull(
@@ -228,8 +243,7 @@ class BankCardBaseDataBuilder
                 currencyLabel, r'BankCardBaseData', 'currencyLabel'),
             status: BuiltValueNullFieldError.checkNotNull(
                 status, r'BankCardBaseData', 'status'),
-            image: BuiltValueNullFieldError.checkNotNull(
-                image, r'BankCardBaseData', 'image'),
+            image: BuiltValueNullFieldError.checkNotNull(image, r'BankCardBaseData', 'image'),
             cardName: BuiltValueNullFieldError.checkNotNull(cardName, r'BankCardBaseData', 'cardName'),
             createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'BankCardBaseData', 'createdAt'));
     replace(_$result);

@@ -8,6 +8,7 @@ import 'package:bind_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **String** |  | 
 **cardholderName** | **String** | From common settings of the user | 
 **maskedCardNumber** | **String** |  | 
 **expiryDate** | [**Date**](Date.md) |  | 

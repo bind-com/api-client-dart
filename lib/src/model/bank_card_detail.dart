@@ -16,6 +16,7 @@ part 'bank_card_detail.g.dart';
 /// BankCardDetail
 ///
 /// Properties:
+/// * [id] 
 /// * [cardholderName] - From common settings of the user
 /// * [maskedCardNumber] 
 /// * [expiryDate] 
@@ -33,6 +34,9 @@ part 'bank_card_detail.g.dart';
 /// * [internationalPaymentsLocked] 
 /// * [gamblingTransactionsLocked] 
 abstract class BankCardDetail implements Built<BankCardDetail, BankCardDetailBuilder> {
+    @BuiltValueField(wireName: r'id')
+    String get id;
+
     /// From common settings of the user
     @BuiltValueField(wireName: r'cardholder_name')
     String get cardholderName;
@@ -107,6 +111,10 @@ class _$BankCardDetailSerializer implements StructuredSerializer<BankCardDetail>
     Iterable<Object?> serialize(Serializers serializers, BankCardDetail object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
+        result
+            ..add(r'id')
+            ..add(serializers.serialize(object.id,
+                specifiedType: const FullType(String)));
         result
             ..add(r'cardholder_name')
             ..add(serializers.serialize(object.cardholderName,
@@ -198,6 +206,11 @@ class _$BankCardDetailSerializer implements StructuredSerializer<BankCardDetail>
             final Object? value = iterator.current;
             
             switch (key) {
+                case r'id':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.id = valueDes;
+                    break;
                 case r'cardholder_name':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;

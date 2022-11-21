@@ -8,6 +8,8 @@ part of 'bank_card_detail.dart';
 
 class _$BankCardDetail extends BankCardDetail {
   @override
+  final String id;
+  @override
   final String cardholderName;
   @override
   final String maskedCardNumber;
@@ -44,7 +46,8 @@ class _$BankCardDetail extends BankCardDetail {
       (new BankCardDetailBuilder()..update(updates))._build();
 
   _$BankCardDetail._(
-      {required this.cardholderName,
+      {required this.id,
+      required this.cardholderName,
       required this.maskedCardNumber,
       required this.expiryDate,
       required this.currency,
@@ -61,6 +64,7 @@ class _$BankCardDetail extends BankCardDetail {
       this.internationalPaymentsLocked,
       this.gamblingTransactionsLocked})
       : super._() {
+    BuiltValueNullFieldError.checkNotNull(id, r'BankCardDetail', 'id');
     BuiltValueNullFieldError.checkNotNull(
         cardholderName, r'BankCardDetail', 'cardholderName');
     BuiltValueNullFieldError.checkNotNull(
@@ -93,6 +97,7 @@ class _$BankCardDetail extends BankCardDetail {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is BankCardDetail &&
+        id == other.id &&
         cardholderName == other.cardholderName &&
         maskedCardNumber == other.maskedCardNumber &&
         expiryDate == other.expiryDate &&
@@ -129,7 +134,10 @@ class _$BankCardDetail extends BankCardDetail {
                                                         $jc(
                                                             $jc(
                                                                 $jc(
-                                                                    0,
+                                                                    $jc(
+                                                                        0,
+                                                                        id
+                                                                            .hashCode),
                                                                     cardholderName
                                                                         .hashCode),
                                                                 maskedCardNumber
@@ -154,6 +162,7 @@ class _$BankCardDetail extends BankCardDetail {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'BankCardDetail')
+          ..add('id', id)
           ..add('cardholderName', cardholderName)
           ..add('maskedCardNumber', maskedCardNumber)
           ..add('expiryDate', expiryDate)
@@ -177,6 +186,10 @@ class _$BankCardDetail extends BankCardDetail {
 class BankCardDetailBuilder
     implements Builder<BankCardDetail, BankCardDetailBuilder> {
   _$BankCardDetail? _$v;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   String? _cardholderName;
   String? get cardholderName => _$this._cardholderName;
@@ -257,6 +270,7 @@ class BankCardDetailBuilder
   BankCardDetailBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _id = $v.id;
       _cardholderName = $v.cardholderName;
       _maskedCardNumber = $v.maskedCardNumber;
       _expiryDate = $v.expiryDate;
@@ -297,6 +311,8 @@ class BankCardDetailBuilder
     try {
       _$result = _$v ??
           new _$BankCardDetail._(
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id, r'BankCardDetail', 'id'),
               cardholderName: BuiltValueNullFieldError.checkNotNull(
                   cardholderName, r'BankCardDetail', 'cardholderName'),
               maskedCardNumber: BuiltValueNullFieldError.checkNotNull(
@@ -311,8 +327,7 @@ class BankCardDetailBuilder
                   currencyLabel, r'BankCardDetail', 'currencyLabel'),
               status: BuiltValueNullFieldError.checkNotNull(
                   status, r'BankCardDetail', 'status'),
-              image: BuiltValueNullFieldError.checkNotNull(
-                  image, r'BankCardDetail', 'image'),
+              image: BuiltValueNullFieldError.checkNotNull(image, r'BankCardDetail', 'image'),
               cardName: BuiltValueNullFieldError.checkNotNull(cardName, r'BankCardDetail', 'cardName'),
               createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'BankCardDetail', 'createdAt'),
               balance: balance,
