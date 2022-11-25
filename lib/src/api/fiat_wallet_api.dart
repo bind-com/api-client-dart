@@ -428,9 +428,9 @@ class FiatWalletApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [String] as data
+  /// Returns a [Future] containing a [Response] with a [BankCardDetail] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<String>> createBankCard({ 
+  Future<Response<BankCardDetail>> createBankCard({ 
     CreateBankCardRequest? createBankCardRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -485,10 +485,14 @@ class FiatWalletApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    String _responseData;
+    BankCardDetail _responseData;
 
     try {
-      _responseData = _response.data as String;
+      const _responseType = FullType(BankCardDetail);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as BankCardDetail;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -499,7 +503,7 @@ class FiatWalletApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<String>(
+    return Response<BankCardDetail>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

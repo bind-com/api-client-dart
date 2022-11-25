@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createBankCard**
-> String createBankCard(createBankCardRequest)
+> BankCardDetail createBankCard(createBankCardRequest)
 
 Create a new Bank Card of a specific type for current User
 
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+[**BankCardDetail**](BankCardDetail.md)
 
 ### Authorization
 
