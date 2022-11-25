@@ -17,6 +17,8 @@ class _$CreateBankCardRequest extends CreateBankCardRequest {
   final DeliveryAddress? deliveryAddress;
   @override
   final String? cardBackground;
+  @override
+  final Uint8List? cardImage;
 
   factory _$CreateBankCardRequest(
           [void Function(CreateBankCardRequestBuilder)? updates]) =>
@@ -27,7 +29,8 @@ class _$CreateBankCardRequest extends CreateBankCardRequest {
       required this.cardType,
       this.currency,
       this.deliveryAddress,
-      this.cardBackground})
+      this.cardBackground,
+      this.cardImage})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         cardType, r'CreateBankCardRequest', 'cardType');
@@ -50,17 +53,20 @@ class _$CreateBankCardRequest extends CreateBankCardRequest {
         cardType == other.cardType &&
         currency == other.currency &&
         deliveryAddress == other.deliveryAddress &&
-        cardBackground == other.cardBackground;
+        cardBackground == other.cardBackground &&
+        cardImage == other.cardImage;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, cardName.hashCode), cardType.hashCode),
-                currency.hashCode),
-            deliveryAddress.hashCode),
-        cardBackground.hashCode));
+            $jc(
+                $jc($jc($jc(0, cardName.hashCode), cardType.hashCode),
+                    currency.hashCode),
+                deliveryAddress.hashCode),
+            cardBackground.hashCode),
+        cardImage.hashCode));
   }
 
   @override
@@ -70,7 +76,8 @@ class _$CreateBankCardRequest extends CreateBankCardRequest {
           ..add('cardType', cardType)
           ..add('currency', currency)
           ..add('deliveryAddress', deliveryAddress)
-          ..add('cardBackground', cardBackground))
+          ..add('cardBackground', cardBackground)
+          ..add('cardImage', cardImage))
         .toString();
   }
 }
@@ -102,6 +109,10 @@ class CreateBankCardRequestBuilder
   set cardBackground(String? cardBackground) =>
       _$this._cardBackground = cardBackground;
 
+  Uint8List? _cardImage;
+  Uint8List? get cardImage => _$this._cardImage;
+  set cardImage(Uint8List? cardImage) => _$this._cardImage = cardImage;
+
   CreateBankCardRequestBuilder() {
     CreateBankCardRequest._defaults(this);
   }
@@ -114,6 +125,7 @@ class CreateBankCardRequestBuilder
       _currency = $v.currency;
       _deliveryAddress = $v.deliveryAddress?.toBuilder();
       _cardBackground = $v.cardBackground;
+      _cardImage = $v.cardImage;
       _$v = null;
     }
     return this;
@@ -143,7 +155,8 @@ class CreateBankCardRequestBuilder
                   cardType, r'CreateBankCardRequest', 'cardType'),
               currency: currency,
               deliveryAddress: _deliveryAddress?.build(),
-              cardBackground: cardBackground);
+              cardBackground: cardBackground,
+              cardImage: cardImage);
     } catch (_) {
       late String _$failedField;
       try {

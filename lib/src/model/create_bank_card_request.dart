@@ -3,6 +3,7 @@
 //
 
 import 'package:bind_api/src/model/delivery_address.dart';
+import 'dart:typed_data';
 import 'package:bind_api/src/model/bank_card_type.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -17,6 +18,7 @@ part 'create_bank_card_request.g.dart';
 /// * [currency] 
 /// * [deliveryAddress] 
 /// * [cardBackground] 
+/// * [cardImage] 
 abstract class CreateBankCardRequest implements Built<CreateBankCardRequest, CreateBankCardRequestBuilder> {
     @BuiltValueField(wireName: r'card_name')
     String? get cardName;
@@ -33,6 +35,9 @@ abstract class CreateBankCardRequest implements Built<CreateBankCardRequest, Cre
 
     @BuiltValueField(wireName: r'card_background')
     String? get cardBackground;
+
+    @BuiltValueField(wireName: r'card_image')
+    Uint8List? get cardImage;
 
     CreateBankCardRequest._();
 
@@ -84,6 +89,12 @@ class _$CreateBankCardRequestSerializer implements StructuredSerializer<CreateBa
                 ..add(serializers.serialize(object.cardBackground,
                     specifiedType: const FullType(String)));
         }
+        if (object.cardImage != null) {
+            result
+                ..add(r'card_image')
+                ..add(serializers.serialize(object.cardImage,
+                    specifiedType: const FullType(Uint8List)));
+        }
         return result;
     }
 
@@ -123,6 +134,11 @@ class _$CreateBankCardRequestSerializer implements StructuredSerializer<CreateBa
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.cardBackground = valueDes;
+                    break;
+                case r'card_image':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(Uint8List)) as Uint8List;
+                    result.cardImage = valueDes;
                     break;
             }
         }
