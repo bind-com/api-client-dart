@@ -13,8 +13,9 @@ Name | Type | Description | Notes
 **maskedCardNumber** | **String** |  | 
 **expiryDate** | [**Date**](Date.md) |  | 
 **currency** | **String** |  | 
+**currencyCode** | **String** |  | 
 **currencyName** | **String** |  | 
-**currencyLabel** | **String** |  | 
+**urrencyLabel** | **String** |  | [optional] 
 **status** | [**BankCardStatus**](BankCardStatus.md) |  | 
 **image** | **String** |  | [optional] 
 **cardBackground** | [**CardView**](CardView.md) |  | [optional] 

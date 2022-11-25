@@ -18,9 +18,11 @@ class _$BankCardBaseData extends BankCardBaseData {
   @override
   final String currency;
   @override
+  final String currencyCode;
+  @override
   final String currencyName;
   @override
-  final String currencyLabel;
+  final String? urrencyLabel;
   @override
   final String status;
   @override
@@ -42,8 +44,9 @@ class _$BankCardBaseData extends BankCardBaseData {
       required this.maskedCardNumber,
       required this.expiryDate,
       required this.currency,
+      required this.currencyCode,
       required this.currencyName,
-      required this.currencyLabel,
+      this.urrencyLabel,
       required this.status,
       this.image,
       this.cardBackground,
@@ -60,9 +63,9 @@ class _$BankCardBaseData extends BankCardBaseData {
     BuiltValueNullFieldError.checkNotNull(
         currency, r'BankCardBaseData', 'currency');
     BuiltValueNullFieldError.checkNotNull(
-        currencyName, r'BankCardBaseData', 'currencyName');
+        currencyCode, r'BankCardBaseData', 'currencyCode');
     BuiltValueNullFieldError.checkNotNull(
-        currencyLabel, r'BankCardBaseData', 'currencyLabel');
+        currencyName, r'BankCardBaseData', 'currencyName');
     BuiltValueNullFieldError.checkNotNull(
         status, r'BankCardBaseData', 'status');
     BuiltValueNullFieldError.checkNotNull(
@@ -86,8 +89,9 @@ class _$BankCardBaseData extends BankCardBaseData {
         maskedCardNumber == other.maskedCardNumber &&
         expiryDate == other.expiryDate &&
         currency == other.currency &&
+        currencyCode == other.currencyCode &&
         currencyName == other.currencyName &&
-        currencyLabel == other.currencyLabel &&
+        urrencyLabel == other.urrencyLabel &&
         status == other.status &&
         image == other.image &&
         cardBackground == other.cardBackground &&
@@ -107,13 +111,15 @@ class _$BankCardBaseData extends BankCardBaseData {
                                 $jc(
                                     $jc(
                                         $jc(
-                                            $jc($jc(0, id.hashCode),
-                                                cardholderName.hashCode),
-                                            maskedCardNumber.hashCode),
-                                        expiryDate.hashCode),
-                                    currency.hashCode),
+                                            $jc(
+                                                $jc($jc(0, id.hashCode),
+                                                    cardholderName.hashCode),
+                                                maskedCardNumber.hashCode),
+                                            expiryDate.hashCode),
+                                        currency.hashCode),
+                                    currencyCode.hashCode),
                                 currencyName.hashCode),
-                            currencyLabel.hashCode),
+                            urrencyLabel.hashCode),
                         status.hashCode),
                     image.hashCode),
                 cardBackground.hashCode),
@@ -129,8 +135,9 @@ class _$BankCardBaseData extends BankCardBaseData {
           ..add('maskedCardNumber', maskedCardNumber)
           ..add('expiryDate', expiryDate)
           ..add('currency', currency)
+          ..add('currencyCode', currencyCode)
           ..add('currencyName', currencyName)
-          ..add('currencyLabel', currencyLabel)
+          ..add('urrencyLabel', urrencyLabel)
           ..add('status', status)
           ..add('image', image)
           ..add('cardBackground', cardBackground)
@@ -166,14 +173,17 @@ class BankCardBaseDataBuilder
   String? get currency => _$this._currency;
   set currency(String? currency) => _$this._currency = currency;
 
+  String? _currencyCode;
+  String? get currencyCode => _$this._currencyCode;
+  set currencyCode(String? currencyCode) => _$this._currencyCode = currencyCode;
+
   String? _currencyName;
   String? get currencyName => _$this._currencyName;
   set currencyName(String? currencyName) => _$this._currencyName = currencyName;
 
-  String? _currencyLabel;
-  String? get currencyLabel => _$this._currencyLabel;
-  set currencyLabel(String? currencyLabel) =>
-      _$this._currencyLabel = currencyLabel;
+  String? _urrencyLabel;
+  String? get urrencyLabel => _$this._urrencyLabel;
+  set urrencyLabel(String? urrencyLabel) => _$this._urrencyLabel = urrencyLabel;
 
   String? _status;
   String? get status => _$this._status;
@@ -209,8 +219,9 @@ class BankCardBaseDataBuilder
       _maskedCardNumber = $v.maskedCardNumber;
       _expiryDate = $v.expiryDate;
       _currency = $v.currency;
+      _currencyCode = $v.currencyCode;
       _currencyName = $v.currencyName;
-      _currencyLabel = $v.currencyLabel;
+      _urrencyLabel = $v.urrencyLabel;
       _status = $v.status;
       _image = $v.image;
       _cardBackground = $v.cardBackground?.toBuilder();
@@ -250,10 +261,11 @@ class BankCardBaseDataBuilder
                   expiryDate, r'BankCardBaseData', 'expiryDate'),
               currency: BuiltValueNullFieldError.checkNotNull(
                   currency, r'BankCardBaseData', 'currency'),
+              currencyCode: BuiltValueNullFieldError.checkNotNull(
+                  currencyCode, r'BankCardBaseData', 'currencyCode'),
               currencyName: BuiltValueNullFieldError.checkNotNull(
                   currencyName, r'BankCardBaseData', 'currencyName'),
-              currencyLabel: BuiltValueNullFieldError.checkNotNull(
-                  currencyLabel, r'BankCardBaseData', 'currencyLabel'),
+              urrencyLabel: urrencyLabel,
               status: BuiltValueNullFieldError.checkNotNull(
                   status, r'BankCardBaseData', 'status'),
               image: image,
