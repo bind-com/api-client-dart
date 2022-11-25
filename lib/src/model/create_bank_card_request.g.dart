@@ -8,11 +8,11 @@ part of 'create_bank_card_request.dart';
 
 class _$CreateBankCardRequest extends CreateBankCardRequest {
   @override
-  final String cardName;
+  final String? cardName;
   @override
   final BankCardType cardType;
   @override
-  final String currency;
+  final String? currency;
   @override
   final DeliveryAddress? deliveryAddress;
   @override
@@ -23,18 +23,14 @@ class _$CreateBankCardRequest extends CreateBankCardRequest {
       (new CreateBankCardRequestBuilder()..update(updates))._build();
 
   _$CreateBankCardRequest._(
-      {required this.cardName,
+      {this.cardName,
       required this.cardType,
-      required this.currency,
+      this.currency,
       this.deliveryAddress,
       this.cardBackground})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        cardName, r'CreateBankCardRequest', 'cardName');
-    BuiltValueNullFieldError.checkNotNull(
         cardType, r'CreateBankCardRequest', 'cardType');
-    BuiltValueNullFieldError.checkNotNull(
-        currency, r'CreateBankCardRequest', 'currency');
   }
 
   @override
@@ -142,12 +138,10 @@ class CreateBankCardRequestBuilder
     try {
       _$result = _$v ??
           new _$CreateBankCardRequest._(
-              cardName: BuiltValueNullFieldError.checkNotNull(
-                  cardName, r'CreateBankCardRequest', 'cardName'),
+              cardName: cardName,
               cardType: BuiltValueNullFieldError.checkNotNull(
                   cardType, r'CreateBankCardRequest', 'cardType'),
-              currency: BuiltValueNullFieldError.checkNotNull(
-                  currency, r'CreateBankCardRequest', 'currency'),
+              currency: currency,
               deliveryAddress: _deliveryAddress?.build(),
               cardBackground: cardBackground);
     } catch (_) {

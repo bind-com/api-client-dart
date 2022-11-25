@@ -135,6 +135,7 @@ import 'package:bind_api/src/model/transaction_group.dart';
 import 'package:bind_api/src/model/transaction_grouping.dart';
 import 'package:bind_api/src/model/transaction_states.dart';
 import 'package:bind_api/src/model/transaction_types.dart';
+import 'package:bind_api/src/model/unstaking_perform_request.dart';
 import 'package:bind_api/src/model/update_beneficiary_request.dart';
 import 'package:bind_api/src/model/update_contact_request.dart';
 import 'package:bind_api/src/model/update_user_passcode_request.dart';
@@ -272,6 +273,7 @@ part 'serializers.g.dart';
   TransactionGrouping,
   TransactionStates,
   TransactionTypes,
+  UnstakingPerformRequest,
   UpdateBeneficiaryRequest,
   UpdateContactRequest,
   UpdateUserPasscodeRequest,

@@ -136,6 +136,7 @@ doc/TransactionGrouping.md
 doc/TransactionStates.md
 doc/TransactionTypes.md
 doc/TransactionsApi.md
+doc/UnstakingPerformRequest.md
 doc/UpdateBeneficiaryRequest.md
 doc/UpdateContactRequest.md
 doc/UpdateUserPasscodeRequest.md
@@ -295,6 +296,7 @@ lib/src/model/transaction_group.dart
 lib/src/model/transaction_grouping.dart
 lib/src/model/transaction_states.dart
 lib/src/model/transaction_types.dart
+lib/src/model/unstaking_perform_request.dart
 lib/src/model/update_beneficiary_request.dart
 lib/src/model/update_contact_request.dart
 lib/src/model/update_user_passcode_request.dart
@@ -307,3 +309,4 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/unstaking_perform_request_test.dart

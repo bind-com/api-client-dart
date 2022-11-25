@@ -20,14 +20,14 @@ part 'create_bank_card_request.g.dart';
 /// * [cardBackground] 
 abstract class CreateBankCardRequest implements Built<CreateBankCardRequest, CreateBankCardRequestBuilder> {
     @BuiltValueField(wireName: r'card_name')
-    String get cardName;
+    String? get cardName;
 
     @BuiltValueField(wireName: r'card_type')
     BankCardType get cardType;
     // enum cardTypeEnum {  Physical,  Virtual,  Digital,  };
 
     @BuiltValueField(wireName: r'currency')
-    String get currency;
+    String? get currency;
 
     @BuiltValueField(wireName: r'delivery_address')
     DeliveryAddress? get deliveryAddress;
@@ -58,18 +58,22 @@ class _$CreateBankCardRequestSerializer implements StructuredSerializer<CreateBa
     Iterable<Object?> serialize(Serializers serializers, CreateBankCardRequest object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
-        result
-            ..add(r'card_name')
-            ..add(serializers.serialize(object.cardName,
-                specifiedType: const FullType(String)));
+        if (object.cardName != null) {
+            result
+                ..add(r'card_name')
+                ..add(serializers.serialize(object.cardName,
+                    specifiedType: const FullType(String)));
+        }
         result
             ..add(r'card_type')
             ..add(serializers.serialize(object.cardType,
                 specifiedType: const FullType(BankCardType)));
-        result
-            ..add(r'currency')
-            ..add(serializers.serialize(object.currency,
-                specifiedType: const FullType(String)));
+        if (object.currency != null) {
+            result
+                ..add(r'currency')
+                ..add(serializers.serialize(object.currency,
+                    specifiedType: const FullType(String)));
+        }
         if (object.deliveryAddress != null) {
             result
                 ..add(r'delivery_address')

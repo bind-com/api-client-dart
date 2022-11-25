@@ -89,6 +89,8 @@ Class | Method | HTTP request | Description
 [*CryptoApi*](doc/CryptoApi.md) | [**getCryptoOverview**](doc/CryptoApi.md#getcryptooverview) | **GET** /crypto/overview/ | Get crypto overview information
 [*CryptoApi*](doc/CryptoApi.md) | [**getGlobalCryptoStats**](doc/CryptoApi.md#getglobalcryptostats) | **GET** /crypto/global/stats/ | Get global crypto market information
 [*CryptoApi*](doc/CryptoApi.md) | [**getInnerCryptoTransferFee**](doc/CryptoApi.md#getinnercryptotransferfee) | **POST** /crypto/send/fee/ | 
+[*CryptoApi*](doc/CryptoApi.md) | [**getStakingMainPoolCandles**](doc/CryptoApi.md#getstakingmainpoolcandles) | **GET** /charts/staking/main_pool/candle/ | List of candles of staking main pool
+[*CryptoApi*](doc/CryptoApi.md) | [**getStakingMainPoolChartLine**](doc/CryptoApi.md#getstakingmainpoolchartline) | **GET** /charts/staking/main_pool/line/ | List line ticks of staking main pool
 [*CryptoApi*](doc/CryptoApi.md) | [**getTokenDetail**](doc/CryptoApi.md#gettokendetail) | **GET** /crypto/detail/{assetID}/ | Get detail for certain token
 [*CryptoApi*](doc/CryptoApi.md) | [**getTokenStats**](doc/CryptoApi.md#gettokenstats) | **GET** /crypto/stats/{assetID}/ | Get stats for certain token
 [*CryptoApi*](doc/CryptoApi.md) | [**listCryptoCurrencies**](doc/CryptoApi.md#listcryptocurrencies) | **GET** /currencies/crypto/ | List of Crypto Currencies
@@ -157,8 +159,12 @@ Class | Method | HTTP request | Description
 [*StakingApi*](doc/StakingApi.md) | [**getStakingPeriods**](doc/StakingApi.md#getstakingperiods) | **GET** /crypto/staking/periods | Get staking periods
 [*StakingApi*](doc/StakingApi.md) | [**getStakingReleases**](doc/StakingApi.md#getstakingreleases) | **GET** /crypto/staking/releases | Get staking releases
 [*StakingApi*](doc/StakingApi.md) | [**getStakingTimer**](doc/StakingApi.md#getstakingtimer) | **GET** /crypto/staking/timer | Get datetime of end timer
+[*StakingApi*](doc/StakingApi.md) | [**restakingEstimateOperation**](doc/StakingApi.md#restakingestimateoperation) | **POST** /crypto/staking/restake-estimate | Estimate restaking operation
+[*StakingApi*](doc/StakingApi.md) | [**restakingPerform**](doc/StakingApi.md#restakingperform) | **POST** /crypto/staking/restake/perform | Perform restaking
 [*StakingApi*](doc/StakingApi.md) | [**stakingEstimateOperation**](doc/StakingApi.md#stakingestimateoperation) | **POST** /crypto/staking/estimate | Estimate staking operation
 [*StakingApi*](doc/StakingApi.md) | [**stakingPerform**](doc/StakingApi.md#stakingperform) | **POST** /crypto/staking/perform | Perform staking
+[*StakingApi*](doc/StakingApi.md) | [**unstakingEstimateOperation**](doc/StakingApi.md#unstakingestimateoperation) | **POST** /crypto/staking/unstake-estimate | Estimate unstaking operation
+[*StakingApi*](doc/StakingApi.md) | [**unstakingPerform**](doc/StakingApi.md#unstakingperform) | **POST** /crypto/staking/ustake | Perform unstaking
 [*StakingApi*](doc/StakingApi.md) | [**userStakingClaiming**](doc/StakingApi.md#userstakingclaiming) | **POST** /crypto/staking/claiming | Perform user claiming
 [*TransactionsApi*](doc/TransactionsApi.md) | [**exportTransactions**](doc/TransactionsApi.md#exporttransactions) | **POST** /transactions/export/ | Export user transaction to csv
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getExportHistory**](doc/TransactionsApi.md#getexporthistory) | **GET** /transactions/export/history/ | Get export history
@@ -301,6 +307,7 @@ Class | Method | HTTP request | Description
  - [TransactionGrouping](doc/TransactionGrouping.md)
  - [TransactionStates](doc/TransactionStates.md)
  - [TransactionTypes](doc/TransactionTypes.md)
+ - [UnstakingPerformRequest](doc/UnstakingPerformRequest.md)
  - [UpdateBeneficiaryRequest](doc/UpdateBeneficiaryRequest.md)
  - [UpdateContactRequest](doc/UpdateContactRequest.md)
  - [UpdateUserPasscodeRequest](doc/UpdateUserPasscodeRequest.md)

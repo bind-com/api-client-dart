@@ -147,6 +147,7 @@ export 'package:bind_api/src/model/transaction_group.dart';
 export 'package:bind_api/src/model/transaction_grouping.dart';
 export 'package:bind_api/src/model/transaction_states.dart';
 export 'package:bind_api/src/model/transaction_types.dart';
+export 'package:bind_api/src/model/unstaking_perform_request.dart';
 export 'package:bind_api/src/model/update_beneficiary_request.dart';
 export 'package:bind_api/src/model/update_contact_request.dart';
 export 'package:bind_api/src/model/update_user_passcode_request.dart';

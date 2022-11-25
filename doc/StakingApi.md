@@ -17,8 +17,12 @@ Method | HTTP request | Description
 [**getStakingPeriods**](StakingApi.md#getstakingperiods) | **GET** /crypto/staking/periods | Get staking periods
 [**getStakingReleases**](StakingApi.md#getstakingreleases) | **GET** /crypto/staking/releases | Get staking releases
 [**getStakingTimer**](StakingApi.md#getstakingtimer) | **GET** /crypto/staking/timer | Get datetime of end timer
+[**restakingEstimateOperation**](StakingApi.md#restakingestimateoperation) | **POST** /crypto/staking/restake-estimate | Estimate restaking operation
+[**restakingPerform**](StakingApi.md#restakingperform) | **POST** /crypto/staking/restake/perform | Perform restaking
 [**stakingEstimateOperation**](StakingApi.md#stakingestimateoperation) | **POST** /crypto/staking/estimate | Estimate staking operation
 [**stakingPerform**](StakingApi.md#stakingperform) | **POST** /crypto/staking/perform | Perform staking
+[**unstakingEstimateOperation**](StakingApi.md#unstakingestimateoperation) | **POST** /crypto/staking/unstake-estimate | Estimate unstaking operation
+[**unstakingPerform**](StakingApi.md#unstakingperform) | **POST** /crypto/staking/ustake | Perform unstaking
 [**userStakingClaiming**](StakingApi.md#userstakingclaiming) | **POST** /crypto/staking/claiming | Perform user claiming
 
 
@@ -362,6 +366,98 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **restakingEstimateOperation**
+> StakingEstimate restakingEstimateOperation(stakingPerformRequest)
+
+Estimate restaking operation
+
+Estimate restaking BINDX
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getStakingApi();
+final StakingPerformRequest stakingPerformRequest = ; // StakingPerformRequest | 
+
+try {
+    final response = api.restakingEstimateOperation(stakingPerformRequest);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling StakingApi->restakingEstimateOperation: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **stakingPerformRequest** | [**StakingPerformRequest**](StakingPerformRequest.md)|  | [optional] 
+
+### Return type
+
+[**StakingEstimate**](StakingEstimate.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **restakingPerform**
+> Staking restakingPerform(stakingPerformRequest)
+
+Perform restaking
+
+Restaking BINDX
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getStakingApi();
+final StakingPerformRequest stakingPerformRequest = ; // StakingPerformRequest | 
+
+try {
+    final response = api.restakingPerform(stakingPerformRequest);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling StakingApi->restakingPerform: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **stakingPerformRequest** | [**StakingPerformRequest**](StakingPerformRequest.md)|  | [optional] 
+
+### Return type
+
+[**Staking**](Staking.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **stakingEstimateOperation**
 > StakingEstimate stakingEstimateOperation(stakingPerformRequest)
 
@@ -438,6 +534,98 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **stakingPerformRequest** | [**StakingPerformRequest**](StakingPerformRequest.md)|  | [optional] 
+
+### Return type
+
+[**Staking**](Staking.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **unstakingEstimateOperation**
+> StakingEstimate unstakingEstimateOperation(unstakingPerformRequest)
+
+Estimate unstaking operation
+
+Estimate unstaking BINDX
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getStakingApi();
+final UnstakingPerformRequest unstakingPerformRequest = ; // UnstakingPerformRequest | 
+
+try {
+    final response = api.unstakingEstimateOperation(unstakingPerformRequest);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling StakingApi->unstakingEstimateOperation: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unstakingPerformRequest** | [**UnstakingPerformRequest**](UnstakingPerformRequest.md)|  | [optional] 
+
+### Return type
+
+[**StakingEstimate**](StakingEstimate.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **unstakingPerform**
+> Staking unstakingPerform(unstakingPerformRequest)
+
+Perform unstaking
+
+Unstaking BINDX
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getStakingApi();
+final UnstakingPerformRequest unstakingPerformRequest = ; // UnstakingPerformRequest | 
+
+try {
+    final response = api.unstakingPerform(unstakingPerformRequest);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling StakingApi->unstakingPerform: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unstakingPerformRequest** | [**UnstakingPerformRequest**](UnstakingPerformRequest.md)|  | [optional] 
 
 ### Return type
 

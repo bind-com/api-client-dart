@@ -14,6 +14,8 @@ Method | HTTP request | Description
 [**getCryptoOverview**](CryptoApi.md#getcryptooverview) | **GET** /crypto/overview/ | Get crypto overview information
 [**getGlobalCryptoStats**](CryptoApi.md#getglobalcryptostats) | **GET** /crypto/global/stats/ | Get global crypto market information
 [**getInnerCryptoTransferFee**](CryptoApi.md#getinnercryptotransferfee) | **POST** /crypto/send/fee/ | 
+[**getStakingMainPoolCandles**](CryptoApi.md#getstakingmainpoolcandles) | **GET** /charts/staking/main_pool/candle/ | List of candles of staking main pool
+[**getStakingMainPoolChartLine**](CryptoApi.md#getstakingmainpoolchartline) | **GET** /charts/staking/main_pool/line/ | List line ticks of staking main pool
 [**getTokenDetail**](CryptoApi.md#gettokendetail) | **GET** /crypto/detail/{assetID}/ | Get detail for certain token
 [**getTokenStats**](CryptoApi.md#gettokenstats) | **GET** /crypto/stats/{assetID}/ | Get stats for certain token
 [**listCryptoCurrencies**](CryptoApi.md#listcryptocurrencies) | **GET** /currencies/crypto/ | List of Crypto Currencies
@@ -254,6 +256,106 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getStakingMainPoolCandles**
+> BuiltList<Candle> getStakingMainPoolCandles(interval, start, end, pageSize)
+
+List of candles of staking main pool
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getCryptoApi();
+final PeriodInterval interval = ; // PeriodInterval | candle interval filter
+final DateTime start = 2013-10-20T19:20:30+01:00; // DateTime | time interval start filter
+final DateTime end = 2013-10-20T19:20:30+01:00; // DateTime | time interval end filter
+final num pageSize = 8.14; // num | 
+
+try {
+    final response = api.getStakingMainPoolCandles(interval, start, end, pageSize);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling CryptoApi->getStakingMainPoolCandles: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **interval** | [**PeriodInterval**](.md)| candle interval filter | 
+ **start** | **DateTime**| time interval start filter | 
+ **end** | **DateTime**| time interval end filter | 
+ **pageSize** | **num**|  | [optional] 
+
+### Return type
+
+[**BuiltList&lt;Candle&gt;**](Candle.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getStakingMainPoolChartLine**
+> BuiltList<ChartTick> getStakingMainPoolChartLine(interval, start, end, pageSize)
+
+List line ticks of staking main pool
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getCryptoApi();
+final PeriodInterval interval = ; // PeriodInterval | interval filter
+final DateTime start = 2013-10-20T19:20:30+01:00; // DateTime | time interval start filter
+final DateTime end = 2013-10-20T19:20:30+01:00; // DateTime | time interval end filter
+final num pageSize = 8.14; // num | 
+
+try {
+    final response = api.getStakingMainPoolChartLine(interval, start, end, pageSize);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling CryptoApi->getStakingMainPoolChartLine: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **interval** | [**PeriodInterval**](.md)| interval filter | 
+ **start** | **DateTime**| time interval start filter | 
+ **end** | **DateTime**| time interval end filter | 
+ **pageSize** | **num**|  | [optional] 
+
+### Return type
+
+[**BuiltList&lt;ChartTick&gt;**](ChartTick.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

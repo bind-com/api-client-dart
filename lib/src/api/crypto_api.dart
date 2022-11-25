@@ -485,6 +485,194 @@ class CryptoApi {
     );
   }
 
+  /// List of candles of staking main pool
+  /// 
+  ///
+  /// Parameters:
+  /// * [interval] - candle interval filter
+  /// * [start] - time interval start filter
+  /// * [end] - time interval end filter
+  /// * [pageSize] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [BuiltList<Candle>] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<BuiltList<Candle>>> getStakingMainPoolCandles({ 
+    required PeriodInterval interval,
+    required DateTime start,
+    required DateTime end,
+    num? pageSize,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/charts/staking/main_pool/candle/';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'bearerAuth',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      r'interval': encodeQueryParameter(_serializers, interval, const FullType(PeriodInterval)),
+      r'start': encodeQueryParameter(_serializers, start, const FullType(DateTime)),
+      r'end': encodeQueryParameter(_serializers, end, const FullType(DateTime)),
+      if (pageSize != null) r'page_size': encodeQueryParameter(_serializers, pageSize, const FullType(num)),
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    BuiltList<Candle> _responseData;
+
+    try {
+      const _responseType = FullType(BuiltList, [FullType(Candle)]);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as BuiltList<Candle>;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<BuiltList<Candle>>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// List line ticks of staking main pool
+  /// 
+  ///
+  /// Parameters:
+  /// * [interval] - interval filter
+  /// * [start] - time interval start filter
+  /// * [end] - time interval end filter
+  /// * [pageSize] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [BuiltList<ChartTick>] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<BuiltList<ChartTick>>> getStakingMainPoolChartLine({ 
+    required PeriodInterval interval,
+    required DateTime start,
+    required DateTime end,
+    num? pageSize,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/charts/staking/main_pool/line/';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'bearerAuth',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      r'interval': encodeQueryParameter(_serializers, interval, const FullType(PeriodInterval)),
+      r'start': encodeQueryParameter(_serializers, start, const FullType(DateTime)),
+      r'end': encodeQueryParameter(_serializers, end, const FullType(DateTime)),
+      if (pageSize != null) r'page_size': encodeQueryParameter(_serializers, pageSize, const FullType(num)),
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    BuiltList<ChartTick> _responseData;
+
+    try {
+      const _responseType = FullType(BuiltList, [FullType(ChartTick)]);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as BuiltList<ChartTick>;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<BuiltList<ChartTick>>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
   /// Get detail for certain token
   /// Get detail info for certain token, price related stats will be converted into the user&#39;s payment currency
   ///

@@ -1,4 +1,4 @@
-# bind_api.model.CreateBankCardRequest
+# bind_api.model.UnstakingPerformRequest
 
 ## Load the model package
 ```dart
@@ -8,11 +8,7 @@ import 'package:bind_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cardName** | **String** |  | [optional] 
-**cardType** | [**BankCardType**](BankCardType.md) |  | 
-**currency** | **String** |  | [optional] 
-**deliveryAddress** | [**DeliveryAddress**](DeliveryAddress.md) |  | [optional] 
-**cardBackground** | [**CardBackground**](CardBackground.md) |  | [optional] 
+**amount** | **num** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
