@@ -16,8 +16,9 @@ Name | Type | Description | Notes
 **currencyName** | **String** |  | 
 **currencyLabel** | **String** |  | 
 **status** | **String** |  | 
-**image** | **String** |  | 
-**cardName** | **String** |  | 
+**image** | **String** |  | [optional] 
+**cardBackground** | [**CardView**](CardView.md) |  | [optional] 
+**cardName** | **String** |  | [optional] 
 **createdAt** | [**DateTime**](DateTime.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

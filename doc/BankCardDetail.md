@@ -16,8 +16,9 @@ Name | Type | Description | Notes
 **currencyName** | **String** |  | 
 **currencyLabel** | **String** |  | 
 **status** | [**BankCardStatus**](BankCardStatus.md) |  | 
-**image** | **String** |  | 
-**cardName** | **String** |  | 
+**image** | **String** |  | [optional] 
+**cardBackground** | [**CardView**](CardView.md) |  | [optional] 
+**cardName** | **String** |  | [optional] 
 **createdAt** | [**DateTime**](DateTime.md) |  | 
 **balance** | **num** |  | [optional] 
 **linkedWallet** | [**FiatWalletLight**](FiatWalletLight.md) |  | [optional] 

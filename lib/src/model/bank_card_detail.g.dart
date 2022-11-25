@@ -24,9 +24,11 @@ class _$BankCardDetail extends BankCardDetail {
   @override
   final BankCardStatus status;
   @override
-  final String image;
+  final String? image;
   @override
-  final String cardName;
+  final CardView? cardBackground;
+  @override
+  final String? cardName;
   @override
   final DateTime createdAt;
   @override
@@ -54,8 +56,9 @@ class _$BankCardDetail extends BankCardDetail {
       required this.currencyName,
       required this.currencyLabel,
       required this.status,
-      required this.image,
-      required this.cardName,
+      this.image,
+      this.cardBackground,
+      this.cardName,
       required this.createdAt,
       this.balance,
       this.linkedWallet,
@@ -78,9 +81,6 @@ class _$BankCardDetail extends BankCardDetail {
     BuiltValueNullFieldError.checkNotNull(
         currencyLabel, r'BankCardDetail', 'currencyLabel');
     BuiltValueNullFieldError.checkNotNull(status, r'BankCardDetail', 'status');
-    BuiltValueNullFieldError.checkNotNull(image, r'BankCardDetail', 'image');
-    BuiltValueNullFieldError.checkNotNull(
-        cardName, r'BankCardDetail', 'cardName');
     BuiltValueNullFieldError.checkNotNull(
         createdAt, r'BankCardDetail', 'createdAt');
   }
@@ -106,6 +106,7 @@ class _$BankCardDetail extends BankCardDetail {
         currencyLabel == other.currencyLabel &&
         status == other.status &&
         image == other.image &&
+        cardBackground == other.cardBackground &&
         cardName == other.cardName &&
         createdAt == other.createdAt &&
         balance == other.balance &&
@@ -135,20 +136,22 @@ class _$BankCardDetail extends BankCardDetail {
                                                             $jc(
                                                                 $jc(
                                                                     $jc(
-                                                                        0,
-                                                                        id
+                                                                        $jc(
+                                                                            0,
+                                                                            id
+                                                                                .hashCode),
+                                                                        cardholderName
                                                                             .hashCode),
-                                                                    cardholderName
+                                                                    maskedCardNumber
                                                                         .hashCode),
-                                                                maskedCardNumber
+                                                                expiryDate
                                                                     .hashCode),
-                                                            expiryDate
-                                                                .hashCode),
-                                                        currency.hashCode),
-                                                    currencyName.hashCode),
-                                                currencyLabel.hashCode),
-                                            status.hashCode),
-                                        image.hashCode),
+                                                            currency.hashCode),
+                                                        currencyName.hashCode),
+                                                    currencyLabel.hashCode),
+                                                status.hashCode),
+                                            image.hashCode),
+                                        cardBackground.hashCode),
                                     cardName.hashCode),
                                 createdAt.hashCode),
                             balance.hashCode),
@@ -171,6 +174,7 @@ class _$BankCardDetail extends BankCardDetail {
           ..add('currencyLabel', currencyLabel)
           ..add('status', status)
           ..add('image', image)
+          ..add('cardBackground', cardBackground)
           ..add('cardName', cardName)
           ..add('createdAt', createdAt)
           ..add('balance', balance)
@@ -226,6 +230,12 @@ class BankCardDetailBuilder
   String? get image => _$this._image;
   set image(String? image) => _$this._image = image;
 
+  CardViewBuilder? _cardBackground;
+  CardViewBuilder get cardBackground =>
+      _$this._cardBackground ??= new CardViewBuilder();
+  set cardBackground(CardViewBuilder? cardBackground) =>
+      _$this._cardBackground = cardBackground;
+
   String? _cardName;
   String? get cardName => _$this._cardName;
   set cardName(String? cardName) => _$this._cardName = cardName;
@@ -279,6 +289,7 @@ class BankCardDetailBuilder
       _currencyLabel = $v.currencyLabel;
       _status = $v.status;
       _image = $v.image;
+      _cardBackground = $v.cardBackground?.toBuilder();
       _cardName = $v.cardName;
       _createdAt = $v.createdAt;
       _balance = $v.balance;
@@ -327,8 +338,9 @@ class BankCardDetailBuilder
                   currencyLabel, r'BankCardDetail', 'currencyLabel'),
               status: BuiltValueNullFieldError.checkNotNull(
                   status, r'BankCardDetail', 'status'),
-              image: BuiltValueNullFieldError.checkNotNull(image, r'BankCardDetail', 'image'),
-              cardName: BuiltValueNullFieldError.checkNotNull(cardName, r'BankCardDetail', 'cardName'),
+              image: image,
+              cardBackground: _cardBackground?.build(),
+              cardName: cardName,
               createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'BankCardDetail', 'createdAt'),
               balance: balance,
               linkedWallet: _linkedWallet?.build(),
@@ -339,6 +351,9 @@ class BankCardDetailBuilder
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'cardBackground';
+        _cardBackground?.build();
+
         _$failedField = 'linkedWallet';
         _linkedWallet?.build();
       } catch (e) {

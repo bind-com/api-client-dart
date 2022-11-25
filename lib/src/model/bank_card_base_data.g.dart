@@ -24,9 +24,11 @@ class _$BankCardBaseData extends BankCardBaseData {
   @override
   final String status;
   @override
-  final String image;
+  final String? image;
   @override
-  final String cardName;
+  final CardView? cardBackground;
+  @override
+  final String? cardName;
   @override
   final DateTime createdAt;
 
@@ -43,8 +45,9 @@ class _$BankCardBaseData extends BankCardBaseData {
       required this.currencyName,
       required this.currencyLabel,
       required this.status,
-      required this.image,
-      required this.cardName,
+      this.image,
+      this.cardBackground,
+      this.cardName,
       required this.createdAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, r'BankCardBaseData', 'id');
@@ -62,9 +65,6 @@ class _$BankCardBaseData extends BankCardBaseData {
         currencyLabel, r'BankCardBaseData', 'currencyLabel');
     BuiltValueNullFieldError.checkNotNull(
         status, r'BankCardBaseData', 'status');
-    BuiltValueNullFieldError.checkNotNull(image, r'BankCardBaseData', 'image');
-    BuiltValueNullFieldError.checkNotNull(
-        cardName, r'BankCardBaseData', 'cardName');
     BuiltValueNullFieldError.checkNotNull(
         createdAt, r'BankCardBaseData', 'createdAt');
   }
@@ -90,6 +90,7 @@ class _$BankCardBaseData extends BankCardBaseData {
         currencyLabel == other.currencyLabel &&
         status == other.status &&
         image == other.image &&
+        cardBackground == other.cardBackground &&
         cardName == other.cardName &&
         createdAt == other.createdAt;
   }
@@ -105,15 +106,17 @@ class _$BankCardBaseData extends BankCardBaseData {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, id.hashCode),
-                                            cardholderName.hashCode),
-                                        maskedCardNumber.hashCode),
-                                    expiryDate.hashCode),
-                                currency.hashCode),
-                            currencyName.hashCode),
-                        currencyLabel.hashCode),
-                    status.hashCode),
-                image.hashCode),
+                                        $jc(
+                                            $jc($jc(0, id.hashCode),
+                                                cardholderName.hashCode),
+                                            maskedCardNumber.hashCode),
+                                        expiryDate.hashCode),
+                                    currency.hashCode),
+                                currencyName.hashCode),
+                            currencyLabel.hashCode),
+                        status.hashCode),
+                    image.hashCode),
+                cardBackground.hashCode),
             cardName.hashCode),
         createdAt.hashCode));
   }
@@ -130,6 +133,7 @@ class _$BankCardBaseData extends BankCardBaseData {
           ..add('currencyLabel', currencyLabel)
           ..add('status', status)
           ..add('image', image)
+          ..add('cardBackground', cardBackground)
           ..add('cardName', cardName)
           ..add('createdAt', createdAt))
         .toString();
@@ -179,6 +183,12 @@ class BankCardBaseDataBuilder
   String? get image => _$this._image;
   set image(String? image) => _$this._image = image;
 
+  CardViewBuilder? _cardBackground;
+  CardViewBuilder get cardBackground =>
+      _$this._cardBackground ??= new CardViewBuilder();
+  set cardBackground(CardViewBuilder? cardBackground) =>
+      _$this._cardBackground = cardBackground;
+
   String? _cardName;
   String? get cardName => _$this._cardName;
   set cardName(String? cardName) => _$this._cardName = cardName;
@@ -203,6 +213,7 @@ class BankCardBaseDataBuilder
       _currencyLabel = $v.currencyLabel;
       _status = $v.status;
       _image = $v.image;
+      _cardBackground = $v.cardBackground?.toBuilder();
       _cardName = $v.cardName;
       _createdAt = $v.createdAt;
       _$v = null;
@@ -225,27 +236,41 @@ class BankCardBaseDataBuilder
   BankCardBaseData build() => _build();
 
   _$BankCardBaseData _build() {
-    final _$result = _$v ??
-        new _$BankCardBaseData._(
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'BankCardBaseData', 'id'),
-            cardholderName: BuiltValueNullFieldError.checkNotNull(
-                cardholderName, r'BankCardBaseData', 'cardholderName'),
-            maskedCardNumber: BuiltValueNullFieldError.checkNotNull(
-                maskedCardNumber, r'BankCardBaseData', 'maskedCardNumber'),
-            expiryDate: BuiltValueNullFieldError.checkNotNull(
-                expiryDate, r'BankCardBaseData', 'expiryDate'),
-            currency: BuiltValueNullFieldError.checkNotNull(
-                currency, r'BankCardBaseData', 'currency'),
-            currencyName: BuiltValueNullFieldError.checkNotNull(
-                currencyName, r'BankCardBaseData', 'currencyName'),
-            currencyLabel: BuiltValueNullFieldError.checkNotNull(
-                currencyLabel, r'BankCardBaseData', 'currencyLabel'),
-            status: BuiltValueNullFieldError.checkNotNull(
-                status, r'BankCardBaseData', 'status'),
-            image: BuiltValueNullFieldError.checkNotNull(image, r'BankCardBaseData', 'image'),
-            cardName: BuiltValueNullFieldError.checkNotNull(cardName, r'BankCardBaseData', 'cardName'),
-            createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'BankCardBaseData', 'createdAt'));
+    _$BankCardBaseData _$result;
+    try {
+      _$result = _$v ??
+          new _$BankCardBaseData._(
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id, r'BankCardBaseData', 'id'),
+              cardholderName: BuiltValueNullFieldError.checkNotNull(
+                  cardholderName, r'BankCardBaseData', 'cardholderName'),
+              maskedCardNumber: BuiltValueNullFieldError.checkNotNull(
+                  maskedCardNumber, r'BankCardBaseData', 'maskedCardNumber'),
+              expiryDate: BuiltValueNullFieldError.checkNotNull(
+                  expiryDate, r'BankCardBaseData', 'expiryDate'),
+              currency: BuiltValueNullFieldError.checkNotNull(
+                  currency, r'BankCardBaseData', 'currency'),
+              currencyName: BuiltValueNullFieldError.checkNotNull(
+                  currencyName, r'BankCardBaseData', 'currencyName'),
+              currencyLabel: BuiltValueNullFieldError.checkNotNull(
+                  currencyLabel, r'BankCardBaseData', 'currencyLabel'),
+              status: BuiltValueNullFieldError.checkNotNull(
+                  status, r'BankCardBaseData', 'status'),
+              image: image,
+              cardBackground: _cardBackground?.build(),
+              cardName: cardName,
+              createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'BankCardBaseData', 'createdAt'));
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'cardBackground';
+        _cardBackground?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'BankCardBaseData', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

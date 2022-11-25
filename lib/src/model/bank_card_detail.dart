@@ -3,6 +3,7 @@
 //
 
 import 'package:bind_api/src/model/bank_card_base_data.dart';
+import 'package:bind_api/src/model/card_view.dart';
 import 'package:bind_api/src/model/date.dart';
 import 'package:bind_api/src/model/bank_card_detail_all_of.dart';
 import 'package:bind_api/src/model/bank_card_settings.dart';
@@ -25,6 +26,7 @@ part 'bank_card_detail.g.dart';
 /// * [currencyLabel] 
 /// * [status] 
 /// * [image] 
+/// * [cardBackground] 
 /// * [cardName] 
 /// * [createdAt] 
 /// * [balance] 
@@ -61,10 +63,13 @@ abstract class BankCardDetail implements Built<BankCardDetail, BankCardDetailBui
     // enum statusEnum {  NotActivated,  Active,  Lost,  Stolen,  Inactive,  PinTriesLimit,  Expired,  Replaced,  Blocked,  };
 
     @BuiltValueField(wireName: r'image')
-    String get image;
+    String? get image;
+
+    @BuiltValueField(wireName: r'card_background')
+    CardView? get cardBackground;
 
     @BuiltValueField(wireName: r'card_name')
-    String get cardName;
+    String? get cardName;
 
     @BuiltValueField(wireName: r'created_at')
     DateTime get createdAt;
@@ -143,14 +148,24 @@ class _$BankCardDetailSerializer implements StructuredSerializer<BankCardDetail>
             ..add(r'status')
             ..add(serializers.serialize(object.status,
                 specifiedType: const FullType(BankCardStatus)));
-        result
-            ..add(r'image')
-            ..add(serializers.serialize(object.image,
-                specifiedType: const FullType(String)));
-        result
-            ..add(r'card_name')
-            ..add(serializers.serialize(object.cardName,
-                specifiedType: const FullType(String)));
+        if (object.image != null) {
+            result
+                ..add(r'image')
+                ..add(serializers.serialize(object.image,
+                    specifiedType: const FullType.nullable(String)));
+        }
+        if (object.cardBackground != null) {
+            result
+                ..add(r'card_background')
+                ..add(serializers.serialize(object.cardBackground,
+                    specifiedType: const FullType(CardView)));
+        }
+        if (object.cardName != null) {
+            result
+                ..add(r'card_name')
+                ..add(serializers.serialize(object.cardName,
+                    specifiedType: const FullType.nullable(String)));
+        }
         result
             ..add(r'created_at')
             ..add(serializers.serialize(object.createdAt,
@@ -248,12 +263,19 @@ class _$BankCardDetailSerializer implements StructuredSerializer<BankCardDetail>
                     break;
                 case r'image':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
+                        specifiedType: const FullType.nullable(String)) as String?;
+                    if (valueDes == null) continue;
                     result.image = valueDes;
+                    break;
+                case r'card_background':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(CardView)) as CardView;
+                    result.cardBackground.replace(valueDes);
                     break;
                 case r'card_name':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
+                        specifiedType: const FullType.nullable(String)) as String?;
+                    if (valueDes == null) continue;
                     result.cardName = valueDes;
                     break;
                 case r'created_at':
