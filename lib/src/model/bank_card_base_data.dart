@@ -19,7 +19,7 @@ part 'bank_card_base_data.g.dart';
 /// * [currency] 
 /// * [currencyCode] 
 /// * [currencyName] 
-/// * [urrencyLabel] 
+/// * [currencyLabel] 
 /// * [status] 
 /// * [image] 
 /// * [cardBackground] 
@@ -48,8 +48,8 @@ abstract class BankCardBaseData implements Built<BankCardBaseData, BankCardBaseD
     @BuiltValueField(wireName: r'currency_name')
     String get currencyName;
 
-    @BuiltValueField(wireName: r'сurrency_label')
-    String? get urrencyLabel;
+    @BuiltValueField(wireName: r'currency_label')
+    String get currencyLabel;
 
     @BuiltValueField(wireName: r'status')
     String get status;
@@ -116,12 +116,10 @@ class _$BankCardBaseDataSerializer implements StructuredSerializer<BankCardBaseD
             ..add(r'currency_name')
             ..add(serializers.serialize(object.currencyName,
                 specifiedType: const FullType(String)));
-        if (object.urrencyLabel != null) {
-            result
-                ..add(r'сurrency_label')
-                ..add(serializers.serialize(object.urrencyLabel,
-                    specifiedType: const FullType(String)));
-        }
+        result
+            ..add(r'currency_label')
+            ..add(serializers.serialize(object.currencyLabel,
+                specifiedType: const FullType(String)));
         result
             ..add(r'status')
             ..add(serializers.serialize(object.status,
@@ -198,10 +196,10 @@ class _$BankCardBaseDataSerializer implements StructuredSerializer<BankCardBaseD
                         specifiedType: const FullType(String)) as String;
                     result.currencyName = valueDes;
                     break;
-                case r'сurrency_label':
+                case r'currency_label':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
-                    result.urrencyLabel = valueDes;
+                    result.currencyLabel = valueDes;
                     break;
                 case r'status':
                     final valueDes = serializers.deserialize(value,

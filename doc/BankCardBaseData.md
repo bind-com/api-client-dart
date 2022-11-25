@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **currency** | **String** |  | 
 **currencyCode** | **String** |  | 
 **currencyName** | **String** |  | 
-**urrencyLabel** | **String** |  | [optional] 
+**currencyLabel** | **String** |  | 
 **status** | **String** |  | 
 **image** | **String** |  | [optional] 
 **cardBackground** | [**CardView**](CardView.md) |  | [optional] 

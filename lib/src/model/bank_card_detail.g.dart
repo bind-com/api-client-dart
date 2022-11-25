@@ -22,7 +22,7 @@ class _$BankCardDetail extends BankCardDetail {
   @override
   final String currencyName;
   @override
-  final String? urrencyLabel;
+  final String currencyLabel;
   @override
   final BankCardStatus status;
   @override
@@ -57,7 +57,7 @@ class _$BankCardDetail extends BankCardDetail {
       required this.currency,
       required this.currencyCode,
       required this.currencyName,
-      this.urrencyLabel,
+      required this.currencyLabel,
       required this.status,
       this.image,
       this.cardBackground,
@@ -83,6 +83,8 @@ class _$BankCardDetail extends BankCardDetail {
         currencyCode, r'BankCardDetail', 'currencyCode');
     BuiltValueNullFieldError.checkNotNull(
         currencyName, r'BankCardDetail', 'currencyName');
+    BuiltValueNullFieldError.checkNotNull(
+        currencyLabel, r'BankCardDetail', 'currencyLabel');
     BuiltValueNullFieldError.checkNotNull(status, r'BankCardDetail', 'status');
     BuiltValueNullFieldError.checkNotNull(
         createdAt, r'BankCardDetail', 'createdAt');
@@ -107,7 +109,7 @@ class _$BankCardDetail extends BankCardDetail {
         currency == other.currency &&
         currencyCode == other.currencyCode &&
         currencyName == other.currencyName &&
-        urrencyLabel == other.urrencyLabel &&
+        currencyLabel == other.currencyLabel &&
         status == other.status &&
         image == other.image &&
         cardBackground == other.cardBackground &&
@@ -156,7 +158,7 @@ class _$BankCardDetail extends BankCardDetail {
                                                             currencyCode
                                                                 .hashCode),
                                                         currencyName.hashCode),
-                                                    urrencyLabel.hashCode),
+                                                    currencyLabel.hashCode),
                                                 status.hashCode),
                                             image.hashCode),
                                         cardBackground.hashCode),
@@ -180,7 +182,7 @@ class _$BankCardDetail extends BankCardDetail {
           ..add('currency', currency)
           ..add('currencyCode', currencyCode)
           ..add('currencyName', currencyName)
-          ..add('urrencyLabel', urrencyLabel)
+          ..add('currencyLabel', currencyLabel)
           ..add('status', status)
           ..add('image', image)
           ..add('cardBackground', cardBackground)
@@ -230,9 +232,10 @@ class BankCardDetailBuilder
   String? get currencyName => _$this._currencyName;
   set currencyName(String? currencyName) => _$this._currencyName = currencyName;
 
-  String? _urrencyLabel;
-  String? get urrencyLabel => _$this._urrencyLabel;
-  set urrencyLabel(String? urrencyLabel) => _$this._urrencyLabel = urrencyLabel;
+  String? _currencyLabel;
+  String? get currencyLabel => _$this._currencyLabel;
+  set currencyLabel(String? currencyLabel) =>
+      _$this._currencyLabel = currencyLabel;
 
   BankCardStatus? _status;
   BankCardStatus? get status => _$this._status;
@@ -299,7 +302,7 @@ class BankCardDetailBuilder
       _currency = $v.currency;
       _currencyCode = $v.currencyCode;
       _currencyName = $v.currencyName;
-      _urrencyLabel = $v.urrencyLabel;
+      _currencyLabel = $v.currencyLabel;
       _status = $v.status;
       _image = $v.image;
       _cardBackground = $v.cardBackground?.toBuilder();
@@ -349,9 +352,9 @@ class BankCardDetailBuilder
                   currencyCode, r'BankCardDetail', 'currencyCode'),
               currencyName: BuiltValueNullFieldError.checkNotNull(
                   currencyName, r'BankCardDetail', 'currencyName'),
-              urrencyLabel: urrencyLabel,
-              status: BuiltValueNullFieldError.checkNotNull(
-                  status, r'BankCardDetail', 'status'),
+              currencyLabel: BuiltValueNullFieldError.checkNotNull(
+                  currencyLabel, r'BankCardDetail', 'currencyLabel'),
+              status: BuiltValueNullFieldError.checkNotNull(status, r'BankCardDetail', 'status'),
               image: image,
               cardBackground: _cardBackground?.build(),
               cardName: cardName,

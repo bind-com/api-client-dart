@@ -22,7 +22,7 @@ class _$BankCardBaseData extends BankCardBaseData {
   @override
   final String currencyName;
   @override
-  final String? urrencyLabel;
+  final String currencyLabel;
   @override
   final String status;
   @override
@@ -46,7 +46,7 @@ class _$BankCardBaseData extends BankCardBaseData {
       required this.currency,
       required this.currencyCode,
       required this.currencyName,
-      this.urrencyLabel,
+      required this.currencyLabel,
       required this.status,
       this.image,
       this.cardBackground,
@@ -66,6 +66,8 @@ class _$BankCardBaseData extends BankCardBaseData {
         currencyCode, r'BankCardBaseData', 'currencyCode');
     BuiltValueNullFieldError.checkNotNull(
         currencyName, r'BankCardBaseData', 'currencyName');
+    BuiltValueNullFieldError.checkNotNull(
+        currencyLabel, r'BankCardBaseData', 'currencyLabel');
     BuiltValueNullFieldError.checkNotNull(
         status, r'BankCardBaseData', 'status');
     BuiltValueNullFieldError.checkNotNull(
@@ -91,7 +93,7 @@ class _$BankCardBaseData extends BankCardBaseData {
         currency == other.currency &&
         currencyCode == other.currencyCode &&
         currencyName == other.currencyName &&
-        urrencyLabel == other.urrencyLabel &&
+        currencyLabel == other.currencyLabel &&
         status == other.status &&
         image == other.image &&
         cardBackground == other.cardBackground &&
@@ -119,7 +121,7 @@ class _$BankCardBaseData extends BankCardBaseData {
                                         currency.hashCode),
                                     currencyCode.hashCode),
                                 currencyName.hashCode),
-                            urrencyLabel.hashCode),
+                            currencyLabel.hashCode),
                         status.hashCode),
                     image.hashCode),
                 cardBackground.hashCode),
@@ -137,7 +139,7 @@ class _$BankCardBaseData extends BankCardBaseData {
           ..add('currency', currency)
           ..add('currencyCode', currencyCode)
           ..add('currencyName', currencyName)
-          ..add('urrencyLabel', urrencyLabel)
+          ..add('currencyLabel', currencyLabel)
           ..add('status', status)
           ..add('image', image)
           ..add('cardBackground', cardBackground)
@@ -181,9 +183,10 @@ class BankCardBaseDataBuilder
   String? get currencyName => _$this._currencyName;
   set currencyName(String? currencyName) => _$this._currencyName = currencyName;
 
-  String? _urrencyLabel;
-  String? get urrencyLabel => _$this._urrencyLabel;
-  set urrencyLabel(String? urrencyLabel) => _$this._urrencyLabel = urrencyLabel;
+  String? _currencyLabel;
+  String? get currencyLabel => _$this._currencyLabel;
+  set currencyLabel(String? currencyLabel) =>
+      _$this._currencyLabel = currencyLabel;
 
   String? _status;
   String? get status => _$this._status;
@@ -221,7 +224,7 @@ class BankCardBaseDataBuilder
       _currency = $v.currency;
       _currencyCode = $v.currencyCode;
       _currencyName = $v.currencyName;
-      _urrencyLabel = $v.urrencyLabel;
+      _currencyLabel = $v.currencyLabel;
       _status = $v.status;
       _image = $v.image;
       _cardBackground = $v.cardBackground?.toBuilder();
@@ -265,9 +268,9 @@ class BankCardBaseDataBuilder
                   currencyCode, r'BankCardBaseData', 'currencyCode'),
               currencyName: BuiltValueNullFieldError.checkNotNull(
                   currencyName, r'BankCardBaseData', 'currencyName'),
-              urrencyLabel: urrencyLabel,
-              status: BuiltValueNullFieldError.checkNotNull(
-                  status, r'BankCardBaseData', 'status'),
+              currencyLabel: BuiltValueNullFieldError.checkNotNull(
+                  currencyLabel, r'BankCardBaseData', 'currencyLabel'),
+              status: BuiltValueNullFieldError.checkNotNull(status, r'BankCardBaseData', 'status'),
               image: image,
               cardBackground: _cardBackground?.build(),
               cardName: cardName,
