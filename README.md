@@ -201,7 +201,6 @@ Class | Method | HTTP request | Description
  - [BeneficiaryDetail](doc/BeneficiaryDetail.md)
  - [CancelLimitOrderRequest](doc/CancelLimitOrderRequest.md)
  - [Candle](doc/Candle.md)
- - [CardBackground](doc/CardBackground.md)
  - [CardView](doc/CardView.md)
  - [ChainImplementation](doc/ChainImplementation.md)
  - [ChangeCardBackgroundRequest](doc/ChangeCardBackgroundRequest.md)

@@ -29,7 +29,6 @@ import 'package:bind_api/src/model/beneficiary.dart';
 import 'package:bind_api/src/model/beneficiary_detail.dart';
 import 'package:bind_api/src/model/cancel_limit_order_request.dart';
 import 'package:bind_api/src/model/candle.dart';
-import 'package:bind_api/src/model/card_background.dart';
 import 'package:bind_api/src/model/card_view.dart';
 import 'package:bind_api/src/model/chain_implementation.dart';
 import 'package:bind_api/src/model/change_card_background_request.dart';
@@ -167,7 +166,6 @@ part 'serializers.g.dart';
   BeneficiaryDetail,
   CancelLimitOrderRequest,
   Candle,
-  CardBackground,
   CardView,
   ChainImplementation,
   ChangeCardBackgroundRequest,

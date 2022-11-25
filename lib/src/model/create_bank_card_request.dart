@@ -3,7 +3,6 @@
 //
 
 import 'package:bind_api/src/model/delivery_address.dart';
-import 'package:bind_api/src/model/card_background.dart';
 import 'package:bind_api/src/model/bank_card_type.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -33,8 +32,7 @@ abstract class CreateBankCardRequest implements Built<CreateBankCardRequest, Cre
     DeliveryAddress? get deliveryAddress;
 
     @BuiltValueField(wireName: r'card_background')
-    CardBackground? get cardBackground;
-    // enum cardBackgroundEnum {  White,  Black,  Gray,  };
+    String? get cardBackground;
 
     CreateBankCardRequest._();
 
@@ -84,7 +82,7 @@ class _$CreateBankCardRequestSerializer implements StructuredSerializer<CreateBa
             result
                 ..add(r'card_background')
                 ..add(serializers.serialize(object.cardBackground,
-                    specifiedType: const FullType(CardBackground)));
+                    specifiedType: const FullType(String)));
         }
         return result;
     }
@@ -123,7 +121,7 @@ class _$CreateBankCardRequestSerializer implements StructuredSerializer<CreateBa
                     break;
                 case r'card_background':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(CardBackground)) as CardBackground;
+                        specifiedType: const FullType(String)) as String;
                     result.cardBackground = valueDes;
                     break;
             }

@@ -41,7 +41,6 @@ export 'package:bind_api/src/model/beneficiary.dart';
 export 'package:bind_api/src/model/beneficiary_detail.dart';
 export 'package:bind_api/src/model/cancel_limit_order_request.dart';
 export 'package:bind_api/src/model/candle.dart';
-export 'package:bind_api/src/model/card_background.dart';
 export 'package:bind_api/src/model/card_view.dart';
 export 'package:bind_api/src/model/chain_implementation.dart';
 export 'package:bind_api/src/model/change_card_background_request.dart';

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **cardType** | [**BankCardType**](BankCardType.md) |  | 
 **currency** | **String** |  | [optional] 
 **deliveryAddress** | [**DeliveryAddress**](DeliveryAddress.md) |  | [optional] 
-**cardBackground** | [**CardBackground**](CardBackground.md) |  | [optional] 
+**cardBackground** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -20,7 +20,6 @@ doc/Beneficiary.md
 doc/BeneficiaryDetail.md
 doc/CancelLimitOrderRequest.md
 doc/Candle.md
-doc/CardBackground.md
 doc/CardView.md
 doc/ChainImplementation.md
 doc/ChangeCardBackgroundRequest.md
@@ -189,7 +188,6 @@ lib/src/model/beneficiary.dart
 lib/src/model/beneficiary_detail.dart
 lib/src/model/cancel_limit_order_request.dart
 lib/src/model/candle.dart
-lib/src/model/card_background.dart
 lib/src/model/card_view.dart
 lib/src/model/chain_implementation.dart
 lib/src/model/change_card_background_request.dart
@@ -309,4 +307,3 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/unstaking_perform_request_test.dart

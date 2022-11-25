@@ -16,7 +16,7 @@ class _$CreateBankCardRequest extends CreateBankCardRequest {
   @override
   final DeliveryAddress? deliveryAddress;
   @override
-  final CardBackground? cardBackground;
+  final String? cardBackground;
 
   factory _$CreateBankCardRequest(
           [void Function(CreateBankCardRequestBuilder)? updates]) =>
@@ -97,9 +97,9 @@ class CreateBankCardRequestBuilder
   set deliveryAddress(DeliveryAddressBuilder? deliveryAddress) =>
       _$this._deliveryAddress = deliveryAddress;
 
-  CardBackground? _cardBackground;
-  CardBackground? get cardBackground => _$this._cardBackground;
-  set cardBackground(CardBackground? cardBackground) =>
+  String? _cardBackground;
+  String? get cardBackground => _$this._cardBackground;
+  set cardBackground(String? cardBackground) =>
       _$this._cardBackground = cardBackground;
 
   CreateBankCardRequestBuilder() {
