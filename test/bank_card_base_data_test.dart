@@ -7,6 +7,11 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(BankCardBaseData, () {
+    // String id
+    test('to test the property `id`', () async {
+      // TODO
+    });
+
     // From common settings of the user
     // String cardholderName
     test('to test the property `cardholderName`', () async {
@@ -28,6 +33,11 @@ void main() {
       // TODO
     });
 
+    // String currencyCode
+    test('to test the property `currencyCode`', () async {
+      // TODO
+    });
+
     // String currencyName
     test('to test the property `currencyName`', () async {
       // TODO
@@ -45,6 +55,11 @@ void main() {
 
     // String image
     test('to test the property `image`', () async {
+      // TODO
+    });
+
+    // CardView cardBackground
+    test('to test the property `cardBackground`', () async {
       // TODO
     });
 

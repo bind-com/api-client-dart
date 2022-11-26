@@ -37,7 +37,7 @@ void main() {
 
     // Create a new Bank Card of a specific type for current User
     //
-    //Future<String> createBankCard({ CreateBankCardRequest createBankCardRequest }) async
+    //Future<BankCardDetail> createBankCard(BankCardType cardType, { String cardName, String currency, DeliveryAddress deliveryAddress, String cardBackground, MultipartFile cardImage }) async
     test('test createBankCard', () async {
       // TODO
     });

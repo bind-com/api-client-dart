@@ -79,6 +79,24 @@ void main() {
       // TODO
     });
 
+    // Estimate restaking operation
+    //
+    // Estimate restaking BINDX
+    //
+    //Future<StakingEstimate> restakingEstimateOperation({ StakingPerformRequest stakingPerformRequest }) async
+    test('test restakingEstimateOperation', () async {
+      // TODO
+    });
+
+    // Perform restaking
+    //
+    // Restaking BINDX
+    //
+    //Future<Staking> restakingPerform({ StakingPerformRequest stakingPerformRequest }) async
+    test('test restakingPerform', () async {
+      // TODO
+    });
+
     // Estimate staking operation
     //
     // Estimate staking BINDX
@@ -94,6 +112,24 @@ void main() {
     //
     //Future<Staking> stakingPerform({ StakingPerformRequest stakingPerformRequest }) async
     test('test stakingPerform', () async {
+      // TODO
+    });
+
+    // Estimate unstaking operation
+    //
+    // Estimate unstaking BINDX
+    //
+    //Future<StakingEstimate> unstakingEstimateOperation({ UnstakingPerformRequest unstakingPerformRequest }) async
+    test('test unstakingEstimateOperation', () async {
+      // TODO
+    });
+
+    // Perform unstaking
+    //
+    // Unstaking BINDX
+    //
+    //Future<Staking> unstakingPerform({ UnstakingPerformRequest unstakingPerformRequest }) async
+    test('test unstakingPerform', () async {
       // TODO
     });
 
