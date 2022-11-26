@@ -10,7 +10,7 @@ All URIs are relative to *https://api.thebind.uk/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**blockBankCard**](FiatWalletApi.md#blockbankcard) | **POST** /fiat/bankcards/{card_id}/block/ | Block bank card and write reason
-[**changeCardBackground**](FiatWalletApi.md#changecardbackground) | **POST** /fiat/bankcards/card_background | Change card background
+[**changeCardBackground**](FiatWalletApi.md#changecardbackground) | **POST** /fiat/bankcards/{card_id}/card_background | Change card background
 [**changeCardStatus**](FiatWalletApi.md#changecardstatus) | **PATCH** /fiat/bankcards/{card_id}/card_status/ | Change card status
 [**changeDefaultWallet**](FiatWalletApi.md#changedefaultwallet) | **POST** /fiat/bankcards/{card_id}/change_wallet/ | Change wallet attached to bank card
 [**createBankCard**](FiatWalletApi.md#createbankcard) | **POST** /fiat/bankcards/ | Create a new Bank Card of a specific type for current User
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **changeCardBackground**
-> changeCardBackground(cardImage)
+> changeCardBackground(cardId, cardImage)
 
 Change card background
 
@@ -91,10 +91,11 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getFiatWalletApi();
+final String cardId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of exact card
 final MultipartFile cardImage = BINARY_DATA_HERE; // MultipartFile | 
 
 try {
-    api.changeCardBackground(cardImage);
+    api.changeCardBackground(cardId, cardImage);
 } catch on DioError (e) {
     print('Exception when calling FiatWalletApi->changeCardBackground: $e\n');
 }
@@ -104,7 +105,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cardImage** | **MultipartFile**|  | [optional] 
+ **cardId** | **String**| id of exact card | 
+ **cardImage** | **MultipartFile**|  | 
 
 ### Return type
 
