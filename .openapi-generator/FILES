@@ -14,7 +14,6 @@ doc/BankCardDetailAllOf.md
 doc/BankCardLockRequest.md
 doc/BankCardSettings.md
 doc/BankCardStatus.md
-doc/BankCardType.md
 doc/BeneficiariesApi.md
 doc/Beneficiary.md
 doc/BeneficiaryDetail.md
@@ -29,7 +28,6 @@ doc/CheckPasscodeRequest.md
 doc/Contact.md
 doc/ContactsApi.md
 doc/Country.md
-doc/CreateBankCardRequest.md
 doc/CreateBeneficiaryRequest.md
 doc/CreateFiatWalletRequest.md
 doc/CreateInnerFiatRequestRequest.md
@@ -61,7 +59,6 @@ doc/Currency.md
 doc/CurrencyApi.md
 doc/CurrencyWithRate.md
 doc/CurrencyWithRateAllOf.md
-doc/DeliveryAddress.md
 doc/DepositAddress.md
 doc/Error.md
 doc/ExchangeApi.md
@@ -183,7 +180,6 @@ lib/src/model/bank_card_detail_all_of.dart
 lib/src/model/bank_card_lock_request.dart
 lib/src/model/bank_card_settings.dart
 lib/src/model/bank_card_status.dart
-lib/src/model/bank_card_type.dart
 lib/src/model/beneficiary.dart
 lib/src/model/beneficiary_detail.dart
 lib/src/model/cancel_limit_order_request.dart
@@ -196,7 +192,6 @@ lib/src/model/chart_tick.dart
 lib/src/model/check_passcode_request.dart
 lib/src/model/contact.dart
 lib/src/model/country.dart
-lib/src/model/create_bank_card_request.dart
 lib/src/model/create_beneficiary_request.dart
 lib/src/model/create_fiat_wallet_request.dart
 lib/src/model/create_inner_fiat_request_request.dart
@@ -226,7 +221,6 @@ lib/src/model/currency.dart
 lib/src/model/currency_with_rate.dart
 lib/src/model/currency_with_rate_all_of.dart
 lib/src/model/date.dart
-lib/src/model/delivery_address.dart
 lib/src/model/deposit_address.dart
 lib/src/model/error.dart
 lib/src/model/export_history.dart

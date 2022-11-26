@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createBankCard**
-> BankCardDetail createBankCard(createBankCardRequest)
+> BankCardDetail createBankCard(cardType, cardName, currency, deliveryAddress, cardBackground, cardImage)
 
 Create a new Bank Card of a specific type for current User
 
@@ -230,10 +230,15 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getFiatWalletApi();
-final CreateBankCardRequest createBankCardRequest = ; // CreateBankCardRequest | 
+final BankCardType cardType = ; // BankCardType | 
+final String cardName = cardName_example; // String | 
+final String currency = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final DeliveryAddress deliveryAddress = ; // DeliveryAddress | 
+final String cardBackground = cardBackground_example; // String | 
+final MultipartFile cardImage = BINARY_DATA_HERE; // MultipartFile | 
 
 try {
-    final response = api.createBankCard(createBankCardRequest);
+    final response = api.createBankCard(cardType, cardName, currency, deliveryAddress, cardBackground, cardImage);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling FiatWalletApi->createBankCard: $e\n');
@@ -244,7 +249,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createBankCardRequest** | [**CreateBankCardRequest**](CreateBankCardRequest.md)|  | [optional] 
+ **cardType** | [**BankCardType**](BankCardType.md)|  | 
+ **cardName** | **String**|  | [optional] 
+ **currency** | **String**|  | [optional] 
+ **deliveryAddress** | [**DeliveryAddress**](DeliveryAddress.md)|  | [optional] 
+ **cardBackground** | **String**|  | [optional] 
+ **cardImage** | **MultipartFile**|  | [optional] 
 
 ### Return type
 
@@ -256,7 +266,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

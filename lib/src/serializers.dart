@@ -24,7 +24,6 @@ import 'package:bind_api/src/model/bank_card_detail_all_of.dart';
 import 'package:bind_api/src/model/bank_card_lock_request.dart';
 import 'package:bind_api/src/model/bank_card_settings.dart';
 import 'package:bind_api/src/model/bank_card_status.dart';
-import 'package:bind_api/src/model/bank_card_type.dart';
 import 'package:bind_api/src/model/beneficiary.dart';
 import 'package:bind_api/src/model/beneficiary_detail.dart';
 import 'package:bind_api/src/model/cancel_limit_order_request.dart';
@@ -37,7 +36,6 @@ import 'package:bind_api/src/model/chart_tick.dart';
 import 'package:bind_api/src/model/check_passcode_request.dart';
 import 'package:bind_api/src/model/contact.dart';
 import 'package:bind_api/src/model/country.dart';
-import 'package:bind_api/src/model/create_bank_card_request.dart';
 import 'package:bind_api/src/model/create_beneficiary_request.dart';
 import 'package:bind_api/src/model/create_fiat_wallet_request.dart';
 import 'package:bind_api/src/model/create_inner_fiat_request_request.dart';
@@ -66,7 +64,6 @@ import 'package:bind_api/src/model/crypto_withdrawal_request.dart';
 import 'package:bind_api/src/model/currency.dart';
 import 'package:bind_api/src/model/currency_with_rate.dart';
 import 'package:bind_api/src/model/currency_with_rate_all_of.dart';
-import 'package:bind_api/src/model/delivery_address.dart';
 import 'package:bind_api/src/model/deposit_address.dart';
 import 'package:bind_api/src/model/error.dart';
 import 'package:bind_api/src/model/export_history.dart';
@@ -161,7 +158,6 @@ part 'serializers.g.dart';
   BankCardLockRequest,
   BankCardSettings,
   BankCardStatus,
-  BankCardType,
   Beneficiary,
   BeneficiaryDetail,
   CancelLimitOrderRequest,
@@ -174,7 +170,6 @@ part 'serializers.g.dart';
   CheckPasscodeRequest,
   Contact,
   Country,
-  CreateBankCardRequest,
   CreateBeneficiaryRequest,
   CreateFiatWalletRequest,
   CreateInnerFiatRequestRequest,
@@ -203,7 +198,6 @@ part 'serializers.g.dart';
   Currency,
   CurrencyWithRate,
   CurrencyWithRateAllOf,
-  DeliveryAddress,
   DepositAddress,
   Error,
   ExportHistory,
