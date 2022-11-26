@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **currency** | **String** |  | [optional] 
 **deliveryAddress** | [**DeliveryAddress**](DeliveryAddress.md) |  | [optional] 
 **cardBackground** | **String** |  | [optional] 
-**cardImage** | [**Uint8List**](Uint8List.md) |  | [optional] 
+**cardImage** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

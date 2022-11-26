@@ -18,7 +18,7 @@ class _$CreateBankCardRequest extends CreateBankCardRequest {
   @override
   final String? cardBackground;
   @override
-  final Uint8List? cardImage;
+  final String? cardImage;
 
   factory _$CreateBankCardRequest(
           [void Function(CreateBankCardRequestBuilder)? updates]) =>
@@ -109,9 +109,9 @@ class CreateBankCardRequestBuilder
   set cardBackground(String? cardBackground) =>
       _$this._cardBackground = cardBackground;
 
-  Uint8List? _cardImage;
-  Uint8List? get cardImage => _$this._cardImage;
-  set cardImage(Uint8List? cardImage) => _$this._cardImage = cardImage;
+  String? _cardImage;
+  String? get cardImage => _$this._cardImage;
+  set cardImage(String? cardImage) => _$this._cardImage = cardImage;
 
   CreateBankCardRequestBuilder() {
     CreateBankCardRequest._defaults(this);

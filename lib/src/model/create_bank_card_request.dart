@@ -3,7 +3,6 @@
 //
 
 import 'package:bind_api/src/model/delivery_address.dart';
-import 'dart:typed_data';
 import 'package:bind_api/src/model/bank_card_type.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -37,7 +36,7 @@ abstract class CreateBankCardRequest implements Built<CreateBankCardRequest, Cre
     String? get cardBackground;
 
     @BuiltValueField(wireName: r'card_image')
-    Uint8List? get cardImage;
+    String? get cardImage;
 
     CreateBankCardRequest._();
 
@@ -93,7 +92,7 @@ class _$CreateBankCardRequestSerializer implements StructuredSerializer<CreateBa
             result
                 ..add(r'card_image')
                 ..add(serializers.serialize(object.cardImage,
-                    specifiedType: const FullType(Uint8List)));
+                    specifiedType: const FullType(String)));
         }
         return result;
     }
@@ -137,7 +136,7 @@ class _$CreateBankCardRequestSerializer implements StructuredSerializer<CreateBa
                     break;
                 case r'card_image':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(Uint8List)) as Uint8List;
+                        specifiedType: const FullType(String)) as String;
                     result.cardImage = valueDes;
                     break;
             }
