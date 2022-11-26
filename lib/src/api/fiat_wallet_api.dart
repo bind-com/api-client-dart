@@ -14,14 +14,13 @@ import 'package:bind_api/src/model/bank_card_change_wallet_request.dart';
 import 'package:bind_api/src/model/bank_card_detail.dart';
 import 'package:bind_api/src/model/bank_card_lock_request.dart';
 import 'package:bind_api/src/model/bank_card_settings.dart';
-import 'package:bind_api/src/model/bank_card_type.dart';
 import 'package:bind_api/src/model/card_view.dart';
 import 'package:bind_api/src/model/change_card_background_request.dart';
 import 'package:bind_api/src/model/change_card_status_request.dart';
+import 'package:bind_api/src/model/create_bank_card_request.dart';
 import 'package:bind_api/src/model/create_fiat_wallet_request.dart';
 import 'package:bind_api/src/model/currency.dart';
 import 'package:bind_api/src/model/currency_with_rate.dart';
-import 'package:bind_api/src/model/delivery_address.dart';
 import 'package:bind_api/src/model/error.dart';
 import 'package:bind_api/src/model/fiat_account.dart';
 import 'package:bind_api/src/model/fiat_wallet.dart';
@@ -421,12 +420,7 @@ class FiatWalletApi {
   /// 
   ///
   /// Parameters:
-  /// * [cardType] 
-  /// * [cardName] 
-  /// * [currency] 
-  /// * [deliveryAddress] 
-  /// * [cardBackground] 
-  /// * [cardImage] 
+  /// * [createBankCardRequest] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -437,12 +431,7 @@ class FiatWalletApi {
   /// Returns a [Future] containing a [Response] with a [BankCardDetail] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BankCardDetail>> createBankCard({ 
-    required BankCardType cardType,
-    String? cardName,
-    String? currency,
-    DeliveryAddress? deliveryAddress,
-    String? cardBackground,
-    MultipartFile? cardImage,
+    CreateBankCardRequest? createBankCardRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -466,21 +455,15 @@ class FiatWalletApi {
         ],
         ...?extra,
       },
-      contentType: 'multipart/form-data',
+      contentType: 'application/json',
       validateStatus: validateStatus,
     );
 
     dynamic _bodyData;
 
     try {
-      _bodyData = FormData.fromMap(<String, dynamic>{
-        if (cardName != null) r'card_name': encodeFormParameter(_serializers, cardName, const FullType(String)),
-        r'card_type': encodeFormParameter(_serializers, cardType, const FullType(BankCardType)),
-        if (currency != null) r'currency': encodeFormParameter(_serializers, currency, const FullType(String)),
-        if (deliveryAddress != null) r'delivery_address': encodeFormParameter(_serializers, deliveryAddress, const FullType(DeliveryAddress)),
-        if (cardBackground != null) r'card_background': encodeFormParameter(_serializers, cardBackground, const FullType(String)),
-        if (cardImage != null) r'card_image': cardImage,
-      });
+      const _type = FullType(CreateBankCardRequest);
+      _bodyData = createBankCardRequest == null ? null : _serializers.serialize(createBankCardRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioError(
