@@ -31,7 +31,6 @@ import 'package:bind_api/src/model/cancel_limit_order_request.dart';
 import 'package:bind_api/src/model/candle.dart';
 import 'package:bind_api/src/model/card_view.dart';
 import 'package:bind_api/src/model/chain_implementation.dart';
-import 'package:bind_api/src/model/change_card_background_request.dart';
 import 'package:bind_api/src/model/change_card_status_request.dart';
 import 'package:bind_api/src/model/chart_tick.dart';
 import 'package:bind_api/src/model/check_passcode_request.dart';
@@ -168,7 +167,6 @@ part 'serializers.g.dart';
   Candle,
   CardView,
   ChainImplementation,
-  ChangeCardBackgroundRequest,
   ChangeCardStatusRequest,
   ChartTick,
   CheckPasscodeRequest,

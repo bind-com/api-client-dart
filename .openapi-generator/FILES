@@ -22,7 +22,6 @@ doc/CancelLimitOrderRequest.md
 doc/Candle.md
 doc/CardView.md
 doc/ChainImplementation.md
-doc/ChangeCardBackgroundRequest.md
 doc/ChangeCardStatusRequest.md
 doc/ChartTick.md
 doc/CheckPasscodeRequest.md
@@ -190,7 +189,6 @@ lib/src/model/cancel_limit_order_request.dart
 lib/src/model/candle.dart
 lib/src/model/card_view.dart
 lib/src/model/chain_implementation.dart
-lib/src/model/change_card_background_request.dart
 lib/src/model/change_card_status_request.dart
 lib/src/model/chart_tick.dart
 lib/src/model/check_passcode_request.dart

@@ -15,7 +15,6 @@ import 'package:bind_api/src/model/bank_card_detail.dart';
 import 'package:bind_api/src/model/bank_card_lock_request.dart';
 import 'package:bind_api/src/model/bank_card_settings.dart';
 import 'package:bind_api/src/model/card_view.dart';
-import 'package:bind_api/src/model/change_card_background_request.dart';
 import 'package:bind_api/src/model/change_card_status_request.dart';
 import 'package:bind_api/src/model/create_bank_card_request.dart';
 import 'package:bind_api/src/model/create_fiat_wallet_request.dart';
@@ -145,7 +144,7 @@ class FiatWalletApi {
   ///
   /// Parameters:
   /// * [cardId] - id of exact card
-  /// * [changeCardBackgroundRequest] 
+  /// * [cardImage] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -157,7 +156,7 @@ class FiatWalletApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> changeCardBackground({ 
     required String cardId,
-    ChangeCardBackgroundRequest? changeCardBackgroundRequest,
+    MultipartFile? cardImage,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -181,15 +180,16 @@ class FiatWalletApi {
         ],
         ...?extra,
       },
-      contentType: 'application/json',
+      contentType: 'multipart/form-data',
       validateStatus: validateStatus,
     );
 
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ChangeCardBackgroundRequest);
-      _bodyData = changeCardBackgroundRequest == null ? null : _serializers.serialize(changeCardBackgroundRequest, specifiedType: _type);
+      _bodyData = FormData.fromMap(<String, dynamic>{
+        if (cardImage != null) r'card_image': cardImage,
+      });
 
     } catch(error, stackTrace) {
       throw DioError(

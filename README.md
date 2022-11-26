@@ -203,7 +203,6 @@ Class | Method | HTTP request | Description
  - [Candle](doc/Candle.md)
  - [CardView](doc/CardView.md)
  - [ChainImplementation](doc/ChainImplementation.md)
- - [ChangeCardBackgroundRequest](doc/ChangeCardBackgroundRequest.md)
  - [ChangeCardStatusRequest](doc/ChangeCardStatusRequest.md)
  - [ChartTick](doc/ChartTick.md)
  - [CheckPasscodeRequest](doc/CheckPasscodeRequest.md)

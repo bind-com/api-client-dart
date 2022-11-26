@@ -43,7 +43,6 @@ export 'package:bind_api/src/model/cancel_limit_order_request.dart';
 export 'package:bind_api/src/model/candle.dart';
 export 'package:bind_api/src/model/card_view.dart';
 export 'package:bind_api/src/model/chain_implementation.dart';
-export 'package:bind_api/src/model/change_card_background_request.dart';
 export 'package:bind_api/src/model/change_card_status_request.dart';
 export 'package:bind_api/src/model/chart_tick.dart';
 export 'package:bind_api/src/model/check_passcode_request.dart';

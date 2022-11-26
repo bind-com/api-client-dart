@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **changeCardBackground**
-> changeCardBackground(cardId, changeCardBackgroundRequest)
+> changeCardBackground(cardId, cardImage)
 
 Change card background
 
@@ -94,10 +94,10 @@ import 'package:bind_api/api.dart';
 
 final api = BindApi().getFiatWalletApi();
 final String cardId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of exact card
-final ChangeCardBackgroundRequest changeCardBackgroundRequest = ; // ChangeCardBackgroundRequest | 
+final MultipartFile cardImage = BINARY_DATA_HERE; // MultipartFile | 
 
 try {
-    api.changeCardBackground(cardId, changeCardBackgroundRequest);
+    api.changeCardBackground(cardId, cardImage);
 } catch on DioError (e) {
     print('Exception when calling FiatWalletApi->changeCardBackground: $e\n');
 }
@@ -108,7 +108,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cardId** | **String**| id of exact card | 
- **changeCardBackgroundRequest** | [**ChangeCardBackgroundRequest**](ChangeCardBackgroundRequest.md)|  | [optional] 
+ **cardImage** | **MultipartFile**|  | [optional] 
 
 ### Return type
 
@@ -120,7 +120,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
