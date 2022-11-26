@@ -35,7 +35,7 @@ Method | HTTP request | Description
 
 
 # **blockBankCard**
-> BankCardDetail blockBankCard(cardId, bankCardBlockingReason)
+> BankCardDetail blockBankCard(cardId)
 
 Block bank card and write reason
 
@@ -48,10 +48,9 @@ import 'package:bind_api/api.dart';
 
 final api = BindApi().getFiatWalletApi();
 final String cardId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of exact card
-final BankCardBlockingReason bankCardBlockingReason = ; // BankCardBlockingReason | 
 
 try {
-    final response = api.blockBankCard(cardId, bankCardBlockingReason);
+    final response = api.blockBankCard(cardId);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling FiatWalletApi->blockBankCard: $e\n');
@@ -63,7 +62,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cardId** | **String**| id of exact card | 
- **bankCardBlockingReason** | [**BankCardBlockingReason**](BankCardBlockingReason.md)|  | [optional] 
 
 ### Return type
 
@@ -75,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

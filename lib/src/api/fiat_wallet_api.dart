@@ -43,7 +43,6 @@ class FiatWalletApi {
   ///
   /// Parameters:
   /// * [cardId] - id of exact card
-  /// * [bankCardBlockingReason] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -55,7 +54,6 @@ class FiatWalletApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BankCardDetail>> blockBankCard({ 
     required String cardId,
-    BankCardBlockingReason? bankCardBlockingReason,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -79,30 +77,11 @@ class FiatWalletApi {
         ],
         ...?extra,
       },
-      contentType: 'application/json',
       validateStatus: validateStatus,
     );
 
-    dynamic _bodyData;
-
-    try {
-      const _type = FullType(BankCardBlockingReason);
-      _bodyData = bankCardBlockingReason == null ? null : _serializers.serialize(bankCardBlockingReason, specifiedType: _type);
-
-    } catch(error, stackTrace) {
-      throw DioError(
-         requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
-        type: DioErrorType.other,
-        error: error,
-      )..stackTrace = stackTrace;
-    }
-
     final _response = await _dio.request<Object>(
       _path,
-      data: _bodyData,
       options: _options,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
