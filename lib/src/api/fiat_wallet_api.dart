@@ -143,7 +143,7 @@ class FiatWalletApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/fiat/bankcards/{card_id}/card_background'.replaceAll('{' r'card_id' '}', cardId.toString());
+    final _path = r'/fiat/bankcards/{card_id}/card_background/'.replaceAll('{' r'card_id' '}', cardId.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{

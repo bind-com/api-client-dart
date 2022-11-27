@@ -10,7 +10,7 @@ All URIs are relative to *https://api.thebind.uk/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**blockBankCard**](FiatWalletApi.md#blockbankcard) | **POST** /fiat/bankcards/{card_id}/block/ | Block bank card and write reason
-[**changeCardBackground**](FiatWalletApi.md#changecardbackground) | **POST** /fiat/bankcards/{card_id}/card_background | Change card background
+[**changeCardBackground**](FiatWalletApi.md#changecardbackground) | **POST** /fiat/bankcards/{card_id}/card_background/ | Change card background
 [**changeCardStatus**](FiatWalletApi.md#changecardstatus) | **PATCH** /fiat/bankcards/{card_id}/card_status/ | Change card status
 [**changeDefaultWallet**](FiatWalletApi.md#changedefaultwallet) | **POST** /fiat/bankcards/{card_id}/change_wallet/ | Change wallet attached to bank card
 [**createBankCard**](FiatWalletApi.md#createbankcard) | **POST** /fiat/bankcards/ | Create a new Bank Card of a specific type for current User
