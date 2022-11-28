@@ -119,12 +119,12 @@ class FiatWalletApi {
   }
 
   /// Change card background
-  /// 
+  /// Setting cards background color OR image. Only one of arguments should be provided. If an image is set, a color of card will become Null and vice versa
   ///
   /// Parameters:
   /// * [cardId] - id of exact card
-  /// * [cardImage] 
-  /// * [cardBackground] 
+  /// * [cardImage] - Image file to place as a card background
+  /// * [cardBackground] - Color to place as a card background. Example - white, Black, GrAy
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request

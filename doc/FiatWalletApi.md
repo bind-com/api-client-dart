@@ -83,6 +83,8 @@ Name | Type | Description  | Notes
 
 Change card background
 
+Setting cards background color OR image. Only one of arguments should be provided. If an image is set, a color of card will become Null and vice versa
+
 ### Example
 ```dart
 import 'package:bind_api/api.dart';
@@ -92,8 +94,8 @@ import 'package:bind_api/api.dart';
 
 final api = BindApi().getFiatWalletApi();
 final String cardId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of exact card
-final MultipartFile cardImage = BINARY_DATA_HERE; // MultipartFile | 
-final String cardBackground = cardBackground_example; // String | 
+final MultipartFile cardImage = BINARY_DATA_HERE; // MultipartFile | Image file to place as a card background
+final String cardBackground = cardBackground_example; // String | Color to place as a card background. Example - white, Black, GrAy
 
 try {
     api.changeCardBackground(cardId, cardImage, cardBackground);
@@ -107,8 +109,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cardId** | **String**| id of exact card | 
- **cardImage** | **MultipartFile**|  | [optional] 
- **cardBackground** | **String**|  | [optional] 
+ **cardImage** | **MultipartFile**| Image file to place as a card background | [optional] 
+ **cardBackground** | **String**| Color to place as a card background. Example - white, Black, GrAy | [optional] 
 
 ### Return type
 
