@@ -153,7 +153,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getStakingCryptoAssetsForClaiming**
-> BuiltList<Currency> getStakingCryptoAssetsForClaiming()
+> BuiltList<CryptoAsset> getStakingCryptoAssetsForClaiming()
 
 Get crypto assets for claiming
 
@@ -181,7 +181,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;Currency&gt;**](Currency.md)
+[**BuiltList&lt;CryptoAsset&gt;**](CryptoAsset.md)
 
 ### Authorization
 
@@ -195,7 +195,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getStakingFiatAssetsForClaiming**
-> BuiltList<Currency> getStakingFiatAssetsForClaiming()
+> BuiltList<FiatWalletWithPaymentCurrency> getStakingFiatAssetsForClaiming()
 
 Get fiat assets for claiming
 
@@ -223,7 +223,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;Currency&gt;**](Currency.md)
+[**BuiltList&lt;FiatWalletWithPaymentCurrency&gt;**](FiatWalletWithPaymentCurrency.md)
 
 ### Authorization
 

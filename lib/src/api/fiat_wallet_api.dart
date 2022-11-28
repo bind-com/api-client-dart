@@ -124,6 +124,7 @@ class FiatWalletApi {
   /// Parameters:
   /// * [cardId] - id of exact card
   /// * [cardImage] 
+  /// * [cardBackground] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -135,7 +136,8 @@ class FiatWalletApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> changeCardBackground({ 
     required String cardId,
-    required MultipartFile cardImage,
+    MultipartFile? cardImage,
+    String? cardBackground,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -168,6 +170,7 @@ class FiatWalletApi {
     try {
       _bodyData = FormData.fromMap(<String, dynamic>{
         r'card_image': cardImage,
+        r'card_background': encodeFormParameter(_serializers, cardBackground, const FullType(String)),
       });
 
     } catch(error, stackTrace) {

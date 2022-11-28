@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **changeCardBackground**
-> changeCardBackground(cardId, cardImage)
+> changeCardBackground(cardId, cardImage, cardBackground)
 
 Change card background
 
@@ -93,9 +93,10 @@ import 'package:bind_api/api.dart';
 final api = BindApi().getFiatWalletApi();
 final String cardId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of exact card
 final MultipartFile cardImage = BINARY_DATA_HERE; // MultipartFile | 
+final String cardBackground = cardBackground_example; // String | 
 
 try {
-    api.changeCardBackground(cardId, cardImage);
+    api.changeCardBackground(cardId, cardImage, cardBackground);
 } catch on DioError (e) {
     print('Exception when calling FiatWalletApi->changeCardBackground: $e\n');
 }
@@ -106,7 +107,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cardId** | **String**| id of exact card | 
- **cardImage** | **MultipartFile**|  | 
+ **cardImage** | **MultipartFile**|  | [optional] 
+ **cardBackground** | **String**|  | [optional] 
 
 ### Return type
 

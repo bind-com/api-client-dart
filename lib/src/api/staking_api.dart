@@ -7,9 +7,10 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:bind_api/src/model/crypto_asset.dart';
 import 'package:bind_api/src/model/crypto_exchange_request.dart';
-import 'package:bind_api/src/model/currency.dart';
 import 'package:bind_api/src/model/error.dart';
+import 'package:bind_api/src/model/fiat_wallet_with_payment_currency.dart';
 import 'package:bind_api/src/model/get_staking_timer200_response.dart';
 import 'package:bind_api/src/model/staking.dart';
 import 'package:bind_api/src/model/staking_additional_information.dart';
@@ -275,9 +276,9 @@ class StakingApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<Currency>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<CryptoAsset>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<Currency>>> getStakingCryptoAssetsForClaiming({ 
+  Future<Response<BuiltList<CryptoAsset>>> getStakingCryptoAssetsForClaiming({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -312,14 +313,14 @@ class StakingApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<Currency> _responseData;
+    BuiltList<CryptoAsset> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(Currency)]);
+      const _responseType = FullType(BuiltList, [FullType(CryptoAsset)]);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as BuiltList<Currency>;
+      ) as BuiltList<CryptoAsset>;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -330,7 +331,7 @@ class StakingApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<Currency>>(
+    return Response<BuiltList<CryptoAsset>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -353,9 +354,9 @@ class StakingApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<Currency>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<FiatWalletWithPaymentCurrency>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<Currency>>> getStakingFiatAssetsForClaiming({ 
+  Future<Response<BuiltList<FiatWalletWithPaymentCurrency>>> getStakingFiatAssetsForClaiming({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -390,14 +391,14 @@ class StakingApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<Currency> _responseData;
+    BuiltList<FiatWalletWithPaymentCurrency> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(Currency)]);
+      const _responseType = FullType(BuiltList, [FullType(FiatWalletWithPaymentCurrency)]);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as BuiltList<Currency>;
+      ) as BuiltList<FiatWalletWithPaymentCurrency>;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -408,7 +409,7 @@ class StakingApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<Currency>>(
+    return Response<BuiltList<FiatWalletWithPaymentCurrency>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
