@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**getStakingPeriods**](StakingApi.md#getstakingperiods) | **GET** /crypto/staking/periods | Get staking periods
 [**getStakingReleases**](StakingApi.md#getstakingreleases) | **GET** /crypto/staking/releases | Get staking releases
 [**getStakingTimer**](StakingApi.md#getstakingtimer) | **GET** /crypto/staking/timer | Get datetime of end timer
+[**getUnstakingInfo**](StakingApi.md#getunstakinginfo) | **GET** /crypto/staking/unstake_info | Get unstaking information
 [**restakingEstimateOperation**](StakingApi.md#restakingestimateoperation) | **POST** /crypto/staking/restake-estimate | Estimate restaking operation
 [**restakingPerform**](StakingApi.md#restakingperform) | **POST** /crypto/staking/restake/perform | Perform restaking
 [**stakingEstimateOperation**](StakingApi.md#stakingestimateoperation) | **POST** /crypto/staking/estimate | Estimate staking operation
@@ -354,6 +355,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetStakingTimer200Response**](GetStakingTimer200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getUnstakingInfo**
+> UnstakingInformation getUnstakingInfo()
+
+Get unstaking information
+
+Get unstaking information
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getStakingApi();
+
+try {
+    final response = api.getUnstakingInfo();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling StakingApi->getUnstakingInfo: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**UnstakingInformation**](UnstakingInformation.md)
 
 ### Authorization
 

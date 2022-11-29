@@ -10,8 +10,8 @@ part 'staking_periods.g.dart';
 
 class StakingPeriods extends EnumClass {
 
-  @BuiltValueEnumConst(wireName: r'30d')
-  static const StakingPeriods n30d = _$n30d;
+  @BuiltValueEnumConst(wireName: r'[\"30d\",\"30 Days\"]')
+  static const StakingPeriods leftSquareBracketDoubleQuote30dDoubleQuoteCommaDoubleQuote30DaysDoubleQuoteRightSquareBracket = _$leftSquareBracketDoubleQuote30dDoubleQuoteCommaDoubleQuote30DaysDoubleQuoteRightSquareBracket;
 
   static Serializer<StakingPeriods> get serializer => _$stakingPeriodsSerializer;
 

@@ -16,7 +16,7 @@ class _$StakingEstimate extends StakingEstimate {
   @override
   final StakingPeriods stakingPeriod;
   @override
-  final String fee;
+  final num fee;
 
   factory _$StakingEstimate([void Function(StakingEstimateBuilder)? updates]) =>
       (new StakingEstimateBuilder()..update(updates))._build();
@@ -103,9 +103,9 @@ class StakingEstimateBuilder
   set stakingPeriod(StakingPeriods? stakingPeriod) =>
       _$this._stakingPeriod = stakingPeriod;
 
-  String? _fee;
-  String? get fee => _$this._fee;
-  set fee(String? fee) => _$this._fee = fee;
+  num? _fee;
+  num? get fee => _$this._fee;
+  set fee(num? fee) => _$this._fee = fee;
 
   StakingEstimateBuilder() {
     StakingEstimate._defaults(this);

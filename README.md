@@ -159,6 +159,7 @@ Class | Method | HTTP request | Description
 [*StakingApi*](doc/StakingApi.md) | [**getStakingPeriods**](doc/StakingApi.md#getstakingperiods) | **GET** /crypto/staking/periods | Get staking periods
 [*StakingApi*](doc/StakingApi.md) | [**getStakingReleases**](doc/StakingApi.md#getstakingreleases) | **GET** /crypto/staking/releases | Get staking releases
 [*StakingApi*](doc/StakingApi.md) | [**getStakingTimer**](doc/StakingApi.md#getstakingtimer) | **GET** /crypto/staking/timer | Get datetime of end timer
+[*StakingApi*](doc/StakingApi.md) | [**getUnstakingInfo**](doc/StakingApi.md#getunstakinginfo) | **GET** /crypto/staking/unstake_info | Get unstaking information
 [*StakingApi*](doc/StakingApi.md) | [**restakingEstimateOperation**](doc/StakingApi.md#restakingestimateoperation) | **POST** /crypto/staking/restake-estimate | Estimate restaking operation
 [*StakingApi*](doc/StakingApi.md) | [**restakingPerform**](doc/StakingApi.md#restakingperform) | **POST** /crypto/staking/restake/perform | Perform restaking
 [*StakingApi*](doc/StakingApi.md) | [**stakingEstimateOperation**](doc/StakingApi.md#stakingestimateoperation) | **POST** /crypto/staking/estimate | Estimate staking operation
@@ -305,6 +306,7 @@ Class | Method | HTTP request | Description
  - [TransactionGrouping](doc/TransactionGrouping.md)
  - [TransactionStates](doc/TransactionStates.md)
  - [TransactionTypes](doc/TransactionTypes.md)
+ - [UnstakingInformation](doc/UnstakingInformation.md)
  - [UnstakingPerformRequest](doc/UnstakingPerformRequest.md)
  - [UpdateBeneficiaryRequest](doc/UpdateBeneficiaryRequest.md)
  - [UpdateContactRequest](doc/UpdateContactRequest.md)

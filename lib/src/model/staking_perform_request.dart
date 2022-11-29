@@ -16,7 +16,7 @@ part 'staking_perform_request.g.dart';
 abstract class StakingPerformRequest implements Built<StakingPerformRequest, StakingPerformRequestBuilder> {
     @BuiltValueField(wireName: r'period')
     StakingPeriods? get period;
-    // enum periodEnum {  30d,  };
+    // enum periodEnum {  ["30d","30 Days"],  };
 
     @BuiltValueField(wireName: r'amount')
     num? get amount;
