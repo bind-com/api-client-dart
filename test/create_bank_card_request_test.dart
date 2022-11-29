@@ -27,8 +27,13 @@ void main() {
       // TODO
     });
 
-    // CardBackground cardBackground
+    // String cardBackground
     test('to test the property `cardBackground`', () async {
+      // TODO
+    });
+
+    // Uint8List cardImage
+    test('to test the property `cardImage`', () async {
       // TODO
     });
 

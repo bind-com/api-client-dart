@@ -84,6 +84,7 @@ doc/GetCardLimits200Response.md
 doc/GetInnerCryptoTransferFeeRequest.md
 doc/GetInnerFiatTransferFeeRequest.md
 doc/GetStakingTimer200Response.md
+doc/HumanStakingPeriods.md
 doc/HumanTransactionTypes.md
 doc/InnerCryptoTransferFeeResult.md
 doc/InnerFiatTransferFeeResult.md
@@ -118,6 +119,7 @@ doc/StakingBalance.md
 doc/StakingEstimate.md
 doc/StakingInformation.md
 doc/StakingPerformRequest.md
+doc/StakingPeriods.md
 doc/StakingReleases.md
 doc/SyncContactsRequest.md
 doc/TokenDetail.md
@@ -245,6 +247,7 @@ lib/src/model/get_card_limits200_response.dart
 lib/src/model/get_inner_crypto_transfer_fee_request.dart
 lib/src/model/get_inner_fiat_transfer_fee_request.dart
 lib/src/model/get_staking_timer200_response.dart
+lib/src/model/human_staking_periods.dart
 lib/src/model/human_transaction_types.dart
 lib/src/model/inner_crypto_transfer_fee_result.dart
 lib/src/model/inner_fiat_transfer_fee_result.dart
@@ -277,6 +280,7 @@ lib/src/model/staking_balance.dart
 lib/src/model/staking_estimate.dart
 lib/src/model/staking_information.dart
 lib/src/model/staking_perform_request.dart
+lib/src/model/staking_periods.dart
 lib/src/model/staking_releases.dart
 lib/src/model/sync_contacts_request.dart
 lib/src/model/token_detail.dart
@@ -305,3 +309,4 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/human_staking_periods_test.dart

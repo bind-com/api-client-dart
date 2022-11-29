@@ -86,6 +86,7 @@ import 'package:bind_api/src/model/get_card_limits200_response.dart';
 import 'package:bind_api/src/model/get_inner_crypto_transfer_fee_request.dart';
 import 'package:bind_api/src/model/get_inner_fiat_transfer_fee_request.dart';
 import 'package:bind_api/src/model/get_staking_timer200_response.dart';
+import 'package:bind_api/src/model/human_staking_periods.dart';
 import 'package:bind_api/src/model/human_transaction_types.dart';
 import 'package:bind_api/src/model/inner_crypto_transfer_fee_result.dart';
 import 'package:bind_api/src/model/inner_fiat_transfer_fee_result.dart';
@@ -118,6 +119,7 @@ import 'package:bind_api/src/model/staking_balance.dart';
 import 'package:bind_api/src/model/staking_estimate.dart';
 import 'package:bind_api/src/model/staking_information.dart';
 import 'package:bind_api/src/model/staking_perform_request.dart';
+import 'package:bind_api/src/model/staking_periods.dart';
 import 'package:bind_api/src/model/staking_releases.dart';
 import 'package:bind_api/src/model/sync_contacts_request.dart';
 import 'package:bind_api/src/model/token_detail.dart';
@@ -222,6 +224,7 @@ part 'serializers.g.dart';
   GetInnerCryptoTransferFeeRequest,
   GetInnerFiatTransferFeeRequest,
   GetStakingTimer200Response,
+  HumanStakingPeriods,
   HumanTransactionTypes,
   InnerCryptoTransferFeeResult,
   InnerFiatTransferFeeResult,
@@ -254,6 +257,7 @@ part 'serializers.g.dart';
   StakingEstimate,
   StakingInformation,
   StakingPerformRequest,
+  StakingPeriods,
   StakingReleases,
   SyncContactsRequest,
   TokenDetail,
@@ -311,6 +315,10 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<LimitOrder>(),
       )
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(HumanStakingPeriods)]),
+        () => ListBuilder<HumanStakingPeriods>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Beneficiary)]),
         () => ListBuilder<Beneficiary>(),
       )
@@ -353,10 +361,6 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Candle)]),
         () => ListBuilder<Candle>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(StakingPeriods)]),
-        () => ListBuilder<StakingPeriods>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(ChartTick)]),

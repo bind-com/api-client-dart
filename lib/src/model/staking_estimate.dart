@@ -28,7 +28,7 @@ abstract class StakingEstimate implements Built<StakingEstimate, StakingEstimate
 
     @BuiltValueField(wireName: r'staking_period')
     StakingPeriods get stakingPeriod;
-    // enum stakingPeriodEnum {  ["30d","30 Days"],  };
+    // enum stakingPeriodEnum {  30d,  };
 
     @BuiltValueField(wireName: r'fee')
     num get fee;

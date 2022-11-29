@@ -46,6 +46,20 @@ void main() {
       // TODO
     });
 
+    // List of candles of staking main pool
+    //
+    //Future<BuiltList<Candle>> getStakingMainPoolCandles(PeriodInterval interval, DateTime start, DateTime end, { num pageSize }) async
+    test('test getStakingMainPoolCandles', () async {
+      // TODO
+    });
+
+    // List line ticks of staking main pool
+    //
+    //Future<BuiltList<ChartTick>> getStakingMainPoolChartLine(PeriodInterval interval, DateTime start, DateTime end, { num pageSize }) async
+    test('test getStakingMainPoolChartLine', () async {
+      // TODO
+    });
+
     // Get detail for certain token
     //
     // Get detail info for certain token, price related stats will be converted into the user's payment currency

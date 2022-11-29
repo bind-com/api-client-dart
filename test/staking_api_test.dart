@@ -38,7 +38,7 @@ void main() {
     //
     // This crypto assets are used for user claiming
     //
-    //Future<BuiltList<Currency>> getStakingCryptoAssetsForClaiming() async
+    //Future<BuiltList<CryptoAsset>> getStakingCryptoAssetsForClaiming() async
     test('test getStakingCryptoAssetsForClaiming', () async {
       // TODO
     });
@@ -47,7 +47,7 @@ void main() {
     //
     // This fiat assets are used for user claiming
     //
-    //Future<BuiltList<Currency>> getStakingFiatAssetsForClaiming() async
+    //Future<BuiltList<FiatWalletWithPaymentCurrency>> getStakingFiatAssetsForClaiming() async
     test('test getStakingFiatAssetsForClaiming', () async {
       // TODO
     });
@@ -56,7 +56,7 @@ void main() {
     //
     // Get staking periods for dropdown
     //
-    //Future<BuiltList<StakingPeriods>> getStakingPeriods() async
+    //Future<BuiltList<HumanStakingPeriods>> getStakingPeriods() async
     test('test getStakingPeriods', () async {
       // TODO
     });
@@ -79,6 +79,33 @@ void main() {
       // TODO
     });
 
+    // Get unstaking information
+    //
+    // Get unstaking information
+    //
+    //Future<UnstakingInformation> getUnstakingInfo() async
+    test('test getUnstakingInfo', () async {
+      // TODO
+    });
+
+    // Estimate restaking operation
+    //
+    // Estimate restaking BINDX
+    //
+    //Future<StakingEstimate> restakingEstimateOperation({ StakingPerformRequest stakingPerformRequest }) async
+    test('test restakingEstimateOperation', () async {
+      // TODO
+    });
+
+    // Perform restaking
+    //
+    // Restaking BINDX
+    //
+    //Future<Staking> restakingPerform({ StakingPerformRequest stakingPerformRequest }) async
+    test('test restakingPerform', () async {
+      // TODO
+    });
+
     // Estimate staking operation
     //
     // Estimate staking BINDX
@@ -94,6 +121,24 @@ void main() {
     //
     //Future<Staking> stakingPerform({ StakingPerformRequest stakingPerformRequest }) async
     test('test stakingPerform', () async {
+      // TODO
+    });
+
+    // Estimate unstaking operation
+    //
+    // Estimate unstaking BINDX
+    //
+    //Future<StakingEstimate> unstakingEstimateOperation({ UnstakingPerformRequest unstakingPerformRequest }) async
+    test('test unstakingEstimateOperation', () async {
+      // TODO
+    });
+
+    // Perform unstaking
+    //
+    // Unstaking BINDX
+    //
+    //Future<Staking> unstakingPerform({ UnstakingPerformRequest unstakingPerformRequest }) async
+    test('test unstakingPerform', () async {
       // TODO
     });
 

@@ -27,7 +27,7 @@ void main() {
       // TODO
     });
 
-    // String fee
+    // num fee
     test('to test the property `fee`', () async {
       // TODO
     });

@@ -9,14 +9,16 @@ void main() {
   group(FiatWalletApi, () {
     // Block bank card and write reason
     //
-    //Future<BankCardDetail> blockBankCard(String cardId, { BankCardBlockingReason bankCardBlockingReason }) async
+    //Future<BankCardDetail> blockBankCard(String cardId) async
     test('test blockBankCard', () async {
       // TODO
     });
 
     // Change card background
     //
-    //Future changeCardBackground(String cardId, { ChangeCardBackgroundRequest changeCardBackgroundRequest }) async
+    // Setting cards background color OR image. Only one of arguments should be provided. If an image is set, a color of card will become Null and vice versa
+    //
+    //Future changeCardBackground(String cardId, { MultipartFile cardImage, String cardBackground }) async
     test('test changeCardBackground', () async {
       // TODO
     });
@@ -37,7 +39,7 @@ void main() {
 
     // Create a new Bank Card of a specific type for current User
     //
-    //Future<String> createBankCard({ CreateBankCardRequest createBankCardRequest }) async
+    //Future<BankCardDetail> createBankCard({ CreateBankCardRequest createBankCardRequest }) async
     test('test createBankCard', () async {
       // TODO
     });

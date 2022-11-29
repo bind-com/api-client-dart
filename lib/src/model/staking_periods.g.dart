@@ -6,15 +6,12 @@ part of 'staking_periods.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const StakingPeriods
-    _$leftSquareBracketDoubleQuote30dDoubleQuoteCommaDoubleQuote30DaysDoubleQuoteRightSquareBracket =
-    const StakingPeriods._(
-        'leftSquareBracketDoubleQuote30dDoubleQuoteCommaDoubleQuote30DaysDoubleQuoteRightSquareBracket');
+const StakingPeriods _$n30d = const StakingPeriods._('n30d');
 
 StakingPeriods _$valueOf(String name) {
   switch (name) {
-    case 'leftSquareBracketDoubleQuote30dDoubleQuoteCommaDoubleQuote30DaysDoubleQuoteRightSquareBracket':
-      return _$leftSquareBracketDoubleQuote30dDoubleQuoteCommaDoubleQuote30DaysDoubleQuoteRightSquareBracket;
+    case 'n30d':
+      return _$n30d;
     default:
       throw new ArgumentError(name);
   }
@@ -22,14 +19,12 @@ StakingPeriods _$valueOf(String name) {
 
 final BuiltSet<StakingPeriods> _$values =
     new BuiltSet<StakingPeriods>(const <StakingPeriods>[
-  _$leftSquareBracketDoubleQuote30dDoubleQuoteCommaDoubleQuote30DaysDoubleQuoteRightSquareBracket,
+  _$n30d,
 ]);
 
 class _$StakingPeriodsMeta {
   const _$StakingPeriodsMeta();
-  StakingPeriods
-      get leftSquareBracketDoubleQuote30dDoubleQuoteCommaDoubleQuote30DaysDoubleQuoteRightSquareBracket =>
-          _$leftSquareBracketDoubleQuote30dDoubleQuoteCommaDoubleQuote30DaysDoubleQuoteRightSquareBracket;
+  StakingPeriods get n30d => _$n30d;
   StakingPeriods valueOf(String name) => _$valueOf(name);
   BuiltSet<StakingPeriods> get values => _$values;
 }
@@ -45,12 +40,10 @@ Serializer<StakingPeriods> _$stakingPeriodsSerializer =
 class _$StakingPeriodsSerializer
     implements PrimitiveSerializer<StakingPeriods> {
   static const Map<String, Object> _toWire = const <String, Object>{
-    'leftSquareBracketDoubleQuote30dDoubleQuoteCommaDoubleQuote30DaysDoubleQuoteRightSquareBracket':
-        '[\"30d\",\"30 Days\"]',
+    'n30d': '30d',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
-    '[\"30d\",\"30 Days\"]':
-        'leftSquareBracketDoubleQuote30dDoubleQuoteCommaDoubleQuote30DaysDoubleQuoteRightSquareBracket',
+    '30d': 'n30d',
   };
 
   @override
