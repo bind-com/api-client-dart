@@ -118,7 +118,6 @@ doc/StakingBalance.md
 doc/StakingEstimate.md
 doc/StakingInformation.md
 doc/StakingPerformRequest.md
-doc/StakingPeriods.md
 doc/StakingReleases.md
 doc/SyncContactsRequest.md
 doc/TokenDetail.md
@@ -278,7 +277,6 @@ lib/src/model/staking_balance.dart
 lib/src/model/staking_estimate.dart
 lib/src/model/staking_information.dart
 lib/src/model/staking_perform_request.dart
-lib/src/model/staking_periods.dart
 lib/src/model/staking_releases.dart
 lib/src/model/sync_contacts_request.dart
 lib/src/model/token_detail.dart
@@ -307,4 +305,3 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/unstaking_information_test.dart

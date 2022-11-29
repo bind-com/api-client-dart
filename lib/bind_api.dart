@@ -130,7 +130,6 @@ export 'package:bind_api/src/model/staking_balance.dart';
 export 'package:bind_api/src/model/staking_estimate.dart';
 export 'package:bind_api/src/model/staking_information.dart';
 export 'package:bind_api/src/model/staking_perform_request.dart';
-export 'package:bind_api/src/model/staking_periods.dart';
 export 'package:bind_api/src/model/staking_releases.dart';
 export 'package:bind_api/src/model/sync_contacts_request.dart';
 export 'package:bind_api/src/model/token_detail.dart';

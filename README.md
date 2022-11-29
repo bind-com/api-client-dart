@@ -291,7 +291,6 @@ Class | Method | HTTP request | Description
  - [StakingEstimate](doc/StakingEstimate.md)
  - [StakingInformation](doc/StakingInformation.md)
  - [StakingPerformRequest](doc/StakingPerformRequest.md)
- - [StakingPeriods](doc/StakingPeriods.md)
  - [StakingReleases](doc/StakingReleases.md)
  - [SyncContactsRequest](doc/SyncContactsRequest.md)
  - [TokenDetail](doc/TokenDetail.md)

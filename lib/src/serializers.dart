@@ -118,7 +118,6 @@ import 'package:bind_api/src/model/staking_balance.dart';
 import 'package:bind_api/src/model/staking_estimate.dart';
 import 'package:bind_api/src/model/staking_information.dart';
 import 'package:bind_api/src/model/staking_perform_request.dart';
-import 'package:bind_api/src/model/staking_periods.dart';
 import 'package:bind_api/src/model/staking_releases.dart';
 import 'package:bind_api/src/model/sync_contacts_request.dart';
 import 'package:bind_api/src/model/token_detail.dart';
@@ -255,7 +254,6 @@ part 'serializers.g.dart';
   StakingEstimate,
   StakingInformation,
   StakingPerformRequest,
-  StakingPeriods,
   StakingReleases,
   SyncContactsRequest,
   TokenDetail,
