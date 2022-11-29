@@ -313,6 +313,10 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<LimitOrder>(),
       )
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(HumanStakingPeriods)]),
+        () => ListBuilder<HumanStakingPeriods>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Beneficiary)]),
         () => ListBuilder<Beneficiary>(),
       )
@@ -355,10 +359,6 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Candle)]),
         () => ListBuilder<Candle>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(StakingPeriods)]),
-        () => ListBuilder<StakingPeriods>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(ChartTick)]),
