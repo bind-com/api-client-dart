@@ -12,13 +12,13 @@ import 'package:bind_api/src/model/crypto_exchange_request.dart';
 import 'package:bind_api/src/model/error.dart';
 import 'package:bind_api/src/model/fiat_wallet_with_payment_currency.dart';
 import 'package:bind_api/src/model/get_staking_timer200_response.dart';
-import 'package:bind_api/src/model/human_staking_periods.dart';
 import 'package:bind_api/src/model/staking.dart';
 import 'package:bind_api/src/model/staking_additional_information.dart';
 import 'package:bind_api/src/model/staking_balance.dart';
 import 'package:bind_api/src/model/staking_estimate.dart';
 import 'package:bind_api/src/model/staking_information.dart';
 import 'package:bind_api/src/model/staking_perform_request.dart';
+import 'package:bind_api/src/model/staking_periods.dart';
 import 'package:bind_api/src/model/staking_releases.dart';
 import 'package:bind_api/src/model/unstaking_information.dart';
 import 'package:bind_api/src/model/unstaking_perform_request.dart';
@@ -433,9 +433,9 @@ class StakingApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<HumanStakingPeriods>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<StakingPeriods>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<HumanStakingPeriods>>> getStakingPeriods({ 
+  Future<Response<BuiltList<StakingPeriods>>> getStakingPeriods({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -470,14 +470,14 @@ class StakingApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<HumanStakingPeriods> _responseData;
+    BuiltList<StakingPeriods> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(HumanStakingPeriods)]);
+      const _responseType = FullType(BuiltList, [FullType(StakingPeriods)]);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as BuiltList<HumanStakingPeriods>;
+      ) as BuiltList<StakingPeriods>;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -488,7 +488,7 @@ class StakingApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<HumanStakingPeriods>>(
+    return Response<BuiltList<StakingPeriods>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

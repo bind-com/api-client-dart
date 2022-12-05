@@ -259,7 +259,6 @@ Class | Method | HTTP request | Description
  - [GetInnerCryptoTransferFeeRequest](doc/GetInnerCryptoTransferFeeRequest.md)
  - [GetInnerFiatTransferFeeRequest](doc/GetInnerFiatTransferFeeRequest.md)
  - [GetStakingTimer200Response](doc/GetStakingTimer200Response.md)
- - [HumanStakingPeriods](doc/HumanStakingPeriods.md)
  - [HumanTransactionTypes](doc/HumanTransactionTypes.md)
  - [InnerCryptoTransferFeeResult](doc/InnerCryptoTransferFeeResult.md)
  - [InnerFiatTransferFeeResult](doc/InnerFiatTransferFeeResult.md)

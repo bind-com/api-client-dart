@@ -98,7 +98,6 @@ export 'package:bind_api/src/model/get_card_limits200_response.dart';
 export 'package:bind_api/src/model/get_inner_crypto_transfer_fee_request.dart';
 export 'package:bind_api/src/model/get_inner_fiat_transfer_fee_request.dart';
 export 'package:bind_api/src/model/get_staking_timer200_response.dart';
-export 'package:bind_api/src/model/human_staking_periods.dart';
 export 'package:bind_api/src/model/human_transaction_types.dart';
 export 'package:bind_api/src/model/inner_crypto_transfer_fee_result.dart';
 export 'package:bind_api/src/model/inner_fiat_transfer_fee_result.dart';

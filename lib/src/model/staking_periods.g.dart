@@ -6,12 +6,12 @@ part of 'staking_periods.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const StakingPeriods _$d30 = const StakingPeriods._('d30');
+const StakingPeriods _$n30days = const StakingPeriods._('n30days');
 
 StakingPeriods _$valueOf(String name) {
   switch (name) {
-    case 'd30':
-      return _$d30;
+    case 'n30days':
+      return _$n30days;
     default:
       throw new ArgumentError(name);
   }
@@ -19,12 +19,12 @@ StakingPeriods _$valueOf(String name) {
 
 final BuiltSet<StakingPeriods> _$values =
     new BuiltSet<StakingPeriods>(const <StakingPeriods>[
-  _$d30,
+  _$n30days,
 ]);
 
 class _$StakingPeriodsMeta {
   const _$StakingPeriodsMeta();
-  StakingPeriods get d30 => _$d30;
+  StakingPeriods get n30days => _$n30days;
   StakingPeriods valueOf(String name) => _$valueOf(name);
   BuiltSet<StakingPeriods> get values => _$values;
 }
@@ -40,10 +40,10 @@ Serializer<StakingPeriods> _$stakingPeriodsSerializer =
 class _$StakingPeriodsSerializer
     implements PrimitiveSerializer<StakingPeriods> {
   static const Map<String, Object> _toWire = const <String, Object>{
-    'd30': 'd30',
+    'n30days': '30 Days',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
-    'd30': 'd30',
+    '30 Days': 'n30days',
   };
 
   @override

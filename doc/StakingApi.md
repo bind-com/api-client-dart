@@ -238,7 +238,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getStakingPeriods**
-> BuiltList<HumanStakingPeriods> getStakingPeriods()
+> BuiltList<StakingPeriods> getStakingPeriods()
 
 Get staking periods
 
@@ -266,7 +266,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;HumanStakingPeriods&gt;**](HumanStakingPeriods.md)
+[**BuiltList&lt;StakingPeriods&gt;**](StakingPeriods.md)
 
 ### Authorization
 
