@@ -16,7 +16,7 @@ class _$Staking extends Staking {
   @override
   final String transactionHash;
   @override
-  final String fee;
+  final num fee;
 
   factory _$Staking([void Function(StakingBuilder)? updates]) =>
       (new StakingBuilder()..update(updates))._build();
@@ -99,9 +99,9 @@ class StakingBuilder implements Builder<Staking, StakingBuilder> {
   set transactionHash(String? transactionHash) =>
       _$this._transactionHash = transactionHash;
 
-  String? _fee;
-  String? get fee => _$this._fee;
-  set fee(String? fee) => _$this._fee = fee;
+  num? _fee;
+  num? get fee => _$this._fee;
+  set fee(num? fee) => _$this._fee = fee;
 
   StakingBuilder() {
     Staking._defaults(this);

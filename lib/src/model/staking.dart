@@ -29,7 +29,7 @@ abstract class Staking implements Built<Staking, StakingBuilder> {
     String get transactionHash;
 
     @BuiltValueField(wireName: r'fee')
-    String get fee;
+    num get fee;
 
     Staking._();
 
@@ -72,7 +72,7 @@ class _$StakingSerializer implements StructuredSerializer<Staking> {
         result
             ..add(r'fee')
             ..add(serializers.serialize(object.fee,
-                specifiedType: const FullType(String)));
+                specifiedType: const FullType(num)));
         return result;
     }
 
@@ -110,7 +110,7 @@ class _$StakingSerializer implements StructuredSerializer<Staking> {
                     break;
                 case r'fee':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
+                        specifiedType: const FullType(num)) as num;
                     result.fee = valueDes;
                     break;
             }

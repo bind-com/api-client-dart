@@ -27,7 +27,7 @@ abstract class StakingEstimate implements Built<StakingEstimate, StakingEstimate
     num get rate;
 
     @BuiltValueField(wireName: r'staking_period')
-    StakingPeriods get stakingPeriod;
+    StakingPeriods? get stakingPeriod;
     // enum stakingPeriodEnum {  30 Days,  };
 
     @BuiltValueField(wireName: r'fee')
@@ -67,10 +67,12 @@ class _$StakingEstimateSerializer implements StructuredSerializer<StakingEstimat
             ..add(r'rate')
             ..add(serializers.serialize(object.rate,
                 specifiedType: const FullType(num)));
-        result
-            ..add(r'staking_period')
-            ..add(serializers.serialize(object.stakingPeriod,
-                specifiedType: const FullType(StakingPeriods)));
+        if (object.stakingPeriod != null) {
+            result
+                ..add(r'staking_period')
+                ..add(serializers.serialize(object.stakingPeriod,
+                    specifiedType: const FullType.nullable(StakingPeriods)));
+        }
         result
             ..add(r'fee')
             ..add(serializers.serialize(object.fee,
@@ -107,7 +109,8 @@ class _$StakingEstimateSerializer implements StructuredSerializer<StakingEstimat
                     break;
                 case r'staking_period':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(StakingPeriods)) as StakingPeriods;
+                        specifiedType: const FullType.nullable(StakingPeriods)) as StakingPeriods?;
+                    if (valueDes == null) continue;
                     result.stakingPeriod = valueDes;
                     break;
                 case r'fee':

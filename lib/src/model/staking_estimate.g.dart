@@ -14,7 +14,7 @@ class _$StakingEstimate extends StakingEstimate {
   @override
   final num rate;
   @override
-  final StakingPeriods stakingPeriod;
+  final StakingPeriods? stakingPeriod;
   @override
   final num fee;
 
@@ -25,7 +25,7 @@ class _$StakingEstimate extends StakingEstimate {
       {required this.amountBind,
       required this.amountPaymentCurrency,
       required this.rate,
-      required this.stakingPeriod,
+      this.stakingPeriod,
       required this.fee})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
@@ -33,8 +33,6 @@ class _$StakingEstimate extends StakingEstimate {
     BuiltValueNullFieldError.checkNotNull(
         amountPaymentCurrency, r'StakingEstimate', 'amountPaymentCurrency');
     BuiltValueNullFieldError.checkNotNull(rate, r'StakingEstimate', 'rate');
-    BuiltValueNullFieldError.checkNotNull(
-        stakingPeriod, r'StakingEstimate', 'stakingPeriod');
     BuiltValueNullFieldError.checkNotNull(fee, r'StakingEstimate', 'fee');
   }
 
@@ -149,8 +147,7 @@ class StakingEstimateBuilder
                 'amountPaymentCurrency'),
             rate: BuiltValueNullFieldError.checkNotNull(
                 rate, r'StakingEstimate', 'rate'),
-            stakingPeriod: BuiltValueNullFieldError.checkNotNull(
-                stakingPeriod, r'StakingEstimate', 'stakingPeriod'),
+            stakingPeriod: stakingPeriod,
             fee: BuiltValueNullFieldError.checkNotNull(
                 fee, r'StakingEstimate', 'fee'));
     replace(_$result);

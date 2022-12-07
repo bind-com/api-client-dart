@@ -47,7 +47,7 @@ class _$StakingPerformRequestSerializer implements StructuredSerializer<StakingP
             result
                 ..add(r'period')
                 ..add(serializers.serialize(object.period,
-                    specifiedType: const FullType(StakingPeriods)));
+                    specifiedType: const FullType.nullable(StakingPeriods)));
         }
         if (object.amount != null) {
             result
@@ -72,7 +72,8 @@ class _$StakingPerformRequestSerializer implements StructuredSerializer<StakingP
             switch (key) {
                 case r'period':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(StakingPeriods)) as StakingPeriods;
+                        specifiedType: const FullType.nullable(StakingPeriods)) as StakingPeriods?;
+                    if (valueDes == null) continue;
                     result.period = valueDes;
                     break;
                 case r'amount':

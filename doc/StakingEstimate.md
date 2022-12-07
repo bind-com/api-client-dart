@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **amountBind** | **num** |  | 
 **amountPaymentCurrency** | **num** |  | 
 **rate** | **num** |  | 
-**stakingPeriod** | [**StakingPeriods**](StakingPeriods.md) |  | 
+**stakingPeriod** | [**StakingPeriods**](StakingPeriods.md) |  | [optional] 
 **fee** | **num** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
