@@ -8,29 +8,37 @@ part of 'delivery_address.dart';
 
 class _$DeliveryAddress extends DeliveryAddress {
   @override
-  final String? addressLine1;
+  final String addressLine1;
   @override
   final String? addressLine2;
   @override
   final String? apartment;
   @override
-  final String? city;
+  final String city;
   @override
-  final String? country;
+  final String country;
   @override
-  final String? postCode;
+  final String postCode;
 
   factory _$DeliveryAddress([void Function(DeliveryAddressBuilder)? updates]) =>
       (new DeliveryAddressBuilder()..update(updates))._build();
 
   _$DeliveryAddress._(
-      {this.addressLine1,
+      {required this.addressLine1,
       this.addressLine2,
       this.apartment,
-      this.city,
-      this.country,
-      this.postCode})
-      : super._();
+      required this.city,
+      required this.country,
+      required this.postCode})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        addressLine1, r'DeliveryAddress', 'addressLine1');
+    BuiltValueNullFieldError.checkNotNull(city, r'DeliveryAddress', 'city');
+    BuiltValueNullFieldError.checkNotNull(
+        country, r'DeliveryAddress', 'country');
+    BuiltValueNullFieldError.checkNotNull(
+        postCode, r'DeliveryAddress', 'postCode');
+  }
 
   @override
   DeliveryAddress rebuild(void Function(DeliveryAddressBuilder) updates) =>
@@ -140,12 +148,16 @@ class DeliveryAddressBuilder
   _$DeliveryAddress _build() {
     final _$result = _$v ??
         new _$DeliveryAddress._(
-            addressLine1: addressLine1,
+            addressLine1: BuiltValueNullFieldError.checkNotNull(
+                addressLine1, r'DeliveryAddress', 'addressLine1'),
             addressLine2: addressLine2,
             apartment: apartment,
-            city: city,
-            country: country,
-            postCode: postCode);
+            city: BuiltValueNullFieldError.checkNotNull(
+                city, r'DeliveryAddress', 'city'),
+            country: BuiltValueNullFieldError.checkNotNull(
+                country, r'DeliveryAddress', 'country'),
+            postCode: BuiltValueNullFieldError.checkNotNull(
+                postCode, r'DeliveryAddress', 'postCode'));
     replace(_$result);
     return _$result;
   }

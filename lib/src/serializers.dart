@@ -96,7 +96,6 @@ import 'package:bind_api/src/model/kyc_field_status.dart';
 import 'package:bind_api/src/model/kyc_file.dart';
 import 'package:bind_api/src/model/kyc_file_id.dart';
 import 'package:bind_api/src/model/kyc_file_status.dart';
-import 'package:bind_api/src/model/kyc_request.dart';
 import 'package:bind_api/src/model/kyc_request_move_result.dart';
 import 'package:bind_api/src/model/kyc_request_move_result_request_fields_status.dart';
 import 'package:bind_api/src/model/kyc_request_status.dart';
@@ -233,7 +232,6 @@ part 'serializers.g.dart';
   KYCFile,
   KYCFileId,
   KYCFileStatus,
-  KYCRequest,
   KYCRequestMoveResult,
   KYCRequestMoveResultRequestFieldsStatus,
   KYCRequestStatus,

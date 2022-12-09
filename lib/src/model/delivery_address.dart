@@ -18,7 +18,7 @@ part 'delivery_address.g.dart';
 /// * [postCode] 
 abstract class DeliveryAddress implements Built<DeliveryAddress, DeliveryAddressBuilder> {
     @BuiltValueField(wireName: r'address_line_1')
-    String? get addressLine1;
+    String get addressLine1;
 
     @BuiltValueField(wireName: r'address_line_2')
     String? get addressLine2;
@@ -27,13 +27,13 @@ abstract class DeliveryAddress implements Built<DeliveryAddress, DeliveryAddress
     String? get apartment;
 
     @BuiltValueField(wireName: r'city')
-    String? get city;
+    String get city;
 
     @BuiltValueField(wireName: r'country')
-    String? get country;
+    String get country;
 
     @BuiltValueField(wireName: r'post_code')
-    String? get postCode;
+    String get postCode;
 
     DeliveryAddress._();
 
@@ -57,12 +57,10 @@ class _$DeliveryAddressSerializer implements StructuredSerializer<DeliveryAddres
     Iterable<Object?> serialize(Serializers serializers, DeliveryAddress object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
-        if (object.addressLine1 != null) {
-            result
-                ..add(r'address_line_1')
-                ..add(serializers.serialize(object.addressLine1,
-                    specifiedType: const FullType(String)));
-        }
+        result
+            ..add(r'address_line_1')
+            ..add(serializers.serialize(object.addressLine1,
+                specifiedType: const FullType(String)));
         if (object.addressLine2 != null) {
             result
                 ..add(r'address_line_2')
@@ -75,24 +73,18 @@ class _$DeliveryAddressSerializer implements StructuredSerializer<DeliveryAddres
                 ..add(serializers.serialize(object.apartment,
                     specifiedType: const FullType(String)));
         }
-        if (object.city != null) {
-            result
-                ..add(r'city')
-                ..add(serializers.serialize(object.city,
-                    specifiedType: const FullType(String)));
-        }
-        if (object.country != null) {
-            result
-                ..add(r'country')
-                ..add(serializers.serialize(object.country,
-                    specifiedType: const FullType(String)));
-        }
-        if (object.postCode != null) {
-            result
-                ..add(r'post_code')
-                ..add(serializers.serialize(object.postCode,
-                    specifiedType: const FullType(String)));
-        }
+        result
+            ..add(r'city')
+            ..add(serializers.serialize(object.city,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'country')
+            ..add(serializers.serialize(object.country,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'post_code')
+            ..add(serializers.serialize(object.postCode,
+                specifiedType: const FullType(String)));
         return result;
     }
 

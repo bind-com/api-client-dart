@@ -269,7 +269,6 @@ Class | Method | HTTP request | Description
  - [KYCFile](doc/KYCFile.md)
  - [KYCFileId](doc/KYCFileId.md)
  - [KYCFileStatus](doc/KYCFileStatus.md)
- - [KYCRequest](doc/KYCRequest.md)
  - [KYCRequestMoveResult](doc/KYCRequestMoveResult.md)
  - [KYCRequestMoveResultRequestFieldsStatus](doc/KYCRequestMoveResultRequestFieldsStatus.md)
  - [KYCRequestStatus](doc/KYCRequestStatus.md)

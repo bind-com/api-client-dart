@@ -14,12 +14,12 @@ Name | Type | Description | Notes
 **firstName** | **String** | Received from Firebase | [optional] 
 **lastName** | **String** | Received from Firebase | [optional] 
 **middleName** | **String** | Received from Firebase | [optional] 
-**isApproved** | **bool** |  | [optional] 
 **passcode** | **String** |  | [optional] 
 **country** | **String** | ID of a country chosen by User during registration. This country can be connected to documents that are used by User during KYC | [optional] 
 **paymentCurrency** | **String** | ID of User’s payment currency | [optional] 
 **refundCurrency** | **String** | ID of User’s refund currency | [optional] 
-**isAdmin** | **bool** |  | [optional] 
+**isAdmin** | **bool** | flag indicating if the user has administrator rights | [optional] 
+**photo** | **String** | link to user profile photo | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

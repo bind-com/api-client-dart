@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateUser**
-> User updateUser(userID, user)
+> User updateUser(userID, email, phoneNumber, firstName, lastName, middleName, country, paymentCurrency, refundCurrency, photo, passcode)
 
 Update user
 
@@ -291,10 +291,19 @@ import 'package:bind_api/api.dart';
 
 final api = BindApi().getUserApi();
 final String userID = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final User user = ; // User | 
+final String email = email_example; // String | Email address that User inputs during registration. Bind backend receives it from Firebase when User is created for the first time
+final String phoneNumber = phoneNumber_example; // String | Phone number that User inputs during registration. Received from Firebase
+final String firstName = firstName_example; // String | Received from Firebase
+final String lastName = lastName_example; // String | Received from Firebase
+final String middleName = middleName_example; // String | Received from Firebase
+final String country = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | ID of a country chosen by User during registration. This country can be connected to documents that are used by User during KYC
+final String paymentCurrency = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | ID of User’s payment currency
+final String refundCurrency = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | ID of User’s refund currency
+final MultipartFile photo = BINARY_DATA_HERE; // MultipartFile | 
+final String passcode = passcode_example; // String | 
 
 try {
-    final response = api.updateUser(userID, user);
+    final response = api.updateUser(userID, email, phoneNumber, firstName, lastName, middleName, country, paymentCurrency, refundCurrency, photo, passcode);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling UserApi->updateUser: $e\n');
@@ -306,7 +315,16 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userID** | **String**|  | 
- **user** | [**User**](User.md)|  | [optional] 
+ **email** | **String**| Email address that User inputs during registration. Bind backend receives it from Firebase when User is created for the first time | [optional] 
+ **phoneNumber** | **String**| Phone number that User inputs during registration. Received from Firebase | [optional] 
+ **firstName** | **String**| Received from Firebase | [optional] 
+ **lastName** | **String**| Received from Firebase | [optional] 
+ **middleName** | **String**| Received from Firebase | [optional] 
+ **country** | **String**| ID of a country chosen by User during registration. This country can be connected to documents that are used by User during KYC | [optional] 
+ **paymentCurrency** | **String**| ID of User’s payment currency | [optional] 
+ **refundCurrency** | **String**| ID of User’s refund currency | [optional] 
+ **photo** | **MultipartFile**|  | [optional] 
+ **passcode** | **String**|  | [optional] 
 
 ### Return type
 
@@ -318,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

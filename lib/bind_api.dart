@@ -108,7 +108,6 @@ export 'package:bind_api/src/model/kyc_field_status.dart';
 export 'package:bind_api/src/model/kyc_file.dart';
 export 'package:bind_api/src/model/kyc_file_id.dart';
 export 'package:bind_api/src/model/kyc_file_status.dart';
-export 'package:bind_api/src/model/kyc_request.dart';
 export 'package:bind_api/src/model/kyc_request_move_result.dart';
 export 'package:bind_api/src/model/kyc_request_move_result_request_fields_status.dart';
 export 'package:bind_api/src/model/kyc_request_status.dart';

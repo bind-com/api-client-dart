@@ -20,8 +20,6 @@ class _$User extends User {
   @override
   final String? middleName;
   @override
-  final bool? isApproved;
-  @override
   final String? passcode;
   @override
   final String? country;
@@ -31,6 +29,8 @@ class _$User extends User {
   final String? refundCurrency;
   @override
   final bool? isAdmin;
+  @override
+  final String? photo;
 
   factory _$User([void Function(UserBuilder)? updates]) =>
       (new UserBuilder()..update(updates))._build();
@@ -42,12 +42,12 @@ class _$User extends User {
       this.firstName,
       this.lastName,
       this.middleName,
-      this.isApproved,
       this.passcode,
       this.country,
       this.paymentCurrency,
       this.refundCurrency,
-      this.isAdmin})
+      this.isAdmin,
+      this.photo})
       : super._();
 
   @override
@@ -67,12 +67,12 @@ class _$User extends User {
         firstName == other.firstName &&
         lastName == other.lastName &&
         middleName == other.middleName &&
-        isApproved == other.isApproved &&
         passcode == other.passcode &&
         country == other.country &&
         paymentCurrency == other.paymentCurrency &&
         refundCurrency == other.refundCurrency &&
-        isAdmin == other.isAdmin;
+        isAdmin == other.isAdmin &&
+        photo == other.photo;
   }
 
   @override
@@ -93,12 +93,12 @@ class _$User extends User {
                                         firstName.hashCode),
                                     lastName.hashCode),
                                 middleName.hashCode),
-                            isApproved.hashCode),
-                        passcode.hashCode),
-                    country.hashCode),
-                paymentCurrency.hashCode),
-            refundCurrency.hashCode),
-        isAdmin.hashCode));
+                            passcode.hashCode),
+                        country.hashCode),
+                    paymentCurrency.hashCode),
+                refundCurrency.hashCode),
+            isAdmin.hashCode),
+        photo.hashCode));
   }
 
   @override
@@ -110,12 +110,12 @@ class _$User extends User {
           ..add('firstName', firstName)
           ..add('lastName', lastName)
           ..add('middleName', middleName)
-          ..add('isApproved', isApproved)
           ..add('passcode', passcode)
           ..add('country', country)
           ..add('paymentCurrency', paymentCurrency)
           ..add('refundCurrency', refundCurrency)
-          ..add('isAdmin', isAdmin))
+          ..add('isAdmin', isAdmin)
+          ..add('photo', photo))
         .toString();
   }
 }
@@ -147,10 +147,6 @@ class UserBuilder implements Builder<User, UserBuilder> {
   String? get middleName => _$this._middleName;
   set middleName(String? middleName) => _$this._middleName = middleName;
 
-  bool? _isApproved;
-  bool? get isApproved => _$this._isApproved;
-  set isApproved(bool? isApproved) => _$this._isApproved = isApproved;
-
   String? _passcode;
   String? get passcode => _$this._passcode;
   set passcode(String? passcode) => _$this._passcode = passcode;
@@ -173,6 +169,10 @@ class UserBuilder implements Builder<User, UserBuilder> {
   bool? get isAdmin => _$this._isAdmin;
   set isAdmin(bool? isAdmin) => _$this._isAdmin = isAdmin;
 
+  String? _photo;
+  String? get photo => _$this._photo;
+  set photo(String? photo) => _$this._photo = photo;
+
   UserBuilder() {
     User._defaults(this);
   }
@@ -186,12 +186,12 @@ class UserBuilder implements Builder<User, UserBuilder> {
       _firstName = $v.firstName;
       _lastName = $v.lastName;
       _middleName = $v.middleName;
-      _isApproved = $v.isApproved;
       _passcode = $v.passcode;
       _country = $v.country;
       _paymentCurrency = $v.paymentCurrency;
       _refundCurrency = $v.refundCurrency;
       _isAdmin = $v.isAdmin;
+      _photo = $v.photo;
       _$v = null;
     }
     return this;
@@ -220,12 +220,12 @@ class UserBuilder implements Builder<User, UserBuilder> {
             firstName: firstName,
             lastName: lastName,
             middleName: middleName,
-            isApproved: isApproved,
             passcode: passcode,
             country: country,
             paymentCurrency: paymentCurrency,
             refundCurrency: refundCurrency,
-            isAdmin: isAdmin);
+            isAdmin: isAdmin,
+            photo: photo);
     replace(_$result);
     return _$result;
   }

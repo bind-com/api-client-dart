@@ -8,6 +8,7 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'dart:typed_data';
+import 'package:bind_api/src/api_util.dart';
 import 'package:bind_api/src/model/check_passcode_request.dart';
 import 'package:bind_api/src/model/currency.dart';
 import 'package:bind_api/src/model/error.dart';
@@ -533,7 +534,16 @@ class UserApi {
   ///
   /// Parameters:
   /// * [userID] 
-  /// * [user] 
+  /// * [email] - Email address that User inputs during registration. Bind backend receives it from Firebase when User is created for the first time
+  /// * [phoneNumber] - Phone number that User inputs during registration. Received from Firebase
+  /// * [firstName] - Received from Firebase
+  /// * [lastName] - Received from Firebase
+  /// * [middleName] - Received from Firebase
+  /// * [country] - ID of a country chosen by User during registration. This country can be connected to documents that are used by User during KYC
+  /// * [paymentCurrency] - ID of User’s payment currency
+  /// * [refundCurrency] - ID of User’s refund currency
+  /// * [photo] 
+  /// * [passcode] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -545,7 +555,16 @@ class UserApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<User>> updateUser({ 
     required String userID,
-    User? user,
+    String? email,
+    String? phoneNumber,
+    String? firstName,
+    String? lastName,
+    String? middleName,
+    String? country,
+    String? paymentCurrency,
+    String? refundCurrency,
+    MultipartFile? photo,
+    String? passcode,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -569,15 +588,25 @@ class UserApi {
         ],
         ...?extra,
       },
-      contentType: 'application/json',
+      contentType: 'multipart/form-data',
       validateStatus: validateStatus,
     );
 
     dynamic _bodyData;
 
     try {
-      const _type = FullType(User);
-      _bodyData = user == null ? null : _serializers.serialize(user, specifiedType: _type);
+      _bodyData = FormData.fromMap(<String, dynamic>{
+        if (email != null) r'email': encodeFormParameter(_serializers, email, const FullType(String)),
+        if (phoneNumber != null) r'phone_number': encodeFormParameter(_serializers, phoneNumber, const FullType(String)),
+        if (firstName != null) r'first_name': encodeFormParameter(_serializers, firstName, const FullType(String)),
+        if (lastName != null) r'last_name': encodeFormParameter(_serializers, lastName, const FullType(String)),
+        if (middleName != null) r'middle_name': encodeFormParameter(_serializers, middleName, const FullType(String)),
+        if (country != null) r'country': encodeFormParameter(_serializers, country, const FullType(String)),
+        if (paymentCurrency != null) r'payment_currency': encodeFormParameter(_serializers, paymentCurrency, const FullType(String)),
+        if (refundCurrency != null) r'refund_currency': encodeFormParameter(_serializers, refundCurrency, const FullType(String)),
+        if (photo != null) r'photo': photo,
+        if (passcode != null) r'passcode': encodeFormParameter(_serializers, passcode, const FullType(String)),
+      });
 
     } catch(error, stackTrace) {
       throw DioError(

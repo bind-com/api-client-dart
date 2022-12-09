@@ -94,7 +94,6 @@ doc/KYCFieldStatus.md
 doc/KYCFile.md
 doc/KYCFileId.md
 doc/KYCFileStatus.md
-doc/KYCRequest.md
 doc/KYCRequestMoveResult.md
 doc/KYCRequestMoveResultRequestFieldsStatus.md
 doc/KYCRequestStatus.md
@@ -256,7 +255,6 @@ lib/src/model/kyc_field_status.dart
 lib/src/model/kyc_file.dart
 lib/src/model/kyc_file_id.dart
 lib/src/model/kyc_file_status.dart
-lib/src/model/kyc_request.dart
 lib/src/model/kyc_request_move_result.dart
 lib/src/model/kyc_request_move_result_request_fields_status.dart
 lib/src/model/kyc_request_status.dart

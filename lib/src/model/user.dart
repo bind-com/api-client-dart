@@ -16,12 +16,12 @@ part 'user.g.dart';
 /// * [firstName] - Received from Firebase
 /// * [lastName] - Received from Firebase
 /// * [middleName] - Received from Firebase
-/// * [isApproved] 
 /// * [passcode] 
 /// * [country] - ID of a country chosen by User during registration. This country can be connected to documents that are used by User during KYC
 /// * [paymentCurrency] - ID of User’s payment currency
 /// * [refundCurrency] - ID of User’s refund currency
-/// * [isAdmin] 
+/// * [isAdmin] - flag indicating if the user has administrator rights
+/// * [photo] - link to user profile photo
 abstract class User implements Built<User, UserBuilder> {
     /// Primary key of a User from User table
     @BuiltValueField(wireName: r'user_id')
@@ -47,9 +47,6 @@ abstract class User implements Built<User, UserBuilder> {
     @BuiltValueField(wireName: r'middle_name')
     String? get middleName;
 
-    @BuiltValueField(wireName: r'is_approved')
-    bool? get isApproved;
-
     @BuiltValueField(wireName: r'passcode')
     String? get passcode;
 
@@ -65,8 +62,13 @@ abstract class User implements Built<User, UserBuilder> {
     @BuiltValueField(wireName: r'refund_currency')
     String? get refundCurrency;
 
+    /// flag indicating if the user has administrator rights
     @BuiltValueField(wireName: r'is_admin')
     bool? get isAdmin;
+
+    /// link to user profile photo
+    @BuiltValueField(wireName: r'photo')
+    String? get photo;
 
     User._();
 
@@ -126,12 +128,6 @@ class _$UserSerializer implements StructuredSerializer<User> {
                 ..add(serializers.serialize(object.middleName,
                     specifiedType: const FullType(String)));
         }
-        if (object.isApproved != null) {
-            result
-                ..add(r'is_approved')
-                ..add(serializers.serialize(object.isApproved,
-                    specifiedType: const FullType(bool)));
-        }
         if (object.passcode != null) {
             result
                 ..add(r'passcode')
@@ -161,6 +157,12 @@ class _$UserSerializer implements StructuredSerializer<User> {
                 ..add(r'is_admin')
                 ..add(serializers.serialize(object.isAdmin,
                     specifiedType: const FullType(bool)));
+        }
+        if (object.photo != null) {
+            result
+                ..add(r'photo')
+                ..add(serializers.serialize(object.photo,
+                    specifiedType: const FullType(String)));
         }
         return result;
     }
@@ -207,11 +209,6 @@ class _$UserSerializer implements StructuredSerializer<User> {
                         specifiedType: const FullType(String)) as String;
                     result.middleName = valueDes;
                     break;
-                case r'is_approved':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(bool)) as bool;
-                    result.isApproved = valueDes;
-                    break;
                 case r'passcode':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
@@ -236,6 +233,11 @@ class _$UserSerializer implements StructuredSerializer<User> {
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(bool)) as bool;
                     result.isAdmin = valueDes;
+                    break;
+                case r'photo':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.photo = valueDes;
                     break;
             }
         }
