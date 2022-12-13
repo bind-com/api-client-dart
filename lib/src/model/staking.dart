@@ -23,7 +23,7 @@ abstract class Staking implements Built<Staking, StakingBuilder> {
     String get datetime;
 
     @BuiltValueField(wireName: r'release_datetime')
-    String get releaseDatetime;
+    String? get releaseDatetime;
 
     @BuiltValueField(wireName: r'transaction_hash')
     String get transactionHash;
@@ -61,10 +61,12 @@ class _$StakingSerializer implements StructuredSerializer<Staking> {
             ..add(r'datetime')
             ..add(serializers.serialize(object.datetime,
                 specifiedType: const FullType(String)));
-        result
-            ..add(r'release_datetime')
-            ..add(serializers.serialize(object.releaseDatetime,
-                specifiedType: const FullType(String)));
+        if (object.releaseDatetime != null) {
+            result
+                ..add(r'release_datetime')
+                ..add(serializers.serialize(object.releaseDatetime,
+                    specifiedType: const FullType.nullable(String)));
+        }
         result
             ..add(r'transaction_hash')
             ..add(serializers.serialize(object.transactionHash,
@@ -100,7 +102,8 @@ class _$StakingSerializer implements StructuredSerializer<Staking> {
                     break;
                 case r'release_datetime':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
+                        specifiedType: const FullType.nullable(String)) as String?;
+                    if (valueDes == null) continue;
                     result.releaseDatetime = valueDes;
                     break;
                 case r'transaction_hash':

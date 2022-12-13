@@ -12,7 +12,7 @@ class _$Staking extends Staking {
   @override
   final String datetime;
   @override
-  final String releaseDatetime;
+  final String? releaseDatetime;
   @override
   final String transactionHash;
   @override
@@ -24,15 +24,13 @@ class _$Staking extends Staking {
   _$Staking._(
       {required this.currentValue,
       required this.datetime,
-      required this.releaseDatetime,
+      this.releaseDatetime,
       required this.transactionHash,
       required this.fee})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         currentValue, r'Staking', 'currentValue');
     BuiltValueNullFieldError.checkNotNull(datetime, r'Staking', 'datetime');
-    BuiltValueNullFieldError.checkNotNull(
-        releaseDatetime, r'Staking', 'releaseDatetime');
     BuiltValueNullFieldError.checkNotNull(
         transactionHash, r'Staking', 'transactionHash');
     BuiltValueNullFieldError.checkNotNull(fee, r'Staking', 'fee');
@@ -141,8 +139,7 @@ class StakingBuilder implements Builder<Staking, StakingBuilder> {
                 currentValue, r'Staking', 'currentValue'),
             datetime: BuiltValueNullFieldError.checkNotNull(
                 datetime, r'Staking', 'datetime'),
-            releaseDatetime: BuiltValueNullFieldError.checkNotNull(
-                releaseDatetime, r'Staking', 'releaseDatetime'),
+            releaseDatetime: releaseDatetime,
             transactionHash: BuiltValueNullFieldError.checkNotNull(
                 transactionHash, r'Staking', 'transactionHash'),
             fee: BuiltValueNullFieldError.checkNotNull(fee, r'Staking', 'fee'));

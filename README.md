@@ -151,7 +151,12 @@ Class | Method | HTTP request | Description
 [*StagingApi*](doc/StagingApi.md) | [**adjustFiatWalletBalance**](doc/StagingApi.md#adjustfiatwalletbalance) | **POST** /staging/fiat/wallet/adjust/ | Change balance of a fiat wallet
 [*StagingApi*](doc/StagingApi.md) | [**fillCryptoWallet**](doc/StagingApi.md#fillcryptowallet) | **POST** /staging/crypto/wallet/fill/ | Put some testnet assets in a crypto wallet of a current user
 [*StagingApi*](doc/StagingApi.md) | [**fireblocksPoolBalances**](doc/StagingApi.md#fireblockspoolbalances) | **GET** /staging/fireblocks_pool/balances/ | Get pool balances
+[*StakingApi*](doc/StakingApi.md) | [**defaultCurrenciesForClaim**](doc/StakingApi.md#defaultcurrenciesforclaim) | **GET** /crypto/staking/default-currency/claim | Get default currencies for claim view
+[*StakingApi*](doc/StakingApi.md) | [**defaultCurrenciesForRestake**](doc/StakingApi.md#defaultcurrenciesforrestake) | **GET** /crypto/staking/default-currency/restake | Get default currencies for restake view
+[*StakingApi*](doc/StakingApi.md) | [**defaultCurrenciesForStake**](doc/StakingApi.md#defaultcurrenciesforstake) | **GET** /crypto/staking/default-currency/stake | Get default currencies for stake view
+[*StakingApi*](doc/StakingApi.md) | [**defaultCurrenciesForUnstake**](doc/StakingApi.md#defaultcurrenciesforunstake) | **GET** /crypto/staking/default-currency/unstake | Get default currencies for unstake view
 [*StakingApi*](doc/StakingApi.md) | [**getAdditionalStaking**](doc/StakingApi.md#getadditionalstaking) | **GET** /crypto/staking/additional_info | Get info of additional staking
+[*StakingApi*](doc/StakingApi.md) | [**getStakeMinNumber**](doc/StakingApi.md#getstakeminnumber) | **GET** /crypto/staking/min-value | Get min number of stake
 [*StakingApi*](doc/StakingApi.md) | [**getStaking**](doc/StakingApi.md#getstaking) | **GET** /crypto/staking | Get info of staking
 [*StakingApi*](doc/StakingApi.md) | [**getStakingBalance**](doc/StakingApi.md#getstakingbalance) | **GET** /crypto/staking/balance | Get staking balance
 [*StakingApi*](doc/StakingApi.md) | [**getStakingCryptoAssetsForClaiming**](doc/StakingApi.md#getstakingcryptoassetsforclaiming) | **GET** /crypto/staking/assets_for_claiming/crypto | Get crypto assets for claiming
@@ -167,6 +172,7 @@ Class | Method | HTTP request | Description
 [*StakingApi*](doc/StakingApi.md) | [**unstakingEstimateOperation**](doc/StakingApi.md#unstakingestimateoperation) | **POST** /crypto/staking/unstake-estimate | Estimate unstaking operation
 [*StakingApi*](doc/StakingApi.md) | [**unstakingPerform**](doc/StakingApi.md#unstakingperform) | **POST** /crypto/staking/ustake | Perform unstaking
 [*StakingApi*](doc/StakingApi.md) | [**userStakingClaiming**](doc/StakingApi.md#userstakingclaiming) | **POST** /crypto/staking/claiming | Perform user claiming
+[*StakingApi*](doc/StakingApi.md) | [**userStakingClaimingEstimate**](doc/StakingApi.md#userstakingclaimingestimate) | **POST** /crypto/staking/claiming/estimate | Estimate user staking
 [*TransactionsApi*](doc/TransactionsApi.md) | [**exportTransactions**](doc/TransactionsApi.md#exporttransactions) | **POST** /transactions/export/ | Export user transaction to csv
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getExportHistory**](doc/TransactionsApi.md#getexporthistory) | **GET** /transactions/export/history/ | Get export history
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionDetails**](doc/TransactionsApi.md#gettransactiondetails) | **GET** /transactions/{transactionId} | Get list of user transactions
@@ -238,6 +244,7 @@ Class | Method | HTTP request | Description
  - [Currency](doc/Currency.md)
  - [CurrencyWithRate](doc/CurrencyWithRate.md)
  - [CurrencyWithRateAllOf](doc/CurrencyWithRateAllOf.md)
+ - [DefaultStakingCurrencies](doc/DefaultStakingCurrencies.md)
  - [DeliveryAddress](doc/DeliveryAddress.md)
  - [DepositAddress](doc/DepositAddress.md)
  - [Error](doc/Error.md)
@@ -258,6 +265,7 @@ Class | Method | HTTP request | Description
  - [GetCardLimits200Response](doc/GetCardLimits200Response.md)
  - [GetInnerCryptoTransferFeeRequest](doc/GetInnerCryptoTransferFeeRequest.md)
  - [GetInnerFiatTransferFeeRequest](doc/GetInnerFiatTransferFeeRequest.md)
+ - [GetStakeMinNumber200Response](doc/GetStakeMinNumber200Response.md)
  - [GetStakingTimer200Response](doc/GetStakingTimer200Response.md)
  - [HumanTransactionTypes](doc/HumanTransactionTypes.md)
  - [InnerCryptoTransferFeeResult](doc/InnerCryptoTransferFeeResult.md)

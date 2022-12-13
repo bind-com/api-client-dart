@@ -65,6 +65,7 @@ import 'package:bind_api/src/model/crypto_withdrawal_request.dart';
 import 'package:bind_api/src/model/currency.dart';
 import 'package:bind_api/src/model/currency_with_rate.dart';
 import 'package:bind_api/src/model/currency_with_rate_all_of.dart';
+import 'package:bind_api/src/model/default_staking_currencies.dart';
 import 'package:bind_api/src/model/delivery_address.dart';
 import 'package:bind_api/src/model/deposit_address.dart';
 import 'package:bind_api/src/model/error.dart';
@@ -85,6 +86,7 @@ import 'package:bind_api/src/model/get_card_benefits200_response.dart';
 import 'package:bind_api/src/model/get_card_limits200_response.dart';
 import 'package:bind_api/src/model/get_inner_crypto_transfer_fee_request.dart';
 import 'package:bind_api/src/model/get_inner_fiat_transfer_fee_request.dart';
+import 'package:bind_api/src/model/get_stake_min_number200_response.dart';
 import 'package:bind_api/src/model/get_staking_timer200_response.dart';
 import 'package:bind_api/src/model/human_transaction_types.dart';
 import 'package:bind_api/src/model/inner_crypto_transfer_fee_result.dart';
@@ -201,6 +203,7 @@ part 'serializers.g.dart';
   Currency,
   CurrencyWithRate,
   CurrencyWithRateAllOf,
+  DefaultStakingCurrencies,
   DeliveryAddress,
   DepositAddress,
   Error,
@@ -221,6 +224,7 @@ part 'serializers.g.dart';
   GetCardLimits200Response,
   GetInnerCryptoTransferFeeRequest,
   GetInnerFiatTransferFeeRequest,
+  GetStakeMinNumber200Response,
   GetStakingTimer200Response,
   HumanTransactionTypes,
   InnerCryptoTransferFeeResult,

@@ -60,6 +60,7 @@ doc/Currency.md
 doc/CurrencyApi.md
 doc/CurrencyWithRate.md
 doc/CurrencyWithRateAllOf.md
+doc/DefaultStakingCurrencies.md
 doc/DeliveryAddress.md
 doc/DepositAddress.md
 doc/Error.md
@@ -83,6 +84,7 @@ doc/GetCardBenefits200Response.md
 doc/GetCardLimits200Response.md
 doc/GetInnerCryptoTransferFeeRequest.md
 doc/GetInnerFiatTransferFeeRequest.md
+doc/GetStakeMinNumber200Response.md
 doc/GetStakingTimer200Response.md
 doc/HumanTransactionTypes.md
 doc/InnerCryptoTransferFeeResult.md
@@ -224,6 +226,7 @@ lib/src/model/currency.dart
 lib/src/model/currency_with_rate.dart
 lib/src/model/currency_with_rate_all_of.dart
 lib/src/model/date.dart
+lib/src/model/default_staking_currencies.dart
 lib/src/model/delivery_address.dart
 lib/src/model/deposit_address.dart
 lib/src/model/error.dart
@@ -244,6 +247,7 @@ lib/src/model/get_card_benefits200_response.dart
 lib/src/model/get_card_limits200_response.dart
 lib/src/model/get_inner_crypto_transfer_fee_request.dart
 lib/src/model/get_inner_fiat_transfer_fee_request.dart
+lib/src/model/get_stake_min_number200_response.dart
 lib/src/model/get_staking_timer200_response.dart
 lib/src/model/human_transaction_types.dart
 lib/src/model/inner_crypto_transfer_fee_result.dart
@@ -305,3 +309,5 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/default_staking_currencies_test.dart
+test/get_stake_min_number200_response_test.dart

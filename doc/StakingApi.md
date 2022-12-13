@@ -9,7 +9,12 @@ All URIs are relative to *https://api.thebind.uk/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**defaultCurrenciesForClaim**](StakingApi.md#defaultcurrenciesforclaim) | **GET** /crypto/staking/default-currency/claim | Get default currencies for claim view
+[**defaultCurrenciesForRestake**](StakingApi.md#defaultcurrenciesforrestake) | **GET** /crypto/staking/default-currency/restake | Get default currencies for restake view
+[**defaultCurrenciesForStake**](StakingApi.md#defaultcurrenciesforstake) | **GET** /crypto/staking/default-currency/stake | Get default currencies for stake view
+[**defaultCurrenciesForUnstake**](StakingApi.md#defaultcurrenciesforunstake) | **GET** /crypto/staking/default-currency/unstake | Get default currencies for unstake view
 [**getAdditionalStaking**](StakingApi.md#getadditionalstaking) | **GET** /crypto/staking/additional_info | Get info of additional staking
+[**getStakeMinNumber**](StakingApi.md#getstakeminnumber) | **GET** /crypto/staking/min-value | Get min number of stake
 [**getStaking**](StakingApi.md#getstaking) | **GET** /crypto/staking | Get info of staking
 [**getStakingBalance**](StakingApi.md#getstakingbalance) | **GET** /crypto/staking/balance | Get staking balance
 [**getStakingCryptoAssetsForClaiming**](StakingApi.md#getstakingcryptoassetsforclaiming) | **GET** /crypto/staking/assets_for_claiming/crypto | Get crypto assets for claiming
@@ -25,7 +30,176 @@ Method | HTTP request | Description
 [**unstakingEstimateOperation**](StakingApi.md#unstakingestimateoperation) | **POST** /crypto/staking/unstake-estimate | Estimate unstaking operation
 [**unstakingPerform**](StakingApi.md#unstakingperform) | **POST** /crypto/staking/ustake | Perform unstaking
 [**userStakingClaiming**](StakingApi.md#userstakingclaiming) | **POST** /crypto/staking/claiming | Perform user claiming
+[**userStakingClaimingEstimate**](StakingApi.md#userstakingclaimingestimate) | **POST** /crypto/staking/claiming/estimate | Estimate user staking
 
+
+# **defaultCurrenciesForClaim**
+> DefaultStakingCurrencies defaultCurrenciesForClaim()
+
+Get default currencies for claim view
+
+Get default currencies for claim view
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getStakingApi();
+
+try {
+    final response = api.defaultCurrenciesForClaim();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling StakingApi->defaultCurrenciesForClaim: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**DefaultStakingCurrencies**](DefaultStakingCurrencies.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **defaultCurrenciesForRestake**
+> DefaultStakingCurrencies defaultCurrenciesForRestake()
+
+Get default currencies for restake view
+
+Get default currencies for restake view
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getStakingApi();
+
+try {
+    final response = api.defaultCurrenciesForRestake();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling StakingApi->defaultCurrenciesForRestake: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**DefaultStakingCurrencies**](DefaultStakingCurrencies.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **defaultCurrenciesForStake**
+> DefaultStakingCurrencies defaultCurrenciesForStake()
+
+Get default currencies for stake view
+
+Get default currencies for stake view
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getStakingApi();
+
+try {
+    final response = api.defaultCurrenciesForStake();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling StakingApi->defaultCurrenciesForStake: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**DefaultStakingCurrencies**](DefaultStakingCurrencies.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **defaultCurrenciesForUnstake**
+> DefaultStakingCurrencies defaultCurrenciesForUnstake()
+
+Get default currencies for unstake view
+
+Get default currencies for unstake view
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getStakingApi();
+
+try {
+    final response = api.defaultCurrenciesForUnstake();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling StakingApi->defaultCurrenciesForUnstake: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**DefaultStakingCurrencies**](DefaultStakingCurrencies.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getAdditionalStaking**
 > StakingAdditionalInformation getAdditionalStaking()
@@ -57,6 +231,48 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**StakingAdditionalInformation**](StakingAdditionalInformation.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getStakeMinNumber**
+> GetStakeMinNumber200Response getStakeMinNumber()
+
+Get min number of stake
+
+Get min number of stake
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getStakingApi();
+
+try {
+    final response = api.getStakeMinNumber();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling StakingApi->getStakeMinNumber: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetStakeMinNumber200Response**](GetStakeMinNumber200Response.md)
 
 ### Authorization
 
@@ -718,6 +934,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **userStakingClaimingEstimate**
+> CryptoExchangeEstimationResult userStakingClaimingEstimate(cryptoExchangeRequest)
+
+Estimate user staking
+
+Only one of amounts (source or target) must be given
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getStakingApi();
+final CryptoExchangeRequest cryptoExchangeRequest = ; // CryptoExchangeRequest | 
+
+try {
+    final response = api.userStakingClaimingEstimate(cryptoExchangeRequest);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling StakingApi->userStakingClaimingEstimate: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cryptoExchangeRequest** | [**CryptoExchangeRequest**](CryptoExchangeRequest.md)|  | [optional] 
+
+### Return type
+
+[**CryptoExchangeEstimationResult**](CryptoExchangeEstimationResult.md)
 
 ### Authorization
 
