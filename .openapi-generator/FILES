@@ -3,6 +3,8 @@ README.md
 analysis_options.yaml
 doc/AddContactByUserRequest.md
 doc/AdjustFiatWalletBalanceRequest.md
+doc/Alert.md
+doc/AlertPeriodicity.md
 doc/AnalysisStatus.md
 doc/AuthApi.md
 doc/BankCardAnalytics.md
@@ -28,11 +30,13 @@ doc/CheckPasscodeRequest.md
 doc/Contact.md
 doc/ContactsApi.md
 doc/Country.md
+doc/CreateAlertRequest.md
 doc/CreateBankCardRequest.md
 doc/CreateBeneficiaryRequest.md
 doc/CreateFiatWalletRequest.md
 doc/CreateInnerFiatRequestRequest.md
 doc/CreateInnerFiatTransferRequest.md
+doc/CreateRegistrationTokenRequest.md
 doc/CryptoAccount.md
 doc/CryptoAccountAllOf.md
 doc/CryptoAccountLight.md
@@ -105,6 +109,7 @@ doc/MainWalletType.md
 doc/PerformExchangeRequest.md
 doc/PerformFiatTransferRequest.md
 doc/PeriodInterval.md
+doc/PriceScale.md
 doc/ProfitLoss.md
 doc/ProfitLossSort.md
 doc/ProfitLossSummary.md
@@ -137,6 +142,7 @@ doc/TransactionTypes.md
 doc/TransactionsApi.md
 doc/UnstakingInformation.md
 doc/UnstakingPerformRequest.md
+doc/UpdateAlertRequest.md
 doc/UpdateBeneficiaryRequest.md
 doc/UpdateContactRequest.md
 doc/UpdateUserPasscodeRequest.md
@@ -174,6 +180,8 @@ lib/src/auth/oauth.dart
 lib/src/date_serializer.dart
 lib/src/model/add_contact_by_user_request.dart
 lib/src/model/adjust_fiat_wallet_balance_request.dart
+lib/src/model/alert.dart
+lib/src/model/alert_periodicity.dart
 lib/src/model/analysis_status.dart
 lib/src/model/bank_card_analytics.dart
 lib/src/model/bank_card_base_data.dart
@@ -196,11 +204,13 @@ lib/src/model/chart_tick.dart
 lib/src/model/check_passcode_request.dart
 lib/src/model/contact.dart
 lib/src/model/country.dart
+lib/src/model/create_alert_request.dart
 lib/src/model/create_bank_card_request.dart
 lib/src/model/create_beneficiary_request.dart
 lib/src/model/create_fiat_wallet_request.dart
 lib/src/model/create_inner_fiat_request_request.dart
 lib/src/model/create_inner_fiat_transfer_request.dart
+lib/src/model/create_registration_token_request.dart
 lib/src/model/crypto_account.dart
 lib/src/model/crypto_account_all_of.dart
 lib/src/model/crypto_account_light.dart
@@ -268,6 +278,7 @@ lib/src/model/main_wallet_type.dart
 lib/src/model/perform_exchange_request.dart
 lib/src/model/perform_fiat_transfer_request.dart
 lib/src/model/period_interval.dart
+lib/src/model/price_scale.dart
 lib/src/model/profit_loss.dart
 lib/src/model/profit_loss_sort.dart
 lib/src/model/profit_loss_summary.dart
@@ -297,6 +308,7 @@ lib/src/model/transaction_states.dart
 lib/src/model/transaction_types.dart
 lib/src/model/unstaking_information.dart
 lib/src/model/unstaking_perform_request.dart
+lib/src/model/update_alert_request.dart
 lib/src/model/update_beneficiary_request.dart
 lib/src/model/update_contact_request.dart
 lib/src/model/update_user_passcode_request.dart
@@ -309,5 +321,9 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/default_staking_currencies_test.dart
-test/get_stake_min_number200_response_test.dart
+test/alert_periodicity_test.dart
+test/alert_test.dart
+test/create_alert_request_test.dart
+test/create_registration_token_request_test.dart
+test/price_scale_test.dart
+test/update_alert_request_test.dart

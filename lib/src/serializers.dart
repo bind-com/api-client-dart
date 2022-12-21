@@ -14,6 +14,8 @@ import 'package:bind_api/src/model/date.dart';
 
 import 'package:bind_api/src/model/add_contact_by_user_request.dart';
 import 'package:bind_api/src/model/adjust_fiat_wallet_balance_request.dart';
+import 'package:bind_api/src/model/alert.dart';
+import 'package:bind_api/src/model/alert_periodicity.dart';
 import 'package:bind_api/src/model/analysis_status.dart';
 import 'package:bind_api/src/model/bank_card_analytics.dart';
 import 'package:bind_api/src/model/bank_card_base_data.dart';
@@ -36,11 +38,13 @@ import 'package:bind_api/src/model/chart_tick.dart';
 import 'package:bind_api/src/model/check_passcode_request.dart';
 import 'package:bind_api/src/model/contact.dart';
 import 'package:bind_api/src/model/country.dart';
+import 'package:bind_api/src/model/create_alert_request.dart';
 import 'package:bind_api/src/model/create_bank_card_request.dart';
 import 'package:bind_api/src/model/create_beneficiary_request.dart';
 import 'package:bind_api/src/model/create_fiat_wallet_request.dart';
 import 'package:bind_api/src/model/create_inner_fiat_request_request.dart';
 import 'package:bind_api/src/model/create_inner_fiat_transfer_request.dart';
+import 'package:bind_api/src/model/create_registration_token_request.dart';
 import 'package:bind_api/src/model/crypto_account.dart';
 import 'package:bind_api/src/model/crypto_account_all_of.dart';
 import 'package:bind_api/src/model/crypto_account_light.dart';
@@ -107,6 +111,7 @@ import 'package:bind_api/src/model/main_wallet_type.dart';
 import 'package:bind_api/src/model/perform_exchange_request.dart';
 import 'package:bind_api/src/model/perform_fiat_transfer_request.dart';
 import 'package:bind_api/src/model/period_interval.dart';
+import 'package:bind_api/src/model/price_scale.dart';
 import 'package:bind_api/src/model/profit_loss.dart';
 import 'package:bind_api/src/model/profit_loss_sort.dart';
 import 'package:bind_api/src/model/profit_loss_summary.dart';
@@ -136,6 +141,7 @@ import 'package:bind_api/src/model/transaction_states.dart';
 import 'package:bind_api/src/model/transaction_types.dart';
 import 'package:bind_api/src/model/unstaking_information.dart';
 import 'package:bind_api/src/model/unstaking_perform_request.dart';
+import 'package:bind_api/src/model/update_alert_request.dart';
 import 'package:bind_api/src/model/update_beneficiary_request.dart';
 import 'package:bind_api/src/model/update_contact_request.dart';
 import 'package:bind_api/src/model/update_user_passcode_request.dart';
@@ -152,6 +158,8 @@ part 'serializers.g.dart';
 @SerializersFor([
   AddContactByUserRequest,
   AdjustFiatWalletBalanceRequest,
+  Alert,
+  AlertPeriodicity,
   AnalysisStatus,
   BankCardAnalytics,
   BankCardBaseData,
@@ -174,11 +182,13 @@ part 'serializers.g.dart';
   CheckPasscodeRequest,
   Contact,
   Country,
+  CreateAlertRequest,
   CreateBankCardRequest,
   CreateBeneficiaryRequest,
   CreateFiatWalletRequest,
   CreateInnerFiatRequestRequest,
   CreateInnerFiatTransferRequest,
+  CreateRegistrationTokenRequest,
   CryptoAccount,
   CryptoAccountAllOf,
   CryptoAccountLight,
@@ -245,6 +255,7 @@ part 'serializers.g.dart';
   PerformExchangeRequest,
   PerformFiatTransferRequest,
   PeriodInterval,
+  PriceScale,
   ProfitLoss,
   ProfitLossSort,
   ProfitLossSummary,
@@ -274,6 +285,7 @@ part 'serializers.g.dart';
   TransactionTypes,
   UnstakingInformation,
   UnstakingPerformRequest,
+  UpdateAlertRequest,
   UpdateBeneficiaryRequest,
   UpdateContactRequest,
   UpdateUserPasscodeRequest,
@@ -353,6 +365,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Contact)]),
         () => ListBuilder<Contact>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Alert)]),
+        () => ListBuilder<Alert>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Candle)]),

@@ -111,9 +111,13 @@ Class | Method | HTTP request | Description
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getSingleCryptoBalance**](doc/CryptoWalletApi.md#getsinglecryptobalance) | **GET** /crypto/assets/{asset_id}/balance/ | Get detailed balance of a crypto asset
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getWithdrawalAddresses**](doc/CryptoWalletApi.md#getwithdrawaladdresses) | **GET** /crypto/withdrawal/whitelisted_addresses/ | Get whitelisted addresses for crypto withdrawal
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**performWithdrawalOfCrypto**](doc/CryptoWalletApi.md#performwithdrawalofcrypto) | **POST** /crypto/withdrawal/perform/ | Register a withdrawal transaction
+[*CurrencyApi*](doc/CurrencyApi.md) | [**createAlert**](doc/CurrencyApi.md#createalert) | **POST** /currencies/alerts/ | Create an alert
+[*CurrencyApi*](doc/CurrencyApi.md) | [**deleteAlert**](doc/CurrencyApi.md#deletealert) | **DELETE** /currencies/alerts/{alert_id} | Delete an alert
 [*CurrencyApi*](doc/CurrencyApi.md) | [**getCryptoAsset**](doc/CurrencyApi.md#getcryptoasset) | **GET** /currencies/crypto/{crypto_currency_id} | Crypto currency information with flag favorite or not for user
+[*CurrencyApi*](doc/CurrencyApi.md) | [**listAlerts**](doc/CurrencyApi.md#listalerts) | **GET** /currencies/alerts/ | List of alerts
 [*CurrencyApi*](doc/CurrencyApi.md) | [**listCryptoCurrencies**](doc/CurrencyApi.md#listcryptocurrencies) | **GET** /currencies/crypto/ | List of Crypto Currencies
 [*CurrencyApi*](doc/CurrencyApi.md) | [**listCurrencies**](doc/CurrencyApi.md#listcurrencies) | **GET** /currencies/ | List of Currencies available at Bind
+[*CurrencyApi*](doc/CurrencyApi.md) | [**updateAlert**](doc/CurrencyApi.md#updatealert) | **PATCH** /currencies/alerts/{alert_id} | Update an alert
 [*ExchangeApi*](doc/ExchangeApi.md) | [**cancelLimitOrder**](doc/ExchangeApi.md#cancellimitorder) | **POST** /crypto/exchange/limit_orders/{order_id}/cancel | Cancel given limit order
 [*ExchangeApi*](doc/ExchangeApi.md) | [**estimateCryptoExchange**](doc/ExchangeApi.md#estimatecryptoexchange) | **POST** /crypto/exchange/estimate/ | Estimate exchange of assets. One of assets has to be a cryptocurrency
 [*ExchangeApi*](doc/ExchangeApi.md) | [**getCryptoExchangeRate**](doc/ExchangeApi.md#getcryptoexchangerate) | **GET** /crypto/exchange/rate/{from}/{to}/ | Exchange rate between two given assets (at least one of them is crypto)
@@ -149,6 +153,7 @@ Class | Method | HTTP request | Description
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**updateBankCardSettings**](doc/FiatWalletApi.md#updatebankcardsettings) | **PATCH** /fiat/bankcards/{card_id}/ | Update of a Bank Card
 [*GeoApi*](doc/GeoApi.md) | [**listCountries**](doc/GeoApi.md#listcountries) | **GET** /countries/ | Countries list
 [*StagingApi*](doc/StagingApi.md) | [**adjustFiatWalletBalance**](doc/StagingApi.md#adjustfiatwalletbalance) | **POST** /staging/fiat/wallet/adjust/ | Change balance of a fiat wallet
+[*StagingApi*](doc/StagingApi.md) | [**createSettlements**](doc/StagingApi.md#createsettlements) | **GET** /staging/settlement/create/ | Create Settlements
 [*StagingApi*](doc/StagingApi.md) | [**fillCryptoWallet**](doc/StagingApi.md#fillcryptowallet) | **POST** /staging/crypto/wallet/fill/ | Put some testnet assets in a crypto wallet of a current user
 [*StagingApi*](doc/StagingApi.md) | [**fireblocksPoolBalances**](doc/StagingApi.md#fireblockspoolbalances) | **GET** /staging/fireblocks_pool/balances/ | Get pool balances
 [*StakingApi*](doc/StakingApi.md) | [**defaultCurrenciesForClaim**](doc/StakingApi.md#defaultcurrenciesforclaim) | **GET** /crypto/staking/default-currency/claim | Get default currencies for claim view
@@ -181,6 +186,7 @@ Class | Method | HTTP request | Description
 [*UserApi*](doc/UserApi.md) | [**checkKYCRequestApproval**](doc/UserApi.md#checkkycrequestapproval) | **GET** /users/kyc/requests/approval/ | Get status of KYC Request approval
 [*UserApi*](doc/UserApi.md) | [**checkPasscode**](doc/UserApi.md#checkpasscode) | **POST** /users/check/passcode/ | Check validity of user passcode
 [*UserApi*](doc/UserApi.md) | [**createKYCFile**](doc/UserApi.md#createkycfile) | **POST** /user/kyc/file/ | CreateKYCFile
+[*UserApi*](doc/UserApi.md) | [**createRegistrationToken**](doc/UserApi.md#createregistrationtoken) | **POST** /users/firebase/token/ | Create registration token
 [*UserApi*](doc/UserApi.md) | [**getKYCFile**](doc/UserApi.md#getkycfile) | **GET** /user/kyc/file/ | GetKYCFile
 [*UserApi*](doc/UserApi.md) | [**getUserPaymentCurrency**](doc/UserApi.md#getuserpaymentcurrency) | **GET** /users/payment_currency/ | Get user payment currency
 [*UserApi*](doc/UserApi.md) | [**qRCodeGenerateCustomString**](doc/UserApi.md#qrcodegeneratecustomstring) | **POST** /users/generate/custom_qr_code/ | Generate QR code with custom string
@@ -193,6 +199,8 @@ Class | Method | HTTP request | Description
 
  - [AddContactByUserRequest](doc/AddContactByUserRequest.md)
  - [AdjustFiatWalletBalanceRequest](doc/AdjustFiatWalletBalanceRequest.md)
+ - [Alert](doc/Alert.md)
+ - [AlertPeriodicity](doc/AlertPeriodicity.md)
  - [AnalysisStatus](doc/AnalysisStatus.md)
  - [BankCardAnalytics](doc/BankCardAnalytics.md)
  - [BankCardBaseData](doc/BankCardBaseData.md)
@@ -215,11 +223,13 @@ Class | Method | HTTP request | Description
  - [CheckPasscodeRequest](doc/CheckPasscodeRequest.md)
  - [Contact](doc/Contact.md)
  - [Country](doc/Country.md)
+ - [CreateAlertRequest](doc/CreateAlertRequest.md)
  - [CreateBankCardRequest](doc/CreateBankCardRequest.md)
  - [CreateBeneficiaryRequest](doc/CreateBeneficiaryRequest.md)
  - [CreateFiatWalletRequest](doc/CreateFiatWalletRequest.md)
  - [CreateInnerFiatRequestRequest](doc/CreateInnerFiatRequestRequest.md)
  - [CreateInnerFiatTransferRequest](doc/CreateInnerFiatTransferRequest.md)
+ - [CreateRegistrationTokenRequest](doc/CreateRegistrationTokenRequest.md)
  - [CryptoAccount](doc/CryptoAccount.md)
  - [CryptoAccountAllOf](doc/CryptoAccountAllOf.md)
  - [CryptoAccountLight](doc/CryptoAccountLight.md)
@@ -286,6 +296,7 @@ Class | Method | HTTP request | Description
  - [PerformExchangeRequest](doc/PerformExchangeRequest.md)
  - [PerformFiatTransferRequest](doc/PerformFiatTransferRequest.md)
  - [PeriodInterval](doc/PeriodInterval.md)
+ - [PriceScale](doc/PriceScale.md)
  - [ProfitLoss](doc/ProfitLoss.md)
  - [ProfitLossSort](doc/ProfitLossSort.md)
  - [ProfitLossSummary](doc/ProfitLossSummary.md)
@@ -315,6 +326,7 @@ Class | Method | HTTP request | Description
  - [TransactionTypes](doc/TransactionTypes.md)
  - [UnstakingInformation](doc/UnstakingInformation.md)
  - [UnstakingPerformRequest](doc/UnstakingPerformRequest.md)
+ - [UpdateAlertRequest](doc/UpdateAlertRequest.md)
  - [UpdateBeneficiaryRequest](doc/UpdateBeneficiaryRequest.md)
  - [UpdateContactRequest](doc/UpdateContactRequest.md)
  - [UpdateUserPasscodeRequest](doc/UpdateUserPasscodeRequest.md)

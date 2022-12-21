@@ -9,10 +9,104 @@ All URIs are relative to *https://api.thebind.uk/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**createAlert**](CurrencyApi.md#createalert) | **POST** /currencies/alerts/ | Create an alert
+[**deleteAlert**](CurrencyApi.md#deletealert) | **DELETE** /currencies/alerts/{alert_id} | Delete an alert
 [**getCryptoAsset**](CurrencyApi.md#getcryptoasset) | **GET** /currencies/crypto/{crypto_currency_id} | Crypto currency information with flag favorite or not for user
+[**listAlerts**](CurrencyApi.md#listalerts) | **GET** /currencies/alerts/ | List of alerts
 [**listCryptoCurrencies**](CurrencyApi.md#listcryptocurrencies) | **GET** /currencies/crypto/ | List of Crypto Currencies
 [**listCurrencies**](CurrencyApi.md#listcurrencies) | **GET** /currencies/ | List of Currencies available at Bind
+[**updateAlert**](CurrencyApi.md#updatealert) | **PATCH** /currencies/alerts/{alert_id} | Update an alert
 
+
+# **createAlert**
+> createAlert(createAlertRequest)
+
+Create an alert
+
+Create an alert
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getCurrencyApi();
+final CreateAlertRequest createAlertRequest = ; // CreateAlertRequest | 
+
+try {
+    api.createAlert(createAlertRequest);
+} catch on DioError (e) {
+    print('Exception when calling CurrencyApi->createAlert: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createAlertRequest** | [**CreateAlertRequest**](CreateAlertRequest.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteAlert**
+> deleteAlert(alertId)
+
+Delete an alert
+
+Delete an alert
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getCurrencyApi();
+final String alertId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+
+try {
+    api.deleteAlert(alertId);
+} catch on DioError (e) {
+    print('Exception when calling CurrencyApi->deleteAlert: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **alertId** | **String**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCryptoAsset**
 > CryptoAssetFavorite getCryptoAsset(cryptoCurrencyId)
@@ -48,6 +142,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CryptoAssetFavorite**](CryptoAssetFavorite.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **listAlerts**
+> BuiltList<Alert> listAlerts()
+
+List of alerts
+
+List of alerts monitored by the user for selected currencies
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getCurrencyApi();
+
+try {
+    final response = api.listAlerts();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling CurrencyApi->listAlerts: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**BuiltList&lt;Alert&gt;**](Alert.md)
 
 ### Authorization
 
@@ -148,6 +284,53 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateAlert**
+> updateAlert(alertId, updateAlertRequest)
+
+Update an alert
+
+Update an alert
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getCurrencyApi();
+final String alertId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final UpdateAlertRequest updateAlertRequest = ; // UpdateAlertRequest | 
+
+try {
+    api.updateAlert(alertId, updateAlertRequest);
+} catch on DioError (e) {
+    print('Exception when calling CurrencyApi->updateAlert: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **alertId** | **String**|  | 
+ **updateAlertRequest** | [**UpdateAlertRequest**](UpdateAlertRequest.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
