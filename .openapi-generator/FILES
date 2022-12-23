@@ -23,6 +23,7 @@ doc/BeneficiaryDetail.md
 doc/CancelLimitOrderRequest.md
 doc/Candle.md
 doc/CardView.md
+doc/CardholderToken200Response.md
 doc/ChainImplementation.md
 doc/ChangeCardStatusRequest.md
 doc/ChartTick.md
@@ -106,6 +107,7 @@ doc/KYCRequestStatus.md
 doc/LimitOrder.md
 doc/MainWalletItem.md
 doc/MainWalletType.md
+doc/PayoutWalletAdjustRequest.md
 doc/PerformExchangeRequest.md
 doc/PerformFiatTransferRequest.md
 doc/PeriodInterval.md
@@ -198,6 +200,7 @@ lib/src/model/beneficiary_detail.dart
 lib/src/model/cancel_limit_order_request.dart
 lib/src/model/candle.dart
 lib/src/model/card_view.dart
+lib/src/model/cardholder_token200_response.dart
 lib/src/model/chain_implementation.dart
 lib/src/model/change_card_status_request.dart
 lib/src/model/chart_tick.dart
@@ -275,6 +278,7 @@ lib/src/model/kyc_request_status.dart
 lib/src/model/limit_order.dart
 lib/src/model/main_wallet_item.dart
 lib/src/model/main_wallet_type.dart
+lib/src/model/payout_wallet_adjust_request.dart
 lib/src/model/perform_exchange_request.dart
 lib/src/model/perform_fiat_transfer_request.dart
 lib/src/model/period_interval.dart
@@ -321,9 +325,5 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/alert_periodicity_test.dart
-test/alert_test.dart
-test/create_alert_request_test.dart
-test/create_registration_token_request_test.dart
-test/price_scale_test.dart
-test/update_alert_request_test.dart
+test/cardholder_token200_response_test.dart
+test/payout_wallet_adjust_request_test.dart

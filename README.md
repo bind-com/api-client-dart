@@ -129,6 +129,7 @@ Class | Method | HTTP request | Description
 [*ExchangeApi*](doc/ExchangeApi.md) | [**putLimitOrder**](doc/ExchangeApi.md#putlimitorder) | **POST** /crypto/exchange/limit_orders | Put limit order to the system. Order will be executed later
 [*ExchangeApi*](doc/ExchangeApi.md) | [**voteFearGreed**](doc/ExchangeApi.md#votefeargreed) | **PATCH** /crypto/assets/{asset_id}/fear_greed/ | Vote if this crypto asset goes up or down today
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**blockBankCard**](doc/FiatWalletApi.md#blockbankcard) | **POST** /fiat/bankcards/{card_id}/block/ | Block bank card and write reason
+[*FiatWalletApi*](doc/FiatWalletApi.md) | [**cardholderToken**](doc/FiatWalletApi.md#cardholdertoken) | **GET** /fiat/bankcards/cardholder_token/ | get a cardholder token with cardholder_id payload
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**changeCardBackground**](doc/FiatWalletApi.md#changecardbackground) | **POST** /fiat/bankcards/{card_id}/card_background/ | Change card background
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**changeCardStatus**](doc/FiatWalletApi.md#changecardstatus) | **PATCH** /fiat/bankcards/{card_id}/card_status/ | Change card status
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**changeDefaultWallet**](doc/FiatWalletApi.md#changedefaultwallet) | **POST** /fiat/bankcards/{card_id}/change_wallet/ | Change wallet attached to bank card
@@ -156,6 +157,8 @@ Class | Method | HTTP request | Description
 [*StagingApi*](doc/StagingApi.md) | [**createSettlements**](doc/StagingApi.md#createsettlements) | **GET** /staging/settlement/create/ | Create Settlements
 [*StagingApi*](doc/StagingApi.md) | [**fillCryptoWallet**](doc/StagingApi.md#fillcryptowallet) | **POST** /staging/crypto/wallet/fill/ | Put some testnet assets in a crypto wallet of a current user
 [*StagingApi*](doc/StagingApi.md) | [**fireblocksPoolBalances**](doc/StagingApi.md#fireblockspoolbalances) | **GET** /staging/fireblocks_pool/balances/ | Get pool balances
+[*StagingApi*](doc/StagingApi.md) | [**payoutWalletAdjust**](doc/StagingApi.md#payoutwalletadjust) | **POST** /staging/staking/payout_wallet/adjust/ | Adjust payout pool balance
+[*StagingApi*](doc/StagingApi.md) | [**runDistributionRewards**](doc/StagingApi.md#rundistributionrewards) | **POST** /staging/staking/run_distribution/ | run a task of staking rewards distribution
 [*StakingApi*](doc/StakingApi.md) | [**defaultCurrenciesForClaim**](doc/StakingApi.md#defaultcurrenciesforclaim) | **GET** /crypto/staking/default-currency/claim | Get default currencies for claim view
 [*StakingApi*](doc/StakingApi.md) | [**defaultCurrenciesForRestake**](doc/StakingApi.md#defaultcurrenciesforrestake) | **GET** /crypto/staking/default-currency/restake | Get default currencies for restake view
 [*StakingApi*](doc/StakingApi.md) | [**defaultCurrenciesForStake**](doc/StakingApi.md#defaultcurrenciesforstake) | **GET** /crypto/staking/default-currency/stake | Get default currencies for stake view
@@ -217,6 +220,7 @@ Class | Method | HTTP request | Description
  - [CancelLimitOrderRequest](doc/CancelLimitOrderRequest.md)
  - [Candle](doc/Candle.md)
  - [CardView](doc/CardView.md)
+ - [CardholderToken200Response](doc/CardholderToken200Response.md)
  - [ChainImplementation](doc/ChainImplementation.md)
  - [ChangeCardStatusRequest](doc/ChangeCardStatusRequest.md)
  - [ChartTick](doc/ChartTick.md)
@@ -293,6 +297,7 @@ Class | Method | HTTP request | Description
  - [LimitOrder](doc/LimitOrder.md)
  - [MainWalletItem](doc/MainWalletItem.md)
  - [MainWalletType](doc/MainWalletType.md)
+ - [PayoutWalletAdjustRequest](doc/PayoutWalletAdjustRequest.md)
  - [PerformExchangeRequest](doc/PerformExchangeRequest.md)
  - [PerformFiatTransferRequest](doc/PerformFiatTransferRequest.md)
  - [PeriodInterval](doc/PeriodInterval.md)

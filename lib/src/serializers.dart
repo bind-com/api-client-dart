@@ -32,6 +32,7 @@ import 'package:bind_api/src/model/beneficiary_detail.dart';
 import 'package:bind_api/src/model/cancel_limit_order_request.dart';
 import 'package:bind_api/src/model/candle.dart';
 import 'package:bind_api/src/model/card_view.dart';
+import 'package:bind_api/src/model/cardholder_token200_response.dart';
 import 'package:bind_api/src/model/chain_implementation.dart';
 import 'package:bind_api/src/model/change_card_status_request.dart';
 import 'package:bind_api/src/model/chart_tick.dart';
@@ -108,6 +109,7 @@ import 'package:bind_api/src/model/kyc_request_status.dart';
 import 'package:bind_api/src/model/limit_order.dart';
 import 'package:bind_api/src/model/main_wallet_item.dart';
 import 'package:bind_api/src/model/main_wallet_type.dart';
+import 'package:bind_api/src/model/payout_wallet_adjust_request.dart';
 import 'package:bind_api/src/model/perform_exchange_request.dart';
 import 'package:bind_api/src/model/perform_fiat_transfer_request.dart';
 import 'package:bind_api/src/model/period_interval.dart';
@@ -176,6 +178,7 @@ part 'serializers.g.dart';
   CancelLimitOrderRequest,
   Candle,
   CardView,
+  CardholderToken200Response,
   ChainImplementation,
   ChangeCardStatusRequest,
   ChartTick,
@@ -252,6 +255,7 @@ part 'serializers.g.dart';
   LimitOrder,
   MainWalletItem,
   MainWalletType,
+  PayoutWalletAdjustRequest,
   PerformExchangeRequest,
   PerformFiatTransferRequest,
   PeriodInterval,

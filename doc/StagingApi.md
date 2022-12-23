@@ -13,6 +13,8 @@ Method | HTTP request | Description
 [**createSettlements**](StagingApi.md#createsettlements) | **GET** /staging/settlement/create/ | Create Settlements
 [**fillCryptoWallet**](StagingApi.md#fillcryptowallet) | **POST** /staging/crypto/wallet/fill/ | Put some testnet assets in a crypto wallet of a current user
 [**fireblocksPoolBalances**](StagingApi.md#fireblockspoolbalances) | **GET** /staging/fireblocks_pool/balances/ | Get pool balances
+[**payoutWalletAdjust**](StagingApi.md#payoutwalletadjust) | **POST** /staging/staking/payout_wallet/adjust/ | Adjust payout pool balance
+[**runDistributionRewards**](StagingApi.md#rundistributionrewards) | **POST** /staging/staking/run_distribution/ | run a task of staking rewards distribution
 
 
 # **adjustFiatWalletBalance**
@@ -162,6 +164,92 @@ try {
     api.fireblocksPoolBalances();
 } catch on DioError (e) {
     print('Exception when calling StagingApi->fireblocksPoolBalances: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **payoutWalletAdjust**
+> payoutWalletAdjust(payoutWalletAdjustRequest)
+
+Adjust payout pool balance
+
+to test staking, you may use this method for adjusting payout pool balance before running distribution
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getStagingApi();
+final PayoutWalletAdjustRequest payoutWalletAdjustRequest = ; // PayoutWalletAdjustRequest | 
+
+try {
+    api.payoutWalletAdjust(payoutWalletAdjustRequest);
+} catch on DioError (e) {
+    print('Exception when calling StagingApi->payoutWalletAdjust: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payoutWalletAdjustRequest** | [**PayoutWalletAdjustRequest**](PayoutWalletAdjustRequest.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **runDistributionRewards**
+> runDistributionRewards()
+
+run a task of staking rewards distribution
+
+to test staking, you may use this method for adjusting payout pool balance before running distribution
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getStagingApi();
+
+try {
+    api.runDistributionRewards();
+} catch on DioError (e) {
+    print('Exception when calling StagingApi->runDistributionRewards: $e\n');
 }
 ```
 

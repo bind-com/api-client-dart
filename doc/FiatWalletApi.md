@@ -10,6 +10,7 @@ All URIs are relative to *https://api.thebind.uk/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**blockBankCard**](FiatWalletApi.md#blockbankcard) | **POST** /fiat/bankcards/{card_id}/block/ | Block bank card and write reason
+[**cardholderToken**](FiatWalletApi.md#cardholdertoken) | **GET** /fiat/bankcards/cardholder_token/ | get a cardholder token with cardholder_id payload
 [**changeCardBackground**](FiatWalletApi.md#changecardbackground) | **POST** /fiat/bankcards/{card_id}/card_background/ | Change card background
 [**changeCardStatus**](FiatWalletApi.md#changecardstatus) | **PATCH** /fiat/bankcards/{card_id}/card_status/ | Change card status
 [**changeDefaultWallet**](FiatWalletApi.md#changedefaultwallet) | **POST** /fiat/bankcards/{card_id}/change_wallet/ | Change wallet attached to bank card
@@ -66,6 +67,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BankCardDetail**](BankCardDetail.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **cardholderToken**
+> CardholderToken200Response cardholderToken()
+
+get a cardholder token with cardholder_id payload
+
+This token will contain cardholder_id (kmmrce id) which may be decrypted using certificates
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getFiatWalletApi();
+
+try {
+    final response = api.cardholderToken();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling FiatWalletApi->cardholderToken: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**CardholderToken200Response**](CardholderToken200Response.md)
 
 ### Authorization
 
