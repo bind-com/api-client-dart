@@ -160,7 +160,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createInnerFiatTransfer**
-> createInnerFiatTransfer(createInnerFiatTransferRequest)
+> createInnerFiatTransfer(getInnerFiatTransferFeeRequest)
 
 Send fiat inside BIND
 
@@ -174,10 +174,10 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getContactsApi();
-final CreateInnerFiatTransferRequest createInnerFiatTransferRequest = ; // CreateInnerFiatTransferRequest | 
+final GetInnerFiatTransferFeeRequest getInnerFiatTransferFeeRequest = ; // GetInnerFiatTransferFeeRequest | 
 
 try {
-    api.createInnerFiatTransfer(createInnerFiatTransferRequest);
+    api.createInnerFiatTransfer(getInnerFiatTransferFeeRequest);
 } catch on DioError (e) {
     print('Exception when calling ContactsApi->createInnerFiatTransfer: $e\n');
 }
@@ -187,7 +187,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createInnerFiatTransferRequest** | [**CreateInnerFiatTransferRequest**](CreateInnerFiatTransferRequest.md)|  | [optional] 
+ **getInnerFiatTransferFeeRequest** | [**GetInnerFiatTransferFeeRequest**](GetInnerFiatTransferFeeRequest.md)|  | [optional] 
 
 ### Return type
 

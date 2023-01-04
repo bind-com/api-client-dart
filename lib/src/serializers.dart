@@ -44,7 +44,6 @@ import 'package:bind_api/src/model/create_bank_card_request.dart';
 import 'package:bind_api/src/model/create_beneficiary_request.dart';
 import 'package:bind_api/src/model/create_fiat_wallet_request.dart';
 import 'package:bind_api/src/model/create_inner_fiat_request_request.dart';
-import 'package:bind_api/src/model/create_inner_fiat_transfer_request.dart';
 import 'package:bind_api/src/model/create_registration_token_request.dart';
 import 'package:bind_api/src/model/crypto_account.dart';
 import 'package:bind_api/src/model/crypto_account_all_of.dart';
@@ -190,7 +189,6 @@ part 'serializers.g.dart';
   CreateBeneficiaryRequest,
   CreateFiatWalletRequest,
   CreateInnerFiatRequestRequest,
-  CreateInnerFiatTransferRequest,
   CreateRegistrationTokenRequest,
   CryptoAccount,
   CryptoAccountAllOf,

@@ -12,18 +12,12 @@ class _$Error extends Error {
   @override
   final String message;
   @override
-  final BuiltMap<String, JsonObject?>? parent;
-  @override
-  final BuiltMap<String, BuiltList<String>>? validationError;
+  final JsonObject? data;
 
   factory _$Error([void Function(ErrorBuilder)? updates]) =>
       (new ErrorBuilder()..update(updates))._build();
 
-  _$Error._(
-      {required this.code,
-      required this.message,
-      this.parent,
-      this.validationError})
+  _$Error._({required this.code, required this.message, this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(code, r'Error', 'code');
     BuiltValueNullFieldError.checkNotNull(message, r'Error', 'message');
@@ -42,15 +36,13 @@ class _$Error extends Error {
     return other is Error &&
         code == other.code &&
         message == other.message &&
-        parent == other.parent &&
-        validationError == other.validationError;
+        data == other.data;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc(0, code.hashCode), message.hashCode), parent.hashCode),
-        validationError.hashCode));
+    return $jf(
+        $jc($jc($jc(0, code.hashCode), message.hashCode), data.hashCode));
   }
 
   @override
@@ -58,8 +50,7 @@ class _$Error extends Error {
     return (newBuiltValueToStringHelper(r'Error')
           ..add('code', code)
           ..add('message', message)
-          ..add('parent', parent)
-          ..add('validationError', validationError))
+          ..add('data', data))
         .toString();
   }
 }
@@ -75,17 +66,9 @@ class ErrorBuilder implements Builder<Error, ErrorBuilder> {
   String? get message => _$this._message;
   set message(String? message) => _$this._message = message;
 
-  MapBuilder<String, JsonObject?>? _parent;
-  MapBuilder<String, JsonObject?> get parent =>
-      _$this._parent ??= new MapBuilder<String, JsonObject?>();
-  set parent(MapBuilder<String, JsonObject?>? parent) =>
-      _$this._parent = parent;
-
-  MapBuilder<String, BuiltList<String>>? _validationError;
-  MapBuilder<String, BuiltList<String>> get validationError =>
-      _$this._validationError ??= new MapBuilder<String, BuiltList<String>>();
-  set validationError(MapBuilder<String, BuiltList<String>>? validationError) =>
-      _$this._validationError = validationError;
+  JsonObject? _data;
+  JsonObject? get data => _$this._data;
+  set data(JsonObject? data) => _$this._data = data;
 
   ErrorBuilder() {
     Error._defaults(this);
@@ -96,8 +79,7 @@ class ErrorBuilder implements Builder<Error, ErrorBuilder> {
     if ($v != null) {
       _code = $v.code;
       _message = $v.message;
-      _parent = $v.parent?.toBuilder();
-      _validationError = $v.validationError?.toBuilder();
+      _data = $v.data;
       _$v = null;
     }
     return this;
@@ -118,29 +100,12 @@ class ErrorBuilder implements Builder<Error, ErrorBuilder> {
   Error build() => _build();
 
   _$Error _build() {
-    _$Error _$result;
-    try {
-      _$result = _$v ??
-          new _$Error._(
-              code:
-                  BuiltValueNullFieldError.checkNotNull(code, r'Error', 'code'),
-              message: BuiltValueNullFieldError.checkNotNull(
-                  message, r'Error', 'message'),
-              parent: _parent?.build(),
-              validationError: _validationError?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'parent';
-        _parent?.build();
-        _$failedField = 'validationError';
-        _validationError?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'Error', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        new _$Error._(
+            code: BuiltValueNullFieldError.checkNotNull(code, r'Error', 'code'),
+            message: BuiltValueNullFieldError.checkNotNull(
+                message, r'Error', 'message'),
+            data: data);
     replace(_$result);
     return _$result;
   }

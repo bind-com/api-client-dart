@@ -56,7 +56,6 @@ export 'package:bind_api/src/model/create_bank_card_request.dart';
 export 'package:bind_api/src/model/create_beneficiary_request.dart';
 export 'package:bind_api/src/model/create_fiat_wallet_request.dart';
 export 'package:bind_api/src/model/create_inner_fiat_request_request.dart';
-export 'package:bind_api/src/model/create_inner_fiat_transfer_request.dart';
 export 'package:bind_api/src/model/create_registration_token_request.dart';
 export 'package:bind_api/src/model/crypto_account.dart';
 export 'package:bind_api/src/model/crypto_account_all_of.dart';

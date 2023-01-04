@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**getFearGreed**](ExchangeApi.md#getfeargreed) | **GET** /crypto/assets/{asset_id}/fear_greed/ | Get fear and greed rates for given asset (results of votes if crypto asset will go up or down)
 [**getLimitOrdersList**](ExchangeApi.md#getlimitorderslist) | **GET** /crypto/exchange/limit_orders | Get list of limit orders for current user
 [**performCryptoExchange**](ExchangeApi.md#performcryptoexchange) | **POST** /crypto/exchange/ | Perform exchange of assets. One of assets has to be a cryptocurrency
+[**performCryptoExchangePromise**](ExchangeApi.md#performcryptoexchangepromise) | **GET** /crypto/exchange/{exchange_id}/ | Perform exchange of assets. One of assets has to be a cryptocurrency
 [**performExchange**](ExchangeApi.md#performexchange) | **POST** /fiat/exchange/ | Perform exchange operation
 [**putLimitOrder**](ExchangeApi.md#putlimitorder) | **POST** /crypto/exchange/limit_orders | Put limit order to the system. Order will be executed later
 [**voteFearGreed**](ExchangeApi.md#votefeargreed) | **PATCH** /crypto/assets/{asset_id}/fear_greed/ | Vote if this crypto asset goes up or down today
@@ -338,6 +339,51 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **performCryptoExchangePromise**
+> performCryptoExchangePromise(exchangeId)
+
+Perform exchange of assets. One of assets has to be a cryptocurrency
+
+Only one of amounts (source or target) must be given
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getExchangeApi();
+final String exchangeId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+
+try {
+    api.performCryptoExchangePromise(exchangeId);
+} catch on DioError (e) {
+    print('Exception when calling ExchangeApi->performCryptoExchangePromise: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **exchangeId** | **String**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -8,6 +8,7 @@ import 'package:bind_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**exchangePromise** | **String** |  | [optional] 
 **amountSource** | **num** |  | [optional] 
 **amountTarget** | **num** |  | [optional] 
 **directRate** | **num** |  | [optional] 

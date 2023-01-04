@@ -8,6 +8,8 @@ part of 'crypto_exchange_estimation_result.dart';
 
 class _$CryptoExchangeEstimationResult extends CryptoExchangeEstimationResult {
   @override
+  final String? exchangePromise;
+  @override
   final num? amountSource;
   @override
   final num? amountTarget;
@@ -23,7 +25,8 @@ class _$CryptoExchangeEstimationResult extends CryptoExchangeEstimationResult {
       (new CryptoExchangeEstimationResultBuilder()..update(updates))._build();
 
   _$CryptoExchangeEstimationResult._(
-      {this.amountSource,
+      {this.exchangePromise,
+      this.amountSource,
       this.amountTarget,
       this.directRate,
       this.reverseRate,
@@ -43,6 +46,7 @@ class _$CryptoExchangeEstimationResult extends CryptoExchangeEstimationResult {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CryptoExchangeEstimationResult &&
+        exchangePromise == other.exchangePromise &&
         amountSource == other.amountSource &&
         amountTarget == other.amountTarget &&
         directRate == other.directRate &&
@@ -54,7 +58,11 @@ class _$CryptoExchangeEstimationResult extends CryptoExchangeEstimationResult {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, amountSource.hashCode), amountTarget.hashCode),
+            $jc(
+                $jc(
+                    $jc($jc(0, exchangePromise.hashCode),
+                        amountSource.hashCode),
+                    amountTarget.hashCode),
                 directRate.hashCode),
             reverseRate.hashCode),
         fee.hashCode));
@@ -63,6 +71,7 @@ class _$CryptoExchangeEstimationResult extends CryptoExchangeEstimationResult {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'CryptoExchangeEstimationResult')
+          ..add('exchangePromise', exchangePromise)
           ..add('amountSource', amountSource)
           ..add('amountTarget', amountTarget)
           ..add('directRate', directRate)
@@ -77,6 +86,11 @@ class CryptoExchangeEstimationResultBuilder
         Builder<CryptoExchangeEstimationResult,
             CryptoExchangeEstimationResultBuilder> {
   _$CryptoExchangeEstimationResult? _$v;
+
+  String? _exchangePromise;
+  String? get exchangePromise => _$this._exchangePromise;
+  set exchangePromise(String? exchangePromise) =>
+      _$this._exchangePromise = exchangePromise;
 
   num? _amountSource;
   num? get amountSource => _$this._amountSource;
@@ -105,6 +119,7 @@ class CryptoExchangeEstimationResultBuilder
   CryptoExchangeEstimationResultBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _exchangePromise = $v.exchangePromise;
       _amountSource = $v.amountSource;
       _amountTarget = $v.amountTarget;
       _directRate = $v.directRate;
@@ -132,6 +147,7 @@ class CryptoExchangeEstimationResultBuilder
   _$CryptoExchangeEstimationResult _build() {
     final _$result = _$v ??
         new _$CryptoExchangeEstimationResult._(
+            exchangePromise: exchangePromise,
             amountSource: amountSource,
             amountTarget: amountTarget,
             directRate: directRate,

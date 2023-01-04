@@ -16,12 +16,12 @@ part 'transaction_filter.g.dart';
 ///
 /// Properties:
 /// * [groupBy] 
-/// * [assetType] 
+/// * [assetType] - result will contain only transactions that have asset_source or asset_target or both, of chosen type
 /// * [descriptionFillingRuleSet] 
-/// * [asset] - id of asset (currency)
+/// * [asset] - Return transactions connected with given asset by source or target
 /// * [type] 
-/// * [wallet] - id of wallet (fiat or crypto)
-/// * [contact] - id of contact
+/// * [wallet] - Return transactions connected with given wallet by source or target
+/// * [contact] - Return transactions connected with given contact
 /// * [startDate] - date field to filter transactions by date later or equal
 /// * [endDate] - date field to filter transactions by date earlier or equal
 abstract class TransactionFilter implements Built<TransactionFilter, TransactionFilterBuilder> {
@@ -29,6 +29,7 @@ abstract class TransactionFilter implements Built<TransactionFilter, Transaction
     TransactionGrouping get groupBy;
     // enum groupByEnum {  date,  asset,  };
 
+    /// result will contain only transactions that have asset_source or asset_target or both, of chosen type
     @BuiltValueField(wireName: r'asset_type')
     TransactionFilterAssetTypeEnum get assetType;
     // enum assetTypeEnum {  fiat,  crypto,  all,  };
@@ -37,7 +38,7 @@ abstract class TransactionFilter implements Built<TransactionFilter, Transaction
     TransactionDescriptionFillingRuleSet get descriptionFillingRuleSet;
     // enum descriptionFillingRuleSetEnum {  for_wallet,  for_contact,  common,  };
 
-    /// id of asset (currency)
+    /// Return transactions connected with given asset by source or target
     @BuiltValueField(wireName: r'asset')
     String? get asset;
 
@@ -45,11 +46,11 @@ abstract class TransactionFilter implements Built<TransactionFilter, Transaction
     TransactionTypes? get type;
     // enum typeEnum {  OUTGOING_INNER_FIAT_TRANSFER,  INCOMING_INNER_FIAT_TRANSFER,  OUTGOING_INNER_CRYPTO_TRANSFER,  INCOMING_INNER_CRYPTO_TRANSFER,  FIAT_EXCHANGE,  OUTGOING_SWIFT_FIAT_TRANSFER,  EXCHANGE,  SEND,  CRYPTO_WITHDRAWAL,  CRYPTO_DEPOSIT,  };
 
-    /// id of wallet (fiat or crypto)
+    /// Return transactions connected with given wallet by source or target
     @BuiltValueField(wireName: r'wallet')
     String? get wallet;
 
-    /// id of contact
+    /// Return transactions connected with given contact
     @BuiltValueField(wireName: r'contact')
     String? get contact;
 
@@ -199,10 +200,13 @@ class _$TransactionFilterSerializer implements StructuredSerializer<TransactionF
 
 class TransactionFilterAssetTypeEnum extends EnumClass {
 
+  /// result will contain only transactions that have asset_source or asset_target or both, of chosen type
   @BuiltValueEnumConst(wireName: r'fiat')
   static const TransactionFilterAssetTypeEnum fiat = _$transactionFilterAssetTypeEnum_fiat;
+  /// result will contain only transactions that have asset_source or asset_target or both, of chosen type
   @BuiltValueEnumConst(wireName: r'crypto')
   static const TransactionFilterAssetTypeEnum crypto = _$transactionFilterAssetTypeEnum_crypto;
+  /// result will contain only transactions that have asset_source or asset_target or both, of chosen type
   @BuiltValueEnumConst(wireName: r'all')
   static const TransactionFilterAssetTypeEnum all = _$transactionFilterAssetTypeEnum_all;
 

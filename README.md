@@ -125,6 +125,7 @@ Class | Method | HTTP request | Description
 [*ExchangeApi*](doc/ExchangeApi.md) | [**getFearGreed**](doc/ExchangeApi.md#getfeargreed) | **GET** /crypto/assets/{asset_id}/fear_greed/ | Get fear and greed rates for given asset (results of votes if crypto asset will go up or down)
 [*ExchangeApi*](doc/ExchangeApi.md) | [**getLimitOrdersList**](doc/ExchangeApi.md#getlimitorderslist) | **GET** /crypto/exchange/limit_orders | Get list of limit orders for current user
 [*ExchangeApi*](doc/ExchangeApi.md) | [**performCryptoExchange**](doc/ExchangeApi.md#performcryptoexchange) | **POST** /crypto/exchange/ | Perform exchange of assets. One of assets has to be a cryptocurrency
+[*ExchangeApi*](doc/ExchangeApi.md) | [**performCryptoExchangePromise**](doc/ExchangeApi.md#performcryptoexchangepromise) | **GET** /crypto/exchange/{exchange_id}/ | Perform exchange of assets. One of assets has to be a cryptocurrency
 [*ExchangeApi*](doc/ExchangeApi.md) | [**performExchange**](doc/ExchangeApi.md#performexchange) | **POST** /fiat/exchange/ | Perform exchange operation
 [*ExchangeApi*](doc/ExchangeApi.md) | [**putLimitOrder**](doc/ExchangeApi.md#putlimitorder) | **POST** /crypto/exchange/limit_orders | Put limit order to the system. Order will be executed later
 [*ExchangeApi*](doc/ExchangeApi.md) | [**voteFearGreed**](doc/ExchangeApi.md#votefeargreed) | **PATCH** /crypto/assets/{asset_id}/fear_greed/ | Vote if this crypto asset goes up or down today
@@ -183,7 +184,7 @@ Class | Method | HTTP request | Description
 [*StakingApi*](doc/StakingApi.md) | [**userStakingClaimingEstimate**](doc/StakingApi.md#userstakingclaimingestimate) | **POST** /crypto/staking/claiming/estimate | Estimate user staking
 [*TransactionsApi*](doc/TransactionsApi.md) | [**exportTransactions**](doc/TransactionsApi.md#exporttransactions) | **POST** /transactions/export/ | Export user transaction to csv
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getExportHistory**](doc/TransactionsApi.md#getexporthistory) | **GET** /transactions/export/history/ | Get export history
-[*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionDetails**](doc/TransactionsApi.md#gettransactiondetails) | **GET** /transactions/{transactionId} | Get list of user transactions
+[*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionDetails**](doc/TransactionsApi.md#gettransactiondetails) | **GET** /transactions/{transactionId} | Get detailed info of a transaction
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionsAssetsList**](doc/TransactionsApi.md#gettransactionsassetslist) | **POST** /transactions/assets/ | Get list of assets of user transactions
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionsFiltered**](doc/TransactionsApi.md#gettransactionsfiltered) | **POST** /transactions/ | Get list of user transactions
 [*UserApi*](doc/UserApi.md) | [**checkKYCRequestApproval**](doc/UserApi.md#checkkycrequestapproval) | **GET** /users/kyc/requests/approval/ | Get status of KYC Request approval
@@ -232,7 +233,6 @@ Class | Method | HTTP request | Description
  - [CreateBeneficiaryRequest](doc/CreateBeneficiaryRequest.md)
  - [CreateFiatWalletRequest](doc/CreateFiatWalletRequest.md)
  - [CreateInnerFiatRequestRequest](doc/CreateInnerFiatRequestRequest.md)
- - [CreateInnerFiatTransferRequest](doc/CreateInnerFiatTransferRequest.md)
  - [CreateRegistrationTokenRequest](doc/CreateRegistrationTokenRequest.md)
  - [CryptoAccount](doc/CryptoAccount.md)
  - [CryptoAccountAllOf](doc/CryptoAccountAllOf.md)

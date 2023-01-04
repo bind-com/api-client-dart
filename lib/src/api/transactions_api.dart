@@ -200,8 +200,8 @@ class TransactionsApi {
     );
   }
 
-  /// Get list of user transactions
-  /// Get list of user transactions
+  /// Get detailed info of a transaction
+  /// 
   ///
   /// Parameters:
   /// * [xUserTimezone] 

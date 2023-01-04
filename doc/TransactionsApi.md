@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**exportTransactions**](TransactionsApi.md#exporttransactions) | **POST** /transactions/export/ | Export user transaction to csv
 [**getExportHistory**](TransactionsApi.md#getexporthistory) | **GET** /transactions/export/history/ | Get export history
-[**getTransactionDetails**](TransactionsApi.md#gettransactiondetails) | **GET** /transactions/{transactionId} | Get list of user transactions
+[**getTransactionDetails**](TransactionsApi.md#gettransactiondetails) | **GET** /transactions/{transactionId} | Get detailed info of a transaction
 [**getTransactionsAssetsList**](TransactionsApi.md#gettransactionsassetslist) | **POST** /transactions/assets/ | Get list of assets of user transactions
 [**getTransactionsFiltered**](TransactionsApi.md#gettransactionsfiltered) | **POST** /transactions/ | Get list of user transactions
 
@@ -107,9 +107,7 @@ This endpoint does not need any parameter.
 # **getTransactionDetails**
 > TransactionDetail getTransactionDetails(xUserTimezone, transactionId)
 
-Get list of user transactions
-
-Get list of user transactions
+Get detailed info of a transaction
 
 ### Example
 ```dart

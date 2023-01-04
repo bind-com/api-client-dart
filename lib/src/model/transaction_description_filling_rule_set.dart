@@ -10,10 +10,13 @@ part 'transaction_description_filling_rule_set.g.dart';
 
 class TransactionDescriptionFillingRuleSet extends EnumClass {
 
+  /// sets how description and comment fields of each transactions in a result will be filled. Transactions are described differently in different parts of an app
   @BuiltValueEnumConst(wireName: r'for_wallet')
   static const TransactionDescriptionFillingRuleSet forWallet = _$forWallet;
+  /// sets how description and comment fields of each transactions in a result will be filled. Transactions are described differently in different parts of an app
   @BuiltValueEnumConst(wireName: r'for_contact')
   static const TransactionDescriptionFillingRuleSet forContact = _$forContact;
+  /// sets how description and comment fields of each transactions in a result will be filled. Transactions are described differently in different parts of an app
   @BuiltValueEnumConst(wireName: r'common')
   static const TransactionDescriptionFillingRuleSet common = _$common;
 

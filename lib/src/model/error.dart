@@ -2,7 +2,6 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:built_collection/built_collection.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -14,8 +13,7 @@ part 'error.g.dart';
 /// Properties:
 /// * [code] 
 /// * [message] 
-/// * [parent] 
-/// * [validationError] 
+/// * [data] 
 abstract class Error implements Built<Error, ErrorBuilder> {
     @BuiltValueField(wireName: r'code')
     String get code;
@@ -23,11 +21,8 @@ abstract class Error implements Built<Error, ErrorBuilder> {
     @BuiltValueField(wireName: r'message')
     String get message;
 
-    @BuiltValueField(wireName: r'parent')
-    BuiltMap<String, JsonObject?>? get parent;
-
-    @BuiltValueField(wireName: r'validation_error')
-    BuiltMap<String, BuiltList<String>>? get validationError;
+    @BuiltValueField(wireName: r'data')
+    JsonObject? get data;
 
     Error._();
 
@@ -60,13 +55,9 @@ class _$ErrorSerializer implements StructuredSerializer<Error> {
             ..add(serializers.serialize(object.message,
                 specifiedType: const FullType(String)));
         result
-            ..add(r'parent')
-            ..add(object.parent == null ? null : serializers.serialize(object.parent,
-                specifiedType: const FullType.nullable(BuiltMap, [FullType(String), FullType.nullable(JsonObject)])));
-        result
-            ..add(r'validation_error')
-            ..add(object.validationError == null ? null : serializers.serialize(object.validationError,
-                specifiedType: const FullType.nullable(BuiltMap, [FullType(String), FullType(BuiltList, [FullType(String)])])));
+            ..add(r'data')
+            ..add(object.data == null ? null : serializers.serialize(object.data,
+                specifiedType: const FullType.nullable(JsonObject)));
         return result;
     }
 
@@ -92,17 +83,11 @@ class _$ErrorSerializer implements StructuredSerializer<Error> {
                         specifiedType: const FullType(String)) as String;
                     result.message = valueDes;
                     break;
-                case r'parent':
+                case r'data':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType.nullable(BuiltMap, [FullType(String), FullType.nullable(JsonObject)])) as BuiltMap<String, JsonObject?>?;
+                        specifiedType: const FullType.nullable(JsonObject)) as JsonObject?;
                     if (valueDes == null) continue;
-                    result.parent.replace(valueDes);
-                    break;
-                case r'validation_error':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType.nullable(BuiltMap, [FullType(String), FullType(BuiltList, [FullType(String)])])) as BuiltMap<String, BuiltList<String>>?;
-                    if (valueDes == null) continue;
-                    result.validationError.replace(valueDes);
+                    result.data = valueDes;
                     break;
             }
         }

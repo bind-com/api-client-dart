@@ -10,12 +10,16 @@ part 'crypto_exchange_estimation_result.g.dart';
 /// CryptoExchangeEstimationResult
 ///
 /// Properties:
+/// * [exchangePromise] 
 /// * [amountSource] 
 /// * [amountTarget] 
 /// * [directRate] 
 /// * [reverseRate] 
 /// * [fee] 
 abstract class CryptoExchangeEstimationResult implements Built<CryptoExchangeEstimationResult, CryptoExchangeEstimationResultBuilder> {
+    @BuiltValueField(wireName: r'exchange_promise')
+    String? get exchangePromise;
+
     @BuiltValueField(wireName: r'amount_source')
     num? get amountSource;
 
@@ -53,6 +57,12 @@ class _$CryptoExchangeEstimationResultSerializer implements StructuredSerializer
     Iterable<Object?> serialize(Serializers serializers, CryptoExchangeEstimationResult object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
+        if (object.exchangePromise != null) {
+            result
+                ..add(r'exchange_promise')
+                ..add(serializers.serialize(object.exchangePromise,
+                    specifiedType: const FullType(String)));
+        }
         if (object.amountSource != null) {
             result
                 ..add(r'amount_source')
@@ -98,6 +108,11 @@ class _$CryptoExchangeEstimationResultSerializer implements StructuredSerializer
             final Object? value = iterator.current;
             
             switch (key) {
+                case r'exchange_promise':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.exchangePromise = valueDes;
+                    break;
                 case r'amount_source':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(num)) as num;
