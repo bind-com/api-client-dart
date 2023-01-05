@@ -17,6 +17,8 @@ class _$Contact extends Contact {
   final String phoneNumber;
   @override
   final bool isFavorite;
+  @override
+  final String? countryName;
 
   factory _$Contact([void Function(ContactBuilder)? updates]) =>
       (new ContactBuilder()..update(updates))._build();
@@ -26,7 +28,8 @@ class _$Contact extends Contact {
       required this.firstName,
       required this.lastName,
       required this.phoneNumber,
-      required this.isFavorite})
+      required this.isFavorite,
+      this.countryName})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, r'Contact', 'id');
     BuiltValueNullFieldError.checkNotNull(firstName, r'Contact', 'firstName');
@@ -51,17 +54,20 @@ class _$Contact extends Contact {
         firstName == other.firstName &&
         lastName == other.lastName &&
         phoneNumber == other.phoneNumber &&
-        isFavorite == other.isFavorite;
+        isFavorite == other.isFavorite &&
+        countryName == other.countryName;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, id.hashCode), firstName.hashCode),
-                lastName.hashCode),
-            phoneNumber.hashCode),
-        isFavorite.hashCode));
+            $jc(
+                $jc($jc($jc(0, id.hashCode), firstName.hashCode),
+                    lastName.hashCode),
+                phoneNumber.hashCode),
+            isFavorite.hashCode),
+        countryName.hashCode));
   }
 
   @override
@@ -71,7 +77,8 @@ class _$Contact extends Contact {
           ..add('firstName', firstName)
           ..add('lastName', lastName)
           ..add('phoneNumber', phoneNumber)
-          ..add('isFavorite', isFavorite))
+          ..add('isFavorite', isFavorite)
+          ..add('countryName', countryName))
         .toString();
   }
 }
@@ -99,6 +106,10 @@ class ContactBuilder implements Builder<Contact, ContactBuilder> {
   bool? get isFavorite => _$this._isFavorite;
   set isFavorite(bool? isFavorite) => _$this._isFavorite = isFavorite;
 
+  String? _countryName;
+  String? get countryName => _$this._countryName;
+  set countryName(String? countryName) => _$this._countryName = countryName;
+
   ContactBuilder() {
     Contact._defaults(this);
   }
@@ -111,6 +122,7 @@ class ContactBuilder implements Builder<Contact, ContactBuilder> {
       _lastName = $v.lastName;
       _phoneNumber = $v.phoneNumber;
       _isFavorite = $v.isFavorite;
+      _countryName = $v.countryName;
       _$v = null;
     }
     return this;
@@ -141,7 +153,8 @@ class ContactBuilder implements Builder<Contact, ContactBuilder> {
             phoneNumber: BuiltValueNullFieldError.checkNotNull(
                 phoneNumber, r'Contact', 'phoneNumber'),
             isFavorite: BuiltValueNullFieldError.checkNotNull(
-                isFavorite, r'Contact', 'isFavorite'));
+                isFavorite, r'Contact', 'isFavorite'),
+            countryName: countryName);
     replace(_$result);
     return _$result;
   }

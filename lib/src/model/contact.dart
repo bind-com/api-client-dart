@@ -15,6 +15,7 @@ part 'contact.g.dart';
 /// * [lastName] 
 /// * [phoneNumber] 
 /// * [isFavorite] 
+/// * [countryName] 
 abstract class Contact implements Built<Contact, ContactBuilder> {
     @BuiltValueField(wireName: r'id')
     String get id;
@@ -30,6 +31,9 @@ abstract class Contact implements Built<Contact, ContactBuilder> {
 
     @BuiltValueField(wireName: r'is_favorite')
     bool get isFavorite;
+
+    @BuiltValueField(wireName: r'country_name')
+    String? get countryName;
 
     Contact._();
 
@@ -73,6 +77,12 @@ class _$ContactSerializer implements StructuredSerializer<Contact> {
             ..add(r'is_favorite')
             ..add(serializers.serialize(object.isFavorite,
                 specifiedType: const FullType(bool)));
+        if (object.countryName != null) {
+            result
+                ..add(r'country_name')
+                ..add(serializers.serialize(object.countryName,
+                    specifiedType: const FullType.nullable(String)));
+        }
         return result;
     }
 
@@ -112,6 +122,12 @@ class _$ContactSerializer implements StructuredSerializer<Contact> {
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(bool)) as bool;
                     result.isFavorite = valueDes;
+                    break;
+                case r'country_name':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType.nullable(String)) as String?;
+                    if (valueDes == null) continue;
+                    result.countryName = valueDes;
                     break;
             }
         }
