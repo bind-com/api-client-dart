@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **paymentCurrencyCode** | **String** | Code of a fiat currency | 
 **paymentCurrencySymbol** | **String** | Symbol of a fiat currency (can be used to show currency symbol at UI) | 
 **rank** | **num** | coinmarketcap rank | [optional] 
+**assetColor** | **String** | color of an asset | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

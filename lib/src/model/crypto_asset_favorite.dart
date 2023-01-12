@@ -21,6 +21,7 @@ part 'crypto_asset_favorite.g.dart';
 /// * [paymentCurrencyCode] - Code of a fiat currency
 /// * [paymentCurrencySymbol] - Symbol of a fiat currency (can be used to show currency symbol at UI)
 /// * [rank] - coinmarketcap rank
+/// * [assetColor] - color of an asset
 /// * [favorite] - True if an asset is added to User's favorites
 abstract class CryptoAssetFavorite implements Built<CryptoAssetFavorite, CryptoAssetFavoriteBuilder> {
     /// Market price of a token converted to fiat currency (payment currency of current user)
@@ -58,6 +59,10 @@ abstract class CryptoAssetFavorite implements Built<CryptoAssetFavorite, CryptoA
     /// coinmarketcap rank
     @BuiltValueField(wireName: r'rank')
     num? get rank;
+
+    /// color of an asset
+    @BuiltValueField(wireName: r'asset_color')
+    String? get assetColor;
 
     /// True if an asset is added to User's favorites
     @BuiltValueField(wireName: r'favorite')
@@ -123,6 +128,12 @@ class _$CryptoAssetFavoriteSerializer implements StructuredSerializer<CryptoAsse
                 ..add(serializers.serialize(object.rank,
                     specifiedType: const FullType(num)));
         }
+        if (object.assetColor != null) {
+            result
+                ..add(r'asset_color')
+                ..add(serializers.serialize(object.assetColor,
+                    specifiedType: const FullType(String)));
+        }
         result
             ..add(r'favorite')
             ..add(serializers.serialize(object.favorite,
@@ -187,6 +198,11 @@ class _$CryptoAssetFavoriteSerializer implements StructuredSerializer<CryptoAsse
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(num)) as num;
                     result.rank = valueDes;
+                    break;
+                case r'asset_color':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.assetColor = valueDes;
                     break;
                 case r'favorite':
                     final valueDes = serializers.deserialize(value,

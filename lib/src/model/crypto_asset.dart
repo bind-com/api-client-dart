@@ -19,6 +19,7 @@ part 'crypto_asset.g.dart';
 /// * [paymentCurrencyCode] - Code of a fiat currency
 /// * [paymentCurrencySymbol] - Symbol of a fiat currency (can be used to show currency symbol at UI)
 /// * [rank] - coinmarketcap rank
+/// * [assetColor] - color of an asset
 abstract class CryptoAsset implements Built<CryptoAsset, CryptoAssetBuilder> {
     /// Market price of a token converted to fiat currency (payment currency of current user)
     @BuiltValueField(wireName: r'price')
@@ -55,6 +56,10 @@ abstract class CryptoAsset implements Built<CryptoAsset, CryptoAssetBuilder> {
     /// coinmarketcap rank
     @BuiltValueField(wireName: r'rank')
     num? get rank;
+
+    /// color of an asset
+    @BuiltValueField(wireName: r'asset_color')
+    String? get assetColor;
 
     CryptoAsset._();
 
@@ -116,6 +121,12 @@ class _$CryptoAssetSerializer implements StructuredSerializer<CryptoAsset> {
                 ..add(serializers.serialize(object.rank,
                     specifiedType: const FullType(num)));
         }
+        if (object.assetColor != null) {
+            result
+                ..add(r'asset_color')
+                ..add(serializers.serialize(object.assetColor,
+                    specifiedType: const FullType(String)));
+        }
         return result;
     }
 
@@ -176,6 +187,11 @@ class _$CryptoAssetSerializer implements StructuredSerializer<CryptoAsset> {
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(num)) as num;
                     result.rank = valueDes;
+                    break;
+                case r'asset_color':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.assetColor = valueDes;
                     break;
             }
         }
