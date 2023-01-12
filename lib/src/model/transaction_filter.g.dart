@@ -10,6 +10,8 @@ const TransactionFilterAssetTypeEnum _$transactionFilterAssetTypeEnum_fiat =
     const TransactionFilterAssetTypeEnum._('fiat');
 const TransactionFilterAssetTypeEnum _$transactionFilterAssetTypeEnum_crypto =
     const TransactionFilterAssetTypeEnum._('crypto');
+const TransactionFilterAssetTypeEnum _$transactionFilterAssetTypeEnum_staking =
+    const TransactionFilterAssetTypeEnum._('staking');
 const TransactionFilterAssetTypeEnum _$transactionFilterAssetTypeEnum_all =
     const TransactionFilterAssetTypeEnum._('all');
 
@@ -20,6 +22,8 @@ TransactionFilterAssetTypeEnum _$transactionFilterAssetTypeEnumValueOf(
       return _$transactionFilterAssetTypeEnum_fiat;
     case 'crypto':
       return _$transactionFilterAssetTypeEnum_crypto;
+    case 'staking':
+      return _$transactionFilterAssetTypeEnum_staking;
     case 'all':
       return _$transactionFilterAssetTypeEnum_all;
     default:
@@ -32,6 +36,7 @@ final BuiltSet<TransactionFilterAssetTypeEnum>
         TransactionFilterAssetTypeEnum>(const <TransactionFilterAssetTypeEnum>[
   _$transactionFilterAssetTypeEnum_fiat,
   _$transactionFilterAssetTypeEnum_crypto,
+  _$transactionFilterAssetTypeEnum_staking,
   _$transactionFilterAssetTypeEnum_all,
 ]);
 
@@ -44,11 +49,13 @@ class _$TransactionFilterAssetTypeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'fiat': 'fiat',
     'crypto': 'crypto',
+    'staking': 'staking',
     'all': 'all',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'fiat': 'fiat',
     'crypto': 'crypto',
+    'staking': 'staking',
     'all': 'all',
   };
 

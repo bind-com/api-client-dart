@@ -32,7 +32,7 @@ abstract class TransactionFilter implements Built<TransactionFilter, Transaction
     /// result will contain only transactions that have asset_source or asset_target or both, of chosen type
     @BuiltValueField(wireName: r'asset_type')
     TransactionFilterAssetTypeEnum get assetType;
-    // enum assetTypeEnum {  fiat,  crypto,  all,  };
+    // enum assetTypeEnum {  fiat,  crypto,  staking,  all,  };
 
     @BuiltValueField(wireName: r'description_filling_rule_set')
     TransactionDescriptionFillingRuleSet get descriptionFillingRuleSet;
@@ -206,6 +206,9 @@ class TransactionFilterAssetTypeEnum extends EnumClass {
   /// result will contain only transactions that have asset_source or asset_target or both, of chosen type
   @BuiltValueEnumConst(wireName: r'crypto')
   static const TransactionFilterAssetTypeEnum crypto = _$transactionFilterAssetTypeEnum_crypto;
+  /// result will contain only transactions that have asset_source or asset_target or both, of chosen type
+  @BuiltValueEnumConst(wireName: r'staking')
+  static const TransactionFilterAssetTypeEnum staking = _$transactionFilterAssetTypeEnum_staking;
   /// result will contain only transactions that have asset_source or asset_target or both, of chosen type
   @BuiltValueEnumConst(wireName: r'all')
   static const TransactionFilterAssetTypeEnum all = _$transactionFilterAssetTypeEnum_all;

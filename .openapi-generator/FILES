@@ -95,7 +95,6 @@ doc/InnerCryptoTransferFeeResult.md
 doc/InnerFiatTransferFeeResult.md
 doc/JWTToken.md
 doc/KYCDocumentStatus.md
-doc/KYCDocumentStatusRequest.md
 doc/KYCFieldStatus.md
 doc/KYCFile.md
 doc/KYCFileId.md
@@ -265,7 +264,6 @@ lib/src/model/inner_crypto_transfer_fee_result.dart
 lib/src/model/inner_fiat_transfer_fee_result.dart
 lib/src/model/jwt_token.dart
 lib/src/model/kyc_document_status.dart
-lib/src/model/kyc_document_status_request.dart
 lib/src/model/kyc_field_status.dart
 lib/src/model/kyc_file.dart
 lib/src/model/kyc_file_id.dart

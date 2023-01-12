@@ -97,7 +97,6 @@ import 'package:bind_api/src/model/inner_crypto_transfer_fee_result.dart';
 import 'package:bind_api/src/model/inner_fiat_transfer_fee_result.dart';
 import 'package:bind_api/src/model/jwt_token.dart';
 import 'package:bind_api/src/model/kyc_document_status.dart';
-import 'package:bind_api/src/model/kyc_document_status_request.dart';
 import 'package:bind_api/src/model/kyc_field_status.dart';
 import 'package:bind_api/src/model/kyc_file.dart';
 import 'package:bind_api/src/model/kyc_file_id.dart';
@@ -242,7 +241,6 @@ part 'serializers.g.dart';
   InnerFiatTransferFeeResult,
   JWTToken,
   KYCDocumentStatus,
-  KYCDocumentStatusRequest,
   KYCFieldStatus,
   KYCFile,
   KYCFileId,

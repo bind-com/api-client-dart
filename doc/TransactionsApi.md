@@ -10,6 +10,7 @@ All URIs are relative to *https://api.thebind.uk/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**exportTransactions**](TransactionsApi.md#exporttransactions) | **POST** /transactions/export/ | Export user transaction to csv
+[**exportTransactionsById**](TransactionsApi.md#exporttransactionsbyid) | **GET** /transactions/export/history/{export_id}/ | Export user transaction to pdf
 [**getExportHistory**](TransactionsApi.md#getexporthistory) | **GET** /transactions/export/history/ | Get export history
 [**getTransactionDetails**](TransactionsApi.md#gettransactiondetails) | **GET** /transactions/{transactionId} | Get detailed info of a transaction
 [**getTransactionsAssetsList**](TransactionsApi.md#gettransactionsassetslist) | **POST** /transactions/assets/ | Get list of assets of user transactions
@@ -58,6 +59,52 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **exportTransactionsById**
+> Uint8List exportTransactionsById(exportId)
+
+Export user transaction to pdf
+
+Export user transaction to pdf
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getTransactionsApi();
+final String exportId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+
+try {
+    final response = api.exportTransactionsById(exportId);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling TransactionsApi->exportTransactionsById: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **exportId** | **String**|  | 
+
+### Return type
+
+[**Uint8List**](Uint8List.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

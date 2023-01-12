@@ -12,6 +12,7 @@ part 'single_crypto_balance.g.dart';
 /// Properties:
 /// * [assetName] 
 /// * [assetCode] 
+/// * [assetColor] 
 /// * [totalBalance] 
 /// * [availableBalance] 
 /// * [inOrderBalance] 
@@ -24,6 +25,9 @@ abstract class SingleCryptoBalance implements Built<SingleCryptoBalance, SingleC
 
     @BuiltValueField(wireName: r'asset_code')
     String? get assetCode;
+
+    @BuiltValueField(wireName: r'asset_color')
+    String? get assetColor;
 
     @BuiltValueField(wireName: r'total_balance')
     num? get totalBalance;
@@ -75,6 +79,12 @@ class _$SingleCryptoBalanceSerializer implements StructuredSerializer<SingleCryp
             result
                 ..add(r'asset_code')
                 ..add(serializers.serialize(object.assetCode,
+                    specifiedType: const FullType(String)));
+        }
+        if (object.assetColor != null) {
+            result
+                ..add(r'asset_color')
+                ..add(serializers.serialize(object.assetColor,
                     specifiedType: const FullType(String)));
         }
         if (object.totalBalance != null) {
@@ -137,6 +147,11 @@ class _$SingleCryptoBalanceSerializer implements StructuredSerializer<SingleCryp
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.assetCode = valueDes;
+                    break;
+                case r'asset_color':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.assetColor = valueDes;
                     break;
                 case r'total_balance':
                     final valueDes = serializers.deserialize(value,

@@ -109,7 +109,6 @@ export 'package:bind_api/src/model/inner_crypto_transfer_fee_result.dart';
 export 'package:bind_api/src/model/inner_fiat_transfer_fee_result.dart';
 export 'package:bind_api/src/model/jwt_token.dart';
 export 'package:bind_api/src/model/kyc_document_status.dart';
-export 'package:bind_api/src/model/kyc_document_status_request.dart';
 export 'package:bind_api/src/model/kyc_field_status.dart';
 export 'package:bind_api/src/model/kyc_file.dart';
 export 'package:bind_api/src/model/kyc_file_id.dart';

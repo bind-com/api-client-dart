@@ -183,6 +183,7 @@ Class | Method | HTTP request | Description
 [*StakingApi*](doc/StakingApi.md) | [**userStakingClaiming**](doc/StakingApi.md#userstakingclaiming) | **POST** /crypto/staking/claiming | Perform user claiming
 [*StakingApi*](doc/StakingApi.md) | [**userStakingClaimingEstimate**](doc/StakingApi.md#userstakingclaimingestimate) | **POST** /crypto/staking/claiming/estimate | Estimate user staking
 [*TransactionsApi*](doc/TransactionsApi.md) | [**exportTransactions**](doc/TransactionsApi.md#exporttransactions) | **POST** /transactions/export/ | Export user transaction to csv
+[*TransactionsApi*](doc/TransactionsApi.md) | [**exportTransactionsById**](doc/TransactionsApi.md#exporttransactionsbyid) | **GET** /transactions/export/history/{export_id}/ | Export user transaction to pdf
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getExportHistory**](doc/TransactionsApi.md#getexporthistory) | **GET** /transactions/export/history/ | Get export history
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionDetails**](doc/TransactionsApi.md#gettransactiondetails) | **GET** /transactions/{transactionId} | Get detailed info of a transaction
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionsAssetsList**](doc/TransactionsApi.md#gettransactionsassetslist) | **POST** /transactions/assets/ | Get list of assets of user transactions
@@ -286,7 +287,6 @@ Class | Method | HTTP request | Description
  - [InnerFiatTransferFeeResult](doc/InnerFiatTransferFeeResult.md)
  - [JWTToken](doc/JWTToken.md)
  - [KYCDocumentStatus](doc/KYCDocumentStatus.md)
- - [KYCDocumentStatusRequest](doc/KYCDocumentStatusRequest.md)
  - [KYCFieldStatus](doc/KYCFieldStatus.md)
  - [KYCFile](doc/KYCFile.md)
  - [KYCFileId](doc/KYCFileId.md)

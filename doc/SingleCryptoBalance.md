@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **assetName** | **String** |  | [optional] 
 **assetCode** | **String** |  | [optional] 
+**assetColor** | **String** |  | [optional] 
 **totalBalance** | **num** |  | [optional] 
 **availableBalance** | **num** |  | [optional] 
 **inOrderBalance** | **num** |  | [optional] 

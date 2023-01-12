@@ -18,6 +18,8 @@ class _$CryptoAccount extends CryptoAccount {
   @override
   final String? assetLogo;
   @override
+  final String? assetColor;
+  @override
   final String paymentCurrencyCode;
   @override
   final num paymentCurrencyBalance;
@@ -35,6 +37,7 @@ class _$CryptoAccount extends CryptoAccount {
       required this.assetName,
       required this.assetId,
       this.assetLogo,
+      this.assetColor,
       required this.paymentCurrencyCode,
       required this.paymentCurrencyBalance,
       this.price,
@@ -71,6 +74,7 @@ class _$CryptoAccount extends CryptoAccount {
         assetName == other.assetName &&
         assetId == other.assetId &&
         assetLogo == other.assetLogo &&
+        assetColor == other.assetColor &&
         paymentCurrencyCode == other.paymentCurrencyCode &&
         paymentCurrencyBalance == other.paymentCurrencyBalance &&
         price == other.price &&
@@ -86,11 +90,13 @@ class _$CryptoAccount extends CryptoAccount {
                     $jc(
                         $jc(
                             $jc(
-                                $jc($jc(0, assetBalance.hashCode),
-                                    assetCode.hashCode),
-                                assetName.hashCode),
-                            assetId.hashCode),
-                        assetLogo.hashCode),
+                                $jc(
+                                    $jc($jc(0, assetBalance.hashCode),
+                                        assetCode.hashCode),
+                                    assetName.hashCode),
+                                assetId.hashCode),
+                            assetLogo.hashCode),
+                        assetColor.hashCode),
                     paymentCurrencyCode.hashCode),
                 paymentCurrencyBalance.hashCode),
             price.hashCode),
@@ -105,6 +111,7 @@ class _$CryptoAccount extends CryptoAccount {
           ..add('assetName', assetName)
           ..add('assetId', assetId)
           ..add('assetLogo', assetLogo)
+          ..add('assetColor', assetColor)
           ..add('paymentCurrencyCode', paymentCurrencyCode)
           ..add('paymentCurrencyBalance', paymentCurrencyBalance)
           ..add('price', price)
@@ -137,6 +144,10 @@ class CryptoAccountBuilder
   String? get assetLogo => _$this._assetLogo;
   set assetLogo(String? assetLogo) => _$this._assetLogo = assetLogo;
 
+  String? _assetColor;
+  String? get assetColor => _$this._assetColor;
+  set assetColor(String? assetColor) => _$this._assetColor = assetColor;
+
   String? _paymentCurrencyCode;
   String? get paymentCurrencyCode => _$this._paymentCurrencyCode;
   set paymentCurrencyCode(String? paymentCurrencyCode) =>
@@ -168,6 +179,7 @@ class CryptoAccountBuilder
       _assetName = $v.assetName;
       _assetId = $v.assetId;
       _assetLogo = $v.assetLogo;
+      _assetColor = $v.assetColor;
       _paymentCurrencyCode = $v.paymentCurrencyCode;
       _paymentCurrencyBalance = $v.paymentCurrencyBalance;
       _price = $v.price;
@@ -203,6 +215,7 @@ class CryptoAccountBuilder
             assetId: BuiltValueNullFieldError.checkNotNull(
                 assetId, r'CryptoAccount', 'assetId'),
             assetLogo: assetLogo,
+            assetColor: assetColor,
             paymentCurrencyCode: BuiltValueNullFieldError.checkNotNull(
                 paymentCurrencyCode, r'CryptoAccount', 'paymentCurrencyCode'),
             paymentCurrencyBalance: BuiltValueNullFieldError.checkNotNull(

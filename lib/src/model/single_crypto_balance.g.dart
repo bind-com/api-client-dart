@@ -12,6 +12,8 @@ class _$SingleCryptoBalance extends SingleCryptoBalance {
   @override
   final String? assetCode;
   @override
+  final String? assetColor;
+  @override
   final num? totalBalance;
   @override
   final num? availableBalance;
@@ -31,6 +33,7 @@ class _$SingleCryptoBalance extends SingleCryptoBalance {
   _$SingleCryptoBalance._(
       {this.assetName,
       this.assetCode,
+      this.assetColor,
       this.totalBalance,
       this.availableBalance,
       this.inOrderBalance,
@@ -54,6 +57,7 @@ class _$SingleCryptoBalance extends SingleCryptoBalance {
     return other is SingleCryptoBalance &&
         assetName == other.assetName &&
         assetCode == other.assetCode &&
+        assetColor == other.assetColor &&
         totalBalance == other.totalBalance &&
         availableBalance == other.availableBalance &&
         inOrderBalance == other.inOrderBalance &&
@@ -69,7 +73,11 @@ class _$SingleCryptoBalance extends SingleCryptoBalance {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, assetName.hashCode), assetCode.hashCode),
+                        $jc(
+                            $jc(
+                                $jc($jc(0, assetName.hashCode),
+                                    assetCode.hashCode),
+                                assetColor.hashCode),
                             totalBalance.hashCode),
                         availableBalance.hashCode),
                     inOrderBalance.hashCode),
@@ -83,6 +91,7 @@ class _$SingleCryptoBalance extends SingleCryptoBalance {
     return (newBuiltValueToStringHelper(r'SingleCryptoBalance')
           ..add('assetName', assetName)
           ..add('assetCode', assetCode)
+          ..add('assetColor', assetColor)
           ..add('totalBalance', totalBalance)
           ..add('availableBalance', availableBalance)
           ..add('inOrderBalance', inOrderBalance)
@@ -104,6 +113,10 @@ class SingleCryptoBalanceBuilder
   String? _assetCode;
   String? get assetCode => _$this._assetCode;
   set assetCode(String? assetCode) => _$this._assetCode = assetCode;
+
+  String? _assetColor;
+  String? get assetColor => _$this._assetColor;
+  set assetColor(String? assetColor) => _$this._assetColor = assetColor;
 
   num? _totalBalance;
   num? get totalBalance => _$this._totalBalance;
@@ -143,6 +156,7 @@ class SingleCryptoBalanceBuilder
     if ($v != null) {
       _assetName = $v.assetName;
       _assetCode = $v.assetCode;
+      _assetColor = $v.assetColor;
       _totalBalance = $v.totalBalance;
       _availableBalance = $v.availableBalance;
       _inOrderBalance = $v.inOrderBalance;
@@ -173,6 +187,7 @@ class SingleCryptoBalanceBuilder
         new _$SingleCryptoBalance._(
             assetName: assetName,
             assetCode: assetCode,
+            assetColor: assetColor,
             totalBalance: totalBalance,
             availableBalance: availableBalance,
             inOrderBalance: inOrderBalance,

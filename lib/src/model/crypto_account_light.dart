@@ -15,6 +15,7 @@ part 'crypto_account_light.g.dart';
 /// * [assetName] - Full name of a token
 /// * [assetId] - Primary key of an asset
 /// * [assetLogo] - Logo of an asset (link to static file)
+/// * [assetColor] - Color of an asset
 /// * [paymentCurrencyCode] - Code of a fiat currency (can be used to show currency symbol at UI)
 /// * [paymentCurrencyBalance] - Balance of a wallet converted to fiat currency (payment currency of current user)
 /// * [price] - price of a token in payment currency
@@ -38,6 +39,10 @@ abstract class CryptoAccountLight implements Built<CryptoAccountLight, CryptoAcc
     /// Logo of an asset (link to static file)
     @BuiltValueField(wireName: r'asset_logo')
     String? get assetLogo;
+
+    /// Color of an asset
+    @BuiltValueField(wireName: r'asset_color')
+    String? get assetColor;
 
     /// Code of a fiat currency (can be used to show currency symbol at UI)
     @BuiltValueField(wireName: r'payment_currency_code')
@@ -93,6 +98,12 @@ class _$CryptoAccountLightSerializer implements StructuredSerializer<CryptoAccou
             ..add(r'asset_logo')
             ..add(object.assetLogo == null ? null : serializers.serialize(object.assetLogo,
                 specifiedType: const FullType.nullable(String)));
+        if (object.assetColor != null) {
+            result
+                ..add(r'asset_color')
+                ..add(serializers.serialize(object.assetColor,
+                    specifiedType: const FullType(String)));
+        }
         result
             ..add(r'payment_currency_code')
             ..add(serializers.serialize(object.paymentCurrencyCode,
@@ -147,6 +158,11 @@ class _$CryptoAccountLightSerializer implements StructuredSerializer<CryptoAccou
                         specifiedType: const FullType.nullable(String)) as String?;
                     if (valueDes == null) continue;
                     result.assetLogo = valueDes;
+                    break;
+                case r'asset_color':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.assetColor = valueDes;
                     break;
                 case r'payment_currency_code':
                     final valueDes = serializers.deserialize(value,
