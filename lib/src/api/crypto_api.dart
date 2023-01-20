@@ -837,7 +837,8 @@ class CryptoApi {
   /// List of Crypto Currencies available at Bind
   ///
   /// Parameters:
-  /// * [sort] - Sort order:  * `all` - Ascending, order by currency code  * `gainers` - Top gainers, tokens with highest perfomance first  * `losers` - Top losers, tokens with lowest perfomance first  * `capUp` - Ascending, order by market capitalization  * `capDown` - Descending, order by market capitalization  * `volumeUp` - Ascending, order by market volume   * `volumeDown` - Descending, order by market volume  * `recentUp` - Ascending, order by listing date on coinmarketcap api  * `recentDown` - Descending, order by listing date on coinmarketcap api  * `watch` - not implemented yet, sort like `all`  * `trending` - order by coinmarketcap trending sort 
+  /// * [hasTradingPairWith] - filter by trading pair
+  /// * [sort] - Sort order:  * `all` - Ascending, order by currency code  * `gainers` - Top gainers, tokens with highest perfomance first  * `losers` - Top losers, tokens with lowest perfomance first  * `capUp` - Ascending, order by market capitalization  * `capDown` - Descending, order by market capitalization  * `volumeUp` - Ascending, order by market volume  * `volumeDown` - Descending, order by market volume  * `recentUp` - Ascending, order by listing date on coinmarketcap api  * `recentDown` - Descending, order by listing date on coinmarketcap api  * `watch` - not implemented yet, sort like `all`  * `trending` - order by coinmarketcap trending sort 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -848,6 +849,7 @@ class CryptoApi {
   /// Returns a [Future] containing a [Response] with a [BuiltList<CryptoAsset>] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BuiltList<CryptoAsset>>> listCryptoCurrencies({ 
+    String? hasTradingPairWith,
     CryptoAssetSorting? sort,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -876,6 +878,7 @@ class CryptoApi {
     );
 
     final _queryParameters = <String, dynamic>{
+      if (hasTradingPairWith != null) r'has_trading_pair_with': encodeQueryParameter(_serializers, hasTradingPairWith, const FullType(String)),
       if (sort != null) r'sort': encodeQueryParameter(_serializers, sort, const FullType(CryptoAssetSorting)),
     };
 

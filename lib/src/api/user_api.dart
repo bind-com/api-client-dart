@@ -603,7 +603,7 @@ class UserApi {
   }
 
   /// Update user
-  /// This method allows to change or initially set some fields from WhoAmI method: email, first_name, last_name, middle_name, kyc_status, phone_number, passcode (To be removed), country, payment_currency, refund_currency Fields can be changed in a batch or separately. Method can work with a subset of possible arguments.  Authenticated User can change only himself. Calling a method with user_id of a different User will cause NotAllowed exception. 
+  /// This method allows to change or initially set some fields from WhoAmI method: email, first_name, last_name, middle_name, kyc_status, phone_number, passcode (To be removed), country, payment_currency, refund_currency Fields can be changed in a batch or separately. Method can work with a subset of possible arguments. Authenticated User can change only himself. Calling a method with user_id of a different User will cause NotAllowed exception. 
   ///
   /// Parameters:
   /// * [userID] 

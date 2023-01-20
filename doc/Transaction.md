@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **state** | [**TransactionStates**](TransactionStates.md) |  | [optional] 
 **isCrypto** | **bool** |  | [optional] 
 **isFiat** | **bool** |  | [optional] 
+**isStaking** | **bool** |  | [optional] 
 **assetSourceCode** | **String** | ISO code of source asset | [optional] 
 **assetTargetCode** | **String** | ISO code of target asset | [optional] 
 **assetSourceIsCrypto** | **bool** | is asset a crypto asset | [optional] 

@@ -20,6 +20,8 @@ class _$Transaction extends Transaction {
   @override
   final bool? isFiat;
   @override
+  final bool? isStaking;
+  @override
   final String? assetSourceCode;
   @override
   final String? assetTargetCode;
@@ -50,6 +52,7 @@ class _$Transaction extends Transaction {
       this.state,
       this.isCrypto,
       this.isFiat,
+      this.isStaking,
       this.assetSourceCode,
       this.assetTargetCode,
       this.assetSourceIsCrypto,
@@ -79,6 +82,7 @@ class _$Transaction extends Transaction {
         state == other.state &&
         isCrypto == other.isCrypto &&
         isFiat == other.isFiat &&
+        isStaking == other.isStaking &&
         assetSourceCode == other.assetSourceCode &&
         assetTargetCode == other.assetTargetCode &&
         assetSourceIsCrypto == other.assetSourceIsCrypto &&
@@ -109,15 +113,18 @@ class _$Transaction extends Transaction {
                                                         $jc(
                                                             $jc(
                                                                 $jc(
-                                                                    0,
-                                                                    group
+                                                                    $jc(
+                                                                        0,
+                                                                        group
+                                                                            .hashCode),
+                                                                    id
                                                                         .hashCode),
-                                                                id.hashCode),
-                                                            operationLabel
-                                                                .hashCode),
-                                                        state.hashCode),
-                                                    isCrypto.hashCode),
-                                                isFiat.hashCode),
+                                                                operationLabel
+                                                                    .hashCode),
+                                                            state.hashCode),
+                                                        isCrypto.hashCode),
+                                                    isFiat.hashCode),
+                                                isStaking.hashCode),
                                             assetSourceCode.hashCode),
                                         assetTargetCode.hashCode),
                                     assetSourceIsCrypto.hashCode),
@@ -139,6 +146,7 @@ class _$Transaction extends Transaction {
           ..add('state', state)
           ..add('isCrypto', isCrypto)
           ..add('isFiat', isFiat)
+          ..add('isStaking', isStaking)
           ..add('assetSourceCode', assetSourceCode)
           ..add('assetTargetCode', assetTargetCode)
           ..add('assetSourceIsCrypto', assetSourceIsCrypto)
@@ -181,6 +189,10 @@ class TransactionBuilder implements Builder<Transaction, TransactionBuilder> {
   bool? _isFiat;
   bool? get isFiat => _$this._isFiat;
   set isFiat(bool? isFiat) => _$this._isFiat = isFiat;
+
+  bool? _isStaking;
+  bool? get isStaking => _$this._isStaking;
+  set isStaking(bool? isStaking) => _$this._isStaking = isStaking;
 
   String? _assetSourceCode;
   String? get assetSourceCode => _$this._assetSourceCode;
@@ -239,6 +251,7 @@ class TransactionBuilder implements Builder<Transaction, TransactionBuilder> {
       _state = $v.state;
       _isCrypto = $v.isCrypto;
       _isFiat = $v.isFiat;
+      _isStaking = $v.isStaking;
       _assetSourceCode = $v.assetSourceCode;
       _assetTargetCode = $v.assetTargetCode;
       _assetSourceIsCrypto = $v.assetSourceIsCrypto;
@@ -279,6 +292,7 @@ class TransactionBuilder implements Builder<Transaction, TransactionBuilder> {
               state: state,
               isCrypto: isCrypto,
               isFiat: isFiat,
+              isStaking: isStaking,
               assetSourceCode: assetSourceCode,
               assetTargetCode: assetTargetCode,
               assetSourceIsCrypto: assetSourceIsCrypto,

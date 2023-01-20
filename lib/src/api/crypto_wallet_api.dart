@@ -651,6 +651,7 @@ class CryptoWalletApi {
   /// 
   ///
   /// Parameters:
+  /// * [hasTradingPairWith] - filter by trading pair
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -661,6 +662,7 @@ class CryptoWalletApi {
   /// Returns a [Future] containing a [Response] with a [CryptoWallet] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<CryptoWallet>> getCryptoWallet({ 
+    String? hasTradingPairWith,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -687,9 +689,14 @@ class CryptoWalletApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (hasTradingPairWith != null) r'has_trading_pair_with': encodeQueryParameter(_serializers, hasTradingPairWith, const FullType(String)),
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -1051,6 +1058,7 @@ class CryptoWalletApi {
   ///
   /// Parameters:
   /// * [assetId] - id of a crypto asset
+  /// * [hasTradingPairWith] - filter by trading pair
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1062,6 +1070,7 @@ class CryptoWalletApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<SingleCryptoBalance>> getSingleCryptoBalance({ 
     required String assetId,
+    String? hasTradingPairWith,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1088,9 +1097,14 @@ class CryptoWalletApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (hasTradingPairWith != null) r'has_trading_pair_with': encodeQueryParameter(_serializers, hasTradingPairWith, const FullType(String)),
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,

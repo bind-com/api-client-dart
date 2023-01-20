@@ -369,7 +369,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCryptoWallet**
-> CryptoWallet getCryptoWallet()
+> CryptoWallet getCryptoWallet(hasTradingPairWith)
 
 Get crypto wallet of current User - total balance and assets balances
 
@@ -381,9 +381,10 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getCryptoWalletApi();
+final String hasTradingPairWith = hasTradingPairWith_example; // String | filter by trading pair
 
 try {
-    final response = api.getCryptoWallet();
+    final response = api.getCryptoWallet(hasTradingPairWith);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling CryptoWalletApi->getCryptoWallet: $e\n');
@@ -391,7 +392,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **hasTradingPairWith** | **String**| filter by trading pair | [optional] 
 
 ### Return type
 
@@ -577,7 +581,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getSingleCryptoBalance**
-> SingleCryptoBalance getSingleCryptoBalance(assetId)
+> SingleCryptoBalance getSingleCryptoBalance(assetId, hasTradingPairWith)
 
 Get detailed balance of a crypto asset
 
@@ -590,9 +594,10 @@ import 'package:bind_api/api.dart';
 
 final api = BindApi().getCryptoWalletApi();
 final String assetId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | id of a crypto asset
+final String hasTradingPairWith = hasTradingPairWith_example; // String | filter by trading pair
 
 try {
-    final response = api.getSingleCryptoBalance(assetId);
+    final response = api.getSingleCryptoBalance(assetId, hasTradingPairWith);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling CryptoWalletApi->getSingleCryptoBalance: $e\n');
@@ -604,6 +609,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **assetId** | **String**| id of a crypto asset | 
+ **hasTradingPairWith** | **String**| filter by trading pair | [optional] 
 
 ### Return type
 

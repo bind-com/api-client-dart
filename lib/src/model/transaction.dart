@@ -19,6 +19,7 @@ part 'transaction.g.dart';
 /// * [state] 
 /// * [isCrypto] 
 /// * [isFiat] 
+/// * [isStaking] 
 /// * [assetSourceCode] - ISO code of source asset
 /// * [assetTargetCode] - ISO code of target asset
 /// * [assetSourceIsCrypto] - is asset a crypto asset
@@ -49,6 +50,9 @@ abstract class Transaction implements Built<Transaction, TransactionBuilder> {
 
     @BuiltValueField(wireName: r'is_fiat')
     bool? get isFiat;
+
+    @BuiltValueField(wireName: r'is_staking')
+    bool? get isStaking;
 
     /// ISO code of source asset
     @BuiltValueField(wireName: r'asset_source_code')
@@ -143,6 +147,12 @@ class _$TransactionSerializer implements StructuredSerializer<Transaction> {
             result
                 ..add(r'is_fiat')
                 ..add(serializers.serialize(object.isFiat,
+                    specifiedType: const FullType(bool)));
+        }
+        if (object.isStaking != null) {
+            result
+                ..add(r'is_staking')
+                ..add(serializers.serialize(object.isStaking,
                     specifiedType: const FullType(bool)));
         }
         if (object.assetSourceCode != null) {
@@ -249,6 +259,11 @@ class _$TransactionSerializer implements StructuredSerializer<Transaction> {
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(bool)) as bool;
                     result.isFiat = valueDes;
+                    break;
+                case r'is_staking':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(bool)) as bool;
+                    result.isStaking = valueDes;
                     break;
                 case r'asset_source_code':
                     final valueDes = serializers.deserialize(value,

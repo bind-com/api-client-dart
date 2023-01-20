@@ -779,7 +779,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getFiatWallets**
-> BuiltList<FiatWalletLight> getFiatWallets()
+> BuiltList<FiatWalletLight> getFiatWallets(hasTradingPairWith)
 
 All fiat wallets of current user
 
@@ -793,9 +793,10 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getFiatWalletApi();
+final String hasTradingPairWith = hasTradingPairWith_example; // String | filter by trading pair
 
 try {
-    final response = api.getFiatWallets();
+    final response = api.getFiatWallets(hasTradingPairWith);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling FiatWalletApi->getFiatWallets: $e\n');
@@ -803,7 +804,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **hasTradingPairWith** | **String**| filter by trading pair | [optional] 
 
 ### Return type
 
