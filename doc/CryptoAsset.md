@@ -9,6 +9,7 @@ import 'package:bind_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **price** | **num** | Market price of a token converted to fiat currency (payment currency of current user) | 
+**btcPrice** | **num** | Price of token in BTC, null if not available | [optional] 
 **performance** | **num** | Percentage of growth of an asset during last 24 hours | 
 **code** | **String** | Code of an asset | 
 **name** | **String** | Full name of a token | 

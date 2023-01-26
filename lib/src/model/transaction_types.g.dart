@@ -24,6 +24,8 @@ const TransactionTypes _$CRYPTO_WITHDRAWAL =
     const TransactionTypes._('CRYPTO_WITHDRAWAL');
 const TransactionTypes _$CRYPTO_DEPOSIT =
     const TransactionTypes._('CRYPTO_DEPOSIT');
+const TransactionTypes _$CARD_SPENDING =
+    const TransactionTypes._('CARD_SPENDING');
 
 TransactionTypes _$valueOf(String name) {
   switch (name) {
@@ -47,6 +49,8 @@ TransactionTypes _$valueOf(String name) {
       return _$CRYPTO_WITHDRAWAL;
     case 'CRYPTO_DEPOSIT':
       return _$CRYPTO_DEPOSIT;
+    case 'CARD_SPENDING':
+      return _$CARD_SPENDING;
     default:
       throw new ArgumentError(name);
   }
@@ -64,6 +68,7 @@ final BuiltSet<TransactionTypes> _$values =
   _$SEND,
   _$CRYPTO_WITHDRAWAL,
   _$CRYPTO_DEPOSIT,
+  _$CARD_SPENDING,
 ]);
 
 class _$TransactionTypesMeta {
@@ -83,6 +88,7 @@ class _$TransactionTypesMeta {
   TransactionTypes get SEND => _$SEND;
   TransactionTypes get CRYPTO_WITHDRAWAL => _$CRYPTO_WITHDRAWAL;
   TransactionTypes get CRYPTO_DEPOSIT => _$CRYPTO_DEPOSIT;
+  TransactionTypes get CARD_SPENDING => _$CARD_SPENDING;
   TransactionTypes valueOf(String name) => _$valueOf(name);
   BuiltSet<TransactionTypes> get values => _$values;
 }
@@ -108,6 +114,7 @@ class _$TransactionTypesSerializer
     'SEND': 'SEND',
     'CRYPTO_WITHDRAWAL': 'CRYPTO_WITHDRAWAL',
     'CRYPTO_DEPOSIT': 'CRYPTO_DEPOSIT',
+    'CARD_SPENDING': 'CARD_SPENDING',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'OUTGOING_INNER_FIAT_TRANSFER': 'OUTGOING_INNER_FIAT_TRANSFER',
@@ -120,6 +127,7 @@ class _$TransactionTypesSerializer
     'SEND': 'SEND',
     'CRYPTO_WITHDRAWAL': 'CRYPTO_WITHDRAWAL',
     'CRYPTO_DEPOSIT': 'CRYPTO_DEPOSIT',
+    'CARD_SPENDING': 'CARD_SPENDING',
   };
 
   @override

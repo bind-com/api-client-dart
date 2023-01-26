@@ -10,6 +10,8 @@ class _$CryptoAssetFavorite extends CryptoAssetFavorite {
   @override
   final num price;
   @override
+  final num? btcPrice;
+  @override
   final num performance;
   @override
   final String code;
@@ -36,6 +38,7 @@ class _$CryptoAssetFavorite extends CryptoAssetFavorite {
 
   _$CryptoAssetFavorite._(
       {required this.price,
+      this.btcPrice,
       required this.performance,
       required this.code,
       required this.name,
@@ -76,6 +79,7 @@ class _$CryptoAssetFavorite extends CryptoAssetFavorite {
     if (identical(other, this)) return true;
     return other is CryptoAssetFavorite &&
         price == other.price &&
+        btcPrice == other.btcPrice &&
         performance == other.performance &&
         code == other.code &&
         name == other.name &&
@@ -99,7 +103,9 @@ class _$CryptoAssetFavorite extends CryptoAssetFavorite {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, price.hashCode),
+                                        $jc(
+                                            $jc($jc(0, price.hashCode),
+                                                btcPrice.hashCode),
                                             performance.hashCode),
                                         code.hashCode),
                                     name.hashCode),
@@ -116,6 +122,7 @@ class _$CryptoAssetFavorite extends CryptoAssetFavorite {
   String toString() {
     return (newBuiltValueToStringHelper(r'CryptoAssetFavorite')
           ..add('price', price)
+          ..add('btcPrice', btcPrice)
           ..add('performance', performance)
           ..add('code', code)
           ..add('name', name)
@@ -137,6 +144,10 @@ class CryptoAssetFavoriteBuilder
   num? _price;
   num? get price => _$this._price;
   set price(num? price) => _$this._price = price;
+
+  num? _btcPrice;
+  num? get btcPrice => _$this._btcPrice;
+  set btcPrice(num? btcPrice) => _$this._btcPrice = btcPrice;
 
   num? _performance;
   num? get performance => _$this._performance;
@@ -188,6 +199,7 @@ class CryptoAssetFavoriteBuilder
     final $v = _$v;
     if ($v != null) {
       _price = $v.price;
+      _btcPrice = $v.btcPrice;
       _performance = $v.performance;
       _code = $v.code;
       _name = $v.name;
@@ -222,6 +234,7 @@ class CryptoAssetFavoriteBuilder
         new _$CryptoAssetFavorite._(
             price: BuiltValueNullFieldError.checkNotNull(
                 price, r'CryptoAssetFavorite', 'price'),
+            btcPrice: btcPrice,
             performance: BuiltValueNullFieldError.checkNotNull(
                 performance, r'CryptoAssetFavorite', 'performance'),
             code: BuiltValueNullFieldError.checkNotNull(

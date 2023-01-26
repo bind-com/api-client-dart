@@ -30,6 +30,8 @@ class TransactionTypes extends EnumClass {
   static const TransactionTypes CRYPTO_WITHDRAWAL = _$CRYPTO_WITHDRAWAL;
   @BuiltValueEnumConst(wireName: r'CRYPTO_DEPOSIT')
   static const TransactionTypes CRYPTO_DEPOSIT = _$CRYPTO_DEPOSIT;
+  @BuiltValueEnumConst(wireName: r'CARD_SPENDING')
+  static const TransactionTypes CARD_SPENDING = _$CARD_SPENDING;
 
   static Serializer<TransactionTypes> get serializer => _$transactionTypesSerializer;
 

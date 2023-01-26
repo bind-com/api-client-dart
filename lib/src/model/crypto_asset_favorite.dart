@@ -13,6 +13,7 @@ part 'crypto_asset_favorite.g.dart';
 ///
 /// Properties:
 /// * [price] - Market price of a token converted to fiat currency (payment currency of current user)
+/// * [btcPrice] - Price of token in BTC, null if not available
 /// * [performance] - Percentage of growth of an asset during last 24 hours
 /// * [code] - Code of an asset
 /// * [name] - Full name of a token
@@ -27,6 +28,10 @@ abstract class CryptoAssetFavorite implements Built<CryptoAssetFavorite, CryptoA
     /// Market price of a token converted to fiat currency (payment currency of current user)
     @BuiltValueField(wireName: r'price')
     num get price;
+
+    /// Price of token in BTC, null if not available
+    @BuiltValueField(wireName: r'btc_price')
+    num? get btcPrice;
 
     /// Percentage of growth of an asset during last 24 hours
     @BuiltValueField(wireName: r'performance')
@@ -94,6 +99,12 @@ class _$CryptoAssetFavoriteSerializer implements StructuredSerializer<CryptoAsse
             ..add(r'price')
             ..add(serializers.serialize(object.price,
                 specifiedType: const FullType(num)));
+        if (object.btcPrice != null) {
+            result
+                ..add(r'btc_price')
+                ..add(serializers.serialize(object.btcPrice,
+                    specifiedType: const FullType(num)));
+        }
         result
             ..add(r'performance')
             ..add(serializers.serialize(object.performance,
@@ -157,6 +168,11 @@ class _$CryptoAssetFavoriteSerializer implements StructuredSerializer<CryptoAsse
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(num)) as num;
                     result.price = valueDes;
+                    break;
+                case r'btc_price':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(num)) as num;
+                    result.btcPrice = valueDes;
                     break;
                 case r'performance':
                     final valueDes = serializers.deserialize(value,
