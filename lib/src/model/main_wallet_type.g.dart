@@ -10,6 +10,7 @@ const MainWalletType _$total = const MainWalletType._('total');
 const MainWalletType _$crypto = const MainWalletType._('crypto');
 const MainWalletType _$fiat = const MainWalletType._('fiat');
 const MainWalletType _$nft = const MainWalletType._('nft');
+const MainWalletType _$autoporfolio = const MainWalletType._('autoporfolio');
 
 MainWalletType _$valueOf(String name) {
   switch (name) {
@@ -21,6 +22,8 @@ MainWalletType _$valueOf(String name) {
       return _$fiat;
     case 'nft':
       return _$nft;
+    case 'autoporfolio':
+      return _$autoporfolio;
     default:
       throw new ArgumentError(name);
   }
@@ -32,6 +35,7 @@ final BuiltSet<MainWalletType> _$values =
   _$crypto,
   _$fiat,
   _$nft,
+  _$autoporfolio,
 ]);
 
 class _$MainWalletTypeMeta {
@@ -40,6 +44,7 @@ class _$MainWalletTypeMeta {
   MainWalletType get crypto => _$crypto;
   MainWalletType get fiat => _$fiat;
   MainWalletType get nft => _$nft;
+  MainWalletType get autoporfolio => _$autoporfolio;
   MainWalletType valueOf(String name) => _$valueOf(name);
   BuiltSet<MainWalletType> get values => _$values;
 }
@@ -59,12 +64,14 @@ class _$MainWalletTypeSerializer
     'crypto': 'crypto',
     'fiat': 'fiat',
     'nft': 'nft',
+    'autoporfolio': 'autoporfolio',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'total': 'total',
     'crypto': 'crypto',
     'fiat': 'fiat',
     'nft': 'nft',
+    'autoporfolio': 'autoporfolio',
   };
 
   @override

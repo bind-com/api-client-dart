@@ -7,6 +7,14 @@ doc/Alert.md
 doc/AlertPeriodicity.md
 doc/AnalysisStatus.md
 doc/AuthApi.md
+doc/AutoPortfolio.md
+doc/AutoPortfolioApi.md
+doc/AutoPortfolioAsset.md
+doc/AutoPortfolioChartPeriod.md
+doc/AutoPortfolioChartTick.md
+doc/AutoPortfolioEstimate.md
+doc/AutoPortfolioParams.md
+doc/AutoPortfolioSellRequest.md
 doc/BankCardAnalytics.md
 doc/BankCardBaseData.md
 doc/BankCardBlockingReason.md
@@ -67,6 +75,7 @@ doc/CurrencyWithRateAllOf.md
 doc/DefaultStakingCurrencies.md
 doc/DeliveryAddress.md
 doc/DepositAddress.md
+doc/DurationSpan.md
 doc/Error.md
 doc/ExchangeApi.md
 doc/ExportHistory.md
@@ -93,6 +102,7 @@ doc/GetStakingTimer200Response.md
 doc/HumanTransactionTypes.md
 doc/InnerCryptoTransferFeeResult.md
 doc/InnerFiatTransferFeeResult.md
+doc/InvestmentStyle.md
 doc/JWTToken.md
 doc/KYCDocumentStatus.md
 doc/KYCFieldStatus.md
@@ -105,6 +115,7 @@ doc/KYCRequestStatus.md
 doc/LimitOrder.md
 doc/MainWalletItem.md
 doc/MainWalletType.md
+doc/PaymentMethods.md
 doc/PayoutWalletAdjustRequest.md
 doc/PerformExchangeRequest.md
 doc/PerformFiatTransferRequest.md
@@ -115,7 +126,11 @@ doc/ProfitLossSort.md
 doc/ProfitLossSummary.md
 doc/PutLimitOrderRequest.md
 doc/QRCodeGenerateCustomStringRequest.md
+doc/RenameAutoPortfolioRequest.md
 doc/SingleCryptoBalance.md
+doc/SliderMatrix.md
+doc/SliderMatrixParams.md
+doc/SliderMatrixStyle.md
 doc/StagingApi.md
 doc/Staking.md
 doc/StakingAdditionalInformation.md
@@ -158,6 +173,7 @@ doc/WithdrawalAddressCreationRequest.md
 lib/bind_api.dart
 lib/src/api.dart
 lib/src/api/auth_api.dart
+lib/src/api/auto_portfolio_api.dart
 lib/src/api/beneficiaries_api.dart
 lib/src/api/contacts_api.dart
 lib/src/api/crypto_api.dart
@@ -183,6 +199,13 @@ lib/src/model/adjust_fiat_wallet_balance_request.dart
 lib/src/model/alert.dart
 lib/src/model/alert_periodicity.dart
 lib/src/model/analysis_status.dart
+lib/src/model/auto_portfolio.dart
+lib/src/model/auto_portfolio_asset.dart
+lib/src/model/auto_portfolio_chart_period.dart
+lib/src/model/auto_portfolio_chart_tick.dart
+lib/src/model/auto_portfolio_estimate.dart
+lib/src/model/auto_portfolio_params.dart
+lib/src/model/auto_portfolio_sell_request.dart
 lib/src/model/bank_card_analytics.dart
 lib/src/model/bank_card_base_data.dart
 lib/src/model/bank_card_blocking_reason.dart
@@ -239,6 +262,7 @@ lib/src/model/date.dart
 lib/src/model/default_staking_currencies.dart
 lib/src/model/delivery_address.dart
 lib/src/model/deposit_address.dart
+lib/src/model/duration_span.dart
 lib/src/model/error.dart
 lib/src/model/export_history.dart
 lib/src/model/favorite_crypto_create_request.dart
@@ -262,6 +286,7 @@ lib/src/model/get_staking_timer200_response.dart
 lib/src/model/human_transaction_types.dart
 lib/src/model/inner_crypto_transfer_fee_result.dart
 lib/src/model/inner_fiat_transfer_fee_result.dart
+lib/src/model/investment_style.dart
 lib/src/model/jwt_token.dart
 lib/src/model/kyc_document_status.dart
 lib/src/model/kyc_field_status.dart
@@ -274,6 +299,7 @@ lib/src/model/kyc_request_status.dart
 lib/src/model/limit_order.dart
 lib/src/model/main_wallet_item.dart
 lib/src/model/main_wallet_type.dart
+lib/src/model/payment_methods.dart
 lib/src/model/payout_wallet_adjust_request.dart
 lib/src/model/perform_exchange_request.dart
 lib/src/model/perform_fiat_transfer_request.dart
@@ -284,7 +310,11 @@ lib/src/model/profit_loss_sort.dart
 lib/src/model/profit_loss_summary.dart
 lib/src/model/put_limit_order_request.dart
 lib/src/model/qr_code_generate_custom_string_request.dart
+lib/src/model/rename_auto_portfolio_request.dart
 lib/src/model/single_crypto_balance.dart
+lib/src/model/slider_matrix.dart
+lib/src/model/slider_matrix_params.dart
+lib/src/model/slider_matrix_style.dart
 lib/src/model/staking.dart
 lib/src/model/staking_additional_information.dart
 lib/src/model/staking_balance.dart
@@ -321,3 +351,18 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/auto_portfolio_api_test.dart
+test/auto_portfolio_asset_test.dart
+test/auto_portfolio_chart_period_test.dart
+test/auto_portfolio_chart_tick_test.dart
+test/auto_portfolio_estimate_test.dart
+test/auto_portfolio_params_test.dart
+test/auto_portfolio_sell_request_test.dart
+test/auto_portfolio_test.dart
+test/duration_span_test.dart
+test/investment_style_test.dart
+test/payment_methods_test.dart
+test/rename_auto_portfolio_request_test.dart
+test/slider_matrix_params_test.dart
+test/slider_matrix_style_test.dart
+test/slider_matrix_test.dart

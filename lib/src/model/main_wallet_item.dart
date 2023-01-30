@@ -15,10 +15,12 @@ part 'main_wallet_item.g.dart';
 /// * [balance] 
 /// * [currencyCode] 
 /// * [performance] 
+/// * [name] - if wallet type is auto portfolio, then name of portfolio here
+/// * [portfolioId] - if wallet type is auto portfolio, then id of portfolio here
 abstract class MainWalletItem implements Built<MainWalletItem, MainWalletItemBuilder> {
     @BuiltValueField(wireName: r'wallet_type')
     MainWalletType get walletType;
-    // enum walletTypeEnum {  total,  crypto,  fiat,  nft,  };
+    // enum walletTypeEnum {  total,  crypto,  fiat,  nft,  autoporfolio,  };
 
     @BuiltValueField(wireName: r'balance')
     num get balance;
@@ -28,6 +30,14 @@ abstract class MainWalletItem implements Built<MainWalletItem, MainWalletItemBui
 
     @BuiltValueField(wireName: r'performance')
     num? get performance;
+
+    /// if wallet type is auto portfolio, then name of portfolio here
+    @BuiltValueField(wireName: r'name')
+    String? get name;
+
+    /// if wallet type is auto portfolio, then id of portfolio here
+    @BuiltValueField(wireName: r'portfolio_id')
+    String? get portfolioId;
 
     MainWalletItem._();
 
@@ -69,6 +79,18 @@ class _$MainWalletItemSerializer implements StructuredSerializer<MainWalletItem>
                 ..add(serializers.serialize(object.performance,
                     specifiedType: const FullType(num)));
         }
+        if (object.name != null) {
+            result
+                ..add(r'name')
+                ..add(serializers.serialize(object.name,
+                    specifiedType: const FullType(String)));
+        }
+        if (object.portfolioId != null) {
+            result
+                ..add(r'portfolio_id')
+                ..add(serializers.serialize(object.portfolioId,
+                    specifiedType: const FullType(String)));
+        }
         return result;
     }
 
@@ -103,6 +125,16 @@ class _$MainWalletItemSerializer implements StructuredSerializer<MainWalletItem>
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(num)) as num;
                     result.performance = valueDes;
+                    break;
+                case r'name':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.name = valueDes;
+                    break;
+                case r'portfolio_id':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.portfolioId = valueDes;
                     break;
             }
         }

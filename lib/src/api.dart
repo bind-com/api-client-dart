@@ -10,6 +10,7 @@ import 'package:bind_api/src/auth/basic_auth.dart';
 import 'package:bind_api/src/auth/bearer_auth.dart';
 import 'package:bind_api/src/auth/oauth.dart';
 import 'package:bind_api/src/api/auth_api.dart';
+import 'package:bind_api/src/api/auto_portfolio_api.dart';
 import 'package:bind_api/src/api/beneficiaries_api.dart';
 import 'package:bind_api/src/api/contacts_api.dart';
 import 'package:bind_api/src/api/crypto_api.dart';
@@ -82,6 +83,12 @@ class BindApi {
   /// by doing that all interceptors will not be executed
   AuthApi getAuthApi() {
     return AuthApi(dio, serializers);
+  }
+
+  /// Get AutoPortfolioApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  AutoPortfolioApi getAutoPortfolioApi() {
+    return AutoPortfolioApi(dio, serializers);
   }
 
   /// Get BeneficiariesApi instance, base route and serializer can be overridden by a given but be careful,

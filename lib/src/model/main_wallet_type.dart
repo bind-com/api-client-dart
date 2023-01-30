@@ -18,6 +18,8 @@ class MainWalletType extends EnumClass {
   static const MainWalletType fiat = _$fiat;
   @BuiltValueEnumConst(wireName: r'nft')
   static const MainWalletType nft = _$nft;
+  @BuiltValueEnumConst(wireName: r'autoporfolio')
+  static const MainWalletType autoporfolio = _$autoporfolio;
 
   static Serializer<MainWalletType> get serializer => _$mainWalletTypeSerializer;
 

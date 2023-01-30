@@ -17,6 +17,13 @@ import 'package:bind_api/src/model/adjust_fiat_wallet_balance_request.dart';
 import 'package:bind_api/src/model/alert.dart';
 import 'package:bind_api/src/model/alert_periodicity.dart';
 import 'package:bind_api/src/model/analysis_status.dart';
+import 'package:bind_api/src/model/auto_portfolio.dart';
+import 'package:bind_api/src/model/auto_portfolio_asset.dart';
+import 'package:bind_api/src/model/auto_portfolio_chart_period.dart';
+import 'package:bind_api/src/model/auto_portfolio_chart_tick.dart';
+import 'package:bind_api/src/model/auto_portfolio_estimate.dart';
+import 'package:bind_api/src/model/auto_portfolio_params.dart';
+import 'package:bind_api/src/model/auto_portfolio_sell_request.dart';
 import 'package:bind_api/src/model/bank_card_analytics.dart';
 import 'package:bind_api/src/model/bank_card_base_data.dart';
 import 'package:bind_api/src/model/bank_card_blocking_reason.dart';
@@ -72,6 +79,7 @@ import 'package:bind_api/src/model/currency_with_rate_all_of.dart';
 import 'package:bind_api/src/model/default_staking_currencies.dart';
 import 'package:bind_api/src/model/delivery_address.dart';
 import 'package:bind_api/src/model/deposit_address.dart';
+import 'package:bind_api/src/model/duration_span.dart';
 import 'package:bind_api/src/model/error.dart';
 import 'package:bind_api/src/model/export_history.dart';
 import 'package:bind_api/src/model/favorite_crypto_create_request.dart';
@@ -95,6 +103,7 @@ import 'package:bind_api/src/model/get_staking_timer200_response.dart';
 import 'package:bind_api/src/model/human_transaction_types.dart';
 import 'package:bind_api/src/model/inner_crypto_transfer_fee_result.dart';
 import 'package:bind_api/src/model/inner_fiat_transfer_fee_result.dart';
+import 'package:bind_api/src/model/investment_style.dart';
 import 'package:bind_api/src/model/jwt_token.dart';
 import 'package:bind_api/src/model/kyc_document_status.dart';
 import 'package:bind_api/src/model/kyc_field_status.dart';
@@ -107,6 +116,7 @@ import 'package:bind_api/src/model/kyc_request_status.dart';
 import 'package:bind_api/src/model/limit_order.dart';
 import 'package:bind_api/src/model/main_wallet_item.dart';
 import 'package:bind_api/src/model/main_wallet_type.dart';
+import 'package:bind_api/src/model/payment_methods.dart';
 import 'package:bind_api/src/model/payout_wallet_adjust_request.dart';
 import 'package:bind_api/src/model/perform_exchange_request.dart';
 import 'package:bind_api/src/model/perform_fiat_transfer_request.dart';
@@ -117,7 +127,11 @@ import 'package:bind_api/src/model/profit_loss_sort.dart';
 import 'package:bind_api/src/model/profit_loss_summary.dart';
 import 'package:bind_api/src/model/put_limit_order_request.dart';
 import 'package:bind_api/src/model/qr_code_generate_custom_string_request.dart';
+import 'package:bind_api/src/model/rename_auto_portfolio_request.dart';
 import 'package:bind_api/src/model/single_crypto_balance.dart';
+import 'package:bind_api/src/model/slider_matrix.dart';
+import 'package:bind_api/src/model/slider_matrix_params.dart';
+import 'package:bind_api/src/model/slider_matrix_style.dart';
 import 'package:bind_api/src/model/staking.dart';
 import 'package:bind_api/src/model/staking_additional_information.dart';
 import 'package:bind_api/src/model/staking_balance.dart';
@@ -161,6 +175,13 @@ part 'serializers.g.dart';
   Alert,
   AlertPeriodicity,
   AnalysisStatus,
+  AutoPortfolio,
+  AutoPortfolioAsset,
+  AutoPortfolioChartPeriod,
+  AutoPortfolioChartTick,
+  AutoPortfolioEstimate,
+  AutoPortfolioParams,
+  AutoPortfolioSellRequest,
   BankCardAnalytics,
   BankCardBaseData,
   BankCardBlockingReason,
@@ -216,6 +237,7 @@ part 'serializers.g.dart';
   DefaultStakingCurrencies,
   DeliveryAddress,
   DepositAddress,
+  DurationSpan,
   Error,
   ExportHistory,
   FavoriteCryptoCreateRequest,
@@ -239,6 +261,7 @@ part 'serializers.g.dart';
   HumanTransactionTypes,
   InnerCryptoTransferFeeResult,
   InnerFiatTransferFeeResult,
+  InvestmentStyle,
   JWTToken,
   KYCDocumentStatus,
   KYCFieldStatus,
@@ -251,6 +274,7 @@ part 'serializers.g.dart';
   LimitOrder,
   MainWalletItem,
   MainWalletType,
+  PaymentMethods,
   PayoutWalletAdjustRequest,
   PerformExchangeRequest,
   PerformFiatTransferRequest,
@@ -261,7 +285,11 @@ part 'serializers.g.dart';
   ProfitLossSummary,
   PutLimitOrderRequest,
   QRCodeGenerateCustomStringRequest,
+  RenameAutoPortfolioRequest,
   SingleCryptoBalance,
+  SliderMatrix,
+  SliderMatrixParams,
+  SliderMatrixStyle,
   Staking,
   StakingAdditionalInformation,
   StakingBalance,
@@ -299,12 +327,8 @@ part 'serializers.g.dart';
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ChainImplementation)]),
-        () => ListBuilder<ChainImplementation>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(MainWalletItem)]),
-        () => ListBuilder<MainWalletItem>(),
+        const FullType(BuiltList, [FullType(AutoPortfolioAsset)]),
+        () => ListBuilder<AutoPortfolioAsset>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(CryptoOverviewElement)]),
@@ -315,28 +339,8 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<Country>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(FiatWalletWithPaymentCurrency)]),
-        () => ListBuilder<FiatWalletWithPaymentCurrency>(),
-      )
-      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(CryptoAsset)]),
         () => ListBuilder<CryptoAsset>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(LimitOrder)]),
-        () => ListBuilder<LimitOrder>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Beneficiary)]),
-        () => ListBuilder<Beneficiary>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Currency)]),
-        () => ListBuilder<Currency>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(FiatWalletLight)]),
-        () => ListBuilder<FiatWalletLight>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(ExportHistory)]),
@@ -359,14 +363,6 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<CardView>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(StakingReleases)]),
-        () => ListBuilder<StakingReleases>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Contact)]),
-        () => ListBuilder<Contact>(),
-      )
-      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Alert)]),
         () => ListBuilder<Alert>(),
       )
@@ -379,20 +375,60 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<StakingPeriods>(),
       )
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(WithdrawalAddress)]),
+        () => ListBuilder<WithdrawalAddress>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(AutoPortfolioChartTick)]),
+        () => ListBuilder<AutoPortfolioChartTick>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(CurrencyWithRate)]),
+        () => ListBuilder<CurrencyWithRate>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(ChainImplementation)]),
+        () => ListBuilder<ChainImplementation>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(MainWalletItem)]),
+        () => ListBuilder<MainWalletItem>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(FiatWalletWithPaymentCurrency)]),
+        () => ListBuilder<FiatWalletWithPaymentCurrency>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(LimitOrder)]),
+        () => ListBuilder<LimitOrder>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Beneficiary)]),
+        () => ListBuilder<Beneficiary>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Currency)]),
+        () => ListBuilder<Currency>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(FiatWalletLight)]),
+        () => ListBuilder<FiatWalletLight>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(StakingReleases)]),
+        () => ListBuilder<StakingReleases>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Contact)]),
+        () => ListBuilder<Contact>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(ChartTick)]),
         () => ListBuilder<ChartTick>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(ProfitLoss)]),
         () => ListBuilder<ProfitLoss>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(WithdrawalAddress)]),
-        () => ListBuilder<WithdrawalAddress>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(CurrencyWithRate)]),
-        () => ListBuilder<CurrencyWithRate>(),
       )
       ..add(const DateSerializer())
       ..add(Iso8601DateTimeSerializer()))

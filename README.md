@@ -66,6 +66,13 @@ All URIs are relative to *https://api.thebind.uk/v1*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 [*AuthApi*](doc/AuthApi.md) | [**whoAmI**](doc/AuthApi.md#whoami) | **GET** /auth/whoami/ | Who am I
+[*AutoPortfolioApi*](doc/AutoPortfolioApi.md) | [**estimateAutoPortfolio**](doc/AutoPortfolioApi.md#estimateautoportfolio) | **POST** /autoportfolio/estimate/ | Estimate auto portfolio with given parameters
+[*AutoPortfolioApi*](doc/AutoPortfolioApi.md) | [**getAutoPortfolioChart**](doc/AutoPortfolioApi.md#getautoportfoliochart) | **GET** /autoportfolio/{portfolio_id}/chart/ | Get chart for specific auto portfolio
+[*AutoPortfolioApi*](doc/AutoPortfolioApi.md) | [**getAutoPortfolioSliderMatrix**](doc/AutoPortfolioApi.md#getautoportfolioslidermatrix) | **GET** /autoportfolio/slidermatrix/ | Get calculated slider matrix
+[*AutoPortfolioApi*](doc/AutoPortfolioApi.md) | [**getAutoPortfolioSummary**](doc/AutoPortfolioApi.md#getautoportfoliosummary) | **GET** /autoportfolio/{portfolio_id}/ | Get detailed info about specific auto portfolio
+[*AutoPortfolioApi*](doc/AutoPortfolioApi.md) | [**purchaseAutoPortfolio**](doc/AutoPortfolioApi.md#purchaseautoportfolio) | **POST** /autoportfolio/{portfolio_id}/purchase/ | Purchase pre estimated auto portfolio
+[*AutoPortfolioApi*](doc/AutoPortfolioApi.md) | [**renameAutoPortfolio**](doc/AutoPortfolioApi.md#renameautoportfolio) | **PATCH** /autoportfolio/{portfolio_id}/rename/ | rename auto portfolio
+[*AutoPortfolioApi*](doc/AutoPortfolioApi.md) | [**sellAutoPortfolio**](doc/AutoPortfolioApi.md#sellautoportfolio) | **POST** /autoportfolio/{portfolio_id}/sell/ | sell percentage of auto portfolio assets
 [*BeneficiariesApi*](doc/BeneficiariesApi.md) | [**createBeneficiary**](doc/BeneficiariesApi.md#createbeneficiary) | **POST** /beneficiaries/ | Add new beneficiary
 [*BeneficiariesApi*](doc/BeneficiariesApi.md) | [**deleteBeneficiary**](doc/BeneficiariesApi.md#deletebeneficiary) | **DELETE** /beneficiaries/{beneficiary_id}/ | Delete beneficiary
 [*BeneficiariesApi*](doc/BeneficiariesApi.md) | [**estimateFiatTransfer**](doc/BeneficiariesApi.md#estimatefiattransfer) | **POST** /fiat/transfer/review/ | Preview of fiat transfer
@@ -207,6 +214,13 @@ Class | Method | HTTP request | Description
  - [Alert](doc/Alert.md)
  - [AlertPeriodicity](doc/AlertPeriodicity.md)
  - [AnalysisStatus](doc/AnalysisStatus.md)
+ - [AutoPortfolio](doc/AutoPortfolio.md)
+ - [AutoPortfolioAsset](doc/AutoPortfolioAsset.md)
+ - [AutoPortfolioChartPeriod](doc/AutoPortfolioChartPeriod.md)
+ - [AutoPortfolioChartTick](doc/AutoPortfolioChartTick.md)
+ - [AutoPortfolioEstimate](doc/AutoPortfolioEstimate.md)
+ - [AutoPortfolioParams](doc/AutoPortfolioParams.md)
+ - [AutoPortfolioSellRequest](doc/AutoPortfolioSellRequest.md)
  - [BankCardAnalytics](doc/BankCardAnalytics.md)
  - [BankCardBaseData](doc/BankCardBaseData.md)
  - [BankCardBlockingReason](doc/BankCardBlockingReason.md)
@@ -262,6 +276,7 @@ Class | Method | HTTP request | Description
  - [DefaultStakingCurrencies](doc/DefaultStakingCurrencies.md)
  - [DeliveryAddress](doc/DeliveryAddress.md)
  - [DepositAddress](doc/DepositAddress.md)
+ - [DurationSpan](doc/DurationSpan.md)
  - [Error](doc/Error.md)
  - [ExportHistory](doc/ExportHistory.md)
  - [FavoriteCryptoCreateRequest](doc/FavoriteCryptoCreateRequest.md)
@@ -285,6 +300,7 @@ Class | Method | HTTP request | Description
  - [HumanTransactionTypes](doc/HumanTransactionTypes.md)
  - [InnerCryptoTransferFeeResult](doc/InnerCryptoTransferFeeResult.md)
  - [InnerFiatTransferFeeResult](doc/InnerFiatTransferFeeResult.md)
+ - [InvestmentStyle](doc/InvestmentStyle.md)
  - [JWTToken](doc/JWTToken.md)
  - [KYCDocumentStatus](doc/KYCDocumentStatus.md)
  - [KYCFieldStatus](doc/KYCFieldStatus.md)
@@ -297,6 +313,7 @@ Class | Method | HTTP request | Description
  - [LimitOrder](doc/LimitOrder.md)
  - [MainWalletItem](doc/MainWalletItem.md)
  - [MainWalletType](doc/MainWalletType.md)
+ - [PaymentMethods](doc/PaymentMethods.md)
  - [PayoutWalletAdjustRequest](doc/PayoutWalletAdjustRequest.md)
  - [PerformExchangeRequest](doc/PerformExchangeRequest.md)
  - [PerformFiatTransferRequest](doc/PerformFiatTransferRequest.md)
@@ -307,7 +324,11 @@ Class | Method | HTTP request | Description
  - [ProfitLossSummary](doc/ProfitLossSummary.md)
  - [PutLimitOrderRequest](doc/PutLimitOrderRequest.md)
  - [QRCodeGenerateCustomStringRequest](doc/QRCodeGenerateCustomStringRequest.md)
+ - [RenameAutoPortfolioRequest](doc/RenameAutoPortfolioRequest.md)
  - [SingleCryptoBalance](doc/SingleCryptoBalance.md)
+ - [SliderMatrix](doc/SliderMatrix.md)
+ - [SliderMatrixParams](doc/SliderMatrixParams.md)
+ - [SliderMatrixStyle](doc/SliderMatrixStyle.md)
  - [Staking](doc/Staking.md)
  - [StakingAdditionalInformation](doc/StakingAdditionalInformation.md)
  - [StakingBalance](doc/StakingBalance.md)

@@ -15,6 +15,10 @@ class _$MainWalletItem extends MainWalletItem {
   final String currencyCode;
   @override
   final num? performance;
+  @override
+  final String? name;
+  @override
+  final String? portfolioId;
 
   factory _$MainWalletItem([void Function(MainWalletItemBuilder)? updates]) =>
       (new MainWalletItemBuilder()..update(updates))._build();
@@ -23,7 +27,9 @@ class _$MainWalletItem extends MainWalletItem {
       {required this.walletType,
       required this.balance,
       required this.currencyCode,
-      this.performance})
+      this.performance,
+      this.name,
+      this.portfolioId})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         walletType, r'MainWalletItem', 'walletType');
@@ -48,15 +54,21 @@ class _$MainWalletItem extends MainWalletItem {
         walletType == other.walletType &&
         balance == other.balance &&
         currencyCode == other.currencyCode &&
-        performance == other.performance;
+        performance == other.performance &&
+        name == other.name &&
+        portfolioId == other.portfolioId;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, walletType.hashCode), balance.hashCode),
-            currencyCode.hashCode),
-        performance.hashCode));
+        $jc(
+            $jc(
+                $jc($jc($jc(0, walletType.hashCode), balance.hashCode),
+                    currencyCode.hashCode),
+                performance.hashCode),
+            name.hashCode),
+        portfolioId.hashCode));
   }
 
   @override
@@ -65,7 +77,9 @@ class _$MainWalletItem extends MainWalletItem {
           ..add('walletType', walletType)
           ..add('balance', balance)
           ..add('currencyCode', currencyCode)
-          ..add('performance', performance))
+          ..add('performance', performance)
+          ..add('name', name)
+          ..add('portfolioId', portfolioId))
         .toString();
   }
 }
@@ -90,6 +104,14 @@ class MainWalletItemBuilder
   num? get performance => _$this._performance;
   set performance(num? performance) => _$this._performance = performance;
 
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _portfolioId;
+  String? get portfolioId => _$this._portfolioId;
+  set portfolioId(String? portfolioId) => _$this._portfolioId = portfolioId;
+
   MainWalletItemBuilder() {
     MainWalletItem._defaults(this);
   }
@@ -101,6 +123,8 @@ class MainWalletItemBuilder
       _balance = $v.balance;
       _currencyCode = $v.currencyCode;
       _performance = $v.performance;
+      _name = $v.name;
+      _portfolioId = $v.portfolioId;
       _$v = null;
     }
     return this;
@@ -129,7 +153,9 @@ class MainWalletItemBuilder
                 balance, r'MainWalletItem', 'balance'),
             currencyCode: BuiltValueNullFieldError.checkNotNull(
                 currencyCode, r'MainWalletItem', 'currencyCode'),
-            performance: performance);
+            performance: performance,
+            name: name,
+            portfolioId: portfolioId);
     replace(_$result);
     return _$result;
   }

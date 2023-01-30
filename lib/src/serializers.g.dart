@@ -12,6 +12,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(Alert.serializer)
       ..add(AlertPeriodicity.serializer)
       ..add(AnalysisStatus.serializer)
+      ..add(AutoPortfolio.serializer)
+      ..add(AutoPortfolioAsset.serializer)
+      ..add(AutoPortfolioChartPeriod.serializer)
+      ..add(AutoPortfolioChartTick.serializer)
+      ..add(AutoPortfolioEstimate.serializer)
+      ..add(AutoPortfolioParams.serializer)
+      ..add(AutoPortfolioSellRequest.serializer)
       ..add(BankCardAnalytics.serializer)
       ..add(BankCardBaseData.serializer)
       ..add(BankCardBlockingReason.serializer)
@@ -68,6 +75,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(DefaultStakingCurrencies.serializer)
       ..add(DeliveryAddress.serializer)
       ..add(DepositAddress.serializer)
+      ..add(DurationSpan.serializer)
       ..add(Error.serializer)
       ..add(ExportHistory.serializer)
       ..add(ExportHistoryWalletTypeEnum.serializer)
@@ -92,6 +100,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(HumanTransactionTypes.serializer)
       ..add(InnerCryptoTransferFeeResult.serializer)
       ..add(InnerFiatTransferFeeResult.serializer)
+      ..add(InvestmentStyle.serializer)
       ..add(JWTToken.serializer)
       ..add(KYCDocumentStatus.serializer)
       ..add(KYCFieldStatus.serializer)
@@ -107,6 +116,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(LimitOrderDirectionEnum.serializer)
       ..add(MainWalletItem.serializer)
       ..add(MainWalletType.serializer)
+      ..add(PaymentMethods.serializer)
       ..add(PayoutWalletAdjustRequest.serializer)
       ..add(PerformExchangeRequest.serializer)
       ..add(PerformFiatTransferRequest.serializer)
@@ -117,7 +127,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ProfitLossSummary.serializer)
       ..add(PutLimitOrderRequest.serializer)
       ..add(QRCodeGenerateCustomStringRequest.serializer)
+      ..add(RenameAutoPortfolioRequest.serializer)
       ..add(SingleCryptoBalance.serializer)
+      ..add(SliderMatrix.serializer)
+      ..add(SliderMatrixParams.serializer)
+      ..add(SliderMatrixStyle.serializer)
       ..add(Staking.serializer)
       ..add(StakingAdditionalInformation.serializer)
       ..add(StakingBalance.serializer)
@@ -156,6 +170,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(WithdrawalAddress.serializer)
       ..add(WithdrawalAddressCreationRequest.serializer)
       ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(AutoPortfolioAsset)]),
+          () => new ListBuilder<AutoPortfolioAsset>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(AutoPortfolioAsset)]),
+          () => new ListBuilder<AutoPortfolioAsset>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(BankCardBaseData)]),
           () => new ListBuilder<BankCardBaseData>())
       ..addBuilderFactory(
@@ -179,6 +199,21 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(FiatWalletWithPaymentCurrency)]),
           () => new ListBuilder<FiatWalletWithPaymentCurrency>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(SliderMatrixParams)]),
+          () => new ListBuilder<SliderMatrixParams>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(SliderMatrixParams)]),
+          () => new ListBuilder<SliderMatrixParams>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(SliderMatrixParams)]),
+          () => new ListBuilder<SliderMatrixParams>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(SliderMatrixParams)]),
+          () => new ListBuilder<SliderMatrixParams>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(SliderMatrixParams)]),
+          () => new ListBuilder<SliderMatrixParams>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
