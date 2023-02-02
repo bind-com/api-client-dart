@@ -119,12 +119,12 @@ Class | Method | HTTP request | Description
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**getWithdrawalAddresses**](doc/CryptoWalletApi.md#getwithdrawaladdresses) | **GET** /crypto/withdrawal/whitelisted_addresses/ | Get whitelisted addresses for crypto withdrawal
 [*CryptoWalletApi*](doc/CryptoWalletApi.md) | [**performWithdrawalOfCrypto**](doc/CryptoWalletApi.md#performwithdrawalofcrypto) | **POST** /crypto/withdrawal/perform/ | Register a withdrawal transaction
 [*CurrencyApi*](doc/CurrencyApi.md) | [**createAlert**](doc/CurrencyApi.md#createalert) | **POST** /currencies/alerts/ | Create an alert
-[*CurrencyApi*](doc/CurrencyApi.md) | [**deleteAlert**](doc/CurrencyApi.md#deletealert) | **DELETE** /currencies/alerts/{alert_id} | Delete an alert
+[*CurrencyApi*](doc/CurrencyApi.md) | [**deleteAlert**](doc/CurrencyApi.md#deletealert) | **DELETE** /currencies/alerts/{alert_id}/ | Delete an alert
 [*CurrencyApi*](doc/CurrencyApi.md) | [**getCryptoAsset**](doc/CurrencyApi.md#getcryptoasset) | **GET** /currencies/crypto/{crypto_currency_id} | Crypto currency information with flag favorite or not for user
 [*CurrencyApi*](doc/CurrencyApi.md) | [**listAlerts**](doc/CurrencyApi.md#listalerts) | **GET** /currencies/alerts/ | List of alerts
 [*CurrencyApi*](doc/CurrencyApi.md) | [**listCryptoCurrencies**](doc/CurrencyApi.md#listcryptocurrencies) | **GET** /currencies/crypto/ | List of Crypto Currencies
 [*CurrencyApi*](doc/CurrencyApi.md) | [**listCurrencies**](doc/CurrencyApi.md#listcurrencies) | **GET** /currencies/ | List of Currencies available at Bind
-[*CurrencyApi*](doc/CurrencyApi.md) | [**updateAlert**](doc/CurrencyApi.md#updatealert) | **PATCH** /currencies/alerts/{alert_id} | Update an alert
+[*CurrencyApi*](doc/CurrencyApi.md) | [**updateAlert**](doc/CurrencyApi.md#updatealert) | **PATCH** /currencies/alerts/{alert_id}/ | Update an alert
 [*ExchangeApi*](doc/ExchangeApi.md) | [**cancelLimitOrder**](doc/ExchangeApi.md#cancellimitorder) | **POST** /crypto/exchange/limit_orders/{order_id}/cancel | Cancel given limit order
 [*ExchangeApi*](doc/ExchangeApi.md) | [**estimateCryptoExchange**](doc/ExchangeApi.md#estimatecryptoexchange) | **POST** /crypto/exchange/estimate/ | Estimate exchange of assets. One of assets has to be a cryptocurrency
 [*ExchangeApi*](doc/ExchangeApi.md) | [**getCryptoExchangeRate**](doc/ExchangeApi.md#getcryptoexchangerate) | **GET** /crypto/exchange/rate/{from}/{to}/ | Exchange rate between two given assets (at least one of them is crypto)

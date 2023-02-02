@@ -10,12 +10,12 @@ All URIs are relative to *https://api.thebind.uk/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createAlert**](CurrencyApi.md#createalert) | **POST** /currencies/alerts/ | Create an alert
-[**deleteAlert**](CurrencyApi.md#deletealert) | **DELETE** /currencies/alerts/{alert_id} | Delete an alert
+[**deleteAlert**](CurrencyApi.md#deletealert) | **DELETE** /currencies/alerts/{alert_id}/ | Delete an alert
 [**getCryptoAsset**](CurrencyApi.md#getcryptoasset) | **GET** /currencies/crypto/{crypto_currency_id} | Crypto currency information with flag favorite or not for user
 [**listAlerts**](CurrencyApi.md#listalerts) | **GET** /currencies/alerts/ | List of alerts
 [**listCryptoCurrencies**](CurrencyApi.md#listcryptocurrencies) | **GET** /currencies/crypto/ | List of Crypto Currencies
 [**listCurrencies**](CurrencyApi.md#listcurrencies) | **GET** /currencies/ | List of Currencies available at Bind
-[**updateAlert**](CurrencyApi.md#updatealert) | **PATCH** /currencies/alerts/{alert_id} | Update an alert
+[**updateAlert**](CurrencyApi.md#updatealert) | **PATCH** /currencies/alerts/{alert_id}/ | Update an alert
 
 
 # **createAlert**

@@ -121,7 +121,7 @@ class CurrencyApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/currencies/alerts/{alert_id}'.replaceAll('{' r'alert_id' '}', alertId.toString());
+    final _path = r'/currencies/alerts/{alert_id}/'.replaceAll('{' r'alert_id' '}', alertId.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -510,7 +510,7 @@ class CurrencyApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/currencies/alerts/{alert_id}'.replaceAll('{' r'alert_id' '}', alertId.toString());
+    final _path = r'/currencies/alerts/{alert_id}/'.replaceAll('{' r'alert_id' '}', alertId.toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
