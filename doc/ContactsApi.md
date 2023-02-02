@@ -160,7 +160,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createInnerFiatTransfer**
-> createInnerFiatTransfer(getInnerFiatTransferFeeRequest)
+> createInnerFiatTransfer(fiatTransfer)
 
 Send fiat inside BIND
 
@@ -174,10 +174,10 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getContactsApi();
-final GetInnerFiatTransferFeeRequest getInnerFiatTransferFeeRequest = ; // GetInnerFiatTransferFeeRequest | 
+final FiatTransfer fiatTransfer = ; // FiatTransfer | 
 
 try {
-    api.createInnerFiatTransfer(getInnerFiatTransferFeeRequest);
+    api.createInnerFiatTransfer(fiatTransfer);
 } catch on DioError (e) {
     print('Exception when calling ContactsApi->createInnerFiatTransfer: $e\n');
 }
@@ -187,7 +187,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **getInnerFiatTransferFeeRequest** | [**GetInnerFiatTransferFeeRequest**](GetInnerFiatTransferFeeRequest.md)|  | [optional] 
+ **fiatTransfer** | [**FiatTransfer**](FiatTransfer.md)|  | [optional] 
 
 ### Return type
 
@@ -297,7 +297,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getInnerFiatTransferFee**
-> InnerFiatTransferFeeResult getInnerFiatTransferFee(getInnerFiatTransferFeeRequest)
+> InnerFiatTransferFeeResult getInnerFiatTransferFee(fiatTransfer)
 
 
 
@@ -311,10 +311,10 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getContactsApi();
-final GetInnerFiatTransferFeeRequest getInnerFiatTransferFeeRequest = ; // GetInnerFiatTransferFeeRequest | 
+final FiatTransfer fiatTransfer = ; // FiatTransfer | 
 
 try {
-    final response = api.getInnerFiatTransferFee(getInnerFiatTransferFeeRequest);
+    final response = api.getInnerFiatTransferFee(fiatTransfer);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling ContactsApi->getInnerFiatTransferFee: $e\n');
@@ -325,7 +325,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **getInnerFiatTransferFeeRequest** | [**GetInnerFiatTransferFeeRequest**](GetInnerFiatTransferFeeRequest.md)|  | [optional] 
+ **fiatTransfer** | [**FiatTransfer**](FiatTransfer.md)|  | [optional] 
 
 ### Return type
 

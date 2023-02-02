@@ -199,6 +199,7 @@ Class | Method | HTTP request | Description
 [*UserApi*](doc/UserApi.md) | [**checkPasscode**](doc/UserApi.md#checkpasscode) | **POST** /users/check/passcode/ | Check validity of user passcode
 [*UserApi*](doc/UserApi.md) | [**createKYCFile**](doc/UserApi.md#createkycfile) | **POST** /user/kyc/file/ | CreateKYCFile
 [*UserApi*](doc/UserApi.md) | [**createRegistrationToken**](doc/UserApi.md#createregistrationtoken) | **POST** /users/firebase/token/ | Create registration token
+[*UserApi*](doc/UserApi.md) | [**deleteUserPhoto**](doc/UserApi.md#deleteuserphoto) | **DELETE** /users/photo/delete/ | Delete user photo
 [*UserApi*](doc/UserApi.md) | [**getKYCFile**](doc/UserApi.md#getkycfile) | **GET** /user/kyc/file/ | GetKYCFile
 [*UserApi*](doc/UserApi.md) | [**getUserPaymentCurrency**](doc/UserApi.md#getuserpaymentcurrency) | **GET** /users/payment_currency/ | Get user payment currency
 [*UserApi*](doc/UserApi.md) | [**qRCodeGenerateCustomString**](doc/UserApi.md#qrcodegeneratecustomstring) | **POST** /users/generate/custom_qr_code/ | Generate QR code with custom string
@@ -282,6 +283,7 @@ Class | Method | HTTP request | Description
  - [FavoriteCryptoCreateRequest](doc/FavoriteCryptoCreateRequest.md)
  - [FearGreed](doc/FearGreed.md)
  - [FiatAccount](doc/FiatAccount.md)
+ - [FiatTransfer](doc/FiatTransfer.md)
  - [FiatTransferEstimate](doc/FiatTransferEstimate.md)
  - [FiatWallet](doc/FiatWallet.md)
  - [FiatWalletAllOf](doc/FiatWalletAllOf.md)
@@ -294,7 +296,6 @@ Class | Method | HTTP request | Description
  - [GetCardBenefits200Response](doc/GetCardBenefits200Response.md)
  - [GetCardLimits200Response](doc/GetCardLimits200Response.md)
  - [GetInnerCryptoTransferFeeRequest](doc/GetInnerCryptoTransferFeeRequest.md)
- - [GetInnerFiatTransferFeeRequest](doc/GetInnerFiatTransferFeeRequest.md)
  - [GetStakeMinNumber200Response](doc/GetStakeMinNumber200Response.md)
  - [GetStakingTimer200Response](doc/GetStakingTimer200Response.md)
  - [HumanTransactionTypes](doc/HumanTransactionTypes.md)

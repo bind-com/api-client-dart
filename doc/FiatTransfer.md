@@ -1,4 +1,4 @@
-# bind_api.model.GetInnerFiatTransferFeeRequest
+# bind_api.model.FiatTransfer
 
 ## Load the model package
 ```dart

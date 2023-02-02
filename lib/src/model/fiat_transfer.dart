@@ -5,9 +5,9 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'get_inner_fiat_transfer_fee_request.g.dart';
+part 'fiat_transfer.g.dart';
 
-/// GetInnerFiatTransferFeeRequest
+/// FiatTransfer
 ///
 /// Properties:
 /// * [userId] 
@@ -16,7 +16,7 @@ part 'get_inner_fiat_transfer_fee_request.g.dart';
 /// * [receiverCurrency] 
 /// * [amount] 
 /// * [note] 
-abstract class GetInnerFiatTransferFeeRequest implements Built<GetInnerFiatTransferFeeRequest, GetInnerFiatTransferFeeRequestBuilder> {
+abstract class FiatTransfer implements Built<FiatTransfer, FiatTransferBuilder> {
     @BuiltValueField(wireName: r'user_id')
     String? get userId;
 
@@ -36,26 +36,26 @@ abstract class GetInnerFiatTransferFeeRequest implements Built<GetInnerFiatTrans
     @BuiltValueField(wireName: r'note')
     String? get note;
 
-    GetInnerFiatTransferFeeRequest._();
+    FiatTransfer._();
 
     @BuiltValueHook(initializeBuilder: true)
-    static void _defaults(GetInnerFiatTransferFeeRequestBuilder b) => b;
+    static void _defaults(FiatTransferBuilder b) => b;
 
-    factory GetInnerFiatTransferFeeRequest([void updates(GetInnerFiatTransferFeeRequestBuilder b)]) = _$GetInnerFiatTransferFeeRequest;
+    factory FiatTransfer([void updates(FiatTransferBuilder b)]) = _$FiatTransfer;
 
     @BuiltValueSerializer(custom: true)
-    static Serializer<GetInnerFiatTransferFeeRequest> get serializer => _$GetInnerFiatTransferFeeRequestSerializer();
+    static Serializer<FiatTransfer> get serializer => _$FiatTransferSerializer();
 }
 
-class _$GetInnerFiatTransferFeeRequestSerializer implements StructuredSerializer<GetInnerFiatTransferFeeRequest> {
+class _$FiatTransferSerializer implements StructuredSerializer<FiatTransfer> {
     @override
-    final Iterable<Type> types = const [GetInnerFiatTransferFeeRequest, _$GetInnerFiatTransferFeeRequest];
+    final Iterable<Type> types = const [FiatTransfer, _$FiatTransfer];
 
     @override
-    final String wireName = r'GetInnerFiatTransferFeeRequest';
+    final String wireName = r'FiatTransfer';
 
     @override
-    Iterable<Object?> serialize(Serializers serializers, GetInnerFiatTransferFeeRequest object,
+    Iterable<Object?> serialize(Serializers serializers, FiatTransfer object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
         if (object.userId != null) {
@@ -98,9 +98,9 @@ class _$GetInnerFiatTransferFeeRequestSerializer implements StructuredSerializer
     }
 
     @override
-    GetInnerFiatTransferFeeRequest deserialize(Serializers serializers, Iterable<Object?> serialized,
+    FiatTransfer deserialize(Serializers serializers, Iterable<Object?> serialized,
         {FullType specifiedType = FullType.unspecified}) {
-        final result = GetInnerFiatTransferFeeRequestBuilder();
+        final result = FiatTransferBuilder();
 
         final iterator = serialized.iterator;
         while (iterator.moveNext()) {

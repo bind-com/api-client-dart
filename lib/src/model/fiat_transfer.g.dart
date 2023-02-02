@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'get_inner_fiat_transfer_fee_request.dart';
+part of 'fiat_transfer.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$GetInnerFiatTransferFeeRequest extends GetInnerFiatTransferFeeRequest {
+class _$FiatTransfer extends FiatTransfer {
   @override
   final String? userId;
   @override
@@ -20,11 +20,10 @@ class _$GetInnerFiatTransferFeeRequest extends GetInnerFiatTransferFeeRequest {
   @override
   final String? note;
 
-  factory _$GetInnerFiatTransferFeeRequest(
-          [void Function(GetInnerFiatTransferFeeRequestBuilder)? updates]) =>
-      (new GetInnerFiatTransferFeeRequestBuilder()..update(updates))._build();
+  factory _$FiatTransfer([void Function(FiatTransferBuilder)? updates]) =>
+      (new FiatTransferBuilder()..update(updates))._build();
 
-  _$GetInnerFiatTransferFeeRequest._(
+  _$FiatTransfer._(
       {this.userId,
       this.contactId,
       this.fiatAccount,
@@ -34,18 +33,16 @@ class _$GetInnerFiatTransferFeeRequest extends GetInnerFiatTransferFeeRequest {
       : super._();
 
   @override
-  GetInnerFiatTransferFeeRequest rebuild(
-          void Function(GetInnerFiatTransferFeeRequestBuilder) updates) =>
+  FiatTransfer rebuild(void Function(FiatTransferBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GetInnerFiatTransferFeeRequestBuilder toBuilder() =>
-      new GetInnerFiatTransferFeeRequestBuilder()..replace(this);
+  FiatTransferBuilder toBuilder() => new FiatTransferBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GetInnerFiatTransferFeeRequest &&
+    return other is FiatTransfer &&
         userId == other.userId &&
         contactId == other.contactId &&
         fiatAccount == other.fiatAccount &&
@@ -68,7 +65,7 @@ class _$GetInnerFiatTransferFeeRequest extends GetInnerFiatTransferFeeRequest {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'GetInnerFiatTransferFeeRequest')
+    return (newBuiltValueToStringHelper(r'FiatTransfer')
           ..add('userId', userId)
           ..add('contactId', contactId)
           ..add('fiatAccount', fiatAccount)
@@ -79,11 +76,9 @@ class _$GetInnerFiatTransferFeeRequest extends GetInnerFiatTransferFeeRequest {
   }
 }
 
-class GetInnerFiatTransferFeeRequestBuilder
-    implements
-        Builder<GetInnerFiatTransferFeeRequest,
-            GetInnerFiatTransferFeeRequestBuilder> {
-  _$GetInnerFiatTransferFeeRequest? _$v;
+class FiatTransferBuilder
+    implements Builder<FiatTransfer, FiatTransferBuilder> {
+  _$FiatTransfer? _$v;
 
   String? _userId;
   String? get userId => _$this._userId;
@@ -110,11 +105,11 @@ class GetInnerFiatTransferFeeRequestBuilder
   String? get note => _$this._note;
   set note(String? note) => _$this._note = note;
 
-  GetInnerFiatTransferFeeRequestBuilder() {
-    GetInnerFiatTransferFeeRequest._defaults(this);
+  FiatTransferBuilder() {
+    FiatTransfer._defaults(this);
   }
 
-  GetInnerFiatTransferFeeRequestBuilder get _$this {
+  FiatTransferBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _userId = $v.userId;
@@ -129,22 +124,22 @@ class GetInnerFiatTransferFeeRequestBuilder
   }
 
   @override
-  void replace(GetInnerFiatTransferFeeRequest other) {
+  void replace(FiatTransfer other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GetInnerFiatTransferFeeRequest;
+    _$v = other as _$FiatTransfer;
   }
 
   @override
-  void update(void Function(GetInnerFiatTransferFeeRequestBuilder)? updates) {
+  void update(void Function(FiatTransferBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GetInnerFiatTransferFeeRequest build() => _build();
+  FiatTransfer build() => _build();
 
-  _$GetInnerFiatTransferFeeRequest _build() {
+  _$FiatTransfer _build() {
     final _$result = _$v ??
-        new _$GetInnerFiatTransferFeeRequest._(
+        new _$FiatTransfer._(
             userId: userId,
             contactId: contactId,
             fiatAccount: fiatAccount,

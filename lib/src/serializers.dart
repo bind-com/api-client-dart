@@ -85,6 +85,7 @@ import 'package:bind_api/src/model/export_history.dart';
 import 'package:bind_api/src/model/favorite_crypto_create_request.dart';
 import 'package:bind_api/src/model/fear_greed.dart';
 import 'package:bind_api/src/model/fiat_account.dart';
+import 'package:bind_api/src/model/fiat_transfer.dart';
 import 'package:bind_api/src/model/fiat_transfer_estimate.dart';
 import 'package:bind_api/src/model/fiat_wallet.dart';
 import 'package:bind_api/src/model/fiat_wallet_all_of.dart';
@@ -97,7 +98,6 @@ import 'package:bind_api/src/model/get_bank_cards_list200_response.dart';
 import 'package:bind_api/src/model/get_card_benefits200_response.dart';
 import 'package:bind_api/src/model/get_card_limits200_response.dart';
 import 'package:bind_api/src/model/get_inner_crypto_transfer_fee_request.dart';
-import 'package:bind_api/src/model/get_inner_fiat_transfer_fee_request.dart';
 import 'package:bind_api/src/model/get_stake_min_number200_response.dart';
 import 'package:bind_api/src/model/get_staking_timer200_response.dart';
 import 'package:bind_api/src/model/human_transaction_types.dart';
@@ -243,6 +243,7 @@ part 'serializers.g.dart';
   FavoriteCryptoCreateRequest,
   FearGreed,
   FiatAccount,
+  FiatTransfer,
   FiatTransferEstimate,
   FiatWallet,
   FiatWalletAllOf,
@@ -255,7 +256,6 @@ part 'serializers.g.dart';
   GetCardBenefits200Response,
   GetCardLimits200Response,
   GetInnerCryptoTransferFeeRequest,
-  GetInnerFiatTransferFeeRequest,
   GetStakeMinNumber200Response,
   GetStakingTimer200Response,
   HumanTransactionTypes,

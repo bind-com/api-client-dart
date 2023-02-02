@@ -13,7 +13,7 @@ import 'package:bind_api/src/model/add_contact_by_user_request.dart';
 import 'package:bind_api/src/model/contact.dart';
 import 'package:bind_api/src/model/create_inner_fiat_request_request.dart';
 import 'package:bind_api/src/model/error.dart';
-import 'package:bind_api/src/model/get_inner_fiat_transfer_fee_request.dart';
+import 'package:bind_api/src/model/fiat_transfer.dart';
 import 'package:bind_api/src/model/inner_fiat_transfer_fee_result.dart';
 import 'package:bind_api/src/model/jwt_token.dart';
 import 'package:bind_api/src/model/sync_contacts_request.dart';
@@ -280,7 +280,7 @@ class ContactsApi {
   /// Send fiat inside BIND
   ///
   /// Parameters:
-  /// * [getInnerFiatTransferFeeRequest] 
+  /// * [fiatTransfer] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -291,7 +291,7 @@ class ContactsApi {
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> createInnerFiatTransfer({ 
-    GetInnerFiatTransferFeeRequest? getInnerFiatTransferFeeRequest,
+    FiatTransfer? fiatTransfer,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -322,8 +322,8 @@ class ContactsApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(GetInnerFiatTransferFeeRequest);
-      _bodyData = getInnerFiatTransferFeeRequest == null ? null : _serializers.serialize(getInnerFiatTransferFeeRequest, specifiedType: _type);
+      const _type = FullType(FiatTransfer);
+      _bodyData = fiatTransfer == null ? null : _serializers.serialize(fiatTransfer, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioError(
@@ -525,7 +525,7 @@ class ContactsApi {
   /// Get fee for fiat transfer
   ///
   /// Parameters:
-  /// * [getInnerFiatTransferFeeRequest] 
+  /// * [fiatTransfer] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -536,7 +536,7 @@ class ContactsApi {
   /// Returns a [Future] containing a [Response] with a [InnerFiatTransferFeeResult] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<InnerFiatTransferFeeResult>> getInnerFiatTransferFee({ 
-    GetInnerFiatTransferFeeRequest? getInnerFiatTransferFeeRequest,
+    FiatTransfer? fiatTransfer,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -567,8 +567,8 @@ class ContactsApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(GetInnerFiatTransferFeeRequest);
-      _bodyData = getInnerFiatTransferFeeRequest == null ? null : _serializers.serialize(getInnerFiatTransferFeeRequest, specifiedType: _type);
+      const _type = FullType(FiatTransfer);
+      _bodyData = fiatTransfer == null ? null : _serializers.serialize(fiatTransfer, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioError(

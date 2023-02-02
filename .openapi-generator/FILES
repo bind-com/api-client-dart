@@ -82,6 +82,7 @@ doc/ExportHistory.md
 doc/FavoriteCryptoCreateRequest.md
 doc/FearGreed.md
 doc/FiatAccount.md
+doc/FiatTransfer.md
 doc/FiatTransferEstimate.md
 doc/FiatWallet.md
 doc/FiatWalletAllOf.md
@@ -96,7 +97,6 @@ doc/GetBankCardsList200Response.md
 doc/GetCardBenefits200Response.md
 doc/GetCardLimits200Response.md
 doc/GetInnerCryptoTransferFeeRequest.md
-doc/GetInnerFiatTransferFeeRequest.md
 doc/GetStakeMinNumber200Response.md
 doc/GetStakingTimer200Response.md
 doc/HumanTransactionTypes.md
@@ -268,6 +268,7 @@ lib/src/model/export_history.dart
 lib/src/model/favorite_crypto_create_request.dart
 lib/src/model/fear_greed.dart
 lib/src/model/fiat_account.dart
+lib/src/model/fiat_transfer.dart
 lib/src/model/fiat_transfer_estimate.dart
 lib/src/model/fiat_wallet.dart
 lib/src/model/fiat_wallet_all_of.dart
@@ -280,7 +281,6 @@ lib/src/model/get_bank_cards_list200_response.dart
 lib/src/model/get_card_benefits200_response.dart
 lib/src/model/get_card_limits200_response.dart
 lib/src/model/get_inner_crypto_transfer_fee_request.dart
-lib/src/model/get_inner_fiat_transfer_fee_request.dart
 lib/src/model/get_stake_min_number200_response.dart
 lib/src/model/get_staking_timer200_response.dart
 lib/src/model/human_transaction_types.dart
@@ -351,18 +351,4 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/auto_portfolio_api_test.dart
-test/auto_portfolio_asset_test.dart
-test/auto_portfolio_chart_period_test.dart
-test/auto_portfolio_chart_tick_test.dart
-test/auto_portfolio_estimate_test.dart
-test/auto_portfolio_params_test.dart
-test/auto_portfolio_sell_request_test.dart
-test/auto_portfolio_test.dart
-test/duration_span_test.dart
-test/investment_style_test.dart
-test/payment_methods_test.dart
-test/rename_auto_portfolio_request_test.dart
-test/slider_matrix_params_test.dart
-test/slider_matrix_style_test.dart
-test/slider_matrix_test.dart
+test/fiat_transfer_test.dart
