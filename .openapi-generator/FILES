@@ -136,6 +136,7 @@ doc/Staking.md
 doc/StakingAdditionalInformation.md
 doc/StakingApi.md
 doc/StakingBalance.md
+doc/StakingChartTick.md
 doc/StakingEstimate.md
 doc/StakingInformation.md
 doc/StakingPerformRequest.md
@@ -318,6 +319,7 @@ lib/src/model/slider_matrix_style.dart
 lib/src/model/staking.dart
 lib/src/model/staking_additional_information.dart
 lib/src/model/staking_balance.dart
+lib/src/model/staking_chart_tick.dart
 lib/src/model/staking_estimate.dart
 lib/src/model/staking_information.dart
 lib/src/model/staking_perform_request.dart
@@ -351,3 +353,4 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/staking_chart_tick_test.dart

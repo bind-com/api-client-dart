@@ -311,7 +311,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getStakingMainPoolChartLine**
-> BuiltList<ChartTick> getStakingMainPoolChartLine(interval, start, end, pageSize)
+> BuiltList<StakingChartTick> getStakingMainPoolChartLine(interval, start, end, pageSize)
 
 List line ticks of staking main pool
 
@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;ChartTick&gt;**](ChartTick.md)
+[**BuiltList&lt;StakingChartTick&gt;**](StakingChartTick.md)
 
 ### Authorization
 

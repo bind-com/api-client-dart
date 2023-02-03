@@ -148,6 +148,7 @@ export 'package:bind_api/src/model/slider_matrix_style.dart';
 export 'package:bind_api/src/model/staking.dart';
 export 'package:bind_api/src/model/staking_additional_information.dart';
 export 'package:bind_api/src/model/staking_balance.dart';
+export 'package:bind_api/src/model/staking_chart_tick.dart';
 export 'package:bind_api/src/model/staking_estimate.dart';
 export 'package:bind_api/src/model/staking_information.dart';
 export 'package:bind_api/src/model/staking_perform_request.dart';

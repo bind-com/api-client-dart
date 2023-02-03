@@ -333,6 +333,7 @@ Class | Method | HTTP request | Description
  - [Staking](doc/Staking.md)
  - [StakingAdditionalInformation](doc/StakingAdditionalInformation.md)
  - [StakingBalance](doc/StakingBalance.md)
+ - [StakingChartTick](doc/StakingChartTick.md)
  - [StakingEstimate](doc/StakingEstimate.md)
  - [StakingInformation](doc/StakingInformation.md)
  - [StakingPerformRequest](doc/StakingPerformRequest.md)

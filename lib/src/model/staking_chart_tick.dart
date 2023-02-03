@@ -5,56 +5,46 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'chart_tick.g.dart';
+part 'staking_chart_tick.g.dart';
 
-/// ChartTick
+/// StakingChartTick
 ///
 /// Properties:
 /// * [value] 
-/// * [btcPrice] 
 /// * [timestamp] 
-abstract class ChartTick implements Built<ChartTick, ChartTickBuilder> {
+abstract class StakingChartTick implements Built<StakingChartTick, StakingChartTickBuilder> {
     @BuiltValueField(wireName: r'value')
     num? get value;
-
-    @BuiltValueField(wireName: r'btc_price')
-    num? get btcPrice;
 
     @BuiltValueField(wireName: r'timestamp')
     DateTime? get timestamp;
 
-    ChartTick._();
+    StakingChartTick._();
 
     @BuiltValueHook(initializeBuilder: true)
-    static void _defaults(ChartTickBuilder b) => b;
+    static void _defaults(StakingChartTickBuilder b) => b;
 
-    factory ChartTick([void updates(ChartTickBuilder b)]) = _$ChartTick;
+    factory StakingChartTick([void updates(StakingChartTickBuilder b)]) = _$StakingChartTick;
 
     @BuiltValueSerializer(custom: true)
-    static Serializer<ChartTick> get serializer => _$ChartTickSerializer();
+    static Serializer<StakingChartTick> get serializer => _$StakingChartTickSerializer();
 }
 
-class _$ChartTickSerializer implements StructuredSerializer<ChartTick> {
+class _$StakingChartTickSerializer implements StructuredSerializer<StakingChartTick> {
     @override
-    final Iterable<Type> types = const [ChartTick, _$ChartTick];
+    final Iterable<Type> types = const [StakingChartTick, _$StakingChartTick];
 
     @override
-    final String wireName = r'ChartTick';
+    final String wireName = r'StakingChartTick';
 
     @override
-    Iterable<Object?> serialize(Serializers serializers, ChartTick object,
+    Iterable<Object?> serialize(Serializers serializers, StakingChartTick object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
         if (object.value != null) {
             result
                 ..add(r'value')
                 ..add(serializers.serialize(object.value,
-                    specifiedType: const FullType(num)));
-        }
-        if (object.btcPrice != null) {
-            result
-                ..add(r'btc_price')
-                ..add(serializers.serialize(object.btcPrice,
                     specifiedType: const FullType(num)));
         }
         if (object.timestamp != null) {
@@ -67,9 +57,9 @@ class _$ChartTickSerializer implements StructuredSerializer<ChartTick> {
     }
 
     @override
-    ChartTick deserialize(Serializers serializers, Iterable<Object?> serialized,
+    StakingChartTick deserialize(Serializers serializers, Iterable<Object?> serialized,
         {FullType specifiedType = FullType.unspecified}) {
-        final result = ChartTickBuilder();
+        final result = StakingChartTickBuilder();
 
         final iterator = serialized.iterator;
         while (iterator.moveNext()) {
@@ -82,11 +72,6 @@ class _$ChartTickSerializer implements StructuredSerializer<ChartTick> {
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(num)) as num;
                     result.value = valueDes;
-                    break;
-                case r'btc_price':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
-                    result.btcPrice = valueDes;
                     break;
                 case r'timestamp':
                     final valueDes = serializers.deserialize(value,

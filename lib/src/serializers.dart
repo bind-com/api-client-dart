@@ -135,6 +135,7 @@ import 'package:bind_api/src/model/slider_matrix_style.dart';
 import 'package:bind_api/src/model/staking.dart';
 import 'package:bind_api/src/model/staking_additional_information.dart';
 import 'package:bind_api/src/model/staking_balance.dart';
+import 'package:bind_api/src/model/staking_chart_tick.dart';
 import 'package:bind_api/src/model/staking_estimate.dart';
 import 'package:bind_api/src/model/staking_information.dart';
 import 'package:bind_api/src/model/staking_perform_request.dart';
@@ -293,6 +294,7 @@ part 'serializers.g.dart';
   Staking,
   StakingAdditionalInformation,
   StakingBalance,
+  StakingChartTick,
   StakingEstimate,
   StakingInformation,
   StakingPerformRequest,
@@ -429,6 +431,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(ProfitLoss)]),
         () => ListBuilder<ProfitLoss>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(StakingChartTick)]),
+        () => ListBuilder<StakingChartTick>(),
       )
       ..add(const DateSerializer())
       ..add(Iso8601DateTimeSerializer()))
