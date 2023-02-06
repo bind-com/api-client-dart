@@ -23,7 +23,7 @@ abstract class CreateAlertRequest implements Built<CreateAlertRequest, CreateAle
 
     @BuiltValueField(wireName: r'periodicity')
     AlertPeriodicity? get periodicity;
-    // enum periodicityEnum {  one_time,  once_a_day,  repeatedly,  };
+    // enum periodicityEnum {  ONE_TIME,  ONCE_A_DAY,  REPEATEDLY,  };
 
     CreateAlertRequest._();
 

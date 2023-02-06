@@ -36,7 +36,7 @@ abstract class Alert implements Built<Alert, AlertBuilder> {
 
     @BuiltValueField(wireName: r'periodicity')
     AlertPeriodicity? get periodicity;
-    // enum periodicityEnum {  one_time,  once_a_day,  repeatedly,  };
+    // enum periodicityEnum {  ONE_TIME,  ONCE_A_DAY,  REPEATEDLY,  };
 
     @BuiltValueField(wireName: r'price')
     num? get price;

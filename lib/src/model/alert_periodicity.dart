@@ -10,12 +10,12 @@ part 'alert_periodicity.g.dart';
 
 class AlertPeriodicity extends EnumClass {
 
-  @BuiltValueEnumConst(wireName: r'one_time')
-  static const AlertPeriodicity oneTime = _$oneTime;
-  @BuiltValueEnumConst(wireName: r'once_a_day')
-  static const AlertPeriodicity onceADay = _$onceADay;
-  @BuiltValueEnumConst(wireName: r'repeatedly')
-  static const AlertPeriodicity repeatedly = _$repeatedly;
+  @BuiltValueEnumConst(wireName: r'ONE_TIME')
+  static const AlertPeriodicity ONE_TIME = _$ONE_TIME;
+  @BuiltValueEnumConst(wireName: r'ONCE_A_DAY')
+  static const AlertPeriodicity ONCE_A_DAY = _$ONCE_A_DAY;
+  @BuiltValueEnumConst(wireName: r'REPEATEDLY')
+  static const AlertPeriodicity REPEATEDLY = _$REPEATEDLY;
 
   static Serializer<AlertPeriodicity> get serializer => _$alertPeriodicitySerializer;
 

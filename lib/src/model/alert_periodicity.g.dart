@@ -6,18 +6,18 @@ part of 'alert_periodicity.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const AlertPeriodicity _$oneTime = const AlertPeriodicity._('oneTime');
-const AlertPeriodicity _$onceADay = const AlertPeriodicity._('onceADay');
-const AlertPeriodicity _$repeatedly = const AlertPeriodicity._('repeatedly');
+const AlertPeriodicity _$ONE_TIME = const AlertPeriodicity._('ONE_TIME');
+const AlertPeriodicity _$ONCE_A_DAY = const AlertPeriodicity._('ONCE_A_DAY');
+const AlertPeriodicity _$REPEATEDLY = const AlertPeriodicity._('REPEATEDLY');
 
 AlertPeriodicity _$valueOf(String name) {
   switch (name) {
-    case 'oneTime':
-      return _$oneTime;
-    case 'onceADay':
-      return _$onceADay;
-    case 'repeatedly':
-      return _$repeatedly;
+    case 'ONE_TIME':
+      return _$ONE_TIME;
+    case 'ONCE_A_DAY':
+      return _$ONCE_A_DAY;
+    case 'REPEATEDLY':
+      return _$REPEATEDLY;
     default:
       throw new ArgumentError(name);
   }
@@ -25,16 +25,16 @@ AlertPeriodicity _$valueOf(String name) {
 
 final BuiltSet<AlertPeriodicity> _$values =
     new BuiltSet<AlertPeriodicity>(const <AlertPeriodicity>[
-  _$oneTime,
-  _$onceADay,
-  _$repeatedly,
+  _$ONE_TIME,
+  _$ONCE_A_DAY,
+  _$REPEATEDLY,
 ]);
 
 class _$AlertPeriodicityMeta {
   const _$AlertPeriodicityMeta();
-  AlertPeriodicity get oneTime => _$oneTime;
-  AlertPeriodicity get onceADay => _$onceADay;
-  AlertPeriodicity get repeatedly => _$repeatedly;
+  AlertPeriodicity get ONE_TIME => _$ONE_TIME;
+  AlertPeriodicity get ONCE_A_DAY => _$ONCE_A_DAY;
+  AlertPeriodicity get REPEATEDLY => _$REPEATEDLY;
   AlertPeriodicity valueOf(String name) => _$valueOf(name);
   BuiltSet<AlertPeriodicity> get values => _$values;
 }
@@ -50,14 +50,14 @@ Serializer<AlertPeriodicity> _$alertPeriodicitySerializer =
 class _$AlertPeriodicitySerializer
     implements PrimitiveSerializer<AlertPeriodicity> {
   static const Map<String, Object> _toWire = const <String, Object>{
-    'oneTime': 'one_time',
-    'onceADay': 'once_a_day',
-    'repeatedly': 'repeatedly',
+    'ONE_TIME': 'ONE_TIME',
+    'ONCE_A_DAY': 'ONCE_A_DAY',
+    'REPEATEDLY': 'REPEATEDLY',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
-    'one_time': 'oneTime',
-    'once_a_day': 'onceADay',
-    'repeatedly': 'repeatedly',
+    'ONE_TIME': 'ONE_TIME',
+    'ONCE_A_DAY': 'ONCE_A_DAY',
+    'REPEATEDLY': 'REPEATEDLY',
   };
 
   @override

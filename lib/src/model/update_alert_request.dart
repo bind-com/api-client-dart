@@ -20,7 +20,7 @@ abstract class UpdateAlertRequest implements Built<UpdateAlertRequest, UpdateAle
 
     @BuiltValueField(wireName: r'periodicity')
     AlertPeriodicity? get periodicity;
-    // enum periodicityEnum {  one_time,  once_a_day,  repeatedly,  };
+    // enum periodicityEnum {  ONE_TIME,  ONCE_A_DAY,  REPEATEDLY,  };
 
     @BuiltValueField(wireName: r'active')
     bool? get active;
