@@ -43,6 +43,7 @@ doc/CreateAlertRequest.md
 doc/CreateBankCardRequest.md
 doc/CreateBeneficiaryRequest.md
 doc/CreateFiatWalletRequest.md
+doc/CreateInnerFiatRequest200Response.md
 doc/CreateInnerFiatRequestRequest.md
 doc/CreateRegistrationTokenRequest.md
 doc/CryptoAccount.md
@@ -115,6 +116,7 @@ doc/KYCRequestStatus.md
 doc/LimitOrder.md
 doc/MainWalletItem.md
 doc/MainWalletType.md
+doc/MediaResponse.md
 doc/PaymentMethods.md
 doc/PayoutWalletAdjustRequest.md
 doc/PerformExchangeRequest.md
@@ -142,6 +144,7 @@ doc/StakingInformation.md
 doc/StakingPerformRequest.md
 doc/StakingPeriods.md
 doc/StakingReleases.md
+doc/SupportApi.md
 doc/SyncContactsRequest.md
 doc/TokenDetail.md
 doc/TokenStats.md
@@ -185,6 +188,7 @@ lib/src/api/fiat_wallet_api.dart
 lib/src/api/geo_api.dart
 lib/src/api/staging_api.dart
 lib/src/api/staking_api.dart
+lib/src/api/support_api.dart
 lib/src/api/transactions_api.dart
 lib/src/api/user_api.dart
 lib/src/api/wallet_api.dart
@@ -233,6 +237,7 @@ lib/src/model/create_alert_request.dart
 lib/src/model/create_bank_card_request.dart
 lib/src/model/create_beneficiary_request.dart
 lib/src/model/create_fiat_wallet_request.dart
+lib/src/model/create_inner_fiat_request200_response.dart
 lib/src/model/create_inner_fiat_request_request.dart
 lib/src/model/create_registration_token_request.dart
 lib/src/model/crypto_account.dart
@@ -300,6 +305,7 @@ lib/src/model/kyc_request_status.dart
 lib/src/model/limit_order.dart
 lib/src/model/main_wallet_item.dart
 lib/src/model/main_wallet_type.dart
+lib/src/model/media_response.dart
 lib/src/model/payment_methods.dart
 lib/src/model/payout_wallet_adjust_request.dart
 lib/src/model/perform_exchange_request.dart
@@ -353,3 +359,6 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/create_inner_fiat_request200_response_test.dart
+test/media_response_test.dart
+test/support_api_test.dart

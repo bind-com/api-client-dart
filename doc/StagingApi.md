@@ -11,6 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**adjustFiatWalletBalance**](StagingApi.md#adjustfiatwalletbalance) | **POST** /staging/fiat/wallet/adjust/ | Change balance of a fiat wallet
 [**createSettlements**](StagingApi.md#createsettlements) | **GET** /staging/settlement/create/ | Create Settlements
+[**deleteRequest**](StagingApi.md#deleterequest) | **DELETE** /staging/request/delete/{request_uuid}/ | Delete request
 [**fillCryptoWallet**](StagingApi.md#fillcryptowallet) | **POST** /staging/crypto/wallet/fill/ | Put some testnet assets in a crypto wallet of a current user
 [**fireblocksPoolBalances**](StagingApi.md#fireblockspoolbalances) | **GET** /staging/fireblocks_pool/balances/ | Get pool balances
 [**payoutWalletAdjust**](StagingApi.md#payoutwalletadjust) | **POST** /staging/staking/payout_wallet/adjust/ | Adjust payout pool balance
@@ -87,6 +88,51 @@ try {
 
 ### Parameters
 This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteRequest**
+> deleteRequest(requestUuid)
+
+Delete request
+
+Delete request
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getStagingApi();
+final String requestUuid = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+
+try {
+    api.deleteRequest(requestUuid);
+} catch on DioError (e) {
+    print('Exception when calling StagingApi->deleteRequest: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **requestUuid** | **String**|  | 
 
 ### Return type
 

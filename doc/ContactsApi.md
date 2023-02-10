@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createInnerFiatRequest**
-> createInnerFiatRequest(createInnerFiatRequestRequest)
+> CreateInnerFiatRequest200Response createInnerFiatRequest(createInnerFiatRequestRequest)
 
 Request fiat inside BIND
 
@@ -132,7 +132,8 @@ final api = BindApi().getContactsApi();
 final CreateInnerFiatRequestRequest createInnerFiatRequestRequest = ; // CreateInnerFiatRequestRequest | 
 
 try {
-    api.createInnerFiatRequest(createInnerFiatRequestRequest);
+    final response = api.createInnerFiatRequest(createInnerFiatRequestRequest);
+    print(response);
 } catch on DioError (e) {
     print('Exception when calling ContactsApi->createInnerFiatRequest: $e\n');
 }
@@ -146,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**CreateInnerFiatRequest200Response**](CreateInnerFiatRequest200Response.md)
 
 ### Authorization
 

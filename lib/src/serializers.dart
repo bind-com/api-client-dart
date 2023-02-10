@@ -50,6 +50,7 @@ import 'package:bind_api/src/model/create_alert_request.dart';
 import 'package:bind_api/src/model/create_bank_card_request.dart';
 import 'package:bind_api/src/model/create_beneficiary_request.dart';
 import 'package:bind_api/src/model/create_fiat_wallet_request.dart';
+import 'package:bind_api/src/model/create_inner_fiat_request200_response.dart';
 import 'package:bind_api/src/model/create_inner_fiat_request_request.dart';
 import 'package:bind_api/src/model/create_registration_token_request.dart';
 import 'package:bind_api/src/model/crypto_account.dart';
@@ -116,6 +117,7 @@ import 'package:bind_api/src/model/kyc_request_status.dart';
 import 'package:bind_api/src/model/limit_order.dart';
 import 'package:bind_api/src/model/main_wallet_item.dart';
 import 'package:bind_api/src/model/main_wallet_type.dart';
+import 'package:bind_api/src/model/media_response.dart';
 import 'package:bind_api/src/model/payment_methods.dart';
 import 'package:bind_api/src/model/payout_wallet_adjust_request.dart';
 import 'package:bind_api/src/model/perform_exchange_request.dart';
@@ -209,6 +211,7 @@ part 'serializers.g.dart';
   CreateBankCardRequest,
   CreateBeneficiaryRequest,
   CreateFiatWalletRequest,
+  CreateInnerFiatRequest200Response,
   CreateInnerFiatRequestRequest,
   CreateRegistrationTokenRequest,
   CryptoAccount,
@@ -275,6 +278,7 @@ part 'serializers.g.dart';
   LimitOrder,
   MainWalletItem,
   MainWalletType,
+  MediaResponse,
   PaymentMethods,
   PayoutWalletAdjustRequest,
   PerformExchangeRequest,

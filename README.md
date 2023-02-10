@@ -163,6 +163,7 @@ Class | Method | HTTP request | Description
 [*GeoApi*](doc/GeoApi.md) | [**listCountries**](doc/GeoApi.md#listcountries) | **GET** /countries/ | Countries list
 [*StagingApi*](doc/StagingApi.md) | [**adjustFiatWalletBalance**](doc/StagingApi.md#adjustfiatwalletbalance) | **POST** /staging/fiat/wallet/adjust/ | Change balance of a fiat wallet
 [*StagingApi*](doc/StagingApi.md) | [**createSettlements**](doc/StagingApi.md#createsettlements) | **GET** /staging/settlement/create/ | Create Settlements
+[*StagingApi*](doc/StagingApi.md) | [**deleteRequest**](doc/StagingApi.md#deleterequest) | **DELETE** /staging/request/delete/{request_uuid}/ | Delete request
 [*StagingApi*](doc/StagingApi.md) | [**fillCryptoWallet**](doc/StagingApi.md#fillcryptowallet) | **POST** /staging/crypto/wallet/fill/ | Put some testnet assets in a crypto wallet of a current user
 [*StagingApi*](doc/StagingApi.md) | [**fireblocksPoolBalances**](doc/StagingApi.md#fireblockspoolbalances) | **GET** /staging/fireblocks_pool/balances/ | Get pool balances
 [*StagingApi*](doc/StagingApi.md) | [**payoutWalletAdjust**](doc/StagingApi.md#payoutwalletadjust) | **POST** /staging/staking/payout_wallet/adjust/ | Adjust payout pool balance
@@ -189,6 +190,7 @@ Class | Method | HTTP request | Description
 [*StakingApi*](doc/StakingApi.md) | [**unstakingPerform**](doc/StakingApi.md#unstakingperform) | **POST** /crypto/staking/ustake | Perform unstaking
 [*StakingApi*](doc/StakingApi.md) | [**userStakingClaiming**](doc/StakingApi.md#userstakingclaiming) | **POST** /crypto/staking/claiming | Perform user claiming
 [*StakingApi*](doc/StakingApi.md) | [**userStakingClaimingEstimate**](doc/StakingApi.md#userstakingclaimingestimate) | **POST** /crypto/staking/claiming/estimate | Estimate user staking
+[*SupportApi*](doc/SupportApi.md) | [**fileUpload**](doc/SupportApi.md#fileupload) | **POST** /files/ | Upload a file
 [*TransactionsApi*](doc/TransactionsApi.md) | [**exportTransactions**](doc/TransactionsApi.md#exporttransactions) | **POST** /transactions/export/ | Export user transaction to csv
 [*TransactionsApi*](doc/TransactionsApi.md) | [**exportTransactionsById**](doc/TransactionsApi.md#exporttransactionsbyid) | **GET** /transactions/export/history/{export_id}/ | Export user transaction to pdf
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getExportHistory**](doc/TransactionsApi.md#getexporthistory) | **GET** /transactions/export/history/ | Get export history
@@ -248,6 +250,7 @@ Class | Method | HTTP request | Description
  - [CreateBankCardRequest](doc/CreateBankCardRequest.md)
  - [CreateBeneficiaryRequest](doc/CreateBeneficiaryRequest.md)
  - [CreateFiatWalletRequest](doc/CreateFiatWalletRequest.md)
+ - [CreateInnerFiatRequest200Response](doc/CreateInnerFiatRequest200Response.md)
  - [CreateInnerFiatRequestRequest](doc/CreateInnerFiatRequestRequest.md)
  - [CreateRegistrationTokenRequest](doc/CreateRegistrationTokenRequest.md)
  - [CryptoAccount](doc/CryptoAccount.md)
@@ -314,6 +317,7 @@ Class | Method | HTTP request | Description
  - [LimitOrder](doc/LimitOrder.md)
  - [MainWalletItem](doc/MainWalletItem.md)
  - [MainWalletType](doc/MainWalletType.md)
+ - [MediaResponse](doc/MediaResponse.md)
  - [PaymentMethods](doc/PaymentMethods.md)
  - [PayoutWalletAdjustRequest](doc/PayoutWalletAdjustRequest.md)
  - [PerformExchangeRequest](doc/PerformExchangeRequest.md)

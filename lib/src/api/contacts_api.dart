@@ -11,6 +11,7 @@ import 'dart:typed_data';
 import 'package:bind_api/src/api_util.dart';
 import 'package:bind_api/src/model/add_contact_by_user_request.dart';
 import 'package:bind_api/src/model/contact.dart';
+import 'package:bind_api/src/model/create_inner_fiat_request200_response.dart';
 import 'package:bind_api/src/model/create_inner_fiat_request_request.dart';
 import 'package:bind_api/src/model/error.dart';
 import 'package:bind_api/src/model/fiat_transfer.dart';
@@ -216,9 +217,9 @@ class ContactsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [CreateInnerFiatRequest200Response] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> createInnerFiatRequest({ 
+  Future<Response<CreateInnerFiatRequest200Response>> createInnerFiatRequest({ 
     CreateInnerFiatRequestRequest? createInnerFiatRequestRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -273,7 +274,34 @@ class ContactsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    CreateInnerFiatRequest200Response _responseData;
+
+    try {
+      const _responseType = FullType(CreateInnerFiatRequest200Response);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as CreateInnerFiatRequest200Response;
+
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<CreateInnerFiatRequest200Response>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// Send fiat inside BIND
