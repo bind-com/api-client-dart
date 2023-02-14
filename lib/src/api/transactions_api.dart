@@ -8,6 +8,7 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'dart:typed_data';
+import 'package:bind_api/src/api_util.dart';
 import 'package:bind_api/src/model/currency.dart';
 import 'package:bind_api/src/model/error.dart';
 import 'package:bind_api/src/model/export_history.dart';
@@ -463,6 +464,7 @@ class TransactionsApi {
   /// Get list of user transactions
   ///
   /// Parameters:
+  /// * [cursor] 
   /// * [transactionFilter] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -474,6 +476,7 @@ class TransactionsApi {
   /// Returns a [Future] containing a [Response] with a [BuiltList<Transaction>] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<BuiltList<Transaction>>> getTransactionsFiltered({ 
+    String? cursor,
     TransactionFilter? transactionFilter,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -502,6 +505,10 @@ class TransactionsApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (cursor != null) r'cursor': encodeQueryParameter(_serializers, cursor, const FullType(String)),
+    };
+
     dynamic _bodyData;
 
     try {
@@ -513,6 +520,7 @@ class TransactionsApi {
          requestOptions: _options.compose(
           _dio.options,
           _path,
+          queryParameters: _queryParameters,
         ),
         type: DioErrorType.other,
         error: error,
@@ -523,6 +531,7 @@ class TransactionsApi {
       _path,
       data: _bodyData,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,

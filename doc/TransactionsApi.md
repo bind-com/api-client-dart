@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTransactionsFiltered**
-> BuiltList<Transaction> getTransactionsFiltered(transactionFilter)
+> BuiltList<Transaction> getTransactionsFiltered(cursor, transactionFilter)
 
 Get list of user transactions
 
@@ -258,10 +258,11 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getTransactionsApi();
+final String cursor = cursor_example; // String | 
 final TransactionFilter transactionFilter = ; // TransactionFilter | 
 
 try {
-    final response = api.getTransactionsFiltered(transactionFilter);
+    final response = api.getTransactionsFiltered(cursor, transactionFilter);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling TransactionsApi->getTransactionsFiltered: $e\n');
@@ -272,6 +273,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cursor** | **String**|  | [optional] 
  **transactionFilter** | [**TransactionFilter**](TransactionFilter.md)|  | [optional] 
 
 ### Return type

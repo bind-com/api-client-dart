@@ -129,6 +129,7 @@ export 'package:bind_api/src/model/kyc_request_move_result.dart';
 export 'package:bind_api/src/model/kyc_request_move_result_request_fields_status.dart';
 export 'package:bind_api/src/model/kyc_request_status.dart';
 export 'package:bind_api/src/model/limit_order.dart';
+export 'package:bind_api/src/model/machine_and_human_readables.dart';
 export 'package:bind_api/src/model/main_wallet_item.dart';
 export 'package:bind_api/src/model/main_wallet_type.dart';
 export 'package:bind_api/src/model/media_response.dart';

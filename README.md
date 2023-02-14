@@ -91,8 +91,10 @@ Class | Method | HTTP request | Description
 [*ContactsApi*](doc/ContactsApi.md) | [**readJWTToken**](doc/ContactsApi.md#readjwttoken) | **POST** /users/send/qr_code/ | Check JWT validity and read user from it
 [*ContactsApi*](doc/ContactsApi.md) | [**syncContacts**](doc/ContactsApi.md#synccontacts) | **POST** /contacts/sync/ | Sync mobile phone contacts of current user with backend data
 [*ContactsApi*](doc/ContactsApi.md) | [**updateContact**](doc/ContactsApi.md#updatecontact) | **PATCH** /contacts/{contact_id}/ | Update contact data (add/remove contact from favorite)
+[*CryptoApi*](doc/CryptoApi.md) | [**getCryptoCandlePeriodIntervals**](doc/CryptoApi.md#getcryptocandleperiodintervals) | **GET** /charts/crypto/candle/intervals/ | Interval list of candles periods with human and machine readables
 [*CryptoApi*](doc/CryptoApi.md) | [**getCryptoChartCandles**](doc/CryptoApi.md#getcryptochartcandles) | **GET** /charts/crypto/candle/ | List of candles for crypto price chart
 [*CryptoApi*](doc/CryptoApi.md) | [**getCryptoChartLine**](doc/CryptoApi.md#getcryptochartline) | **GET** /charts/crypto/line/ | List line ticks for crypto price chart
+[*CryptoApi*](doc/CryptoApi.md) | [**getCryptoLinePeriodIntervals**](doc/CryptoApi.md#getcryptolineperiodintervals) | **GET** /charts/crypto/line/intervals/ | Interval list of lines periods with human and machine readables
 [*CryptoApi*](doc/CryptoApi.md) | [**getCryptoOverview**](doc/CryptoApi.md#getcryptooverview) | **GET** /crypto/overview/ | Get crypto overview information
 [*CryptoApi*](doc/CryptoApi.md) | [**getGlobalCryptoStats**](doc/CryptoApi.md#getglobalcryptostats) | **GET** /crypto/global/stats/ | Get global crypto market information
 [*CryptoApi*](doc/CryptoApi.md) | [**getInnerCryptoTransferFee**](doc/CryptoApi.md#getinnercryptotransferfee) | **POST** /crypto/send/fee/ | 
@@ -200,7 +202,7 @@ Class | Method | HTTP request | Description
 [*UserApi*](doc/UserApi.md) | [**checkKYCRequestApproval**](doc/UserApi.md#checkkycrequestapproval) | **GET** /users/kyc/requests/approval/ | Get status of KYC Request approval
 [*UserApi*](doc/UserApi.md) | [**checkPasscode**](doc/UserApi.md#checkpasscode) | **POST** /users/check/passcode/ | Check validity of user passcode
 [*UserApi*](doc/UserApi.md) | [**createKYCFile**](doc/UserApi.md#createkycfile) | **POST** /user/kyc/file/ | CreateKYCFile
-[*UserApi*](doc/UserApi.md) | [**createRegistrationToken**](doc/UserApi.md#createregistrationtoken) | **POST** /users/firebase/token/ | Create registration token
+[*UserApi*](doc/UserApi.md) | [**createRegistrationToken**](doc/UserApi.md#createregistrationtoken) | **PUT** /users/firebase/token/ | Create registration token
 [*UserApi*](doc/UserApi.md) | [**deleteUserPhoto**](doc/UserApi.md#deleteuserphoto) | **DELETE** /users/photo/delete/ | Delete user photo
 [*UserApi*](doc/UserApi.md) | [**getKYCFile**](doc/UserApi.md#getkycfile) | **GET** /user/kyc/file/ | GetKYCFile
 [*UserApi*](doc/UserApi.md) | [**getUserPaymentCurrency**](doc/UserApi.md#getuserpaymentcurrency) | **GET** /users/payment_currency/ | Get user payment currency
@@ -315,6 +317,7 @@ Class | Method | HTTP request | Description
  - [KYCRequestMoveResultRequestFieldsStatus](doc/KYCRequestMoveResultRequestFieldsStatus.md)
  - [KYCRequestStatus](doc/KYCRequestStatus.md)
  - [LimitOrder](doc/LimitOrder.md)
+ - [MachineAndHumanReadables](doc/MachineAndHumanReadables.md)
  - [MainWalletItem](doc/MainWalletItem.md)
  - [MainWalletType](doc/MainWalletType.md)
  - [MediaResponse](doc/MediaResponse.md)

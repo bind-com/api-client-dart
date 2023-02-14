@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**checkKYCRequestApproval**](UserApi.md#checkkycrequestapproval) | **GET** /users/kyc/requests/approval/ | Get status of KYC Request approval
 [**checkPasscode**](UserApi.md#checkpasscode) | **POST** /users/check/passcode/ | Check validity of user passcode
 [**createKYCFile**](UserApi.md#createkycfile) | **POST** /user/kyc/file/ | CreateKYCFile
-[**createRegistrationToken**](UserApi.md#createregistrationtoken) | **POST** /users/firebase/token/ | Create registration token
+[**createRegistrationToken**](UserApi.md#createregistrationtoken) | **PUT** /users/firebase/token/ | Create registration token
 [**deleteUserPhoto**](UserApi.md#deleteuserphoto) | **DELETE** /users/photo/delete/ | Delete user photo
 [**getKYCFile**](UserApi.md#getkycfile) | **GET** /user/kyc/file/ | GetKYCFile
 [**getUserPaymentCurrency**](UserApi.md#getuserpaymentcurrency) | **GET** /users/payment_currency/ | Get user payment currency

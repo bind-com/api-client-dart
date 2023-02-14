@@ -114,6 +114,7 @@ doc/KYCRequestMoveResult.md
 doc/KYCRequestMoveResultRequestFieldsStatus.md
 doc/KYCRequestStatus.md
 doc/LimitOrder.md
+doc/MachineAndHumanReadables.md
 doc/MainWalletItem.md
 doc/MainWalletType.md
 doc/MediaResponse.md
@@ -303,6 +304,7 @@ lib/src/model/kyc_request_move_result.dart
 lib/src/model/kyc_request_move_result_request_fields_status.dart
 lib/src/model/kyc_request_status.dart
 lib/src/model/limit_order.dart
+lib/src/model/machine_and_human_readables.dart
 lib/src/model/main_wallet_item.dart
 lib/src/model/main_wallet_type.dart
 lib/src/model/media_response.dart
@@ -359,6 +361,4 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/create_inner_fiat_request200_response_test.dart
-test/media_response_test.dart
-test/support_api_test.dart
+test/machine_and_human_readables_test.dart

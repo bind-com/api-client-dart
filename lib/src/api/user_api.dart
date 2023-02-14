@@ -303,7 +303,7 @@ class UserApi {
   }) async {
     final _path = r'/users/firebase/token/';
     final _options = Options(
-      method: r'POST',
+      method: r'PUT',
       headers: <String, dynamic>{
         ...?headers,
       },

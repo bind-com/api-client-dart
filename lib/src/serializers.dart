@@ -115,6 +115,7 @@ import 'package:bind_api/src/model/kyc_request_move_result.dart';
 import 'package:bind_api/src/model/kyc_request_move_result_request_fields_status.dart';
 import 'package:bind_api/src/model/kyc_request_status.dart';
 import 'package:bind_api/src/model/limit_order.dart';
+import 'package:bind_api/src/model/machine_and_human_readables.dart';
 import 'package:bind_api/src/model/main_wallet_item.dart';
 import 'package:bind_api/src/model/main_wallet_type.dart';
 import 'package:bind_api/src/model/media_response.dart';
@@ -276,6 +277,7 @@ part 'serializers.g.dart';
   KYCRequestMoveResultRequestFieldsStatus,
   KYCRequestStatus,
   LimitOrder,
+  MachineAndHumanReadables,
   MainWalletItem,
   MainWalletType,
   MediaResponse,
@@ -427,6 +429,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Contact)]),
         () => ListBuilder<Contact>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(MachineAndHumanReadables)]),
+        () => ListBuilder<MachineAndHumanReadables>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(ChartTick)]),

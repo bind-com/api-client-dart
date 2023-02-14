@@ -9,8 +9,10 @@ All URIs are relative to *https://api.thebind.uk/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**getCryptoCandlePeriodIntervals**](CryptoApi.md#getcryptocandleperiodintervals) | **GET** /charts/crypto/candle/intervals/ | Interval list of candles periods with human and machine readables
 [**getCryptoChartCandles**](CryptoApi.md#getcryptochartcandles) | **GET** /charts/crypto/candle/ | List of candles for crypto price chart
 [**getCryptoChartLine**](CryptoApi.md#getcryptochartline) | **GET** /charts/crypto/line/ | List line ticks for crypto price chart
+[**getCryptoLinePeriodIntervals**](CryptoApi.md#getcryptolineperiodintervals) | **GET** /charts/crypto/line/intervals/ | Interval list of lines periods with human and machine readables
 [**getCryptoOverview**](CryptoApi.md#getcryptooverview) | **GET** /crypto/overview/ | Get crypto overview information
 [**getGlobalCryptoStats**](CryptoApi.md#getglobalcryptostats) | **GET** /crypto/global/stats/ | Get global crypto market information
 [**getInnerCryptoTransferFee**](CryptoApi.md#getinnercryptotransferfee) | **POST** /crypto/send/fee/ | 
@@ -21,6 +23,46 @@ Method | HTTP request | Description
 [**listCryptoCurrencies**](CryptoApi.md#listcryptocurrencies) | **GET** /currencies/crypto/ | List of Crypto Currencies
 [**performInnerCryptoTransfer**](CryptoApi.md#performinnercryptotransfer) | **POST** /crypto/send/ | Send crypto inside BIND
 
+
+# **getCryptoCandlePeriodIntervals**
+> BuiltList<MachineAndHumanReadables> getCryptoCandlePeriodIntervals()
+
+Interval list of candles periods with human and machine readables
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getCryptoApi();
+
+try {
+    final response = api.getCryptoCandlePeriodIntervals();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling CryptoApi->getCryptoCandlePeriodIntervals: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**BuiltList&lt;MachineAndHumanReadables&gt;**](MachineAndHumanReadables.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCryptoChartCandles**
 > BuiltList<Candle> getCryptoChartCandles(asset, interval, start, end, showUsd, pageSize)
@@ -118,6 +160,46 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BuiltList&lt;ChartTick&gt;**](ChartTick.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getCryptoLinePeriodIntervals**
+> BuiltList<MachineAndHumanReadables> getCryptoLinePeriodIntervals()
+
+Interval list of lines periods with human and machine readables
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getCryptoApi();
+
+try {
+    final response = api.getCryptoLinePeriodIntervals();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling CryptoApi->getCryptoLinePeriodIntervals: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**BuiltList&lt;MachineAndHumanReadables&gt;**](MachineAndHumanReadables.md)
 
 ### Authorization
 
