@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**deleteUserPhoto**](UserApi.md#deleteuserphoto) | **DELETE** /users/photo/delete/ | Delete user photo
 [**getKYCFile**](UserApi.md#getkycfile) | **GET** /user/kyc/file/ | GetKYCFile
 [**getUserPaymentCurrency**](UserApi.md#getuserpaymentcurrency) | **GET** /users/payment_currency/ | Get user payment currency
+[**getUserRefundCurrency**](UserApi.md#getuserrefundcurrency) | **GET** /users/refund_currency/ | Get user refund currency
 [**qRCodeGenerateCustomString**](UserApi.md#qrcodegeneratecustomstring) | **POST** /users/generate/custom_qr_code/ | Generate QR code with custom string
 [**updateUser**](UserApi.md#updateuser) | **PATCH** /users/{userID}/ | Update user
 [**updateUserPasscode**](UserApi.md#updateuserpasscode) | **PATCH** /users/change_passcode/{userID}/ | Update user passcode
@@ -298,6 +299,48 @@ try {
     print(response);
 } catch on DioError (e) {
     print('Exception when calling UserApi->getUserPaymentCurrency: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Currency**](Currency.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getUserRefundCurrency**
+> Currency getUserRefundCurrency()
+
+Get user refund currency
+
+A dedicated method to get User’s refund currency with additional fields from Currency table
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getUserApi();
+
+try {
+    final response = api.getUserRefundCurrency();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling UserApi->getUserRefundCurrency: $e\n');
 }
 ```
 

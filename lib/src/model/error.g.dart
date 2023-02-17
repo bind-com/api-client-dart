@@ -12,12 +12,15 @@ class _$Error extends Error {
   @override
   final String message;
   @override
+  final bool? isRetriable;
+  @override
   final JsonObject? data;
 
   factory _$Error([void Function(ErrorBuilder)? updates]) =>
       (new ErrorBuilder()..update(updates))._build();
 
-  _$Error._({required this.code, required this.message, this.data})
+  _$Error._(
+      {required this.code, required this.message, this.isRetriable, this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(code, r'Error', 'code');
     BuiltValueNullFieldError.checkNotNull(message, r'Error', 'message');
@@ -36,13 +39,15 @@ class _$Error extends Error {
     return other is Error &&
         code == other.code &&
         message == other.message &&
+        isRetriable == other.isRetriable &&
         data == other.data;
   }
 
   @override
   int get hashCode {
-    return $jf(
-        $jc($jc($jc(0, code.hashCode), message.hashCode), data.hashCode));
+    return $jf($jc(
+        $jc($jc($jc(0, code.hashCode), message.hashCode), isRetriable.hashCode),
+        data.hashCode));
   }
 
   @override
@@ -50,6 +55,7 @@ class _$Error extends Error {
     return (newBuiltValueToStringHelper(r'Error')
           ..add('code', code)
           ..add('message', message)
+          ..add('isRetriable', isRetriable)
           ..add('data', data))
         .toString();
   }
@@ -66,6 +72,10 @@ class ErrorBuilder implements Builder<Error, ErrorBuilder> {
   String? get message => _$this._message;
   set message(String? message) => _$this._message = message;
 
+  bool? _isRetriable;
+  bool? get isRetriable => _$this._isRetriable;
+  set isRetriable(bool? isRetriable) => _$this._isRetriable = isRetriable;
+
   JsonObject? _data;
   JsonObject? get data => _$this._data;
   set data(JsonObject? data) => _$this._data = data;
@@ -79,6 +89,7 @@ class ErrorBuilder implements Builder<Error, ErrorBuilder> {
     if ($v != null) {
       _code = $v.code;
       _message = $v.message;
+      _isRetriable = $v.isRetriable;
       _data = $v.data;
       _$v = null;
     }
@@ -105,6 +116,7 @@ class ErrorBuilder implements Builder<Error, ErrorBuilder> {
             code: BuiltValueNullFieldError.checkNotNull(code, r'Error', 'code'),
             message: BuiltValueNullFieldError.checkNotNull(
                 message, r'Error', 'message'),
+            isRetriable: isRetriable,
             data: data);
     replace(_$result);
     return _$result;

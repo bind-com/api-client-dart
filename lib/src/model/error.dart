@@ -13,6 +13,7 @@ part 'error.g.dart';
 /// Properties:
 /// * [code] 
 /// * [message] 
+/// * [isRetriable] 
 /// * [data] 
 abstract class Error implements Built<Error, ErrorBuilder> {
     @BuiltValueField(wireName: r'code')
@@ -20,6 +21,9 @@ abstract class Error implements Built<Error, ErrorBuilder> {
 
     @BuiltValueField(wireName: r'message')
     String get message;
+
+    @BuiltValueField(wireName: r'is_retriable')
+    bool? get isRetriable;
 
     @BuiltValueField(wireName: r'data')
     JsonObject? get data;
@@ -54,6 +58,12 @@ class _$ErrorSerializer implements StructuredSerializer<Error> {
             ..add(r'message')
             ..add(serializers.serialize(object.message,
                 specifiedType: const FullType(String)));
+        if (object.isRetriable != null) {
+            result
+                ..add(r'is_retriable')
+                ..add(serializers.serialize(object.isRetriable,
+                    specifiedType: const FullType(bool)));
+        }
         result
             ..add(r'data')
             ..add(object.data == null ? null : serializers.serialize(object.data,
@@ -82,6 +92,11 @@ class _$ErrorSerializer implements StructuredSerializer<Error> {
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.message = valueDes;
+                    break;
+                case r'is_retriable':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(bool)) as bool;
+                    result.isRetriable = valueDes;
                     break;
                 case r'data':
                     final valueDes = serializers.deserialize(value,
