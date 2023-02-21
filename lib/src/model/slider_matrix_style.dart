@@ -18,19 +18,19 @@ part 'slider_matrix_style.g.dart';
 /// * [ambitious] 
 /// * [adventurous] 
 abstract class SliderMatrixStyle implements Built<SliderMatrixStyle, SliderMatrixStyleBuilder> {
-    @BuiltValueField(wireName: r'cautious')
+    @BuiltValueField(wireName: r'Cautious')
     BuiltList<SliderMatrixParams>? get cautious;
 
-    @BuiltValueField(wireName: r'tentative')
+    @BuiltValueField(wireName: r'Tentative')
     BuiltList<SliderMatrixParams>? get tentative;
 
-    @BuiltValueField(wireName: r'confident')
+    @BuiltValueField(wireName: r'Confident')
     BuiltList<SliderMatrixParams>? get confident;
 
-    @BuiltValueField(wireName: r'ambitious')
+    @BuiltValueField(wireName: r'Ambitious')
     BuiltList<SliderMatrixParams>? get ambitious;
 
-    @BuiltValueField(wireName: r'adventurous')
+    @BuiltValueField(wireName: r'Adventurous')
     BuiltList<SliderMatrixParams>? get adventurous;
 
     SliderMatrixStyle._();
@@ -57,31 +57,31 @@ class _$SliderMatrixStyleSerializer implements StructuredSerializer<SliderMatrix
         final result = <Object?>[];
         if (object.cautious != null) {
             result
-                ..add(r'cautious')
+                ..add(r'Cautious')
                 ..add(serializers.serialize(object.cautious,
                     specifiedType: const FullType(BuiltList, [FullType(SliderMatrixParams)])));
         }
         if (object.tentative != null) {
             result
-                ..add(r'tentative')
+                ..add(r'Tentative')
                 ..add(serializers.serialize(object.tentative,
                     specifiedType: const FullType(BuiltList, [FullType(SliderMatrixParams)])));
         }
         if (object.confident != null) {
             result
-                ..add(r'confident')
+                ..add(r'Confident')
                 ..add(serializers.serialize(object.confident,
                     specifiedType: const FullType(BuiltList, [FullType(SliderMatrixParams)])));
         }
         if (object.ambitious != null) {
             result
-                ..add(r'ambitious')
+                ..add(r'Ambitious')
                 ..add(serializers.serialize(object.ambitious,
                     specifiedType: const FullType(BuiltList, [FullType(SliderMatrixParams)])));
         }
         if (object.adventurous != null) {
             result
-                ..add(r'adventurous')
+                ..add(r'Adventurous')
                 ..add(serializers.serialize(object.adventurous,
                     specifiedType: const FullType(BuiltList, [FullType(SliderMatrixParams)])));
         }
@@ -100,27 +100,27 @@ class _$SliderMatrixStyleSerializer implements StructuredSerializer<SliderMatrix
             final Object? value = iterator.current;
             
             switch (key) {
-                case r'cautious':
+                case r'Cautious':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(BuiltList, [FullType(SliderMatrixParams)])) as BuiltList<SliderMatrixParams>;
                     result.cautious.replace(valueDes);
                     break;
-                case r'tentative':
+                case r'Tentative':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(BuiltList, [FullType(SliderMatrixParams)])) as BuiltList<SliderMatrixParams>;
                     result.tentative.replace(valueDes);
                     break;
-                case r'confident':
+                case r'Confident':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(BuiltList, [FullType(SliderMatrixParams)])) as BuiltList<SliderMatrixParams>;
                     result.confident.replace(valueDes);
                     break;
-                case r'ambitious':
+                case r'Ambitious':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(BuiltList, [FullType(SliderMatrixParams)])) as BuiltList<SliderMatrixParams>;
                     result.ambitious.replace(valueDes);
                     break;
-                case r'adventurous':
+                case r'Adventurous':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(BuiltList, [FullType(SliderMatrixParams)])) as BuiltList<SliderMatrixParams>;
                     result.adventurous.replace(valueDes);

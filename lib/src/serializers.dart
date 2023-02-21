@@ -105,6 +105,8 @@ import 'package:bind_api/src/model/human_transaction_types.dart';
 import 'package:bind_api/src/model/inner_crypto_transfer_fee_result.dart';
 import 'package:bind_api/src/model/inner_fiat_transfer_fee_result.dart';
 import 'package:bind_api/src/model/investment_style.dart';
+import 'package:bind_api/src/model/investment_style_response.dart';
+import 'package:bind_api/src/model/investment_style_response_all_of.dart';
 import 'package:bind_api/src/model/jwt_token.dart';
 import 'package:bind_api/src/model/kyc_document_status.dart';
 import 'package:bind_api/src/model/kyc_field_status.dart';
@@ -267,6 +269,8 @@ part 'serializers.g.dart';
   InnerCryptoTransferFeeResult,
   InnerFiatTransferFeeResult,
   InvestmentStyle,
+  InvestmentStyleResponse,
+  InvestmentStyleResponseAllOf,
   JWTToken,
   KYCDocumentStatus,
   KYCFieldStatus,
@@ -401,6 +405,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(MainWalletItem)]),
         () => ListBuilder<MainWalletItem>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(InvestmentStyleResponse)]),
+        () => ListBuilder<InvestmentStyleResponse>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(FiatWalletWithPaymentCurrency)]),

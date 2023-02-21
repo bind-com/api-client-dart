@@ -68,7 +68,10 @@ Class | Method | HTTP request | Description
 [*AuthApi*](doc/AuthApi.md) | [**whoAmI**](doc/AuthApi.md#whoami) | **GET** /auth/whoami/ | Who am I
 [*AutoPortfolioApi*](doc/AutoPortfolioApi.md) | [**estimateAutoPortfolio**](doc/AutoPortfolioApi.md#estimateautoportfolio) | **POST** /autoportfolio/estimate/ | Estimate auto portfolio with given parameters
 [*AutoPortfolioApi*](doc/AutoPortfolioApi.md) | [**getAutoPortfolioChart**](doc/AutoPortfolioApi.md#getautoportfoliochart) | **GET** /autoportfolio/{portfolio_id}/chart/ | Get chart for specific auto portfolio
+[*AutoPortfolioApi*](doc/AutoPortfolioApi.md) | [**getAutoPortfolioChartIntervals**](doc/AutoPortfolioApi.md#getautoportfoliochartintervals) | **GET** /autoportfolio/chart/intervals/ | List of autoportfolio chart intervals
+[*AutoPortfolioApi*](doc/AutoPortfolioApi.md) | [**getAutoPortfolioDurations**](doc/AutoPortfolioApi.md#getautoportfoliodurations) | **GET** /autoportfolio/durations/ | List of investment durations
 [*AutoPortfolioApi*](doc/AutoPortfolioApi.md) | [**getAutoPortfolioSliderMatrix**](doc/AutoPortfolioApi.md#getautoportfolioslidermatrix) | **GET** /autoportfolio/slidermatrix/ | Get calculated slider matrix
+[*AutoPortfolioApi*](doc/AutoPortfolioApi.md) | [**getAutoPortfolioStyles**](doc/AutoPortfolioApi.md#getautoportfoliostyles) | **GET** /autoportfolio/styles/ | List of investment styles with description
 [*AutoPortfolioApi*](doc/AutoPortfolioApi.md) | [**getAutoPortfolioSummary**](doc/AutoPortfolioApi.md#getautoportfoliosummary) | **GET** /autoportfolio/{portfolio_id}/ | Get detailed info about specific auto portfolio
 [*AutoPortfolioApi*](doc/AutoPortfolioApi.md) | [**purchaseAutoPortfolio**](doc/AutoPortfolioApi.md#purchaseautoportfolio) | **POST** /autoportfolio/{portfolio_id}/purchase/ | Purchase pre estimated auto portfolio
 [*AutoPortfolioApi*](doc/AutoPortfolioApi.md) | [**renameAutoPortfolio**](doc/AutoPortfolioApi.md#renameautoportfolio) | **PATCH** /autoportfolio/{portfolio_id}/rename/ | rename auto portfolio
@@ -163,6 +166,7 @@ Class | Method | HTTP request | Description
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**shareFiatWallet**](doc/FiatWalletApi.md#sharefiatwallet) | **GET** /fiat/wallets/{wallet_id}/share/ | Share specified wallet details
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**updateBankCardSettings**](doc/FiatWalletApi.md#updatebankcardsettings) | **PATCH** /fiat/bankcards/{card_id}/ | Update of a Bank Card
 [*GeoApi*](doc/GeoApi.md) | [**listCountries**](doc/GeoApi.md#listcountries) | **GET** /countries/ | Countries list
+[*GeoApi*](doc/GeoApi.md) | [**listCountriesWthSort**](doc/GeoApi.md#listcountrieswthsort) | **GET** /countries-wth-sort/ | Countries list with neighboring sort
 [*StagingApi*](doc/StagingApi.md) | [**adjustFiatWalletBalance**](doc/StagingApi.md#adjustfiatwalletbalance) | **POST** /staging/fiat/wallet/adjust/ | Change balance of a fiat wallet
 [*StagingApi*](doc/StagingApi.md) | [**createSettlements**](doc/StagingApi.md#createsettlements) | **GET** /staging/settlement/create/ | Create Settlements
 [*StagingApi*](doc/StagingApi.md) | [**deleteRequest**](doc/StagingApi.md#deleterequest) | **DELETE** /staging/request/delete/{request_uuid}/ | Delete request
@@ -308,6 +312,8 @@ Class | Method | HTTP request | Description
  - [InnerCryptoTransferFeeResult](doc/InnerCryptoTransferFeeResult.md)
  - [InnerFiatTransferFeeResult](doc/InnerFiatTransferFeeResult.md)
  - [InvestmentStyle](doc/InvestmentStyle.md)
+ - [InvestmentStyleResponse](doc/InvestmentStyleResponse.md)
+ - [InvestmentStyleResponseAllOf](doc/InvestmentStyleResponseAllOf.md)
  - [JWTToken](doc/JWTToken.md)
  - [KYCDocumentStatus](doc/KYCDocumentStatus.md)
  - [KYCFieldStatus](doc/KYCFieldStatus.md)

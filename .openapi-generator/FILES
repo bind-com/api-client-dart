@@ -104,6 +104,8 @@ doc/HumanTransactionTypes.md
 doc/InnerCryptoTransferFeeResult.md
 doc/InnerFiatTransferFeeResult.md
 doc/InvestmentStyle.md
+doc/InvestmentStyleResponse.md
+doc/InvestmentStyleResponseAllOf.md
 doc/JWTToken.md
 doc/KYCDocumentStatus.md
 doc/KYCFieldStatus.md
@@ -294,6 +296,8 @@ lib/src/model/human_transaction_types.dart
 lib/src/model/inner_crypto_transfer_fee_result.dart
 lib/src/model/inner_fiat_transfer_fee_result.dart
 lib/src/model/investment_style.dart
+lib/src/model/investment_style_response.dart
+lib/src/model/investment_style_response_all_of.dart
 lib/src/model/jwt_token.dart
 lib/src/model/kyc_document_status.dart
 lib/src/model/kyc_field_status.dart
@@ -361,3 +365,5 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/investment_style_response_all_of_test.dart
+test/investment_style_response_test.dart

@@ -119,6 +119,8 @@ export 'package:bind_api/src/model/human_transaction_types.dart';
 export 'package:bind_api/src/model/inner_crypto_transfer_fee_result.dart';
 export 'package:bind_api/src/model/inner_fiat_transfer_fee_result.dart';
 export 'package:bind_api/src/model/investment_style.dart';
+export 'package:bind_api/src/model/investment_style_response.dart';
+export 'package:bind_api/src/model/investment_style_response_all_of.dart';
 export 'package:bind_api/src/model/jwt_token.dart';
 export 'package:bind_api/src/model/kyc_document_status.dart';
 export 'package:bind_api/src/model/kyc_field_status.dart';

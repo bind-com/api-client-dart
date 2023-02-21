@@ -11,7 +11,10 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**estimateAutoPortfolio**](AutoPortfolioApi.md#estimateautoportfolio) | **POST** /autoportfolio/estimate/ | Estimate auto portfolio with given parameters
 [**getAutoPortfolioChart**](AutoPortfolioApi.md#getautoportfoliochart) | **GET** /autoportfolio/{portfolio_id}/chart/ | Get chart for specific auto portfolio
+[**getAutoPortfolioChartIntervals**](AutoPortfolioApi.md#getautoportfoliochartintervals) | **GET** /autoportfolio/chart/intervals/ | List of autoportfolio chart intervals
+[**getAutoPortfolioDurations**](AutoPortfolioApi.md#getautoportfoliodurations) | **GET** /autoportfolio/durations/ | List of investment durations
 [**getAutoPortfolioSliderMatrix**](AutoPortfolioApi.md#getautoportfolioslidermatrix) | **GET** /autoportfolio/slidermatrix/ | Get calculated slider matrix
+[**getAutoPortfolioStyles**](AutoPortfolioApi.md#getautoportfoliostyles) | **GET** /autoportfolio/styles/ | List of investment styles with description
 [**getAutoPortfolioSummary**](AutoPortfolioApi.md#getautoportfoliosummary) | **GET** /autoportfolio/{portfolio_id}/ | Get detailed info about specific auto portfolio
 [**purchaseAutoPortfolio**](AutoPortfolioApi.md#purchaseautoportfolio) | **POST** /autoportfolio/{portfolio_id}/purchase/ | Purchase pre estimated auto portfolio
 [**renameAutoPortfolio**](AutoPortfolioApi.md#renameautoportfolio) | **PATCH** /autoportfolio/{portfolio_id}/rename/ | rename auto portfolio
@@ -108,6 +111,86 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **getAutoPortfolioChartIntervals**
+> BuiltList<MachineAndHumanReadables> getAutoPortfolioChartIntervals()
+
+List of autoportfolio chart intervals
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getAutoPortfolioApi();
+
+try {
+    final response = api.getAutoPortfolioChartIntervals();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AutoPortfolioApi->getAutoPortfolioChartIntervals: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**BuiltList&lt;MachineAndHumanReadables&gt;**](MachineAndHumanReadables.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAutoPortfolioDurations**
+> BuiltList<MachineAndHumanReadables> getAutoPortfolioDurations()
+
+List of investment durations
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getAutoPortfolioApi();
+
+try {
+    final response = api.getAutoPortfolioDurations();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AutoPortfolioApi->getAutoPortfolioDurations: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**BuiltList&lt;MachineAndHumanReadables&gt;**](MachineAndHumanReadables.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getAutoPortfolioSliderMatrix**
 > SliderMatrix getAutoPortfolioSliderMatrix()
 
@@ -136,6 +219,46 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**SliderMatrix**](SliderMatrix.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAutoPortfolioStyles**
+> BuiltList<InvestmentStyleResponse> getAutoPortfolioStyles()
+
+List of investment styles with description
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getAutoPortfolioApi();
+
+try {
+    final response = api.getAutoPortfolioStyles();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AutoPortfolioApi->getAutoPortfolioStyles: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**BuiltList&lt;InvestmentStyleResponse&gt;**](InvestmentStyleResponse.md)
 
 ### Authorization
 

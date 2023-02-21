@@ -12,19 +12,19 @@ part 'auto_portfolio_params.g.dart';
 /// AutoPortfolioParams
 ///
 /// Properties:
-/// * [initialInvestment] - intial investement amount, in usd
-/// * [investmentTarget] - investement traget amount, in usd
+/// * [initialInvestment] - initial investment amount, in usd
+/// * [investmentTarget] - investment target amount, in usd
 /// * [investmentDuration] 
 /// * [investmentDurationSpan] 
 /// * [investmentStyle] 
 /// * [assetSource] 
-/// * [assetSourceAmount] - amount of invest? in source asset
+/// * [assetSourceAmount] - amount of invest, in source asset
 abstract class AutoPortfolioParams implements Built<AutoPortfolioParams, AutoPortfolioParamsBuilder> {
-    /// intial investement amount, in usd
+    /// initial investment amount, in usd
     @BuiltValueField(wireName: r'initial_investment')
     num? get initialInvestment;
 
-    /// investement traget amount, in usd
+    /// investment target amount, in usd
     @BuiltValueField(wireName: r'investment_target')
     num? get investmentTarget;
 
@@ -42,7 +42,7 @@ abstract class AutoPortfolioParams implements Built<AutoPortfolioParams, AutoPor
     @BuiltValueField(wireName: r'asset_source')
     String? get assetSource;
 
-    /// amount of invest? in source asset
+    /// amount of invest, in source asset
     @BuiltValueField(wireName: r'asset_source_amount')
     num? get assetSourceAmount;
 
