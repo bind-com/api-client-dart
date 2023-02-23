@@ -11,6 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**checkKYCRequestApproval**](UserApi.md#checkkycrequestapproval) | **GET** /users/kyc/requests/approval/ | Get status of KYC Request approval
 [**checkPasscode**](UserApi.md#checkpasscode) | **POST** /users/check/passcode/ | Check validity of user passcode
+[**createDevice**](UserApi.md#createdevice) | **PUT** /users/firebase/device/ | Create device
 [**createKYCFile**](UserApi.md#createkycfile) | **POST** /user/kyc/file/ | CreateKYCFile
 [**createRegistrationToken**](UserApi.md#createregistrationtoken) | **PUT** /users/firebase/token/ | Create registration token
 [**deleteUserPhoto**](UserApi.md#deleteuserphoto) | **DELETE** /users/photo/delete/ | Delete user photo
@@ -96,6 +97,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 **bool**
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **createDevice**
+> createDevice(createDeviceRequest)
+
+Create device
+
+A method to create device from firebase device id
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getUserApi();
+final CreateDeviceRequest createDeviceRequest = ; // CreateDeviceRequest | 
+
+try {
+    api.createDevice(createDeviceRequest);
+} catch on DioError (e) {
+    print('Exception when calling UserApi->createDevice: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createDeviceRequest** | [**CreateDeviceRequest**](CreateDeviceRequest.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 

@@ -3,6 +3,7 @@
 //
 
 import 'package:bind_api/src/model/alert_periodicity.dart';
+import 'package:bind_api/src/model/trading_asset.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -14,6 +15,7 @@ part 'create_alert_request.g.dart';
 /// * [currency] 
 /// * [price] 
 /// * [periodicity] 
+/// * [tradingAsset] 
 abstract class CreateAlertRequest implements Built<CreateAlertRequest, CreateAlertRequestBuilder> {
     @BuiltValueField(wireName: r'currency')
     String? get currency;
@@ -24,6 +26,10 @@ abstract class CreateAlertRequest implements Built<CreateAlertRequest, CreateAle
     @BuiltValueField(wireName: r'periodicity')
     AlertPeriodicity? get periodicity;
     // enum periodicityEnum {  ONE_TIME,  ONCE_A_DAY,  REPEATEDLY,  };
+
+    @BuiltValueField(wireName: r'trading_asset')
+    TradingAsset? get tradingAsset;
+    // enum tradingAssetEnum {  BTC,  USD,  };
 
     CreateAlertRequest._();
 
@@ -65,6 +71,12 @@ class _$CreateAlertRequestSerializer implements StructuredSerializer<CreateAlert
                 ..add(serializers.serialize(object.periodicity,
                     specifiedType: const FullType(AlertPeriodicity)));
         }
+        if (object.tradingAsset != null) {
+            result
+                ..add(r'trading_asset')
+                ..add(serializers.serialize(object.tradingAsset,
+                    specifiedType: const FullType(TradingAsset)));
+        }
         return result;
     }
 
@@ -94,6 +106,11 @@ class _$CreateAlertRequestSerializer implements StructuredSerializer<CreateAlert
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(AlertPeriodicity)) as AlertPeriodicity;
                     result.periodicity = valueDes;
+                    break;
+                case r'trading_asset':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(TradingAsset)) as TradingAsset;
+                    result.tradingAsset = valueDes;
                     break;
             }
         }

@@ -205,6 +205,7 @@ Class | Method | HTTP request | Description
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionsFiltered**](doc/TransactionsApi.md#gettransactionsfiltered) | **POST** /transactions/ | Get list of user transactions
 [*UserApi*](doc/UserApi.md) | [**checkKYCRequestApproval**](doc/UserApi.md#checkkycrequestapproval) | **GET** /users/kyc/requests/approval/ | Get status of KYC Request approval
 [*UserApi*](doc/UserApi.md) | [**checkPasscode**](doc/UserApi.md#checkpasscode) | **POST** /users/check/passcode/ | Check validity of user passcode
+[*UserApi*](doc/UserApi.md) | [**createDevice**](doc/UserApi.md#createdevice) | **PUT** /users/firebase/device/ | Create device
 [*UserApi*](doc/UserApi.md) | [**createKYCFile**](doc/UserApi.md#createkycfile) | **POST** /user/kyc/file/ | CreateKYCFile
 [*UserApi*](doc/UserApi.md) | [**createRegistrationToken**](doc/UserApi.md#createregistrationtoken) | **PUT** /users/firebase/token/ | Create registration token
 [*UserApi*](doc/UserApi.md) | [**deleteUserPhoto**](doc/UserApi.md#deleteuserphoto) | **DELETE** /users/photo/delete/ | Delete user photo
@@ -256,6 +257,7 @@ Class | Method | HTTP request | Description
  - [CreateAlertRequest](doc/CreateAlertRequest.md)
  - [CreateBankCardRequest](doc/CreateBankCardRequest.md)
  - [CreateBeneficiaryRequest](doc/CreateBeneficiaryRequest.md)
+ - [CreateDeviceRequest](doc/CreateDeviceRequest.md)
  - [CreateFiatWalletRequest](doc/CreateFiatWalletRequest.md)
  - [CreateInnerFiatRequest200Response](doc/CreateInnerFiatRequest200Response.md)
  - [CreateInnerFiatRequestRequest](doc/CreateInnerFiatRequestRequest.md)
@@ -356,6 +358,7 @@ Class | Method | HTTP request | Description
  - [SyncContactsRequest](doc/SyncContactsRequest.md)
  - [TokenDetail](doc/TokenDetail.md)
  - [TokenStats](doc/TokenStats.md)
+ - [TradingAsset](doc/TradingAsset.md)
  - [Transaction](doc/Transaction.md)
  - [TransactionAssetsFilter](doc/TransactionAssetsFilter.md)
  - [TransactionDescriptionFillingRuleSet](doc/TransactionDescriptionFillingRuleSet.md)

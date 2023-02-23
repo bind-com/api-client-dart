@@ -13,12 +13,15 @@ class _$CreateAlertRequest extends CreateAlertRequest {
   final num? price;
   @override
   final AlertPeriodicity? periodicity;
+  @override
+  final TradingAsset? tradingAsset;
 
   factory _$CreateAlertRequest(
           [void Function(CreateAlertRequestBuilder)? updates]) =>
       (new CreateAlertRequestBuilder()..update(updates))._build();
 
-  _$CreateAlertRequest._({this.currency, this.price, this.periodicity})
+  _$CreateAlertRequest._(
+      {this.currency, this.price, this.periodicity, this.tradingAsset})
       : super._();
 
   @override
@@ -36,13 +39,16 @@ class _$CreateAlertRequest extends CreateAlertRequest {
     return other is CreateAlertRequest &&
         currency == other.currency &&
         price == other.price &&
-        periodicity == other.periodicity;
+        periodicity == other.periodicity &&
+        tradingAsset == other.tradingAsset;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc(0, currency.hashCode), price.hashCode), periodicity.hashCode));
+        $jc($jc($jc(0, currency.hashCode), price.hashCode),
+            periodicity.hashCode),
+        tradingAsset.hashCode));
   }
 
   @override
@@ -50,7 +56,8 @@ class _$CreateAlertRequest extends CreateAlertRequest {
     return (newBuiltValueToStringHelper(r'CreateAlertRequest')
           ..add('currency', currency)
           ..add('price', price)
-          ..add('periodicity', periodicity))
+          ..add('periodicity', periodicity)
+          ..add('tradingAsset', tradingAsset))
         .toString();
   }
 }
@@ -72,6 +79,11 @@ class CreateAlertRequestBuilder
   set periodicity(AlertPeriodicity? periodicity) =>
       _$this._periodicity = periodicity;
 
+  TradingAsset? _tradingAsset;
+  TradingAsset? get tradingAsset => _$this._tradingAsset;
+  set tradingAsset(TradingAsset? tradingAsset) =>
+      _$this._tradingAsset = tradingAsset;
+
   CreateAlertRequestBuilder() {
     CreateAlertRequest._defaults(this);
   }
@@ -82,6 +94,7 @@ class CreateAlertRequestBuilder
       _currency = $v.currency;
       _price = $v.price;
       _periodicity = $v.periodicity;
+      _tradingAsset = $v.tradingAsset;
       _$v = null;
     }
     return this;
@@ -104,7 +117,10 @@ class CreateAlertRequestBuilder
   _$CreateAlertRequest _build() {
     final _$result = _$v ??
         new _$CreateAlertRequest._(
-            currency: currency, price: price, periodicity: periodicity);
+            currency: currency,
+            price: price,
+            periodicity: periodicity,
+            tradingAsset: tradingAsset);
     replace(_$result);
     return _$result;
   }

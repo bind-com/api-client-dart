@@ -9,12 +9,14 @@ part of 'create_registration_token_request.dart';
 class _$CreateRegistrationTokenRequest extends CreateRegistrationTokenRequest {
   @override
   final String? token;
+  @override
+  final String? deviceId;
 
   factory _$CreateRegistrationTokenRequest(
           [void Function(CreateRegistrationTokenRequestBuilder)? updates]) =>
       (new CreateRegistrationTokenRequestBuilder()..update(updates))._build();
 
-  _$CreateRegistrationTokenRequest._({this.token}) : super._();
+  _$CreateRegistrationTokenRequest._({this.token, this.deviceId}) : super._();
 
   @override
   CreateRegistrationTokenRequest rebuild(
@@ -28,18 +30,21 @@ class _$CreateRegistrationTokenRequest extends CreateRegistrationTokenRequest {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is CreateRegistrationTokenRequest && token == other.token;
+    return other is CreateRegistrationTokenRequest &&
+        token == other.token &&
+        deviceId == other.deviceId;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(0, token.hashCode));
+    return $jf($jc($jc(0, token.hashCode), deviceId.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'CreateRegistrationTokenRequest')
-          ..add('token', token))
+          ..add('token', token)
+          ..add('deviceId', deviceId))
         .toString();
   }
 }
@@ -54,6 +59,10 @@ class CreateRegistrationTokenRequestBuilder
   String? get token => _$this._token;
   set token(String? token) => _$this._token = token;
 
+  String? _deviceId;
+  String? get deviceId => _$this._deviceId;
+  set deviceId(String? deviceId) => _$this._deviceId = deviceId;
+
   CreateRegistrationTokenRequestBuilder() {
     CreateRegistrationTokenRequest._defaults(this);
   }
@@ -62,6 +71,7 @@ class CreateRegistrationTokenRequestBuilder
     final $v = _$v;
     if ($v != null) {
       _token = $v.token;
+      _deviceId = $v.deviceId;
       _$v = null;
     }
     return this;
@@ -82,8 +92,9 @@ class CreateRegistrationTokenRequestBuilder
   CreateRegistrationTokenRequest build() => _build();
 
   _$CreateRegistrationTokenRequest _build() {
-    final _$result =
-        _$v ?? new _$CreateRegistrationTokenRequest._(token: token);
+    final _$result = _$v ??
+        new _$CreateRegistrationTokenRequest._(
+            token: token, deviceId: deviceId);
     replace(_$result);
     return _$result;
   }

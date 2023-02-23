@@ -49,6 +49,7 @@ import 'package:bind_api/src/model/country.dart';
 import 'package:bind_api/src/model/create_alert_request.dart';
 import 'package:bind_api/src/model/create_bank_card_request.dart';
 import 'package:bind_api/src/model/create_beneficiary_request.dart';
+import 'package:bind_api/src/model/create_device_request.dart';
 import 'package:bind_api/src/model/create_fiat_wallet_request.dart';
 import 'package:bind_api/src/model/create_inner_fiat_request200_response.dart';
 import 'package:bind_api/src/model/create_inner_fiat_request_request.dart';
@@ -149,6 +150,7 @@ import 'package:bind_api/src/model/staking_releases.dart';
 import 'package:bind_api/src/model/sync_contacts_request.dart';
 import 'package:bind_api/src/model/token_detail.dart';
 import 'package:bind_api/src/model/token_stats.dart';
+import 'package:bind_api/src/model/trading_asset.dart';
 import 'package:bind_api/src/model/transaction.dart';
 import 'package:bind_api/src/model/transaction_assets_filter.dart';
 import 'package:bind_api/src/model/transaction_description_filling_rule_set.dart';
@@ -213,6 +215,7 @@ part 'serializers.g.dart';
   CreateAlertRequest,
   CreateBankCardRequest,
   CreateBeneficiaryRequest,
+  CreateDeviceRequest,
   CreateFiatWalletRequest,
   CreateInnerFiatRequest200Response,
   CreateInnerFiatRequestRequest,
@@ -313,6 +316,7 @@ part 'serializers.g.dart';
   SyncContactsRequest,
   TokenDetail,
   TokenStats,
+  TradingAsset,
   Transaction,
   TransactionAssetsFilter,
   TransactionDescriptionFillingRuleSet,

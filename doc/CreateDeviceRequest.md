@@ -1,4 +1,4 @@
-# bind_api.model.CreateAlertRequest
+# bind_api.model.CreateDeviceRequest
 
 ## Load the model package
 ```dart
@@ -8,10 +8,7 @@ import 'package:bind_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**currency** | **String** |  | [optional] 
-**price** | **num** |  | [optional] 
-**periodicity** | [**AlertPeriodicity**](AlertPeriodicity.md) |  | [optional] 
-**tradingAsset** | [**TradingAsset**](TradingAsset.md) |  | [optional] 
+**deviceId** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

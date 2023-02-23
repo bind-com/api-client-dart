@@ -11,9 +11,13 @@ part 'create_registration_token_request.g.dart';
 ///
 /// Properties:
 /// * [token] 
+/// * [deviceId] 
 abstract class CreateRegistrationTokenRequest implements Built<CreateRegistrationTokenRequest, CreateRegistrationTokenRequestBuilder> {
     @BuiltValueField(wireName: r'token')
     String? get token;
+
+    @BuiltValueField(wireName: r'device_id')
+    String? get deviceId;
 
     CreateRegistrationTokenRequest._();
 
@@ -43,6 +47,12 @@ class _$CreateRegistrationTokenRequestSerializer implements StructuredSerializer
                 ..add(serializers.serialize(object.token,
                     specifiedType: const FullType(String)));
         }
+        if (object.deviceId != null) {
+            result
+                ..add(r'device_id')
+                ..add(serializers.serialize(object.deviceId,
+                    specifiedType: const FullType(String)));
+        }
         return result;
     }
 
@@ -62,6 +72,11 @@ class _$CreateRegistrationTokenRequestSerializer implements StructuredSerializer
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.token = valueDes;
+                    break;
+                case r'device_id':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.deviceId = valueDes;
                     break;
             }
         }

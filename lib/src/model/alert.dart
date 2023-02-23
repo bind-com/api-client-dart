@@ -4,6 +4,7 @@
 
 import 'package:bind_api/src/model/price_scale.dart';
 import 'package:bind_api/src/model/alert_periodicity.dart';
+import 'package:bind_api/src/model/trading_asset.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -19,6 +20,7 @@ part 'alert.g.dart';
 /// * [periodicity] 
 /// * [price] 
 /// * [priceScale] 
+/// * [tradingAsset] 
 /// * [active] 
 abstract class Alert implements Built<Alert, AlertBuilder> {
     @BuiltValueField(wireName: r'alert_id')
@@ -44,6 +46,10 @@ abstract class Alert implements Built<Alert, AlertBuilder> {
     @BuiltValueField(wireName: r'price_scale')
     PriceScale? get priceScale;
     // enum priceScaleEnum {  above,  below,  };
+
+    @BuiltValueField(wireName: r'trading_asset')
+    TradingAsset? get tradingAsset;
+    // enum tradingAssetEnum {  BTC,  USD,  };
 
     @BuiltValueField(wireName: r'active')
     bool? get active;
@@ -112,6 +118,12 @@ class _$AlertSerializer implements StructuredSerializer<Alert> {
                 ..add(serializers.serialize(object.priceScale,
                     specifiedType: const FullType(PriceScale)));
         }
+        if (object.tradingAsset != null) {
+            result
+                ..add(r'trading_asset')
+                ..add(serializers.serialize(object.tradingAsset,
+                    specifiedType: const FullType(TradingAsset)));
+        }
         if (object.active != null) {
             result
                 ..add(r'active')
@@ -167,6 +179,11 @@ class _$AlertSerializer implements StructuredSerializer<Alert> {
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(PriceScale)) as PriceScale;
                     result.priceScale = valueDes;
+                    break;
+                case r'trading_asset':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(TradingAsset)) as TradingAsset;
+                    result.tradingAsset = valueDes;
                     break;
                 case r'active':
                     final valueDes = serializers.deserialize(value,

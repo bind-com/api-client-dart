@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **periodicity** | [**AlertPeriodicity**](AlertPeriodicity.md) |  | [optional] 
 **price** | **num** |  | [optional] 
 **priceScale** | [**PriceScale**](PriceScale.md) |  | [optional] 
+**tradingAsset** | [**TradingAsset**](TradingAsset.md) |  | [optional] 
 **active** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

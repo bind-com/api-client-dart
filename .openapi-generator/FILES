@@ -42,6 +42,7 @@ doc/Country.md
 doc/CreateAlertRequest.md
 doc/CreateBankCardRequest.md
 doc/CreateBeneficiaryRequest.md
+doc/CreateDeviceRequest.md
 doc/CreateFiatWalletRequest.md
 doc/CreateInnerFiatRequest200Response.md
 doc/CreateInnerFiatRequestRequest.md
@@ -151,6 +152,7 @@ doc/SupportApi.md
 doc/SyncContactsRequest.md
 doc/TokenDetail.md
 doc/TokenStats.md
+doc/TradingAsset.md
 doc/Transaction.md
 doc/TransactionAssetsFilter.md
 doc/TransactionDescriptionFillingRuleSet.md
@@ -239,6 +241,7 @@ lib/src/model/country.dart
 lib/src/model/create_alert_request.dart
 lib/src/model/create_bank_card_request.dart
 lib/src/model/create_beneficiary_request.dart
+lib/src/model/create_device_request.dart
 lib/src/model/create_fiat_wallet_request.dart
 lib/src/model/create_inner_fiat_request200_response.dart
 lib/src/model/create_inner_fiat_request_request.dart
@@ -340,6 +343,7 @@ lib/src/model/staking_releases.dart
 lib/src/model/sync_contacts_request.dart
 lib/src/model/token_detail.dart
 lib/src/model/token_stats.dart
+lib/src/model/trading_asset.dart
 lib/src/model/transaction.dart
 lib/src/model/transaction_assets_filter.dart
 lib/src/model/transaction_description_filling_rule_set.dart
@@ -365,5 +369,5 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/investment_style_response_all_of_test.dart
-test/investment_style_response_test.dart
+test/create_device_request_test.dart
+test/trading_asset_test.dart

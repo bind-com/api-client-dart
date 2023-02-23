@@ -22,6 +22,8 @@ class _$Alert extends Alert {
   @override
   final PriceScale? priceScale;
   @override
+  final TradingAsset? tradingAsset;
+  @override
   final bool? active;
 
   factory _$Alert([void Function(AlertBuilder)? updates]) =>
@@ -35,6 +37,7 @@ class _$Alert extends Alert {
       this.periodicity,
       this.price,
       this.priceScale,
+      this.tradingAsset,
       this.active})
       : super._();
 
@@ -56,6 +59,7 @@ class _$Alert extends Alert {
         periodicity == other.periodicity &&
         price == other.price &&
         priceScale == other.priceScale &&
+        tradingAsset == other.tradingAsset &&
         active == other.active;
   }
 
@@ -67,13 +71,15 @@ class _$Alert extends Alert {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc(0, alertId.hashCode),
-                                currencyCode.hashCode),
-                            currencyLogo.hashCode),
-                        createdAt.hashCode),
-                    periodicity.hashCode),
-                price.hashCode),
-            priceScale.hashCode),
+                            $jc(
+                                $jc($jc(0, alertId.hashCode),
+                                    currencyCode.hashCode),
+                                currencyLogo.hashCode),
+                            createdAt.hashCode),
+                        periodicity.hashCode),
+                    price.hashCode),
+                priceScale.hashCode),
+            tradingAsset.hashCode),
         active.hashCode));
   }
 
@@ -87,6 +93,7 @@ class _$Alert extends Alert {
           ..add('periodicity', periodicity)
           ..add('price', price)
           ..add('priceScale', priceScale)
+          ..add('tradingAsset', tradingAsset)
           ..add('active', active))
         .toString();
   }
@@ -124,6 +131,11 @@ class AlertBuilder implements Builder<Alert, AlertBuilder> {
   PriceScale? get priceScale => _$this._priceScale;
   set priceScale(PriceScale? priceScale) => _$this._priceScale = priceScale;
 
+  TradingAsset? _tradingAsset;
+  TradingAsset? get tradingAsset => _$this._tradingAsset;
+  set tradingAsset(TradingAsset? tradingAsset) =>
+      _$this._tradingAsset = tradingAsset;
+
   bool? _active;
   bool? get active => _$this._active;
   set active(bool? active) => _$this._active = active;
@@ -142,6 +154,7 @@ class AlertBuilder implements Builder<Alert, AlertBuilder> {
       _periodicity = $v.periodicity;
       _price = $v.price;
       _priceScale = $v.priceScale;
+      _tradingAsset = $v.tradingAsset;
       _active = $v.active;
       _$v = null;
     }
@@ -172,6 +185,7 @@ class AlertBuilder implements Builder<Alert, AlertBuilder> {
             periodicity: periodicity,
             price: price,
             priceScale: priceScale,
+            tradingAsset: tradingAsset,
             active: active);
     replace(_$result);
     return _$result;
