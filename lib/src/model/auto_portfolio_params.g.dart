@@ -14,7 +14,7 @@ class _$AutoPortfolioParams extends AutoPortfolioParams {
   @override
   final num? investmentDuration;
   @override
-  final DurationSpan? investmentDurationSpan;
+  final InvestmentDuration? investmentDurationSpan;
   @override
   final InvestmentStyle? investmentStyle;
   @override
@@ -107,9 +107,10 @@ class AutoPortfolioParamsBuilder
   set investmentDuration(num? investmentDuration) =>
       _$this._investmentDuration = investmentDuration;
 
-  DurationSpan? _investmentDurationSpan;
-  DurationSpan? get investmentDurationSpan => _$this._investmentDurationSpan;
-  set investmentDurationSpan(DurationSpan? investmentDurationSpan) =>
+  InvestmentDuration? _investmentDurationSpan;
+  InvestmentDuration? get investmentDurationSpan =>
+      _$this._investmentDurationSpan;
+  set investmentDurationSpan(InvestmentDuration? investmentDurationSpan) =>
       _$this._investmentDurationSpan = investmentDurationSpan;
 
   InvestmentStyle? _investmentStyle;

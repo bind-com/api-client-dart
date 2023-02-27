@@ -3,7 +3,7 @@
 //
 
 import 'package:bind_api/src/model/investment_style.dart';
-import 'package:bind_api/src/model/duration_span.dart';
+import 'package:bind_api/src/model/investment_duration.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -32,7 +32,7 @@ abstract class AutoPortfolioParams implements Built<AutoPortfolioParams, AutoPor
     num? get investmentDuration;
 
     @BuiltValueField(wireName: r'investment_duration_span')
-    DurationSpan? get investmentDurationSpan;
+    InvestmentDuration? get investmentDurationSpan;
     // enum investmentDurationSpanEnum {  week,  month,  year,  };
 
     @BuiltValueField(wireName: r'investment_style')
@@ -90,7 +90,7 @@ class _$AutoPortfolioParamsSerializer implements StructuredSerializer<AutoPortfo
             result
                 ..add(r'investment_duration_span')
                 ..add(serializers.serialize(object.investmentDurationSpan,
-                    specifiedType: const FullType(DurationSpan)));
+                    specifiedType: const FullType(InvestmentDuration)));
         }
         if (object.investmentStyle != null) {
             result
@@ -142,7 +142,7 @@ class _$AutoPortfolioParamsSerializer implements StructuredSerializer<AutoPortfo
                     break;
                 case r'investment_duration_span':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(DurationSpan)) as DurationSpan;
+                        specifiedType: const FullType(InvestmentDuration)) as InvestmentDuration;
                     result.investmentDurationSpan = valueDes;
                     break;
                 case r'investment_style':

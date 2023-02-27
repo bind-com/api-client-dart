@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getAutoPortfolioChartIntervals**
-> BuiltList<MachineAndHumanReadables> getAutoPortfolioChartIntervals()
+> BuiltList<AutoportfolioChartPeriodResponse> getAutoPortfolioChartIntervals()
 
 List of autoportfolio chart intervals
 
@@ -138,7 +138,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;MachineAndHumanReadables&gt;**](MachineAndHumanReadables.md)
+[**BuiltList&lt;AutoportfolioChartPeriodResponse&gt;**](AutoportfolioChartPeriodResponse.md)
 
 ### Authorization
 
@@ -152,7 +152,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getAutoPortfolioDurations**
-> BuiltList<MachineAndHumanReadables> getAutoPortfolioDurations()
+> BuiltList<InvestmentDurationResponse> getAutoPortfolioDurations()
 
 List of investment durations
 
@@ -178,7 +178,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;MachineAndHumanReadables&gt;**](MachineAndHumanReadables.md)
+[**BuiltList&lt;InvestmentDurationResponse&gt;**](InvestmentDurationResponse.md)
 
 ### Authorization
 

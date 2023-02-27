@@ -15,9 +15,10 @@ import 'package:bind_api/src/model/auto_portfolio_chart_tick.dart';
 import 'package:bind_api/src/model/auto_portfolio_estimate.dart';
 import 'package:bind_api/src/model/auto_portfolio_params.dart';
 import 'package:bind_api/src/model/auto_portfolio_sell_request.dart';
+import 'package:bind_api/src/model/autoportfolio_chart_period_response.dart';
 import 'package:bind_api/src/model/error.dart';
+import 'package:bind_api/src/model/investment_duration_response.dart';
 import 'package:bind_api/src/model/investment_style_response.dart';
-import 'package:bind_api/src/model/machine_and_human_readables.dart';
 import 'package:bind_api/src/model/rename_auto_portfolio_request.dart';
 import 'package:bind_api/src/model/slider_matrix.dart';
 import 'package:built_collection/built_collection.dart';
@@ -227,9 +228,9 @@ class AutoPortfolioApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<MachineAndHumanReadables>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<AutoportfolioChartPeriodResponse>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<MachineAndHumanReadables>>> getAutoPortfolioChartIntervals({ 
+  Future<Response<BuiltList<AutoportfolioChartPeriodResponse>>> getAutoPortfolioChartIntervals({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -264,14 +265,14 @@ class AutoPortfolioApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<MachineAndHumanReadables> _responseData;
+    BuiltList<AutoportfolioChartPeriodResponse> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(MachineAndHumanReadables)]);
+      const _responseType = FullType(BuiltList, [FullType(AutoportfolioChartPeriodResponse)]);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as BuiltList<MachineAndHumanReadables>;
+      ) as BuiltList<AutoportfolioChartPeriodResponse>;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -282,7 +283,7 @@ class AutoPortfolioApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<MachineAndHumanReadables>>(
+    return Response<BuiltList<AutoportfolioChartPeriodResponse>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -305,9 +306,9 @@ class AutoPortfolioApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<MachineAndHumanReadables>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<InvestmentDurationResponse>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<MachineAndHumanReadables>>> getAutoPortfolioDurations({ 
+  Future<Response<BuiltList<InvestmentDurationResponse>>> getAutoPortfolioDurations({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -342,14 +343,14 @@ class AutoPortfolioApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<MachineAndHumanReadables> _responseData;
+    BuiltList<InvestmentDurationResponse> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(MachineAndHumanReadables)]);
+      const _responseType = FullType(BuiltList, [FullType(InvestmentDurationResponse)]);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as BuiltList<MachineAndHumanReadables>;
+      ) as BuiltList<InvestmentDurationResponse>;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -360,7 +361,7 @@ class AutoPortfolioApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<MachineAndHumanReadables>>(
+    return Response<BuiltList<InvestmentDurationResponse>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

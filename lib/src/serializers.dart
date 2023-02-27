@@ -24,6 +24,7 @@ import 'package:bind_api/src/model/auto_portfolio_chart_tick.dart';
 import 'package:bind_api/src/model/auto_portfolio_estimate.dart';
 import 'package:bind_api/src/model/auto_portfolio_params.dart';
 import 'package:bind_api/src/model/auto_portfolio_sell_request.dart';
+import 'package:bind_api/src/model/autoportfolio_chart_period_response.dart';
 import 'package:bind_api/src/model/bank_card_analytics.dart';
 import 'package:bind_api/src/model/bank_card_base_data.dart';
 import 'package:bind_api/src/model/bank_card_blocking_reason.dart';
@@ -81,7 +82,6 @@ import 'package:bind_api/src/model/currency_with_rate_all_of.dart';
 import 'package:bind_api/src/model/default_staking_currencies.dart';
 import 'package:bind_api/src/model/delivery_address.dart';
 import 'package:bind_api/src/model/deposit_address.dart';
-import 'package:bind_api/src/model/duration_span.dart';
 import 'package:bind_api/src/model/error.dart';
 import 'package:bind_api/src/model/export_history.dart';
 import 'package:bind_api/src/model/favorite_crypto_create_request.dart';
@@ -105,9 +105,10 @@ import 'package:bind_api/src/model/get_staking_timer200_response.dart';
 import 'package:bind_api/src/model/human_transaction_types.dart';
 import 'package:bind_api/src/model/inner_crypto_transfer_fee_result.dart';
 import 'package:bind_api/src/model/inner_fiat_transfer_fee_result.dart';
+import 'package:bind_api/src/model/investment_duration.dart';
+import 'package:bind_api/src/model/investment_duration_response.dart';
 import 'package:bind_api/src/model/investment_style.dart';
 import 'package:bind_api/src/model/investment_style_response.dart';
-import 'package:bind_api/src/model/investment_style_response_all_of.dart';
 import 'package:bind_api/src/model/jwt_token.dart';
 import 'package:bind_api/src/model/kyc_document_status.dart';
 import 'package:bind_api/src/model/kyc_field_status.dart';
@@ -190,6 +191,7 @@ part 'serializers.g.dart';
   AutoPortfolioEstimate,
   AutoPortfolioParams,
   AutoPortfolioSellRequest,
+  AutoportfolioChartPeriodResponse,
   BankCardAnalytics,
   BankCardBaseData,
   BankCardBlockingReason,
@@ -247,7 +249,6 @@ part 'serializers.g.dart';
   DefaultStakingCurrencies,
   DeliveryAddress,
   DepositAddress,
-  DurationSpan,
   Error,
   ExportHistory,
   FavoriteCryptoCreateRequest,
@@ -271,9 +272,10 @@ part 'serializers.g.dart';
   HumanTransactionTypes,
   InnerCryptoTransferFeeResult,
   InnerFiatTransferFeeResult,
+  InvestmentDuration,
+  InvestmentDurationResponse,
   InvestmentStyle,
   InvestmentStyleResponse,
-  InvestmentStyleResponseAllOf,
   JWTToken,
   KYCDocumentStatus,
   KYCFieldStatus,
@@ -343,6 +345,10 @@ part 'serializers.g.dart';
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(AutoportfolioChartPeriodResponse)]),
+        () => ListBuilder<AutoportfolioChartPeriodResponse>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(AutoPortfolioAsset)]),
         () => ListBuilder<AutoPortfolioAsset>(),
       )
@@ -377,6 +383,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(CardView)]),
         () => ListBuilder<CardView>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(InvestmentDurationResponse)]),
+        () => ListBuilder<InvestmentDurationResponse>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Alert)]),

@@ -8,7 +8,7 @@ part of 'investment_style_response.dart';
 
 class _$InvestmentStyleResponse extends InvestmentStyleResponse {
   @override
-  final String machineReadable;
+  final InvestmentStyle machineReadable;
   @override
   final String humanReadable;
   @override
@@ -69,9 +69,9 @@ class InvestmentStyleResponseBuilder
         Builder<InvestmentStyleResponse, InvestmentStyleResponseBuilder> {
   _$InvestmentStyleResponse? _$v;
 
-  String? _machineReadable;
-  String? get machineReadable => _$this._machineReadable;
-  set machineReadable(String? machineReadable) =>
+  InvestmentStyle? _machineReadable;
+  InvestmentStyle? get machineReadable => _$this._machineReadable;
+  set machineReadable(InvestmentStyle? machineReadable) =>
       _$this._machineReadable = machineReadable;
 
   String? _humanReadable;

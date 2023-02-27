@@ -15,6 +15,7 @@ doc/AutoPortfolioChartTick.md
 doc/AutoPortfolioEstimate.md
 doc/AutoPortfolioParams.md
 doc/AutoPortfolioSellRequest.md
+doc/AutoportfolioChartPeriodResponse.md
 doc/BankCardAnalytics.md
 doc/BankCardBaseData.md
 doc/BankCardBlockingReason.md
@@ -77,7 +78,6 @@ doc/CurrencyWithRateAllOf.md
 doc/DefaultStakingCurrencies.md
 doc/DeliveryAddress.md
 doc/DepositAddress.md
-doc/DurationSpan.md
 doc/Error.md
 doc/ExchangeApi.md
 doc/ExportHistory.md
@@ -104,9 +104,10 @@ doc/GetStakingTimer200Response.md
 doc/HumanTransactionTypes.md
 doc/InnerCryptoTransferFeeResult.md
 doc/InnerFiatTransferFeeResult.md
+doc/InvestmentDuration.md
+doc/InvestmentDurationResponse.md
 doc/InvestmentStyle.md
 doc/InvestmentStyleResponse.md
-doc/InvestmentStyleResponseAllOf.md
 doc/JWTToken.md
 doc/KYCDocumentStatus.md
 doc/KYCFieldStatus.md
@@ -216,6 +217,7 @@ lib/src/model/auto_portfolio_chart_tick.dart
 lib/src/model/auto_portfolio_estimate.dart
 lib/src/model/auto_portfolio_params.dart
 lib/src/model/auto_portfolio_sell_request.dart
+lib/src/model/autoportfolio_chart_period_response.dart
 lib/src/model/bank_card_analytics.dart
 lib/src/model/bank_card_base_data.dart
 lib/src/model/bank_card_blocking_reason.dart
@@ -274,7 +276,6 @@ lib/src/model/date.dart
 lib/src/model/default_staking_currencies.dart
 lib/src/model/delivery_address.dart
 lib/src/model/deposit_address.dart
-lib/src/model/duration_span.dart
 lib/src/model/error.dart
 lib/src/model/export_history.dart
 lib/src/model/favorite_crypto_create_request.dart
@@ -298,9 +299,10 @@ lib/src/model/get_staking_timer200_response.dart
 lib/src/model/human_transaction_types.dart
 lib/src/model/inner_crypto_transfer_fee_result.dart
 lib/src/model/inner_fiat_transfer_fee_result.dart
+lib/src/model/investment_duration.dart
+lib/src/model/investment_duration_response.dart
 lib/src/model/investment_style.dart
 lib/src/model/investment_style_response.dart
-lib/src/model/investment_style_response_all_of.dart
 lib/src/model/jwt_token.dart
 lib/src/model/kyc_document_status.dart
 lib/src/model/kyc_field_status.dart
@@ -369,5 +371,6 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/create_device_request_test.dart
-test/trading_asset_test.dart
+test/autoportfolio_chart_period_response_test.dart
+test/investment_duration_response_test.dart
+test/investment_duration_test.dart

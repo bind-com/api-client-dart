@@ -2,8 +2,7 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:bind_api/src/model/investment_style_response_all_of.dart';
-import 'package:bind_api/src/model/machine_and_human_readables.dart';
+import 'package:bind_api/src/model/investment_style.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -17,7 +16,8 @@ part 'investment_style_response.g.dart';
 /// * [description] 
 abstract class InvestmentStyleResponse implements Built<InvestmentStyleResponse, InvestmentStyleResponseBuilder> {
     @BuiltValueField(wireName: r'machine_readable')
-    String get machineReadable;
+    InvestmentStyle get machineReadable;
+    // enum machineReadableEnum {  Cautious,  Tentative,  Confident,  Ambitious,  Adventurous,  };
 
     @BuiltValueField(wireName: r'human_readable')
     String get humanReadable;
@@ -50,7 +50,7 @@ class _$InvestmentStyleResponseSerializer implements StructuredSerializer<Invest
         result
             ..add(r'machine_readable')
             ..add(serializers.serialize(object.machineReadable,
-                specifiedType: const FullType(String)));
+                specifiedType: const FullType(InvestmentStyle)));
         result
             ..add(r'human_readable')
             ..add(serializers.serialize(object.humanReadable,
@@ -78,7 +78,7 @@ class _$InvestmentStyleResponseSerializer implements StructuredSerializer<Invest
             switch (key) {
                 case r'machine_readable':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
+                        specifiedType: const FullType(InvestmentStyle)) as InvestmentStyle;
                     result.machineReadable = valueDes;
                     break;
                 case r'human_readable':

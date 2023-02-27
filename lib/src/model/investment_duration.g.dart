@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'duration_span.dart';
+part of 'investment_duration.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-const DurationSpan _$week = const DurationSpan._('week');
-const DurationSpan _$month = const DurationSpan._('month');
-const DurationSpan _$year = const DurationSpan._('year');
+const InvestmentDuration _$week = const InvestmentDuration._('week');
+const InvestmentDuration _$month = const InvestmentDuration._('month');
+const InvestmentDuration _$year = const InvestmentDuration._('year');
 
-DurationSpan _$valueOf(String name) {
+InvestmentDuration _$valueOf(String name) {
   switch (name) {
     case 'week':
       return _$week;
@@ -23,31 +23,33 @@ DurationSpan _$valueOf(String name) {
   }
 }
 
-final BuiltSet<DurationSpan> _$values =
-    new BuiltSet<DurationSpan>(const <DurationSpan>[
+final BuiltSet<InvestmentDuration> _$values =
+    new BuiltSet<InvestmentDuration>(const <InvestmentDuration>[
   _$week,
   _$month,
   _$year,
 ]);
 
-class _$DurationSpanMeta {
-  const _$DurationSpanMeta();
-  DurationSpan get week => _$week;
-  DurationSpan get month => _$month;
-  DurationSpan get year => _$year;
-  DurationSpan valueOf(String name) => _$valueOf(name);
-  BuiltSet<DurationSpan> get values => _$values;
+class _$InvestmentDurationMeta {
+  const _$InvestmentDurationMeta();
+  InvestmentDuration get week => _$week;
+  InvestmentDuration get month => _$month;
+  InvestmentDuration get year => _$year;
+  InvestmentDuration valueOf(String name) => _$valueOf(name);
+  BuiltSet<InvestmentDuration> get values => _$values;
 }
 
-abstract class _$DurationSpanMixin {
+abstract class _$InvestmentDurationMixin {
   // ignore: non_constant_identifier_names
-  _$DurationSpanMeta get DurationSpan => const _$DurationSpanMeta();
+  _$InvestmentDurationMeta get InvestmentDuration =>
+      const _$InvestmentDurationMeta();
 }
 
-Serializer<DurationSpan> _$durationSpanSerializer =
-    new _$DurationSpanSerializer();
+Serializer<InvestmentDuration> _$investmentDurationSerializer =
+    new _$InvestmentDurationSerializer();
 
-class _$DurationSpanSerializer implements PrimitiveSerializer<DurationSpan> {
+class _$InvestmentDurationSerializer
+    implements PrimitiveSerializer<InvestmentDuration> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'week': 'week',
     'month': 'month',
@@ -60,19 +62,19 @@ class _$DurationSpanSerializer implements PrimitiveSerializer<DurationSpan> {
   };
 
   @override
-  final Iterable<Type> types = const <Type>[DurationSpan];
+  final Iterable<Type> types = const <Type>[InvestmentDuration];
   @override
-  final String wireName = 'DurationSpan';
+  final String wireName = 'InvestmentDuration';
 
   @override
-  Object serialize(Serializers serializers, DurationSpan object,
+  Object serialize(Serializers serializers, InvestmentDuration object,
           {FullType specifiedType = FullType.unspecified}) =>
       _toWire[object.name] ?? object.name;
 
   @override
-  DurationSpan deserialize(Serializers serializers, Object serialized,
+  InvestmentDuration deserialize(Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
-      DurationSpan.valueOf(
+      InvestmentDuration.valueOf(
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
