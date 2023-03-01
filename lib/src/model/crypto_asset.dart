@@ -96,7 +96,7 @@ class _$CryptoAssetSerializer implements StructuredSerializer<CryptoAsset> {
             result
                 ..add(r'btc_price')
                 ..add(serializers.serialize(object.btcPrice,
-                    specifiedType: const FullType(num)));
+                    specifiedType: const FullType.nullable(num)));
         }
         result
             ..add(r'performance')
@@ -160,7 +160,8 @@ class _$CryptoAssetSerializer implements StructuredSerializer<CryptoAsset> {
                     break;
                 case r'btc_price':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
+                        specifiedType: const FullType.nullable(num)) as num?;
+                    if (valueDes == null) continue;
                     result.btcPrice = valueDes;
                     break;
                 case r'performance':

@@ -371,6 +371,3 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/autoportfolio_chart_period_response_test.dart
-test/investment_duration_response_test.dart
-test/investment_duration_test.dart
