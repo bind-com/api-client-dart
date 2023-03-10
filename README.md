@@ -167,6 +167,7 @@ Class | Method | HTTP request | Description
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**updateBankCardSettings**](doc/FiatWalletApi.md#updatebankcardsettings) | **PATCH** /fiat/bankcards/{card_id}/ | Update of a Bank Card
 [*GeoApi*](doc/GeoApi.md) | [**listCountries**](doc/GeoApi.md#listcountries) | **GET** /countries/ | Countries list
 [*GeoApi*](doc/GeoApi.md) | [**listCountriesWthSort**](doc/GeoApi.md#listcountrieswthsort) | **GET** /countries-wth-sort/ | Countries list with neighboring sort
+[*MediaApi*](doc/MediaApi.md) | [**getWhitepaperLink**](doc/MediaApi.md#getwhitepaperlink) | **GET** /media/whitepaper/ | Get link of BIND whitepaper file
 [*StagingApi*](doc/StagingApi.md) | [**adjustFiatWalletBalance**](doc/StagingApi.md#adjustfiatwalletbalance) | **POST** /staging/fiat/wallet/adjust/ | Change balance of a fiat wallet
 [*StagingApi*](doc/StagingApi.md) | [**createSettlements**](doc/StagingApi.md#createsettlements) | **GET** /staging/settlement/create/ | Create Settlements
 [*StagingApi*](doc/StagingApi.md) | [**deleteRequest**](doc/StagingApi.md#deleterequest) | **DELETE** /staging/request/delete/{request_uuid}/ | Delete request

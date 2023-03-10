@@ -121,6 +121,7 @@ doc/LimitOrder.md
 doc/MachineAndHumanReadables.md
 doc/MainWalletItem.md
 doc/MainWalletType.md
+doc/MediaApi.md
 doc/MediaResponse.md
 doc/PaymentMethods.md
 doc/PayoutWalletAdjustRequest.md
@@ -192,6 +193,7 @@ lib/src/api/currency_api.dart
 lib/src/api/exchange_api.dart
 lib/src/api/fiat_wallet_api.dart
 lib/src/api/geo_api.dart
+lib/src/api/media_api.dart
 lib/src/api/staging_api.dart
 lib/src/api/staking_api.dart
 lib/src/api/support_api.dart
@@ -371,3 +373,4 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/media_api_test.dart

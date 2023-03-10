@@ -19,6 +19,7 @@ export 'package:bind_api/src/api/currency_api.dart';
 export 'package:bind_api/src/api/exchange_api.dart';
 export 'package:bind_api/src/api/fiat_wallet_api.dart';
 export 'package:bind_api/src/api/geo_api.dart';
+export 'package:bind_api/src/api/media_api.dart';
 export 'package:bind_api/src/api/staging_api.dart';
 export 'package:bind_api/src/api/staking_api.dart';
 export 'package:bind_api/src/api/support_api.dart';
