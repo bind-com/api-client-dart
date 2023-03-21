@@ -82,13 +82,18 @@ class _$TransactionExportFilter extends TransactionExportFilter {
   final DateTime dateTo;
   @override
   final TransactionExportFilterWalletEnum wallet;
+  @override
+  final TransactionTypes? transactionType;
 
   factory _$TransactionExportFilter(
           [void Function(TransactionExportFilterBuilder)? updates]) =>
       (new TransactionExportFilterBuilder()..update(updates))._build();
 
   _$TransactionExportFilter._(
-      {required this.dateFrom, required this.dateTo, required this.wallet})
+      {required this.dateFrom,
+      required this.dateTo,
+      required this.wallet,
+      this.transactionType})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         dateFrom, r'TransactionExportFilter', 'dateFrom');
@@ -113,13 +118,15 @@ class _$TransactionExportFilter extends TransactionExportFilter {
     return other is TransactionExportFilter &&
         dateFrom == other.dateFrom &&
         dateTo == other.dateTo &&
-        wallet == other.wallet;
+        wallet == other.wallet &&
+        transactionType == other.transactionType;
   }
 
   @override
   int get hashCode {
-    return $jf(
-        $jc($jc($jc(0, dateFrom.hashCode), dateTo.hashCode), wallet.hashCode));
+    return $jf($jc(
+        $jc($jc($jc(0, dateFrom.hashCode), dateTo.hashCode), wallet.hashCode),
+        transactionType.hashCode));
   }
 
   @override
@@ -127,7 +134,8 @@ class _$TransactionExportFilter extends TransactionExportFilter {
     return (newBuiltValueToStringHelper(r'TransactionExportFilter')
           ..add('dateFrom', dateFrom)
           ..add('dateTo', dateTo)
-          ..add('wallet', wallet))
+          ..add('wallet', wallet)
+          ..add('transactionType', transactionType))
         .toString();
   }
 }
@@ -150,6 +158,11 @@ class TransactionExportFilterBuilder
   set wallet(TransactionExportFilterWalletEnum? wallet) =>
       _$this._wallet = wallet;
 
+  TransactionTypes? _transactionType;
+  TransactionTypes? get transactionType => _$this._transactionType;
+  set transactionType(TransactionTypes? transactionType) =>
+      _$this._transactionType = transactionType;
+
   TransactionExportFilterBuilder() {
     TransactionExportFilter._defaults(this);
   }
@@ -160,6 +173,7 @@ class TransactionExportFilterBuilder
       _dateFrom = $v.dateFrom;
       _dateTo = $v.dateTo;
       _wallet = $v.wallet;
+      _transactionType = $v.transactionType;
       _$v = null;
     }
     return this;
@@ -187,7 +201,8 @@ class TransactionExportFilterBuilder
             dateTo: BuiltValueNullFieldError.checkNotNull(
                 dateTo, r'TransactionExportFilter', 'dateTo'),
             wallet: BuiltValueNullFieldError.checkNotNull(
-                wallet, r'TransactionExportFilter', 'wallet'));
+                wallet, r'TransactionExportFilter', 'wallet'),
+            transactionType: transactionType);
     replace(_$result);
     return _$result;
   }

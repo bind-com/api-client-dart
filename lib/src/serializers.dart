@@ -55,6 +55,7 @@ import 'package:bind_api/src/model/create_fiat_wallet_request.dart';
 import 'package:bind_api/src/model/create_inner_fiat_request200_response.dart';
 import 'package:bind_api/src/model/create_inner_fiat_request_request.dart';
 import 'package:bind_api/src/model/create_registration_token_request.dart';
+import 'package:bind_api/src/model/create_token_login.dart';
 import 'package:bind_api/src/model/crypto_account.dart';
 import 'package:bind_api/src/model/crypto_account_all_of.dart';
 import 'package:bind_api/src/model/crypto_account_light.dart';
@@ -150,6 +151,8 @@ import 'package:bind_api/src/model/staking_periods.dart';
 import 'package:bind_api/src/model/staking_releases.dart';
 import 'package:bind_api/src/model/sync_contacts_request.dart';
 import 'package:bind_api/src/model/token_detail.dart';
+import 'package:bind_api/src/model/token_login.dart';
+import 'package:bind_api/src/model/token_obtain.dart';
 import 'package:bind_api/src/model/token_stats.dart';
 import 'package:bind_api/src/model/trading_asset.dart';
 import 'package:bind_api/src/model/transaction.dart';
@@ -222,6 +225,7 @@ part 'serializers.g.dart';
   CreateInnerFiatRequest200Response,
   CreateInnerFiatRequestRequest,
   CreateRegistrationTokenRequest,
+  CreateTokenLogin,
   CryptoAccount,
   CryptoAccountAllOf,
   CryptoAccountLight,
@@ -317,6 +321,8 @@ part 'serializers.g.dart';
   StakingReleases,
   SyncContactsRequest,
   TokenDetail,
+  TokenLogin,
+  TokenObtain,
   TokenStats,
   TradingAsset,
   Transaction,

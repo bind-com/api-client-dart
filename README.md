@@ -49,12 +49,13 @@ import 'package:bind_api/bind_api.dart';
 
 
 final api = BindApi().getAuthApi();
+final CreateTokenLogin createTokenLogin = ; // CreateTokenLogin | 
 
 try {
-    final response = await api.whoAmI();
+    final response = await api.loginToken(createTokenLogin);
     print(response);
 } catch on DioError (e) {
-    print("Exception when calling AuthApi->whoAmI: $e\n");
+    print("Exception when calling AuthApi->loginToken: $e\n");
 }
 
 ```
@@ -65,6 +66,8 @@ All URIs are relative to *https://api.thebind.uk/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+[*AuthApi*](doc/AuthApi.md) | [**loginToken**](doc/AuthApi.md#logintoken) | **POST** /auth/token/login/ | Login with JWT token
+[*AuthApi*](doc/AuthApi.md) | [**obtainToken**](doc/AuthApi.md#obtaintoken) | **GET** /auth/token/obtain/ | Obtain JWT token
 [*AuthApi*](doc/AuthApi.md) | [**whoAmI**](doc/AuthApi.md#whoami) | **GET** /auth/whoami/ | Who am I
 [*AutoPortfolioApi*](doc/AutoPortfolioApi.md) | [**estimateAutoPortfolio**](doc/AutoPortfolioApi.md#estimateautoportfolio) | **POST** /autoportfolio/estimate/ | Estimate auto portfolio with given parameters
 [*AutoPortfolioApi*](doc/AutoPortfolioApi.md) | [**getAutoPortfolioChart**](doc/AutoPortfolioApi.md#getautoportfoliochart) | **GET** /autoportfolio/{portfolio_id}/chart/ | Get chart for specific auto portfolio
@@ -264,6 +267,7 @@ Class | Method | HTTP request | Description
  - [CreateInnerFiatRequest200Response](doc/CreateInnerFiatRequest200Response.md)
  - [CreateInnerFiatRequestRequest](doc/CreateInnerFiatRequestRequest.md)
  - [CreateRegistrationTokenRequest](doc/CreateRegistrationTokenRequest.md)
+ - [CreateTokenLogin](doc/CreateTokenLogin.md)
  - [CryptoAccount](doc/CryptoAccount.md)
  - [CryptoAccountAllOf](doc/CryptoAccountAllOf.md)
  - [CryptoAccountLight](doc/CryptoAccountLight.md)
@@ -359,6 +363,8 @@ Class | Method | HTTP request | Description
  - [StakingReleases](doc/StakingReleases.md)
  - [SyncContactsRequest](doc/SyncContactsRequest.md)
  - [TokenDetail](doc/TokenDetail.md)
+ - [TokenLogin](doc/TokenLogin.md)
+ - [TokenObtain](doc/TokenObtain.md)
  - [TokenStats](doc/TokenStats.md)
  - [TradingAsset](doc/TradingAsset.md)
  - [Transaction](doc/Transaction.md)

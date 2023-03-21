@@ -48,6 +48,7 @@ doc/CreateFiatWalletRequest.md
 doc/CreateInnerFiatRequest200Response.md
 doc/CreateInnerFiatRequestRequest.md
 doc/CreateRegistrationTokenRequest.md
+doc/CreateTokenLogin.md
 doc/CryptoAccount.md
 doc/CryptoAccountAllOf.md
 doc/CryptoAccountLight.md
@@ -153,6 +154,8 @@ doc/StakingReleases.md
 doc/SupportApi.md
 doc/SyncContactsRequest.md
 doc/TokenDetail.md
+doc/TokenLogin.md
+doc/TokenObtain.md
 doc/TokenStats.md
 doc/TradingAsset.md
 doc/Transaction.md
@@ -250,6 +253,7 @@ lib/src/model/create_fiat_wallet_request.dart
 lib/src/model/create_inner_fiat_request200_response.dart
 lib/src/model/create_inner_fiat_request_request.dart
 lib/src/model/create_registration_token_request.dart
+lib/src/model/create_token_login.dart
 lib/src/model/crypto_account.dart
 lib/src/model/crypto_account_all_of.dart
 lib/src/model/crypto_account_light.dart
@@ -346,6 +350,8 @@ lib/src/model/staking_periods.dart
 lib/src/model/staking_releases.dart
 lib/src/model/sync_contacts_request.dart
 lib/src/model/token_detail.dart
+lib/src/model/token_login.dart
+lib/src/model/token_obtain.dart
 lib/src/model/token_stats.dart
 lib/src/model/trading_asset.dart
 lib/src/model/transaction.dart
@@ -373,4 +379,6 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/media_api_test.dart
+test/create_token_login_test.dart
+test/token_login_test.dart
+test/token_obtain_test.dart
