@@ -2,6 +2,7 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+// ignore_for_file: unused_element
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -11,60 +12,129 @@ part 'crypto_account_all_of.g.dart';
 ///
 /// Properties:
 /// * [assetPerformance] - Percentage of growth of an asset during last 24 hours
-abstract class CryptoAccountAllOf implements Built<CryptoAccountAllOf, CryptoAccountAllOfBuilder> {
-    /// Percentage of growth of an asset during last 24 hours
-    @BuiltValueField(wireName: r'asset_performance')
-    num get assetPerformance;
+@BuiltValue(instantiable: false)
+abstract class CryptoAccountAllOf  {
+  /// Percentage of growth of an asset during last 24 hours
+  @BuiltValueField(wireName: r'asset_performance')
+  num get assetPerformance;
 
-    CryptoAccountAllOf._();
-
-    @BuiltValueHook(initializeBuilder: true)
-    static void _defaults(CryptoAccountAllOfBuilder b) => b;
-
-    factory CryptoAccountAllOf([void updates(CryptoAccountAllOfBuilder b)]) = _$CryptoAccountAllOf;
-
-    @BuiltValueSerializer(custom: true)
-    static Serializer<CryptoAccountAllOf> get serializer => _$CryptoAccountAllOfSerializer();
+  @BuiltValueSerializer(custom: true)
+  static Serializer<CryptoAccountAllOf> get serializer => _$CryptoAccountAllOfSerializer();
 }
 
-class _$CryptoAccountAllOfSerializer implements StructuredSerializer<CryptoAccountAllOf> {
-    @override
-    final Iterable<Type> types = const [CryptoAccountAllOf, _$CryptoAccountAllOf];
+class _$CryptoAccountAllOfSerializer implements PrimitiveSerializer<CryptoAccountAllOf> {
+  @override
+  final Iterable<Type> types = const [CryptoAccountAllOf];
 
-    @override
-    final String wireName = r'CryptoAccountAllOf';
+  @override
+  final String wireName = r'CryptoAccountAllOf';
 
-    @override
-    Iterable<Object?> serialize(Serializers serializers, CryptoAccountAllOf object,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = <Object?>[];
-        result
-            ..add(r'asset_performance')
-            ..add(serializers.serialize(object.assetPerformance,
-                specifiedType: const FullType(num)));
-        return result;
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    CryptoAccountAllOf object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    yield r'asset_performance';
+    yield serializers.serialize(
+      object.assetPerformance,
+      specifiedType: const FullType(num),
+    );
+  }
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    CryptoAccountAllOf object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  @override
+  CryptoAccountAllOf deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return serializers.deserialize(serialized, specifiedType: FullType($CryptoAccountAllOf)) as $CryptoAccountAllOf;
+  }
+}
+
+/// a concrete implementation of [CryptoAccountAllOf], since [CryptoAccountAllOf] is not instantiable
+@BuiltValue(instantiable: true)
+abstract class $CryptoAccountAllOf implements CryptoAccountAllOf, Built<$CryptoAccountAllOf, $CryptoAccountAllOfBuilder> {
+  $CryptoAccountAllOf._();
+
+  factory $CryptoAccountAllOf([void Function($CryptoAccountAllOfBuilder)? updates]) = _$$CryptoAccountAllOf;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($CryptoAccountAllOfBuilder b) => b;
+
+  @BuiltValueSerializer(custom: true)
+  static Serializer<$CryptoAccountAllOf> get serializer => _$$CryptoAccountAllOfSerializer();
+}
+
+class _$$CryptoAccountAllOfSerializer implements PrimitiveSerializer<$CryptoAccountAllOf> {
+  @override
+  final Iterable<Type> types = const [$CryptoAccountAllOf, _$$CryptoAccountAllOf];
+
+  @override
+  final String wireName = r'$CryptoAccountAllOf';
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    $CryptoAccountAllOf object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return serializers.serialize(object, specifiedType: FullType(CryptoAccountAllOf))!;
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required CryptoAccountAllOfBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'asset_performance':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.assetPerformance = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
     }
+  }
 
-    @override
-    CryptoAccountAllOf deserialize(Serializers serializers, Iterable<Object?> serialized,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = CryptoAccountAllOfBuilder();
-
-        final iterator = serialized.iterator;
-        while (iterator.moveNext()) {
-            final key = iterator.current as String;
-            iterator.moveNext();
-            final Object? value = iterator.current;
-            
-            switch (key) {
-                case r'asset_performance':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
-                    result.assetPerformance = valueDes;
-                    break;
-            }
-        }
-        return result.build();
-    }
+  @override
+  $CryptoAccountAllOf deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = $CryptoAccountAllOfBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

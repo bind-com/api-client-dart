@@ -2,6 +2,7 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+// ignore_for_file: unused_element
 import 'package:bind_api/src/model/crypto_wallet_balance.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:bind_api/src/model/crypto_account.dart';
@@ -18,99 +19,130 @@ part 'crypto_wallet.g.dart';
 /// * [paymentCurrencyCode] 
 /// * [performance] - total performance of a wallet
 /// * [accounts] 
-abstract class CryptoWallet implements Built<CryptoWallet, CryptoWalletBuilder> {
-    /// Total balance of crypto assets converted to Users payment currency
-    @BuiltValueField(wireName: r'payment_currency_balance')
-    num get paymentCurrencyBalance;
+@BuiltValue()
+abstract class CryptoWallet implements CryptoWalletAllOf, CryptoWalletBalance, Built<CryptoWallet, CryptoWalletBuilder> {
+  CryptoWallet._();
 
-    @BuiltValueField(wireName: r'payment_currency_code')
-    String get paymentCurrencyCode;
+  factory CryptoWallet([void updates(CryptoWalletBuilder b)]) = _$CryptoWallet;
 
-    /// total performance of a wallet
-    @BuiltValueField(wireName: r'performance')
-    num get performance;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(CryptoWalletBuilder b) => b;
 
-    @BuiltValueField(wireName: r'accounts')
-    BuiltList<CryptoAccount>? get accounts;
-
-    CryptoWallet._();
-
-    @BuiltValueHook(initializeBuilder: true)
-    static void _defaults(CryptoWalletBuilder b) => b;
-
-    factory CryptoWallet([void updates(CryptoWalletBuilder b)]) = _$CryptoWallet;
-
-    @BuiltValueSerializer(custom: true)
-    static Serializer<CryptoWallet> get serializer => _$CryptoWalletSerializer();
+  @BuiltValueSerializer(custom: true)
+  static Serializer<CryptoWallet> get serializer => _$CryptoWalletSerializer();
 }
 
-class _$CryptoWalletSerializer implements StructuredSerializer<CryptoWallet> {
-    @override
-    final Iterable<Type> types = const [CryptoWallet, _$CryptoWallet];
+class _$CryptoWalletSerializer implements PrimitiveSerializer<CryptoWallet> {
+  @override
+  final Iterable<Type> types = const [CryptoWallet, _$CryptoWallet];
 
-    @override
-    final String wireName = r'CryptoWallet';
+  @override
+  final String wireName = r'CryptoWallet';
 
-    @override
-    Iterable<Object?> serialize(Serializers serializers, CryptoWallet object,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = <Object?>[];
-        result
-            ..add(r'payment_currency_balance')
-            ..add(serializers.serialize(object.paymentCurrencyBalance,
-                specifiedType: const FullType(num)));
-        result
-            ..add(r'payment_currency_code')
-            ..add(serializers.serialize(object.paymentCurrencyCode,
-                specifiedType: const FullType(String)));
-        result
-            ..add(r'performance')
-            ..add(serializers.serialize(object.performance,
-                specifiedType: const FullType(num)));
-        if (object.accounts != null) {
-            result
-                ..add(r'accounts')
-                ..add(serializers.serialize(object.accounts,
-                    specifiedType: const FullType(BuiltList, [FullType(CryptoAccount)])));
-        }
-        return result;
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    CryptoWallet object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    yield r'performance';
+    yield serializers.serialize(
+      object.performance,
+      specifiedType: const FullType(num),
+    );
+    if (object.accounts != null) {
+      yield r'accounts';
+      yield serializers.serialize(
+        object.accounts,
+        specifiedType: const FullType(BuiltList, [FullType(CryptoAccount)]),
+      );
     }
+    yield r'payment_currency_code';
+    yield serializers.serialize(
+      object.paymentCurrencyCode,
+      specifiedType: const FullType(String),
+    );
+    yield r'payment_currency_balance';
+    yield serializers.serialize(
+      object.paymentCurrencyBalance,
+      specifiedType: const FullType(num),
+    );
+  }
 
-    @override
-    CryptoWallet deserialize(Serializers serializers, Iterable<Object?> serialized,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = CryptoWalletBuilder();
+  @override
+  Object serialize(
+    Serializers serializers,
+    CryptoWallet object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
 
-        final iterator = serialized.iterator;
-        while (iterator.moveNext()) {
-            final key = iterator.current as String;
-            iterator.moveNext();
-            final Object? value = iterator.current;
-            
-            switch (key) {
-                case r'payment_currency_balance':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
-                    result.paymentCurrencyBalance = valueDes;
-                    break;
-                case r'payment_currency_code':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.paymentCurrencyCode = valueDes;
-                    break;
-                case r'performance':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
-                    result.performance = valueDes;
-                    break;
-                case r'accounts':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(BuiltList, [FullType(CryptoAccount)])) as BuiltList<CryptoAccount>;
-                    result.accounts.replace(valueDes);
-                    break;
-            }
-        }
-        return result.build();
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required CryptoWalletBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'performance':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.performance = valueDes;
+          break;
+        case r'accounts':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(CryptoAccount)]),
+          ) as BuiltList<CryptoAccount>;
+          result.accounts.replace(valueDes);
+          break;
+        case r'payment_currency_code':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.paymentCurrencyCode = valueDes;
+          break;
+        case r'payment_currency_balance':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.paymentCurrencyBalance = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
     }
+  }
+
+  @override
+  CryptoWallet deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = CryptoWalletBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

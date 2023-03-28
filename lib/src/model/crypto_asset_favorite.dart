@@ -2,6 +2,7 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+// ignore_for_file: unused_element
 import 'package:bind_api/src/model/crypto_asset_favorite_all_of.dart';
 import 'package:bind_api/src/model/crypto_asset.dart';
 import 'package:built_value/built_value.dart';
@@ -24,211 +25,232 @@ part 'crypto_asset_favorite.g.dart';
 /// * [rank] - coinmarketcap rank
 /// * [assetColor] - color of an asset
 /// * [favorite] - True if an asset is added to User's favorites
-abstract class CryptoAssetFavorite implements Built<CryptoAssetFavorite, CryptoAssetFavoriteBuilder> {
-    /// Market price of a token converted to fiat currency (payment currency of current user)
-    @BuiltValueField(wireName: r'price')
-    num get price;
+@BuiltValue()
+abstract class CryptoAssetFavorite implements CryptoAsset, CryptoAssetFavoriteAllOf, Built<CryptoAssetFavorite, CryptoAssetFavoriteBuilder> {
+  CryptoAssetFavorite._();
 
-    /// Price of token in BTC, null if not available
-    @BuiltValueField(wireName: r'btc_price')
-    num? get btcPrice;
+  factory CryptoAssetFavorite([void updates(CryptoAssetFavoriteBuilder b)]) = _$CryptoAssetFavorite;
 
-    /// Percentage of growth of an asset during last 24 hours
-    @BuiltValueField(wireName: r'performance')
-    num get performance;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(CryptoAssetFavoriteBuilder b) => b;
 
-    /// Code of an asset
-    @BuiltValueField(wireName: r'code')
-    String get code;
-
-    /// Full name of a token
-    @BuiltValueField(wireName: r'name')
-    String get name;
-
-    /// Primary key of an asset
-    @BuiltValueField(wireName: r'id')
-    String get id;
-
-    /// Logo of an asset (link to static file)
-    @BuiltValueField(wireName: r'logo')
-    String? get logo;
-
-    /// Code of a fiat currency
-    @BuiltValueField(wireName: r'payment_currency_code')
-    String get paymentCurrencyCode;
-
-    /// Symbol of a fiat currency (can be used to show currency symbol at UI)
-    @BuiltValueField(wireName: r'payment_currency_symbol')
-    String get paymentCurrencySymbol;
-
-    /// coinmarketcap rank
-    @BuiltValueField(wireName: r'rank')
-    num? get rank;
-
-    /// color of an asset
-    @BuiltValueField(wireName: r'asset_color')
-    String? get assetColor;
-
-    /// True if an asset is added to User's favorites
-    @BuiltValueField(wireName: r'favorite')
-    bool get favorite;
-
-    CryptoAssetFavorite._();
-
-    @BuiltValueHook(initializeBuilder: true)
-    static void _defaults(CryptoAssetFavoriteBuilder b) => b;
-
-    factory CryptoAssetFavorite([void updates(CryptoAssetFavoriteBuilder b)]) = _$CryptoAssetFavorite;
-
-    @BuiltValueSerializer(custom: true)
-    static Serializer<CryptoAssetFavorite> get serializer => _$CryptoAssetFavoriteSerializer();
+  @BuiltValueSerializer(custom: true)
+  static Serializer<CryptoAssetFavorite> get serializer => _$CryptoAssetFavoriteSerializer();
 }
 
-class _$CryptoAssetFavoriteSerializer implements StructuredSerializer<CryptoAssetFavorite> {
-    @override
-    final Iterable<Type> types = const [CryptoAssetFavorite, _$CryptoAssetFavorite];
+class _$CryptoAssetFavoriteSerializer implements PrimitiveSerializer<CryptoAssetFavorite> {
+  @override
+  final Iterable<Type> types = const [CryptoAssetFavorite, _$CryptoAssetFavorite];
 
-    @override
-    final String wireName = r'CryptoAssetFavorite';
+  @override
+  final String wireName = r'CryptoAssetFavorite';
 
-    @override
-    Iterable<Object?> serialize(Serializers serializers, CryptoAssetFavorite object,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = <Object?>[];
-        result
-            ..add(r'price')
-            ..add(serializers.serialize(object.price,
-                specifiedType: const FullType(num)));
-        if (object.btcPrice != null) {
-            result
-                ..add(r'btc_price')
-                ..add(serializers.serialize(object.btcPrice,
-                    specifiedType: const FullType.nullable(num)));
-        }
-        result
-            ..add(r'performance')
-            ..add(serializers.serialize(object.performance,
-                specifiedType: const FullType(num)));
-        result
-            ..add(r'code')
-            ..add(serializers.serialize(object.code,
-                specifiedType: const FullType(String)));
-        result
-            ..add(r'name')
-            ..add(serializers.serialize(object.name,
-                specifiedType: const FullType(String)));
-        result
-            ..add(r'id')
-            ..add(serializers.serialize(object.id,
-                specifiedType: const FullType(String)));
-        result
-            ..add(r'logo')
-            ..add(object.logo == null ? null : serializers.serialize(object.logo,
-                specifiedType: const FullType.nullable(String)));
-        result
-            ..add(r'payment_currency_code')
-            ..add(serializers.serialize(object.paymentCurrencyCode,
-                specifiedType: const FullType(String)));
-        result
-            ..add(r'payment_currency_symbol')
-            ..add(serializers.serialize(object.paymentCurrencySymbol,
-                specifiedType: const FullType(String)));
-        if (object.rank != null) {
-            result
-                ..add(r'rank')
-                ..add(serializers.serialize(object.rank,
-                    specifiedType: const FullType(num)));
-        }
-        if (object.assetColor != null) {
-            result
-                ..add(r'asset_color')
-                ..add(serializers.serialize(object.assetColor,
-                    specifiedType: const FullType(String)));
-        }
-        result
-            ..add(r'favorite')
-            ..add(serializers.serialize(object.favorite,
-                specifiedType: const FullType(bool)));
-        return result;
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    CryptoAssetFavorite object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    yield r'performance';
+    yield serializers.serialize(
+      object.performance,
+      specifiedType: const FullType(num),
+    );
+    yield r'code';
+    yield serializers.serialize(
+      object.code,
+      specifiedType: const FullType(String),
+    );
+    yield r'price';
+    yield serializers.serialize(
+      object.price,
+      specifiedType: const FullType(num),
+    );
+    yield r'payment_currency_code';
+    yield serializers.serialize(
+      object.paymentCurrencyCode,
+      specifiedType: const FullType(String),
+    );
+    yield r'payment_currency_symbol';
+    yield serializers.serialize(
+      object.paymentCurrencySymbol,
+      specifiedType: const FullType(String),
+    );
+    if (object.assetColor != null) {
+      yield r'asset_color';
+      yield serializers.serialize(
+        object.assetColor,
+        specifiedType: const FullType(String),
+      );
     }
-
-    @override
-    CryptoAssetFavorite deserialize(Serializers serializers, Iterable<Object?> serialized,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = CryptoAssetFavoriteBuilder();
-
-        final iterator = serialized.iterator;
-        while (iterator.moveNext()) {
-            final key = iterator.current as String;
-            iterator.moveNext();
-            final Object? value = iterator.current;
-            
-            switch (key) {
-                case r'price':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
-                    result.price = valueDes;
-                    break;
-                case r'btc_price':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType.nullable(num)) as num?;
-                    if (valueDes == null) continue;
-                    result.btcPrice = valueDes;
-                    break;
-                case r'performance':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
-                    result.performance = valueDes;
-                    break;
-                case r'code':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.code = valueDes;
-                    break;
-                case r'name':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.name = valueDes;
-                    break;
-                case r'id':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.id = valueDes;
-                    break;
-                case r'logo':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType.nullable(String)) as String?;
-                    if (valueDes == null) continue;
-                    result.logo = valueDes;
-                    break;
-                case r'payment_currency_code':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.paymentCurrencyCode = valueDes;
-                    break;
-                case r'payment_currency_symbol':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.paymentCurrencySymbol = valueDes;
-                    break;
-                case r'rank':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
-                    result.rank = valueDes;
-                    break;
-                case r'asset_color':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.assetColor = valueDes;
-                    break;
-                case r'favorite':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(bool)) as bool;
-                    result.favorite = valueDes;
-                    break;
-            }
-        }
-        return result.build();
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'logo';
+    yield object.logo == null ? null : serializers.serialize(
+      object.logo,
+      specifiedType: const FullType.nullable(String),
+    );
+    if (object.rank != null) {
+      yield r'rank';
+      yield serializers.serialize(
+        object.rank,
+        specifiedType: const FullType(num),
+      );
     }
+    if (object.btcPrice != null) {
+      yield r'btc_price';
+      yield serializers.serialize(
+        object.btcPrice,
+        specifiedType: const FullType.nullable(num),
+      );
+    }
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
+    yield r'favorite';
+    yield serializers.serialize(
+      object.favorite,
+      specifiedType: const FullType(bool),
+    );
+  }
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    CryptoAssetFavorite object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required CryptoAssetFavoriteBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'performance':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.performance = valueDes;
+          break;
+        case r'code':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.code = valueDes;
+          break;
+        case r'price':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.price = valueDes;
+          break;
+        case r'payment_currency_code':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.paymentCurrencyCode = valueDes;
+          break;
+        case r'payment_currency_symbol':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.paymentCurrencySymbol = valueDes;
+          break;
+        case r'asset_color':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.assetColor = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'logo':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.logo = valueDes;
+          break;
+        case r'rank':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.rank = valueDes;
+          break;
+        case r'btc_price':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(num),
+          ) as num?;
+          if (valueDes == null) continue;
+          result.btcPrice = valueDes;
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
+          break;
+        case r'favorite':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.favorite = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  CryptoAssetFavorite deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = CryptoAssetFavoriteBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

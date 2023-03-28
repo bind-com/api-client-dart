@@ -2,6 +2,7 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+// ignore_for_file: unused_element
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -12,75 +13,147 @@ part 'bank_card_settings.g.dart';
 /// Properties:
 /// * [internationalPaymentsLocked] 
 /// * [gamblingTransactionsLocked] 
-abstract class BankCardSettings implements Built<BankCardSettings, BankCardSettingsBuilder> {
-    @BuiltValueField(wireName: r'international_payments_locked')
-    bool? get internationalPaymentsLocked;
+@BuiltValue(instantiable: false)
+abstract class BankCardSettings  {
+  @BuiltValueField(wireName: r'international_payments_locked')
+  bool? get internationalPaymentsLocked;
 
-    @BuiltValueField(wireName: r'gambling_transactions_locked')
-    bool? get gamblingTransactionsLocked;
+  @BuiltValueField(wireName: r'gambling_transactions_locked')
+  bool? get gamblingTransactionsLocked;
 
-    BankCardSettings._();
-
-    @BuiltValueHook(initializeBuilder: true)
-    static void _defaults(BankCardSettingsBuilder b) => b;
-
-    factory BankCardSettings([void updates(BankCardSettingsBuilder b)]) = _$BankCardSettings;
-
-    @BuiltValueSerializer(custom: true)
-    static Serializer<BankCardSettings> get serializer => _$BankCardSettingsSerializer();
+  @BuiltValueSerializer(custom: true)
+  static Serializer<BankCardSettings> get serializer => _$BankCardSettingsSerializer();
 }
 
-class _$BankCardSettingsSerializer implements StructuredSerializer<BankCardSettings> {
-    @override
-    final Iterable<Type> types = const [BankCardSettings, _$BankCardSettings];
+class _$BankCardSettingsSerializer implements PrimitiveSerializer<BankCardSettings> {
+  @override
+  final Iterable<Type> types = const [BankCardSettings];
 
-    @override
-    final String wireName = r'BankCardSettings';
+  @override
+  final String wireName = r'BankCardSettings';
 
-    @override
-    Iterable<Object?> serialize(Serializers serializers, BankCardSettings object,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = <Object?>[];
-        if (object.internationalPaymentsLocked != null) {
-            result
-                ..add(r'international_payments_locked')
-                ..add(serializers.serialize(object.internationalPaymentsLocked,
-                    specifiedType: const FullType(bool)));
-        }
-        if (object.gamblingTransactionsLocked != null) {
-            result
-                ..add(r'gambling_transactions_locked')
-                ..add(serializers.serialize(object.gamblingTransactionsLocked,
-                    specifiedType: const FullType(bool)));
-        }
-        return result;
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    BankCardSettings object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.internationalPaymentsLocked != null) {
+      yield r'international_payments_locked';
+      yield serializers.serialize(
+        object.internationalPaymentsLocked,
+        specifiedType: const FullType(bool),
+      );
     }
-
-    @override
-    BankCardSettings deserialize(Serializers serializers, Iterable<Object?> serialized,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = BankCardSettingsBuilder();
-
-        final iterator = serialized.iterator;
-        while (iterator.moveNext()) {
-            final key = iterator.current as String;
-            iterator.moveNext();
-            final Object? value = iterator.current;
-            
-            switch (key) {
-                case r'international_payments_locked':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(bool)) as bool;
-                    result.internationalPaymentsLocked = valueDes;
-                    break;
-                case r'gambling_transactions_locked':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(bool)) as bool;
-                    result.gamblingTransactionsLocked = valueDes;
-                    break;
-            }
-        }
-        return result.build();
+    if (object.gamblingTransactionsLocked != null) {
+      yield r'gambling_transactions_locked';
+      yield serializers.serialize(
+        object.gamblingTransactionsLocked,
+        specifiedType: const FullType(bool),
+      );
     }
+  }
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    BankCardSettings object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  @override
+  BankCardSettings deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return serializers.deserialize(serialized, specifiedType: FullType($BankCardSettings)) as $BankCardSettings;
+  }
+}
+
+/// a concrete implementation of [BankCardSettings], since [BankCardSettings] is not instantiable
+@BuiltValue(instantiable: true)
+abstract class $BankCardSettings implements BankCardSettings, Built<$BankCardSettings, $BankCardSettingsBuilder> {
+  $BankCardSettings._();
+
+  factory $BankCardSettings([void Function($BankCardSettingsBuilder)? updates]) = _$$BankCardSettings;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($BankCardSettingsBuilder b) => b;
+
+  @BuiltValueSerializer(custom: true)
+  static Serializer<$BankCardSettings> get serializer => _$$BankCardSettingsSerializer();
+}
+
+class _$$BankCardSettingsSerializer implements PrimitiveSerializer<$BankCardSettings> {
+  @override
+  final Iterable<Type> types = const [$BankCardSettings, _$$BankCardSettings];
+
+  @override
+  final String wireName = r'$BankCardSettings';
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    $BankCardSettings object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return serializers.serialize(object, specifiedType: FullType(BankCardSettings))!;
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required BankCardSettingsBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'international_payments_locked':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.internationalPaymentsLocked = valueDes;
+          break;
+        case r'gambling_transactions_locked':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.gamblingTransactionsLocked = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  $BankCardSettings deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = $BankCardSettingsBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

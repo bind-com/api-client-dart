@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCryptoFavorites**
-> BuiltList<CryptoAsset> getCryptoFavorites()
+> BuiltList<CryptoAsset> getCryptoFavorites(hasTradingPairWith)
 
 Get user favorite crypto assets
 
@@ -341,9 +341,10 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getCryptoWalletApi();
+final String hasTradingPairWith = hasTradingPairWith_example; // String | filter by trading pair
 
 try {
-    final response = api.getCryptoFavorites();
+    final response = api.getCryptoFavorites(hasTradingPairWith);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling CryptoWalletApi->getCryptoFavorites: $e\n');
@@ -351,7 +352,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **hasTradingPairWith** | **String**| filter by trading pair | [optional] 
 
 ### Return type
 

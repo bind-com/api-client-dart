@@ -2,6 +2,7 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+// ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
 import 'package:bind_api/src/model/transaction_types.dart';
 import 'package:built_value/built_value.dart';
@@ -16,106 +17,151 @@ part 'transaction_assets_filter.g.dart';
 /// * [type] 
 /// * [wallet] - id of wallet (fiat or crypto)
 /// * [contact] - id of contact
+@BuiltValue()
 abstract class TransactionAssetsFilter implements Built<TransactionAssetsFilter, TransactionAssetsFilterBuilder> {
-    @BuiltValueField(wireName: r'asset_type')
-    TransactionAssetsFilterAssetTypeEnum get assetType;
-    // enum assetTypeEnum {  fiat,  crypto,  all,  };
+  @BuiltValueField(wireName: r'asset_type')
+  TransactionAssetsFilterAssetTypeEnum get assetType;
+  // enum assetTypeEnum {  fiat,  crypto,  all,  };
 
-    @BuiltValueField(wireName: r'type')
-    TransactionTypes? get type;
-    // enum typeEnum {  OUTGOING_INNER_FIAT_TRANSFER,  INCOMING_INNER_FIAT_TRANSFER,  OUTGOING_INNER_CRYPTO_TRANSFER,  INCOMING_INNER_CRYPTO_TRANSFER,  FIAT_EXCHANGE,  OUTGOING_SWIFT_FIAT_TRANSFER,  EXCHANGE,  SEND,  CRYPTO_WITHDRAWAL,  CRYPTO_DEPOSIT,  CARD_SPENDING,  STAKE,  };
+  @BuiltValueField(wireName: r'type')
+  TransactionTypes? get type;
+  // enum typeEnum {  OUTGOING_INNER_FIAT_TRANSFER,  INCOMING_INNER_FIAT_TRANSFER,  OUTGOING_INNER_CRYPTO_TRANSFER,  INCOMING_INNER_CRYPTO_TRANSFER,  FIAT_EXCHANGE,  OUTGOING_SWIFT_FIAT_TRANSFER,  EXCHANGE,  SEND,  CRYPTO_WITHDRAWAL,  CRYPTO_DEPOSIT,  CARD_SPENDING,  STAKE,  };
 
-    /// id of wallet (fiat or crypto)
-    @BuiltValueField(wireName: r'wallet')
-    String? get wallet;
+  /// id of wallet (fiat or crypto)
+  @BuiltValueField(wireName: r'wallet')
+  String? get wallet;
 
-    /// id of contact
-    @BuiltValueField(wireName: r'contact')
-    String? get contact;
+  /// id of contact
+  @BuiltValueField(wireName: r'contact')
+  String? get contact;
 
-    TransactionAssetsFilter._();
+  TransactionAssetsFilter._();
 
-    @BuiltValueHook(initializeBuilder: true)
-    static void _defaults(TransactionAssetsFilterBuilder b) => b;
+  factory TransactionAssetsFilter([void updates(TransactionAssetsFilterBuilder b)]) = _$TransactionAssetsFilter;
 
-    factory TransactionAssetsFilter([void updates(TransactionAssetsFilterBuilder b)]) = _$TransactionAssetsFilter;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(TransactionAssetsFilterBuilder b) => b;
 
-    @BuiltValueSerializer(custom: true)
-    static Serializer<TransactionAssetsFilter> get serializer => _$TransactionAssetsFilterSerializer();
+  @BuiltValueSerializer(custom: true)
+  static Serializer<TransactionAssetsFilter> get serializer => _$TransactionAssetsFilterSerializer();
 }
 
-class _$TransactionAssetsFilterSerializer implements StructuredSerializer<TransactionAssetsFilter> {
-    @override
-    final Iterable<Type> types = const [TransactionAssetsFilter, _$TransactionAssetsFilter];
+class _$TransactionAssetsFilterSerializer implements PrimitiveSerializer<TransactionAssetsFilter> {
+  @override
+  final Iterable<Type> types = const [TransactionAssetsFilter, _$TransactionAssetsFilter];
 
-    @override
-    final String wireName = r'TransactionAssetsFilter';
+  @override
+  final String wireName = r'TransactionAssetsFilter';
 
-    @override
-    Iterable<Object?> serialize(Serializers serializers, TransactionAssetsFilter object,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = <Object?>[];
-        result
-            ..add(r'asset_type')
-            ..add(serializers.serialize(object.assetType,
-                specifiedType: const FullType(TransactionAssetsFilterAssetTypeEnum)));
-        if (object.type != null) {
-            result
-                ..add(r'type')
-                ..add(serializers.serialize(object.type,
-                    specifiedType: const FullType(TransactionTypes)));
-        }
-        if (object.wallet != null) {
-            result
-                ..add(r'wallet')
-                ..add(serializers.serialize(object.wallet,
-                    specifiedType: const FullType(String)));
-        }
-        if (object.contact != null) {
-            result
-                ..add(r'contact')
-                ..add(serializers.serialize(object.contact,
-                    specifiedType: const FullType(String)));
-        }
-        return result;
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    TransactionAssetsFilter object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    yield r'asset_type';
+    yield serializers.serialize(
+      object.assetType,
+      specifiedType: const FullType(TransactionAssetsFilterAssetTypeEnum),
+    );
+    if (object.type != null) {
+      yield r'type';
+      yield serializers.serialize(
+        object.type,
+        specifiedType: const FullType(TransactionTypes),
+      );
     }
-
-    @override
-    TransactionAssetsFilter deserialize(Serializers serializers, Iterable<Object?> serialized,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = TransactionAssetsFilterBuilder();
-
-        final iterator = serialized.iterator;
-        while (iterator.moveNext()) {
-            final key = iterator.current as String;
-            iterator.moveNext();
-            final Object? value = iterator.current;
-            
-            switch (key) {
-                case r'asset_type':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(TransactionAssetsFilterAssetTypeEnum)) as TransactionAssetsFilterAssetTypeEnum;
-                    result.assetType = valueDes;
-                    break;
-                case r'type':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(TransactionTypes)) as TransactionTypes;
-                    result.type = valueDes;
-                    break;
-                case r'wallet':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.wallet = valueDes;
-                    break;
-                case r'contact':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.contact = valueDes;
-                    break;
-            }
-        }
-        return result.build();
+    if (object.wallet != null) {
+      yield r'wallet';
+      yield serializers.serialize(
+        object.wallet,
+        specifiedType: const FullType(String),
+      );
     }
+    if (object.contact != null) {
+      yield r'contact';
+      yield serializers.serialize(
+        object.contact,
+        specifiedType: const FullType(String),
+      );
+    }
+  }
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    TransactionAssetsFilter object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required TransactionAssetsFilterBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'asset_type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(TransactionAssetsFilterAssetTypeEnum),
+          ) as TransactionAssetsFilterAssetTypeEnum;
+          result.assetType = valueDes;
+          break;
+        case r'type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(TransactionTypes),
+          ) as TransactionTypes;
+          result.type = valueDes;
+          break;
+        case r'wallet':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.wallet = valueDes;
+          break;
+        case r'contact':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.contact = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  TransactionAssetsFilter deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = TransactionAssetsFilterBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 
 class TransactionAssetsFilterAssetTypeEnum extends EnumClass {

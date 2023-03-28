@@ -4,6 +4,8 @@
 
 // ignore_for_file: unused_import
 
+import 'package:one_of_serializer/any_of_serializer.dart';
+import 'package:one_of_serializer/one_of_serializer.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
@@ -196,13 +198,13 @@ part 'serializers.g.dart';
   AutoPortfolioSellRequest,
   AutoportfolioChartPeriodResponse,
   BankCardAnalytics,
-  BankCardBaseData,
+  BankCardBaseData,$BankCardBaseData,
   BankCardBlockingReason,
   BankCardChangeWalletRequest,
   BankCardDetail,
-  BankCardDetailAllOf,
+  BankCardDetailAllOf,$BankCardDetailAllOf,
   BankCardLockRequest,
-  BankCardSettings,
+  BankCardSettings,$BankCardSettings,
   BankCardStatus,
   BankCardType,
   Beneficiary,
@@ -226,30 +228,30 @@ part 'serializers.g.dart';
   CreateInnerFiatRequestRequest,
   CreateRegistrationTokenRequest,
   CreateTokenLogin,
-  CryptoAccount,
-  CryptoAccountAllOf,
-  CryptoAccountLight,
+  CryptoAccount,$CryptoAccount,
+  CryptoAccountAllOf,$CryptoAccountAllOf,
+  CryptoAccountLight,$CryptoAccountLight,
   CryptoAccountWithShare,
-  CryptoAccountWithShareAllOf,
-  CryptoAsset,
+  CryptoAccountWithShareAllOf,$CryptoAccountWithShareAllOf,
+  CryptoAsset,$CryptoAsset,
   CryptoAssetFavorite,
-  CryptoAssetFavoriteAllOf,
+  CryptoAssetFavoriteAllOf,$CryptoAssetFavoriteAllOf,
   CryptoAssetSorting,
   CryptoExchangeEstimationResult,
   CryptoExchangeRequest,
   CryptoMarketStats,
   CryptoOverviewElement,
   CryptoWallet,
-  CryptoWalletAllOf,
-  CryptoWalletBalance,
+  CryptoWalletAllOf,$CryptoWalletAllOf,
+  CryptoWalletBalance,$CryptoWalletBalance,
   CryptoWalletWithShare,
-  CryptoWalletWithShareAllOf,
+  CryptoWalletWithShareAllOf,$CryptoWalletWithShareAllOf,
   CryptoWithdrawalFeeEstimationRequest,
   CryptoWithdrawalFeeEstimationResult,
   CryptoWithdrawalRequest,
-  Currency,
+  Currency,$Currency,
   CurrencyWithRate,
-  CurrencyWithRateAllOf,
+  CurrencyWithRateAllOf,$CurrencyWithRateAllOf,
   DefaultStakingCurrencies,
   DeliveryAddress,
   DepositAddress,
@@ -260,13 +262,13 @@ part 'serializers.g.dart';
   FiatAccount,
   FiatTransfer,
   FiatTransferEstimate,
-  FiatWallet,
-  FiatWalletAllOf,
-  FiatWalletLight,
+  FiatWallet,$FiatWallet,
+  FiatWalletAllOf,$FiatWalletAllOf,
+  FiatWalletLight,$FiatWalletLight,
   FiatWalletRequisites,
   FiatWalletTotalBalance,
   FiatWalletWithPaymentCurrency,
-  FiatWalletWithPaymentCurrencyAllOf,
+  FiatWalletWithPaymentCurrencyAllOf,$FiatWalletWithPaymentCurrencyAllOf,
   GetBankCardsList200Response,
   GetCardBenefits200Response,
   GetCardLimits200Response,
@@ -474,6 +476,26 @@ Serializers serializers = (_$serializers.toBuilder()
         const FullType(BuiltList, [FullType(StakingChartTick)]),
         () => ListBuilder<StakingChartTick>(),
       )
+      ..add(BankCardBaseData.serializer)
+      ..add(BankCardDetailAllOf.serializer)
+      ..add(BankCardSettings.serializer)
+      ..add(CryptoAccount.serializer)
+      ..add(CryptoAccountAllOf.serializer)
+      ..add(CryptoAccountLight.serializer)
+      ..add(CryptoAccountWithShareAllOf.serializer)
+      ..add(CryptoAsset.serializer)
+      ..add(CryptoAssetFavoriteAllOf.serializer)
+      ..add(CryptoWalletAllOf.serializer)
+      ..add(CryptoWalletBalance.serializer)
+      ..add(CryptoWalletWithShareAllOf.serializer)
+      ..add(Currency.serializer)
+      ..add(CurrencyWithRateAllOf.serializer)
+      ..add(FiatWallet.serializer)
+      ..add(FiatWalletAllOf.serializer)
+      ..add(FiatWalletLight.serializer)
+      ..add(FiatWalletWithPaymentCurrencyAllOf.serializer)
+      ..add(const OneOfSerializer())
+      ..add(const AnyOfSerializer())
       ..add(const DateSerializer())
       ..add(Iso8601DateTimeSerializer()))
     .build();

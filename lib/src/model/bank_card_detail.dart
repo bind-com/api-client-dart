@@ -2,8 +2,9 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:bind_api/src/model/bank_card_base_data.dart';
+// ignore_for_file: unused_element
 import 'package:bind_api/src/model/card_view.dart';
+import 'package:bind_api/src/model/bank_card_base_data.dart';
 import 'package:bind_api/src/model/date.dart';
 import 'package:bind_api/src/model/bank_card_detail_all_of.dart';
 import 'package:bind_api/src/model/bank_card_settings.dart';
@@ -36,301 +37,330 @@ part 'bank_card_detail.g.dart';
 /// * [decryptedCvv] - only if \"show encrypted data\" is true
 /// * [internationalPaymentsLocked] 
 /// * [gamblingTransactionsLocked] 
-abstract class BankCardDetail implements Built<BankCardDetail, BankCardDetailBuilder> {
-    @BuiltValueField(wireName: r'id')
-    String get id;
+@BuiltValue()
+abstract class BankCardDetail implements BankCardBaseData, BankCardDetailAllOf, BankCardSettings, Built<BankCardDetail, BankCardDetailBuilder> {
+  BankCardDetail._();
 
-    /// From common settings of the user
-    @BuiltValueField(wireName: r'cardholder_name')
-    String get cardholderName;
+  factory BankCardDetail([void updates(BankCardDetailBuilder b)]) = _$BankCardDetail;
 
-    @BuiltValueField(wireName: r'masked_card_number')
-    String get maskedCardNumber;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(BankCardDetailBuilder b) => b;
 
-    @BuiltValueField(wireName: r'expiry_date')
-    Date get expiryDate;
-
-    @BuiltValueField(wireName: r'currency')
-    String get currency;
-
-    @BuiltValueField(wireName: r'currency_code')
-    String get currencyCode;
-
-    @BuiltValueField(wireName: r'currency_name')
-    String get currencyName;
-
-    @BuiltValueField(wireName: r'currency_label')
-    String get currencyLabel;
-
-    @BuiltValueField(wireName: r'status')
-    BankCardStatus get status;
-    // enum statusEnum {  NotActivated,  Active,  Lost,  Stolen,  Inactive,  PinTriesLimit,  Expired,  Replaced,  Blocked,  };
-
-    @BuiltValueField(wireName: r'image')
-    String? get image;
-
-    @BuiltValueField(wireName: r'card_background')
-    CardView? get cardBackground;
-
-    @BuiltValueField(wireName: r'card_name')
-    String? get cardName;
-
-    @BuiltValueField(wireName: r'created_at')
-    DateTime get createdAt;
-
-    @BuiltValueField(wireName: r'balance')
-    num? get balance;
-
-    @BuiltValueField(wireName: r'linked_wallet')
-    FiatWalletLight? get linkedWallet;
-
-    /// only if \"show encrypted data\" is true
-    @BuiltValueField(wireName: r'decrypted_card_number')
-    String? get decryptedCardNumber;
-
-    /// only if \"show encrypted data\" is true
-    @BuiltValueField(wireName: r'decrypted_cvv')
-    String? get decryptedCvv;
-
-    @BuiltValueField(wireName: r'international_payments_locked')
-    bool? get internationalPaymentsLocked;
-
-    @BuiltValueField(wireName: r'gambling_transactions_locked')
-    bool? get gamblingTransactionsLocked;
-
-    BankCardDetail._();
-
-    @BuiltValueHook(initializeBuilder: true)
-    static void _defaults(BankCardDetailBuilder b) => b;
-
-    factory BankCardDetail([void updates(BankCardDetailBuilder b)]) = _$BankCardDetail;
-
-    @BuiltValueSerializer(custom: true)
-    static Serializer<BankCardDetail> get serializer => _$BankCardDetailSerializer();
+  @BuiltValueSerializer(custom: true)
+  static Serializer<BankCardDetail> get serializer => _$BankCardDetailSerializer();
 }
 
-class _$BankCardDetailSerializer implements StructuredSerializer<BankCardDetail> {
-    @override
-    final Iterable<Type> types = const [BankCardDetail, _$BankCardDetail];
+class _$BankCardDetailSerializer implements PrimitiveSerializer<BankCardDetail> {
+  @override
+  final Iterable<Type> types = const [BankCardDetail, _$BankCardDetail];
 
-    @override
-    final String wireName = r'BankCardDetail';
+  @override
+  final String wireName = r'BankCardDetail';
 
-    @override
-    Iterable<Object?> serialize(Serializers serializers, BankCardDetail object,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = <Object?>[];
-        result
-            ..add(r'id')
-            ..add(serializers.serialize(object.id,
-                specifiedType: const FullType(String)));
-        result
-            ..add(r'cardholder_name')
-            ..add(serializers.serialize(object.cardholderName,
-                specifiedType: const FullType(String)));
-        result
-            ..add(r'masked_card_number')
-            ..add(serializers.serialize(object.maskedCardNumber,
-                specifiedType: const FullType(String)));
-        result
-            ..add(r'expiry_date')
-            ..add(serializers.serialize(object.expiryDate,
-                specifiedType: const FullType(Date)));
-        result
-            ..add(r'currency')
-            ..add(serializers.serialize(object.currency,
-                specifiedType: const FullType(String)));
-        result
-            ..add(r'currency_code')
-            ..add(serializers.serialize(object.currencyCode,
-                specifiedType: const FullType(String)));
-        result
-            ..add(r'currency_name')
-            ..add(serializers.serialize(object.currencyName,
-                specifiedType: const FullType(String)));
-        result
-            ..add(r'currency_label')
-            ..add(serializers.serialize(object.currencyLabel,
-                specifiedType: const FullType(String)));
-        result
-            ..add(r'status')
-            ..add(serializers.serialize(object.status,
-                specifiedType: const FullType(BankCardStatus)));
-        if (object.image != null) {
-            result
-                ..add(r'image')
-                ..add(serializers.serialize(object.image,
-                    specifiedType: const FullType.nullable(String)));
-        }
-        if (object.cardBackground != null) {
-            result
-                ..add(r'card_background')
-                ..add(serializers.serialize(object.cardBackground,
-                    specifiedType: const FullType(CardView)));
-        }
-        if (object.cardName != null) {
-            result
-                ..add(r'card_name')
-                ..add(serializers.serialize(object.cardName,
-                    specifiedType: const FullType.nullable(String)));
-        }
-        result
-            ..add(r'created_at')
-            ..add(serializers.serialize(object.createdAt,
-                specifiedType: const FullType(DateTime)));
-        if (object.balance != null) {
-            result
-                ..add(r'balance')
-                ..add(serializers.serialize(object.balance,
-                    specifiedType: const FullType(num)));
-        }
-        if (object.linkedWallet != null) {
-            result
-                ..add(r'linked_wallet')
-                ..add(serializers.serialize(object.linkedWallet,
-                    specifiedType: const FullType(FiatWalletLight)));
-        }
-        if (object.decryptedCardNumber != null) {
-            result
-                ..add(r'decrypted_card_number')
-                ..add(serializers.serialize(object.decryptedCardNumber,
-                    specifiedType: const FullType.nullable(String)));
-        }
-        if (object.decryptedCvv != null) {
-            result
-                ..add(r'decrypted_cvv')
-                ..add(serializers.serialize(object.decryptedCvv,
-                    specifiedType: const FullType.nullable(String)));
-        }
-        if (object.internationalPaymentsLocked != null) {
-            result
-                ..add(r'international_payments_locked')
-                ..add(serializers.serialize(object.internationalPaymentsLocked,
-                    specifiedType: const FullType(bool)));
-        }
-        if (object.gamblingTransactionsLocked != null) {
-            result
-                ..add(r'gambling_transactions_locked')
-                ..add(serializers.serialize(object.gamblingTransactionsLocked,
-                    specifiedType: const FullType(bool)));
-        }
-        return result;
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    BankCardDetail object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.decryptedCvv != null) {
+      yield r'decrypted_cvv';
+      yield serializers.serialize(
+        object.decryptedCvv,
+        specifiedType: const FullType.nullable(String),
+      );
     }
-
-    @override
-    BankCardDetail deserialize(Serializers serializers, Iterable<Object?> serialized,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = BankCardDetailBuilder();
-
-        final iterator = serialized.iterator;
-        while (iterator.moveNext()) {
-            final key = iterator.current as String;
-            iterator.moveNext();
-            final Object? value = iterator.current;
-            
-            switch (key) {
-                case r'id':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.id = valueDes;
-                    break;
-                case r'cardholder_name':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.cardholderName = valueDes;
-                    break;
-                case r'masked_card_number':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.maskedCardNumber = valueDes;
-                    break;
-                case r'expiry_date':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(Date)) as Date;
-                    result.expiryDate = valueDes;
-                    break;
-                case r'currency':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.currency = valueDes;
-                    break;
-                case r'currency_code':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.currencyCode = valueDes;
-                    break;
-                case r'currency_name':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.currencyName = valueDes;
-                    break;
-                case r'currency_label':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.currencyLabel = valueDes;
-                    break;
-                case r'status':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(BankCardStatus)) as BankCardStatus;
-                    result.status = valueDes;
-                    break;
-                case r'image':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType.nullable(String)) as String?;
-                    if (valueDes == null) continue;
-                    result.image = valueDes;
-                    break;
-                case r'card_background':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(CardView)) as CardView;
-                    result.cardBackground.replace(valueDes);
-                    break;
-                case r'card_name':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType.nullable(String)) as String?;
-                    if (valueDes == null) continue;
-                    result.cardName = valueDes;
-                    break;
-                case r'created_at':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(DateTime)) as DateTime;
-                    result.createdAt = valueDes;
-                    break;
-                case r'balance':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
-                    result.balance = valueDes;
-                    break;
-                case r'linked_wallet':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(FiatWalletLight)) as FiatWalletLight;
-                    result.linkedWallet.replace(valueDes);
-                    break;
-                case r'decrypted_card_number':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType.nullable(String)) as String?;
-                    if (valueDes == null) continue;
-                    result.decryptedCardNumber = valueDes;
-                    break;
-                case r'decrypted_cvv':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType.nullable(String)) as String?;
-                    if (valueDes == null) continue;
-                    result.decryptedCvv = valueDes;
-                    break;
-                case r'international_payments_locked':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(bool)) as bool;
-                    result.internationalPaymentsLocked = valueDes;
-                    break;
-                case r'gambling_transactions_locked':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(bool)) as bool;
-                    result.gamblingTransactionsLocked = valueDes;
-                    break;
-            }
-        }
-        return result.build();
+    if (object.decryptedCardNumber != null) {
+      yield r'decrypted_card_number';
+      yield serializers.serialize(
+        object.decryptedCardNumber,
+        specifiedType: const FullType.nullable(String),
+      );
     }
+    if (object.image != null) {
+      yield r'image';
+      yield serializers.serialize(
+        object.image,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.cardName != null) {
+      yield r'card_name';
+      yield serializers.serialize(
+        object.cardName,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.gamblingTransactionsLocked != null) {
+      yield r'gambling_transactions_locked';
+      yield serializers.serialize(
+        object.gamblingTransactionsLocked,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.internationalPaymentsLocked != null) {
+      yield r'international_payments_locked';
+      yield serializers.serialize(
+        object.internationalPaymentsLocked,
+        specifiedType: const FullType(bool),
+      );
+    }
+    yield r'currency_label';
+    yield serializers.serialize(
+      object.currencyLabel,
+      specifiedType: const FullType(String),
+    );
+    yield r'masked_card_number';
+    yield serializers.serialize(
+      object.maskedCardNumber,
+      specifiedType: const FullType(String),
+    );
+    yield r'expiry_date';
+    yield serializers.serialize(
+      object.expiryDate,
+      specifiedType: const FullType(Date),
+    );
+    yield r'created_at';
+    yield serializers.serialize(
+      object.createdAt,
+      specifiedType: const FullType(DateTime),
+    );
+    if (object.balance != null) {
+      yield r'balance';
+      yield serializers.serialize(
+        object.balance,
+        specifiedType: const FullType(num),
+      );
+    }
+    yield r'currency_name';
+    yield serializers.serialize(
+      object.currencyName,
+      specifiedType: const FullType(String),
+    );
+    yield r'cardholder_name';
+    yield serializers.serialize(
+      object.cardholderName,
+      specifiedType: const FullType(String),
+    );
+    if (object.cardBackground != null) {
+      yield r'card_background';
+      yield serializers.serialize(
+        object.cardBackground,
+        specifiedType: const FullType(CardView),
+      );
+    }
+    yield r'currency';
+    yield serializers.serialize(
+      object.currency,
+      specifiedType: const FullType(String),
+    );
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
+    yield r'currency_code';
+    yield serializers.serialize(
+      object.currencyCode,
+      specifiedType: const FullType(String),
+    );
+    if (object.linkedWallet != null) {
+      yield r'linked_wallet';
+      yield serializers.serialize(
+        object.linkedWallet,
+        specifiedType: const FullType(FiatWalletLight),
+      );
+    }
+    yield r'status';
+    yield serializers.serialize(
+      object.status,
+      specifiedType: const FullType(String),
+    );
+  }
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    BankCardDetail object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required BankCardDetailBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'decrypted_cvv':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.decryptedCvv = valueDes;
+          break;
+        case r'decrypted_card_number':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.decryptedCardNumber = valueDes;
+          break;
+        case r'image':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.image = valueDes;
+          break;
+        case r'card_name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.cardName = valueDes;
+          break;
+        case r'gambling_transactions_locked':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.gamblingTransactionsLocked = valueDes;
+          break;
+        case r'international_payments_locked':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.internationalPaymentsLocked = valueDes;
+          break;
+        case r'currency_label':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.currencyLabel = valueDes;
+          break;
+        case r'masked_card_number':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.maskedCardNumber = valueDes;
+          break;
+        case r'expiry_date':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(Date),
+          ) as Date;
+          result.expiryDate = valueDes;
+          break;
+        case r'created_at':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdAt = valueDes;
+          break;
+        case r'balance':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.balance = valueDes;
+          break;
+        case r'currency_name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.currencyName = valueDes;
+          break;
+        case r'cardholder_name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.cardholderName = valueDes;
+          break;
+        case r'card_background':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(CardView),
+          ) as CardView;
+          result.cardBackground.replace(valueDes);
+          break;
+        case r'currency':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.currency = valueDes;
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
+          break;
+        case r'currency_code':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.currencyCode = valueDes;
+          break;
+        case r'linked_wallet':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(FiatWalletLight),
+          ) as FiatWalletLight;
+          result.linkedWallet = valueDes;
+          break;
+        case r'status':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.status = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  BankCardDetail deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = BankCardDetailBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

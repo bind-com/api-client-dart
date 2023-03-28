@@ -74,26 +74,20 @@ class _$ProfitLoss extends ProfitLoss {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc(
-                        $jc(
-                            $jc(
-                                $jc(
-                                    $jc(
-                                        $jc($jc(0, assetCode.hashCode),
-                                            assetName.hashCode),
-                                        assetLogo.hashCode),
-                                    assetBalance.hashCode),
-                                assetBalancePaymentCurrency.hashCode),
-                            paymentCurrencyCode.hashCode),
-                        profitPaymentCurrency.hashCode),
-                    percentageProfitPaymentCurrency.hashCode),
-                avgPurchasePrice.hashCode),
-            currentPrice.hashCode),
-        notIncludedInCalculation.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, assetCode.hashCode);
+    _$hash = $jc(_$hash, assetName.hashCode);
+    _$hash = $jc(_$hash, assetLogo.hashCode);
+    _$hash = $jc(_$hash, assetBalance.hashCode);
+    _$hash = $jc(_$hash, assetBalancePaymentCurrency.hashCode);
+    _$hash = $jc(_$hash, paymentCurrencyCode.hashCode);
+    _$hash = $jc(_$hash, profitPaymentCurrency.hashCode);
+    _$hash = $jc(_$hash, percentageProfitPaymentCurrency.hashCode);
+    _$hash = $jc(_$hash, avgPurchasePrice.hashCode);
+    _$hash = $jc(_$hash, currentPrice.hashCode);
+    _$hash = $jc(_$hash, notIncludedInCalculation.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
@@ -225,4 +219,4 @@ class ProfitLossBuilder implements Builder<ProfitLoss, ProfitLossBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

@@ -6,7 +6,38 @@ part of 'crypto_account_light.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$CryptoAccountLight extends CryptoAccountLight {
+abstract class CryptoAccountLightBuilder {
+  void replace(CryptoAccountLight other);
+  void update(void Function(CryptoAccountLightBuilder) updates);
+  num? get assetBalance;
+  set assetBalance(num? assetBalance);
+
+  String? get assetCode;
+  set assetCode(String? assetCode);
+
+  String? get assetName;
+  set assetName(String? assetName);
+
+  String? get assetId;
+  set assetId(String? assetId);
+
+  String? get assetLogo;
+  set assetLogo(String? assetLogo);
+
+  String? get assetColor;
+  set assetColor(String? assetColor);
+
+  String? get paymentCurrencyCode;
+  set paymentCurrencyCode(String? paymentCurrencyCode);
+
+  num? get paymentCurrencyBalance;
+  set paymentCurrencyBalance(num? paymentCurrencyBalance);
+
+  num? get price;
+  set price(num? price);
+}
+
+class _$$CryptoAccountLight extends $CryptoAccountLight {
   @override
   final num assetBalance;
   @override
@@ -26,11 +57,11 @@ class _$CryptoAccountLight extends CryptoAccountLight {
   @override
   final num? price;
 
-  factory _$CryptoAccountLight(
-          [void Function(CryptoAccountLightBuilder)? updates]) =>
-      (new CryptoAccountLightBuilder()..update(updates))._build();
+  factory _$$CryptoAccountLight(
+          [void Function($CryptoAccountLightBuilder)? updates]) =>
+      (new $CryptoAccountLightBuilder()..update(updates))._build();
 
-  _$CryptoAccountLight._(
+  _$$CryptoAccountLight._(
       {required this.assetBalance,
       required this.assetCode,
       required this.assetName,
@@ -42,32 +73,32 @@ class _$CryptoAccountLight extends CryptoAccountLight {
       this.price})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        assetBalance, r'CryptoAccountLight', 'assetBalance');
+        assetBalance, r'$CryptoAccountLight', 'assetBalance');
     BuiltValueNullFieldError.checkNotNull(
-        assetCode, r'CryptoAccountLight', 'assetCode');
+        assetCode, r'$CryptoAccountLight', 'assetCode');
     BuiltValueNullFieldError.checkNotNull(
-        assetName, r'CryptoAccountLight', 'assetName');
+        assetName, r'$CryptoAccountLight', 'assetName');
     BuiltValueNullFieldError.checkNotNull(
-        assetId, r'CryptoAccountLight', 'assetId');
+        assetId, r'$CryptoAccountLight', 'assetId');
     BuiltValueNullFieldError.checkNotNull(
-        paymentCurrencyCode, r'CryptoAccountLight', 'paymentCurrencyCode');
+        paymentCurrencyCode, r'$CryptoAccountLight', 'paymentCurrencyCode');
     BuiltValueNullFieldError.checkNotNull(paymentCurrencyBalance,
-        r'CryptoAccountLight', 'paymentCurrencyBalance');
+        r'$CryptoAccountLight', 'paymentCurrencyBalance');
   }
 
   @override
-  CryptoAccountLight rebuild(
-          void Function(CryptoAccountLightBuilder) updates) =>
+  $CryptoAccountLight rebuild(
+          void Function($CryptoAccountLightBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  CryptoAccountLightBuilder toBuilder() =>
-      new CryptoAccountLightBuilder()..replace(this);
+  $CryptoAccountLightBuilder toBuilder() =>
+      new $CryptoAccountLightBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is CryptoAccountLight &&
+    return other is $CryptoAccountLight &&
         assetBalance == other.assetBalance &&
         assetCode == other.assetCode &&
         assetName == other.assetName &&
@@ -81,27 +112,23 @@ class _$CryptoAccountLight extends CryptoAccountLight {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc(
-                        $jc(
-                            $jc(
-                                $jc($jc(0, assetBalance.hashCode),
-                                    assetCode.hashCode),
-                                assetName.hashCode),
-                            assetId.hashCode),
-                        assetLogo.hashCode),
-                    assetColor.hashCode),
-                paymentCurrencyCode.hashCode),
-            paymentCurrencyBalance.hashCode),
-        price.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, assetBalance.hashCode);
+    _$hash = $jc(_$hash, assetCode.hashCode);
+    _$hash = $jc(_$hash, assetName.hashCode);
+    _$hash = $jc(_$hash, assetId.hashCode);
+    _$hash = $jc(_$hash, assetLogo.hashCode);
+    _$hash = $jc(_$hash, assetColor.hashCode);
+    _$hash = $jc(_$hash, paymentCurrencyCode.hashCode);
+    _$hash = $jc(_$hash, paymentCurrencyBalance.hashCode);
+    _$hash = $jc(_$hash, price.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'CryptoAccountLight')
+    return (newBuiltValueToStringHelper(r'$CryptoAccountLight')
           ..add('assetBalance', assetBalance)
           ..add('assetCode', assetCode)
           ..add('assetName', assetName)
@@ -115,53 +142,57 @@ class _$CryptoAccountLight extends CryptoAccountLight {
   }
 }
 
-class CryptoAccountLightBuilder
-    implements Builder<CryptoAccountLight, CryptoAccountLightBuilder> {
-  _$CryptoAccountLight? _$v;
+class $CryptoAccountLightBuilder
+    implements
+        Builder<$CryptoAccountLight, $CryptoAccountLightBuilder>,
+        CryptoAccountLightBuilder {
+  _$$CryptoAccountLight? _$v;
 
   num? _assetBalance;
   num? get assetBalance => _$this._assetBalance;
-  set assetBalance(num? assetBalance) => _$this._assetBalance = assetBalance;
+  set assetBalance(covariant num? assetBalance) =>
+      _$this._assetBalance = assetBalance;
 
   String? _assetCode;
   String? get assetCode => _$this._assetCode;
-  set assetCode(String? assetCode) => _$this._assetCode = assetCode;
+  set assetCode(covariant String? assetCode) => _$this._assetCode = assetCode;
 
   String? _assetName;
   String? get assetName => _$this._assetName;
-  set assetName(String? assetName) => _$this._assetName = assetName;
+  set assetName(covariant String? assetName) => _$this._assetName = assetName;
 
   String? _assetId;
   String? get assetId => _$this._assetId;
-  set assetId(String? assetId) => _$this._assetId = assetId;
+  set assetId(covariant String? assetId) => _$this._assetId = assetId;
 
   String? _assetLogo;
   String? get assetLogo => _$this._assetLogo;
-  set assetLogo(String? assetLogo) => _$this._assetLogo = assetLogo;
+  set assetLogo(covariant String? assetLogo) => _$this._assetLogo = assetLogo;
 
   String? _assetColor;
   String? get assetColor => _$this._assetColor;
-  set assetColor(String? assetColor) => _$this._assetColor = assetColor;
+  set assetColor(covariant String? assetColor) =>
+      _$this._assetColor = assetColor;
 
   String? _paymentCurrencyCode;
   String? get paymentCurrencyCode => _$this._paymentCurrencyCode;
-  set paymentCurrencyCode(String? paymentCurrencyCode) =>
+  set paymentCurrencyCode(covariant String? paymentCurrencyCode) =>
       _$this._paymentCurrencyCode = paymentCurrencyCode;
 
   num? _paymentCurrencyBalance;
   num? get paymentCurrencyBalance => _$this._paymentCurrencyBalance;
-  set paymentCurrencyBalance(num? paymentCurrencyBalance) =>
+  set paymentCurrencyBalance(covariant num? paymentCurrencyBalance) =>
       _$this._paymentCurrencyBalance = paymentCurrencyBalance;
 
   num? _price;
   num? get price => _$this._price;
-  set price(num? price) => _$this._price = price;
+  set price(covariant num? price) => _$this._price = price;
 
-  CryptoAccountLightBuilder() {
-    CryptoAccountLight._defaults(this);
+  $CryptoAccountLightBuilder() {
+    $CryptoAccountLight._defaults(this);
   }
 
-  CryptoAccountLightBuilder get _$this {
+  $CryptoAccountLightBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _assetBalance = $v.assetBalance;
@@ -179,39 +210,39 @@ class CryptoAccountLightBuilder
   }
 
   @override
-  void replace(CryptoAccountLight other) {
+  void replace(covariant $CryptoAccountLight other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$CryptoAccountLight;
+    _$v = other as _$$CryptoAccountLight;
   }
 
   @override
-  void update(void Function(CryptoAccountLightBuilder)? updates) {
+  void update(void Function($CryptoAccountLightBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  CryptoAccountLight build() => _build();
+  $CryptoAccountLight build() => _build();
 
-  _$CryptoAccountLight _build() {
+  _$$CryptoAccountLight _build() {
     final _$result = _$v ??
-        new _$CryptoAccountLight._(
+        new _$$CryptoAccountLight._(
             assetBalance: BuiltValueNullFieldError.checkNotNull(
-                assetBalance, r'CryptoAccountLight', 'assetBalance'),
+                assetBalance, r'$CryptoAccountLight', 'assetBalance'),
             assetCode: BuiltValueNullFieldError.checkNotNull(
-                assetCode, r'CryptoAccountLight', 'assetCode'),
+                assetCode, r'$CryptoAccountLight', 'assetCode'),
             assetName: BuiltValueNullFieldError.checkNotNull(
-                assetName, r'CryptoAccountLight', 'assetName'),
+                assetName, r'$CryptoAccountLight', 'assetName'),
             assetId: BuiltValueNullFieldError.checkNotNull(
-                assetId, r'CryptoAccountLight', 'assetId'),
+                assetId, r'$CryptoAccountLight', 'assetId'),
             assetLogo: assetLogo,
             assetColor: assetColor,
             paymentCurrencyCode: BuiltValueNullFieldError.checkNotNull(
                 paymentCurrencyCode,
-                r'CryptoAccountLight',
+                r'$CryptoAccountLight',
                 'paymentCurrencyCode'),
             paymentCurrencyBalance: BuiltValueNullFieldError.checkNotNull(
                 paymentCurrencyBalance,
-                r'CryptoAccountLight',
+                r'$CryptoAccountLight',
                 'paymentCurrencyBalance'),
             price: price);
     replace(_$result);
@@ -219,4 +250,4 @@ class CryptoAccountLightBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

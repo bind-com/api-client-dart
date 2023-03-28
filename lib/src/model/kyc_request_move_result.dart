@@ -2,6 +2,7 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+// ignore_for_file: unused_element
 import 'package:bind_api/src/model/kyc_request_move_result_request_fields_status.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
@@ -14,77 +15,116 @@ part 'kyc_request_move_result.g.dart';
 /// Properties:
 /// * [status] 
 /// * [requestFieldsStatus] 
+@BuiltValue()
 abstract class KYCRequestMoveResult implements Built<KYCRequestMoveResult, KYCRequestMoveResultBuilder> {
-    @BuiltValueField(wireName: r'status')
-    KYCRequestMoveResultStatusEnum? get status;
-    // enum statusEnum {  ok,  fail,  };
+  @BuiltValueField(wireName: r'status')
+  KYCRequestMoveResultStatusEnum? get status;
+  // enum statusEnum {  ok,  fail,  };
 
-    @BuiltValueField(wireName: r'request_fields_status')
-    KYCRequestMoveResultRequestFieldsStatus? get requestFieldsStatus;
+  @BuiltValueField(wireName: r'request_fields_status')
+  KYCRequestMoveResultRequestFieldsStatus? get requestFieldsStatus;
 
-    KYCRequestMoveResult._();
+  KYCRequestMoveResult._();
 
-    @BuiltValueHook(initializeBuilder: true)
-    static void _defaults(KYCRequestMoveResultBuilder b) => b;
+  factory KYCRequestMoveResult([void updates(KYCRequestMoveResultBuilder b)]) = _$KYCRequestMoveResult;
 
-    factory KYCRequestMoveResult([void updates(KYCRequestMoveResultBuilder b)]) = _$KYCRequestMoveResult;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(KYCRequestMoveResultBuilder b) => b;
 
-    @BuiltValueSerializer(custom: true)
-    static Serializer<KYCRequestMoveResult> get serializer => _$KYCRequestMoveResultSerializer();
+  @BuiltValueSerializer(custom: true)
+  static Serializer<KYCRequestMoveResult> get serializer => _$KYCRequestMoveResultSerializer();
 }
 
-class _$KYCRequestMoveResultSerializer implements StructuredSerializer<KYCRequestMoveResult> {
-    @override
-    final Iterable<Type> types = const [KYCRequestMoveResult, _$KYCRequestMoveResult];
+class _$KYCRequestMoveResultSerializer implements PrimitiveSerializer<KYCRequestMoveResult> {
+  @override
+  final Iterable<Type> types = const [KYCRequestMoveResult, _$KYCRequestMoveResult];
 
-    @override
-    final String wireName = r'KYCRequestMoveResult';
+  @override
+  final String wireName = r'KYCRequestMoveResult';
 
-    @override
-    Iterable<Object?> serialize(Serializers serializers, KYCRequestMoveResult object,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = <Object?>[];
-        if (object.status != null) {
-            result
-                ..add(r'status')
-                ..add(serializers.serialize(object.status,
-                    specifiedType: const FullType(KYCRequestMoveResultStatusEnum)));
-        }
-        if (object.requestFieldsStatus != null) {
-            result
-                ..add(r'request_fields_status')
-                ..add(serializers.serialize(object.requestFieldsStatus,
-                    specifiedType: const FullType(KYCRequestMoveResultRequestFieldsStatus)));
-        }
-        return result;
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    KYCRequestMoveResult object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.status != null) {
+      yield r'status';
+      yield serializers.serialize(
+        object.status,
+        specifiedType: const FullType(KYCRequestMoveResultStatusEnum),
+      );
     }
-
-    @override
-    KYCRequestMoveResult deserialize(Serializers serializers, Iterable<Object?> serialized,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = KYCRequestMoveResultBuilder();
-
-        final iterator = serialized.iterator;
-        while (iterator.moveNext()) {
-            final key = iterator.current as String;
-            iterator.moveNext();
-            final Object? value = iterator.current;
-            
-            switch (key) {
-                case r'status':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(KYCRequestMoveResultStatusEnum)) as KYCRequestMoveResultStatusEnum;
-                    result.status = valueDes;
-                    break;
-                case r'request_fields_status':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(KYCRequestMoveResultRequestFieldsStatus)) as KYCRequestMoveResultRequestFieldsStatus;
-                    result.requestFieldsStatus.replace(valueDes);
-                    break;
-            }
-        }
-        return result.build();
+    if (object.requestFieldsStatus != null) {
+      yield r'request_fields_status';
+      yield serializers.serialize(
+        object.requestFieldsStatus,
+        specifiedType: const FullType(KYCRequestMoveResultRequestFieldsStatus),
+      );
     }
+  }
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    KYCRequestMoveResult object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required KYCRequestMoveResultBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'status':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(KYCRequestMoveResultStatusEnum),
+          ) as KYCRequestMoveResultStatusEnum;
+          result.status = valueDes;
+          break;
+        case r'request_fields_status':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(KYCRequestMoveResultRequestFieldsStatus),
+          ) as KYCRequestMoveResultRequestFieldsStatus;
+          result.requestFieldsStatus.replace(valueDes);
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  KYCRequestMoveResult deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = KYCRequestMoveResultBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 
 class KYCRequestMoveResultStatusEnum extends EnumClass {

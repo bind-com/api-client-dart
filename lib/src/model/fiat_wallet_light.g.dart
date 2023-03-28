@@ -6,7 +6,32 @@ part of 'fiat_wallet_light.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$FiatWalletLight extends FiatWalletLight {
+abstract class FiatWalletLightBuilder {
+  void replace(FiatWalletLight other);
+  void update(void Function(FiatWalletLightBuilder) updates);
+  String? get id;
+  set id(String? id);
+
+  num? get balance;
+  set balance(num? balance);
+
+  String? get account;
+  set account(String? account);
+
+  String? get currency;
+  set currency(String? currency);
+
+  String? get currencyCode;
+  set currencyCode(String? currencyCode);
+
+  String? get currencyName;
+  set currencyName(String? currencyName);
+
+  String? get currencyIcon;
+  set currencyIcon(String? currencyIcon);
+}
+
+class _$$FiatWalletLight extends $FiatWalletLight {
   @override
   final String? id;
   @override
@@ -22,10 +47,11 @@ class _$FiatWalletLight extends FiatWalletLight {
   @override
   final String? currencyIcon;
 
-  factory _$FiatWalletLight([void Function(FiatWalletLightBuilder)? updates]) =>
-      (new FiatWalletLightBuilder()..update(updates))._build();
+  factory _$$FiatWalletLight(
+          [void Function($FiatWalletLightBuilder)? updates]) =>
+      (new $FiatWalletLightBuilder()..update(updates))._build();
 
-  _$FiatWalletLight._(
+  _$$FiatWalletLight._(
       {this.id,
       this.balance,
       this.account,
@@ -36,17 +62,17 @@ class _$FiatWalletLight extends FiatWalletLight {
       : super._();
 
   @override
-  FiatWalletLight rebuild(void Function(FiatWalletLightBuilder) updates) =>
+  $FiatWalletLight rebuild(void Function($FiatWalletLightBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  FiatWalletLightBuilder toBuilder() =>
-      new FiatWalletLightBuilder()..replace(this);
+  $FiatWalletLightBuilder toBuilder() =>
+      new $FiatWalletLightBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is FiatWalletLight &&
+    return other is $FiatWalletLight &&
         id == other.id &&
         balance == other.balance &&
         account == other.account &&
@@ -58,21 +84,21 @@ class _$FiatWalletLight extends FiatWalletLight {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc($jc($jc(0, id.hashCode), balance.hashCode),
-                        account.hashCode),
-                    currency.hashCode),
-                currencyCode.hashCode),
-            currencyName.hashCode),
-        currencyIcon.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, balance.hashCode);
+    _$hash = $jc(_$hash, account.hashCode);
+    _$hash = $jc(_$hash, currency.hashCode);
+    _$hash = $jc(_$hash, currencyCode.hashCode);
+    _$hash = $jc(_$hash, currencyName.hashCode);
+    _$hash = $jc(_$hash, currencyIcon.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'FiatWalletLight')
+    return (newBuiltValueToStringHelper(r'$FiatWalletLight')
           ..add('id', id)
           ..add('balance', balance)
           ..add('account', account)
@@ -84,43 +110,48 @@ class _$FiatWalletLight extends FiatWalletLight {
   }
 }
 
-class FiatWalletLightBuilder
-    implements Builder<FiatWalletLight, FiatWalletLightBuilder> {
-  _$FiatWalletLight? _$v;
+class $FiatWalletLightBuilder
+    implements
+        Builder<$FiatWalletLight, $FiatWalletLightBuilder>,
+        FiatWalletLightBuilder {
+  _$$FiatWalletLight? _$v;
 
   String? _id;
   String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
+  set id(covariant String? id) => _$this._id = id;
 
   num? _balance;
   num? get balance => _$this._balance;
-  set balance(num? balance) => _$this._balance = balance;
+  set balance(covariant num? balance) => _$this._balance = balance;
 
   String? _account;
   String? get account => _$this._account;
-  set account(String? account) => _$this._account = account;
+  set account(covariant String? account) => _$this._account = account;
 
   String? _currency;
   String? get currency => _$this._currency;
-  set currency(String? currency) => _$this._currency = currency;
+  set currency(covariant String? currency) => _$this._currency = currency;
 
   String? _currencyCode;
   String? get currencyCode => _$this._currencyCode;
-  set currencyCode(String? currencyCode) => _$this._currencyCode = currencyCode;
+  set currencyCode(covariant String? currencyCode) =>
+      _$this._currencyCode = currencyCode;
 
   String? _currencyName;
   String? get currencyName => _$this._currencyName;
-  set currencyName(String? currencyName) => _$this._currencyName = currencyName;
+  set currencyName(covariant String? currencyName) =>
+      _$this._currencyName = currencyName;
 
   String? _currencyIcon;
   String? get currencyIcon => _$this._currencyIcon;
-  set currencyIcon(String? currencyIcon) => _$this._currencyIcon = currencyIcon;
+  set currencyIcon(covariant String? currencyIcon) =>
+      _$this._currencyIcon = currencyIcon;
 
-  FiatWalletLightBuilder() {
-    FiatWalletLight._defaults(this);
+  $FiatWalletLightBuilder() {
+    $FiatWalletLight._defaults(this);
   }
 
-  FiatWalletLightBuilder get _$this {
+  $FiatWalletLightBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
@@ -136,22 +167,22 @@ class FiatWalletLightBuilder
   }
 
   @override
-  void replace(FiatWalletLight other) {
+  void replace(covariant $FiatWalletLight other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$FiatWalletLight;
+    _$v = other as _$$FiatWalletLight;
   }
 
   @override
-  void update(void Function(FiatWalletLightBuilder)? updates) {
+  void update(void Function($FiatWalletLightBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  FiatWalletLight build() => _build();
+  $FiatWalletLight build() => _build();
 
-  _$FiatWalletLight _build() {
+  _$$FiatWalletLight _build() {
     final _$result = _$v ??
-        new _$FiatWalletLight._(
+        new _$$FiatWalletLight._(
             id: id,
             balance: balance,
             account: account,
@@ -164,4 +195,4 @@ class FiatWalletLightBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

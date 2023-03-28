@@ -2,6 +2,7 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+// ignore_for_file: unused_element
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -14,95 +15,140 @@ part 'deposit_address.g.dart';
 /// * [networkCode] 
 /// * [assetCode] 
 /// * [assetId] 
+@BuiltValue()
 abstract class DepositAddress implements Built<DepositAddress, DepositAddressBuilder> {
-    @BuiltValueField(wireName: r'address')
-    String get address;
+  @BuiltValueField(wireName: r'address')
+  String get address;
 
-    @BuiltValueField(wireName: r'network_code')
-    String get networkCode;
+  @BuiltValueField(wireName: r'network_code')
+  String get networkCode;
 
-    @BuiltValueField(wireName: r'asset_code')
-    String get assetCode;
+  @BuiltValueField(wireName: r'asset_code')
+  String get assetCode;
 
-    @BuiltValueField(wireName: r'asset_id')
-    String get assetId;
+  @BuiltValueField(wireName: r'asset_id')
+  String get assetId;
 
-    DepositAddress._();
+  DepositAddress._();
 
-    @BuiltValueHook(initializeBuilder: true)
-    static void _defaults(DepositAddressBuilder b) => b;
+  factory DepositAddress([void updates(DepositAddressBuilder b)]) = _$DepositAddress;
 
-    factory DepositAddress([void updates(DepositAddressBuilder b)]) = _$DepositAddress;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(DepositAddressBuilder b) => b;
 
-    @BuiltValueSerializer(custom: true)
-    static Serializer<DepositAddress> get serializer => _$DepositAddressSerializer();
+  @BuiltValueSerializer(custom: true)
+  static Serializer<DepositAddress> get serializer => _$DepositAddressSerializer();
 }
 
-class _$DepositAddressSerializer implements StructuredSerializer<DepositAddress> {
-    @override
-    final Iterable<Type> types = const [DepositAddress, _$DepositAddress];
+class _$DepositAddressSerializer implements PrimitiveSerializer<DepositAddress> {
+  @override
+  final Iterable<Type> types = const [DepositAddress, _$DepositAddress];
 
-    @override
-    final String wireName = r'DepositAddress';
+  @override
+  final String wireName = r'DepositAddress';
 
-    @override
-    Iterable<Object?> serialize(Serializers serializers, DepositAddress object,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = <Object?>[];
-        result
-            ..add(r'address')
-            ..add(serializers.serialize(object.address,
-                specifiedType: const FullType(String)));
-        result
-            ..add(r'network_code')
-            ..add(serializers.serialize(object.networkCode,
-                specifiedType: const FullType(String)));
-        result
-            ..add(r'asset_code')
-            ..add(serializers.serialize(object.assetCode,
-                specifiedType: const FullType(String)));
-        result
-            ..add(r'asset_id')
-            ..add(serializers.serialize(object.assetId,
-                specifiedType: const FullType(String)));
-        return result;
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    DepositAddress object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    yield r'address';
+    yield serializers.serialize(
+      object.address,
+      specifiedType: const FullType(String),
+    );
+    yield r'network_code';
+    yield serializers.serialize(
+      object.networkCode,
+      specifiedType: const FullType(String),
+    );
+    yield r'asset_code';
+    yield serializers.serialize(
+      object.assetCode,
+      specifiedType: const FullType(String),
+    );
+    yield r'asset_id';
+    yield serializers.serialize(
+      object.assetId,
+      specifiedType: const FullType(String),
+    );
+  }
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    DepositAddress object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required DepositAddressBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'address':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.address = valueDes;
+          break;
+        case r'network_code':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.networkCode = valueDes;
+          break;
+        case r'asset_code':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.assetCode = valueDes;
+          break;
+        case r'asset_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.assetId = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
     }
+  }
 
-    @override
-    DepositAddress deserialize(Serializers serializers, Iterable<Object?> serialized,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = DepositAddressBuilder();
-
-        final iterator = serialized.iterator;
-        while (iterator.moveNext()) {
-            final key = iterator.current as String;
-            iterator.moveNext();
-            final Object? value = iterator.current;
-            
-            switch (key) {
-                case r'address':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.address = valueDes;
-                    break;
-                case r'network_code':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.networkCode = valueDes;
-                    break;
-                case r'asset_code':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.assetCode = valueDes;
-                    break;
-                case r'asset_id':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.assetId = valueDes;
-                    break;
-            }
-        }
-        return result.build();
-    }
+  @override
+  DepositAddress deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = DepositAddressBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

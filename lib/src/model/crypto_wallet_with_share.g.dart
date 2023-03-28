@@ -55,12 +55,13 @@ class _$CryptoWalletWithShare extends CryptoWalletWithShare {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc($jc(0, paymentCurrencyBalance.hashCode),
-                paymentCurrencyCode.hashCode),
-            performance.hashCode),
-        accounts.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, paymentCurrencyBalance.hashCode);
+    _$hash = $jc(_$hash, paymentCurrencyCode.hashCode);
+    _$hash = $jc(_$hash, performance.hashCode);
+    _$hash = $jc(_$hash, accounts.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
@@ -75,27 +76,31 @@ class _$CryptoWalletWithShare extends CryptoWalletWithShare {
 }
 
 class CryptoWalletWithShareBuilder
-    implements Builder<CryptoWalletWithShare, CryptoWalletWithShareBuilder> {
+    implements
+        Builder<CryptoWalletWithShare, CryptoWalletWithShareBuilder>,
+        CryptoWalletBalanceBuilder,
+        CryptoWalletWithShareAllOfBuilder {
   _$CryptoWalletWithShare? _$v;
 
   num? _paymentCurrencyBalance;
   num? get paymentCurrencyBalance => _$this._paymentCurrencyBalance;
-  set paymentCurrencyBalance(num? paymentCurrencyBalance) =>
+  set paymentCurrencyBalance(covariant num? paymentCurrencyBalance) =>
       _$this._paymentCurrencyBalance = paymentCurrencyBalance;
 
   String? _paymentCurrencyCode;
   String? get paymentCurrencyCode => _$this._paymentCurrencyCode;
-  set paymentCurrencyCode(String? paymentCurrencyCode) =>
+  set paymentCurrencyCode(covariant String? paymentCurrencyCode) =>
       _$this._paymentCurrencyCode = paymentCurrencyCode;
 
   num? _performance;
   num? get performance => _$this._performance;
-  set performance(num? performance) => _$this._performance = performance;
+  set performance(covariant num? performance) =>
+      _$this._performance = performance;
 
   ListBuilder<CryptoAccountWithShare>? _accounts;
   ListBuilder<CryptoAccountWithShare> get accounts =>
       _$this._accounts ??= new ListBuilder<CryptoAccountWithShare>();
-  set accounts(ListBuilder<CryptoAccountWithShare>? accounts) =>
+  set accounts(covariant ListBuilder<CryptoAccountWithShare>? accounts) =>
       _$this._accounts = accounts;
 
   CryptoWalletWithShareBuilder() {
@@ -115,7 +120,8 @@ class CryptoWalletWithShareBuilder
   }
 
   @override
-  void replace(CryptoWalletWithShare other) {
+// ignore: override_on_non_overriding_method
+  void replace(covariant CryptoWalletWithShare other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$CryptoWalletWithShare;
   }
@@ -160,4 +166,4 @@ class CryptoWalletWithShareBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

@@ -2,6 +2,7 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+// ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -12,63 +13,99 @@ part 'bank_card_blocking_reason.g.dart';
 ///
 /// Properties:
 /// * [reason] 
+@BuiltValue()
 abstract class BankCardBlockingReason implements Built<BankCardBlockingReason, BankCardBlockingReasonBuilder> {
-    @BuiltValueField(wireName: r'reason')
-    BankCardBlockingReasonReasonEnum? get reason;
-    // enum reasonEnum {  details_stolen,  not_needed,  other,  };
+  @BuiltValueField(wireName: r'reason')
+  BankCardBlockingReasonReasonEnum? get reason;
+  // enum reasonEnum {  details_stolen,  not_needed,  other,  };
 
-    BankCardBlockingReason._();
+  BankCardBlockingReason._();
 
-    @BuiltValueHook(initializeBuilder: true)
-    static void _defaults(BankCardBlockingReasonBuilder b) => b;
+  factory BankCardBlockingReason([void updates(BankCardBlockingReasonBuilder b)]) = _$BankCardBlockingReason;
 
-    factory BankCardBlockingReason([void updates(BankCardBlockingReasonBuilder b)]) = _$BankCardBlockingReason;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(BankCardBlockingReasonBuilder b) => b;
 
-    @BuiltValueSerializer(custom: true)
-    static Serializer<BankCardBlockingReason> get serializer => _$BankCardBlockingReasonSerializer();
+  @BuiltValueSerializer(custom: true)
+  static Serializer<BankCardBlockingReason> get serializer => _$BankCardBlockingReasonSerializer();
 }
 
-class _$BankCardBlockingReasonSerializer implements StructuredSerializer<BankCardBlockingReason> {
-    @override
-    final Iterable<Type> types = const [BankCardBlockingReason, _$BankCardBlockingReason];
+class _$BankCardBlockingReasonSerializer implements PrimitiveSerializer<BankCardBlockingReason> {
+  @override
+  final Iterable<Type> types = const [BankCardBlockingReason, _$BankCardBlockingReason];
 
-    @override
-    final String wireName = r'BankCardBlockingReason';
+  @override
+  final String wireName = r'BankCardBlockingReason';
 
-    @override
-    Iterable<Object?> serialize(Serializers serializers, BankCardBlockingReason object,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = <Object?>[];
-        if (object.reason != null) {
-            result
-                ..add(r'reason')
-                ..add(serializers.serialize(object.reason,
-                    specifiedType: const FullType(BankCardBlockingReasonReasonEnum)));
-        }
-        return result;
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    BankCardBlockingReason object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.reason != null) {
+      yield r'reason';
+      yield serializers.serialize(
+        object.reason,
+        specifiedType: const FullType(BankCardBlockingReasonReasonEnum),
+      );
     }
+  }
 
-    @override
-    BankCardBlockingReason deserialize(Serializers serializers, Iterable<Object?> serialized,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = BankCardBlockingReasonBuilder();
+  @override
+  Object serialize(
+    Serializers serializers,
+    BankCardBlockingReason object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
 
-        final iterator = serialized.iterator;
-        while (iterator.moveNext()) {
-            final key = iterator.current as String;
-            iterator.moveNext();
-            final Object? value = iterator.current;
-            
-            switch (key) {
-                case r'reason':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(BankCardBlockingReasonReasonEnum)) as BankCardBlockingReasonReasonEnum;
-                    result.reason = valueDes;
-                    break;
-            }
-        }
-        return result.build();
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required BankCardBlockingReasonBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'reason':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BankCardBlockingReasonReasonEnum),
+          ) as BankCardBlockingReasonReasonEnum;
+          result.reason = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
     }
+  }
+
+  @override
+  BankCardBlockingReason deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = BankCardBlockingReasonBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 
 class BankCardBlockingReasonReasonEnum extends EnumClass {

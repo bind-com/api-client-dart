@@ -2,6 +2,7 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+// ignore_for_file: unused_element
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -11,60 +12,129 @@ part 'crypto_asset_favorite_all_of.g.dart';
 ///
 /// Properties:
 /// * [favorite] - True if an asset is added to User's favorites
-abstract class CryptoAssetFavoriteAllOf implements Built<CryptoAssetFavoriteAllOf, CryptoAssetFavoriteAllOfBuilder> {
-    /// True if an asset is added to User's favorites
-    @BuiltValueField(wireName: r'favorite')
-    bool get favorite;
+@BuiltValue(instantiable: false)
+abstract class CryptoAssetFavoriteAllOf  {
+  /// True if an asset is added to User's favorites
+  @BuiltValueField(wireName: r'favorite')
+  bool get favorite;
 
-    CryptoAssetFavoriteAllOf._();
-
-    @BuiltValueHook(initializeBuilder: true)
-    static void _defaults(CryptoAssetFavoriteAllOfBuilder b) => b;
-
-    factory CryptoAssetFavoriteAllOf([void updates(CryptoAssetFavoriteAllOfBuilder b)]) = _$CryptoAssetFavoriteAllOf;
-
-    @BuiltValueSerializer(custom: true)
-    static Serializer<CryptoAssetFavoriteAllOf> get serializer => _$CryptoAssetFavoriteAllOfSerializer();
+  @BuiltValueSerializer(custom: true)
+  static Serializer<CryptoAssetFavoriteAllOf> get serializer => _$CryptoAssetFavoriteAllOfSerializer();
 }
 
-class _$CryptoAssetFavoriteAllOfSerializer implements StructuredSerializer<CryptoAssetFavoriteAllOf> {
-    @override
-    final Iterable<Type> types = const [CryptoAssetFavoriteAllOf, _$CryptoAssetFavoriteAllOf];
+class _$CryptoAssetFavoriteAllOfSerializer implements PrimitiveSerializer<CryptoAssetFavoriteAllOf> {
+  @override
+  final Iterable<Type> types = const [CryptoAssetFavoriteAllOf];
 
-    @override
-    final String wireName = r'CryptoAssetFavoriteAllOf';
+  @override
+  final String wireName = r'CryptoAssetFavoriteAllOf';
 
-    @override
-    Iterable<Object?> serialize(Serializers serializers, CryptoAssetFavoriteAllOf object,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = <Object?>[];
-        result
-            ..add(r'favorite')
-            ..add(serializers.serialize(object.favorite,
-                specifiedType: const FullType(bool)));
-        return result;
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    CryptoAssetFavoriteAllOf object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    yield r'favorite';
+    yield serializers.serialize(
+      object.favorite,
+      specifiedType: const FullType(bool),
+    );
+  }
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    CryptoAssetFavoriteAllOf object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  @override
+  CryptoAssetFavoriteAllOf deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return serializers.deserialize(serialized, specifiedType: FullType($CryptoAssetFavoriteAllOf)) as $CryptoAssetFavoriteAllOf;
+  }
+}
+
+/// a concrete implementation of [CryptoAssetFavoriteAllOf], since [CryptoAssetFavoriteAllOf] is not instantiable
+@BuiltValue(instantiable: true)
+abstract class $CryptoAssetFavoriteAllOf implements CryptoAssetFavoriteAllOf, Built<$CryptoAssetFavoriteAllOf, $CryptoAssetFavoriteAllOfBuilder> {
+  $CryptoAssetFavoriteAllOf._();
+
+  factory $CryptoAssetFavoriteAllOf([void Function($CryptoAssetFavoriteAllOfBuilder)? updates]) = _$$CryptoAssetFavoriteAllOf;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($CryptoAssetFavoriteAllOfBuilder b) => b;
+
+  @BuiltValueSerializer(custom: true)
+  static Serializer<$CryptoAssetFavoriteAllOf> get serializer => _$$CryptoAssetFavoriteAllOfSerializer();
+}
+
+class _$$CryptoAssetFavoriteAllOfSerializer implements PrimitiveSerializer<$CryptoAssetFavoriteAllOf> {
+  @override
+  final Iterable<Type> types = const [$CryptoAssetFavoriteAllOf, _$$CryptoAssetFavoriteAllOf];
+
+  @override
+  final String wireName = r'$CryptoAssetFavoriteAllOf';
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    $CryptoAssetFavoriteAllOf object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return serializers.serialize(object, specifiedType: FullType(CryptoAssetFavoriteAllOf))!;
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required CryptoAssetFavoriteAllOfBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'favorite':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.favorite = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
     }
+  }
 
-    @override
-    CryptoAssetFavoriteAllOf deserialize(Serializers serializers, Iterable<Object?> serialized,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = CryptoAssetFavoriteAllOfBuilder();
-
-        final iterator = serialized.iterator;
-        while (iterator.moveNext()) {
-            final key = iterator.current as String;
-            iterator.moveNext();
-            final Object? value = iterator.current;
-            
-            switch (key) {
-                case r'favorite':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(bool)) as bool;
-                    result.favorite = valueDes;
-                    break;
-            }
-        }
-        return result.build();
-    }
+  @override
+  $CryptoAssetFavoriteAllOf deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = $CryptoAssetFavoriteAllOfBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

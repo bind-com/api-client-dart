@@ -8,6 +8,8 @@ part of 'fiat_wallet_with_payment_currency.dart';
 
 class _$FiatWalletWithPaymentCurrency extends FiatWalletWithPaymentCurrency {
   @override
+  final FiatWalletRequisites? transferRequisites;
+  @override
   final String? id;
   @override
   final num? balance;
@@ -22,8 +24,6 @@ class _$FiatWalletWithPaymentCurrency extends FiatWalletWithPaymentCurrency {
   @override
   final String? currencyIcon;
   @override
-  final FiatWalletRequisites? transferRequisites;
-  @override
   final WalletBalanceInfo? paymentCurrencyBalance;
 
   factory _$FiatWalletWithPaymentCurrency(
@@ -31,14 +31,14 @@ class _$FiatWalletWithPaymentCurrency extends FiatWalletWithPaymentCurrency {
       (new FiatWalletWithPaymentCurrencyBuilder()..update(updates))._build();
 
   _$FiatWalletWithPaymentCurrency._(
-      {this.id,
+      {this.transferRequisites,
+      this.id,
       this.balance,
       this.account,
       this.currency,
       this.currencyCode,
       this.currencyName,
       this.currencyIcon,
-      this.transferRequisites,
       this.paymentCurrencyBalance})
       : super._();
 
@@ -55,6 +55,7 @@ class _$FiatWalletWithPaymentCurrency extends FiatWalletWithPaymentCurrency {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is FiatWalletWithPaymentCurrency &&
+        transferRequisites == other.transferRequisites &&
         id == other.id &&
         balance == other.balance &&
         account == other.account &&
@@ -62,31 +63,29 @@ class _$FiatWalletWithPaymentCurrency extends FiatWalletWithPaymentCurrency {
         currencyCode == other.currencyCode &&
         currencyName == other.currencyName &&
         currencyIcon == other.currencyIcon &&
-        transferRequisites == other.transferRequisites &&
         paymentCurrencyBalance == other.paymentCurrencyBalance;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc(
-                        $jc(
-                            $jc($jc($jc(0, id.hashCode), balance.hashCode),
-                                account.hashCode),
-                            currency.hashCode),
-                        currencyCode.hashCode),
-                    currencyName.hashCode),
-                currencyIcon.hashCode),
-            transferRequisites.hashCode),
-        paymentCurrencyBalance.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, transferRequisites.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, balance.hashCode);
+    _$hash = $jc(_$hash, account.hashCode);
+    _$hash = $jc(_$hash, currency.hashCode);
+    _$hash = $jc(_$hash, currencyCode.hashCode);
+    _$hash = $jc(_$hash, currencyName.hashCode);
+    _$hash = $jc(_$hash, currencyIcon.hashCode);
+    _$hash = $jc(_$hash, paymentCurrencyBalance.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'FiatWalletWithPaymentCurrency')
+          ..add('transferRequisites', transferRequisites)
           ..add('id', id)
           ..add('balance', balance)
           ..add('account', account)
@@ -94,7 +93,6 @@ class _$FiatWalletWithPaymentCurrency extends FiatWalletWithPaymentCurrency {
           ..add('currencyCode', currencyCode)
           ..add('currencyName', currencyName)
           ..add('currencyIcon', currencyIcon)
-          ..add('transferRequisites', transferRequisites)
           ..add('paymentCurrencyBalance', paymentCurrencyBalance))
         .toString();
   }
@@ -103,48 +101,54 @@ class _$FiatWalletWithPaymentCurrency extends FiatWalletWithPaymentCurrency {
 class FiatWalletWithPaymentCurrencyBuilder
     implements
         Builder<FiatWalletWithPaymentCurrency,
-            FiatWalletWithPaymentCurrencyBuilder> {
+            FiatWalletWithPaymentCurrencyBuilder>,
+        FiatWalletBuilder,
+        FiatWalletWithPaymentCurrencyAllOfBuilder {
   _$FiatWalletWithPaymentCurrency? _$v;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
-  num? _balance;
-  num? get balance => _$this._balance;
-  set balance(num? balance) => _$this._balance = balance;
-
-  String? _account;
-  String? get account => _$this._account;
-  set account(String? account) => _$this._account = account;
-
-  String? _currency;
-  String? get currency => _$this._currency;
-  set currency(String? currency) => _$this._currency = currency;
-
-  String? _currencyCode;
-  String? get currencyCode => _$this._currencyCode;
-  set currencyCode(String? currencyCode) => _$this._currencyCode = currencyCode;
-
-  String? _currencyName;
-  String? get currencyName => _$this._currencyName;
-  set currencyName(String? currencyName) => _$this._currencyName = currencyName;
-
-  String? _currencyIcon;
-  String? get currencyIcon => _$this._currencyIcon;
-  set currencyIcon(String? currencyIcon) => _$this._currencyIcon = currencyIcon;
 
   FiatWalletRequisitesBuilder? _transferRequisites;
   FiatWalletRequisitesBuilder get transferRequisites =>
       _$this._transferRequisites ??= new FiatWalletRequisitesBuilder();
-  set transferRequisites(FiatWalletRequisitesBuilder? transferRequisites) =>
+  set transferRequisites(
+          covariant FiatWalletRequisitesBuilder? transferRequisites) =>
       _$this._transferRequisites = transferRequisites;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(covariant String? id) => _$this._id = id;
+
+  num? _balance;
+  num? get balance => _$this._balance;
+  set balance(covariant num? balance) => _$this._balance = balance;
+
+  String? _account;
+  String? get account => _$this._account;
+  set account(covariant String? account) => _$this._account = account;
+
+  String? _currency;
+  String? get currency => _$this._currency;
+  set currency(covariant String? currency) => _$this._currency = currency;
+
+  String? _currencyCode;
+  String? get currencyCode => _$this._currencyCode;
+  set currencyCode(covariant String? currencyCode) =>
+      _$this._currencyCode = currencyCode;
+
+  String? _currencyName;
+  String? get currencyName => _$this._currencyName;
+  set currencyName(covariant String? currencyName) =>
+      _$this._currencyName = currencyName;
+
+  String? _currencyIcon;
+  String? get currencyIcon => _$this._currencyIcon;
+  set currencyIcon(covariant String? currencyIcon) =>
+      _$this._currencyIcon = currencyIcon;
 
   WalletBalanceInfoBuilder? _paymentCurrencyBalance;
   WalletBalanceInfoBuilder get paymentCurrencyBalance =>
       _$this._paymentCurrencyBalance ??= new WalletBalanceInfoBuilder();
   set paymentCurrencyBalance(
-          WalletBalanceInfoBuilder? paymentCurrencyBalance) =>
+          covariant WalletBalanceInfoBuilder? paymentCurrencyBalance) =>
       _$this._paymentCurrencyBalance = paymentCurrencyBalance;
 
   FiatWalletWithPaymentCurrencyBuilder() {
@@ -154,6 +158,7 @@ class FiatWalletWithPaymentCurrencyBuilder
   FiatWalletWithPaymentCurrencyBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _transferRequisites = $v.transferRequisites?.toBuilder();
       _id = $v.id;
       _balance = $v.balance;
       _account = $v.account;
@@ -161,7 +166,6 @@ class FiatWalletWithPaymentCurrencyBuilder
       _currencyCode = $v.currencyCode;
       _currencyName = $v.currencyName;
       _currencyIcon = $v.currencyIcon;
-      _transferRequisites = $v.transferRequisites?.toBuilder();
       _paymentCurrencyBalance = $v.paymentCurrencyBalance?.toBuilder();
       _$v = null;
     }
@@ -169,7 +173,8 @@ class FiatWalletWithPaymentCurrencyBuilder
   }
 
   @override
-  void replace(FiatWalletWithPaymentCurrency other) {
+// ignore: override_on_non_overriding_method
+  void replace(covariant FiatWalletWithPaymentCurrency other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$FiatWalletWithPaymentCurrency;
   }
@@ -187,6 +192,7 @@ class FiatWalletWithPaymentCurrencyBuilder
     try {
       _$result = _$v ??
           new _$FiatWalletWithPaymentCurrency._(
+              transferRequisites: _transferRequisites?.build(),
               id: id,
               balance: balance,
               account: account,
@@ -194,13 +200,13 @@ class FiatWalletWithPaymentCurrencyBuilder
               currencyCode: currencyCode,
               currencyName: currencyName,
               currencyIcon: currencyIcon,
-              transferRequisites: _transferRequisites?.build(),
               paymentCurrencyBalance: _paymentCurrencyBalance?.build());
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'transferRequisites';
         _transferRequisites?.build();
+
         _$failedField = 'paymentCurrencyBalance';
         _paymentCurrencyBalance?.build();
       } catch (e) {
@@ -214,4 +220,4 @@ class FiatWalletWithPaymentCurrencyBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

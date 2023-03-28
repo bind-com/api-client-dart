@@ -2,6 +2,7 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+// ignore_for_file: unused_element
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -11,62 +12,98 @@ part 'rename_auto_portfolio_request.g.dart';
 ///
 /// Properties:
 /// * [name] - new name of portfolio
+@BuiltValue()
 abstract class RenameAutoPortfolioRequest implements Built<RenameAutoPortfolioRequest, RenameAutoPortfolioRequestBuilder> {
-    /// new name of portfolio
-    @BuiltValueField(wireName: r'name')
-    String? get name;
+  /// new name of portfolio
+  @BuiltValueField(wireName: r'name')
+  String? get name;
 
-    RenameAutoPortfolioRequest._();
+  RenameAutoPortfolioRequest._();
 
-    @BuiltValueHook(initializeBuilder: true)
-    static void _defaults(RenameAutoPortfolioRequestBuilder b) => b;
+  factory RenameAutoPortfolioRequest([void updates(RenameAutoPortfolioRequestBuilder b)]) = _$RenameAutoPortfolioRequest;
 
-    factory RenameAutoPortfolioRequest([void updates(RenameAutoPortfolioRequestBuilder b)]) = _$RenameAutoPortfolioRequest;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(RenameAutoPortfolioRequestBuilder b) => b;
 
-    @BuiltValueSerializer(custom: true)
-    static Serializer<RenameAutoPortfolioRequest> get serializer => _$RenameAutoPortfolioRequestSerializer();
+  @BuiltValueSerializer(custom: true)
+  static Serializer<RenameAutoPortfolioRequest> get serializer => _$RenameAutoPortfolioRequestSerializer();
 }
 
-class _$RenameAutoPortfolioRequestSerializer implements StructuredSerializer<RenameAutoPortfolioRequest> {
-    @override
-    final Iterable<Type> types = const [RenameAutoPortfolioRequest, _$RenameAutoPortfolioRequest];
+class _$RenameAutoPortfolioRequestSerializer implements PrimitiveSerializer<RenameAutoPortfolioRequest> {
+  @override
+  final Iterable<Type> types = const [RenameAutoPortfolioRequest, _$RenameAutoPortfolioRequest];
 
-    @override
-    final String wireName = r'RenameAutoPortfolioRequest';
+  @override
+  final String wireName = r'RenameAutoPortfolioRequest';
 
-    @override
-    Iterable<Object?> serialize(Serializers serializers, RenameAutoPortfolioRequest object,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = <Object?>[];
-        if (object.name != null) {
-            result
-                ..add(r'name')
-                ..add(serializers.serialize(object.name,
-                    specifiedType: const FullType(String)));
-        }
-        return result;
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    RenameAutoPortfolioRequest object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.name != null) {
+      yield r'name';
+      yield serializers.serialize(
+        object.name,
+        specifiedType: const FullType(String),
+      );
     }
+  }
 
-    @override
-    RenameAutoPortfolioRequest deserialize(Serializers serializers, Iterable<Object?> serialized,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = RenameAutoPortfolioRequestBuilder();
+  @override
+  Object serialize(
+    Serializers serializers,
+    RenameAutoPortfolioRequest object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
 
-        final iterator = serialized.iterator;
-        while (iterator.moveNext()) {
-            final key = iterator.current as String;
-            iterator.moveNext();
-            final Object? value = iterator.current;
-            
-            switch (key) {
-                case r'name':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.name = valueDes;
-                    break;
-            }
-        }
-        return result.build();
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required RenameAutoPortfolioRequestBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
     }
+  }
+
+  @override
+  RenameAutoPortfolioRequest deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = RenameAutoPortfolioRequestBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

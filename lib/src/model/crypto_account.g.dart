@@ -6,7 +6,44 @@ part of 'crypto_account.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$CryptoAccount extends CryptoAccount {
+abstract class CryptoAccountBuilder
+    implements CryptoAccountAllOfBuilder, CryptoAccountLightBuilder {
+  void replace(covariant CryptoAccount other);
+  void update(void Function(CryptoAccountBuilder) updates);
+  num? get assetPerformance;
+  set assetPerformance(covariant num? assetPerformance);
+
+  num? get assetBalance;
+  set assetBalance(covariant num? assetBalance);
+
+  String? get assetCode;
+  set assetCode(covariant String? assetCode);
+
+  String? get assetName;
+  set assetName(covariant String? assetName);
+
+  String? get assetId;
+  set assetId(covariant String? assetId);
+
+  String? get assetLogo;
+  set assetLogo(covariant String? assetLogo);
+
+  String? get assetColor;
+  set assetColor(covariant String? assetColor);
+
+  String? get paymentCurrencyCode;
+  set paymentCurrencyCode(covariant String? paymentCurrencyCode);
+
+  num? get paymentCurrencyBalance;
+  set paymentCurrencyBalance(covariant num? paymentCurrencyBalance);
+
+  num? get price;
+  set price(covariant num? price);
+}
+
+class _$$CryptoAccount extends $CryptoAccount {
+  @override
+  final num assetPerformance;
   @override
   final num assetBalance;
   @override
@@ -25,14 +62,13 @@ class _$CryptoAccount extends CryptoAccount {
   final num paymentCurrencyBalance;
   @override
   final num? price;
-  @override
-  final num assetPerformance;
 
-  factory _$CryptoAccount([void Function(CryptoAccountBuilder)? updates]) =>
-      (new CryptoAccountBuilder()..update(updates))._build();
+  factory _$$CryptoAccount([void Function($CryptoAccountBuilder)? updates]) =>
+      (new $CryptoAccountBuilder()..update(updates))._build();
 
-  _$CryptoAccount._(
-      {required this.assetBalance,
+  _$$CryptoAccount._(
+      {required this.assetPerformance,
+      required this.assetBalance,
       required this.assetCode,
       required this.assetName,
       required this.assetId,
@@ -40,35 +76,37 @@ class _$CryptoAccount extends CryptoAccount {
       this.assetColor,
       required this.paymentCurrencyCode,
       required this.paymentCurrencyBalance,
-      this.price,
-      required this.assetPerformance})
+      this.price})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        assetBalance, r'CryptoAccount', 'assetBalance');
+        assetPerformance, r'$CryptoAccount', 'assetPerformance');
     BuiltValueNullFieldError.checkNotNull(
-        assetCode, r'CryptoAccount', 'assetCode');
+        assetBalance, r'$CryptoAccount', 'assetBalance');
     BuiltValueNullFieldError.checkNotNull(
-        assetName, r'CryptoAccount', 'assetName');
-    BuiltValueNullFieldError.checkNotNull(assetId, r'CryptoAccount', 'assetId');
+        assetCode, r'$CryptoAccount', 'assetCode');
     BuiltValueNullFieldError.checkNotNull(
-        paymentCurrencyCode, r'CryptoAccount', 'paymentCurrencyCode');
+        assetName, r'$CryptoAccount', 'assetName');
     BuiltValueNullFieldError.checkNotNull(
-        paymentCurrencyBalance, r'CryptoAccount', 'paymentCurrencyBalance');
+        assetId, r'$CryptoAccount', 'assetId');
     BuiltValueNullFieldError.checkNotNull(
-        assetPerformance, r'CryptoAccount', 'assetPerformance');
+        paymentCurrencyCode, r'$CryptoAccount', 'paymentCurrencyCode');
+    BuiltValueNullFieldError.checkNotNull(
+        paymentCurrencyBalance, r'$CryptoAccount', 'paymentCurrencyBalance');
   }
 
   @override
-  CryptoAccount rebuild(void Function(CryptoAccountBuilder) updates) =>
+  $CryptoAccount rebuild(void Function($CryptoAccountBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  CryptoAccountBuilder toBuilder() => new CryptoAccountBuilder()..replace(this);
+  $CryptoAccountBuilder toBuilder() =>
+      new $CryptoAccountBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is CryptoAccount &&
+    return other is $CryptoAccount &&
+        assetPerformance == other.assetPerformance &&
         assetBalance == other.assetBalance &&
         assetCode == other.assetCode &&
         assetName == other.assetName &&
@@ -77,35 +115,30 @@ class _$CryptoAccount extends CryptoAccount {
         assetColor == other.assetColor &&
         paymentCurrencyCode == other.paymentCurrencyCode &&
         paymentCurrencyBalance == other.paymentCurrencyBalance &&
-        price == other.price &&
-        assetPerformance == other.assetPerformance;
+        price == other.price;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc(
-                        $jc(
-                            $jc(
-                                $jc(
-                                    $jc($jc(0, assetBalance.hashCode),
-                                        assetCode.hashCode),
-                                    assetName.hashCode),
-                                assetId.hashCode),
-                            assetLogo.hashCode),
-                        assetColor.hashCode),
-                    paymentCurrencyCode.hashCode),
-                paymentCurrencyBalance.hashCode),
-            price.hashCode),
-        assetPerformance.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, assetPerformance.hashCode);
+    _$hash = $jc(_$hash, assetBalance.hashCode);
+    _$hash = $jc(_$hash, assetCode.hashCode);
+    _$hash = $jc(_$hash, assetName.hashCode);
+    _$hash = $jc(_$hash, assetId.hashCode);
+    _$hash = $jc(_$hash, assetLogo.hashCode);
+    _$hash = $jc(_$hash, assetColor.hashCode);
+    _$hash = $jc(_$hash, paymentCurrencyCode.hashCode);
+    _$hash = $jc(_$hash, paymentCurrencyBalance.hashCode);
+    _$hash = $jc(_$hash, price.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'CryptoAccount')
+    return (newBuiltValueToStringHelper(r'$CryptoAccount')
+          ..add('assetPerformance', assetPerformance)
           ..add('assetBalance', assetBalance)
           ..add('assetCode', assetCode)
           ..add('assetName', assetName)
@@ -114,66 +147,70 @@ class _$CryptoAccount extends CryptoAccount {
           ..add('assetColor', assetColor)
           ..add('paymentCurrencyCode', paymentCurrencyCode)
           ..add('paymentCurrencyBalance', paymentCurrencyBalance)
-          ..add('price', price)
-          ..add('assetPerformance', assetPerformance))
+          ..add('price', price))
         .toString();
   }
 }
 
-class CryptoAccountBuilder
-    implements Builder<CryptoAccount, CryptoAccountBuilder> {
-  _$CryptoAccount? _$v;
+class $CryptoAccountBuilder
+    implements
+        Builder<$CryptoAccount, $CryptoAccountBuilder>,
+        CryptoAccountBuilder {
+  _$$CryptoAccount? _$v;
+
+  num? _assetPerformance;
+  num? get assetPerformance => _$this._assetPerformance;
+  set assetPerformance(covariant num? assetPerformance) =>
+      _$this._assetPerformance = assetPerformance;
 
   num? _assetBalance;
   num? get assetBalance => _$this._assetBalance;
-  set assetBalance(num? assetBalance) => _$this._assetBalance = assetBalance;
+  set assetBalance(covariant num? assetBalance) =>
+      _$this._assetBalance = assetBalance;
 
   String? _assetCode;
   String? get assetCode => _$this._assetCode;
-  set assetCode(String? assetCode) => _$this._assetCode = assetCode;
+  set assetCode(covariant String? assetCode) => _$this._assetCode = assetCode;
 
   String? _assetName;
   String? get assetName => _$this._assetName;
-  set assetName(String? assetName) => _$this._assetName = assetName;
+  set assetName(covariant String? assetName) => _$this._assetName = assetName;
 
   String? _assetId;
   String? get assetId => _$this._assetId;
-  set assetId(String? assetId) => _$this._assetId = assetId;
+  set assetId(covariant String? assetId) => _$this._assetId = assetId;
 
   String? _assetLogo;
   String? get assetLogo => _$this._assetLogo;
-  set assetLogo(String? assetLogo) => _$this._assetLogo = assetLogo;
+  set assetLogo(covariant String? assetLogo) => _$this._assetLogo = assetLogo;
 
   String? _assetColor;
   String? get assetColor => _$this._assetColor;
-  set assetColor(String? assetColor) => _$this._assetColor = assetColor;
+  set assetColor(covariant String? assetColor) =>
+      _$this._assetColor = assetColor;
 
   String? _paymentCurrencyCode;
   String? get paymentCurrencyCode => _$this._paymentCurrencyCode;
-  set paymentCurrencyCode(String? paymentCurrencyCode) =>
+  set paymentCurrencyCode(covariant String? paymentCurrencyCode) =>
       _$this._paymentCurrencyCode = paymentCurrencyCode;
 
   num? _paymentCurrencyBalance;
   num? get paymentCurrencyBalance => _$this._paymentCurrencyBalance;
-  set paymentCurrencyBalance(num? paymentCurrencyBalance) =>
+  set paymentCurrencyBalance(covariant num? paymentCurrencyBalance) =>
       _$this._paymentCurrencyBalance = paymentCurrencyBalance;
 
   num? _price;
   num? get price => _$this._price;
-  set price(num? price) => _$this._price = price;
+  set price(covariant num? price) => _$this._price = price;
 
-  num? _assetPerformance;
-  num? get assetPerformance => _$this._assetPerformance;
-  set assetPerformance(num? assetPerformance) =>
-      _$this._assetPerformance = assetPerformance;
-
-  CryptoAccountBuilder() {
-    CryptoAccount._defaults(this);
+  $CryptoAccountBuilder() {
+    $CryptoAccount._defaults(this);
   }
 
-  CryptoAccountBuilder get _$this {
+  $CryptoAccountBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _assetPerformance = $v.assetPerformance;
       _assetBalance = $v.assetBalance;
       _assetCode = $v.assetCode;
       _assetName = $v.assetName;
@@ -183,51 +220,50 @@ class CryptoAccountBuilder
       _paymentCurrencyCode = $v.paymentCurrencyCode;
       _paymentCurrencyBalance = $v.paymentCurrencyBalance;
       _price = $v.price;
-      _assetPerformance = $v.assetPerformance;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(CryptoAccount other) {
+  void replace(covariant $CryptoAccount other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$CryptoAccount;
+    _$v = other as _$$CryptoAccount;
   }
 
   @override
-  void update(void Function(CryptoAccountBuilder)? updates) {
+  void update(void Function($CryptoAccountBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  CryptoAccount build() => _build();
+  $CryptoAccount build() => _build();
 
-  _$CryptoAccount _build() {
+  _$$CryptoAccount _build() {
     final _$result = _$v ??
-        new _$CryptoAccount._(
+        new _$$CryptoAccount._(
+            assetPerformance: BuiltValueNullFieldError.checkNotNull(
+                assetPerformance, r'$CryptoAccount', 'assetPerformance'),
             assetBalance: BuiltValueNullFieldError.checkNotNull(
-                assetBalance, r'CryptoAccount', 'assetBalance'),
+                assetBalance, r'$CryptoAccount', 'assetBalance'),
             assetCode: BuiltValueNullFieldError.checkNotNull(
-                assetCode, r'CryptoAccount', 'assetCode'),
+                assetCode, r'$CryptoAccount', 'assetCode'),
             assetName: BuiltValueNullFieldError.checkNotNull(
-                assetName, r'CryptoAccount', 'assetName'),
+                assetName, r'$CryptoAccount', 'assetName'),
             assetId: BuiltValueNullFieldError.checkNotNull(
-                assetId, r'CryptoAccount', 'assetId'),
+                assetId, r'$CryptoAccount', 'assetId'),
             assetLogo: assetLogo,
             assetColor: assetColor,
             paymentCurrencyCode: BuiltValueNullFieldError.checkNotNull(
-                paymentCurrencyCode, r'CryptoAccount', 'paymentCurrencyCode'),
+                paymentCurrencyCode, r'$CryptoAccount', 'paymentCurrencyCode'),
             paymentCurrencyBalance: BuiltValueNullFieldError.checkNotNull(
                 paymentCurrencyBalance,
-                r'CryptoAccount',
+                r'$CryptoAccount',
                 'paymentCurrencyBalance'),
-            price: price,
-            assetPerformance: BuiltValueNullFieldError.checkNotNull(
-                assetPerformance, r'CryptoAccount', 'assetPerformance'));
+            price: price);
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

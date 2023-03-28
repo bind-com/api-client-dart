@@ -2,6 +2,7 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+// ignore_for_file: unused_element
 import 'package:bind_api/src/model/fiat_wallet_requisites.dart';
 import 'package:bind_api/src/model/wallet_balance_info.dart';
 import 'package:bind_api/src/model/fiat_wallet.dart';
@@ -23,173 +24,206 @@ part 'fiat_wallet_with_payment_currency.g.dart';
 /// * [currencyIcon] 
 /// * [transferRequisites] 
 /// * [paymentCurrencyBalance] 
-abstract class FiatWalletWithPaymentCurrency implements Built<FiatWalletWithPaymentCurrency, FiatWalletWithPaymentCurrencyBuilder> {
-    @BuiltValueField(wireName: r'id')
-    String? get id;
+@BuiltValue()
+abstract class FiatWalletWithPaymentCurrency implements FiatWallet, FiatWalletWithPaymentCurrencyAllOf, Built<FiatWalletWithPaymentCurrency, FiatWalletWithPaymentCurrencyBuilder> {
+  FiatWalletWithPaymentCurrency._();
 
-    @BuiltValueField(wireName: r'balance')
-    num? get balance;
+  factory FiatWalletWithPaymentCurrency([void updates(FiatWalletWithPaymentCurrencyBuilder b)]) = _$FiatWalletWithPaymentCurrency;
 
-    @BuiltValueField(wireName: r'account')
-    String? get account;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(FiatWalletWithPaymentCurrencyBuilder b) => b;
 
-    @BuiltValueField(wireName: r'currency')
-    String? get currency;
-
-    @BuiltValueField(wireName: r'currency_code')
-    String? get currencyCode;
-
-    @BuiltValueField(wireName: r'currency_name')
-    String? get currencyName;
-
-    @BuiltValueField(wireName: r'currency_icon')
-    String? get currencyIcon;
-
-    @BuiltValueField(wireName: r'transfer_requisites')
-    FiatWalletRequisites? get transferRequisites;
-
-    @BuiltValueField(wireName: r'payment_currency_balance')
-    WalletBalanceInfo? get paymentCurrencyBalance;
-
-    FiatWalletWithPaymentCurrency._();
-
-    @BuiltValueHook(initializeBuilder: true)
-    static void _defaults(FiatWalletWithPaymentCurrencyBuilder b) => b;
-
-    factory FiatWalletWithPaymentCurrency([void updates(FiatWalletWithPaymentCurrencyBuilder b)]) = _$FiatWalletWithPaymentCurrency;
-
-    @BuiltValueSerializer(custom: true)
-    static Serializer<FiatWalletWithPaymentCurrency> get serializer => _$FiatWalletWithPaymentCurrencySerializer();
+  @BuiltValueSerializer(custom: true)
+  static Serializer<FiatWalletWithPaymentCurrency> get serializer => _$FiatWalletWithPaymentCurrencySerializer();
 }
 
-class _$FiatWalletWithPaymentCurrencySerializer implements StructuredSerializer<FiatWalletWithPaymentCurrency> {
-    @override
-    final Iterable<Type> types = const [FiatWalletWithPaymentCurrency, _$FiatWalletWithPaymentCurrency];
+class _$FiatWalletWithPaymentCurrencySerializer implements PrimitiveSerializer<FiatWalletWithPaymentCurrency> {
+  @override
+  final Iterable<Type> types = const [FiatWalletWithPaymentCurrency, _$FiatWalletWithPaymentCurrency];
 
-    @override
-    final String wireName = r'FiatWalletWithPaymentCurrency';
+  @override
+  final String wireName = r'FiatWalletWithPaymentCurrency';
 
-    @override
-    Iterable<Object?> serialize(Serializers serializers, FiatWalletWithPaymentCurrency object,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = <Object?>[];
-        if (object.id != null) {
-            result
-                ..add(r'id')
-                ..add(serializers.serialize(object.id,
-                    specifiedType: const FullType(String)));
-        }
-        if (object.balance != null) {
-            result
-                ..add(r'balance')
-                ..add(serializers.serialize(object.balance,
-                    specifiedType: const FullType(num)));
-        }
-        if (object.account != null) {
-            result
-                ..add(r'account')
-                ..add(serializers.serialize(object.account,
-                    specifiedType: const FullType(String)));
-        }
-        if (object.currency != null) {
-            result
-                ..add(r'currency')
-                ..add(serializers.serialize(object.currency,
-                    specifiedType: const FullType(String)));
-        }
-        if (object.currencyCode != null) {
-            result
-                ..add(r'currency_code')
-                ..add(serializers.serialize(object.currencyCode,
-                    specifiedType: const FullType(String)));
-        }
-        if (object.currencyName != null) {
-            result
-                ..add(r'currency_name')
-                ..add(serializers.serialize(object.currencyName,
-                    specifiedType: const FullType(String)));
-        }
-        if (object.currencyIcon != null) {
-            result
-                ..add(r'currency_icon')
-                ..add(serializers.serialize(object.currencyIcon,
-                    specifiedType: const FullType(String)));
-        }
-        if (object.transferRequisites != null) {
-            result
-                ..add(r'transfer_requisites')
-                ..add(serializers.serialize(object.transferRequisites,
-                    specifiedType: const FullType(FiatWalletRequisites)));
-        }
-        if (object.paymentCurrencyBalance != null) {
-            result
-                ..add(r'payment_currency_balance')
-                ..add(serializers.serialize(object.paymentCurrencyBalance,
-                    specifiedType: const FullType(WalletBalanceInfo)));
-        }
-        return result;
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    FiatWalletWithPaymentCurrency object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.transferRequisites != null) {
+      yield r'transfer_requisites';
+      yield serializers.serialize(
+        object.transferRequisites,
+        specifiedType: const FullType(FiatWalletRequisites),
+      );
     }
-
-    @override
-    FiatWalletWithPaymentCurrency deserialize(Serializers serializers, Iterable<Object?> serialized,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = FiatWalletWithPaymentCurrencyBuilder();
-
-        final iterator = serialized.iterator;
-        while (iterator.moveNext()) {
-            final key = iterator.current as String;
-            iterator.moveNext();
-            final Object? value = iterator.current;
-            
-            switch (key) {
-                case r'id':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.id = valueDes;
-                    break;
-                case r'balance':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
-                    result.balance = valueDes;
-                    break;
-                case r'account':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.account = valueDes;
-                    break;
-                case r'currency':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.currency = valueDes;
-                    break;
-                case r'currency_code':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.currencyCode = valueDes;
-                    break;
-                case r'currency_name':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.currencyName = valueDes;
-                    break;
-                case r'currency_icon':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.currencyIcon = valueDes;
-                    break;
-                case r'transfer_requisites':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(FiatWalletRequisites)) as FiatWalletRequisites;
-                    result.transferRequisites.replace(valueDes);
-                    break;
-                case r'payment_currency_balance':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(WalletBalanceInfo)) as WalletBalanceInfo;
-                    result.paymentCurrencyBalance.replace(valueDes);
-                    break;
-            }
-        }
-        return result.build();
+    if (object.balance != null) {
+      yield r'balance';
+      yield serializers.serialize(
+        object.balance,
+        specifiedType: const FullType(num),
+      );
     }
+    if (object.currencyName != null) {
+      yield r'currency_name';
+      yield serializers.serialize(
+        object.currencyName,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.paymentCurrencyBalance != null) {
+      yield r'payment_currency_balance';
+      yield serializers.serialize(
+        object.paymentCurrencyBalance,
+        specifiedType: const FullType(WalletBalanceInfo),
+      );
+    }
+    if (object.currency != null) {
+      yield r'currency';
+      yield serializers.serialize(
+        object.currency,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.id != null) {
+      yield r'id';
+      yield serializers.serialize(
+        object.id,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.currencyIcon != null) {
+      yield r'currency_icon';
+      yield serializers.serialize(
+        object.currencyIcon,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.currencyCode != null) {
+      yield r'currency_code';
+      yield serializers.serialize(
+        object.currencyCode,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.account != null) {
+      yield r'account';
+      yield serializers.serialize(
+        object.account,
+        specifiedType: const FullType(String),
+      );
+    }
+  }
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    FiatWalletWithPaymentCurrency object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required FiatWalletWithPaymentCurrencyBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'transfer_requisites':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(FiatWalletRequisites),
+          ) as FiatWalletRequisites;
+          result.transferRequisites.replace(valueDes);
+          break;
+        case r'balance':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.balance = valueDes;
+          break;
+        case r'currency_name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.currencyName = valueDes;
+          break;
+        case r'payment_currency_balance':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(WalletBalanceInfo),
+          ) as WalletBalanceInfo;
+          result.paymentCurrencyBalance.replace(valueDes);
+          break;
+        case r'currency':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.currency = valueDes;
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
+          break;
+        case r'currency_icon':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.currencyIcon = valueDes;
+          break;
+        case r'currency_code':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.currencyCode = valueDes;
+          break;
+        case r'account':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.account = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  FiatWalletWithPaymentCurrency deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = FiatWalletWithPaymentCurrencyBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

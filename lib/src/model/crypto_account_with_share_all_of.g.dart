@@ -6,59 +6,70 @@ part of 'crypto_account_with_share_all_of.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$CryptoAccountWithShareAllOf extends CryptoAccountWithShareAllOf {
+abstract class CryptoAccountWithShareAllOfBuilder {
+  void replace(CryptoAccountWithShareAllOf other);
+  void update(void Function(CryptoAccountWithShareAllOfBuilder) updates);
+  num? get share;
+  set share(num? share);
+}
+
+class _$$CryptoAccountWithShareAllOf extends $CryptoAccountWithShareAllOf {
   @override
   final num? share;
 
-  factory _$CryptoAccountWithShareAllOf(
-          [void Function(CryptoAccountWithShareAllOfBuilder)? updates]) =>
-      (new CryptoAccountWithShareAllOfBuilder()..update(updates))._build();
+  factory _$$CryptoAccountWithShareAllOf(
+          [void Function($CryptoAccountWithShareAllOfBuilder)? updates]) =>
+      (new $CryptoAccountWithShareAllOfBuilder()..update(updates))._build();
 
-  _$CryptoAccountWithShareAllOf._({this.share}) : super._();
+  _$$CryptoAccountWithShareAllOf._({this.share}) : super._();
 
   @override
-  CryptoAccountWithShareAllOf rebuild(
-          void Function(CryptoAccountWithShareAllOfBuilder) updates) =>
+  $CryptoAccountWithShareAllOf rebuild(
+          void Function($CryptoAccountWithShareAllOfBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  CryptoAccountWithShareAllOfBuilder toBuilder() =>
-      new CryptoAccountWithShareAllOfBuilder()..replace(this);
+  $CryptoAccountWithShareAllOfBuilder toBuilder() =>
+      new $CryptoAccountWithShareAllOfBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is CryptoAccountWithShareAllOf && share == other.share;
+    return other is $CryptoAccountWithShareAllOf && share == other.share;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(0, share.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, share.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'CryptoAccountWithShareAllOf')
+    return (newBuiltValueToStringHelper(r'$CryptoAccountWithShareAllOf')
           ..add('share', share))
         .toString();
   }
 }
 
-class CryptoAccountWithShareAllOfBuilder
+class $CryptoAccountWithShareAllOfBuilder
     implements
-        Builder<CryptoAccountWithShareAllOf,
-            CryptoAccountWithShareAllOfBuilder> {
-  _$CryptoAccountWithShareAllOf? _$v;
+        Builder<$CryptoAccountWithShareAllOf,
+            $CryptoAccountWithShareAllOfBuilder>,
+        CryptoAccountWithShareAllOfBuilder {
+  _$$CryptoAccountWithShareAllOf? _$v;
 
   num? _share;
   num? get share => _$this._share;
-  set share(num? share) => _$this._share = share;
+  set share(covariant num? share) => _$this._share = share;
 
-  CryptoAccountWithShareAllOfBuilder() {
-    CryptoAccountWithShareAllOf._defaults(this);
+  $CryptoAccountWithShareAllOfBuilder() {
+    $CryptoAccountWithShareAllOf._defaults(this);
   }
 
-  CryptoAccountWithShareAllOfBuilder get _$this {
+  $CryptoAccountWithShareAllOfBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _share = $v.share;
@@ -68,24 +79,24 @@ class CryptoAccountWithShareAllOfBuilder
   }
 
   @override
-  void replace(CryptoAccountWithShareAllOf other) {
+  void replace(covariant $CryptoAccountWithShareAllOf other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$CryptoAccountWithShareAllOf;
+    _$v = other as _$$CryptoAccountWithShareAllOf;
   }
 
   @override
-  void update(void Function(CryptoAccountWithShareAllOfBuilder)? updates) {
+  void update(void Function($CryptoAccountWithShareAllOfBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  CryptoAccountWithShareAllOf build() => _build();
+  $CryptoAccountWithShareAllOf build() => _build();
 
-  _$CryptoAccountWithShareAllOf _build() {
-    final _$result = _$v ?? new _$CryptoAccountWithShareAllOf._(share: share);
+  _$$CryptoAccountWithShareAllOf _build() {
+    final _$result = _$v ?? new _$$CryptoAccountWithShareAllOf._(share: share);
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

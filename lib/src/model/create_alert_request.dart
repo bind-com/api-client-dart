@@ -2,6 +2,7 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+// ignore_for_file: unused_element
 import 'package:bind_api/src/model/alert_periodicity.dart';
 import 'package:bind_api/src/model/trading_asset.dart';
 import 'package:built_value/built_value.dart';
@@ -16,105 +17,150 @@ part 'create_alert_request.g.dart';
 /// * [price] 
 /// * [periodicity] 
 /// * [tradingAsset] 
+@BuiltValue()
 abstract class CreateAlertRequest implements Built<CreateAlertRequest, CreateAlertRequestBuilder> {
-    @BuiltValueField(wireName: r'currency')
-    String? get currency;
+  @BuiltValueField(wireName: r'currency')
+  String? get currency;
 
-    @BuiltValueField(wireName: r'price')
-    num? get price;
+  @BuiltValueField(wireName: r'price')
+  num? get price;
 
-    @BuiltValueField(wireName: r'periodicity')
-    AlertPeriodicity? get periodicity;
-    // enum periodicityEnum {  ONE_TIME,  ONCE_A_DAY,  REPEATEDLY,  };
+  @BuiltValueField(wireName: r'periodicity')
+  AlertPeriodicity? get periodicity;
+  // enum periodicityEnum {  ONE_TIME,  ONCE_A_DAY,  REPEATEDLY,  };
 
-    @BuiltValueField(wireName: r'trading_asset')
-    TradingAsset? get tradingAsset;
-    // enum tradingAssetEnum {  BTC,  USD,  };
+  @BuiltValueField(wireName: r'trading_asset')
+  TradingAsset? get tradingAsset;
+  // enum tradingAssetEnum {  BTC,  USD,  };
 
-    CreateAlertRequest._();
+  CreateAlertRequest._();
 
-    @BuiltValueHook(initializeBuilder: true)
-    static void _defaults(CreateAlertRequestBuilder b) => b;
+  factory CreateAlertRequest([void updates(CreateAlertRequestBuilder b)]) = _$CreateAlertRequest;
 
-    factory CreateAlertRequest([void updates(CreateAlertRequestBuilder b)]) = _$CreateAlertRequest;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(CreateAlertRequestBuilder b) => b;
 
-    @BuiltValueSerializer(custom: true)
-    static Serializer<CreateAlertRequest> get serializer => _$CreateAlertRequestSerializer();
+  @BuiltValueSerializer(custom: true)
+  static Serializer<CreateAlertRequest> get serializer => _$CreateAlertRequestSerializer();
 }
 
-class _$CreateAlertRequestSerializer implements StructuredSerializer<CreateAlertRequest> {
-    @override
-    final Iterable<Type> types = const [CreateAlertRequest, _$CreateAlertRequest];
+class _$CreateAlertRequestSerializer implements PrimitiveSerializer<CreateAlertRequest> {
+  @override
+  final Iterable<Type> types = const [CreateAlertRequest, _$CreateAlertRequest];
 
-    @override
-    final String wireName = r'CreateAlertRequest';
+  @override
+  final String wireName = r'CreateAlertRequest';
 
-    @override
-    Iterable<Object?> serialize(Serializers serializers, CreateAlertRequest object,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = <Object?>[];
-        if (object.currency != null) {
-            result
-                ..add(r'currency')
-                ..add(serializers.serialize(object.currency,
-                    specifiedType: const FullType(String)));
-        }
-        if (object.price != null) {
-            result
-                ..add(r'price')
-                ..add(serializers.serialize(object.price,
-                    specifiedType: const FullType(num)));
-        }
-        if (object.periodicity != null) {
-            result
-                ..add(r'periodicity')
-                ..add(serializers.serialize(object.periodicity,
-                    specifiedType: const FullType(AlertPeriodicity)));
-        }
-        if (object.tradingAsset != null) {
-            result
-                ..add(r'trading_asset')
-                ..add(serializers.serialize(object.tradingAsset,
-                    specifiedType: const FullType(TradingAsset)));
-        }
-        return result;
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    CreateAlertRequest object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.currency != null) {
+      yield r'currency';
+      yield serializers.serialize(
+        object.currency,
+        specifiedType: const FullType(String),
+      );
     }
-
-    @override
-    CreateAlertRequest deserialize(Serializers serializers, Iterable<Object?> serialized,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = CreateAlertRequestBuilder();
-
-        final iterator = serialized.iterator;
-        while (iterator.moveNext()) {
-            final key = iterator.current as String;
-            iterator.moveNext();
-            final Object? value = iterator.current;
-            
-            switch (key) {
-                case r'currency':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.currency = valueDes;
-                    break;
-                case r'price':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
-                    result.price = valueDes;
-                    break;
-                case r'periodicity':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(AlertPeriodicity)) as AlertPeriodicity;
-                    result.periodicity = valueDes;
-                    break;
-                case r'trading_asset':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(TradingAsset)) as TradingAsset;
-                    result.tradingAsset = valueDes;
-                    break;
-            }
-        }
-        return result.build();
+    if (object.price != null) {
+      yield r'price';
+      yield serializers.serialize(
+        object.price,
+        specifiedType: const FullType(num),
+      );
     }
+    if (object.periodicity != null) {
+      yield r'periodicity';
+      yield serializers.serialize(
+        object.periodicity,
+        specifiedType: const FullType(AlertPeriodicity),
+      );
+    }
+    if (object.tradingAsset != null) {
+      yield r'trading_asset';
+      yield serializers.serialize(
+        object.tradingAsset,
+        specifiedType: const FullType(TradingAsset),
+      );
+    }
+  }
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    CreateAlertRequest object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required CreateAlertRequestBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'currency':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.currency = valueDes;
+          break;
+        case r'price':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.price = valueDes;
+          break;
+        case r'periodicity':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AlertPeriodicity),
+          ) as AlertPeriodicity;
+          result.periodicity = valueDes;
+          break;
+        case r'trading_asset':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(TradingAsset),
+          ) as TradingAsset;
+          result.tradingAsset = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  CreateAlertRequest deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = CreateAlertRequestBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

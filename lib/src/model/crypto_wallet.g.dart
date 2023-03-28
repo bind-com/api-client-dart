@@ -8,22 +8,22 @@ part of 'crypto_wallet.dart';
 
 class _$CryptoWallet extends CryptoWallet {
   @override
+  final BuiltList<CryptoAccount>? accounts;
+  @override
   final num paymentCurrencyBalance;
   @override
   final String paymentCurrencyCode;
   @override
   final num performance;
-  @override
-  final BuiltList<CryptoAccount>? accounts;
 
   factory _$CryptoWallet([void Function(CryptoWalletBuilder)? updates]) =>
       (new CryptoWalletBuilder()..update(updates))._build();
 
   _$CryptoWallet._(
-      {required this.paymentCurrencyBalance,
+      {this.accounts,
+      required this.paymentCurrencyBalance,
       required this.paymentCurrencyCode,
-      required this.performance,
-      this.accounts})
+      required this.performance})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         paymentCurrencyBalance, r'CryptoWallet', 'paymentCurrencyBalance');
@@ -44,56 +44,61 @@ class _$CryptoWallet extends CryptoWallet {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CryptoWallet &&
+        accounts == other.accounts &&
         paymentCurrencyBalance == other.paymentCurrencyBalance &&
         paymentCurrencyCode == other.paymentCurrencyCode &&
-        performance == other.performance &&
-        accounts == other.accounts;
+        performance == other.performance;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc($jc(0, paymentCurrencyBalance.hashCode),
-                paymentCurrencyCode.hashCode),
-            performance.hashCode),
-        accounts.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, accounts.hashCode);
+    _$hash = $jc(_$hash, paymentCurrencyBalance.hashCode);
+    _$hash = $jc(_$hash, paymentCurrencyCode.hashCode);
+    _$hash = $jc(_$hash, performance.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'CryptoWallet')
+          ..add('accounts', accounts)
           ..add('paymentCurrencyBalance', paymentCurrencyBalance)
           ..add('paymentCurrencyCode', paymentCurrencyCode)
-          ..add('performance', performance)
-          ..add('accounts', accounts))
+          ..add('performance', performance))
         .toString();
   }
 }
 
 class CryptoWalletBuilder
-    implements Builder<CryptoWallet, CryptoWalletBuilder> {
+    implements
+        Builder<CryptoWallet, CryptoWalletBuilder>,
+        CryptoWalletAllOfBuilder,
+        CryptoWalletBalanceBuilder {
   _$CryptoWallet? _$v;
-
-  num? _paymentCurrencyBalance;
-  num? get paymentCurrencyBalance => _$this._paymentCurrencyBalance;
-  set paymentCurrencyBalance(num? paymentCurrencyBalance) =>
-      _$this._paymentCurrencyBalance = paymentCurrencyBalance;
-
-  String? _paymentCurrencyCode;
-  String? get paymentCurrencyCode => _$this._paymentCurrencyCode;
-  set paymentCurrencyCode(String? paymentCurrencyCode) =>
-      _$this._paymentCurrencyCode = paymentCurrencyCode;
-
-  num? _performance;
-  num? get performance => _$this._performance;
-  set performance(num? performance) => _$this._performance = performance;
 
   ListBuilder<CryptoAccount>? _accounts;
   ListBuilder<CryptoAccount> get accounts =>
       _$this._accounts ??= new ListBuilder<CryptoAccount>();
-  set accounts(ListBuilder<CryptoAccount>? accounts) =>
+  set accounts(covariant ListBuilder<CryptoAccount>? accounts) =>
       _$this._accounts = accounts;
+
+  num? _paymentCurrencyBalance;
+  num? get paymentCurrencyBalance => _$this._paymentCurrencyBalance;
+  set paymentCurrencyBalance(covariant num? paymentCurrencyBalance) =>
+      _$this._paymentCurrencyBalance = paymentCurrencyBalance;
+
+  String? _paymentCurrencyCode;
+  String? get paymentCurrencyCode => _$this._paymentCurrencyCode;
+  set paymentCurrencyCode(covariant String? paymentCurrencyCode) =>
+      _$this._paymentCurrencyCode = paymentCurrencyCode;
+
+  num? _performance;
+  num? get performance => _$this._performance;
+  set performance(covariant num? performance) =>
+      _$this._performance = performance;
 
   CryptoWalletBuilder() {
     CryptoWallet._defaults(this);
@@ -102,17 +107,18 @@ class CryptoWalletBuilder
   CryptoWalletBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _accounts = $v.accounts?.toBuilder();
       _paymentCurrencyBalance = $v.paymentCurrencyBalance;
       _paymentCurrencyCode = $v.paymentCurrencyCode;
       _performance = $v.performance;
-      _accounts = $v.accounts?.toBuilder();
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(CryptoWallet other) {
+// ignore: override_on_non_overriding_method
+  void replace(covariant CryptoWallet other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$CryptoWallet;
   }
@@ -130,6 +136,7 @@ class CryptoWalletBuilder
     try {
       _$result = _$v ??
           new _$CryptoWallet._(
+              accounts: _accounts?.build(),
               paymentCurrencyBalance: BuiltValueNullFieldError.checkNotNull(
                   paymentCurrencyBalance,
                   r'CryptoWallet',
@@ -137,8 +144,7 @@ class CryptoWalletBuilder
               paymentCurrencyCode: BuiltValueNullFieldError.checkNotNull(
                   paymentCurrencyCode, r'CryptoWallet', 'paymentCurrencyCode'),
               performance: BuiltValueNullFieldError.checkNotNull(
-                  performance, r'CryptoWallet', 'performance'),
-              accounts: _accounts?.build());
+                  performance, r'CryptoWallet', 'performance'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -155,4 +161,4 @@ class CryptoWalletBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

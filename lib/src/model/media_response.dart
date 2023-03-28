@@ -2,6 +2,7 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+// ignore_for_file: unused_element
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -14,97 +15,142 @@ part 'media_response.g.dart';
 /// * [file] - file URL
 /// * [mimetype] 
 /// * [size] 
+@BuiltValue()
 abstract class MediaResponse implements Built<MediaResponse, MediaResponseBuilder> {
-    /// an unique file id which can be used for any goals
-    @BuiltValueField(wireName: r'file_id')
-    String get fileId;
+  /// an unique file id which can be used for any goals
+  @BuiltValueField(wireName: r'file_id')
+  String get fileId;
 
-    /// file URL
-    @BuiltValueField(wireName: r'file')
-    String get file;
+  /// file URL
+  @BuiltValueField(wireName: r'file')
+  String get file;
 
-    @BuiltValueField(wireName: r'mimetype')
-    String get mimetype;
+  @BuiltValueField(wireName: r'mimetype')
+  String get mimetype;
 
-    @BuiltValueField(wireName: r'size')
-    num get size;
+  @BuiltValueField(wireName: r'size')
+  num get size;
 
-    MediaResponse._();
+  MediaResponse._();
 
-    @BuiltValueHook(initializeBuilder: true)
-    static void _defaults(MediaResponseBuilder b) => b;
+  factory MediaResponse([void updates(MediaResponseBuilder b)]) = _$MediaResponse;
 
-    factory MediaResponse([void updates(MediaResponseBuilder b)]) = _$MediaResponse;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(MediaResponseBuilder b) => b;
 
-    @BuiltValueSerializer(custom: true)
-    static Serializer<MediaResponse> get serializer => _$MediaResponseSerializer();
+  @BuiltValueSerializer(custom: true)
+  static Serializer<MediaResponse> get serializer => _$MediaResponseSerializer();
 }
 
-class _$MediaResponseSerializer implements StructuredSerializer<MediaResponse> {
-    @override
-    final Iterable<Type> types = const [MediaResponse, _$MediaResponse];
+class _$MediaResponseSerializer implements PrimitiveSerializer<MediaResponse> {
+  @override
+  final Iterable<Type> types = const [MediaResponse, _$MediaResponse];
 
-    @override
-    final String wireName = r'MediaResponse';
+  @override
+  final String wireName = r'MediaResponse';
 
-    @override
-    Iterable<Object?> serialize(Serializers serializers, MediaResponse object,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = <Object?>[];
-        result
-            ..add(r'file_id')
-            ..add(serializers.serialize(object.fileId,
-                specifiedType: const FullType(String)));
-        result
-            ..add(r'file')
-            ..add(serializers.serialize(object.file,
-                specifiedType: const FullType(String)));
-        result
-            ..add(r'mimetype')
-            ..add(serializers.serialize(object.mimetype,
-                specifiedType: const FullType(String)));
-        result
-            ..add(r'size')
-            ..add(serializers.serialize(object.size,
-                specifiedType: const FullType(num)));
-        return result;
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    MediaResponse object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    yield r'file_id';
+    yield serializers.serialize(
+      object.fileId,
+      specifiedType: const FullType(String),
+    );
+    yield r'file';
+    yield serializers.serialize(
+      object.file,
+      specifiedType: const FullType(String),
+    );
+    yield r'mimetype';
+    yield serializers.serialize(
+      object.mimetype,
+      specifiedType: const FullType(String),
+    );
+    yield r'size';
+    yield serializers.serialize(
+      object.size,
+      specifiedType: const FullType(num),
+    );
+  }
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    MediaResponse object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required MediaResponseBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'file_id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.fileId = valueDes;
+          break;
+        case r'file':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.file = valueDes;
+          break;
+        case r'mimetype':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.mimetype = valueDes;
+          break;
+        case r'size':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.size = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
     }
+  }
 
-    @override
-    MediaResponse deserialize(Serializers serializers, Iterable<Object?> serialized,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = MediaResponseBuilder();
-
-        final iterator = serialized.iterator;
-        while (iterator.moveNext()) {
-            final key = iterator.current as String;
-            iterator.moveNext();
-            final Object? value = iterator.current;
-            
-            switch (key) {
-                case r'file_id':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.fileId = valueDes;
-                    break;
-                case r'file':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.file = valueDes;
-                    break;
-                case r'mimetype':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.mimetype = valueDes;
-                    break;
-                case r'size':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
-                    result.size = valueDes;
-                    break;
-            }
-        }
-        return result.build();
-    }
+  @override
+  MediaResponse deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = MediaResponseBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

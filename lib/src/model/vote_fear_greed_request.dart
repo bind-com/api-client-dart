@@ -2,6 +2,7 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+// ignore_for_file: unused_element
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -11,60 +12,96 @@ part 'vote_fear_greed_request.g.dart';
 ///
 /// Properties:
 /// * [greed] - True if user votes a crypto up
+@BuiltValue()
 abstract class VoteFearGreedRequest implements Built<VoteFearGreedRequest, VoteFearGreedRequestBuilder> {
-    /// True if user votes a crypto up
-    @BuiltValueField(wireName: r'greed')
-    bool get greed;
+  /// True if user votes a crypto up
+  @BuiltValueField(wireName: r'greed')
+  bool get greed;
 
-    VoteFearGreedRequest._();
+  VoteFearGreedRequest._();
 
-    @BuiltValueHook(initializeBuilder: true)
-    static void _defaults(VoteFearGreedRequestBuilder b) => b;
+  factory VoteFearGreedRequest([void updates(VoteFearGreedRequestBuilder b)]) = _$VoteFearGreedRequest;
 
-    factory VoteFearGreedRequest([void updates(VoteFearGreedRequestBuilder b)]) = _$VoteFearGreedRequest;
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(VoteFearGreedRequestBuilder b) => b;
 
-    @BuiltValueSerializer(custom: true)
-    static Serializer<VoteFearGreedRequest> get serializer => _$VoteFearGreedRequestSerializer();
+  @BuiltValueSerializer(custom: true)
+  static Serializer<VoteFearGreedRequest> get serializer => _$VoteFearGreedRequestSerializer();
 }
 
-class _$VoteFearGreedRequestSerializer implements StructuredSerializer<VoteFearGreedRequest> {
-    @override
-    final Iterable<Type> types = const [VoteFearGreedRequest, _$VoteFearGreedRequest];
+class _$VoteFearGreedRequestSerializer implements PrimitiveSerializer<VoteFearGreedRequest> {
+  @override
+  final Iterable<Type> types = const [VoteFearGreedRequest, _$VoteFearGreedRequest];
 
-    @override
-    final String wireName = r'VoteFearGreedRequest';
+  @override
+  final String wireName = r'VoteFearGreedRequest';
 
-    @override
-    Iterable<Object?> serialize(Serializers serializers, VoteFearGreedRequest object,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = <Object?>[];
-        result
-            ..add(r'greed')
-            ..add(serializers.serialize(object.greed,
-                specifiedType: const FullType(bool)));
-        return result;
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    VoteFearGreedRequest object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    yield r'greed';
+    yield serializers.serialize(
+      object.greed,
+      specifiedType: const FullType(bool),
+    );
+  }
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    VoteFearGreedRequest object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required VoteFearGreedRequestBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'greed':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.greed = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
     }
+  }
 
-    @override
-    VoteFearGreedRequest deserialize(Serializers serializers, Iterable<Object?> serialized,
-        {FullType specifiedType = FullType.unspecified}) {
-        final result = VoteFearGreedRequestBuilder();
-
-        final iterator = serialized.iterator;
-        while (iterator.moveNext()) {
-            final key = iterator.current as String;
-            iterator.moveNext();
-            final Object? value = iterator.current;
-            
-            switch (key) {
-                case r'greed':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(bool)) as bool;
-                    result.greed = valueDes;
-                    break;
-            }
-        }
-        return result.build();
-    }
+  @override
+  VoteFearGreedRequest deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = VoteFearGreedRequestBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

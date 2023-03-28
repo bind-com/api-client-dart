@@ -6,7 +6,50 @@ part of 'bank_card_base_data.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$BankCardBaseData extends BankCardBaseData {
+abstract class BankCardBaseDataBuilder {
+  void replace(BankCardBaseData other);
+  void update(void Function(BankCardBaseDataBuilder) updates);
+  String? get id;
+  set id(String? id);
+
+  String? get cardholderName;
+  set cardholderName(String? cardholderName);
+
+  String? get maskedCardNumber;
+  set maskedCardNumber(String? maskedCardNumber);
+
+  Date? get expiryDate;
+  set expiryDate(Date? expiryDate);
+
+  String? get currency;
+  set currency(String? currency);
+
+  String? get currencyCode;
+  set currencyCode(String? currencyCode);
+
+  String? get currencyName;
+  set currencyName(String? currencyName);
+
+  String? get currencyLabel;
+  set currencyLabel(String? currencyLabel);
+
+  String? get status;
+  set status(String? status);
+
+  String? get image;
+  set image(String? image);
+
+  CardViewBuilder get cardBackground;
+  set cardBackground(CardViewBuilder? cardBackground);
+
+  String? get cardName;
+  set cardName(String? cardName);
+
+  DateTime? get createdAt;
+  set createdAt(DateTime? createdAt);
+}
+
+class _$$BankCardBaseData extends $BankCardBaseData {
   @override
   final String id;
   @override
@@ -34,11 +77,11 @@ class _$BankCardBaseData extends BankCardBaseData {
   @override
   final DateTime createdAt;
 
-  factory _$BankCardBaseData(
-          [void Function(BankCardBaseDataBuilder)? updates]) =>
-      (new BankCardBaseDataBuilder()..update(updates))._build();
+  factory _$$BankCardBaseData(
+          [void Function($BankCardBaseDataBuilder)? updates]) =>
+      (new $BankCardBaseDataBuilder()..update(updates))._build();
 
-  _$BankCardBaseData._(
+  _$$BankCardBaseData._(
       {required this.id,
       required this.cardholderName,
       required this.maskedCardNumber,
@@ -53,39 +96,39 @@ class _$BankCardBaseData extends BankCardBaseData {
       this.cardName,
       required this.createdAt})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, r'BankCardBaseData', 'id');
+    BuiltValueNullFieldError.checkNotNull(id, r'$BankCardBaseData', 'id');
     BuiltValueNullFieldError.checkNotNull(
-        cardholderName, r'BankCardBaseData', 'cardholderName');
+        cardholderName, r'$BankCardBaseData', 'cardholderName');
     BuiltValueNullFieldError.checkNotNull(
-        maskedCardNumber, r'BankCardBaseData', 'maskedCardNumber');
+        maskedCardNumber, r'$BankCardBaseData', 'maskedCardNumber');
     BuiltValueNullFieldError.checkNotNull(
-        expiryDate, r'BankCardBaseData', 'expiryDate');
+        expiryDate, r'$BankCardBaseData', 'expiryDate');
     BuiltValueNullFieldError.checkNotNull(
-        currency, r'BankCardBaseData', 'currency');
+        currency, r'$BankCardBaseData', 'currency');
     BuiltValueNullFieldError.checkNotNull(
-        currencyCode, r'BankCardBaseData', 'currencyCode');
+        currencyCode, r'$BankCardBaseData', 'currencyCode');
     BuiltValueNullFieldError.checkNotNull(
-        currencyName, r'BankCardBaseData', 'currencyName');
+        currencyName, r'$BankCardBaseData', 'currencyName');
     BuiltValueNullFieldError.checkNotNull(
-        currencyLabel, r'BankCardBaseData', 'currencyLabel');
+        currencyLabel, r'$BankCardBaseData', 'currencyLabel');
     BuiltValueNullFieldError.checkNotNull(
-        status, r'BankCardBaseData', 'status');
+        status, r'$BankCardBaseData', 'status');
     BuiltValueNullFieldError.checkNotNull(
-        createdAt, r'BankCardBaseData', 'createdAt');
+        createdAt, r'$BankCardBaseData', 'createdAt');
   }
 
   @override
-  BankCardBaseData rebuild(void Function(BankCardBaseDataBuilder) updates) =>
+  $BankCardBaseData rebuild(void Function($BankCardBaseDataBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  BankCardBaseDataBuilder toBuilder() =>
-      new BankCardBaseDataBuilder()..replace(this);
+  $BankCardBaseDataBuilder toBuilder() =>
+      new $BankCardBaseDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is BankCardBaseData &&
+    return other is $BankCardBaseData &&
         id == other.id &&
         cardholderName == other.cardholderName &&
         maskedCardNumber == other.maskedCardNumber &&
@@ -103,35 +146,27 @@ class _$BankCardBaseData extends BankCardBaseData {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc(
-                        $jc(
-                            $jc(
-                                $jc(
-                                    $jc(
-                                        $jc(
-                                            $jc(
-                                                $jc($jc(0, id.hashCode),
-                                                    cardholderName.hashCode),
-                                                maskedCardNumber.hashCode),
-                                            expiryDate.hashCode),
-                                        currency.hashCode),
-                                    currencyCode.hashCode),
-                                currencyName.hashCode),
-                            currencyLabel.hashCode),
-                        status.hashCode),
-                    image.hashCode),
-                cardBackground.hashCode),
-            cardName.hashCode),
-        createdAt.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, cardholderName.hashCode);
+    _$hash = $jc(_$hash, maskedCardNumber.hashCode);
+    _$hash = $jc(_$hash, expiryDate.hashCode);
+    _$hash = $jc(_$hash, currency.hashCode);
+    _$hash = $jc(_$hash, currencyCode.hashCode);
+    _$hash = $jc(_$hash, currencyName.hashCode);
+    _$hash = $jc(_$hash, currencyLabel.hashCode);
+    _$hash = $jc(_$hash, status.hashCode);
+    _$hash = $jc(_$hash, image.hashCode);
+    _$hash = $jc(_$hash, cardBackground.hashCode);
+    _$hash = $jc(_$hash, cardName.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'BankCardBaseData')
+    return (newBuiltValueToStringHelper(r'$BankCardBaseData')
           ..add('id', id)
           ..add('cardholderName', cardholderName)
           ..add('maskedCardNumber', maskedCardNumber)
@@ -149,72 +184,76 @@ class _$BankCardBaseData extends BankCardBaseData {
   }
 }
 
-class BankCardBaseDataBuilder
-    implements Builder<BankCardBaseData, BankCardBaseDataBuilder> {
-  _$BankCardBaseData? _$v;
+class $BankCardBaseDataBuilder
+    implements
+        Builder<$BankCardBaseData, $BankCardBaseDataBuilder>,
+        BankCardBaseDataBuilder {
+  _$$BankCardBaseData? _$v;
 
   String? _id;
   String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
+  set id(covariant String? id) => _$this._id = id;
 
   String? _cardholderName;
   String? get cardholderName => _$this._cardholderName;
-  set cardholderName(String? cardholderName) =>
+  set cardholderName(covariant String? cardholderName) =>
       _$this._cardholderName = cardholderName;
 
   String? _maskedCardNumber;
   String? get maskedCardNumber => _$this._maskedCardNumber;
-  set maskedCardNumber(String? maskedCardNumber) =>
+  set maskedCardNumber(covariant String? maskedCardNumber) =>
       _$this._maskedCardNumber = maskedCardNumber;
 
   Date? _expiryDate;
   Date? get expiryDate => _$this._expiryDate;
-  set expiryDate(Date? expiryDate) => _$this._expiryDate = expiryDate;
+  set expiryDate(covariant Date? expiryDate) => _$this._expiryDate = expiryDate;
 
   String? _currency;
   String? get currency => _$this._currency;
-  set currency(String? currency) => _$this._currency = currency;
+  set currency(covariant String? currency) => _$this._currency = currency;
 
   String? _currencyCode;
   String? get currencyCode => _$this._currencyCode;
-  set currencyCode(String? currencyCode) => _$this._currencyCode = currencyCode;
+  set currencyCode(covariant String? currencyCode) =>
+      _$this._currencyCode = currencyCode;
 
   String? _currencyName;
   String? get currencyName => _$this._currencyName;
-  set currencyName(String? currencyName) => _$this._currencyName = currencyName;
+  set currencyName(covariant String? currencyName) =>
+      _$this._currencyName = currencyName;
 
   String? _currencyLabel;
   String? get currencyLabel => _$this._currencyLabel;
-  set currencyLabel(String? currencyLabel) =>
+  set currencyLabel(covariant String? currencyLabel) =>
       _$this._currencyLabel = currencyLabel;
 
   String? _status;
   String? get status => _$this._status;
-  set status(String? status) => _$this._status = status;
+  set status(covariant String? status) => _$this._status = status;
 
   String? _image;
   String? get image => _$this._image;
-  set image(String? image) => _$this._image = image;
+  set image(covariant String? image) => _$this._image = image;
 
   CardViewBuilder? _cardBackground;
   CardViewBuilder get cardBackground =>
       _$this._cardBackground ??= new CardViewBuilder();
-  set cardBackground(CardViewBuilder? cardBackground) =>
+  set cardBackground(covariant CardViewBuilder? cardBackground) =>
       _$this._cardBackground = cardBackground;
 
   String? _cardName;
   String? get cardName => _$this._cardName;
-  set cardName(String? cardName) => _$this._cardName = cardName;
+  set cardName(covariant String? cardName) => _$this._cardName = cardName;
 
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
+  set createdAt(covariant DateTime? createdAt) => _$this._createdAt = createdAt;
 
-  BankCardBaseDataBuilder() {
-    BankCardBaseData._defaults(this);
+  $BankCardBaseDataBuilder() {
+    $BankCardBaseData._defaults(this);
   }
 
-  BankCardBaseDataBuilder get _$this {
+  $BankCardBaseDataBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
@@ -236,45 +275,45 @@ class BankCardBaseDataBuilder
   }
 
   @override
-  void replace(BankCardBaseData other) {
+  void replace(covariant $BankCardBaseData other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$BankCardBaseData;
+    _$v = other as _$$BankCardBaseData;
   }
 
   @override
-  void update(void Function(BankCardBaseDataBuilder)? updates) {
+  void update(void Function($BankCardBaseDataBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  BankCardBaseData build() => _build();
+  $BankCardBaseData build() => _build();
 
-  _$BankCardBaseData _build() {
-    _$BankCardBaseData _$result;
+  _$$BankCardBaseData _build() {
+    _$$BankCardBaseData _$result;
     try {
       _$result = _$v ??
-          new _$BankCardBaseData._(
+          new _$$BankCardBaseData._(
               id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'BankCardBaseData', 'id'),
+                  id, r'$BankCardBaseData', 'id'),
               cardholderName: BuiltValueNullFieldError.checkNotNull(
-                  cardholderName, r'BankCardBaseData', 'cardholderName'),
+                  cardholderName, r'$BankCardBaseData', 'cardholderName'),
               maskedCardNumber: BuiltValueNullFieldError.checkNotNull(
-                  maskedCardNumber, r'BankCardBaseData', 'maskedCardNumber'),
+                  maskedCardNumber, r'$BankCardBaseData', 'maskedCardNumber'),
               expiryDate: BuiltValueNullFieldError.checkNotNull(
-                  expiryDate, r'BankCardBaseData', 'expiryDate'),
+                  expiryDate, r'$BankCardBaseData', 'expiryDate'),
               currency: BuiltValueNullFieldError.checkNotNull(
-                  currency, r'BankCardBaseData', 'currency'),
+                  currency, r'$BankCardBaseData', 'currency'),
               currencyCode: BuiltValueNullFieldError.checkNotNull(
-                  currencyCode, r'BankCardBaseData', 'currencyCode'),
+                  currencyCode, r'$BankCardBaseData', 'currencyCode'),
               currencyName: BuiltValueNullFieldError.checkNotNull(
-                  currencyName, r'BankCardBaseData', 'currencyName'),
-              currencyLabel: BuiltValueNullFieldError.checkNotNull(
-                  currencyLabel, r'BankCardBaseData', 'currencyLabel'),
-              status: BuiltValueNullFieldError.checkNotNull(status, r'BankCardBaseData', 'status'),
+                  currencyName, r'$BankCardBaseData', 'currencyName'),
+              currencyLabel:
+                  BuiltValueNullFieldError.checkNotNull(currencyLabel, r'$BankCardBaseData', 'currencyLabel'),
+              status: BuiltValueNullFieldError.checkNotNull(status, r'$BankCardBaseData', 'status'),
               image: image,
               cardBackground: _cardBackground?.build(),
               cardName: cardName,
-              createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'BankCardBaseData', 'createdAt'));
+              createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'$BankCardBaseData', 'createdAt'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -282,7 +321,7 @@ class BankCardBaseDataBuilder
         _cardBackground?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'BankCardBaseData', _$failedField, e.toString());
+            r'$BankCardBaseData', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -291,4 +330,4 @@ class BankCardBaseDataBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

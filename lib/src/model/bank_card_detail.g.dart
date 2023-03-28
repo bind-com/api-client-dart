@@ -24,7 +24,7 @@ class _$BankCardDetail extends BankCardDetail {
   @override
   final String currencyLabel;
   @override
-  final BankCardStatus status;
+  final String status;
   @override
   final String? image;
   @override
@@ -125,51 +125,28 @@ class _$BankCardDetail extends BankCardDetail {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc(
-                        $jc(
-                            $jc(
-                                $jc(
-                                    $jc(
-                                        $jc(
-                                            $jc(
-                                                $jc(
-                                                    $jc(
-                                                        $jc(
-                                                            $jc(
-                                                                $jc(
-                                                                    $jc(
-                                                                        $jc(
-                                                                            $jc(
-                                                                                0,
-                                                                                id
-                                                                                    .hashCode),
-                                                                            cardholderName
-                                                                                .hashCode),
-                                                                        maskedCardNumber
-                                                                            .hashCode),
-                                                                    expiryDate
-                                                                        .hashCode),
-                                                                currency
-                                                                    .hashCode),
-                                                            currencyCode
-                                                                .hashCode),
-                                                        currencyName.hashCode),
-                                                    currencyLabel.hashCode),
-                                                status.hashCode),
-                                            image.hashCode),
-                                        cardBackground.hashCode),
-                                    cardName.hashCode),
-                                createdAt.hashCode),
-                            balance.hashCode),
-                        linkedWallet.hashCode),
-                    decryptedCardNumber.hashCode),
-                decryptedCvv.hashCode),
-            internationalPaymentsLocked.hashCode),
-        gamblingTransactionsLocked.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, cardholderName.hashCode);
+    _$hash = $jc(_$hash, maskedCardNumber.hashCode);
+    _$hash = $jc(_$hash, expiryDate.hashCode);
+    _$hash = $jc(_$hash, currency.hashCode);
+    _$hash = $jc(_$hash, currencyCode.hashCode);
+    _$hash = $jc(_$hash, currencyName.hashCode);
+    _$hash = $jc(_$hash, currencyLabel.hashCode);
+    _$hash = $jc(_$hash, status.hashCode);
+    _$hash = $jc(_$hash, image.hashCode);
+    _$hash = $jc(_$hash, cardBackground.hashCode);
+    _$hash = $jc(_$hash, cardName.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, balance.hashCode);
+    _$hash = $jc(_$hash, linkedWallet.hashCode);
+    _$hash = $jc(_$hash, decryptedCardNumber.hashCode);
+    _$hash = $jc(_$hash, decryptedCvv.hashCode);
+    _$hash = $jc(_$hash, internationalPaymentsLocked.hashCode);
+    _$hash = $jc(_$hash, gamblingTransactionsLocked.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
@@ -199,93 +176,100 @@ class _$BankCardDetail extends BankCardDetail {
 }
 
 class BankCardDetailBuilder
-    implements Builder<BankCardDetail, BankCardDetailBuilder> {
+    implements
+        Builder<BankCardDetail, BankCardDetailBuilder>,
+        BankCardBaseDataBuilder,
+        BankCardDetailAllOfBuilder,
+        BankCardSettingsBuilder {
   _$BankCardDetail? _$v;
 
   String? _id;
   String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
+  set id(covariant String? id) => _$this._id = id;
 
   String? _cardholderName;
   String? get cardholderName => _$this._cardholderName;
-  set cardholderName(String? cardholderName) =>
+  set cardholderName(covariant String? cardholderName) =>
       _$this._cardholderName = cardholderName;
 
   String? _maskedCardNumber;
   String? get maskedCardNumber => _$this._maskedCardNumber;
-  set maskedCardNumber(String? maskedCardNumber) =>
+  set maskedCardNumber(covariant String? maskedCardNumber) =>
       _$this._maskedCardNumber = maskedCardNumber;
 
   Date? _expiryDate;
   Date? get expiryDate => _$this._expiryDate;
-  set expiryDate(Date? expiryDate) => _$this._expiryDate = expiryDate;
+  set expiryDate(covariant Date? expiryDate) => _$this._expiryDate = expiryDate;
 
   String? _currency;
   String? get currency => _$this._currency;
-  set currency(String? currency) => _$this._currency = currency;
+  set currency(covariant String? currency) => _$this._currency = currency;
 
   String? _currencyCode;
   String? get currencyCode => _$this._currencyCode;
-  set currencyCode(String? currencyCode) => _$this._currencyCode = currencyCode;
+  set currencyCode(covariant String? currencyCode) =>
+      _$this._currencyCode = currencyCode;
 
   String? _currencyName;
   String? get currencyName => _$this._currencyName;
-  set currencyName(String? currencyName) => _$this._currencyName = currencyName;
+  set currencyName(covariant String? currencyName) =>
+      _$this._currencyName = currencyName;
 
   String? _currencyLabel;
   String? get currencyLabel => _$this._currencyLabel;
-  set currencyLabel(String? currencyLabel) =>
+  set currencyLabel(covariant String? currencyLabel) =>
       _$this._currencyLabel = currencyLabel;
 
-  BankCardStatus? _status;
-  BankCardStatus? get status => _$this._status;
-  set status(BankCardStatus? status) => _$this._status = status;
+  String? _status;
+  String? get status => _$this._status;
+  set status(covariant String? status) => _$this._status = status;
 
   String? _image;
   String? get image => _$this._image;
-  set image(String? image) => _$this._image = image;
+  set image(covariant String? image) => _$this._image = image;
 
   CardViewBuilder? _cardBackground;
   CardViewBuilder get cardBackground =>
       _$this._cardBackground ??= new CardViewBuilder();
-  set cardBackground(CardViewBuilder? cardBackground) =>
+  set cardBackground(covariant CardViewBuilder? cardBackground) =>
       _$this._cardBackground = cardBackground;
 
   String? _cardName;
   String? get cardName => _$this._cardName;
-  set cardName(String? cardName) => _$this._cardName = cardName;
+  set cardName(covariant String? cardName) => _$this._cardName = cardName;
 
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
+  set createdAt(covariant DateTime? createdAt) => _$this._createdAt = createdAt;
 
   num? _balance;
   num? get balance => _$this._balance;
-  set balance(num? balance) => _$this._balance = balance;
+  set balance(covariant num? balance) => _$this._balance = balance;
 
-  FiatWalletLightBuilder? _linkedWallet;
-  FiatWalletLightBuilder get linkedWallet =>
-      _$this._linkedWallet ??= new FiatWalletLightBuilder();
-  set linkedWallet(FiatWalletLightBuilder? linkedWallet) =>
+  FiatWalletLight? _linkedWallet;
+  FiatWalletLight? get linkedWallet => _$this._linkedWallet;
+  set linkedWallet(covariant FiatWalletLight? linkedWallet) =>
       _$this._linkedWallet = linkedWallet;
 
   String? _decryptedCardNumber;
   String? get decryptedCardNumber => _$this._decryptedCardNumber;
-  set decryptedCardNumber(String? decryptedCardNumber) =>
+  set decryptedCardNumber(covariant String? decryptedCardNumber) =>
       _$this._decryptedCardNumber = decryptedCardNumber;
 
   String? _decryptedCvv;
   String? get decryptedCvv => _$this._decryptedCvv;
-  set decryptedCvv(String? decryptedCvv) => _$this._decryptedCvv = decryptedCvv;
+  set decryptedCvv(covariant String? decryptedCvv) =>
+      _$this._decryptedCvv = decryptedCvv;
 
   bool? _internationalPaymentsLocked;
   bool? get internationalPaymentsLocked => _$this._internationalPaymentsLocked;
-  set internationalPaymentsLocked(bool? internationalPaymentsLocked) =>
+  set internationalPaymentsLocked(
+          covariant bool? internationalPaymentsLocked) =>
       _$this._internationalPaymentsLocked = internationalPaymentsLocked;
 
   bool? _gamblingTransactionsLocked;
   bool? get gamblingTransactionsLocked => _$this._gamblingTransactionsLocked;
-  set gamblingTransactionsLocked(bool? gamblingTransactionsLocked) =>
+  set gamblingTransactionsLocked(covariant bool? gamblingTransactionsLocked) =>
       _$this._gamblingTransactionsLocked = gamblingTransactionsLocked;
 
   BankCardDetailBuilder() {
@@ -309,7 +293,7 @@ class BankCardDetailBuilder
       _cardName = $v.cardName;
       _createdAt = $v.createdAt;
       _balance = $v.balance;
-      _linkedWallet = $v.linkedWallet?.toBuilder();
+      _linkedWallet = $v.linkedWallet;
       _decryptedCardNumber = $v.decryptedCardNumber;
       _decryptedCvv = $v.decryptedCvv;
       _internationalPaymentsLocked = $v.internationalPaymentsLocked;
@@ -320,7 +304,8 @@ class BankCardDetailBuilder
   }
 
   @override
-  void replace(BankCardDetail other) {
+// ignore: override_on_non_overriding_method
+  void replace(covariant BankCardDetail other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$BankCardDetail;
   }
@@ -360,7 +345,7 @@ class BankCardDetailBuilder
               cardName: cardName,
               createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'BankCardDetail', 'createdAt'),
               balance: balance,
-              linkedWallet: _linkedWallet?.build(),
+              linkedWallet: linkedWallet,
               decryptedCardNumber: decryptedCardNumber,
               decryptedCvv: decryptedCvv,
               internationalPaymentsLocked: internationalPaymentsLocked,
@@ -370,9 +355,6 @@ class BankCardDetailBuilder
       try {
         _$failedField = 'cardBackground';
         _cardBackground?.build();
-
-        _$failedField = 'linkedWallet';
-        _linkedWallet?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'BankCardDetail', _$failedField, e.toString());
@@ -384,4 +366,4 @@ class BankCardDetailBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

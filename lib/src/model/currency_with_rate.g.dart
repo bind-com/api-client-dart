@@ -63,16 +63,16 @@ class _$CurrencyWithRate extends CurrencyWithRate {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc($jc($jc(0, currencyId.hashCode), code.hashCode),
-                        name.hashCode),
-                    symbol.hashCode),
-                iconUrl.hashCode),
-            rate.hashCode),
-        convertCurrencyCode.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, currencyId.hashCode);
+    _$hash = $jc(_$hash, code.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, symbol.hashCode);
+    _$hash = $jc(_$hash, iconUrl.hashCode);
+    _$hash = $jc(_$hash, rate.hashCode);
+    _$hash = $jc(_$hash, convertCurrencyCode.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
@@ -90,36 +90,40 @@ class _$CurrencyWithRate extends CurrencyWithRate {
 }
 
 class CurrencyWithRateBuilder
-    implements Builder<CurrencyWithRate, CurrencyWithRateBuilder> {
+    implements
+        Builder<CurrencyWithRate, CurrencyWithRateBuilder>,
+        CurrencyBuilder,
+        CurrencyWithRateAllOfBuilder {
   _$CurrencyWithRate? _$v;
 
   String? _currencyId;
   String? get currencyId => _$this._currencyId;
-  set currencyId(String? currencyId) => _$this._currencyId = currencyId;
+  set currencyId(covariant String? currencyId) =>
+      _$this._currencyId = currencyId;
 
   String? _code;
   String? get code => _$this._code;
-  set code(String? code) => _$this._code = code;
+  set code(covariant String? code) => _$this._code = code;
 
   String? _name;
   String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
+  set name(covariant String? name) => _$this._name = name;
 
   String? _symbol;
   String? get symbol => _$this._symbol;
-  set symbol(String? symbol) => _$this._symbol = symbol;
+  set symbol(covariant String? symbol) => _$this._symbol = symbol;
 
   String? _iconUrl;
   String? get iconUrl => _$this._iconUrl;
-  set iconUrl(String? iconUrl) => _$this._iconUrl = iconUrl;
+  set iconUrl(covariant String? iconUrl) => _$this._iconUrl = iconUrl;
 
   num? _rate;
   num? get rate => _$this._rate;
-  set rate(num? rate) => _$this._rate = rate;
+  set rate(covariant num? rate) => _$this._rate = rate;
 
   String? _convertCurrencyCode;
   String? get convertCurrencyCode => _$this._convertCurrencyCode;
-  set convertCurrencyCode(String? convertCurrencyCode) =>
+  set convertCurrencyCode(covariant String? convertCurrencyCode) =>
       _$this._convertCurrencyCode = convertCurrencyCode;
 
   CurrencyWithRateBuilder() {
@@ -142,7 +146,8 @@ class CurrencyWithRateBuilder
   }
 
   @override
-  void replace(CurrencyWithRate other) {
+// ignore: override_on_non_overriding_method
+  void replace(covariant CurrencyWithRate other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$CurrencyWithRate;
   }
@@ -174,4 +179,4 @@ class CurrencyWithRateBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint
