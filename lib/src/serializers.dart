@@ -148,6 +148,7 @@ import 'package:bind_api/src/model/staking_balance.dart';
 import 'package:bind_api/src/model/staking_chart_tick.dart';
 import 'package:bind_api/src/model/staking_estimate.dart';
 import 'package:bind_api/src/model/staking_information.dart';
+import 'package:bind_api/src/model/staking_main_pool_size.dart';
 import 'package:bind_api/src/model/staking_perform_request.dart';
 import 'package:bind_api/src/model/staking_periods.dart';
 import 'package:bind_api/src/model/staking_releases.dart';
@@ -318,6 +319,7 @@ part 'serializers.g.dart';
   StakingChartTick,
   StakingEstimate,
   StakingInformation,
+  StakingMainPoolSize,
   StakingPerformRequest,
   StakingPeriods,
   StakingReleases,

@@ -106,6 +106,7 @@ Class | Method | HTTP request | Description
 [*CryptoApi*](doc/CryptoApi.md) | [**getInnerCryptoTransferFee**](doc/CryptoApi.md#getinnercryptotransferfee) | **POST** /crypto/send/fee/ | 
 [*CryptoApi*](doc/CryptoApi.md) | [**getStakingMainPoolCandles**](doc/CryptoApi.md#getstakingmainpoolcandles) | **GET** /charts/staking/main_pool/candle/ | List of candles of staking main pool
 [*CryptoApi*](doc/CryptoApi.md) | [**getStakingMainPoolChartLine**](doc/CryptoApi.md#getstakingmainpoolchartline) | **GET** /charts/staking/main_pool/line/ | List line ticks of staking main pool
+[*CryptoApi*](doc/CryptoApi.md) | [**getStakingMainPoolSize**](doc/CryptoApi.md#getstakingmainpoolsize) | **GET** /charts/staking/main_pool/size/ | Size of the pool
 [*CryptoApi*](doc/CryptoApi.md) | [**getTokenDetail**](doc/CryptoApi.md#gettokendetail) | **GET** /crypto/detail/{assetID}/ | Get detail for certain token
 [*CryptoApi*](doc/CryptoApi.md) | [**getTokenStats**](doc/CryptoApi.md#gettokenstats) | **GET** /crypto/stats/{assetID}/ | Get stats for certain token
 [*CryptoApi*](doc/CryptoApi.md) | [**listCryptoCurrencies**](doc/CryptoApi.md#listcryptocurrencies) | **GET** /currencies/crypto/ | List of Crypto Currencies
@@ -358,6 +359,7 @@ Class | Method | HTTP request | Description
  - [StakingChartTick](doc/StakingChartTick.md)
  - [StakingEstimate](doc/StakingEstimate.md)
  - [StakingInformation](doc/StakingInformation.md)
+ - [StakingMainPoolSize](doc/StakingMainPoolSize.md)
  - [StakingPerformRequest](doc/StakingPerformRequest.md)
  - [StakingPeriods](doc/StakingPeriods.md)
  - [StakingReleases](doc/StakingReleases.md)

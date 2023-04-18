@@ -18,6 +18,7 @@ part 'candle.g.dart';
 /// * [timestamp] 
 /// * [change] 
 /// * [amplitude] 
+/// * [btcPrice] 
 @BuiltValue()
 abstract class Candle implements Built<Candle, CandleBuilder> {
   @BuiltValueField(wireName: r'open')
@@ -40,6 +41,9 @@ abstract class Candle implements Built<Candle, CandleBuilder> {
 
   @BuiltValueField(wireName: r'amplitude')
   num? get amplitude;
+
+  @BuiltValueField(wireName: r'btc_price')
+  num? get btcPrice;
 
   Candle._();
 
@@ -110,6 +114,13 @@ class _$CandleSerializer implements PrimitiveSerializer<Candle> {
       yield r'amplitude';
       yield serializers.serialize(
         object.amplitude,
+        specifiedType: const FullType(num),
+      );
+    }
+    if (object.btcPrice != null) {
+      yield r'btc_price';
+      yield serializers.serialize(
+        object.btcPrice,
         specifiedType: const FullType(num),
       );
     }
@@ -184,6 +195,13 @@ class _$CandleSerializer implements PrimitiveSerializer<Candle> {
             specifiedType: const FullType(num),
           ) as num;
           result.amplitude = valueDes;
+          break;
+        case r'btc_price':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(num),
+          ) as num;
+          result.btcPrice = valueDes;
           break;
         default:
           unhandled.add(key);

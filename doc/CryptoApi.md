@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**getInnerCryptoTransferFee**](CryptoApi.md#getinnercryptotransferfee) | **POST** /crypto/send/fee/ | 
 [**getStakingMainPoolCandles**](CryptoApi.md#getstakingmainpoolcandles) | **GET** /charts/staking/main_pool/candle/ | List of candles of staking main pool
 [**getStakingMainPoolChartLine**](CryptoApi.md#getstakingmainpoolchartline) | **GET** /charts/staking/main_pool/line/ | List line ticks of staking main pool
+[**getStakingMainPoolSize**](CryptoApi.md#getstakingmainpoolsize) | **GET** /charts/staking/main_pool/size/ | Size of the pool
 [**getTokenDetail**](CryptoApi.md#gettokendetail) | **GET** /crypto/detail/{assetID}/ | Get detail for certain token
 [**getTokenStats**](CryptoApi.md#gettokenstats) | **GET** /crypto/stats/{assetID}/ | Get stats for certain token
 [**listCryptoCurrencies**](CryptoApi.md#listcryptocurrencies) | **GET** /currencies/crypto/ | List of Crypto Currencies
@@ -430,6 +431,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BuiltList&lt;StakingChartTick&gt;**](StakingChartTick.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getStakingMainPoolSize**
+> StakingMainPoolSize getStakingMainPoolSize()
+
+Size of the pool
+
+Returns current size of staking pool and 24 performance of size
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getCryptoApi();
+
+try {
+    final response = api.getStakingMainPoolSize();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling CryptoApi->getStakingMainPoolSize: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**StakingMainPoolSize**](StakingMainPoolSize.md)
 
 ### Authorization
 

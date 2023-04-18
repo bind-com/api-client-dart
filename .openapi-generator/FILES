@@ -148,6 +148,7 @@ doc/StakingBalance.md
 doc/StakingChartTick.md
 doc/StakingEstimate.md
 doc/StakingInformation.md
+doc/StakingMainPoolSize.md
 doc/StakingPerformRequest.md
 doc/StakingPeriods.md
 doc/StakingReleases.md
@@ -345,6 +346,7 @@ lib/src/model/staking_balance.dart
 lib/src/model/staking_chart_tick.dart
 lib/src/model/staking_estimate.dart
 lib/src/model/staking_information.dart
+lib/src/model/staking_main_pool_size.dart
 lib/src/model/staking_perform_request.dart
 lib/src/model/staking_periods.dart
 lib/src/model/staking_releases.dart
@@ -379,3 +381,4 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/staking_main_pool_size_test.dart
