@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **linkedWallet** | [**FiatWalletLight**](FiatWalletLight.md) |  | [optional] 
 **decryptedCardNumber** | **String** | only if \"show encrypted data\" is true | [optional] 
 **decryptedCvv** | **String** | only if \"show encrypted data\" is true | [optional] 
-**status** | [**BankCardStatus**](BankCardStatus.md) |  | [optional] 
+**statuss** | [**BankCardStatus**](BankCardStatus.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

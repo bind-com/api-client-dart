@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **currencyCode** | **String** |  | 
 **currencyName** | **String** |  | 
 **currencyLabel** | **String** |  | 
-**status** | [**BankCardStatus**](BankCardStatus.md) |  | 
+**status** | **String** |  | 
 **image** | **String** |  | [optional] 
 **cardBackground** | [**CardView**](CardView.md) |  | [optional] 
 **cardName** | **String** |  | [optional] 
@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **linkedWallet** | [**FiatWalletLight**](FiatWalletLight.md) |  | [optional] 
 **decryptedCardNumber** | **String** | only if \"show encrypted data\" is true | [optional] 
 **decryptedCvv** | **String** | only if \"show encrypted data\" is true | [optional] 
+**statuss** | [**BankCardStatus**](BankCardStatus.md) |  | [optional] 
 **internationalPaymentsLocked** | **bool** |  | [optional] 
 **gamblingTransactionsLocked** | **bool** |  | [optional] 
 

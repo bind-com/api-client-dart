@@ -17,7 +17,7 @@ part 'bank_card_detail_all_of.g.dart';
 /// * [linkedWallet] 
 /// * [decryptedCardNumber] - only if \"show encrypted data\" is true
 /// * [decryptedCvv] - only if \"show encrypted data\" is true
-/// * [status] 
+/// * [statuss] 
 @BuiltValue(instantiable: false)
 abstract class BankCardDetailAllOf  {
   @BuiltValueField(wireName: r'balance')
@@ -34,9 +34,9 @@ abstract class BankCardDetailAllOf  {
   @BuiltValueField(wireName: r'decrypted_cvv')
   String? get decryptedCvv;
 
-  @BuiltValueField(wireName: r'status')
-  BankCardStatus? get status;
-  // enum statusEnum {  NotActivated,  Active,  Lost,  Stolen,  Inactive,  PinTriesLimit,  Expired,  Replaced,  Blocked,  };
+  @BuiltValueField(wireName: r'statuss')
+  BankCardStatus? get statuss;
+  // enum statussEnum {  NotActivated,  Active,  Lost,  Stolen,  Inactive,  PinTriesLimit,  Expired,  Replaced,  Blocked,  };
 
   @BuiltValueSerializer(custom: true)
   static Serializer<BankCardDetailAllOf> get serializer => _$BankCardDetailAllOfSerializer();
@@ -82,10 +82,10 @@ class _$BankCardDetailAllOfSerializer implements PrimitiveSerializer<BankCardDet
         specifiedType: const FullType.nullable(String),
       );
     }
-    if (object.status != null) {
-      yield r'status';
+    if (object.statuss != null) {
+      yield r'statuss';
       yield serializers.serialize(
-        object.status,
+        object.statuss,
         specifiedType: const FullType(BankCardStatus),
       );
     }
@@ -182,12 +182,12 @@ class _$$BankCardDetailAllOfSerializer implements PrimitiveSerializer<$BankCardD
           if (valueDes == null) continue;
           result.decryptedCvv = valueDes;
           break;
-        case r'status':
+        case r'statuss':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BankCardStatus),
           ) as BankCardStatus;
-          result.status = valueDes;
+          result.statuss = valueDes;
           break;
         default:
           unhandled.add(key);

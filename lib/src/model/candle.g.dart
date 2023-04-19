@@ -21,6 +21,8 @@ class _$Candle extends Candle {
   final num? change;
   @override
   final num? amplitude;
+  @override
+  final num? btcPrice;
 
   factory _$Candle([void Function(CandleBuilder)? updates]) =>
       (new CandleBuilder()..update(updates))._build();
@@ -32,7 +34,8 @@ class _$Candle extends Candle {
       this.low,
       this.timestamp,
       this.change,
-      this.amplitude})
+      this.amplitude,
+      this.btcPrice})
       : super._();
 
   @override
@@ -52,7 +55,8 @@ class _$Candle extends Candle {
         low == other.low &&
         timestamp == other.timestamp &&
         change == other.change &&
-        amplitude == other.amplitude;
+        amplitude == other.amplitude &&
+        btcPrice == other.btcPrice;
   }
 
   @override
@@ -65,6 +69,7 @@ class _$Candle extends Candle {
     _$hash = $jc(_$hash, timestamp.hashCode);
     _$hash = $jc(_$hash, change.hashCode);
     _$hash = $jc(_$hash, amplitude.hashCode);
+    _$hash = $jc(_$hash, btcPrice.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -78,7 +83,8 @@ class _$Candle extends Candle {
           ..add('low', low)
           ..add('timestamp', timestamp)
           ..add('change', change)
-          ..add('amplitude', amplitude))
+          ..add('amplitude', amplitude)
+          ..add('btcPrice', btcPrice))
         .toString();
   }
 }
@@ -114,6 +120,10 @@ class CandleBuilder implements Builder<Candle, CandleBuilder> {
   num? get amplitude => _$this._amplitude;
   set amplitude(num? amplitude) => _$this._amplitude = amplitude;
 
+  num? _btcPrice;
+  num? get btcPrice => _$this._btcPrice;
+  set btcPrice(num? btcPrice) => _$this._btcPrice = btcPrice;
+
   CandleBuilder() {
     Candle._defaults(this);
   }
@@ -128,6 +138,7 @@ class CandleBuilder implements Builder<Candle, CandleBuilder> {
       _timestamp = $v.timestamp;
       _change = $v.change;
       _amplitude = $v.amplitude;
+      _btcPrice = $v.btcPrice;
       _$v = null;
     }
     return this;
@@ -156,7 +167,8 @@ class CandleBuilder implements Builder<Candle, CandleBuilder> {
             low: low,
             timestamp: timestamp,
             change: change,
-            amplitude: amplitude);
+            amplitude: amplitude,
+            btcPrice: btcPrice);
     replace(_$result);
     return _$result;
   }

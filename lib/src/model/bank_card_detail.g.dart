@@ -42,6 +42,8 @@ class _$BankCardDetail extends BankCardDetail {
   @override
   final String? decryptedCvv;
   @override
+  final BankCardStatus? statuss;
+  @override
   final bool? internationalPaymentsLocked;
   @override
   final bool? gamblingTransactionsLocked;
@@ -67,6 +69,7 @@ class _$BankCardDetail extends BankCardDetail {
       this.linkedWallet,
       this.decryptedCardNumber,
       this.decryptedCvv,
+      this.statuss,
       this.internationalPaymentsLocked,
       this.gamblingTransactionsLocked})
       : super._() {
@@ -119,6 +122,7 @@ class _$BankCardDetail extends BankCardDetail {
         linkedWallet == other.linkedWallet &&
         decryptedCardNumber == other.decryptedCardNumber &&
         decryptedCvv == other.decryptedCvv &&
+        statuss == other.statuss &&
         internationalPaymentsLocked == other.internationalPaymentsLocked &&
         gamblingTransactionsLocked == other.gamblingTransactionsLocked;
   }
@@ -143,6 +147,7 @@ class _$BankCardDetail extends BankCardDetail {
     _$hash = $jc(_$hash, linkedWallet.hashCode);
     _$hash = $jc(_$hash, decryptedCardNumber.hashCode);
     _$hash = $jc(_$hash, decryptedCvv.hashCode);
+    _$hash = $jc(_$hash, statuss.hashCode);
     _$hash = $jc(_$hash, internationalPaymentsLocked.hashCode);
     _$hash = $jc(_$hash, gamblingTransactionsLocked.hashCode);
     _$hash = $jf(_$hash);
@@ -169,6 +174,7 @@ class _$BankCardDetail extends BankCardDetail {
           ..add('linkedWallet', linkedWallet)
           ..add('decryptedCardNumber', decryptedCardNumber)
           ..add('decryptedCvv', decryptedCvv)
+          ..add('statuss', statuss)
           ..add('internationalPaymentsLocked', internationalPaymentsLocked)
           ..add('gamblingTransactionsLocked', gamblingTransactionsLocked))
         .toString();
@@ -261,6 +267,10 @@ class BankCardDetailBuilder
   set decryptedCvv(covariant String? decryptedCvv) =>
       _$this._decryptedCvv = decryptedCvv;
 
+  BankCardStatus? _statuss;
+  BankCardStatus? get statuss => _$this._statuss;
+  set statuss(covariant BankCardStatus? statuss) => _$this._statuss = statuss;
+
   bool? _internationalPaymentsLocked;
   bool? get internationalPaymentsLocked => _$this._internationalPaymentsLocked;
   set internationalPaymentsLocked(
@@ -296,6 +306,7 @@ class BankCardDetailBuilder
       _linkedWallet = $v.linkedWallet;
       _decryptedCardNumber = $v.decryptedCardNumber;
       _decryptedCvv = $v.decryptedCvv;
+      _statuss = $v.statuss;
       _internationalPaymentsLocked = $v.internationalPaymentsLocked;
       _gamblingTransactionsLocked = $v.gamblingTransactionsLocked;
       _$v = null;
@@ -348,6 +359,7 @@ class BankCardDetailBuilder
               linkedWallet: linkedWallet,
               decryptedCardNumber: decryptedCardNumber,
               decryptedCvv: decryptedCvv,
+              statuss: statuss,
               internationalPaymentsLocked: internationalPaymentsLocked,
               gamblingTransactionsLocked: gamblingTransactionsLocked);
     } catch (_) {

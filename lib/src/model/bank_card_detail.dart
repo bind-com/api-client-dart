@@ -35,6 +35,7 @@ part 'bank_card_detail.g.dart';
 /// * [linkedWallet] 
 /// * [decryptedCardNumber] - only if \"show encrypted data\" is true
 /// * [decryptedCvv] - only if \"show encrypted data\" is true
+/// * [statuss] 
 /// * [internationalPaymentsLocked] 
 /// * [gamblingTransactionsLocked] 
 @BuiltValue()
@@ -109,6 +110,13 @@ class _$BankCardDetailSerializer implements PrimitiveSerializer<BankCardDetail> 
       object.currencyLabel,
       specifiedType: const FullType(String),
     );
+    if (object.statuss != null) {
+      yield r'statuss';
+      yield serializers.serialize(
+        object.statuss,
+        specifiedType: const FullType(BankCardStatus),
+      );
+    }
     yield r'masked_card_number';
     yield serializers.serialize(
       object.maskedCardNumber,
@@ -250,6 +258,13 @@ class _$BankCardDetailSerializer implements PrimitiveSerializer<BankCardDetail> 
             specifiedType: const FullType(String),
           ) as String;
           result.currencyLabel = valueDes;
+          break;
+        case r'statuss':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BankCardStatus),
+          ) as BankCardStatus;
+          result.statuss = valueDes;
           break;
         case r'masked_card_number':
           final valueDes = serializers.deserialize(

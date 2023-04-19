@@ -21,8 +21,8 @@ abstract class BankCardDetailAllOfBuilder {
   String? get decryptedCvv;
   set decryptedCvv(String? decryptedCvv);
 
-  BankCardStatus? get status;
-  set status(BankCardStatus? status);
+  BankCardStatus? get statuss;
+  set statuss(BankCardStatus? statuss);
 }
 
 class _$$BankCardDetailAllOf extends $BankCardDetailAllOf {
@@ -35,7 +35,7 @@ class _$$BankCardDetailAllOf extends $BankCardDetailAllOf {
   @override
   final String? decryptedCvv;
   @override
-  final BankCardStatus? status;
+  final BankCardStatus? statuss;
 
   factory _$$BankCardDetailAllOf(
           [void Function($BankCardDetailAllOfBuilder)? updates]) =>
@@ -46,7 +46,7 @@ class _$$BankCardDetailAllOf extends $BankCardDetailAllOf {
       this.linkedWallet,
       this.decryptedCardNumber,
       this.decryptedCvv,
-      this.status})
+      this.statuss})
       : super._();
 
   @override
@@ -66,7 +66,7 @@ class _$$BankCardDetailAllOf extends $BankCardDetailAllOf {
         linkedWallet == other.linkedWallet &&
         decryptedCardNumber == other.decryptedCardNumber &&
         decryptedCvv == other.decryptedCvv &&
-        status == other.status;
+        statuss == other.statuss;
   }
 
   @override
@@ -76,7 +76,7 @@ class _$$BankCardDetailAllOf extends $BankCardDetailAllOf {
     _$hash = $jc(_$hash, linkedWallet.hashCode);
     _$hash = $jc(_$hash, decryptedCardNumber.hashCode);
     _$hash = $jc(_$hash, decryptedCvv.hashCode);
-    _$hash = $jc(_$hash, status.hashCode);
+    _$hash = $jc(_$hash, statuss.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -88,7 +88,7 @@ class _$$BankCardDetailAllOf extends $BankCardDetailAllOf {
           ..add('linkedWallet', linkedWallet)
           ..add('decryptedCardNumber', decryptedCardNumber)
           ..add('decryptedCvv', decryptedCvv)
-          ..add('status', status))
+          ..add('statuss', statuss))
         .toString();
   }
 }
@@ -118,9 +118,9 @@ class $BankCardDetailAllOfBuilder
   set decryptedCvv(covariant String? decryptedCvv) =>
       _$this._decryptedCvv = decryptedCvv;
 
-  BankCardStatus? _status;
-  BankCardStatus? get status => _$this._status;
-  set status(covariant BankCardStatus? status) => _$this._status = status;
+  BankCardStatus? _statuss;
+  BankCardStatus? get statuss => _$this._statuss;
+  set statuss(covariant BankCardStatus? statuss) => _$this._statuss = statuss;
 
   $BankCardDetailAllOfBuilder() {
     $BankCardDetailAllOf._defaults(this);
@@ -133,7 +133,7 @@ class $BankCardDetailAllOfBuilder
       _linkedWallet = $v.linkedWallet;
       _decryptedCardNumber = $v.decryptedCardNumber;
       _decryptedCvv = $v.decryptedCvv;
-      _status = $v.status;
+      _statuss = $v.statuss;
       _$v = null;
     }
     return this;
@@ -160,7 +160,7 @@ class $BankCardDetailAllOfBuilder
             linkedWallet: linkedWallet,
             decryptedCardNumber: decryptedCardNumber,
             decryptedCvv: decryptedCvv,
-            status: status);
+            statuss: statuss);
     replace(_$result);
     return _$result;
   }
