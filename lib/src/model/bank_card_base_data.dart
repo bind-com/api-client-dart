@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:bind_api/src/model/card_view.dart';
 import 'package:bind_api/src/model/date.dart';
+import 'package:bind_api/src/model/bank_card_status.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -54,7 +55,8 @@ abstract class BankCardBaseData  {
   String get currencyLabel;
 
   @BuiltValueField(wireName: r'status')
-  String get status;
+  BankCardStatus get status;
+  // enum statusEnum {  NotActivated,  Active,  Lost,  Stolen,  Inactive,  PinTriesLimit,  Expired,  Replaced,  Blocked,  };
 
   @BuiltValueField(wireName: r'image')
   String? get image;
@@ -127,7 +129,7 @@ class _$BankCardBaseDataSerializer implements PrimitiveSerializer<BankCardBaseDa
     yield r'status';
     yield serializers.serialize(
       object.status,
-      specifiedType: const FullType(String),
+      specifiedType: const FullType(BankCardStatus),
     );
     if (object.image != null) {
       yield r'image';
@@ -277,8 +279,8 @@ class _$$BankCardBaseDataSerializer implements PrimitiveSerializer<$BankCardBase
         case r'status':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType(BankCardStatus),
+          ) as BankCardStatus;
           result.status = valueDes;
           break;
         case r'image':

@@ -33,8 +33,8 @@ abstract class BankCardBaseDataBuilder {
   String? get currencyLabel;
   set currencyLabel(String? currencyLabel);
 
-  String? get status;
-  set status(String? status);
+  BankCardStatus? get status;
+  set status(BankCardStatus? status);
 
   String? get image;
   set image(String? image);
@@ -67,7 +67,7 @@ class _$$BankCardBaseData extends $BankCardBaseData {
   @override
   final String currencyLabel;
   @override
-  final String status;
+  final BankCardStatus status;
   @override
   final String? image;
   @override
@@ -227,9 +227,9 @@ class $BankCardBaseDataBuilder
   set currencyLabel(covariant String? currencyLabel) =>
       _$this._currencyLabel = currencyLabel;
 
-  String? _status;
-  String? get status => _$this._status;
-  set status(covariant String? status) => _$this._status = status;
+  BankCardStatus? _status;
+  BankCardStatus? get status => _$this._status;
+  set status(covariant BankCardStatus? status) => _$this._status = status;
 
   String? _image;
   String? get image => _$this._image;

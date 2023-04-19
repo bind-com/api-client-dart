@@ -11,13 +11,15 @@ part 'bank_card_settings.g.dart';
 /// BankCardSettings
 ///
 /// Properties:
-/// * [internationalPaymentsLocked] 
-/// * [gamblingTransactionsLocked] 
+/// * [internationalPaymentsLocked] - Lock of international payments
+/// * [gamblingTransactionsLocked] - Lock of gambling transactions
 @BuiltValue(instantiable: false)
 abstract class BankCardSettings  {
+  /// Lock of international payments
   @BuiltValueField(wireName: r'international_payments_locked')
   bool? get internationalPaymentsLocked;
 
+  /// Lock of gambling transactions
   @BuiltValueField(wireName: r'gambling_transactions_locked')
   bool? get gamblingTransactionsLocked;
 

@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:bind_api/src/model/bank_card_status.dart';
 import 'package:bind_api/src/model/fiat_wallet_light.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -17,7 +16,6 @@ part 'bank_card_detail_all_of.g.dart';
 /// * [linkedWallet] 
 /// * [decryptedCardNumber] - only if \"show encrypted data\" is true
 /// * [decryptedCvv] - only if \"show encrypted data\" is true
-/// * [statuss] 
 @BuiltValue(instantiable: false)
 abstract class BankCardDetailAllOf  {
   @BuiltValueField(wireName: r'balance')
@@ -33,10 +31,6 @@ abstract class BankCardDetailAllOf  {
   /// only if \"show encrypted data\" is true
   @BuiltValueField(wireName: r'decrypted_cvv')
   String? get decryptedCvv;
-
-  @BuiltValueField(wireName: r'statuss')
-  BankCardStatus? get statuss;
-  // enum statussEnum {  NotActivated,  Active,  Lost,  Stolen,  Inactive,  PinTriesLimit,  Expired,  Replaced,  Blocked,  };
 
   @BuiltValueSerializer(custom: true)
   static Serializer<BankCardDetailAllOf> get serializer => _$BankCardDetailAllOfSerializer();
@@ -80,13 +74,6 @@ class _$BankCardDetailAllOfSerializer implements PrimitiveSerializer<BankCardDet
       yield serializers.serialize(
         object.decryptedCvv,
         specifiedType: const FullType.nullable(String),
-      );
-    }
-    if (object.statuss != null) {
-      yield r'statuss';
-      yield serializers.serialize(
-        object.statuss,
-        specifiedType: const FullType(BankCardStatus),
       );
     }
   }
@@ -181,13 +168,6 @@ class _$$BankCardDetailAllOfSerializer implements PrimitiveSerializer<$BankCardD
           ) as String?;
           if (valueDes == null) continue;
           result.decryptedCvv = valueDes;
-          break;
-        case r'statuss':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BankCardStatus),
-          ) as BankCardStatus;
-          result.statuss = valueDes;
           break;
         default:
           unhandled.add(key);

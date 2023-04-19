@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **currencyCode** | **String** |  | 
 **currencyName** | **String** |  | 
 **currencyLabel** | **String** |  | 
-**status** | **String** |  | 
+**status** | [**BankCardStatus**](BankCardStatus.md) |  | 
 **image** | **String** |  | [optional] 
 **cardBackground** | [**CardView**](CardView.md) |  | [optional] 
 **cardName** | **String** |  | [optional] 
