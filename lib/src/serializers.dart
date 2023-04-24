@@ -105,6 +105,7 @@ import 'package:bind_api/src/model/get_card_limits200_response.dart';
 import 'package:bind_api/src/model/get_inner_crypto_transfer_fee_request.dart';
 import 'package:bind_api/src/model/get_stake_min_number200_response.dart';
 import 'package:bind_api/src/model/get_staking_timer200_response.dart';
+import 'package:bind_api/src/model/human_and_machine_readable.dart';
 import 'package:bind_api/src/model/human_transaction_types.dart';
 import 'package:bind_api/src/model/inner_crypto_transfer_fee_result.dart';
 import 'package:bind_api/src/model/inner_fiat_transfer_fee_result.dart';
@@ -166,6 +167,7 @@ import 'package:bind_api/src/model/transaction_export_filter.dart';
 import 'package:bind_api/src/model/transaction_filter.dart';
 import 'package:bind_api/src/model/transaction_group.dart';
 import 'package:bind_api/src/model/transaction_grouping.dart';
+import 'package:bind_api/src/model/transaction_groups_and_types.dart';
 import 'package:bind_api/src/model/transaction_states.dart';
 import 'package:bind_api/src/model/transaction_types.dart';
 import 'package:bind_api/src/model/unstaking_information.dart';
@@ -276,6 +278,7 @@ part 'serializers.g.dart';
   GetInnerCryptoTransferFeeRequest,
   GetStakeMinNumber200Response,
   GetStakingTimer200Response,
+  HumanAndMachineReadable,
   HumanTransactionTypes,
   InnerCryptoTransferFeeResult,
   InnerFiatTransferFeeResult,
@@ -337,6 +340,7 @@ part 'serializers.g.dart';
   TransactionFilter,
   TransactionGroup,
   TransactionGrouping,
+  TransactionGroupsAndTypes,
   TransactionStates,
   TransactionTypes,
   UnstakingInformation,
@@ -453,6 +457,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(FiatWalletLight)]),
         () => ListBuilder<FiatWalletLight>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(TransactionGroupsAndTypes)]),
+        () => ListBuilder<TransactionGroupsAndTypes>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(StakingReleases)]),

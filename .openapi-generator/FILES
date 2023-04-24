@@ -102,6 +102,7 @@ doc/GetCardLimits200Response.md
 doc/GetInnerCryptoTransferFeeRequest.md
 doc/GetStakeMinNumber200Response.md
 doc/GetStakingTimer200Response.md
+doc/HumanAndMachineReadable.md
 doc/HumanTransactionTypes.md
 doc/InnerCryptoTransferFeeResult.md
 doc/InnerFiatTransferFeeResult.md
@@ -167,6 +168,7 @@ doc/TransactionExportFilter.md
 doc/TransactionFilter.md
 doc/TransactionGroup.md
 doc/TransactionGrouping.md
+doc/TransactionGroupsAndTypes.md
 doc/TransactionStates.md
 doc/TransactionTypes.md
 doc/TransactionsApi.md
@@ -303,6 +305,7 @@ lib/src/model/get_card_limits200_response.dart
 lib/src/model/get_inner_crypto_transfer_fee_request.dart
 lib/src/model/get_stake_min_number200_response.dart
 lib/src/model/get_staking_timer200_response.dart
+lib/src/model/human_and_machine_readable.dart
 lib/src/model/human_transaction_types.dart
 lib/src/model/inner_crypto_transfer_fee_result.dart
 lib/src/model/inner_fiat_transfer_fee_result.dart
@@ -364,6 +367,7 @@ lib/src/model/transaction_export_filter.dart
 lib/src/model/transaction_filter.dart
 lib/src/model/transaction_group.dart
 lib/src/model/transaction_grouping.dart
+lib/src/model/transaction_groups_and_types.dart
 lib/src/model/transaction_states.dart
 lib/src/model/transaction_types.dart
 lib/src/model/unstaking_information.dart
@@ -381,3 +385,5 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/human_and_machine_readable_test.dart
+test/transaction_groups_and_types_test.dart

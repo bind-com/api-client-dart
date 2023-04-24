@@ -100,6 +100,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GetInnerCryptoTransferFeeRequest.serializer)
       ..add(GetStakeMinNumber200Response.serializer)
       ..add(GetStakingTimer200Response.serializer)
+      ..add(HumanAndMachineReadable.serializer)
       ..add(HumanTransactionTypes.serializer)
       ..add(InnerCryptoTransferFeeResult.serializer)
       ..add(InnerFiatTransferFeeResult.serializer)
@@ -167,6 +168,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(TransactionFilterAssetTypeEnum.serializer)
       ..add(TransactionGroup.serializer)
       ..add(TransactionGrouping.serializer)
+      ..add(TransactionGroupsAndTypes.serializer)
       ..add(TransactionStates.serializer)
       ..add(TransactionTypes.serializer)
       ..add(UnstakingInformation.serializer)
@@ -212,6 +214,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(FiatWalletWithPaymentCurrency)]),
           () => new ListBuilder<FiatWalletWithPaymentCurrency>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(HumanAndMachineReadable)]),
+          () => new ListBuilder<HumanAndMachineReadable>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(SliderMatrixParams)]),
           () => new ListBuilder<SliderMatrixParams>())

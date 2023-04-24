@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**exportTransactionsById**](TransactionsApi.md#exporttransactionsbyid) | **GET** /transactions/export/history/{export_id}/ | Export user transaction to pdf
 [**getExportHistory**](TransactionsApi.md#getexporthistory) | **GET** /transactions/export/history/ | Get export history
 [**getTransactionDetails**](TransactionsApi.md#gettransactiondetails) | **GET** /transactions/{transactionId} | Get detailed info of a transaction
+[**getTransactionTypesExportHistory**](TransactionsApi.md#gettransactiontypesexporthistory) | **GET** /transactions/types/export_history | Get list of transaction types for export history
 [**getTransactionsAssetsList**](TransactionsApi.md#gettransactionsassetslist) | **POST** /transactions/assets/ | Get list of assets of user transactions
 [**getTransactionsFiltered**](TransactionsApi.md#gettransactionsfiltered) | **POST** /transactions/ | Get list of user transactions
 
@@ -185,6 +186,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TransactionDetail**](TransactionDetail.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getTransactionTypesExportHistory**
+> BuiltList<TransactionGroupsAndTypes> getTransactionTypesExportHistory()
+
+Get list of transaction types for export history
+
+Get list of transaction types for export history
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getTransactionsApi();
+
+try {
+    final response = api.getTransactionTypesExportHistory();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling TransactionsApi->getTransactionTypesExportHistory: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**BuiltList&lt;TransactionGroupsAndTypes&gt;**](TransactionGroupsAndTypes.md)
 
 ### Authorization
 

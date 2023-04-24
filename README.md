@@ -206,6 +206,7 @@ Class | Method | HTTP request | Description
 [*TransactionsApi*](doc/TransactionsApi.md) | [**exportTransactionsById**](doc/TransactionsApi.md#exporttransactionsbyid) | **GET** /transactions/export/history/{export_id}/ | Export user transaction to pdf
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getExportHistory**](doc/TransactionsApi.md#getexporthistory) | **GET** /transactions/export/history/ | Get export history
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionDetails**](doc/TransactionsApi.md#gettransactiondetails) | **GET** /transactions/{transactionId} | Get detailed info of a transaction
+[*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionTypesExportHistory**](doc/TransactionsApi.md#gettransactiontypesexporthistory) | **GET** /transactions/types/export_history | Get list of transaction types for export history
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionsAssetsList**](doc/TransactionsApi.md#gettransactionsassetslist) | **POST** /transactions/assets/ | Get list of assets of user transactions
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionsFiltered**](doc/TransactionsApi.md#gettransactionsfiltered) | **POST** /transactions/ | Get list of user transactions
 [*UserApi*](doc/UserApi.md) | [**checkKYCRequestApproval**](doc/UserApi.md#checkkycrequestapproval) | **GET** /users/kyc/requests/approval/ | Get status of KYC Request approval
@@ -316,6 +317,7 @@ Class | Method | HTTP request | Description
  - [GetInnerCryptoTransferFeeRequest](doc/GetInnerCryptoTransferFeeRequest.md)
  - [GetStakeMinNumber200Response](doc/GetStakeMinNumber200Response.md)
  - [GetStakingTimer200Response](doc/GetStakingTimer200Response.md)
+ - [HumanAndMachineReadable](doc/HumanAndMachineReadable.md)
  - [HumanTransactionTypes](doc/HumanTransactionTypes.md)
  - [InnerCryptoTransferFeeResult](doc/InnerCryptoTransferFeeResult.md)
  - [InnerFiatTransferFeeResult](doc/InnerFiatTransferFeeResult.md)
@@ -377,6 +379,7 @@ Class | Method | HTTP request | Description
  - [TransactionFilter](doc/TransactionFilter.md)
  - [TransactionGroup](doc/TransactionGroup.md)
  - [TransactionGrouping](doc/TransactionGrouping.md)
+ - [TransactionGroupsAndTypes](doc/TransactionGroupsAndTypes.md)
  - [TransactionStates](doc/TransactionStates.md)
  - [TransactionTypes](doc/TransactionTypes.md)
  - [UnstakingInformation](doc/UnstakingInformation.md)
