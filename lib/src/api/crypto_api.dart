@@ -20,6 +20,7 @@ import 'package:bind_api/src/model/inner_crypto_transfer_fee_result.dart';
 import 'package:bind_api/src/model/machine_and_human_readables.dart';
 import 'package:bind_api/src/model/period_interval.dart';
 import 'package:bind_api/src/model/staking_chart_tick.dart';
+import 'package:bind_api/src/model/staking_main_pool_candle.dart';
 import 'package:bind_api/src/model/staking_main_pool_size.dart';
 import 'package:bind_api/src/model/token_detail.dart';
 import 'package:bind_api/src/model/token_stats.dart';
@@ -667,9 +668,9 @@ class CryptoApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<Candle>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<StakingMainPoolCandle>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<Candle>>> getStakingMainPoolCandles({ 
+  Future<Response<BuiltList<StakingMainPoolCandle>>> getStakingMainPoolCandles({ 
     required PeriodInterval interval,
     required DateTime start,
     required DateTime end,
@@ -716,14 +717,14 @@ class CryptoApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<Candle> _responseData;
+    BuiltList<StakingMainPoolCandle> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(Candle)]);
+      const _responseType = FullType(BuiltList, [FullType(StakingMainPoolCandle)]);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as BuiltList<Candle>;
+      ) as BuiltList<StakingMainPoolCandle>;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -735,7 +736,7 @@ class CryptoApi {
       );
     }
 
-    return Response<BuiltList<Candle>>(
+    return Response<BuiltList<StakingMainPoolCandle>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

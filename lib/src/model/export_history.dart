@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -21,8 +20,7 @@ abstract class ExportHistory implements Built<ExportHistory, ExportHistoryBuilde
   DateTime? get datetime;
 
   @BuiltValueField(wireName: r'wallet_type')
-  ExportHistoryWalletTypeEnum? get walletType;
-  // enum walletTypeEnum {  fiat,  crypto,  };
+  String? get walletType;
 
   @BuiltValueField(wireName: r'file')
   String? get file;
@@ -61,7 +59,7 @@ class _$ExportHistorySerializer implements PrimitiveSerializer<ExportHistory> {
       yield r'wallet_type';
       yield serializers.serialize(
         object.walletType,
-        specifiedType: const FullType(ExportHistoryWalletTypeEnum),
+        specifiedType: const FullType(String),
       );
     }
     if (object.file != null) {
@@ -104,8 +102,8 @@ class _$ExportHistorySerializer implements PrimitiveSerializer<ExportHistory> {
         case r'wallet_type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ExportHistoryWalletTypeEnum),
-          ) as ExportHistoryWalletTypeEnum;
+            specifiedType: const FullType(String),
+          ) as String;
           result.walletType = valueDes;
           break;
         case r'file':
@@ -142,20 +140,5 @@ class _$ExportHistorySerializer implements PrimitiveSerializer<ExportHistory> {
     );
     return result.build();
   }
-}
-
-class ExportHistoryWalletTypeEnum extends EnumClass {
-
-  @BuiltValueEnumConst(wireName: r'fiat')
-  static const ExportHistoryWalletTypeEnum fiat = _$exportHistoryWalletTypeEnum_fiat;
-  @BuiltValueEnumConst(wireName: r'crypto')
-  static const ExportHistoryWalletTypeEnum crypto = _$exportHistoryWalletTypeEnum_crypto;
-
-  static Serializer<ExportHistoryWalletTypeEnum> get serializer => _$exportHistoryWalletTypeEnumSerializer;
-
-  const ExportHistoryWalletTypeEnum._(String name): super(name);
-
-  static BuiltSet<ExportHistoryWalletTypeEnum> get values => _$exportHistoryWalletTypeEnumValues;
-  static ExportHistoryWalletTypeEnum valueOf(String name) => _$exportHistoryWalletTypeEnumValueOf(name);
 }
 

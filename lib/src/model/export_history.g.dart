@@ -6,67 +6,11 @@ part of 'export_history.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const ExportHistoryWalletTypeEnum _$exportHistoryWalletTypeEnum_fiat =
-    const ExportHistoryWalletTypeEnum._('fiat');
-const ExportHistoryWalletTypeEnum _$exportHistoryWalletTypeEnum_crypto =
-    const ExportHistoryWalletTypeEnum._('crypto');
-
-ExportHistoryWalletTypeEnum _$exportHistoryWalletTypeEnumValueOf(String name) {
-  switch (name) {
-    case 'fiat':
-      return _$exportHistoryWalletTypeEnum_fiat;
-    case 'crypto':
-      return _$exportHistoryWalletTypeEnum_crypto;
-    default:
-      throw new ArgumentError(name);
-  }
-}
-
-final BuiltSet<ExportHistoryWalletTypeEnum>
-    _$exportHistoryWalletTypeEnumValues = new BuiltSet<
-        ExportHistoryWalletTypeEnum>(const <ExportHistoryWalletTypeEnum>[
-  _$exportHistoryWalletTypeEnum_fiat,
-  _$exportHistoryWalletTypeEnum_crypto,
-]);
-
-Serializer<ExportHistoryWalletTypeEnum>
-    _$exportHistoryWalletTypeEnumSerializer =
-    new _$ExportHistoryWalletTypeEnumSerializer();
-
-class _$ExportHistoryWalletTypeEnumSerializer
-    implements PrimitiveSerializer<ExportHistoryWalletTypeEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'fiat': 'fiat',
-    'crypto': 'crypto',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'fiat': 'fiat',
-    'crypto': 'crypto',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[ExportHistoryWalletTypeEnum];
-  @override
-  final String wireName = 'ExportHistoryWalletTypeEnum';
-
-  @override
-  Object serialize(Serializers serializers, ExportHistoryWalletTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
-
-  @override
-  ExportHistoryWalletTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExportHistoryWalletTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
-}
-
 class _$ExportHistory extends ExportHistory {
   @override
   final DateTime? datetime;
   @override
-  final ExportHistoryWalletTypeEnum? walletType;
+  final String? walletType;
   @override
   final String? file;
 
@@ -119,10 +63,9 @@ class ExportHistoryBuilder
   DateTime? get datetime => _$this._datetime;
   set datetime(DateTime? datetime) => _$this._datetime = datetime;
 
-  ExportHistoryWalletTypeEnum? _walletType;
-  ExportHistoryWalletTypeEnum? get walletType => _$this._walletType;
-  set walletType(ExportHistoryWalletTypeEnum? walletType) =>
-      _$this._walletType = walletType;
+  String? _walletType;
+  String? get walletType => _$this._walletType;
+  set walletType(String? walletType) => _$this._walletType = walletType;
 
   String? _file;
   String? get file => _$this._file;

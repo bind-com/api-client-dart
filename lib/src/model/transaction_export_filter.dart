@@ -3,8 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
-import 'package:bind_api/src/model/transaction_types.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -26,12 +24,10 @@ abstract class TransactionExportFilter implements Built<TransactionExportFilter,
   DateTime get dateTo;
 
   @BuiltValueField(wireName: r'wallet')
-  TransactionExportFilterWalletEnum get wallet;
-  // enum walletEnum {  fiat,  crypto,  NFT,  };
+  String get wallet;
 
   @BuiltValueField(wireName: r'transaction_type')
-  TransactionTypes? get transactionType;
-  // enum transactionTypeEnum {  OUTGOING_INNER_FIAT_TRANSFER,  INCOMING_INNER_FIAT_TRANSFER,  OUTGOING_INNER_CRYPTO_TRANSFER,  INCOMING_INNER_CRYPTO_TRANSFER,  FIAT_EXCHANGE,  OUTGOING_SWIFT_FIAT_TRANSFER,  EXCHANGE,  SEND,  CRYPTO_WITHDRAWAL,  CRYPTO_DEPOSIT,  CARD_SPENDING,  STAKE,  };
+  String? get transactionType;
 
   TransactionExportFilter._();
 
@@ -69,13 +65,13 @@ class _$TransactionExportFilterSerializer implements PrimitiveSerializer<Transac
     yield r'wallet';
     yield serializers.serialize(
       object.wallet,
-      specifiedType: const FullType(TransactionExportFilterWalletEnum),
+      specifiedType: const FullType(String),
     );
     if (object.transactionType != null) {
       yield r'transaction_type';
       yield serializers.serialize(
         object.transactionType,
-        specifiedType: const FullType(TransactionTypes),
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -118,15 +114,15 @@ class _$TransactionExportFilterSerializer implements PrimitiveSerializer<Transac
         case r'wallet':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(TransactionExportFilterWalletEnum),
-          ) as TransactionExportFilterWalletEnum;
+            specifiedType: const FullType(String),
+          ) as String;
           result.wallet = valueDes;
           break;
         case r'transaction_type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(TransactionTypes),
-          ) as TransactionTypes;
+            specifiedType: const FullType(String),
+          ) as String;
           result.transactionType = valueDes;
           break;
         default:
@@ -156,22 +152,5 @@ class _$TransactionExportFilterSerializer implements PrimitiveSerializer<Transac
     );
     return result.build();
   }
-}
-
-class TransactionExportFilterWalletEnum extends EnumClass {
-
-  @BuiltValueEnumConst(wireName: r'fiat')
-  static const TransactionExportFilterWalletEnum fiat = _$transactionExportFilterWalletEnum_fiat;
-  @BuiltValueEnumConst(wireName: r'crypto')
-  static const TransactionExportFilterWalletEnum crypto = _$transactionExportFilterWalletEnum_crypto;
-  @BuiltValueEnumConst(wireName: r'NFT')
-  static const TransactionExportFilterWalletEnum NFT = _$transactionExportFilterWalletEnum_NFT;
-
-  static Serializer<TransactionExportFilterWalletEnum> get serializer => _$transactionExportFilterWalletEnumSerializer;
-
-  const TransactionExportFilterWalletEnum._(String name): super(name);
-
-  static BuiltSet<TransactionExportFilterWalletEnum> get values => _$transactionExportFilterWalletEnumValues;
-  static TransactionExportFilterWalletEnum valueOf(String name) => _$transactionExportFilterWalletEnumValueOf(name);
 }
 

@@ -344,7 +344,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getStakingMainPoolCandles**
-> BuiltList<Candle> getStakingMainPoolCandles(interval, start, end, pageSize)
+> BuiltList<StakingMainPoolCandle> getStakingMainPoolCandles(interval, start, end, pageSize)
 
 List of candles of staking main pool
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;Candle&gt;**](Candle.md)
+[**BuiltList&lt;StakingMainPoolCandle&gt;**](StakingMainPoolCandle.md)
 
 ### Authorization
 

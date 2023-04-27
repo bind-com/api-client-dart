@@ -361,6 +361,7 @@ Class | Method | HTTP request | Description
  - [StakingChartTick](doc/StakingChartTick.md)
  - [StakingEstimate](doc/StakingEstimate.md)
  - [StakingInformation](doc/StakingInformation.md)
+ - [StakingMainPoolCandle](doc/StakingMainPoolCandle.md)
  - [StakingMainPoolSize](doc/StakingMainPoolSize.md)
  - [StakingPerformRequest](doc/StakingPerformRequest.md)
  - [StakingPeriods](doc/StakingPeriods.md)

@@ -162,6 +162,7 @@ export 'package:bind_api/src/model/staking_balance.dart';
 export 'package:bind_api/src/model/staking_chart_tick.dart';
 export 'package:bind_api/src/model/staking_estimate.dart';
 export 'package:bind_api/src/model/staking_information.dart';
+export 'package:bind_api/src/model/staking_main_pool_candle.dart';
 export 'package:bind_api/src/model/staking_main_pool_size.dart';
 export 'package:bind_api/src/model/staking_perform_request.dart';
 export 'package:bind_api/src/model/staking_periods.dart';

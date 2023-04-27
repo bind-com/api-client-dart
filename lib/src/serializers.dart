@@ -149,6 +149,7 @@ import 'package:bind_api/src/model/staking_balance.dart';
 import 'package:bind_api/src/model/staking_chart_tick.dart';
 import 'package:bind_api/src/model/staking_estimate.dart';
 import 'package:bind_api/src/model/staking_information.dart';
+import 'package:bind_api/src/model/staking_main_pool_candle.dart';
 import 'package:bind_api/src/model/staking_main_pool_size.dart';
 import 'package:bind_api/src/model/staking_perform_request.dart';
 import 'package:bind_api/src/model/staking_periods.dart';
@@ -322,6 +323,7 @@ part 'serializers.g.dart';
   StakingChartTick,
   StakingEstimate,
   StakingInformation,
+  StakingMainPoolCandle,
   StakingMainPoolSize,
   StakingPerformRequest,
   StakingPeriods,
@@ -425,6 +427,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(CurrencyWithRate)]),
         () => ListBuilder<CurrencyWithRate>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(StakingMainPoolCandle)]),
+        () => ListBuilder<StakingMainPoolCandle>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(ChainImplementation)]),

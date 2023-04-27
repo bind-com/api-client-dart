@@ -6,84 +6,15 @@ part of 'transaction_export_filter.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const TransactionExportFilterWalletEnum
-    _$transactionExportFilterWalletEnum_fiat =
-    const TransactionExportFilterWalletEnum._('fiat');
-const TransactionExportFilterWalletEnum
-    _$transactionExportFilterWalletEnum_crypto =
-    const TransactionExportFilterWalletEnum._('crypto');
-const TransactionExportFilterWalletEnum
-    _$transactionExportFilterWalletEnum_NFT =
-    const TransactionExportFilterWalletEnum._('NFT');
-
-TransactionExportFilterWalletEnum _$transactionExportFilterWalletEnumValueOf(
-    String name) {
-  switch (name) {
-    case 'fiat':
-      return _$transactionExportFilterWalletEnum_fiat;
-    case 'crypto':
-      return _$transactionExportFilterWalletEnum_crypto;
-    case 'NFT':
-      return _$transactionExportFilterWalletEnum_NFT;
-    default:
-      throw new ArgumentError(name);
-  }
-}
-
-final BuiltSet<TransactionExportFilterWalletEnum>
-    _$transactionExportFilterWalletEnumValues =
-    new BuiltSet<TransactionExportFilterWalletEnum>(const <
-        TransactionExportFilterWalletEnum>[
-  _$transactionExportFilterWalletEnum_fiat,
-  _$transactionExportFilterWalletEnum_crypto,
-  _$transactionExportFilterWalletEnum_NFT,
-]);
-
-Serializer<TransactionExportFilterWalletEnum>
-    _$transactionExportFilterWalletEnumSerializer =
-    new _$TransactionExportFilterWalletEnumSerializer();
-
-class _$TransactionExportFilterWalletEnumSerializer
-    implements PrimitiveSerializer<TransactionExportFilterWalletEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'fiat': 'fiat',
-    'crypto': 'crypto',
-    'NFT': 'NFT',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'fiat': 'fiat',
-    'crypto': 'crypto',
-    'NFT': 'NFT',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[TransactionExportFilterWalletEnum];
-  @override
-  final String wireName = 'TransactionExportFilterWalletEnum';
-
-  @override
-  Object serialize(
-          Serializers serializers, TransactionExportFilterWalletEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
-
-  @override
-  TransactionExportFilterWalletEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TransactionExportFilterWalletEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
-}
-
 class _$TransactionExportFilter extends TransactionExportFilter {
   @override
   final DateTime dateFrom;
   @override
   final DateTime dateTo;
   @override
-  final TransactionExportFilterWalletEnum wallet;
+  final String wallet;
   @override
-  final TransactionTypes? transactionType;
+  final String? transactionType;
 
   factory _$TransactionExportFilter(
           [void Function(TransactionExportFilterBuilder)? updates]) =>
@@ -157,14 +88,13 @@ class TransactionExportFilterBuilder
   DateTime? get dateTo => _$this._dateTo;
   set dateTo(DateTime? dateTo) => _$this._dateTo = dateTo;
 
-  TransactionExportFilterWalletEnum? _wallet;
-  TransactionExportFilterWalletEnum? get wallet => _$this._wallet;
-  set wallet(TransactionExportFilterWalletEnum? wallet) =>
-      _$this._wallet = wallet;
+  String? _wallet;
+  String? get wallet => _$this._wallet;
+  set wallet(String? wallet) => _$this._wallet = wallet;
 
-  TransactionTypes? _transactionType;
-  TransactionTypes? get transactionType => _$this._transactionType;
-  set transactionType(TransactionTypes? transactionType) =>
+  String? _transactionType;
+  String? get transactionType => _$this._transactionType;
+  set transactionType(String? transactionType) =>
       _$this._transactionType = transactionType;
 
   TransactionExportFilterBuilder() {
