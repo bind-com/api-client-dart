@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:bind_api/src/model/currency.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -11,6 +12,7 @@ part 'profit_loss.g.dart';
 /// ProfitLoss
 ///
 /// Properties:
+/// * [asset] 
 /// * [assetCode] 
 /// * [assetName] 
 /// * [assetLogo] 
@@ -24,6 +26,9 @@ part 'profit_loss.g.dart';
 /// * [notIncludedInCalculation] 
 @BuiltValue()
 abstract class ProfitLoss implements Built<ProfitLoss, ProfitLossBuilder> {
+  @BuiltValueField(wireName: r'asset')
+  Currency? get asset;
+
   @BuiltValueField(wireName: r'asset_code')
   String? get assetCode;
 
@@ -80,6 +85,13 @@ class _$ProfitLossSerializer implements PrimitiveSerializer<ProfitLoss> {
     ProfitLoss object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.asset != null) {
+      yield r'asset';
+      yield serializers.serialize(
+        object.asset,
+        specifiedType: const FullType(Currency),
+      );
+    }
     if (object.assetCode != null) {
       yield r'asset_code';
       yield serializers.serialize(
@@ -180,6 +192,13 @@ class _$ProfitLossSerializer implements PrimitiveSerializer<ProfitLoss> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'asset':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(Currency),
+          ) as Currency;
+          result.asset = valueDes;
+          break;
         case r'asset_code':
           final valueDes = serializers.deserialize(
             value,

@@ -30,6 +30,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(Alert.serializer)
       ..add(AlertPeriodicity.serializer)
       ..add(AnalysisStatus.serializer)
+      ..add(Approve2FAKey200Response.serializer)
       ..add(AutoPortfolio.serializer)
       ..add(AutoPortfolioAsset.serializer)
       ..add(AutoPortfolioChartPeriod.serializer)
@@ -170,6 +171,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(TransactionGroupsAndTypes.serializer)
       ..add(TransactionStates.serializer)
       ..add(TransactionTypes.serializer)
+      ..add(TwoFactorAuthKey.serializer)
+      ..add(TwoFactorAuthKeyApprove.serializer)
       ..add(UnstakingInformation.serializer)
       ..add(UnstakingPerformRequest.serializer)
       ..add(UpdateAlertRequest.serializer)
@@ -232,6 +235,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(SliderMatrixParams)]),
           () => new ListBuilder<SliderMatrixParams>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())

@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:bind_api/src/model/crypto_account_light.dart';
+import 'package:bind_api/src/model/currency.dart';
 import 'package:bind_api/src/model/crypto_account_all_of.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -13,12 +14,14 @@ part 'crypto_account.g.dart';
 /// CryptoAccount
 ///
 /// Properties:
+/// * [asset] 
 /// * [assetBalance] - balance of a token
 /// * [assetCode] - Code of an asset
 /// * [assetName] - Full name of a token
 /// * [assetId] - Primary key of an asset
 /// * [assetLogo] - Logo of an asset (link to static file)
 /// * [assetColor] - Color of an asset
+/// * [paymentCurrency] 
 /// * [paymentCurrencyCode] - Code of a fiat currency (can be used to show currency symbol at UI)
 /// * [paymentCurrencyBalance] - Balance of a wallet converted to fiat currency (payment currency of current user)
 /// * [price] - price of a token in payment currency
@@ -41,26 +44,32 @@ class _$CryptoAccountSerializer implements PrimitiveSerializer<CryptoAccount> {
     CryptoAccount object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'asset_code';
-    yield serializers.serialize(
-      object.assetCode,
-      specifiedType: const FullType(String),
-    );
+    if (object.assetCode != null) {
+      yield r'asset_code';
+      yield serializers.serialize(
+        object.assetCode,
+        specifiedType: const FullType(String),
+      );
+    }
     yield r'asset_performance';
     yield serializers.serialize(
       object.assetPerformance,
       specifiedType: const FullType(num),
     );
-    yield r'asset_id';
-    yield serializers.serialize(
-      object.assetId,
-      specifiedType: const FullType(String),
-    );
-    yield r'payment_currency_code';
-    yield serializers.serialize(
-      object.paymentCurrencyCode,
-      specifiedType: const FullType(String),
-    );
+    if (object.assetId != null) {
+      yield r'asset_id';
+      yield serializers.serialize(
+        object.assetId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.paymentCurrencyCode != null) {
+      yield r'payment_currency_code';
+      yield serializers.serialize(
+        object.paymentCurrencyCode,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.price != null) {
       yield r'price';
       yield serializers.serialize(
@@ -80,21 +89,41 @@ class _$CryptoAccountSerializer implements PrimitiveSerializer<CryptoAccount> {
       object.paymentCurrencyBalance,
       specifiedType: const FullType(num),
     );
-    yield r'asset_name';
-    yield serializers.serialize(
-      object.assetName,
-      specifiedType: const FullType(String),
-    );
-    yield r'asset_logo';
-    yield object.assetLogo == null ? null : serializers.serialize(
-      object.assetLogo,
-      specifiedType: const FullType.nullable(String),
-    );
-    yield r'asset_balance';
-    yield serializers.serialize(
-      object.assetBalance,
-      specifiedType: const FullType(num),
-    );
+    if (object.assetName != null) {
+      yield r'asset_name';
+      yield serializers.serialize(
+        object.assetName,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.assetLogo != null) {
+      yield r'asset_logo';
+      yield serializers.serialize(
+        object.assetLogo,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.asset != null) {
+      yield r'asset';
+      yield serializers.serialize(
+        object.asset,
+        specifiedType: const FullType(Currency),
+      );
+    }
+    if (object.paymentCurrency != null) {
+      yield r'payment_currency';
+      yield serializers.serialize(
+        object.paymentCurrency,
+        specifiedType: const FullType(Currency),
+      );
+    }
+    if (object.assetBalance != null) {
+      yield r'asset_balance';
+      yield serializers.serialize(
+        object.assetBalance,
+        specifiedType: const FullType(num),
+      );
+    }
   }
 
   @override
@@ -221,6 +250,20 @@ class _$$CryptoAccountSerializer implements PrimitiveSerializer<$CryptoAccount> 
           ) as String?;
           if (valueDes == null) continue;
           result.assetLogo = valueDes;
+          break;
+        case r'asset':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(Currency),
+          ) as Currency;
+          result.asset = valueDes;
+          break;
+        case r'payment_currency':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(Currency),
+          ) as Currency;
+          result.paymentCurrency = valueDes;
           break;
         case r'asset_balance':
           final valueDes = serializers.deserialize(

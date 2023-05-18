@@ -19,6 +19,7 @@ import 'package:bind_api/src/model/adjust_fiat_wallet_balance_request.dart';
 import 'package:bind_api/src/model/alert.dart';
 import 'package:bind_api/src/model/alert_periodicity.dart';
 import 'package:bind_api/src/model/analysis_status.dart';
+import 'package:bind_api/src/model/approve2_fa_key200_response.dart';
 import 'package:bind_api/src/model/auto_portfolio.dart';
 import 'package:bind_api/src/model/auto_portfolio_asset.dart';
 import 'package:bind_api/src/model/auto_portfolio_chart_period.dart';
@@ -171,6 +172,8 @@ import 'package:bind_api/src/model/transaction_grouping.dart';
 import 'package:bind_api/src/model/transaction_groups_and_types.dart';
 import 'package:bind_api/src/model/transaction_states.dart';
 import 'package:bind_api/src/model/transaction_types.dart';
+import 'package:bind_api/src/model/two_factor_auth_key.dart';
+import 'package:bind_api/src/model/two_factor_auth_key_approve.dart';
 import 'package:bind_api/src/model/unstaking_information.dart';
 import 'package:bind_api/src/model/unstaking_perform_request.dart';
 import 'package:bind_api/src/model/update_alert_request.dart';
@@ -193,6 +196,7 @@ part 'serializers.g.dart';
   Alert,
   AlertPeriodicity,
   AnalysisStatus,
+  Approve2FAKey200Response,
   AutoPortfolio,
   AutoPortfolioAsset,
   AutoPortfolioChartPeriod,
@@ -345,6 +349,8 @@ part 'serializers.g.dart';
   TransactionGroupsAndTypes,
   TransactionStates,
   TransactionTypes,
+  TwoFactorAuthKey,
+  TwoFactorAuthKeyApprove,
   UnstakingInformation,
   UnstakingPerformRequest,
   UpdateAlertRequest,

@@ -8,6 +8,7 @@ import 'package:bind_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**asset** | [**Currency**](Currency.md) |  | [optional] 
 **assetCode** | **String** |  | [optional] 
 **assetName** | **String** |  | [optional] 
 **assetLogo** | **String** |  | [optional] 

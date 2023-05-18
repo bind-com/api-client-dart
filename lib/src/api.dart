@@ -24,6 +24,7 @@ import 'package:bind_api/src/api/staging_api.dart';
 import 'package:bind_api/src/api/staking_api.dart';
 import 'package:bind_api/src/api/support_api.dart';
 import 'package:bind_api/src/api/transactions_api.dart';
+import 'package:bind_api/src/api/two_factor_auth_api.dart';
 import 'package:bind_api/src/api/user_api.dart';
 import 'package:bind_api/src/api/wallet_api.dart';
 
@@ -169,6 +170,12 @@ class BindApi {
   /// by doing that all interceptors will not be executed
   TransactionsApi getTransactionsApi() {
     return TransactionsApi(dio, serializers);
+  }
+
+  /// Get TwoFactorAuthApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  TwoFactorAuthApi getTwoFactorAuthApi() {
+    return TwoFactorAuthApi(dio, serializers);
   }
 
   /// Get UserApi instance, base route and serializer can be overridden by a given but be careful,

@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:bind_api/src/model/currency.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -11,6 +12,7 @@ part 'single_crypto_balance.g.dart';
 /// SingleCryptoBalance
 ///
 /// Properties:
+/// * [asset] 
 /// * [assetName] 
 /// * [assetCode] 
 /// * [assetColor] 
@@ -18,10 +20,14 @@ part 'single_crypto_balance.g.dart';
 /// * [availableBalance] 
 /// * [inOrderBalance] 
 /// * [stakedBalance] 
+/// * [paymentCurrency] 
 /// * [paymentCurrencyCode] 
 /// * [paymentCurrencyBalance] 
 @BuiltValue()
 abstract class SingleCryptoBalance implements Built<SingleCryptoBalance, SingleCryptoBalanceBuilder> {
+  @BuiltValueField(wireName: r'asset')
+  Currency? get asset;
+
   @BuiltValueField(wireName: r'asset_name')
   String? get assetName;
 
@@ -42,6 +48,9 @@ abstract class SingleCryptoBalance implements Built<SingleCryptoBalance, SingleC
 
   @BuiltValueField(wireName: r'staked_balance')
   num? get stakedBalance;
+
+  @BuiltValueField(wireName: r'payment_currency')
+  Currency? get paymentCurrency;
 
   @BuiltValueField(wireName: r'payment_currency_code')
   String? get paymentCurrencyCode;
@@ -72,6 +81,13 @@ class _$SingleCryptoBalanceSerializer implements PrimitiveSerializer<SingleCrypt
     SingleCryptoBalance object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.asset != null) {
+      yield r'asset';
+      yield serializers.serialize(
+        object.asset,
+        specifiedType: const FullType(Currency),
+      );
+    }
     if (object.assetName != null) {
       yield r'asset_name';
       yield serializers.serialize(
@@ -121,6 +137,13 @@ class _$SingleCryptoBalanceSerializer implements PrimitiveSerializer<SingleCrypt
         specifiedType: const FullType(num),
       );
     }
+    if (object.paymentCurrency != null) {
+      yield r'payment_currency';
+      yield serializers.serialize(
+        object.paymentCurrency,
+        specifiedType: const FullType(Currency),
+      );
+    }
     if (object.paymentCurrencyCode != null) {
       yield r'payment_currency_code';
       yield serializers.serialize(
@@ -158,6 +181,13 @@ class _$SingleCryptoBalanceSerializer implements PrimitiveSerializer<SingleCrypt
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'asset':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(Currency),
+          ) as Currency;
+          result.asset = valueDes;
+          break;
         case r'asset_name':
           final valueDes = serializers.deserialize(
             value,
@@ -206,6 +236,13 @@ class _$SingleCryptoBalanceSerializer implements PrimitiveSerializer<SingleCrypt
             specifiedType: const FullType(num),
           ) as num;
           result.stakedBalance = valueDes;
+          break;
+        case r'payment_currency':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(Currency),
+          ) as Currency;
+          result.paymentCurrency = valueDes;
           break;
         case r'payment_currency_code':
           final valueDes = serializers.deserialize(

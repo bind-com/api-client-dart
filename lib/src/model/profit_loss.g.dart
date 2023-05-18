@@ -8,6 +8,8 @@ part of 'profit_loss.dart';
 
 class _$ProfitLoss extends ProfitLoss {
   @override
+  final Currency? asset;
+  @override
   final String? assetCode;
   @override
   final String? assetName;
@@ -34,7 +36,8 @@ class _$ProfitLoss extends ProfitLoss {
       (new ProfitLossBuilder()..update(updates))._build();
 
   _$ProfitLoss._(
-      {this.assetCode,
+      {this.asset,
+      this.assetCode,
       this.assetName,
       this.assetLogo,
       this.assetBalance,
@@ -58,6 +61,7 @@ class _$ProfitLoss extends ProfitLoss {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ProfitLoss &&
+        asset == other.asset &&
         assetCode == other.assetCode &&
         assetName == other.assetName &&
         assetLogo == other.assetLogo &&
@@ -75,6 +79,7 @@ class _$ProfitLoss extends ProfitLoss {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, asset.hashCode);
     _$hash = $jc(_$hash, assetCode.hashCode);
     _$hash = $jc(_$hash, assetName.hashCode);
     _$hash = $jc(_$hash, assetLogo.hashCode);
@@ -93,6 +98,7 @@ class _$ProfitLoss extends ProfitLoss {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ProfitLoss')
+          ..add('asset', asset)
           ..add('assetCode', assetCode)
           ..add('assetName', assetName)
           ..add('assetLogo', assetLogo)
@@ -111,6 +117,10 @@ class _$ProfitLoss extends ProfitLoss {
 
 class ProfitLossBuilder implements Builder<ProfitLoss, ProfitLossBuilder> {
   _$ProfitLoss? _$v;
+
+  Currency? _asset;
+  Currency? get asset => _$this._asset;
+  set asset(Currency? asset) => _$this._asset = asset;
 
   String? _assetCode;
   String? get assetCode => _$this._assetCode;
@@ -170,6 +180,7 @@ class ProfitLossBuilder implements Builder<ProfitLoss, ProfitLossBuilder> {
   ProfitLossBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _asset = $v.asset;
       _assetCode = $v.assetCode;
       _assetName = $v.assetName;
       _assetLogo = $v.assetLogo;
@@ -203,6 +214,7 @@ class ProfitLossBuilder implements Builder<ProfitLoss, ProfitLossBuilder> {
   _$ProfitLoss _build() {
     final _$result = _$v ??
         new _$ProfitLoss._(
+            asset: asset,
             assetCode: assetCode,
             assetName: assetName,
             assetLogo: assetLogo,

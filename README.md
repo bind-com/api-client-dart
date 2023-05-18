@@ -209,6 +209,8 @@ Class | Method | HTTP request | Description
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionTypesExportHistory**](doc/TransactionsApi.md#gettransactiontypesexporthistory) | **GET** /transactions/types/export_history | Get list of transaction types for export history
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionsAssetsList**](doc/TransactionsApi.md#gettransactionsassetslist) | **POST** /transactions/assets/ | Get list of assets of user transactions
 [*TransactionsApi*](doc/TransactionsApi.md) | [**getTransactionsFiltered**](doc/TransactionsApi.md#gettransactionsfiltered) | **POST** /transactions/ | Get list of user transactions
+[*TwoFactorAuthApi*](doc/TwoFactorAuthApi.md) | [**approve2FAKey**](doc/TwoFactorAuthApi.md#approve2fakey) | **POST** /2fa/key/{key_id}/approve/ | Approve 2FA key
+[*TwoFactorAuthApi*](doc/TwoFactorAuthApi.md) | [**create2FAPrivateKey**](doc/TwoFactorAuthApi.md#create2faprivatekey) | **POST** /2fa/key/ | Create 2FA private key
 [*UserApi*](doc/UserApi.md) | [**checkKYCRequestApproval**](doc/UserApi.md#checkkycrequestapproval) | **GET** /users/kyc/requests/approval/ | Get status of KYC Request approval
 [*UserApi*](doc/UserApi.md) | [**checkPasscode**](doc/UserApi.md#checkpasscode) | **POST** /users/check/passcode/ | Check validity of user passcode
 [*UserApi*](doc/UserApi.md) | [**createDevice**](doc/UserApi.md#createdevice) | **PUT** /users/firebase/device/ | Create device
@@ -231,6 +233,7 @@ Class | Method | HTTP request | Description
  - [Alert](doc/Alert.md)
  - [AlertPeriodicity](doc/AlertPeriodicity.md)
  - [AnalysisStatus](doc/AnalysisStatus.md)
+ - [Approve2FAKey200Response](doc/Approve2FAKey200Response.md)
  - [AutoPortfolio](doc/AutoPortfolio.md)
  - [AutoPortfolioAsset](doc/AutoPortfolioAsset.md)
  - [AutoPortfolioChartPeriod](doc/AutoPortfolioChartPeriod.md)
@@ -383,6 +386,8 @@ Class | Method | HTTP request | Description
  - [TransactionGroupsAndTypes](doc/TransactionGroupsAndTypes.md)
  - [TransactionStates](doc/TransactionStates.md)
  - [TransactionTypes](doc/TransactionTypes.md)
+ - [TwoFactorAuthKey](doc/TwoFactorAuthKey.md)
+ - [TwoFactorAuthKeyApprove](doc/TwoFactorAuthKeyApprove.md)
  - [UnstakingInformation](doc/UnstakingInformation.md)
  - [UnstakingPerformRequest](doc/UnstakingPerformRequest.md)
  - [UpdateAlertRequest](doc/UpdateAlertRequest.md)

@@ -54,7 +54,7 @@ class _$CurrencyWithRateSerializer implements PrimitiveSerializer<CurrencyWithRa
       yield r'symbol';
       yield serializers.serialize(
         object.symbol,
-        specifiedType: const FullType(String),
+        specifiedType: const FullType.nullable(String),
       );
     }
     if (object.code != null) {
@@ -123,8 +123,9 @@ class _$CurrencyWithRateSerializer implements PrimitiveSerializer<CurrencyWithRa
         case r'symbol':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.symbol = valueDes;
           break;
         case r'code':

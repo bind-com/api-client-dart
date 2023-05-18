@@ -8,6 +8,7 @@ import 'package:bind_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**asset** | [**Currency**](Currency.md) |  | [optional] 
 **assetName** | **String** |  | [optional] 
 **assetCode** | **String** |  | [optional] 
 **assetColor** | **String** |  | [optional] 
@@ -15,6 +16,7 @@ Name | Type | Description | Notes
 **availableBalance** | **num** |  | [optional] 
 **inOrderBalance** | **num** |  | [optional] 
 **stakedBalance** | **num** |  | [optional] 
+**paymentCurrency** | [**Currency**](Currency.md) |  | [optional] 
 **paymentCurrencyCode** | **String** |  | [optional] 
 **paymentCurrencyBalance** | **num** |  | [optional] 
 

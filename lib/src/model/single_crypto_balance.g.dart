@@ -8,6 +8,8 @@ part of 'single_crypto_balance.dart';
 
 class _$SingleCryptoBalance extends SingleCryptoBalance {
   @override
+  final Currency? asset;
+  @override
   final String? assetName;
   @override
   final String? assetCode;
@@ -22,6 +24,8 @@ class _$SingleCryptoBalance extends SingleCryptoBalance {
   @override
   final num? stakedBalance;
   @override
+  final Currency? paymentCurrency;
+  @override
   final String? paymentCurrencyCode;
   @override
   final num? paymentCurrencyBalance;
@@ -31,13 +35,15 @@ class _$SingleCryptoBalance extends SingleCryptoBalance {
       (new SingleCryptoBalanceBuilder()..update(updates))._build();
 
   _$SingleCryptoBalance._(
-      {this.assetName,
+      {this.asset,
+      this.assetName,
       this.assetCode,
       this.assetColor,
       this.totalBalance,
       this.availableBalance,
       this.inOrderBalance,
       this.stakedBalance,
+      this.paymentCurrency,
       this.paymentCurrencyCode,
       this.paymentCurrencyBalance})
       : super._();
@@ -55,6 +61,7 @@ class _$SingleCryptoBalance extends SingleCryptoBalance {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is SingleCryptoBalance &&
+        asset == other.asset &&
         assetName == other.assetName &&
         assetCode == other.assetCode &&
         assetColor == other.assetColor &&
@@ -62,6 +69,7 @@ class _$SingleCryptoBalance extends SingleCryptoBalance {
         availableBalance == other.availableBalance &&
         inOrderBalance == other.inOrderBalance &&
         stakedBalance == other.stakedBalance &&
+        paymentCurrency == other.paymentCurrency &&
         paymentCurrencyCode == other.paymentCurrencyCode &&
         paymentCurrencyBalance == other.paymentCurrencyBalance;
   }
@@ -69,6 +77,7 @@ class _$SingleCryptoBalance extends SingleCryptoBalance {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, asset.hashCode);
     _$hash = $jc(_$hash, assetName.hashCode);
     _$hash = $jc(_$hash, assetCode.hashCode);
     _$hash = $jc(_$hash, assetColor.hashCode);
@@ -76,6 +85,7 @@ class _$SingleCryptoBalance extends SingleCryptoBalance {
     _$hash = $jc(_$hash, availableBalance.hashCode);
     _$hash = $jc(_$hash, inOrderBalance.hashCode);
     _$hash = $jc(_$hash, stakedBalance.hashCode);
+    _$hash = $jc(_$hash, paymentCurrency.hashCode);
     _$hash = $jc(_$hash, paymentCurrencyCode.hashCode);
     _$hash = $jc(_$hash, paymentCurrencyBalance.hashCode);
     _$hash = $jf(_$hash);
@@ -85,6 +95,7 @@ class _$SingleCryptoBalance extends SingleCryptoBalance {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'SingleCryptoBalance')
+          ..add('asset', asset)
           ..add('assetName', assetName)
           ..add('assetCode', assetCode)
           ..add('assetColor', assetColor)
@@ -92,6 +103,7 @@ class _$SingleCryptoBalance extends SingleCryptoBalance {
           ..add('availableBalance', availableBalance)
           ..add('inOrderBalance', inOrderBalance)
           ..add('stakedBalance', stakedBalance)
+          ..add('paymentCurrency', paymentCurrency)
           ..add('paymentCurrencyCode', paymentCurrencyCode)
           ..add('paymentCurrencyBalance', paymentCurrencyBalance))
         .toString();
@@ -101,6 +113,10 @@ class _$SingleCryptoBalance extends SingleCryptoBalance {
 class SingleCryptoBalanceBuilder
     implements Builder<SingleCryptoBalance, SingleCryptoBalanceBuilder> {
   _$SingleCryptoBalance? _$v;
+
+  Currency? _asset;
+  Currency? get asset => _$this._asset;
+  set asset(Currency? asset) => _$this._asset = asset;
 
   String? _assetName;
   String? get assetName => _$this._assetName;
@@ -133,6 +149,11 @@ class SingleCryptoBalanceBuilder
   set stakedBalance(num? stakedBalance) =>
       _$this._stakedBalance = stakedBalance;
 
+  Currency? _paymentCurrency;
+  Currency? get paymentCurrency => _$this._paymentCurrency;
+  set paymentCurrency(Currency? paymentCurrency) =>
+      _$this._paymentCurrency = paymentCurrency;
+
   String? _paymentCurrencyCode;
   String? get paymentCurrencyCode => _$this._paymentCurrencyCode;
   set paymentCurrencyCode(String? paymentCurrencyCode) =>
@@ -150,6 +171,7 @@ class SingleCryptoBalanceBuilder
   SingleCryptoBalanceBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _asset = $v.asset;
       _assetName = $v.assetName;
       _assetCode = $v.assetCode;
       _assetColor = $v.assetColor;
@@ -157,6 +179,7 @@ class SingleCryptoBalanceBuilder
       _availableBalance = $v.availableBalance;
       _inOrderBalance = $v.inOrderBalance;
       _stakedBalance = $v.stakedBalance;
+      _paymentCurrency = $v.paymentCurrency;
       _paymentCurrencyCode = $v.paymentCurrencyCode;
       _paymentCurrencyBalance = $v.paymentCurrencyBalance;
       _$v = null;
@@ -181,6 +204,7 @@ class SingleCryptoBalanceBuilder
   _$SingleCryptoBalance _build() {
     final _$result = _$v ??
         new _$SingleCryptoBalance._(
+            asset: asset,
             assetName: assetName,
             assetCode: assetCode,
             assetColor: assetColor,
@@ -188,6 +212,7 @@ class SingleCryptoBalanceBuilder
             availableBalance: availableBalance,
             inOrderBalance: inOrderBalance,
             stakedBalance: stakedBalance,
+            paymentCurrency: paymentCurrency,
             paymentCurrencyCode: paymentCurrencyCode,
             paymentCurrencyBalance: paymentCurrencyBalance);
     replace(_$result);
