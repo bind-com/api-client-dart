@@ -127,6 +127,7 @@ import 'package:bind_api/src/model/limit_order.dart';
 import 'package:bind_api/src/model/machine_and_human_readables.dart';
 import 'package:bind_api/src/model/main_wallet_item.dart';
 import 'package:bind_api/src/model/main_wallet_type.dart';
+import 'package:bind_api/src/model/mandate.dart';
 import 'package:bind_api/src/model/media_response.dart';
 import 'package:bind_api/src/model/payment_methods.dart';
 import 'package:bind_api/src/model/payout_wallet_adjust_request.dart';
@@ -173,7 +174,6 @@ import 'package:bind_api/src/model/transaction_groups_and_types.dart';
 import 'package:bind_api/src/model/transaction_states.dart';
 import 'package:bind_api/src/model/transaction_types.dart';
 import 'package:bind_api/src/model/two_factor_auth_key.dart';
-import 'package:bind_api/src/model/two_factor_auth_key_approve.dart';
 import 'package:bind_api/src/model/unstaking_information.dart';
 import 'package:bind_api/src/model/unstaking_perform_request.dart';
 import 'package:bind_api/src/model/update_alert_request.dart';
@@ -183,6 +183,8 @@ import 'package:bind_api/src/model/update_user_passcode_request.dart';
 import 'package:bind_api/src/model/user.dart';
 import 'package:bind_api/src/model/user_payment_currency.dart';
 import 'package:bind_api/src/model/user_sharing_data.dart';
+import 'package:bind_api/src/model/verification_approve.dart';
+import 'package:bind_api/src/model/verification_code.dart';
 import 'package:bind_api/src/model/vote_fear_greed_request.dart';
 import 'package:bind_api/src/model/wallet_balance_info.dart';
 import 'package:bind_api/src/model/withdrawal_address.dart';
@@ -304,6 +306,7 @@ part 'serializers.g.dart';
   MachineAndHumanReadables,
   MainWalletItem,
   MainWalletType,
+  Mandate,
   MediaResponse,
   PaymentMethods,
   PayoutWalletAdjustRequest,
@@ -350,7 +353,6 @@ part 'serializers.g.dart';
   TransactionStates,
   TransactionTypes,
   TwoFactorAuthKey,
-  TwoFactorAuthKeyApprove,
   UnstakingInformation,
   UnstakingPerformRequest,
   UpdateAlertRequest,
@@ -360,6 +362,8 @@ part 'serializers.g.dart';
   User,
   UserPaymentCurrency,
   UserSharingData,
+  VerificationApprove,
+  VerificationCode,
   VoteFearGreedRequest,
   WalletBalanceInfo,
   WithdrawalAddress,

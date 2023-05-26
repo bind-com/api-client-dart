@@ -6,46 +6,46 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'two_factor_auth_key_approve.g.dart';
+part 'verification_approve.g.dart';
 
-/// TwoFactorAuthKeyApprove
+/// VerificationApprove
 ///
 /// Properties:
-/// * [code] - 6-digit code from Google Authenticator
+/// * [isVerified] - true if verification code is correct
 @BuiltValue()
-abstract class TwoFactorAuthKeyApprove implements Built<TwoFactorAuthKeyApprove, TwoFactorAuthKeyApproveBuilder> {
-  /// 6-digit code from Google Authenticator
-  @BuiltValueField(wireName: r'code')
-  String? get code;
+abstract class VerificationApprove implements Built<VerificationApprove, VerificationApproveBuilder> {
+  /// true if verification code is correct
+  @BuiltValueField(wireName: r'is_verified')
+  bool? get isVerified;
 
-  TwoFactorAuthKeyApprove._();
+  VerificationApprove._();
 
-  factory TwoFactorAuthKeyApprove([void updates(TwoFactorAuthKeyApproveBuilder b)]) = _$TwoFactorAuthKeyApprove;
+  factory VerificationApprove([void updates(VerificationApproveBuilder b)]) = _$VerificationApprove;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(TwoFactorAuthKeyApproveBuilder b) => b;
+  static void _defaults(VerificationApproveBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<TwoFactorAuthKeyApprove> get serializer => _$TwoFactorAuthKeyApproveSerializer();
+  static Serializer<VerificationApprove> get serializer => _$VerificationApproveSerializer();
 }
 
-class _$TwoFactorAuthKeyApproveSerializer implements PrimitiveSerializer<TwoFactorAuthKeyApprove> {
+class _$VerificationApproveSerializer implements PrimitiveSerializer<VerificationApprove> {
   @override
-  final Iterable<Type> types = const [TwoFactorAuthKeyApprove, _$TwoFactorAuthKeyApprove];
+  final Iterable<Type> types = const [VerificationApprove, _$VerificationApprove];
 
   @override
-  final String wireName = r'TwoFactorAuthKeyApprove';
+  final String wireName = r'VerificationApprove';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    TwoFactorAuthKeyApprove object, {
+    VerificationApprove object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.code != null) {
-      yield r'code';
+    if (object.isVerified != null) {
+      yield r'is_verified';
       yield serializers.serialize(
-        object.code,
-        specifiedType: const FullType(String),
+        object.isVerified,
+        specifiedType: const FullType(bool),
       );
     }
   }
@@ -53,7 +53,7 @@ class _$TwoFactorAuthKeyApproveSerializer implements PrimitiveSerializer<TwoFact
   @override
   Object serialize(
     Serializers serializers,
-    TwoFactorAuthKeyApprove object, {
+    VerificationApprove object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -64,19 +64,19 @@ class _$TwoFactorAuthKeyApproveSerializer implements PrimitiveSerializer<TwoFact
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required TwoFactorAuthKeyApproveBuilder result,
+    required VerificationApproveBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'code':
+        case r'is_verified':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.code = valueDes;
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isVerified = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -87,12 +87,12 @@ class _$TwoFactorAuthKeyApproveSerializer implements PrimitiveSerializer<TwoFact
   }
 
   @override
-  TwoFactorAuthKeyApprove deserialize(
+  VerificationApprove deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = TwoFactorAuthKeyApproveBuilder();
+    final result = VerificationApproveBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

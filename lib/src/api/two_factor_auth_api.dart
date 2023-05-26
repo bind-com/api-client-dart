@@ -10,7 +10,7 @@ import 'package:dio/dio.dart';
 import 'package:bind_api/src/model/approve2_fa_key200_response.dart';
 import 'package:bind_api/src/model/error.dart';
 import 'package:bind_api/src/model/two_factor_auth_key.dart';
-import 'package:bind_api/src/model/two_factor_auth_key_approve.dart';
+import 'package:bind_api/src/model/verification_code.dart';
 
 class TwoFactorAuthApi {
 
@@ -25,7 +25,7 @@ class TwoFactorAuthApi {
   ///
   /// Parameters:
   /// * [keyId] 
-  /// * [twoFactorAuthKeyApprove] - 2FA key
+  /// * [verificationCode] - 2FA key
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -37,7 +37,7 @@ class TwoFactorAuthApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<Approve2FAKey200Response>> approve2FAKey({ 
     required String keyId,
-    required TwoFactorAuthKeyApprove twoFactorAuthKeyApprove,
+    required VerificationCode verificationCode,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -68,8 +68,8 @@ class TwoFactorAuthApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(TwoFactorAuthKeyApprove);
-      _bodyData = _serializers.serialize(twoFactorAuthKeyApprove, specifiedType: _type);
+      const _type = FullType(VerificationCode);
+      _bodyData = _serializers.serialize(verificationCode, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioError(

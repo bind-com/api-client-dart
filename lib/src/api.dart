@@ -19,6 +19,7 @@ import 'package:bind_api/src/api/currency_api.dart';
 import 'package:bind_api/src/api/exchange_api.dart';
 import 'package:bind_api/src/api/fiat_wallet_api.dart';
 import 'package:bind_api/src/api/geo_api.dart';
+import 'package:bind_api/src/api/mandate_api.dart';
 import 'package:bind_api/src/api/media_api.dart';
 import 'package:bind_api/src/api/staging_api.dart';
 import 'package:bind_api/src/api/staking_api.dart';
@@ -140,6 +141,12 @@ class BindApi {
   /// by doing that all interceptors will not be executed
   GeoApi getGeoApi() {
     return GeoApi(dio, serializers);
+  }
+
+  /// Get MandateApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  MandateApi getMandateApi() {
+    return MandateApi(dio, serializers);
   }
 
   /// Get MediaApi instance, base route and serializer can be overridden by a given but be careful,

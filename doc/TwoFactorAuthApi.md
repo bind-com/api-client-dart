@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **approve2FAKey**
-> Approve2FAKey200Response approve2FAKey(keyId, twoFactorAuthKeyApprove)
+> Approve2FAKey200Response approve2FAKey(keyId, verificationCode)
 
 Approve 2FA key
 
@@ -29,10 +29,10 @@ import 'package:bind_api/api.dart';
 
 final api = BindApi().getTwoFactorAuthApi();
 final String keyId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final TwoFactorAuthKeyApprove twoFactorAuthKeyApprove = ; // TwoFactorAuthKeyApprove | 2FA key
+final VerificationCode verificationCode = ; // VerificationCode | 2FA key
 
 try {
-    final response = api.approve2FAKey(keyId, twoFactorAuthKeyApprove);
+    final response = api.approve2FAKey(keyId, verificationCode);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling TwoFactorAuthApi->approve2FAKey: $e\n');
@@ -44,7 +44,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **keyId** | **String**|  | 
- **twoFactorAuthKeyApprove** | [**TwoFactorAuthKeyApprove**](TwoFactorAuthKeyApprove.md)| 2FA key | 
+ **verificationCode** | [**VerificationCode**](VerificationCode.md)| 2FA key | 
 
 ### Return type
 

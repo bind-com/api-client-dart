@@ -124,6 +124,8 @@ doc/LimitOrder.md
 doc/MachineAndHumanReadables.md
 doc/MainWalletItem.md
 doc/MainWalletType.md
+doc/Mandate.md
+doc/MandateApi.md
 doc/MediaApi.md
 doc/MediaResponse.md
 doc/PaymentMethods.md
@@ -176,7 +178,6 @@ doc/TransactionTypes.md
 doc/TransactionsApi.md
 doc/TwoFactorAuthApi.md
 doc/TwoFactorAuthKey.md
-doc/TwoFactorAuthKeyApprove.md
 doc/UnstakingInformation.md
 doc/UnstakingPerformRequest.md
 doc/UpdateAlertRequest.md
@@ -187,6 +188,8 @@ doc/User.md
 doc/UserApi.md
 doc/UserPaymentCurrency.md
 doc/UserSharingData.md
+doc/VerificationApprove.md
+doc/VerificationCode.md
 doc/VoteFearGreedRequest.md
 doc/WalletApi.md
 doc/WalletBalanceInfo.md
@@ -204,6 +207,7 @@ lib/src/api/currency_api.dart
 lib/src/api/exchange_api.dart
 lib/src/api/fiat_wallet_api.dart
 lib/src/api/geo_api.dart
+lib/src/api/mandate_api.dart
 lib/src/api/media_api.dart
 lib/src/api/staging_api.dart
 lib/src/api/staking_api.dart
@@ -333,6 +337,7 @@ lib/src/model/limit_order.dart
 lib/src/model/machine_and_human_readables.dart
 lib/src/model/main_wallet_item.dart
 lib/src/model/main_wallet_type.dart
+lib/src/model/mandate.dart
 lib/src/model/media_response.dart
 lib/src/model/payment_methods.dart
 lib/src/model/payout_wallet_adjust_request.dart
@@ -379,7 +384,6 @@ lib/src/model/transaction_groups_and_types.dart
 lib/src/model/transaction_states.dart
 lib/src/model/transaction_types.dart
 lib/src/model/two_factor_auth_key.dart
-lib/src/model/two_factor_auth_key_approve.dart
 lib/src/model/unstaking_information.dart
 lib/src/model/unstaking_perform_request.dart
 lib/src/model/update_alert_request.dart
@@ -389,13 +393,15 @@ lib/src/model/update_user_passcode_request.dart
 lib/src/model/user.dart
 lib/src/model/user_payment_currency.dart
 lib/src/model/user_sharing_data.dart
+lib/src/model/verification_approve.dart
+lib/src/model/verification_code.dart
 lib/src/model/vote_fear_greed_request.dart
 lib/src/model/wallet_balance_info.dart
 lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/approve2_fa_key200_response_test.dart
-test/two_factor_auth_api_test.dart
-test/two_factor_auth_key_approve_test.dart
-test/two_factor_auth_key_test.dart
+test/mandate_api_test.dart
+test/mandate_test.dart
+test/verification_approve_test.dart
+test/verification_code_test.dart

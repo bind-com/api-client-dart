@@ -1,4 +1,4 @@
-# bind_api.model.TwoFactorAuthKeyApprove
+# bind_api.model.VerificationCode
 
 ## Load the model package
 ```dart

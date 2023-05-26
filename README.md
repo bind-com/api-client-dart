@@ -171,6 +171,13 @@ Class | Method | HTTP request | Description
 [*FiatWalletApi*](doc/FiatWalletApi.md) | [**updateBankCardSettings**](doc/FiatWalletApi.md#updatebankcardsettings) | **PATCH** /fiat/bankcards/{card_id}/ | Update of a Bank Card
 [*GeoApi*](doc/GeoApi.md) | [**listCountries**](doc/GeoApi.md#listcountries) | **GET** /countries/ | Countries list
 [*GeoApi*](doc/GeoApi.md) | [**listCountriesWthSort**](doc/GeoApi.md#listcountrieswthsort) | **GET** /countries-wth-sort/ | Countries list with neighboring sort
+[*MandateApi*](doc/MandateApi.md) | [**createMandate**](doc/MandateApi.md#createmandate) | **POST** /2fa/mandates/ | Create Mandate
+[*MandateApi*](doc/MandateApi.md) | [**getMandate**](doc/MandateApi.md#getmandate) | **GET** /2fa/mandates/{mandate_id}/ | Get Mandate
+[*MandateApi*](doc/MandateApi.md) | [**sendMandateEmail**](doc/MandateApi.md#sendmandateemail) | **POST** /2fa/mandates/{mandate_id}/email/send/ | Verify Mandate by Email
+[*MandateApi*](doc/MandateApi.md) | [**sendMandateSMS**](doc/MandateApi.md#sendmandatesms) | **POST** /2fa/mandates/{mandate_id}/sms/send/ | Send sms to verify Mandate
+[*MandateApi*](doc/MandateApi.md) | [**verifyMandateEmail**](doc/MandateApi.md#verifymandateemail) | **POST** /2fa/mandates/{mandate_id}/email/verify/ | Verify Mandate by Email
+[*MandateApi*](doc/MandateApi.md) | [**verifyMandateSMS**](doc/MandateApi.md#verifymandatesms) | **POST** /2fa/mandates/{mandate_id}/sms/verify/ | Verify Mandate by SMS
+[*MandateApi*](doc/MandateApi.md) | [**verifyMandateTOTP**](doc/MandateApi.md#verifymandatetotp) | **POST** /2fa/mandates/{mandate_id}/totp/verify/ | Verify Mandate by totp
 [*MediaApi*](doc/MediaApi.md) | [**getWhitepaperLink**](doc/MediaApi.md#getwhitepaperlink) | **GET** /media/whitepaper/ | Get link of BIND whitepaper file
 [*StagingApi*](doc/StagingApi.md) | [**adjustFiatWalletBalance**](doc/StagingApi.md#adjustfiatwalletbalance) | **POST** /staging/fiat/wallet/adjust/ | Change balance of a fiat wallet
 [*StagingApi*](doc/StagingApi.md) | [**createSettlements**](doc/StagingApi.md#createsettlements) | **GET** /staging/settlement/create/ | Create Settlements
@@ -341,6 +348,7 @@ Class | Method | HTTP request | Description
  - [MachineAndHumanReadables](doc/MachineAndHumanReadables.md)
  - [MainWalletItem](doc/MainWalletItem.md)
  - [MainWalletType](doc/MainWalletType.md)
+ - [Mandate](doc/Mandate.md)
  - [MediaResponse](doc/MediaResponse.md)
  - [PaymentMethods](doc/PaymentMethods.md)
  - [PayoutWalletAdjustRequest](doc/PayoutWalletAdjustRequest.md)
@@ -387,7 +395,6 @@ Class | Method | HTTP request | Description
  - [TransactionStates](doc/TransactionStates.md)
  - [TransactionTypes](doc/TransactionTypes.md)
  - [TwoFactorAuthKey](doc/TwoFactorAuthKey.md)
- - [TwoFactorAuthKeyApprove](doc/TwoFactorAuthKeyApprove.md)
  - [UnstakingInformation](doc/UnstakingInformation.md)
  - [UnstakingPerformRequest](doc/UnstakingPerformRequest.md)
  - [UpdateAlertRequest](doc/UpdateAlertRequest.md)
@@ -397,6 +404,8 @@ Class | Method | HTTP request | Description
  - [User](doc/User.md)
  - [UserPaymentCurrency](doc/UserPaymentCurrency.md)
  - [UserSharingData](doc/UserSharingData.md)
+ - [VerificationApprove](doc/VerificationApprove.md)
+ - [VerificationCode](doc/VerificationCode.md)
  - [VoteFearGreedRequest](doc/VoteFearGreedRequest.md)
  - [WalletBalanceInfo](doc/WalletBalanceInfo.md)
  - [WithdrawalAddress](doc/WithdrawalAddress.md)

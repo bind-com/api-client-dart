@@ -829,7 +829,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getFiatWalletsWithUserPaymentCurrency**
-> BuiltList<FiatWalletWithPaymentCurrency> getFiatWalletsWithUserPaymentCurrency()
+> BuiltList<FiatWalletWithPaymentCurrency> getFiatWalletsWithUserPaymentCurrency(hasTradingPairWith)
 
 All fiat wallets of current user with user payment currency info
 
@@ -843,9 +843,10 @@ import 'package:bind_api/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
 
 final api = BindApi().getFiatWalletApi();
+final String hasTradingPairWith = hasTradingPairWith_example; // String | filter by trading pair
 
 try {
-    final response = api.getFiatWalletsWithUserPaymentCurrency();
+    final response = api.getFiatWalletsWithUserPaymentCurrency(hasTradingPairWith);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling FiatWalletApi->getFiatWalletsWithUserPaymentCurrency: $e\n');
@@ -853,7 +854,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **hasTradingPairWith** | **String**| filter by trading pair | [optional] 
 
 ### Return type
 
