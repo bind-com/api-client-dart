@@ -13,11 +13,13 @@ Method | HTTP request | Description
 [**checkPasscode**](UserApi.md#checkpasscode) | **POST** /users/check/passcode/ | Check validity of user passcode
 [**createDevice**](UserApi.md#createdevice) | **PUT** /users/firebase/device/ | Create device
 [**createKYCFile**](UserApi.md#createkycfile) | **POST** /user/kyc/file/ | CreateKYCFile
+[**createKYCRequest**](UserApi.md#createkycrequest) | **POST** /user/old_kyc/requests/ | Create KYC Request
 [**createRegistrationToken**](UserApi.md#createregistrationtoken) | **PUT** /users/firebase/token/ | Create registration token
 [**deleteUserPhoto**](UserApi.md#deleteuserphoto) | **DELETE** /users/photo/delete/ | Delete user photo
 [**getKYCFile**](UserApi.md#getkycfile) | **GET** /user/kyc/file/ | GetKYCFile
 [**getUserPaymentCurrency**](UserApi.md#getuserpaymentcurrency) | **GET** /users/payment_currency/ | Get user payment currency
 [**getUserRefundCurrency**](UserApi.md#getuserrefundcurrency) | **GET** /users/refund_currency/ | Get user refund currency
+[**moveKYCRequest**](UserApi.md#movekycrequest) | **POST** /users/kyc/requests/approval/ | Move KYCRequest to approval
 [**qRCodeGenerateCustomString**](UserApi.md#qrcodegeneratecustomstring) | **POST** /users/generate/custom_qr_code/ | Generate QR code with custom string
 [**updateUser**](UserApi.md#updateuser) | **PATCH** /users/{userID}/ | Update user
 [**updateUserPasscode**](UserApi.md#updateuserpasscode) | **PATCH** /users/change_passcode/{userID}/ | Update user passcode
@@ -192,6 +194,55 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **createKYCRequest**
+> createKYCRequest(selfie, passportScan, idScanFront, idScanBack)
+
+Create KYC Request
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getUserApi();
+final MultipartFile selfie = BINARY_DATA_HERE; // MultipartFile | 
+final MultipartFile passportScan = BINARY_DATA_HERE; // MultipartFile | 
+final MultipartFile idScanFront = BINARY_DATA_HERE; // MultipartFile | 
+final MultipartFile idScanBack = BINARY_DATA_HERE; // MultipartFile | 
+
+try {
+    api.createKYCRequest(selfie, passportScan, idScanFront, idScanBack);
+} catch on DioError (e) {
+    print('Exception when calling UserApi->createKYCRequest: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **selfie** | **MultipartFile**|  | [optional] 
+ **passportScan** | **MultipartFile**|  | [optional] 
+ **idScanFront** | **MultipartFile**|  | [optional] 
+ **idScanBack** | **MultipartFile**|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -396,6 +447,48 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**Currency**](Currency.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **moveKYCRequest**
+> KYCRequestMoveResult moveKYCRequest()
+
+Move KYCRequest to approval
+
+Move KYC Request with priorly uploaded data to approval
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getUserApi();
+
+try {
+    final response = api.moveKYCRequest();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling UserApi->moveKYCRequest: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**KYCRequestMoveResult**](KYCRequestMoveResult.md)
 
 ### Authorization
 

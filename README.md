@@ -222,11 +222,13 @@ Class | Method | HTTP request | Description
 [*UserApi*](doc/UserApi.md) | [**checkPasscode**](doc/UserApi.md#checkpasscode) | **POST** /users/check/passcode/ | Check validity of user passcode
 [*UserApi*](doc/UserApi.md) | [**createDevice**](doc/UserApi.md#createdevice) | **PUT** /users/firebase/device/ | Create device
 [*UserApi*](doc/UserApi.md) | [**createKYCFile**](doc/UserApi.md#createkycfile) | **POST** /user/kyc/file/ | CreateKYCFile
+[*UserApi*](doc/UserApi.md) | [**createKYCRequest**](doc/UserApi.md#createkycrequest) | **POST** /user/old_kyc/requests/ | Create KYC Request
 [*UserApi*](doc/UserApi.md) | [**createRegistrationToken**](doc/UserApi.md#createregistrationtoken) | **PUT** /users/firebase/token/ | Create registration token
 [*UserApi*](doc/UserApi.md) | [**deleteUserPhoto**](doc/UserApi.md#deleteuserphoto) | **DELETE** /users/photo/delete/ | Delete user photo
 [*UserApi*](doc/UserApi.md) | [**getKYCFile**](doc/UserApi.md#getkycfile) | **GET** /user/kyc/file/ | GetKYCFile
 [*UserApi*](doc/UserApi.md) | [**getUserPaymentCurrency**](doc/UserApi.md#getuserpaymentcurrency) | **GET** /users/payment_currency/ | Get user payment currency
 [*UserApi*](doc/UserApi.md) | [**getUserRefundCurrency**](doc/UserApi.md#getuserrefundcurrency) | **GET** /users/refund_currency/ | Get user refund currency
+[*UserApi*](doc/UserApi.md) | [**moveKYCRequest**](doc/UserApi.md#movekycrequest) | **POST** /users/kyc/requests/approval/ | Move KYCRequest to approval
 [*UserApi*](doc/UserApi.md) | [**qRCodeGenerateCustomString**](doc/UserApi.md#qrcodegeneratecustomstring) | **POST** /users/generate/custom_qr_code/ | Generate QR code with custom string
 [*UserApi*](doc/UserApi.md) | [**updateUser**](doc/UserApi.md#updateuser) | **PATCH** /users/{userID}/ | Update user
 [*UserApi*](doc/UserApi.md) | [**updateUserPasscode**](doc/UserApi.md#updateuserpasscode) | **PATCH** /users/change_passcode/{userID}/ | Update user passcode

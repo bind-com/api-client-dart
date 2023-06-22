@@ -401,7 +401,3 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/mandate_api_test.dart
-test/mandate_test.dart
-test/verification_approve_test.dart
-test/verification_code_test.dart
