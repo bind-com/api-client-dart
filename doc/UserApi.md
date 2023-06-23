@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**createRegistrationToken**](UserApi.md#createregistrationtoken) | **PUT** /users/firebase/token/ | Create registration token
 [**deleteUserPhoto**](UserApi.md#deleteuserphoto) | **DELETE** /users/photo/delete/ | Delete user photo
 [**getKYCFile**](UserApi.md#getkycfile) | **GET** /user/kyc/file/ | GetKYCFile
+[**getKYCMethod**](UserApi.md#getkycmethod) | **GET** /kyc/method/ | Get KYC method applicable for current User
 [**getUserPaymentCurrency**](UserApi.md#getuserpaymentcurrency) | **GET** /users/payment_currency/ | Get user payment currency
 [**getUserRefundCurrency**](UserApi.md#getuserrefundcurrency) | **GET** /users/refund_currency/ | Get user refund currency
 [**moveKYCRequest**](UserApi.md#movekycrequest) | **POST** /users/kyc/requests/approval/ | Move KYCRequest to approval
@@ -363,6 +364,46 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**KYCFile**](KYCFile.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getKYCMethod**
+> KYCMethodResponse getKYCMethod()
+
+Get KYC method applicable for current User
+
+### Example
+```dart
+import 'package:bind_api/api.dart';
+// TODO Configure HTTP basic authorization: bearerAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('bearerAuth').password = 'YOUR_PASSWORD';
+
+final api = BindApi().getUserApi();
+
+try {
+    final response = api.getKYCMethod();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling UserApi->getKYCMethod: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**KYCMethodResponse**](KYCMethodResponse.md)
 
 ### Authorization
 

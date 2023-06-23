@@ -117,6 +117,8 @@ doc/KYCFieldStatus.md
 doc/KYCFile.md
 doc/KYCFileId.md
 doc/KYCFileStatus.md
+doc/KYCMethod.md
+doc/KYCMethodResponse.md
 doc/KYCRequestMoveResult.md
 doc/KYCRequestMoveResultRequestFieldsStatus.md
 doc/KYCRequestStatus.md
@@ -330,6 +332,8 @@ lib/src/model/kyc_field_status.dart
 lib/src/model/kyc_file.dart
 lib/src/model/kyc_file_id.dart
 lib/src/model/kyc_file_status.dart
+lib/src/model/kyc_method.dart
+lib/src/model/kyc_method_response.dart
 lib/src/model/kyc_request_move_result.dart
 lib/src/model/kyc_request_move_result_request_fields_status.dart
 lib/src/model/kyc_request_status.dart
@@ -401,3 +405,5 @@ lib/src/model/withdrawal_address.dart
 lib/src/model/withdrawal_address_creation_request.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/kyc_method_response_test.dart
+test/kyc_method_test.dart

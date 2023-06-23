@@ -226,6 +226,7 @@ Class | Method | HTTP request | Description
 [*UserApi*](doc/UserApi.md) | [**createRegistrationToken**](doc/UserApi.md#createregistrationtoken) | **PUT** /users/firebase/token/ | Create registration token
 [*UserApi*](doc/UserApi.md) | [**deleteUserPhoto**](doc/UserApi.md#deleteuserphoto) | **DELETE** /users/photo/delete/ | Delete user photo
 [*UserApi*](doc/UserApi.md) | [**getKYCFile**](doc/UserApi.md#getkycfile) | **GET** /user/kyc/file/ | GetKYCFile
+[*UserApi*](doc/UserApi.md) | [**getKYCMethod**](doc/UserApi.md#getkycmethod) | **GET** /kyc/method/ | Get KYC method applicable for current User
 [*UserApi*](doc/UserApi.md) | [**getUserPaymentCurrency**](doc/UserApi.md#getuserpaymentcurrency) | **GET** /users/payment_currency/ | Get user payment currency
 [*UserApi*](doc/UserApi.md) | [**getUserRefundCurrency**](doc/UserApi.md#getuserrefundcurrency) | **GET** /users/refund_currency/ | Get user refund currency
 [*UserApi*](doc/UserApi.md) | [**moveKYCRequest**](doc/UserApi.md#movekycrequest) | **POST** /users/kyc/requests/approval/ | Move KYCRequest to approval
@@ -343,6 +344,8 @@ Class | Method | HTTP request | Description
  - [KYCFile](doc/KYCFile.md)
  - [KYCFileId](doc/KYCFileId.md)
  - [KYCFileStatus](doc/KYCFileStatus.md)
+ - [KYCMethod](doc/KYCMethod.md)
+ - [KYCMethodResponse](doc/KYCMethodResponse.md)
  - [KYCRequestMoveResult](doc/KYCRequestMoveResult.md)
  - [KYCRequestMoveResultRequestFieldsStatus](doc/KYCRequestMoveResultRequestFieldsStatus.md)
  - [KYCRequestStatus](doc/KYCRequestStatus.md)
