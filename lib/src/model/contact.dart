@@ -29,7 +29,7 @@ abstract class Contact implements Built<Contact, ContactBuilder> {
   String get lastName;
 
   @BuiltValueField(wireName: r'phone_number')
-  String get phoneNumber;
+  String? get phoneNumber;
 
   @BuiltValueField(wireName: r'is_favorite')
   bool get isFavorite;
@@ -76,9 +76,9 @@ class _$ContactSerializer implements PrimitiveSerializer<Contact> {
       specifiedType: const FullType(String),
     );
     yield r'phone_number';
-    yield serializers.serialize(
+    yield object.phoneNumber == null ? null : serializers.serialize(
       object.phoneNumber,
-      specifiedType: const FullType(String),
+      specifiedType: const FullType.nullable(String),
     );
     yield r'is_favorite';
     yield serializers.serialize(
@@ -139,8 +139,9 @@ class _$ContactSerializer implements PrimitiveSerializer<Contact> {
         case r'phone_number':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.phoneNumber = valueDes;
           break;
         case r'is_favorite':

@@ -14,7 +14,7 @@ class _$Contact extends Contact {
   @override
   final String lastName;
   @override
-  final String phoneNumber;
+  final String? phoneNumber;
   @override
   final bool isFavorite;
   @override
@@ -27,15 +27,13 @@ class _$Contact extends Contact {
       {required this.id,
       required this.firstName,
       required this.lastName,
-      required this.phoneNumber,
+      this.phoneNumber,
       required this.isFavorite,
       this.countryName})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, r'Contact', 'id');
     BuiltValueNullFieldError.checkNotNull(firstName, r'Contact', 'firstName');
     BuiltValueNullFieldError.checkNotNull(lastName, r'Contact', 'lastName');
-    BuiltValueNullFieldError.checkNotNull(
-        phoneNumber, r'Contact', 'phoneNumber');
     BuiltValueNullFieldError.checkNotNull(isFavorite, r'Contact', 'isFavorite');
   }
 
@@ -151,8 +149,7 @@ class ContactBuilder implements Builder<Contact, ContactBuilder> {
                 firstName, r'Contact', 'firstName'),
             lastName: BuiltValueNullFieldError.checkNotNull(
                 lastName, r'Contact', 'lastName'),
-            phoneNumber: BuiltValueNullFieldError.checkNotNull(
-                phoneNumber, r'Contact', 'phoneNumber'),
+            phoneNumber: phoneNumber,
             isFavorite: BuiltValueNullFieldError.checkNotNull(
                 isFavorite, r'Contact', 'isFavorite'),
             countryName: countryName);
